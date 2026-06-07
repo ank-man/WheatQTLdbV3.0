@@ -1,0 +1,9 @@
+id,gene,chromosome,position,trait,qtl_name,reference,doi
+G0001,Vrn-A1,5A,~ 575 Mb,Vernalization,QVrn.ccsu-5A,Yan et al. 2003 PNAS,10.1073/pnas.0937399100
+G0002,Ppd-D1,2D,~ 33 Mb,Photoperiod / heading date,QHd.ccsu-2D,Beales et al. 2007 Theor Appl Genet,10.1007/s00122-007-0603-4
+G0003,Rht-B1,4B,~ 30 Mb,Plant height,QPh.ccsu-4B,Pearce et al. 2011 Plant Physiol,10.1104/pp.111.179325
+G0004,Gpc-B1,6B,~ 9 Mb,Grain protein content,QGpc.ccsu-6B,Uauy et al. 2006 Science,10.1126/science.1133649
+G0005,Fhb1,3B,~ 8 Mb,Fusarium head blight,QFhb.ccsu-3BS,Rawat et al. 2016 Nat Genet,10.1038/ng.3706
+G0006,Lr46/Yr29,1B,~ 670 Mb,Leaf/stripe rust,QLr.ccsu-1B,William et al. 2003 Phytopathology,10.1094/PHYTO.2003.93.2.153
+G0007,Pm2,2D,~ 37 Mb,Powdery mildew,QPm.aet-2D,Sanchez-Martin et al. 2016 Genome Biol,10.1186/s13059-016-1082-1
+G0008,Sr2,3B,~ 10 Mb,Stem rust,QSr.ccsu-3B,Mago et al. 2011 Theor Appl Genet,10.1007/s00122-010-1416-4

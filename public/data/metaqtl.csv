@@ -1,0 +1,9 @@
+id,species,trait_category,trait,mqtl_name,chromosome,position_cm,interval_cm,n_qtl,candidate_gene,reference,doi,year
+M0001,Triticum aestivum,Yield,Grain yield,MQTL-Yld-2A.1,2A,65.0,62.5-67.8,18,,Saini et al. 2022 Theor Appl Genet,10.1007/s00122-022-04136-6,2022
+M0002,Triticum aestivum,Abiotic stress,Drought tolerance,MQTL-Drt-3B.2,3B,50.0,47.0-53.0,12,,Kumar et al. 2021 Plant Cell Rep,10.1007/s00299-021-02750-0,2021
+M0003,Triticum aestivum,Quality,Grain protein,MQTL-GPC-6B,6B,10.0,7.0-13.0,9,Gpc-B1,Quraishi et al. 2017 Front Plant Sci,10.3389/fpls.2017.01357,2017
+M0004,Triticum aestivum,Biotic stress,Leaf rust,MQTL-Lr-1B,1B,42.5,40.0-45.0,11,Lr46,Soriano et al. 2019 Plants,10.3390/plants8070221,2019
+M0005,Triticum aestivum,Developmental,Heading date,MQTL-Hd-2D,2D,15.5,13.0-18.0,8,Ppd-D1,Hanocq et al. 2007 Theor Appl Genet,10.1007/s00122-006-0455-3,2007
+M0006,Triticum aestivum,Morphological,Plant height,MQTL-Ph-4B,4B,23.0,20.0-26.0,10,Rht-B1,Griffiths et al. 2012 Theor Appl Genet,10.1007/s00122-012-1881-z,2012
+M0007,Triticum aestivum,Biotic stress,FHB,MQTL-Fhb-3BS,3B,12.5,10.0-15.0,14,Fhb1,Liu et al. 2009 Plant Breed,10.1111/j.1439-0523.2008.01570.x,2009
+M0008,Triticum aestivum,Abiotic stress,Heat tolerance,MQTL-Heat-7B,7B,40.0,38.0-43.0,7,,Acuna-Galindo et al. 2015 Crop Sci,10.2135/cropsci2014.09.0625,2015

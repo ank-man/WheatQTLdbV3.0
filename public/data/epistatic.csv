@@ -1,0 +1,6 @@
+id,species,trait,qtl1,qtl2,chromosome1,chromosome2,interaction_type,pve,reference,doi,year
+E0001,Triticum aestivum,Grain yield,QYld.ccsu-2A.1,QYld.ccsu-3B.2,2A,3B,additive x additive,4.2,Kumar et al. 2018 Theor Appl Genet,10.1007/s00122-018-3097-3,2018
+E0002,Triticum aestivum,Drought tolerance,QDrt.ccsu-1B,QDrt.ccsu-5A,1B,5A,additive x additive,3.8,Sharma et al. 2020 Mol Breed,10.1007/s11032-020-01153-5,2020
+E0003,Triticum aestivum,Heading date,QHd.ccsu-2D,QHd.ccsu-5B,2D,5B,additive x additive,5.1,Diaz et al. 2012 PLOS ONE,10.1371/journal.pone.0033234,2012
+E0004,Triticum aestivum,Plant height,QPh.ccsu-4B,QPh.ccsu-4D,4B,4D,additive x additive,6.7,Borner et al. 2002 Theor Appl Genet,10.1007/s00122-002-1014-1,2002
+E0005,Triticum aestivum,Grain protein,QGpc.ccsu-6B,QGpc.ccsu-7A,6B,7A,additive x additive,2.9,Gupta et al. 2017 J Cereal Sci,10.1016/j.jcs.2017.05.010,2017
