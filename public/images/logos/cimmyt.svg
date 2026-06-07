@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <rect width="200" height="60" rx="8" fill="#00695c"/>
+  <text x="15" y="38" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#fff">CIMMYT</text>
+  <circle cx="165" cy="30" r="12" fill="#4db6ac"/>
+  <path d="M159 30 L171 30 M165 24 L165 36" stroke="#00695c" stroke-width="2"/>
+</svg>

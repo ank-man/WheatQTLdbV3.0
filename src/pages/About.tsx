@@ -30,8 +30,8 @@ export default function About() {
           T. boeoticum, T. turgidum, T. dicoccoides, T. dicoccum</em> and <em>Aegilops tauschii</em>).
         </p>
         <p>
-          <strong>V3.0</strong> is a community, open-source rebuild — fully static, hosted on GitHub Pages, with a
-          CSV-based data layer for transparent contribution and reproducibility.
+          <strong>V3.0</strong> is a community, open-source rebuild — openly archived with reproducible builds, with a
+          CSV-based data layer for transparent contribution and auditability.
         </p>
       </div>
     </div>

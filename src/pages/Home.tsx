@@ -90,7 +90,7 @@ export default function Home() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-wheat-500 animate-pulse-ring" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-wheat-600" />
               </span>
-              v3.0 · open source · GitHub Pages
+              v3.0 · open source · reproducible archive
             </span>
             <h1 className="mt-5 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl animate-fade-up" style={{ animationDelay: '.05s' }}>
               WheatQTLdb <span className="text-gradient-wheat">V3.0</span>
@@ -268,7 +268,7 @@ export default function Home() {
             <Sparkles className="h-7 w-7" />
             <h3 className="mt-3 text-xl font-bold">What's new in V3.0</h3>
             <ul className="mt-3 space-y-2 text-sm text-wheat-50/95">
-              <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Static — free GitHub Pages hosting</li>
+              <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Transparent — open codebase & reproducible builds</li>
               <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Modern UI · dark mode · mobile-ready</li>
               <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Advanced multi-criteria search</li>
               <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Interactive charts (5+ views)</li>

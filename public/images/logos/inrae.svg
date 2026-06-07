@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <rect width="200" height="60" rx="8" fill="#0d47a1"/>
+  <text x="15" y="38" font-family="system-ui, sans-serif" font-size="24" font-weight="800" fill="#fff">INRAE</text>
+  <circle cx="165" cy="30" r="12" fill="#64b5f6"/>
+  <path d="M160 30 L170 30" stroke="#0d47a1" stroke-width="3"/>
+</svg>

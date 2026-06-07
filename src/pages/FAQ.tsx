@@ -28,8 +28,8 @@ const faqs = [
     a: 'Yes. V3.0 is open-source: edit public/data/*.csv files and open a pull request, or email the maintainers a CSV/XLSX through the contact page.',
   },
   {
-    q: '7. Why a static site / GitHub Pages?',
-    a: 'No backend keeps hosting free, fast and reproducible. The data is plain CSV — anyone can audit, fork or reuse it. Search/filter happens client-side and works offline.',
+    q: '7. Why an open, reproducible archive?',
+    a: 'An open architecture ensures long-term accessibility and reproducibility. The data is plain CSV — anyone can audit, fork or reuse it. Search and filtering run entirely in the browser for speed and offline capability.',
   },
 ]
 

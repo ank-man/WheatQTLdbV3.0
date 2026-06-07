@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <rect width="200" height="60" rx="8" fill="#33691e"/>
+  <text x="15" y="38" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#dcedc8">Gramene</text>
+  <circle cx="175" cy="30" r="12" fill="#7cb342"/>
+  <path d="M175 22 L175 38 M169 27 L181 27 M169 33 L181 33" stroke="#33691e" stroke-width="2"/>
+</svg>

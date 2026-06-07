@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <rect width="200" height="60" rx="8" fill="#1a472a"/>
+  <text x="15" y="38" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#fff">Ensembl</text>
+  <circle cx="165" cy="30" r="14" fill="#4caf50"/>
+  <path d="M165 18 L165 42 M155 30 L175 30" stroke="#1a472a" stroke-width="2"/>
+</svg>

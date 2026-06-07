@@ -19,7 +19,7 @@ const v3Team: Member[] = [
   {
     name: 'Ankush Sharma',
     role: 'Lead Developer & Maintainer (V3.0)',
-    affiliation: 'Open-source modernisation · GitHub Pages rebuild',
+    affiliation: 'Open-source modernisation · Reproducible build system',
     github: 'ank-man',
     links: [{ label: 'Repository', url: 'https://github.com/ank-man/WheatQTLdbV3.0' }],
   },
@@ -75,7 +75,7 @@ export default function Team() {
         variant="side"
       />
 
-      <Section title="V3.0 — Maintainers" caption="Open-source modernisation, static rebuild, GitHub Pages deployment.">
+      <Section title="V3.0 — Maintainers" caption="Open-source modernisation, reproducible build, openly archived.">
         <Grid members={v3Team} highlight />
       </Section>
 

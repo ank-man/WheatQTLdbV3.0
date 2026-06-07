@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <rect width="200" height="60" rx="8" fill="#558b2f"/>
+  <text x="15" y="38" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#fff">Grain</text>
+  <text x="75" y="38" font-family="system-ui, sans-serif" font-size="20" font-weight="400" fill="#c5e1a5">Genes</text>
+  <circle cx="175" cy="30" r="10" fill="#aed581"/>
+  <ellipse cx="175" cy="30" rx="3" ry="6" fill="#558b2f"/>
+</svg>
