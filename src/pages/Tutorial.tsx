@@ -1,9 +1,15 @@
-import PageHeader from '../components/PageHeader'
+import PageHero from '../components/PageHero'
 
 export default function Tutorial() {
   return (
     <div>
-      <PageHeader title="Tutorial" subtitle="How to use WheatQTLdb V3.0" />
+      <PageHero
+        eyebrow="Tutorial"
+        title="How to use WheatQTLdb V3.0"
+        subtitle="A short walkthrough of browsing, searching, filtering and exporting curated QTL records."
+        image="wheat-grains.jpg"
+        variant="side"
+      />
       <div className="space-y-6 text-wheat-800 dark:text-wheat-200">
         <Step n={1} title="Browse a dataset">
           Open <strong>Data</strong> from the menu and pick QTL, MetaQTL, Epistatic QTL or Candidate Genes.

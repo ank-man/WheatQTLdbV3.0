@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Database, GitBranch, Network, Dna } from 'lucide-react'
-import PageHeader from '../components/PageHeader'
+import PageHero from '../components/PageHero'
 
 const items = [
   { to: '/data/qtl', icon: Database, title: 'QTL', desc: 'QTL/MTA records from interval mapping and GWAS.' },
@@ -12,7 +12,13 @@ const items = [
 export default function DataIndex() {
   return (
     <div>
-      <PageHeader title="Data" subtitle="Browse, search, sort and export." />
+      <PageHero
+        eyebrow="Data tables"
+        title="Browse the database"
+        subtitle="Curated tables of QTL, MetaQTL, epistatic QTL and candidate genes — all sortable, searchable and exportable as CSV."
+        image="wheat-grains.jpg"
+        variant="side"
+      />
       <div className="grid gap-4 md:grid-cols-2">
         {items.map(({ to, icon: Icon, title, desc }) => (
           <Link key={to} to={to} className="card block transition hover:border-wheat-400">

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
-import PageHeader from '../components/PageHeader'
+import PageHero from '../components/PageHero'
 
 const faqs = [
   {
@@ -36,7 +36,13 @@ const faqs = [
 export default function FAQ() {
   return (
     <div>
-      <PageHeader title="Frequently Asked Questions" />
+      <PageHero
+        eyebrow="FAQ"
+        title="Frequently Asked Questions"
+        subtitle="Definitions, scope, curation methodology and contribution policy."
+        image="wheat-herbarium.jpg"
+        variant="side"
+      />
       <div className="space-y-2">
         {faqs.map((f, i) => (
           <Item key={i} q={f.q} a={f.a} />

@@ -1,5 +1,5 @@
 import { ExternalLink } from 'lucide-react'
-import PageHeader from '../components/PageHeader'
+import PageHero from '../components/PageHero'
 
 const links = [
   { name: 'GrainGenes', url: 'https://wheat.pw.usda.gov/GG3/', desc: 'A database for Triticeae and Avena.' },
@@ -14,7 +14,13 @@ const links = [
 export default function UsefulLinks() {
   return (
     <div>
-      <PageHeader title="Useful Links" />
+      <PageHero
+        eyebrow="Resources"
+        title="Useful Links"
+        subtitle="Allied wheat-genomics databases, genome browsers and breeding programmes."
+        image="hero-wheat.jpg"
+        variant="side"
+      />
       <div className="grid gap-3 md:grid-cols-2">
         {links.map((l) => (
           <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="card block transition hover:border-wheat-400">

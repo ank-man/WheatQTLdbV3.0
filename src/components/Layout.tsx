@@ -104,6 +104,10 @@ export default function Layout({ children }: { children: ReactNode }) {
             <a className="underline hover:text-wheat-900 dark:hover:text-wheat-50" href="http://www.ccsuniversity.ac.in/" target="_blank" rel="noreferrer">CCS University, Meerut</a>.
           </p>
           <p className="mt-1 text-xs">Open-source rebuild · Static site · Hosted on GitHub Pages.</p>
+          <p className="mt-1 text-[11px] text-wheat-600 dark:text-wheat-400">
+            Botanical imagery sourced from Wikimedia Commons / GBIF (CC BY-SA / Public Domain).
+            Citing this resource: see <a className="underline" href="/about">About</a> &amp; <a className="underline" href="/credits">Credits</a>.
+          </p>
         </div>
       </footer>
     </div>

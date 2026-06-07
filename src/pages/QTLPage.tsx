@@ -1,5 +1,5 @@
 import { ColumnDef } from '@tanstack/react-table'
-import PageHeader from '../components/PageHeader'
+import PageHero from '../components/PageHero'
 import DataTable from '../components/DataTable'
 import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
@@ -35,7 +35,13 @@ export default function QTLPage() {
   const { data, loading, error } = useCSV<QTLRecord>('qtl.csv')
   return (
     <div>
-      <PageHeader title="QTL / MTA" subtitle="QTL identified through interval mapping and MTA from GWAS." />
+      <PageHero
+        eyebrow="Data"
+        title="QTL / MTA"
+        subtitle="QTL identified through interval mapping and marker–trait associations identified by GWAS."
+        image="wheat-field-gbif.jpg"
+        variant="side"
+      />
       <AsyncBoundary loading={loading} error={error}>
         <DataTable data={data} columns={columns} filename="wheatqtldb_qtl.csv" />
       </AsyncBoundary>

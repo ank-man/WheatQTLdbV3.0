@@ -1,10 +1,16 @@
 import { Mail, MapPin, Github } from 'lucide-react'
-import PageHeader from '../components/PageHeader'
+import PageHero from '../components/PageHero'
 
 export default function Contact() {
   return (
     <div>
-      <PageHeader title="Contact Us" subtitle="Questions, data submissions or contributions are welcome." />
+      <PageHero
+        eyebrow="Get in touch"
+        title="Contact"
+        subtitle="Questions, data submissions, errata or collaboration enquiries are welcome."
+        image="wheat-field-gbif.jpg"
+        variant="side"
+      />
       <div className="grid gap-4 md:grid-cols-2">
         <div className="card space-y-3">
           <h3 className="font-semibold text-wheat-900 dark:text-wheat-50">Mailing address</h3>

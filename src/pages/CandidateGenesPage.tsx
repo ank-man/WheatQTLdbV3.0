@@ -1,5 +1,5 @@
 import { ColumnDef } from '@tanstack/react-table'
-import PageHeader from '../components/PageHeader'
+import PageHero from '../components/PageHero'
 import DataTable from '../components/DataTable'
 import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
@@ -25,7 +25,13 @@ export default function CandidateGenesPage() {
   const { data, loading, error } = useCSV<CandidateGeneRecord>('candidate_genes.csv')
   return (
     <div>
-      <PageHeader title="Candidate Genes" subtitle="Genes underlying QTL regions." />
+      <PageHero
+        eyebrow="Data"
+        title="Candidate Genes"
+        subtitle="Genes underlying QTL regions, reported in the literature."
+        image="botanical-illustration.jpg"
+        variant="side"
+      />
       <AsyncBoundary loading={loading} error={error}>
         <DataTable data={data} columns={columns} filename="wheatqtldb_candidate_genes.csv" />
       </AsyncBoundary>

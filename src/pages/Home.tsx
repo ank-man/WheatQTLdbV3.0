@@ -93,12 +93,16 @@ export default function Home() {
               v3.0 · open source · GitHub Pages
             </span>
             <h1 className="mt-5 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl animate-fade-up" style={{ animationDelay: '.05s' }}>
-              The wheat QTL database, <span className="text-gradient-wheat">re-imagined.</span>
+              WheatQTLdb <span className="text-gradient-wheat">V3.0</span>
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-wheat-700 dark:text-wheat-200 animate-fade-up" style={{ animationDelay: '.1s' }}>
-              A modern, fully static rebuild of <a className="underline hover:text-wheat-900 dark:hover:text-wheat-50" href="http://wheatqtldb.net" target="_blank" rel="noreferrer">wheatqtldb.net</a>{' '}
-              — manually curated <strong>QTL</strong>, <strong>MetaQTL</strong> and <strong>epistatic QTL</strong> across <em>Triticum aestivum</em> and 7 related species.
-              Search, filter, visualise and export — all in your browser.
+              A manually curated, open-access database of <strong>QTL</strong>, <strong>MetaQTL</strong> and <strong>epistatic QTL</strong> in <em>Triticum aestivum</em> and seven related wheat species.
+              An updated, static, reproducible release of{' '}
+              <a className="underline hover:text-wheat-900 dark:hover:text-wheat-50" href="http://wheatqtldb.net" target="_blank" rel="noreferrer">wheatqtldb.net</a>{' '}
+              for the wheat-genetics community.
+            </p>
+            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-wheat-600 dark:text-wheat-300 animate-fade-up" style={{ animationDelay: '.12s' }}>
+              Academic resource · Manuscript in preparation · Citation-ready
             </p>
 
             {/* Embedded search */}
@@ -151,8 +155,8 @@ export default function Home() {
       <section className="space-y-6">
         <SectionHeader
           eyebrow="Coverage"
-          title="Every trait that matters in wheat breeding"
-          subtitle="From abiotic-stress tolerance to biofortification — explore curated QTL by category."
+          title="Trait categories represented in the database"
+          subtitle="Curated QTL spanning abiotic and biotic stress tolerance, yield, quality, biofortification, developmental and physiological traits."
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {TRAIT_CATS.map(({ name, icon: Icon, blurb }, i) => (
@@ -280,7 +284,7 @@ export default function Home() {
 
       {/* WORKFLOW */}
       <section>
-        <SectionHeader eyebrow="Workflow" title="From query to publication-ready CSV in seconds" />
+        <SectionHeader eyebrow="Workflow" title="From query to publication-ready CSV" subtitle="Reproducible querying for fine-mapping, MAS and meta-analysis." />
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {[
             { icon: Search,   title: '1. Search',  body: 'Combine free-text with species, trait, chromosome, year, PVE, method.', to: '/search' },
@@ -331,9 +335,9 @@ export default function Home() {
         <WheatStalk className="absolute -right-6 top-6 h-72 w-24 opacity-30 animate-float-slow" />
         <WheatStalk className="absolute -left-6 bottom-0 h-60 w-20 opacity-25 animate-float-medium" />
         <div className="relative max-w-3xl">
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Open data. Open code. Built by the community.</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Open data, open code, reproducible science.</h2>
           <p className="mt-3 text-wheat-50/90">
-            Found a missing reference, want a new feature, or have a bigger CSV? Open a pull request — every contribution makes wheat breeding more reproducible.
+            Found a missing reference or want to contribute curated records? Pull requests, issues and email correspondence are all welcome — contributions are credited and versioned in the public repository.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             <a href="https://github.com/ank-man/WheatQTLdbV3.0" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold text-wheat-900 shadow-lg transition hover:bg-wheat-50">

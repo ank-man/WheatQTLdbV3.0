@@ -1,5 +1,5 @@
 import { ColumnDef } from '@tanstack/react-table'
-import PageHeader from '../components/PageHeader'
+import PageHero from '../components/PageHero'
 import DataTable from '../components/DataTable'
 import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
@@ -29,7 +29,13 @@ export default function EpistaticPage() {
   const { data, loading, error } = useCSV<EpistaticRecord>('epistatic.csv')
   return (
     <div>
-      <PageHeader title="Epistatic QTL" subtitle="QTL × QTL interactions." />
+      <PageHero
+        eyebrow="Data"
+        title="Epistatic QTL"
+        subtitle="QTL × QTL interactions reported in the literature."
+        image="wheat-herbarium.jpg"
+        variant="side"
+      />
       <AsyncBoundary loading={loading} error={error}>
         <DataTable data={data} columns={columns} filename="wheatqtldb_epistatic.csv" />
       </AsyncBoundary>

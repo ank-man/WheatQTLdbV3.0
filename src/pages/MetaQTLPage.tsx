@@ -1,5 +1,5 @@
 import { ColumnDef } from '@tanstack/react-table'
-import PageHeader from '../components/PageHeader'
+import PageHero from '../components/PageHero'
 import DataTable from '../components/DataTable'
 import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
@@ -30,7 +30,13 @@ export default function MetaQTLPage() {
   const { data, loading, error } = useCSV<MetaQTLRecord>('metaqtl.csv')
   return (
     <div>
-      <PageHeader title="MetaQTL" subtitle="Consensus QTL regions across studies." />
+      <PageHero
+        eyebrow="Data"
+        title="MetaQTL"
+        subtitle="Consensus QTL regions derived from meta-analysis across multiple studies."
+        image="wheat-spring.jpg"
+        variant="side"
+      />
       <AsyncBoundary loading={loading} error={error}>
         <DataTable data={data} columns={columns} filename="wheatqtldb_metaqtl.csv" />
       </AsyncBoundary>

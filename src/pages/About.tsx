@@ -1,9 +1,15 @@
-import PageHeader from '../components/PageHeader'
+import PageHero from '../components/PageHero'
 
 export default function About() {
   return (
     <div>
-      <PageHeader title="About WheatQTLdb" subtitle="A manually curated QTL database for wheat" />
+      <PageHero
+        eyebrow="About"
+        title="A manually curated QTL database for wheat"
+        subtitle="WheatQTLdb V3.0 is an open-access academic resource consolidating QTL, MetaQTL and epistatic-QTL data from published literature on Triticum aestivum and seven related wheat species."
+        image="botanical-illustration.jpg"
+        variant="side"
+      />
       <div className="prose prose-wheat max-w-none text-wheat-800 dark:text-wheat-200">
         <p>
           WheatQTLdb is a manually curated QTL database for wheat that includes information about QTL identified

@@ -3,7 +3,7 @@ import {
   Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Pie, PieChart, ResponsiveContainer,
   Tooltip, XAxis, YAxis, Cell,
 } from 'recharts'
-import PageHeader from '../components/PageHeader'
+import PageHero from '../components/PageHero'
 import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
@@ -56,7 +56,13 @@ export default function Statistics() {
 
   return (
     <div>
-      <PageHeader title="Statistics" subtitle="Interactive distributions across the database." />
+      <PageHero
+        eyebrow="Analytics"
+        title="Database statistics"
+        subtitle="Interactive distributions of QTL, MetaQTL and epistatic-QTL records across species, traits, chromosomes and publication years."
+        image="wheat-field.jpg"
+        variant="side"
+      />
       <AsyncBoundary loading={loading} error={error}>
         <div className="grid gap-6 lg:grid-cols-2">
           <ChartCard title="Totals">

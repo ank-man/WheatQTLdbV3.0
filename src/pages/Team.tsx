@@ -1,5 +1,5 @@
 import { Github, Mail, ExternalLink } from 'lucide-react'
-import PageHeader from '../components/PageHeader'
+import PageHero from '../components/PageHero'
 import Avatar from '../components/Avatar'
 
 const img = (p: string) => `${import.meta.env.BASE_URL}images/${p}`
@@ -67,7 +67,13 @@ const researchers: Member[] = [
 export default function Team() {
   return (
     <div className="space-y-10">
-      <PageHeader title="Team" subtitle="Authors, curators and maintainers behind WheatQTLdb." />
+      <PageHero
+        eyebrow="People"
+        title="Team"
+        subtitle="Authors, curators and maintainers behind WheatQTLdb."
+        image="wheat-spring.jpg"
+        variant="side"
+      />
 
       <Section title="V3.0 — Maintainers" caption="Open-source modernisation, static rebuild, GitHub Pages deployment.">
         <Grid members={v3Team} highlight />

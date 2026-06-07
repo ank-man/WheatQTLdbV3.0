@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { ColumnDef } from '@tanstack/react-table'
 import { Filter, RotateCcw } from 'lucide-react'
-import PageHeader from '../components/PageHeader'
+import PageHero from '../components/PageHero'
 import DataTable from '../components/DataTable'
 import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
@@ -116,7 +116,13 @@ export default function AdvancedSearch() {
 
   return (
     <div>
-      <PageHeader title="Advanced Search" subtitle="Combine multiple criteria across the QTL dataset." />
+      <PageHero
+        eyebrow="Search"
+        title="Advanced Search"
+        subtitle="Combine free-text with multiple categorical and numeric filters across the curated QTL dataset."
+        image="wheat-grains.jpg"
+        variant="side"
+      />
       <AsyncBoundary loading={loading} error={error}>
         <div className="card mb-4">
           <div className="mb-3 flex items-center justify-between">
