@@ -13,6 +13,7 @@ import QTLPage from './pages/QTLPage'
 import MetaQTLPage from './pages/MetaQTLPage'
 import EpistaticPage from './pages/EpistaticPage'
 import CandidateGenesPage from './pages/CandidateGenesPage'
+import AdvancedSearch from './pages/AdvancedSearch'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/data/metaqtl" element={<MetaQTLPage />} />
         <Route path="/data/epistatic" element={<EpistaticPage />} />
         <Route path="/data/candidate-genes" element={<CandidateGenesPage />} />
+        <Route path="/search" element={<AdvancedSearch />} />
         <Route path="/team" element={<Team />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
