@@ -1,5 +1,8 @@
 import { Github, Mail, ExternalLink } from 'lucide-react'
 import PageHeader from '../components/PageHeader'
+import Avatar from '../components/Avatar'
+
+const img = (p: string) => `${import.meta.env.BASE_URL}images/${p}`
 
 interface Member {
   name: string
@@ -10,10 +13,6 @@ interface Member {
   github?: string
   links?: { label: string; url: string }[]
 }
-
-// Avatar generator (no third-party lock-in: ui-avatars.com is free, CDN-cached, no API key)
-const avatar = (name: string) =>
-  `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=cc9d3f&color=fff&size=160&bold=true&font-size=0.45`
 
 // V3.0 maintainers / new contributors
 const v3Team: Member[] = [
@@ -89,9 +88,9 @@ export default function Team() {
           <strong> Department of Genetics &amp; Plant Breeding, Ch. Charan Singh University, Meerut, India</strong>.
         </p>
         <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
-          <img className="h-32 w-full rounded-lg object-cover" alt="Wheat field" src="https://images.unsplash.com/photo-1574323347407-f5e1c5a1ec21?w=600&q=70" />
-          <img className="h-32 w-full rounded-lg object-cover" alt="Wheat ears" src="https://images.unsplash.com/photo-1535912559178-b1ed1bcb853a?w=600&q=70" />
-          <img className="h-32 w-full rounded-lg object-cover" alt="Crop research" src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=70" />
+          <img className="h-32 w-full rounded-lg object-cover" alt="Wheat field" src={img('wheat-field.jpg')} loading="lazy" />
+          <img className="h-32 w-full rounded-lg object-cover" alt="Wheat ears" src={img('wheat-ears.jpg')} loading="lazy" />
+          <img className="h-32 w-full rounded-lg object-cover" alt="Crop research" src={img('crop-research.jpg')} loading="lazy" />
         </div>
         <p className="mt-3 text-xs text-wheat-600 dark:text-wheat-400">
           Full original team listing preserved at{' '}
@@ -120,12 +119,11 @@ function Grid({ members, highlight, compact }: { members: Member[]; highlight?: 
           key={m.name}
           className={`card flex gap-3 ${highlight ? 'ring-2 ring-wheat-400 dark:ring-wheat-500' : ''}`}
         >
-          <img
-            src={m.photo || avatar(m.name)}
-            alt={m.name}
-            loading="lazy"
+          <Avatar
+            name={m.name}
+            src={m.photo}
+            size={64}
             className="h-16 w-16 flex-shrink-0 rounded-full border border-wheat-200 object-cover dark:border-wheat-700"
-            onError={(e) => { (e.currentTarget as HTMLImageElement).src = avatar(m.name) }}
           />
           <div className="min-w-0">
             <div className="truncate font-semibold text-wheat-900 dark:text-wheat-50">{m.name}</div>

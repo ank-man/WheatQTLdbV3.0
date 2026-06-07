@@ -36,7 +36,7 @@ export default function Home() {
           </div>
           <div className="relative h-56 w-full md:h-full">
             <img
-              src="https://images.unsplash.com/photo-1535912559178-b1ed1bcb853a?w=1200&q=80"
+              src={`${import.meta.env.BASE_URL}images/hero-wheat.jpg`}
               alt="Golden ears of wheat at sunset"
               className="absolute inset-0 h-full w-full object-cover"
               loading="eager"
