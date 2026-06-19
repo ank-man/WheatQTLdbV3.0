@@ -8,25 +8,24 @@ import { QTLRecord } from '../lib/types'
 const columns: ColumnDef<QTLRecord, any>[] = [
   { accessorKey: 'id', header: 'ID' },
   { accessorKey: 'species', header: 'Species' },
-  { accessorKey: 'trait_category', header: 'Category' },
   { accessorKey: 'trait', header: 'Trait' },
-  { accessorKey: 'qtl_name', header: 'QTL' },
+  { accessorKey: 'parameter', header: 'Parameter' },
+  { accessorKey: 'qtl_name', header: 'QTL / MTA' },
   { accessorKey: 'chromosome', header: 'Chr' },
-  { accessorKey: 'position_cm', header: 'Pos (cM)' },
-  { accessorKey: 'interval_cm', header: 'Interval (cM)' },
+  { accessorKey: 'position_interval', header: 'Position / Interval' },
   { accessorKey: 'associated_markers', header: 'Markers' },
   { accessorKey: 'pve', header: 'PVE / R²' },
-  { accessorKey: 'candidate_gene', header: 'Cand. gene' },
+  { accessorKey: 'candidate_gene', header: 'Cand. Gene' },
   { accessorKey: 'method', header: 'Method' },
   { accessorKey: 'cross', header: 'Cross' },
   { accessorKey: 'population', header: 'Population' },
-  { accessorKey: 'year', header: 'Year' },
   {
     accessorKey: 'reference',
     header: 'Reference',
     cell: ({ row }) => {
       const r = row.original
-      return r.doi ? <a className="underline" href={`https://doi.org/${r.doi}`} target="_blank" rel="noreferrer">{r.reference}</a> : r.reference
+      const url = r.doi && r.doi.startsWith('http') ? r.doi : r.doi ? `https://doi.org/${r.doi}` : null
+      return url ? <a className="underline" href={url} target="_blank" rel="noreferrer">{r.reference || r.doi}</a> : (r.reference || '')
     },
   },
 ]

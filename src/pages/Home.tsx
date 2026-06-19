@@ -51,7 +51,7 @@ export default function Home() {
   const topCategories = useMemo(() => {
     const m = new Map<string, number>()
     qtl.data.forEach((r) => {
-      const k = (r.trait_category ?? '').trim()
+      const k = (r.trait ?? '').trim()
       if (k) m.set(k, (m.get(k) ?? 0) + 1)
     })
     const max = Math.max(1, ...m.values())

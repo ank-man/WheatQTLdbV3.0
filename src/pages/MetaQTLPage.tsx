@@ -8,20 +8,20 @@ import { MetaQTLRecord } from '../lib/types'
 const columns: ColumnDef<MetaQTLRecord, any>[] = [
   { accessorKey: 'id', header: 'ID' },
   { accessorKey: 'species', header: 'Species' },
-  { accessorKey: 'trait_category', header: 'Category' },
   { accessorKey: 'trait', header: 'Trait' },
+  { accessorKey: 'parameter', header: 'Parameter' },
   { accessorKey: 'mqtl_name', header: 'MetaQTL' },
   { accessorKey: 'chromosome', header: 'Chr' },
-  { accessorKey: 'position_cm', header: 'Pos (cM)' },
-  { accessorKey: 'interval_cm', header: 'Interval (cM)' },
-  { accessorKey: 'n_qtl', header: '# QTL' },
-  { accessorKey: 'candidate_gene', header: 'Cand. gene' },
-  { accessorKey: 'year', header: 'Year' },
+  { accessorKey: 'position_interval', header: 'Position / Interval' },
+  { accessorKey: 'associated_markers', header: 'Markers' },
+  { accessorKey: 'pve', header: 'PVE / R²' },
+  { accessorKey: 'candidate_gene', header: 'Cand. Gene' },
   {
     accessorKey: 'reference', header: 'Reference',
     cell: ({ row }) => {
       const r = row.original
-      return r.doi ? <a className="underline" href={`https://doi.org/${r.doi}`} target="_blank" rel="noreferrer">{r.reference}</a> : r.reference
+      const url = r.doi && r.doi.startsWith('http') ? r.doi : r.doi ? `https://doi.org/${r.doi}` : null
+      return url ? <a className="underline" href={url} target="_blank" rel="noreferrer">{r.reference || r.doi}</a> : (r.reference || '')
     },
   },
 ]

@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import {
-  Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Pie, PieChart, ResponsiveContainer,
+  Bar, BarChart, CartesianGrid, Pie, PieChart, ResponsiveContainer,
   Tooltip, XAxis, YAxis, Cell,
 } from 'recharts'
 import PageHero from '../components/PageHero'
@@ -34,25 +34,10 @@ export default function Statistics() {
   ]
 
   const bySpecies = useMemo(() => countBy(qtl.data, 'species'), [qtl.data])
-  const byCategory = useMemo(() => countBy(qtl.data, 'trait_category'), [qtl.data])
+  const byCategory = useMemo(() => countBy(qtl.data, 'trait'), [qtl.data])
   const byChrom = useMemo(() => countBy(qtl.data, 'chromosome'), [qtl.data])
 
-  const byYear = useMemo(() => {
-    const all: { year: string; QTL: number; MetaQTL: number; Epistatic: number }[] = []
-    const merge = (key: 'QTL' | 'MetaQTL' | 'Epistatic', rows: { year?: number | string }[]) => {
-      rows.forEach((r) => {
-        const y = String(r.year ?? '').trim()
-        if (!y) return
-        let row = all.find((x) => x.year === y)
-        if (!row) { row = { year: y, QTL: 0, MetaQTL: 0, Epistatic: 0 }; all.push(row) }
-        row[key] += 1
-      })
-    }
-    merge('QTL', qtl.data)
-    merge('MetaQTL', mqtl.data)
-    merge('Epistatic', epi.data)
-    return all.sort((a, b) => Number(a.year) - Number(b.year))
-  }, [qtl.data, mqtl.data, epi.data])
+  const bySource = useMemo(() => countBy(qtl.data, 'source_file'), [qtl.data])
 
   return (
     <div>
@@ -81,12 +66,12 @@ export default function Statistics() {
                 <Pie data={bySpecies} dataKey="value" nameKey="name" outerRadius={90} label>
                   {bySpecies.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
                 </Pie>
-                <Tooltip /><Legend />
+                <Tooltip />
               </PieChart>
             </ResponsiveContainer>
           </ChartCard>
 
-          <ChartCard title="QTL by trait category">
+          <ChartCard title="QTL by trait">
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={byCategory} layout="vertical" margin={{ left: 100 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
@@ -108,15 +93,13 @@ export default function Statistics() {
             </ResponsiveContainer>
           </ChartCard>
 
-          <ChartCard title="Publications per year" wide>
+          <ChartCard title="QTL by source dataset" wide>
             <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={byYear}>
+              <BarChart data={bySource} layout="vertical">
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
-                <XAxis dataKey="year" /><YAxis /><Tooltip /><Legend />
-                <Line type="monotone" dataKey="QTL" stroke="#cc9d3f" strokeWidth={2} />
-                <Line type="monotone" dataKey="MetaQTL" stroke="#9a6628" strokeWidth={2} />
-                <Line type="monotone" dataKey="Epistatic" stroke="#7c4d24" strokeWidth={2} />
-              </LineChart>
+                <XAxis type="number" /><YAxis type="category" dataKey="name" width={180} tick={{ fontSize: 11 }} /><Tooltip />
+                <Bar dataKey="value" fill="#cc9d3f" />
+              </BarChart>
             </ResponsiveContainer>
           </ChartCard>
         </div>

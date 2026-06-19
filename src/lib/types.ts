@@ -1,56 +1,59 @@
 export interface QTLRecord {
   id: string
   species: string
-  trait_category: string
   trait: string
   parameter?: string
   cross?: string
   population?: string
-  population_size?: number | string
   method?: string
   qtl_name: string
   chromosome: string
-  position_cm?: number | string
-  position_bp?: number | string
-  interval_cm?: string
-  interval_bp?: string
+  position_interval?: string
   associated_markers?: string
   pve?: number | string
   candidate_gene?: string
   reference?: string
   doi?: string
-  year?: number | string
+  source_file?: string
 }
 
 export interface MetaQTLRecord {
   id: string
   species: string
-  trait_category: string
   trait: string
+  parameter?: string
   mqtl_name: string
   chromosome: string
-  position_cm?: number | string
-  interval_cm?: string
-  n_qtl?: number | string
+  position_interval?: string
+  associated_markers?: string
+  pve?: number | string
   candidate_gene?: string
   reference?: string
   doi?: string
-  year?: number | string
+  source_file?: string
 }
 
 export interface EpistaticRecord {
   id: string
   species: string
   trait: string
+  parameter?: string
+  cross?: string
+  population?: string
+  method?: string
   qtl1: string
-  qtl2: string
   chromosome1: string
+  position_interval1?: string
+  markers1?: string
+  qtl2: string
   chromosome2: string
-  interaction_type?: string
+  position_interval2?: string
+  markers2?: string
+  lod?: string
   pve?: number | string
   reference?: string
   doi?: string
-  year?: number | string
+  source_file?: string
 }
 
 export interface CandidateGeneRecord {

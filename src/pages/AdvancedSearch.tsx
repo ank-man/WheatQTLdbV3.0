@@ -11,20 +11,17 @@ import { QTLRecord } from '../lib/types'
 interface Filters {
   q: string
   species: string
-  trait_category: string
   trait: string
   chromosome: string
   method: string
-  yearMin: string
-  yearMax: string
   pveMin: string
   pveMax: string
   hasCandidateGene: boolean
 }
 
 const EMPTY: Filters = {
-  q: '', species: '', trait_category: '', trait: '', chromosome: '', method: '',
-  yearMin: '', yearMax: '', pveMin: '', pveMax: '', hasCandidateGene: false,
+  q: '', species: '', trait: '', chromosome: '', method: '',
+  pveMin: '', pveMax: '', hasCandidateGene: false,
 }
 
 function uniqueValues<T>(rows: T[], key: keyof T): string[] {
@@ -38,20 +35,20 @@ function uniqueValues<T>(rows: T[], key: keyof T): string[] {
 
 const columns: ColumnDef<QTLRecord, any>[] = [
   { accessorKey: 'species', header: 'Species' },
-  { accessorKey: 'trait_category', header: 'Category' },
   { accessorKey: 'trait', header: 'Trait' },
-  { accessorKey: 'qtl_name', header: 'QTL' },
+  { accessorKey: 'parameter', header: 'Parameter' },
+  { accessorKey: 'qtl_name', header: 'QTL / MTA' },
   { accessorKey: 'chromosome', header: 'Chr' },
-  { accessorKey: 'position_cm', header: 'Pos (cM)' },
-  { accessorKey: 'pve', header: 'PVE' },
-  { accessorKey: 'candidate_gene', header: 'Cand. gene' },
+  { accessorKey: 'position_interval', header: 'Position / Interval' },
+  { accessorKey: 'pve', header: 'PVE / R²' },
+  { accessorKey: 'candidate_gene', header: 'Cand. Gene' },
   { accessorKey: 'method', header: 'Method' },
-  { accessorKey: 'year', header: 'Year' },
   {
     accessorKey: 'reference', header: 'Reference',
     cell: ({ row }) => {
       const r = row.original
-      return r.doi ? <a className="underline" href={`https://doi.org/${r.doi}`} target="_blank" rel="noreferrer">{r.reference}</a> : r.reference
+      const url = r.doi && r.doi.startsWith('http') ? r.doi : r.doi ? `https://doi.org/${r.doi}` : null
+      return url ? <a className="underline" href={url} target="_blank" rel="noreferrer">{r.reference || r.doi}</a> : (r.reference || '')
     },
   },
 ]
@@ -78,28 +75,19 @@ export default function AdvancedSearch() {
   }, [f, setParams])
 
   const speciesOpts = useMemo(() => uniqueValues(data, 'species'), [data])
-  const categoryOpts = useMemo(() => uniqueValues(data, 'trait_category'), [data])
-  const traitOpts = useMemo(
-    () => uniqueValues(data.filter((r) => !f.trait_category || r.trait_category === f.trait_category), 'trait'),
-    [data, f.trait_category],
-  )
+  const traitOpts = useMemo(() => uniqueValues(data, 'trait'), [data])
   const chrOpts = useMemo(() => uniqueValues(data, 'chromosome'), [data])
   const methodOpts = useMemo(() => uniqueValues(data, 'method'), [data])
 
   const filtered = useMemo(() => {
     const q = f.q.trim().toLowerCase()
-    const yMin = f.yearMin ? Number(f.yearMin) : -Infinity
-    const yMax = f.yearMax ? Number(f.yearMax) : Infinity
     const pMin = f.pveMin ? Number(f.pveMin) : -Infinity
     const pMax = f.pveMax ? Number(f.pveMax) : Infinity
     return data.filter((r) => {
       if (f.species && r.species !== f.species) return false
-      if (f.trait_category && r.trait_category !== f.trait_category) return false
       if (f.trait && r.trait !== f.trait) return false
       if (f.chromosome && r.chromosome !== f.chromosome) return false
       if (f.method && r.method !== f.method) return false
-      const y = Number(r.year)
-      if (!Number.isNaN(y) && (y < yMin || y > yMax)) return false
       const p = Number(r.pve)
       if (!Number.isNaN(p) && (p < pMin || p > pMax)) return false
       if (f.hasCandidateGene && !String(r.candidate_gene ?? '').trim()) return false
@@ -139,9 +127,6 @@ export default function AdvancedSearch() {
             <Field label="Species">
               <Select value={f.species} onChange={(v) => setF({ ...f, species: v })} options={speciesOpts} />
             </Field>
-            <Field label="Trait category">
-              <Select value={f.trait_category} onChange={(v) => setF({ ...f, trait_category: v, trait: '' })} options={categoryOpts} />
-            </Field>
             <Field label="Trait">
               <Select value={f.trait} onChange={(v) => setF({ ...f, trait: v })} options={traitOpts} />
             </Field>
@@ -150,12 +135,6 @@ export default function AdvancedSearch() {
             </Field>
             <Field label="Method">
               <Select value={f.method} onChange={(v) => setF({ ...f, method: v })} options={methodOpts} />
-            </Field>
-            <Field label="Year">
-              <div className="flex gap-2">
-                <input className="input" type="number" placeholder="from" value={f.yearMin} onChange={(e) => setF({ ...f, yearMin: e.target.value })} />
-                <input className="input" type="number" placeholder="to" value={f.yearMax} onChange={(e) => setF({ ...f, yearMax: e.target.value })} />
-              </div>
             </Field>
             <Field label="PVE / R² (%)">
               <div className="flex gap-2">
