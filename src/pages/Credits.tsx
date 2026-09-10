@@ -40,7 +40,7 @@ const credits: Credit[] = [
     source: 'https://commons.wikimedia.org/wiki/Category:Triticum_aestivum',
   },
   {
-    file: 'hero-wheat.jpg / wheat-field.jpg / wheat-ears.jpg / crop-research.jpg',
+    file: 'hero-wheat.jpg / wheat-ears.jpg / crop-research.jpg',
     title: 'Wheat field & ear photographs',
     author: 'Various photographers via Unsplash',
     license: 'Unsplash License (free for commercial & non-commercial use)',
@@ -65,9 +65,9 @@ export default function Credits() {
           Botanical and agronomic images are sourced from Wikimedia Commons (curated through GBIF where applicable)
           and Unsplash. Each image is reused under its respective licence; please cite the original author when re-using.
         </p>
-        <div className="overflow-x-auto rounded-lg border border-wheat-200 dark:border-wheat-700">
-          <table className="min-w-full divide-y divide-wheat-200 text-sm dark:divide-wheat-700">
-            <thead className="bg-wheat-100 dark:bg-wheat-800">
+        <div className="overflow-x-auto rounded-lg border border-wheat-200 dark:border-ink-700">
+          <table className="min-w-full divide-y divide-wheat-200 text-sm dark:divide-ink-700">
+            <thead className="bg-wheat-100 dark:bg-ink-800">
               <tr>
                 <th className="px-3 py-2 text-left font-semibold">File</th>
                 <th className="px-3 py-2 text-left font-semibold">Title</th>
@@ -76,7 +76,7 @@ export default function Credits() {
                 <th className="px-3 py-2 text-left font-semibold">Source</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-wheat-100 bg-white dark:divide-wheat-800 dark:bg-wheat-900">
+            <tbody className="divide-y divide-wheat-100 bg-white dark:divide-ink-800 dark:bg-ink-900">
               {credits.map((c) => (
                 <tr key={c.file}>
                   <td className="px-3 py-2 font-mono text-xs">{c.file}</td>
@@ -114,6 +114,9 @@ export default function Credits() {
           The V3.0 web application is released under the MIT License at{' '}
           <a className="underline" href="https://github.com/ank-man/WheatQTLdbV3.0" target="_blank" rel="noreferrer">github.com/ank-man/WheatQTLdbV3.0</a>.
           Built with React, TypeScript, Vite, Tailwind CSS, TanStack Table, Recharts, PapaParse and Lucide icons.
+        </p>
+        <p className="text-sm text-wheat-700 dark:text-wheat-300">
+          Coded by Ankush Sharma (<a className="underline" href="mailto:mr.ank2999@gmail.com">mr.ank2999@gmail.com</a>).
         </p>
       </section>
     </div>

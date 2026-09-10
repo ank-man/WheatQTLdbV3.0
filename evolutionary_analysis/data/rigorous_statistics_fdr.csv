@@ -1,0 +1,10 @@
+window_mb,test,p,bh_q
+50,genome_wide_r,0.0019,0.0171
+50,partial_r_gc_controlled,0.0055,0.0247
+20,hotspot_vs_background_diff,0.0215,0.0645
+50,hotspot_vs_background_diff,0.0309,0.0695
+20,genome_wide_r,0.0467,0.0841
+10,hotspot_vs_background_diff,0.0931,0.1396
+20,partial_r_gc_controlled,0.1109,0.1426
+10,genome_wide_r,0.255,0.2869
+10,partial_r_gc_controlled,0.5253,0.5253

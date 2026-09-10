@@ -7,6 +7,7 @@ import PageHero from '../components/PageHero'
 import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
+import { TRAIT_COLORS, chromosomeSortKey, normalizeTrait, prepareItems, QTLItem, MetaQTLItem } from '../lib/map'
 
 const COLORS = ['#cc9d3f', '#9a6628', '#7c4d24', '#d8b665', '#e7d29c', '#b88231', '#5e3a1f', '#3f2715']
 
@@ -17,6 +18,78 @@ function countBy<T>(rows: T[], key: keyof T): { name: string; value: number }[] 
     map.set(v, (map.get(v) ?? 0) + 1)
   })
   return Array.from(map.entries()).map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value)
+}
+
+function topBy<T>(rows: T[], key: keyof T, n = 10): { name: string; value: number }[] {
+  return countBy(rows, key).slice(0, n)
+}
+
+function parseYear(ref?: string): string {
+  if (!ref) return 'Unknown'
+  const match = ref.match(/\b(19|20)\d{2}\b/)
+  return match ? match[0] : 'Unknown'
+}
+
+function traitColor(name: string): string {
+  const key = Object.keys(TRAIT_COLORS).find((k) =>
+    name.toLowerCase().includes(k.toLowerCase())
+  )
+  return key ? (TRAIT_COLORS as any)[key] : COLORS[0]
+}
+
+function topCategories<T>(rows: T[], key: keyof T, n = 8): { name: string; value: number }[] {
+  const all = countBy(rows, key)
+  const head = all.slice(0, n)
+  const tail = all.slice(n)
+  if (tail.length) {
+    head.push({ name: 'Other', value: tail.reduce((s, x) => s + x.value, 0) })
+  }
+  return head
+}
+
+// Canonical trait-category counts (the same 12 categories used by the circos
+// and map views), rather than a raw-string tally - raw trait/parameter text
+// varies too much between source studies to read as a meaningful chart axis.
+function byTraitCategory(rows: { trait: string; parameter?: string }[]): { name: string; value: number }[] {
+  const map = new Map<string, number>()
+  rows.forEach((r) => {
+    const cat = normalizeTrait(r as unknown as QTLRecord)
+    map.set(cat, (map.get(cat) ?? 0) + 1)
+  })
+  return Array.from(map.entries()).map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value)
+}
+
+// Count of epistatic pairs touching each chromosome. A pair with both loci on
+// the same chromosome counts once for that chromosome; an inter-chromosomal
+// pair counts once for each of its two chromosomes.
+function epiByChromosome(rows: EpistaticRecord[]): { name: string; value: number }[] {
+  const map = new Map<string, number>()
+  rows.forEach((r) => {
+    const chrs = new Set([r.chromosome1, r.chromosome2].filter(Boolean))
+    chrs.forEach((c) => map.set(c, (map.get(c) ?? 0) + 1))
+  })
+  return Array.from(map.entries())
+    .map(([name, value]) => ({ name, value }))
+    .sort((a, b) => chromosomeSortKey(a.name) - chromosomeSortKey(b.name))
+}
+
+function chromTraitMatrix(qtl: QTLRecord[], topTraits: string[]): { name: string; [trait: string]: number | string }[] {
+  // Genomic order (1A..7D, then Un) reads far better across a chromosome axis
+  // than a frequency sort, which would jumble the homoeologous groups.
+  const chroms = countBy(qtl, 'chromosome')
+    .map((d) => d.name)
+    .sort((a, b) => chromosomeSortKey(a) - chromosomeSortKey(b))
+  return chroms.map((chr) => {
+    const row: any = { name: chr }
+    topTraits.forEach((trait) => (row[trait] = 0))
+    qtl
+      .filter((r) => r.chromosome === chr)
+      .forEach((r) => {
+        const trait = topTraits.find((t) => r.trait.toLowerCase().includes(t.toLowerCase())) ?? 'Other'
+        if (topTraits.includes(trait)) row[trait] = (row[trait] ?? 0) + 1
+      })
+    return row
+  })
 }
 
 export default function Statistics() {
@@ -39,71 +112,314 @@ export default function Statistics() {
 
   const bySource = useMemo(() => countBy(qtl.data, 'source_file'), [qtl.data])
 
+  const byYear = useMemo(() => {
+    const counts = new Map<string, number>()
+    qtl.data.forEach((r) => {
+      const year = parseYear(r.reference)
+      counts.set(year, (counts.get(year) ?? 0) + 1)
+    })
+    return Array.from(counts.entries())
+      .map(([name, value]) => ({ name, value }))
+      .sort((a, b) => Number(a.name) - Number(b.name))
+  }, [qtl.data])
+
+  const topParameters = useMemo(() => topBy(qtl.data, 'parameter', 12), [qtl.data])
+
+  const stats = useMemo(() => {
+    const traits = new Set(qtl.data.map((r) => r.trait).filter(Boolean))
+    // "Un" (unknown/unanchored) isn't a real chromosome, so it's excluded here -
+    // the wheat genome has exactly 21 (7 homoeologous groups x A/B/D genomes).
+    const chrs = new Set(qtl.data.map((r) => r.chromosome).filter((c) => c && c !== 'Un'))
+    return {
+      qtl: qtl.data.length,
+      mqtl: mqtl.data.length,
+      epi: epi.data.length,
+      traits: traits.size,
+      chromosomes: chrs.size,
+    }
+  }, [qtl.data, mqtl.data, epi.data])
+
+  const byCategoryTop = useMemo(() => topCategories(qtl.data, 'trait', 8), [qtl.data])
+  const topTraits = useMemo(() => byCategoryTop.filter((d) => d.name !== 'Other').map((d) => d.name), [byCategoryTop])
+  const chromTraitData = useMemo(() => chromTraitMatrix(qtl.data, topTraits), [qtl.data, topTraits])
+
+  const mqtlByCategory = useMemo(() => byTraitCategory(mqtl.data), [mqtl.data])
+  const mqtlByChrom = useMemo(
+    () => countBy(mqtl.data, 'chromosome').sort((a, b) => chromosomeSortKey(a.name) - chromosomeSortKey(b.name)),
+    [mqtl.data]
+  )
+  const epiByCategory = useMemo(() => byTraitCategory(epi.data), [epi.data])
+  const epiChromData = useMemo(() => epiByChromosome(epi.data), [epi.data])
+
+  // How well the curated MetaQTLs actually summarize the underlying QTL
+  // evidence: for every QTL with a resolvable chromosome + position, check
+  // whether it falls inside any MetaQTL consensus interval on that same
+  // chromosome. Reuses prepareItems so the coordinate space (cM->bp per
+  // chromosome) matches exactly what the map/circos views plot.
+  const overlap = useMemo(() => {
+    if (!qtl.data.length || !mqtl.data.length) return null
+    const items = prepareItems(qtl.data, mqtl.data)
+    const qtlItems = items.filter((i): i is QTLItem => i.type === 'qtl')
+    const metaItems = items.filter((i): i is MetaQTLItem => i.type === 'metaqtl')
+    if (!qtlItems.length || !metaItems.length) return null
+
+    const metaByChr = new Map<string, { start: number; end: number }[]>()
+    metaItems.forEach((m) => {
+      const arr = metaByChr.get(m.chromosome) ?? []
+      arr.push({ start: Math.min(m.start, m.end), end: Math.max(m.start, m.end) })
+      metaByChr.set(m.chromosome, arr)
+    })
+
+    let inside = 0
+    const byChr = new Map<string, { inside: number; total: number }>()
+    qtlItems.forEach((q) => {
+      const ranges = metaByChr.get(q.chromosome) ?? []
+      const hit = ranges.some((r) => q.point >= r.start && q.point <= r.end)
+      if (hit) inside++
+      const rec = byChr.get(q.chromosome) ?? { inside: 0, total: 0 }
+      rec.total++
+      if (hit) rec.inside++
+      byChr.set(q.chromosome, rec)
+    })
+
+    const perChrom = Array.from(byChr.entries())
+      .map(([name, v]) => ({ name, 'Within a MetaQTL': v.inside, 'Outside all MetaQTLs': v.total - v.inside }))
+      .sort((a, b) => chromosomeSortKey(a.name) - chromosomeSortKey(b.name))
+
+    return { mapped: qtlItems.length, inside, pct: Math.round((inside / qtlItems.length) * 100), perChrom }
+  }, [qtl.data, mqtl.data])
+
+  const insights = useMemo(() => {
+    const topTrait = byCategoryTop[0]?.name ?? '-'
+    const topChrom = byChrom.find((d) => d.name !== 'Un')?.name ?? '-'
+    const peakYear = byYear.filter((d) => d.name !== 'Unknown').sort((a, b) => b.value - a.value)[0]?.name ?? '-'
+    return { topTrait, topChrom, peakYear }
+  }, [byCategoryTop, byChrom, byYear])
+
+  const OVERLAP_COLORS = { 'Within a MetaQTL': '#2e7d32', 'Outside all MetaQTLs': '#d8b665' }
+
   return (
     <div>
       <PageHero
         eyebrow="Analytics"
         title="Database statistics"
         subtitle="Interactive distributions of QTL, MetaQTL and epistatic-QTL records across species, traits, chromosomes and publication years."
-        image="wheat-field.jpg"
+        image="wheat-field-gbif.jpg"
         variant="side"
       />
       <AsyncBoundary loading={loading} error={error}>
+        {/* Summary cards */}
+        <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <SummaryCard label="QTLs" value={stats.qtl} />
+          <SummaryCard label="MetaQTLs" value={stats.mqtl} />
+          <SummaryCard label="Epistatic QTLs" value={stats.epi} />
+          <SummaryCard label="Traits" value={stats.traits} />
+          <SummaryCard label="Chromosomes" value={stats.chromosomes} />
+        </div>
+
+        {/* Insights */}
+        <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <InsightCard label="Most studied trait" value={insights.topTrait} color={traitColor(insights.topTrait)} />
+          <InsightCard label="Most QTLs on chromosome" value={insights.topChrom} />
+          <InsightCard label="Peak publication year" value={insights.peakYear} />
+          {overlap && (
+            <InsightCard
+              label="QTLs within a MetaQTL interval"
+              value={`${overlap.pct}%`}
+              color="#2e7d32"
+            />
+          )}
+        </div>
+
         <div className="grid gap-6 lg:grid-cols-2">
-          <ChartCard title="Totals">
-            <ResponsiveContainer width="100%" height={260}>
+          <ChartCard title="Record totals">
+            <ResponsiveContainer width="100%" height={260} className="text-wheat-700 dark:text-wheat-300">
               <BarChart data={totals}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
-                <XAxis dataKey="name" /><YAxis /><Tooltip />
+                <XAxis dataKey="name" tick={{ fill: 'currentColor' }} />
+                <YAxis tick={{ fill: 'currentColor' }} />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value" fill="#cc9d3f" />
               </BarChart>
             </ResponsiveContainer>
           </ChartCard>
 
           <ChartCard title="QTL by species">
-            <ResponsiveContainer width="100%" height={260}>
+            <ResponsiveContainer width="100%" height={260} className="text-wheat-700 dark:text-wheat-300">
               <PieChart>
                 <Pie data={bySpecies} dataKey="value" nameKey="name" outerRadius={90} label>
                   {bySpecies.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
                 </Pie>
-                <Tooltip />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
               </PieChart>
             </ResponsiveContainer>
           </ChartCard>
 
-          <ChartCard title="QTL by trait">
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={byCategory} layout="vertical" margin={{ left: 100 }}>
+          <ChartCard title="QTL by trait category" wide>
+            <ResponsiveContainer width="100%" height={360} className="text-wheat-700 dark:text-wheat-300">
+              <BarChart data={byCategoryTop} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
-                <XAxis type="number" /><YAxis type="category" dataKey="name" width={140} />
-                <Tooltip />
-                <Bar dataKey="value" fill="#9a6628" />
+                <XAxis type="number" tick={{ fill: 'currentColor' }} />
+                <YAxis type="category" dataKey="name" width={150} tick={{ fill: 'currentColor', fontSize: 12 }} />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
+                <Bar dataKey="value">
+                  {byCategoryTop.map((entry, i) => (
+                    <Cell key={`cell-${i}`} fill={traitColor(entry.name)} />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </ChartCard>
 
-          <ChartCard title="QTL by chromosome">
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={byChrom}>
+          <ChartCard title="QTL by chromosome (stacked by top traits)" wide>
+            <ResponsiveContainer width="100%" height={360} className="text-wheat-700 dark:text-wheat-300">
+              <BarChart data={chromTraitData} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
-                <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} />
-                <YAxis /><Tooltip />
-                <Bar dataKey="value" fill="#7c4d24" />
+                <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis tick={{ fill: 'currentColor' }} />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
+                {topTraits.map((trait, i) => (
+                  <Bar key={trait} dataKey={trait} stackId="a" fill={traitColor(trait)} />
+                ))}
+              </BarChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          {overlap && (
+            <ChartCard title="QTL coverage by MetaQTL consensus intervals" wide>
+              <p className="mb-2 text-sm text-wheat-600 dark:text-wheat-400">
+                {overlap.inside.toLocaleString()} of {overlap.mapped.toLocaleString()} chromosome-mapped QTLs ({overlap.pct}%)
+                fall inside at least one MetaQTL interval on the same chromosome.
+              </p>
+              <ResponsiveContainer width="100%" height={340} className="text-wheat-700 dark:text-wheat-300">
+                <BarChart data={overlap.perChrom} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
+                  <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                  <YAxis tick={{ fill: 'currentColor' }} />
+                  <Tooltip contentStyle={{ borderRadius: 8 }} />
+                  <Bar dataKey="Within a MetaQTL" stackId="a" fill={OVERLAP_COLORS['Within a MetaQTL']} />
+                  <Bar dataKey="Outside all MetaQTLs" stackId="a" fill={OVERLAP_COLORS['Outside all MetaQTLs']} />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartCard>
+          )}
+
+          <ChartCard title="MetaQTL by trait category">
+            <ResponsiveContainer width="100%" height={300} className="text-wheat-700 dark:text-wheat-300">
+              <BarChart data={mqtlByCategory} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
+                <XAxis type="number" tick={{ fill: 'currentColor' }} />
+                <YAxis type="category" dataKey="name" width={140} tick={{ fill: 'currentColor', fontSize: 11 }} />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
+                <Bar dataKey="value">
+                  {mqtlByCategory.map((entry, i) => (
+                    <Cell key={`cell-${i}`} fill={traitColor(entry.name)} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          <ChartCard title="MetaQTL by chromosome">
+            <ResponsiveContainer width="100%" height={300} className="text-wheat-700 dark:text-wheat-300">
+              <BarChart data={mqtlByChrom} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
+                <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis tick={{ fill: 'currentColor' }} />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
+                <Bar dataKey="value" fill="#00695c" />
+              </BarChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          <ChartCard title="Epistatic QTL by trait category">
+            <ResponsiveContainer width="100%" height={300} className="text-wheat-700 dark:text-wheat-300">
+              <BarChart data={epiByCategory} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
+                <XAxis type="number" tick={{ fill: 'currentColor' }} />
+                <YAxis type="category" dataKey="name" width={140} tick={{ fill: 'currentColor', fontSize: 11 }} />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
+                <Bar dataKey="value">
+                  {epiByCategory.map((entry, i) => (
+                    <Cell key={`cell-${i}`} fill={traitColor(entry.name)} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          <ChartCard title="Epistatic QTL pairs by chromosome">
+            <ResponsiveContainer width="100%" height={300} className="text-wheat-700 dark:text-wheat-300">
+              <BarChart data={epiChromData} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
+                <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis tick={{ fill: 'currentColor' }} />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
+                <Bar dataKey="value" fill="#5c6bc0" />
+              </BarChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          <ChartCard title="QTLs by publication year">
+            <ResponsiveContainer width="100%" height={280} className="text-wheat-700 dark:text-wheat-300">
+              <BarChart data={byYear} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
+                <XAxis dataKey="name" tick={{ fill: 'currentColor', fontSize: 11 }} interval={2} angle={-45} textAnchor="end" height={50} />
+                <YAxis tick={{ fill: 'currentColor' }} />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
+                <Bar dataKey="value" fill="#b88231" />
+              </BarChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          <ChartCard title="Top QTL parameters">
+            <ResponsiveContainer width="100%" height={340} className="text-wheat-700 dark:text-wheat-300">
+              <BarChart data={topParameters} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
+                <XAxis type="number" tick={{ fill: 'currentColor' }} />
+                <YAxis type="category" dataKey="name" width={160} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
+                <Bar dataKey="value" fill="#5e3a1f" />
               </BarChart>
             </ResponsiveContainer>
           </ChartCard>
 
           <ChartCard title="QTL by source dataset" wide>
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={bySource} layout="vertical">
+            <ResponsiveContainer width="100%" height={360} className="text-wheat-700 dark:text-wheat-300">
+              <BarChart data={bySource} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
-                <XAxis type="number" /><YAxis type="category" dataKey="name" width={180} tick={{ fontSize: 11 }} /><Tooltip />
+                <XAxis type="number" tick={{ fill: 'currentColor' }} />
+                <YAxis type="category" dataKey="name" width={220} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value" fill="#cc9d3f" />
               </BarChart>
             </ResponsiveContainer>
           </ChartCard>
         </div>
       </AsyncBoundary>
+    </div>
+  )
+}
+
+function InsightCard({ label, value, color }: { label: string; value: string; color?: string }) {
+  return (
+    <div className="card flex flex-col items-center justify-center py-4 text-center">
+      <span className="text-sm font-medium uppercase tracking-wide text-wheat-600 dark:text-wheat-400">{label}</span>
+      <span
+        className="mt-1 text-2xl font-bold"
+        style={{ color: color ?? 'inherit' }}
+      >
+        {value}
+      </span>
+    </div>
+  )
+}
+
+function SummaryCard({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="card flex flex-col items-center justify-center py-5 text-center">
+      <span className="text-3xl font-bold text-wheat-800 dark:text-wheat-100">{value.toLocaleString()}</span>
+      <span className="mt-1 text-sm font-medium uppercase tracking-wide text-wheat-600 dark:text-wheat-400">{label}</span>
     </div>
   )
 }

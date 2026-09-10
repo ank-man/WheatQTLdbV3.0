@@ -4,6 +4,7 @@
   "version": "3.0.0",
   "type": "module",
   "description": "WheatQTLdb V3.0 — modern, static, open-source rebuild of wheatqtldb.net",
+  "author": "Ankush Sharma <mr.ank2999@gmail.com>",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

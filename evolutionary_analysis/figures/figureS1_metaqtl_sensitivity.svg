@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='504.00pt' height='360.00pt' viewBox='0 0 504.00 360.00'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: none;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA='>
+    <rect x='0.00' y='0.00' width='504.00' height='360.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
+</g>
+<defs>
+  <clipPath id='cpNDEuMzZ8NDk4LjUyfDM1LjQ0fDMwNS4yMw=='>
+    <rect x='41.36' y='35.44' width='457.16' height='269.79' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNDEuMzZ8NDk4LjUyfDM1LjQ0fDMwNS4yMw==)'>
+<rect x='80.65' y='233.72' width='42.86' height='59.25' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #C62828;' />
+<rect x='223.51' y='151.74' width='42.86' height='141.22' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #C62828;' />
+<rect x='366.37' y='63.47' width='42.86' height='229.50' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #C62828;' />
+<rect x='130.65' y='234.90' width='42.86' height='58.06' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7C4D24;' />
+<rect x='273.51' y='155.42' width='42.86' height='137.54' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7C4D24;' />
+<rect x='416.37' y='66.49' width='42.86' height='226.47' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7C4D24;' />
+<text x='244.94' y='141.07' text-anchor='middle' style='font-size: 14.23px; font-weight: bold; font-family: "Arial";' textLength='5.53px' lengthAdjust='spacingAndGlyphs'>*</text>
+<text x='387.80' y='52.79' text-anchor='middle' style='font-size: 14.23px; font-weight: bold; font-family: "Arial";' textLength='5.53px' lengthAdjust='spacingAndGlyphs'>*</text>
+<text x='437.80' y='55.81' text-anchor='middle' style='font-size: 14.23px; font-weight: bold; font-family: "Arial";' textLength='5.53px' lengthAdjust='spacingAndGlyphs'>*</text>
+<line x1='41.36' y1='292.96' x2='498.52' y2='292.96' style='stroke-width: 0.64; stroke: #666666; stroke-linecap: butt;' />
+</g>
+<g clip-path='url(#cpMC4wMHw1MDQuMDB8MC4wMHwzNjAuMDA=)'>
+<polyline points='41.36,305.23 41.36,35.44 ' style='stroke-width: 1.07; stroke-linecap: square;' />
+<text x='36.27' y='296.34' text-anchor='end' style='font-size: 9.43px; font-family: "Arial";' textLength='18.33px' lengthAdjust='spacingAndGlyphs'>0.00</text>
+<text x='36.27' y='230.65' text-anchor='end' style='font-size: 9.43px; font-family: "Arial";' textLength='18.33px' lengthAdjust='spacingAndGlyphs'>0.05</text>
+<text x='36.27' y='164.97' text-anchor='end' style='font-size: 9.43px; font-family: "Arial";' textLength='18.33px' lengthAdjust='spacingAndGlyphs'>0.10</text>
+<text x='36.27' y='99.29' text-anchor='end' style='font-size: 9.43px; font-family: "Arial";' textLength='18.33px' lengthAdjust='spacingAndGlyphs'>0.15</text>
+<polyline points='38.62,292.96 41.36,292.96 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='38.62,227.28 41.36,227.28 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='38.62,161.60 41.36,161.60 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='38.62,95.91 41.36,95.91 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='41.36,305.23 498.52,305.23 ' style='stroke-width: 1.07; stroke-linecap: square;' />
+<polyline points='127.08,307.97 127.08,305.23 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='269.94,307.97 269.94,305.23 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<polyline points='412.80,307.97 412.80,305.23 ' style='stroke-width: 1.07; stroke-linecap: butt;' />
+<text x='127.08' y='317.06' text-anchor='middle' style='font-size: 9.43px; font-family: "Arial";' textLength='10.47px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='269.94' y='317.06' text-anchor='middle' style='font-size: 9.43px; font-family: "Arial";' textLength='10.47px' lengthAdjust='spacingAndGlyphs'>20</text>
+<text x='412.80' y='317.06' text-anchor='middle' style='font-size: 9.43px; font-family: "Arial";' textLength='10.47px' lengthAdjust='spacingAndGlyphs'>50</text>
+<text x='269.94' y='329.30' text-anchor='middle' style='font-size: 10.50px; font-family: "Arial";' textLength='83.45px' lengthAdjust='spacingAndGlyphs'>Window size (Mb)</text>
+<text transform='translate(13.00,170.33) rotate(-90)' text-anchor='middle' style='font-size: 10.50px; font-family: "Arial";' textLength='45.55px' lengthAdjust='spacingAndGlyphs'>Pearson r</text>
+<rect x='42.07' y='343.17' width='10.64' height='10.64' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #C62828;' />
+<rect x='182.44' y='343.17' width='10.64' height='10.64' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7C4D24;' />
+<text x='58.90' y='351.87' style='font-size: 9.43px; font-family: "Arial";' textLength='117.36px' lengthAdjust='spacingAndGlyphs'>QTL + MetaQTL (combined)</text>
+<text x='199.27' y='351.87' style='font-size: 9.43px; font-family: "Arial";' textLength='126.88px' lengthAdjust='spacingAndGlyphs'>QTL-only (MetaQTL excluded)</text>
+<text x='41.36' y='28.17' style='font-size: 8.50px;fill: #4D4D4D; font-family: "Arial";' textLength='542.19px' lengthAdjust='spacingAndGlyphs'>Genome-wide r (studies/gene vs. fractionation rate), ascertainment-corrected metric, both analyses use identical circular-block permutation tests</text>
+<text x='41.36' y='14.08' style='font-size: 12.00px; font-weight: bold; font-family: "Arial";' textLength='447.02px' lengthAdjust='spacingAndGlyphs'>Figure S1. MetaQTL contributes 0.9% of records; excluding it changes nothing</text>
+</g>
+</g>
+</svg>

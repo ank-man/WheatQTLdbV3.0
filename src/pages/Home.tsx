@@ -1,7 +1,7 @@
 import { FormEvent, useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {
-  ArrowRight, BarChart3, BookOpen, Check, Copy, Database, Download,
+  ArrowRight, BarChart3, Check, Copy, Database, Download,
   Filter, Github, Layers, Microscope, Network, Quote, Search, Sparkles,
   Sprout, Telescope, Wheat, Zap,
 } from 'lucide-react'
@@ -10,6 +10,16 @@ import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
 import { WheatStalk } from '../components/WheatDecor'
 
 const heroImg = `${import.meta.env.BASE_URL}images/hero-wheat.jpg`
+const img = (p: string) => `${import.meta.env.BASE_URL}images/${p}`
+
+// Open-access photography (Wikimedia Commons, CC BY-SA / public domain); full
+// attribution on the Credits page.
+const GALLERY = [
+  { file: 'wheat-field-gbif.jpg', caption: 'Triticum aestivum, field' },
+  { file: 'wheat-spring.jpg', caption: 'Spring wheat (T. aestivum)' },
+  { file: 'wheat-grains.jpg', caption: 'Wheat grains' },
+  { file: 'wheat-herbarium.jpg', caption: 'Herbarium specimen' },
+]
 
 const TRAIT_CATS = [
   { name: 'Yield',           icon: Sprout,     blurb: 'Grain yield, biomass, harvest index, spike traits.' },
@@ -72,11 +82,11 @@ export default function Home() {
   return (
     <div className="space-y-20">
       {/* HERO */}
-      <section className="relative -mx-4 -mt-8 overflow-hidden border-b border-wheat-200 dark:border-wheat-700">
+      <section className="relative -mx-4 -mt-8 overflow-hidden border-b border-wheat-200 dark:border-ink-700">
         <div className="absolute inset-0 bg-grid opacity-60 dark:opacity-30" />
         <div className="absolute inset-0 bg-radial-glow" />
         <img src={heroImg} alt="" className="absolute inset-0 h-full w-full object-cover opacity-25 dark:opacity-15" />
-        <div className="absolute inset-0 bg-gradient-to-b from-wheat-50/40 via-wheat-50/80 to-wheat-50 dark:from-wheat-900/40 dark:via-wheat-900/80 dark:to-wheat-900" />
+        <div className="absolute inset-0 bg-gradient-to-b from-wheat-50/40 via-wheat-50/80 to-wheat-50 dark:from-ink-900/40 dark:via-ink-900/80 dark:to-ink-900" />
 
         {/* Decorative wheat stalks */}
         <WheatStalk className="absolute -left-4 top-8 h-72 w-24 opacity-40 animate-float-slow" />
@@ -92,7 +102,7 @@ export default function Home() {
               </span>
               v3.0 · open source · reproducible archive
             </span>
-            <h1 className="mt-5 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl animate-fade-up" style={{ animationDelay: '.05s' }}>
+            <h1 className="mt-5 max-w-4xl font-serif text-4xl font-bold leading-tight tracking-tight sm:text-6xl animate-fade-up" style={{ animationDelay: '.05s' }}>
               WheatQTLdb <span className="text-gradient-wheat">V3.0</span>
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-wheat-700 dark:text-wheat-200 animate-fade-up" style={{ animationDelay: '.1s' }}>
@@ -106,7 +116,7 @@ export default function Home() {
             </p>
 
             {/* Embedded search */}
-            <form onSubmit={onSearch} className="mt-8 flex w-full max-w-2xl items-center gap-2 rounded-2xl border border-wheat-200 bg-white p-2 shadow-lg shadow-wheat-200/40 dark:border-wheat-700 dark:bg-wheat-800 dark:shadow-black/30 animate-fade-up" style={{ animationDelay: '.15s' }}>
+            <form onSubmit={onSearch} className="mt-8 flex w-full max-w-2xl items-center gap-2 rounded-2xl border border-wheat-200 bg-white p-2 shadow-lg shadow-wheat-200/40 dark:border-ink-700 dark:bg-ink-800 dark:shadow-black/30 animate-fade-up" style={{ animationDelay: '.15s' }}>
               <Search className="ml-2 h-5 w-5 flex-shrink-0 text-wheat-500" />
               <input
                 value={q}
@@ -126,7 +136,7 @@ export default function Home() {
                 <button
                   key={t}
                   onClick={() => navigate(`/search?q=${encodeURIComponent(t)}`)}
-                  className="rounded-full border border-wheat-300 bg-white/70 px-3 py-1 backdrop-blur transition hover:bg-wheat-100 dark:border-wheat-600 dark:bg-wheat-800/60 dark:hover:bg-wheat-700"
+                  className="rounded-full border border-wheat-300 bg-white/70 px-3 py-1 backdrop-blur transition hover:bg-wheat-100 dark:border-wheat-600 dark:bg-ink-800/60 dark:hover:bg-ink-700"
                 >
                   {t}
                 </button>
@@ -136,7 +146,7 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-2 animate-fade-up" style={{ animationDelay: '.25s' }}>
               <Link to="/data" className="btn-primary"><Database className="h-4 w-4" /> Browse data</Link>
               <Link to="/statistics" className="btn"><BarChart3 className="h-4 w-4" /> Statistics</Link>
-              <Link to="/tutorial" className="btn"><BookOpen className="h-4 w-4" /> Tutorial</Link>
+              <Link to="/map" className="btn"><Layers className="h-4 w-4" /> Genome map</Link>
               <a href="https://github.com/ank-man/WheatQTLdbV3.0" target="_blank" rel="noreferrer" className="btn"><Github className="h-4 w-4" /> Star on GitHub</a>
             </div>
           </div>
@@ -163,10 +173,10 @@ export default function Home() {
             <Link
               key={name}
               to={`/search?trait_category=${encodeURIComponent(name)}`}
-              className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-wheat-400 hover:shadow-lg dark:border-wheat-700 dark:bg-wheat-800 dark:hover:border-wheat-500"
+              className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-wheat-400 hover:shadow-lg dark:border-ink-700 dark:bg-ink-800 dark:hover:border-ink-700"
               style={{ animation: `fade-up .5s ease-out ${i * 60}ms both` }}
             >
-              <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-wheat-200/50 blur-2xl transition group-hover:bg-wheat-300/70 dark:bg-wheat-700/40" />
+              <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-wheat-200/50 blur-2xl transition group-hover:bg-wheat-300/70 dark:bg-ink-700/40" />
               <div className="relative">
                 <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-wheat-500 to-wheat-700 text-white shadow-md">
                   <Icon className="h-5 w-5" />
@@ -183,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* CHROMOSOME MAP */}
-      <section className="relative overflow-hidden rounded-3xl border border-wheat-200 bg-white p-6 shadow-sm dark:border-wheat-700 dark:bg-wheat-800 sm:p-10">
+      <section className="relative overflow-hidden rounded-3xl border border-wheat-200 bg-white p-6 shadow-sm dark:border-ink-700 dark:bg-ink-800 sm:p-10">
         <div className="absolute inset-0 bg-grid opacity-40 dark:opacity-20" />
         <div className="relative">
           <SectionHeader
@@ -193,7 +203,7 @@ export default function Home() {
           />
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {SUBGENOMES.map((sg, gi) => (
-              <div key={sg.key} className="rounded-2xl border border-wheat-200 bg-wheat-50/60 p-4 dark:border-wheat-700 dark:bg-wheat-900/40">
+              <div key={sg.key} className="rounded-2xl border border-wheat-200 bg-wheat-50/60 p-4 dark:border-ink-700 dark:bg-ink-900/40">
                 <div className="mb-3 flex items-baseline justify-between">
                   <div>
                     <div className="text-lg font-bold">{sg.label}</div>
@@ -209,7 +219,7 @@ export default function Home() {
                         key={ch}
                         to={`/search?chromosome=${ch}`}
                         title={`Chromosome ${ch}`}
-                        className="group relative aspect-[1/3] overflow-hidden rounded-md border border-wheat-300 bg-gradient-to-b from-wheat-200 to-wheat-400 text-center text-[10px] font-bold text-wheat-900 transition hover:scale-[1.06] hover:from-wheat-300 hover:to-wheat-600 hover:text-white dark:border-wheat-600 dark:from-wheat-700 dark:to-wheat-900 dark:text-wheat-100"
+                        className="group relative aspect-[1/3] overflow-hidden rounded-md border border-wheat-300 bg-gradient-to-b from-wheat-200 to-wheat-400 text-center text-[10px] font-bold text-wheat-900 transition hover:scale-[1.06] hover:from-wheat-300 hover:to-wheat-600 hover:text-white dark:border-wheat-600 dark:from-ink-700 dark:to-ink-900 dark:text-wheat-100"
                         style={{ animation: `grain-grow .8s ease-out ${(gi * 7 + hi) * 30}ms both` }}
                       >
                         <span className="absolute inset-x-0 top-1">{ch}</span>
@@ -247,7 +257,7 @@ export default function Home() {
                       <span className="font-medium text-wheat-800 group-hover:text-wheat-900 dark:text-wheat-100 dark:group-hover:text-white">{c.name}</span>
                       <span className="tabular-nums text-wheat-600 dark:text-wheat-300">{c.value} QTL</span>
                     </div>
-                    <div className="h-2 w-full overflow-hidden rounded-full bg-wheat-100 dark:bg-wheat-700">
+                    <div className="h-2 w-full overflow-hidden rounded-full bg-wheat-100 dark:bg-ink-700">
                       <div
                         className="h-full rounded-full bg-gradient-to-r from-wheat-500 via-wheat-600 to-wheat-700 transition-all"
                         style={{ width: `${c.pct}%`, animation: `fade-up .8s ease-out ${i * 60}ms both` }}
@@ -275,7 +285,7 @@ export default function Home() {
               <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> CSV-based · open data layer</li>
               <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> One-click CSV export</li>
             </ul>
-            <Link to="/about" className="mt-5 inline-flex items-center gap-2 rounded-md bg-white/15 px-3 py-1.5 text-sm font-medium backdrop-blur transition hover:bg-white/25">
+            <Link to="/credits" className="mt-5 inline-flex items-center gap-2 rounded-md bg-white/15 px-3 py-1.5 text-sm font-medium backdrop-blur transition hover:bg-white/25">
               Read more <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -291,12 +301,12 @@ export default function Home() {
             { icon: Filter,   title: '2. Refine',  body: 'Sort, paginate, and drill into individual references with DOI links.', to: '/data/qtl' },
             { icon: Download, title: '3. Export',  body: 'Download the filtered table as CSV for downstream R / Python workflows.', to: '/data' },
           ].map((s, i) => (
-            <Link key={s.title} to={s.to} className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg dark:border-wheat-700 dark:bg-wheat-800">
+            <Link key={s.title} to={s.to} className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg dark:border-ink-700 dark:bg-ink-800">
               <div className="absolute right-3 top-3 text-5xl font-black text-wheat-100 transition group-hover:text-wheat-200 dark:text-wheat-700">
                 {String(i + 1).padStart(2, '0')}
               </div>
               <div className="relative">
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-wheat-100 text-wheat-700 transition group-hover:bg-wheat-600 group-hover:text-white dark:bg-wheat-700 dark:text-wheat-100">
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-wheat-100 text-wheat-700 transition group-hover:bg-wheat-600 group-hover:text-white dark:bg-ink-700 dark:text-wheat-100">
                   <s.icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-3 font-bold text-wheat-900 dark:text-wheat-50">{s.title}</h3>
@@ -307,8 +317,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* GALLERY */}
+      <section className="space-y-6">
+        <SectionHeader
+          eyebrow="Gallery"
+          title="Triticum aestivum, from field to herbarium"
+          subtitle="Open-access botanical and field photography of bread wheat and its relatives."
+        />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {GALLERY.map((g, i) => (
+            <figure
+              key={g.file}
+              className="group relative overflow-hidden rounded-2xl border border-wheat-200 shadow-sm dark:border-ink-700"
+              style={{ animation: `fade-up .5s ease-out ${i * 60}ms both` }}
+            >
+              <img
+                src={img(g.file)}
+                alt={g.caption}
+                loading="lazy"
+                className="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3 py-2 text-xs font-medium text-white">
+                {g.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className="text-xs text-wheat-600 dark:text-wheat-400">
+          All images are openly licensed (public domain / CC BY-SA via Wikimedia Commons) — see{' '}
+          <Link to="/credits" className="underline">Credits &amp; licences</Link> for full attribution.
+        </p>
+      </section>
+
       {/* CITATION */}
-      <section className="relative overflow-hidden rounded-3xl border border-wheat-200 bg-gradient-to-br from-wheat-50 via-white to-wheat-50 p-6 shadow-sm dark:border-wheat-700 dark:from-wheat-900 dark:via-wheat-800 dark:to-wheat-900 sm:p-10">
+      <section className="relative overflow-hidden rounded-3xl border border-wheat-200 bg-gradient-to-br from-wheat-50 via-white to-wheat-50 p-6 shadow-sm dark:border-ink-700 dark:from-ink-900 dark:via-ink-800 dark:to-ink-900 sm:p-10">
         <Quote className="absolute right-6 top-6 h-24 w-24 text-wheat-200 dark:text-wheat-700" />
         <div className="relative">
           <SectionHeader eyebrow="Citing the database" title="Please cite the original WheatQTLdb papers" />
@@ -355,16 +397,16 @@ export default function Home() {
 
 function StatTile({ label, value, loading, icon: Icon, suffix }: { label: string; value: number; loading: boolean; icon: typeof Database; suffix?: string }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white/80 p-4 shadow-sm backdrop-blur transition hover:shadow-md dark:border-wheat-700 dark:bg-wheat-800/80">
-      <div className="absolute -right-3 -top-3 h-16 w-16 rounded-full bg-wheat-100/70 blur-xl transition group-hover:bg-wheat-200 dark:bg-wheat-700/50" />
+    <div className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white/80 p-4 shadow-sm backdrop-blur transition hover:shadow-md dark:border-ink-700 dark:bg-ink-800/80">
+      <div className="absolute -right-3 -top-3 h-16 w-16 rounded-full bg-wheat-100/70 blur-xl transition group-hover:bg-wheat-200 dark:bg-ink-700/50" />
       <div className="relative flex items-start justify-between">
         <div>
           <div className="text-[11px] uppercase tracking-wider text-wheat-600 dark:text-wheat-300">{label}</div>
           <div className="mt-1 text-3xl font-extrabold tabular-nums text-wheat-900 dark:text-wheat-50">
-            {loading ? <span className="inline-block h-7 w-20 animate-pulse rounded bg-wheat-200 dark:bg-wheat-700" /> : value.toLocaleString()}{suffix ?? ''}
+            {loading ? <span className="inline-block h-7 w-20 animate-pulse rounded bg-wheat-200 dark:bg-ink-700" /> : value.toLocaleString()}{suffix ?? ''}
           </div>
         </div>
-        <div className="rounded-lg bg-wheat-100 p-2 text-wheat-700 dark:bg-wheat-700 dark:text-wheat-100">
+        <div className="rounded-lg bg-wheat-100 p-2 text-wheat-700 dark:bg-ink-700 dark:text-wheat-100">
           <Icon className="h-4 w-4" />
         </div>
       </div>

@@ -59,6 +59,13 @@ const resources: Resource[] = [
     logo: '/images/logos/wheatqtldb.svg',
     category: 'Database'
   },
+  {
+    name: 'PGDD',
+    url: 'https://ngdc.cncb.ac.cn/pgdd/',
+    desc: 'Plant Genome Duplication Database — polyploidy and gene/genome duplication analysis across plant genomes, including wheat.',
+    logo: '/images/logos/pgdd.svg',
+    category: 'Database'
+  },
 ]
 
 const categoryColors: Record<Resource['category'], string> = {
@@ -74,11 +81,11 @@ function ResourceCard({ resource }: { resource: Resource }) {
       href={resource.url}
       target="_blank"
       rel="noreferrer"
-      className="group relative flex flex-col overflow-hidden rounded-xl border border-wheat-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-wheat-400 dark:border-wheat-700 dark:bg-wheat-800/50"
+      className="group relative flex flex-col overflow-hidden rounded-xl border border-wheat-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-wheat-400 dark:border-ink-700 dark:bg-ink-800/50"
     >
       <div className="mb-4 flex items-start justify-between">
         <div className="flex items-center gap-3">
-          <div className="flex h-14 w-20 items-center justify-center overflow-hidden rounded-lg bg-wheat-50 p-2 dark:bg-wheat-900/50">
+          <div className="flex h-14 w-20 items-center justify-center overflow-hidden rounded-lg bg-wheat-50 p-2 dark:bg-ink-900/50">
             <img
               src={resource.logo}
               alt={`${resource.name} logo`}
@@ -135,7 +142,7 @@ export default function UsefulLinks() {
         </div>
       </section>
 
-      <section className="rounded-xl border border-wheat-200 bg-gradient-to-br from-wheat-50 to-white p-6 dark:border-wheat-700 dark:from-wheat-900/30 dark:to-wheat-900/10">
+      <section className="rounded-xl border border-wheat-200 bg-gradient-to-br from-wheat-50 to-white p-6 dark:border-ink-700 dark:from-ink-900/30 dark:to-ink-900/10">
         <h3 className="mb-3 font-semibold text-wheat-900 dark:text-wheat-50">Suggest a Resource</h3>
         <p className="text-sm text-wheat-700 dark:text-wheat-300">
           Know a wheat genomics resource we should list?{' '}

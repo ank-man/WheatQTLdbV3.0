@@ -4,13 +4,11 @@ import { Menu, X, Moon, Sun, Github, Wheat } from 'lucide-react'
 
 const NAV = [
   { to: '/', label: 'Home', end: true },
-  { to: '/about', label: 'About' },
-  { to: '/tutorial', label: 'Tutorial' },
   { to: '/statistics', label: 'Statistics' },
+  { to: '/map', label: 'Map' },
   { to: '/data', label: 'Data' },
   { to: '/search', label: 'Search' },
   { to: '/team', label: 'Team' },
-  { to: '/faq', label: 'FAQ' },
   { to: '/contact', label: 'Contact' },
   { to: '/links', label: 'Links' },
 ]
@@ -31,7 +29,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-30 border-b border-wheat-200 bg-white/80 backdrop-blur dark:border-wheat-700 dark:bg-wheat-900/80">
+      <header className="sticky top-0 z-30 border-b border-wheat-200 bg-white/80 backdrop-blur dark:border-ink-700 dark:bg-ink-900/80">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
           <Link to="/" className="flex items-center gap-2">
             <Wheat className="h-7 w-7 text-wheat-600" />
@@ -77,7 +75,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           </div>
         </div>
         {open && (
-          <nav className="border-t border-wheat-200 bg-white px-4 py-2 dark:border-wheat-700 dark:bg-wheat-900 lg:hidden">
+          <nav className="border-t border-wheat-200 bg-white px-4 py-2 dark:border-ink-700 dark:bg-ink-900 lg:hidden">
             <div className="flex flex-col gap-1">
               {NAV.map((n) => (
                 <NavLink
@@ -97,7 +95,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
       <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8">{children}</main>
 
-      <footer className="border-t border-wheat-200 bg-white py-6 text-center text-sm text-wheat-700 dark:border-wheat-700 dark:bg-wheat-900 dark:text-wheat-300">
+      <footer className="border-t border-wheat-200 bg-white py-6 text-center text-sm text-wheat-700 dark:border-ink-700 dark:bg-ink-900 dark:text-wheat-300">
         <div className="mx-auto max-w-7xl px-4">
           <p>
             © {new Date().getFullYear()} WheatQTLdb · Conceived by Department of Genetics &amp; Plant Breeding,{' '}
@@ -106,7 +104,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           <p className="mt-1 text-xs">Open-source rebuild · Reproducible archive · Code openly available for transparency.</p>
           <p className="mt-1 text-[11px] text-wheat-600 dark:text-wheat-400">
             Botanical imagery sourced from Wikimedia Commons / GBIF (CC BY-SA / Public Domain).
-            Citing this resource: see <a className="underline" href="/about">About</a> &amp; <a className="underline" href="/credits">Credits</a>.
+            Citing this resource: see <a className="underline" href="/credits">Credits</a>.
           </p>
         </div>
       </footer>

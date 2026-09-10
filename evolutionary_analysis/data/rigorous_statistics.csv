@@ -1,0 +1,10 @@
+window_mb,metric,n_windows,n_hotspot,r_obs,p_r_perm,r_partial_gc,p_r_partial_perm,hotspot_diff_pp,p_hotspot_diff_perm,r_gc_vs_metric
+10,studies_per_gene,1415,143,0.0451,0.255,0.0257,0.5253,1.592,0.0931,-0.1644
+10,records_per_gene,1415,143,-0.008,0.7369,-0.0092,0.6986,-0.027,0.9786,-0.009
+10,GC_vs_fractionation,1415,,-0.1216,0.0081,,,,,
+20,studies_per_gene,712,72,0.1075,0.0467,0.0866,0.1109,2.864,0.0215,-0.1853
+20,records_per_gene,712,73,-0.0123,0.6981,-0.0129,0.6874,1.377,0.2294,-0.0039
+20,GC_vs_fractionation,712,,-0.1243,0.0312,,,,,
+50,studies_per_gene,293,30,0.1747,0.0019,0.1566,0.0055,3.685,0.0309,-0.1988
+50,records_per_gene,293,30,0.0447,0.444,0.047,0.4213,1.413,0.4209,0.0182
+50,GC_vs_fractionation,293,,-0.1119,0.1251,,,,,

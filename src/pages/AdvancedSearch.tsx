@@ -7,6 +7,7 @@ import DataTable from '../components/DataTable'
 import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord } from '../lib/types'
+import { TRAIT_CATEGORIES, normalizeTrait } from '../lib/map'
 
 interface Filters {
   q: string
@@ -31,6 +32,32 @@ function uniqueValues<T>(rows: T[], key: keyof T): string[] {
     if (v) set.add(v)
   })
   return Array.from(set).sort()
+}
+
+// A handful of source rows have a species name typo'd into the trait column
+// (e.g. "Triticum aestivum") instead of a real trait - drop anything that
+// looks like a species binomial rather than filtering by an explicit list,
+// so this stays correct if new source data introduces the same slip.
+function isSpeciesLikeValue(v: string): boolean {
+  return /^(triticum|aegilops)\b/i.test(v.trim())
+}
+
+// Group distinct trait values under the same 16 canonical categories used by
+// the Map/Statistics views (see normalizeTrait), so the dropdown reads as
+// broad category -> specific trait rather than one flat alphabetical list.
+function groupedTraitOptions(traits: string[]): { category: string; options: string[] }[] {
+  const byCategory = new Map<string, string[]>()
+  traits
+    .filter((t) => !isSpeciesLikeValue(t))
+    .forEach((t) => {
+      const category = normalizeTrait({ trait: t, parameter: '' } as any)
+      const list = byCategory.get(category) ?? []
+      list.push(t)
+      byCategory.set(category, list)
+    })
+  return TRAIT_CATEGORIES
+    .filter((cat) => byCategory.has(cat))
+    .map((cat) => ({ category: cat, options: (byCategory.get(cat) ?? []).sort() }))
 }
 
 const columns: ColumnDef<QTLRecord, any>[] = [
@@ -75,7 +102,7 @@ export default function AdvancedSearch() {
   }, [f, setParams])
 
   const speciesOpts = useMemo(() => uniqueValues(data, 'species'), [data])
-  const traitOpts = useMemo(() => uniqueValues(data, 'trait'), [data])
+  const traitOpts = useMemo(() => groupedTraitOptions(uniqueValues(data, 'trait')), [data])
   const chrOpts = useMemo(() => uniqueValues(data, 'chromosome'), [data])
   const methodOpts = useMemo(() => uniqueValues(data, 'method'), [data])
 
@@ -128,7 +155,7 @@ export default function AdvancedSearch() {
               <Select value={f.species} onChange={(v) => setF({ ...f, species: v })} options={speciesOpts} />
             </Field>
             <Field label="Trait">
-              <Select value={f.trait} onChange={(v) => setF({ ...f, trait: v })} options={traitOpts} />
+              <SelectGrouped value={f.trait} onChange={(v) => setF({ ...f, trait: v })} groups={traitOpts} />
             </Field>
             <Field label="Chromosome">
               <Select value={f.chromosome} onChange={(v) => setF({ ...f, chromosome: v })} options={chrOpts} />
@@ -171,6 +198,27 @@ function Select({ value, onChange, options }: { value: string; onChange: (v: str
     <select className="input" value={value} onChange={(e) => onChange(e.target.value)}>
       <option value="">Any</option>
       {options.map((o) => <option key={o} value={o}>{o}</option>)}
+    </select>
+  )
+}
+
+function SelectGrouped({
+  value,
+  onChange,
+  groups,
+}: {
+  value: string
+  onChange: (v: string) => void
+  groups: { category: string; options: string[] }[]
+}) {
+  return (
+    <select className="input" value={value} onChange={(e) => onChange(e.target.value)}>
+      <option value="">Any</option>
+      {groups.map((g) => (
+        <optgroup key={g.category} label={g.category}>
+          {g.options.map((o) => <option key={o} value={o}>{o}</option>)}
+        </optgroup>
+      ))}
     </select>
   )
 }

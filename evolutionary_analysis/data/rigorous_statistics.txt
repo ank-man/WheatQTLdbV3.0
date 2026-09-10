@@ -1,0 +1,56 @@
+Rigorous, ascertainment- and GC-corrected statistical testing
+Circular block permutation test (per-chromosome, N_PERM=9999, seed=42)
+
+======================================================================
+WINDOW SIZE: 10 Mb  (n=1415 windows, >=5 genes each)
+======================================================================
+
+GC content vs. fractionation rate: r = -0.122, permutation p = 0.0081
+
+--- studies_per_gene -- PRIMARY (ascertainment-corrected: distinct studies/gene) ---
+  GC content vs. studies_per_gene: r = -0.164
+  Genome-wide correlation (density vs. fractionation rate): r = +0.045, circular-block permutation p = 0.2550 (n_perm=9999)
+  Partial correlation controlling for GC content: r_partial = +0.026, permutation p = 0.5253
+  Hotspot (top 10% by studies_per_gene, n=143) vs. genome background (n=1415): mean fractionation-rate difference = +1.59 pp, circular-block permutation p = 0.0931
+
+--- records_per_gene -- SECONDARY (sensitivity check: raw QTL+MetaQTL rows/gene) ---
+  GC content vs. records_per_gene: r = -0.009
+  Genome-wide correlation (density vs. fractionation rate): r = -0.008, circular-block permutation p = 0.7369 (n_perm=9999)
+  Partial correlation controlling for GC content: r_partial = -0.009, permutation p = 0.6986
+  Hotspot (top 10% by records_per_gene, n=143) vs. genome background (n=1415): mean fractionation-rate difference = -0.03 pp, circular-block permutation p = 0.9786
+
+======================================================================
+WINDOW SIZE: 20 Mb  (n=712 windows, >=5 genes each)
+======================================================================
+
+GC content vs. fractionation rate: r = -0.124, permutation p = 0.0312
+
+--- studies_per_gene -- PRIMARY (ascertainment-corrected: distinct studies/gene) ---
+  GC content vs. studies_per_gene: r = -0.185
+  Genome-wide correlation (density vs. fractionation rate): r = +0.107, circular-block permutation p = 0.0467 (n_perm=9999)
+  Partial correlation controlling for GC content: r_partial = +0.087, permutation p = 0.1109
+  Hotspot (top 10% by studies_per_gene, n=72) vs. genome background (n=712): mean fractionation-rate difference = +2.86 pp, circular-block permutation p = 0.0215
+
+--- records_per_gene -- SECONDARY (sensitivity check: raw QTL+MetaQTL rows/gene) ---
+  GC content vs. records_per_gene: r = -0.004
+  Genome-wide correlation (density vs. fractionation rate): r = -0.012, circular-block permutation p = 0.6981 (n_perm=9999)
+  Partial correlation controlling for GC content: r_partial = -0.013, permutation p = 0.6874
+  Hotspot (top 10% by records_per_gene, n=73) vs. genome background (n=712): mean fractionation-rate difference = +1.38 pp, circular-block permutation p = 0.2294
+
+======================================================================
+WINDOW SIZE: 50 Mb  (n=293 windows, >=5 genes each)
+======================================================================
+
+GC content vs. fractionation rate: r = -0.112, permutation p = 0.1251
+
+--- studies_per_gene -- PRIMARY (ascertainment-corrected: distinct studies/gene) ---
+  GC content vs. studies_per_gene: r = -0.199
+  Genome-wide correlation (density vs. fractionation rate): r = +0.175, circular-block permutation p = 0.0019 (n_perm=9999)
+  Partial correlation controlling for GC content: r_partial = +0.157, permutation p = 0.0055
+  Hotspot (top 10% by studies_per_gene, n=30) vs. genome background (n=293): mean fractionation-rate difference = +3.69 pp, circular-block permutation p = 0.0309
+
+--- records_per_gene -- SECONDARY (sensitivity check: raw QTL+MetaQTL rows/gene) ---
+  GC content vs. records_per_gene: r = +0.018
+  Genome-wide correlation (density vs. fractionation rate): r = +0.045, circular-block permutation p = 0.4440 (n_perm=9999)
+  Partial correlation controlling for GC content: r_partial = +0.047, permutation p = 0.4213
+  Hotspot (top 10% by records_per_gene, n=30) vs. genome background (n=293): mean fractionation-rate difference = +1.41 pp, circular-block permutation p = 0.4209

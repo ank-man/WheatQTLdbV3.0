@@ -28,7 +28,7 @@ export default function Contact() {
             <a className="underline" href="https://github.com/" target="_blank" rel="noreferrer">Open an issue / PR on GitHub</a>
           </p>
         </div>
-        <div className="overflow-hidden rounded-xl border border-wheat-200 dark:border-wheat-700">
+        <div className="overflow-hidden rounded-xl border border-wheat-200 dark:border-ink-700">
           <iframe
             title="CCS University, Meerut"
             src="https://www.google.com/maps?q=Chaudhary+Charan+Singh+University+Meerut&output=embed"

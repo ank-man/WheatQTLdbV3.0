@@ -1,0 +1,17 @@
+QTL-only sensitivity re-analysis (MetaQTL excluded, n=34039 records)
+Circular block permutation test (per-chromosome, N_PERM=9999, seed=42)
+
+[10 Mb] n=1415 windows, hotspot n=142
+  QTL-only genome-wide r = +0.044, permutation p = 0.2724
+  QTL-only partial r (GC-controlled) = +0.023, permutation p = 0.5704
+  QTL-only hotspot vs. background diff = +1.77 pp, permutation p = 0.0673
+
+[20 Mb] n=712 windows, hotspot n=72
+  QTL-only genome-wide r = +0.105, permutation p = 0.0527
+  QTL-only partial r (GC-controlled) = +0.082, permutation p = 0.1280
+  QTL-only hotspot vs. background diff = +3.00 pp, permutation p = 0.0182
+
+[50 Mb] n=293 windows, hotspot n=30
+  QTL-only genome-wide r = +0.172, permutation p = 0.0013
+  QTL-only partial r (GC-controlled) = +0.153, permutation p = 0.0046
+  QTL-only hotspot vs. background diff = +3.30 pp, permutation p = 0.0325

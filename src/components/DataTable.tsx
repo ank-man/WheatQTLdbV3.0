@@ -74,9 +74,9 @@ export default function DataTable<T extends object>({
         </button>
       </div>
 
-      <div className="overflow-x-auto rounded-lg border border-wheat-200 dark:border-wheat-700">
-        <table className="min-w-full divide-y divide-wheat-200 text-sm dark:divide-wheat-700">
-          <thead className="bg-wheat-100 dark:bg-wheat-800">
+      <div className="overflow-x-auto rounded-lg border border-wheat-200 dark:border-ink-700">
+        <table className="min-w-full divide-y divide-wheat-200 text-sm dark:divide-ink-700">
+          <thead className="bg-wheat-100 dark:bg-ink-800">
             {table.getHeaderGroups().map((hg) => (
               <tr key={hg.id}>
                 {hg.headers.map((h) => (
@@ -96,7 +96,7 @@ export default function DataTable<T extends object>({
               </tr>
             ))}
           </thead>
-          <tbody className="divide-y divide-wheat-100 bg-white dark:divide-wheat-800 dark:bg-wheat-900">
+          <tbody className="divide-y divide-wheat-100 bg-white dark:divide-ink-800 dark:bg-ink-900">
             {table.getRowModel().rows.map((row) => (
               <tr key={row.id} className="hover:bg-wheat-50 dark:hover:bg-wheat-800">
                 {row.getVisibleCells().map((cell) => (

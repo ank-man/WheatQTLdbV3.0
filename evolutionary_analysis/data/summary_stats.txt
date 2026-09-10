@@ -1,0 +1,15 @@
+Genome-wide window count: 712 (20 Mb windows, >=5 genes each)
+Hotspot threshold (90th percentile of QTL+MetaQTL per window): 107 records
+All windows (genome background): n=712 windows, mean fractionation rate = 17.70%
+Trait hotspot windows (top 10% QTL+MetaQTL density): n=74 windows, mean fractionation rate = 23.45%
+Coldspot windows (zero QTL/MetaQTL evidence): n=4 windows, mean fractionation rate = 15.67%
+
+Hotspot vs. genome-wide background: mean fractionation-rate difference = +5.76 percentage points (Welch t = 4.12, two-sided p = 3.73e-05)
+Hotspot vs. coldspot: mean fractionation-rate difference = +7.79 percentage points (Welch t = 1.25, two-sided p = 2.10e-01; caution: only n=4 coldspot windows)
+
+Genome-wide correlation (all 712 windows): Pearson r = 0.062 between QTL+MetaQTL density and fractionation rate (t = 1.66, two-sided p = 9.77e-02)
+
+Per-subgenome mean fractionation rate (all windows):
+  A genome: 19.04% (n=249 windows)
+  B genome: 18.12% (n=263 windows)
+  D genome: 15.46% (n=200 windows)

@@ -1,0 +1,3 @@
+dataset,total_records,no_chromosome,no_position,cm_only,physically_anchored,distinct_studies_all_records,distinct_studies_physically_anchored
+QTL,84529,7154,11365,31971,34039,1521,253
+MetaQTL,3018,10,238,2459,311,56,6

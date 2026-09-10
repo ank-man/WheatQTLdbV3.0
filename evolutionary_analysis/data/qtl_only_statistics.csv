@@ -1,0 +1,4 @@
+window_mb,n_windows,n_hotspot,r_obs,p_r_perm,r_partial_gc,p_r_partial_perm,hotspot_diff_pp,p_hotspot_diff_perm
+10,1415,142,0.0442,0.2724,0.0233,0.5704,1.774,0.0673
+20,712,72,0.1047,0.0527,0.0821,0.128,2.998,0.0182
+50,293,30,0.1724,0.0013,0.1529,0.0046,3.301,0.0325

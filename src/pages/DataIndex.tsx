@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Database, GitBranch, Network, Dna } from 'lucide-react'
+import { Database, GitBranch, Network, Dna, Map as MapIcon } from 'lucide-react'
 import PageHero from '../components/PageHero'
 
 const items = [
@@ -7,6 +7,7 @@ const items = [
   { to: '/data/metaqtl', icon: GitBranch, title: 'MetaQTL', desc: 'Consensus QTL regions across studies.' },
   { to: '/data/epistatic', icon: Network, title: 'Epistatic QTL', desc: 'QTL × QTL interactions.' },
   { to: '/data/candidate-genes', icon: Dna, title: 'Candidate Genes', desc: 'Genes underlying QTL regions.' },
+  { to: '/map', icon: MapIcon, title: 'Physical Map', desc: 'Interactive chromosome view of all QTLs and MetaQTLs.' },
 ]
 
 export default function DataIndex() {
@@ -23,7 +24,7 @@ export default function DataIndex() {
         {items.map(({ to, icon: Icon, title, desc }) => (
           <Link key={to} to={to} className="card block transition hover:border-wheat-400">
             <div className="flex items-center gap-3">
-              <div className="rounded-lg bg-wheat-100 p-2 text-wheat-700 dark:bg-wheat-700 dark:text-wheat-100">
+              <div className="rounded-lg bg-wheat-100 p-2 text-wheat-700 dark:bg-ink-700 dark:text-wheat-100">
                 <Icon className="h-5 w-5" />
               </div>
               <div className="text-lg font-semibold">{title}</div>

@@ -94,7 +94,7 @@ export default function Team() {
           <strong> Department of Genetics &amp; Plant Breeding, Ch. Charan Singh University, Meerut, India</strong>.
         </p>
         <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
-          <img className="h-32 w-full rounded-lg object-cover" alt="Wheat field" src={img('wheat-field.jpg')} loading="lazy" />
+          <img className="h-32 w-full rounded-lg object-cover" alt="Wheat field" src={img('wheat-field-gbif.jpg')} loading="lazy" />
           <img className="h-32 w-full rounded-lg object-cover" alt="Wheat ears" src={img('wheat-ears.jpg')} loading="lazy" />
           <img className="h-32 w-full rounded-lg object-cover" alt="Crop research" src={img('crop-research.jpg')} loading="lazy" />
         </div>
@@ -129,7 +129,7 @@ function Grid({ members, highlight, compact }: { members: Member[]; highlight?: 
             name={m.name}
             src={m.photo}
             size={64}
-            className="h-16 w-16 flex-shrink-0 rounded-full border border-wheat-200 object-cover dark:border-wheat-700"
+            className="h-16 w-16 flex-shrink-0 rounded-full border border-wheat-200 object-cover dark:border-ink-700"
           />
           <div className="min-w-0">
             <div className="truncate font-semibold text-wheat-900 dark:text-wheat-50">{m.name}</div>
