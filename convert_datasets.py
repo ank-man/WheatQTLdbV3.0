@@ -542,13 +542,24 @@ def main():
     # only contributes its actual drought-stress QTL records.
     skip_sheets = {"apa format references", "references", "list", "root traits_mqtl", "control"}
 
+    # Sheet names like "Sheet1"/"Sheet2" are reused across many files with
+    # unrelated content (e.g. N data_revised.xlsx's Sheet2 is real, needed
+    # data), so exclusions scoped to a specific sheet NAME in a specific FILE
+    # go here rather than in the global skip_sheets set above.
+    # Nematode_Resistance.xlsx Sheet2 (181 rows, two other nematode-resistance
+    # studies) is excluded per instruction, keeping only Sheet1.
+    FILE_SHEET_SKIP = {
+        "Nematode_Resistance.xlsx": {"sheet2"},
+    }
+
     for fpath in collect_files():
         fname = os.path.basename(fpath)
         src = os.path.splitext(fname)[0]
+        file_skip = FILE_SHEET_SKIP.get(fname, set())
         print(f"\nProcessing: {fname}")
         try:
             for shname, headers, body in load_sheets(fpath):
-                if shname.lower().strip() in skip_sheets:
+                if shname.lower().strip() in skip_sheets or shname.lower().strip() in file_skip:
                     continue
                 stype = sheet_type(shname, fname)
                 if stype == "skip":
