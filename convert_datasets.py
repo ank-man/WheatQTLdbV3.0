@@ -4,7 +4,10 @@ Converts updated dataset files (.xlsx, .xls, .csv) into the 3 CSV tables:
   - public/data/metaqtl.csv
   - public/data/epistatic.csv
 
-Prioritizes files in new_data/ over files in the extracted rar contents.
+Sources exclusively from Final_data/ (extracted from Final_data.rar), the
+single authoritative data drop. Earlier source folders (new_data/, the old
+"Updated data (2.0+3.0)/") were archived under archive/pre_final_data/ and
+are no longer read by this pipeline.
 
 Coded by Ankush Sharma <mr.ank2999@gmail.com>
 """
@@ -15,12 +18,10 @@ import xlrd
 
 OUT = os.path.join(os.path.dirname(__file__), "public", "data")
 
-# Priority order: new_data (revised) takes precedence over the extracted rar contents.
 SOURCES = [
-    "new_data",
-    "Updated data (2.0+3.0)/Data with v2.0",
-    "Updated data (2.0+3.0)/multitrait qtl",
-    "Updated data (2.0+3.0)/Epistatic QTLs_v3.0.xlsx",
+    "Final_data/Updated data (2.0+3.0)/Data with v2.0",
+    "Final_data/Updated data (2.0+3.0)/multitrait qtl",
+    "Final_data/Updated data (2.0+3.0)/Epistatic QTLs_v3.0.xlsx",
 ]
 
 # ---------------------------------------------------------------------------
@@ -149,6 +150,8 @@ SPECIES_MAP = {
         "Aegilops tauschii; Aegilops cylindrica; Triticum aestivum; Aegilops crassa",
     "t. turgidum ssp. durum (desf.) husn. and aegilops tauschii":
         "Triticum durum; Aegilops tauschii",
+    "triticum boeoticum": "Triticum boeoticum",
+    "triticum turgidum; triticum aestivum": "Triticum turgidum; Triticum aestivum",
 }
 _unmapped_species = set()
 
@@ -267,13 +270,29 @@ def _norm_tokens(s):
     """Split a header string into normalized alphanumeric tokens."""
     return [t for t in re.split(r"[^a-z0-9]", str(s).lower()) if t]
 
+def _singular_forms(tok):
+    """Cheap pluralization-tolerant variants of a token (marker(s), gene(s),
+    reference(s), cross(es), ...). Source headers mix singular and plural
+    spellings of the same column across files, and a strict token-equality
+    check silently fails to match the column at all when they differ - not
+    a fuzzy-match risk worth worrying about here since these are short,
+    closed candidate lists, not open-ended text."""
+    forms = {tok}
+    if tok.endswith("es") and len(tok) > 3:
+        forms.add(tok[:-2])
+    if tok.endswith("s") and len(tok) > 1:
+        forms.add(tok[:-1])
+    return forms
+
+def _tokens_equal(t1, t2):
+    return t1 == t2 or _singular_forms(t1) & _singular_forms(t2)
+
 def _prefix_match(a, b):
-    """Return True if one token list is a prefix of the other."""
+    """Return True if one token list is a prefix of the other (pluralization-tolerant)."""
     if not a or not b:
         return False
-    if len(a) <= len(b):
-        return a == b[:len(a)]
-    return b == a[:len(b)]
+    shorter, longer = (a, b) if len(a) <= len(b) else (b, a)
+    return all(_tokens_equal(x, y) for x, y in zip(shorter, longer))
 
 def col_idx(headers, *candidates):
     """Return the index of the first matching candidate header (case-insensitive, token-wise prefix match)."""
@@ -342,12 +361,12 @@ def extract_qtl(headers, body, source_file):
     records = []
     si  = col_idx(headers, "species")
     tri = col_idx(headers, "trait", "Trait")
-    pai = col_idx(headers, "parameter")
+    pai = col_idx(headers, "parameter", "paramete")
     cri = col_idx(headers, "cross")
     poi = col_idx(headers, "population", "germplasm")
     mei = col_idx(headers, "method")
     qni = col_idx(headers, "qtl name", "mta", "qtn", "qtl/mta", "qtl name/mta")
-    chi = col_idx(headers, "chromosome")
+    chi = col_idx(headers, "chromosome", "chrom")
     psi = col_idx(headers, "position/interval")
     ami = col_idx(headers, "associated marker", "flanking marker")
     pvi = col_idx(headers, "pve", "r2")
@@ -390,9 +409,14 @@ def extract_metaqtl(headers, body, source_file):
     records = []
     si  = col_idx(headers, "species")
     tri = col_idx(headers, "trait")
-    pai = col_idx(headers, "parameter")
-    qni = col_idx(headers, "meta", "mqtl", "mqtl name", "metaqtl", "mQTL name")
-    chi = col_idx(headers, "chromosome")
+    pai = col_idx(headers, "parameter", "paramete")
+    # Some MetaQTL sheets (correctly identified as MetaQTL by sheet name) are
+    # laid out with the same generic locus-name header used by QTL sheets
+    # ("QTL name/MTAs") rather than an MQTL-specific one -- fall back to the
+    # QTL-style candidates so those rows aren't silently dropped.
+    qni = col_idx(headers, "meta", "mqtl", "mqtl name", "metaqtl", "mQTL name",
+                  "qtl name", "mta", "qtn", "qtl/mta", "qtl name/mta")
+    chi = col_idx(headers, "chromosome", "chrom")
     psi = col_idx(headers, "position/interval")
     ami = col_idx(headers, "associated marker", "flanking")
     pvi = col_idx(headers, "pve", "r2")
@@ -407,7 +431,8 @@ def extract_metaqtl(headers, body, source_file):
         if all(c is None or str(c).strip() == "" for c in row):
             continue
         mqtl = g(row, qni)
-        if not mqtl or mqtl.lower() in ("mqtl name", "metaqtl name", "s_no", "s n"):
+        if not mqtl or mqtl.lower() in ("mqtl name", "metaqtl name", "s_no", "s n",
+                                         "qtl name", "qtl name/mtas"):
             continue
         records.append({
             "species":           normalize_species(g(row, si)),
@@ -429,7 +454,7 @@ def extract_epistatic(headers, body, source_file):
     records = []
     si   = col_idx(headers, "species")
     tri  = col_idx(headers, "trait")
-    pai  = col_idx(headers, "parameter")
+    pai  = col_idx(headers, "parameter", "paramete")
     cri  = col_idx(headers, "cross")
     poi  = col_idx(headers, "population", "germplasm")
     mei  = col_idx(headers, "method")

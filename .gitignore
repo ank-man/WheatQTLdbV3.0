@@ -22,3 +22,10 @@ dist-ssr
 evolutionary_analysis/raw_data/ensembl_plants_wheat_snps_8assembly.tsv
 __pycache__/
 *.pyc
+
+# Final data source drop (private collaborator working files, not for public distribution)
+/Final_data.rar
+/Final_data/
+
+# Local archive of superseded/raw source data (private collaborator files, not for public distribution)
+/archive/

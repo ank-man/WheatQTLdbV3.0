@@ -377,10 +377,20 @@ export default function CircosMap({
                     const a0 = angleFor(m.chromosome, Math.min(m.start, m.end))
                     const a1 = angleFor(m.chromosome, Math.max(m.start, m.end))
                     const color = TRAIT_COLORS[m.trait as TraitCategory] ?? '#9e9e9e'
+                    // Point-like (or very narrow) intervals need a small visible
+                    // width, but as a fraction of THIS chromosome's own angular
+                    // span (mirroring the ~0.5%-of-chromosome-length pad in the
+                    // manuscript R figure) rather than a fixed absolute degree
+                    // value - a flat constant is a large fraction of a short
+                    // chromosome's span and a tiny sliver of a long one, which
+                    // is what made every MetaQTL render as a long bar instead
+                    // of a small scatter-like mark.
+                    const slice = layout.get(m.chromosome)!
+                    const minWidth = (slice.end - slice.start) * 0.004
                     return (
                       <path
                         key={m.id}
-                        d={arcPath(r0, r1, a0, Math.max(a1, a0 + 0.12))}
+                        d={arcPath(r0, r1, a0, Math.max(a1, a0 + minWidth))}
                         fill={color}
                         fillOpacity={0.85}
                         stroke={color}
