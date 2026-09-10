@@ -532,7 +532,12 @@ def main():
     all_metaqtl   = []
     all_epistatic = []
 
-    skip_sheets = {"apa format references", "references", "list"}
+    # "Root traits_MQTL" (in MQTL_all traitsV3.0_final.xlsx) is a confirmed
+    # 100%-redundant re-entry of loci already curated, with fuller annotation
+    # (candidate genes), under "Morphological traits" elsewhere in the same
+    # workbook - every one of its 94 rows shares chromosome+position+markers
+    # with a row in another sheet of that file.
+    skip_sheets = {"apa format references", "references", "list", "root traits_mqtl"}
 
     for fpath in collect_files():
         fname = os.path.basename(fpath)
