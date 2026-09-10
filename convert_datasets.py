@@ -537,7 +537,10 @@ def main():
     # (candidate genes), under "Morphological traits" elsewhere in the same
     # workbook - every one of its 94 rows shares chromosome+position+markers
     # with a row in another sheet of that file.
-    skip_sheets = {"apa format references", "references", "list", "root traits_mqtl"}
+    # "Control" (in "Drought stress and drought control.xlsx") is the
+    # well-watered/non-stressed condition sheet - excluded so this dataset
+    # only contributes its actual drought-stress QTL records.
+    skip_sheets = {"apa format references", "references", "list", "root traits_mqtl", "control"}
 
     for fpath in collect_files():
         fname = os.path.basename(fpath)
