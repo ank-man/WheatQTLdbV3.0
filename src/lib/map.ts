@@ -155,8 +155,16 @@ export function parsePositionInterval(value: string): ParsedPosition {
     return { point: null, start: null, end: null }
   }
 
-  // 46.8(43.5-50.1) or 46.8 (43.5-50.1)
-  const paren = v.match(/^(\d+(?:\.\d+)?)\s*\(?\s*(\d+(?:\.\d+)?)\s*[-–]\s*(\d+(?:\.\d+)?)\s*\)?$/)
+  // 46.8(43.5-50.1) or 46.8 (43.5-50.1) - the "(" must actually be present:
+  // with it optional, a plain "667717050-670783640" range (no parens at all)
+  // also satisfies this pattern via regex backtracking, since \d+ can give
+  // up nearly all of its digits to the "point" group and leave just the
+  // trailing digit(s) for "start" - e.g. point="66771705", start="0", end=
+  // "670783640", corrupting the true start to 0 and making the interval
+  // look like it spans from the chromosome origin. Requiring "(" (and its
+  // matching ")") makes this pattern match ONLY genuine point+interval
+  // strings, so a bare range correctly falls through to the next pattern.
+  const paren = v.match(/^(\d+(?:\.\d+)?)\s*\(\s*(\d+(?:\.\d+)?)\s*[-–]\s*(\d+(?:\.\d+)?)\s*\)$/)
   if (paren) {
     const start = parseFloat(paren[2])
     const end = parseFloat(paren[3])
@@ -182,23 +190,39 @@ export function parsePositionInterval(value: string): ParsedPosition {
   return { point: null, start: null, end: null }
 }
 
+// Whole-word substring match - unlike String.includes(), doesn't fire on a
+// keyword that merely occurs INSIDE a longer, unrelated word (e.g. "heat"
+// inside "wheat", "nue" inside "continue").
+function hasWord(haystack: string, word: string): boolean {
+  return new RegExp(`\\b${word}\\b`).test(haystack)
+}
+
 export function normalizeTrait(record: QTLRecord | MetaQTLRecord): TraitCategory {
   const t = ((record as QTLRecord).trait || (record as MetaQTLRecord).trait || '').toLowerCase().trim()
   const p = ((record as QTLRecord).parameter || (record as MetaQTLRecord).parameter || '').toLowerCase().trim()
   const c = `${t} ${p}`
 
   if (t.includes('yield') || p.includes('yield') || p.includes('grain weight') || p.includes('tgw')) return 'Yield'
-  if (c.includes('fungal') || c.includes('fhb') || c.includes('rust') || c.includes('mildew') || c.includes('blight') || c.includes('smut') || c.includes('bunt') || c.includes('powdery') || c.includes('septoria') || c.includes('tan spot')) return 'Fungal resistance'
+  // "puccinia" covers rust pathogens reported by Latin genus name only
+  // (Puccinia striiformis/graminis/triticina) with no English "rust" nearby.
+  if (c.includes('fungal') || c.includes('fhb') || c.includes('rust') || c.includes('mildew') || c.includes('blight') || c.includes('smut') || c.includes('bunt') || c.includes('powdery') || c.includes('septoria') || c.includes('tan spot') || c.includes('puccinia')) return 'Fungal resistance'
   if (c.includes('quality') || c.includes('protein') || c.includes('gluten') || c.includes('hardness') || c.includes('sediment') || c.includes('dough') || c.includes('test weight')) return 'Quality traits'
   if (c.includes('sprouting') || c.includes('dormancy')) return 'Pre-harvest sprouting'
   // "waterlogging" is spelled inconsistently across source studies (waterlogging /
   // water-logging / water logging) - match regardless of the separator.
-  if (c.includes('salt') || c.includes('drought') || c.includes('heat') || c.includes('cold') || c.includes('abiotic') || c.includes('osmotic') || c.includes('water-log') || c.includes('water log') || c.includes('waterlog') || c.includes('alumin') || c.includes('frost') || c.includes('toxic')) return 'Abiotic stress'
+  // "heat" is matched as a whole word (hasWord), not includes() - "wheat" (in
+  // "wheat dwarf virus", "wheat blossom midge", etc.) contains "heat" as a
+  // bare substring and was wrongly landing disease/insect QTL in Abiotic stress.
+  if (c.includes('salt') || c.includes('drought') || hasWord(c, 'heat') || c.includes('cold') || c.includes('abiotic') || c.includes('osmotic') || c.includes('water-log') || c.includes('water log') || c.includes('waterlog') || c.includes('alumin') || c.includes('frost') || c.includes('toxic')) return 'Abiotic stress'
   // Nutrient *use efficiency* (agronomic input efficiency) is biologically
   // distinct from *biofortification* (grain nutrient content for nutrition)
   // below, so it's checked first even though both mention the same elements.
-  if (c.includes('use efficiency') || c.includes('n-use') || c.includes('n use') || c.includes('nue') || c.includes('nitrogen')) return 'N-use efficiency'
-  if (c.includes('zinc') || c.includes('iron') || c.includes('selenium') || c.includes('biofort') || c.includes('mineral') || c.includes('cadmium') || c.includes('calcium') || c.includes('sulph') || c.includes('sulfur') || c.includes('manganese') || c.includes('copper') || c.includes('nickel') || c.includes('molybden') || c.includes('phosphor') || c.includes('potassium') || c.includes('cobalt') || c.includes('rubidium') || c.includes('lead') || c.includes('strontium') || c.includes('arsenic') || c.includes('sodium') || c.includes('boron') || c.includes('lithium') || c.includes('barium') || c.includes('platinum') || c.includes('co ') || c.includes('mo ') || c.includes('grain fe') || c.includes('grain zn')) return 'Biofortification'
+  // "nue" is matched as a whole word - as a bare substring it also matches
+  // inside unrelated words ("continue", "genuine", "revenue", ...).
+  if (c.includes('use efficiency') || c.includes('n-use') || c.includes('n use') || hasWord(c, 'nue') || c.includes('nitrogen')) return 'N-use efficiency'
+  // "bioforitif" is a known source-data typo for "biofortification" (letters
+  // transposed: ...bioFORITIFcation instead of ...bioforTIFIcation).
+  if (c.includes('zinc') || c.includes('iron') || c.includes('selenium') || c.includes('biofort') || c.includes('bioforitif') || c.includes('mineral') || c.includes('cadmium') || c.includes('calcium') || c.includes('magnesium') || c.includes('sulph') || c.includes('sulfur') || c.includes('manganese') || c.includes('copper') || c.includes('nickel') || c.includes('molybden') || c.includes('phosphor') || c.includes('potassium') || c.includes('cobalt') || c.includes('rubidium') || c.includes('lead') || c.includes('strontium') || c.includes('arsenic') || c.includes('sodium') || c.includes('boron') || c.includes('lithium') || c.includes('barium') || c.includes('platinum') || c.includes('co ') || c.includes('mo ') || c.includes('grain fe') || c.includes('grain zn')) return 'Biofortification'
   if (c.includes('bacterial') || c.includes('leaf streak') || c.includes('bls')) return 'Bacterial resistance'
   if (c.includes('virus') || c.includes('viral')) return 'Viral resistance'
   if (c.includes('nematode') || c.includes('cereal cyst')) return 'Nematode resistance'
