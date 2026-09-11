@@ -8,6 +8,7 @@ import {
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
 import { WheatStalk } from '../components/WheatDecor'
+import { normalizeTrait } from '../lib/map'
 
 const heroImg = `${import.meta.env.BASE_URL}images/hero-wheat.jpg`
 const img = (p: string) => `${import.meta.env.BASE_URL}images/${p}`
@@ -58,11 +59,16 @@ export default function Home() {
     }
   }, [qtl.data, mqtl.data, epi.data])
 
+  // Grouped by the same normalizeTrait() classification the Search page's
+  // Trait dropdown uses, not raw per-row trait text - a raw grouping would
+  // both undercount (case/whitespace variants of the same trait split
+  // across bars) and disagree with what "Trait" actually filters to
+  // elsewhere in the app.
   const topCategories = useMemo(() => {
     const m = new Map<string, number>()
     qtl.data.forEach((r) => {
-      const k = (r.trait ?? '').trim()
-      if (k) m.set(k, (m.get(k) ?? 0) + 1)
+      const k = normalizeTrait(r)
+      m.set(k, (m.get(k) ?? 0) + 1)
     })
     const max = Math.max(1, ...m.values())
     return Array.from(m, ([name, value]) => ({ name, value, pct: (value / max) * 100 }))

@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import {
-  Bar, BarChart, CartesianGrid, Pie, PieChart, ResponsiveContainer,
+  Bar, BarChart, CartesianGrid, ResponsiveContainer,
   Tooltip, XAxis, YAxis, Cell,
 } from 'recharts'
 import PageHero from '../components/PageHero'
@@ -24,27 +24,20 @@ function topBy<T>(rows: T[], key: keyof T, n = 10): { name: string; value: numbe
   return countBy(rows, key).slice(0, n)
 }
 
-function parseYear(ref?: string): string {
-  if (!ref) return 'Unknown'
-  const match = ref.match(/\b(19|20)\d{2}\b/)
+// The "reference" (full citation) field is populated for only ~2.5% of
+// records - most rows only carry a DOI/article URL, which is why this also
+// tries the doi field: a real fix for what was otherwise an "Unknown"-
+// dominated chart, not a cosmetic one.
+function parseYear(ref?: string, doi?: string): string {
+  const match = (ref || '').match(/\b(19|20)\d{2}\b/) ?? (doi || '').match(/\b(19|20)\d{2}\b/)
   return match ? match[0] : 'Unknown'
 }
 
+// Category names are always one of TRAIT_COLORS' own keys now (every chart
+// below buckets by normalizeTrait, not raw trait text), so this is a direct
+// lookup, not the fuzzy substring match it used to need for raw strings.
 function traitColor(name: string): string {
-  const key = Object.keys(TRAIT_COLORS).find((k) =>
-    name.toLowerCase().includes(k.toLowerCase())
-  )
-  return key ? (TRAIT_COLORS as any)[key] : COLORS[0]
-}
-
-function topCategories<T>(rows: T[], key: keyof T, n = 8): { name: string; value: number }[] {
-  const all = countBy(rows, key)
-  const head = all.slice(0, n)
-  const tail = all.slice(n)
-  if (tail.length) {
-    head.push({ name: 'Other', value: tail.reduce((s, x) => s + x.value, 0) })
-  }
-  return head
+  return (TRAIT_COLORS as Record<string, string>)[name] ?? COLORS[0]
 }
 
 // Canonical trait-category counts (the same 12 categories used by the circos
@@ -79,14 +72,16 @@ function chromTraitMatrix(qtl: QTLRecord[], topTraits: string[]): { name: string
   const chroms = countBy(qtl, 'chromosome')
     .map((d) => d.name)
     .sort((a, b) => chromosomeSortKey(a) - chromosomeSortKey(b))
+  const topSet = new Set(topTraits)
   return chroms.map((chr) => {
-    const row: any = { name: chr }
+    const row: any = { name: chr, Other: 0 }
     topTraits.forEach((trait) => (row[trait] = 0))
     qtl
       .filter((r) => r.chromosome === chr)
       .forEach((r) => {
-        const trait = topTraits.find((t) => r.trait.toLowerCase().includes(t.toLowerCase())) ?? 'Other'
-        if (topTraits.includes(trait)) row[trait] = (row[trait] ?? 0) + 1
+        const cat = normalizeTrait(r)
+        const trait = topSet.has(cat) ? cat : 'Other'
+        row[trait] = (row[trait] ?? 0) + 1
       })
     return row
   })
@@ -106,8 +101,10 @@ export default function Statistics() {
     { name: 'Epistatic', value: epi.data.length },
   ]
 
+  // Species distribution is extremely skewed (T. aestivum is 93.4% of
+  // records) - kept as a sorted bar rather than a pie, where 13 slivers next
+  // to one near-full circle would be unreadable.
   const bySpecies = useMemo(() => countBy(qtl.data, 'species'), [qtl.data])
-  const byCategory = useMemo(() => countBy(qtl.data, 'trait'), [qtl.data])
   const byChrom = useMemo(() => countBy(qtl.data, 'chromosome'), [qtl.data])
 
   const bySource = useMemo(() => countBy(qtl.data, 'source_file'), [qtl.data])
@@ -115,7 +112,7 @@ export default function Statistics() {
   const byYear = useMemo(() => {
     const counts = new Map<string, number>()
     qtl.data.forEach((r) => {
-      const year = parseYear(r.reference)
+      const year = parseYear(r.reference, r.doi)
       counts.set(year, (counts.get(year) ?? 0) + 1)
     })
     return Array.from(counts.entries())
@@ -126,7 +123,11 @@ export default function Statistics() {
   const topParameters = useMemo(() => topBy(qtl.data, 'parameter', 12), [qtl.data])
 
   const stats = useMemo(() => {
-    const traits = new Set(qtl.data.map((r) => r.trait).filter(Boolean))
+    // Distinct trait CATEGORIES (the same normalizeTrait classification the
+    // Search page's Trait dropdown uses), not raw distinct trait strings -
+    // those number in the hundreds across source studies and don't mean
+    // anything as a headline count next to a 20-category filter elsewhere.
+    const traits = new Set(qtl.data.map((r) => normalizeTrait(r)))
     // "Un" (unknown/unanchored) isn't a real chromosome, so it's excluded here -
     // the wheat genome has exactly 21 (7 homoeologous groups x A/B/D genomes).
     const chrs = new Set(qtl.data.map((r) => r.chromosome).filter((c) => c && c !== 'Un'))
@@ -139,8 +140,15 @@ export default function Statistics() {
     }
   }, [qtl.data, mqtl.data, epi.data])
 
-  const byCategoryTop = useMemo(() => topCategories(qtl.data, 'trait', 8), [qtl.data])
-  const topTraits = useMemo(() => byCategoryTop.filter((d) => d.name !== 'Other').map((d) => d.name), [byCategoryTop])
+  // All real categories (normalizeTrait - the same classification the Search
+  // page's Trait dropdown uses), not a raw-string tally capped at 8 with
+  // everything else dumped into one opaque "Other" bar.
+  const byCategoryTop = useMemo(() => byTraitCategory(qtl.data), [qtl.data])
+  // The stacked-by-chromosome view still caps at the top 8 for a legible
+  // number of stack segments; anything outside the top 8 folds into "Other"
+  // there (chromTraitMatrix), which is a display simplification for that one
+  // chart, not a re-introduction of the raw-string "Other" bug above.
+  const topTraits = useMemo(() => byCategoryTop.slice(0, 8).map((d) => d.name), [byCategoryTop])
   const chromTraitData = useMemo(() => chromTraitMatrix(qtl.data, topTraits), [qtl.data, topTraits])
 
   const mqtlByCategory = useMemo(() => byTraitCategory(mqtl.data), [mqtl.data])
@@ -245,13 +253,27 @@ export default function Statistics() {
           </ChartCard>
 
           <ChartCard title="QTL by species">
-            <ResponsiveContainer width="100%" height={260} className="text-wheat-700 dark:text-wheat-300">
-              <PieChart>
-                <Pie data={bySpecies} dataKey="value" nameKey="name" outerRadius={90} label>
-                  {bySpecies.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
-                </Pie>
+            {/* T. aestivum is 93.4% of records - a pie here would be one
+                near-full circle plus 13 unreadable slivers. Called out
+                separately, with a bar chart of the other species (the
+                actually-informative part of this distribution). */}
+            <p className="mb-3 text-sm text-wheat-600 dark:text-wheat-400">
+              <span className="font-semibold text-wheat-900 dark:text-wheat-100">
+                {bySpecies[0]?.value.toLocaleString()}
+              </span>{' '}
+              of {qtl.data.length.toLocaleString()} QTL ({((bySpecies[0]?.value ?? 0) / (qtl.data.length || 1) * 100).toFixed(1)}%)
+              are <em>{bySpecies[0]?.name}</em>; other species below.
+            </p>
+            <ResponsiveContainer width="100%" height={220} className="text-wheat-700 dark:text-wheat-300">
+              <BarChart data={bySpecies.slice(1)} layout="vertical" margin={{ left: 12, right: 12, top: 4, bottom: 4 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
+                <XAxis type="number" tick={{ fill: 'currentColor' }} />
+                <YAxis type="category" dataKey="name" width={170} tick={{ fill: 'currentColor', fontSize: 11 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
-              </PieChart>
+                <Bar dataKey="value">
+                  {bySpecies.slice(1).map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
+                </Bar>
+              </BarChart>
             </ResponsiveContainer>
           </ChartCard>
 
