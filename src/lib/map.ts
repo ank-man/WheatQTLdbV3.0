@@ -4,7 +4,11 @@ export const TRAIT_CATEGORIES = [
   'Yield',
   'Fungal resistance',
   'Quality traits',
-  'Abiotic stress',
+  'Drought tolerance',
+  'Salt tolerance',
+  'Heat stress tolerance',
+  'Waterlogging tolerance',
+  'Abiotic stress (other)',
   'Biofortification',
   'Bacterial resistance',
   'Nematode resistance',
@@ -21,19 +25,31 @@ export const TRAIT_CATEGORIES = [
 
 export type TraitCategory = (typeof TRAIT_CATEGORIES)[number]
 
-// Validated with the dataviz skill's categorical checker (OKLCH lightness
-// band, chroma floor, CVD separation, contrast) - see scripts/validate_palette.js.
-// 16 categories is at the edge of what a categorical palette can carry
-// distinctly; every trait/parameter string in the data resolves to one of
-// these (see normalizeTrait) rather than being split further, which would
-// stop reading as distinct colours. "Other" is kept only as the residual for
-// genuine data errors (e.g. a species name typo'd into the trait column) -
-// every real trait category found in the data has its own bucket.
+// Every trait/parameter string in the data resolves to one of these (see
+// normalizeTrait). The former single "Abiotic stress" bucket (26,517 QTL +
+// 348 MetaQTL) is split into its dominant, individually well-represented
+// stresses - Drought (18,610), Heat (4,164), Salt (3,615), Waterlogging
+// (369) - with a residual "Abiotic stress (other)" for frost/cold, osmotic,
+// aluminium toxicity and genuinely combined multi-stress records (~430),
+// so nothing reads as an opaque catch-all bucket. "Other" (distinct from
+// "Abiotic stress (other)") is kept only as the residual for genuine data
+// errors (e.g. a row with no trait/parameter text at all).
+//
+// At 20 categories, some hue closeness between adjacent swatches is
+// unavoidable in a single-channel qualitative palette (the dataviz skill's
+// own guidance puts ~16 as the practical ceiling for full colourblind-safe
+// separation) - every use of these colours is paired with a text label
+// (dropdown option, legend chip, category name), so identity never depends
+// on colour alone.
 export const TRAIT_COLORS: Record<TraitCategory, string> = {
   Yield: '#2e7d32',
   'Fungal resistance': '#c62828',
   'Quality traits': '#d4a017',
-  'Abiotic stress': '#1565c0',
+  'Drought tolerance': '#a16207',
+  'Salt tolerance': '#0e7490',
+  'Heat stress tolerance': '#e11d48',
+  'Waterlogging tolerance': '#1565c0',
+  'Abiotic stress (other)': '#64748b',
   Biofortification: '#7b1fa2',
   'Bacterial resistance': '#0e8fa0',
   'Nematode resistance': '#ef6c00',
@@ -208,12 +224,21 @@ export function normalizeTrait(record: QTLRecord | MetaQTLRecord): TraitCategory
   if (c.includes('fungal') || c.includes('fhb') || c.includes('rust') || c.includes('mildew') || c.includes('blight') || c.includes('smut') || c.includes('bunt') || c.includes('powdery') || c.includes('septoria') || c.includes('tan spot') || c.includes('puccinia')) return 'Fungal resistance'
   if (c.includes('quality') || c.includes('protein') || c.includes('gluten') || c.includes('hardness') || c.includes('sediment') || c.includes('dough') || c.includes('test weight')) return 'Quality traits'
   if (c.includes('sprouting') || c.includes('dormancy')) return 'Pre-harvest sprouting'
-  // "waterlogging" is spelled inconsistently across source studies (waterlogging /
-  // water-logging / water logging) - match regardless of the separator.
-  // "heat" is matched as a whole word (hasWord), not includes() - "wheat" (in
-  // "wheat dwarf virus", "wheat blossom midge", etc.) contains "heat" as a
-  // bare substring and was wrongly landing disease/insect QTL in Abiotic stress.
-  if (c.includes('salt') || c.includes('drought') || hasWord(c, 'heat') || c.includes('cold') || c.includes('abiotic') || c.includes('osmotic') || c.includes('water-log') || c.includes('water log') || c.includes('waterlog') || c.includes('alumin') || c.includes('frost') || c.includes('toxic')) return 'Abiotic stress'
+  // Former single "Abiotic stress" bucket, split into its dominant
+  // individual stresses. Order matters for records mentioning more than one
+  // stress together (e.g. "drought and heat stress tolerance") - drought is
+  // checked first as the single largest category in the source data.
+  // "heat" is matched as a whole word (hasWord), not includes() - "wheat"
+  // (in "wheat dwarf virus", "wheat blossom midge", etc.) contains "heat" as
+  // a bare substring and was wrongly landing disease/insect QTL here.
+  if (c.includes('drought')) return 'Drought tolerance'
+  if (c.includes('salt')) return 'Salt tolerance'
+  if (hasWord(c, 'heat')) return 'Heat stress tolerance'
+  // "waterlogging" is spelled inconsistently across source studies
+  // (waterlogging / water-logging / water logging) - match regardless of
+  // the separator.
+  if (c.includes('water-log') || c.includes('water log') || c.includes('waterlog')) return 'Waterlogging tolerance'
+  if (c.includes('cold') || c.includes('abiotic') || c.includes('osmotic') || c.includes('alumin') || c.includes('frost') || c.includes('toxic')) return 'Abiotic stress (other)'
   // Nutrient *use efficiency* (agronomic input efficiency) is biologically
   // distinct from *biofortification* (grain nutrient content for nutrition)
   // below, so it's checked first even though both mention the same elements.
