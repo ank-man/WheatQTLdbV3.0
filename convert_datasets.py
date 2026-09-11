@@ -152,6 +152,7 @@ SPECIES_MAP = {
         "Triticum durum; Aegilops tauschii",
     "triticum boeoticum": "Triticum boeoticum",
     "triticum turgidum; triticum aestivum": "Triticum turgidum; Triticum aestivum",
+    "triticum durum/t. dicoccoides": "Triticum durum; Triticum turgidum subsp. dicoccoides",
 }
 _unmapped_species = set()
 
@@ -208,6 +209,38 @@ def file_type_from_name(fname):
         return "metaqtl"
     return "qtl"
 
+# Some source spreadsheets have a header row that is missing one column
+# label, which silently shifts every SUBSEQUENT header one position away
+# from the data it actually describes (e.g. a header that reads
+# [..., "Trait", "Parameter", "Cross", ...] over data that is actually
+# [..., species, trait, parameter, ...] - every label from that point on
+# names the WRONG column, not just one). col_idx()'s token matching can't
+# detect this on its own since each individual header token still looks
+# like a plausible, real column name. Corrected in full here, per file,
+# once confirmed by inspecting the actual data columns by hand.
+HEADER_OVERRIDE = {
+    # Zn content.xls: header omits a "Species" label entirely, so
+    # "Trait" through the final blank column each name the column to
+    # their own LEFT. Confirmed against the real data (e.g. row 1:
+    # [1, "Triticum aestivum", "Zinc content", "Shoot zinc content", ...]).
+    "Zn content.xls": ["", "Species", "Trait", "Parameter", "Cross", "Population/Germplasm",
+                        "Method", "QTL/MTA name", "Chromosome", "Position/Interval in cM/bp",
+                        "Associated markers", "PVE/R2", "Candidate gene", "Link to reference"],
+}
+
+
+def apply_header_override(fname, headers):
+    override = HEADER_OVERRIDE.get(fname)
+    if override is None:
+        return headers
+    # Preserve the original length (trailing/extra blank columns, if any)
+    # rather than assuming the override list's length is exactly right.
+    fixed = list(override)
+    if len(fixed) < len(headers):
+        fixed += headers[len(fixed):]
+    return fixed[:len(headers)] if len(fixed) > len(headers) else fixed
+
+
 def load_sheets(fpath):
     """Yield (sheet_name, headers, body) for .xlsx, .xls or .csv files."""
     fname = os.path.basename(fpath)
@@ -226,7 +259,7 @@ def load_sheets(fpath):
                 print(f"  ERROR reading CSV {fname}: {e}")
                 return
         headers, body = rows_from_list(rows)
-        yield fname, headers, body
+        yield fname, apply_header_override(fname, headers), body
         return
     if ext == ".xls":
         try:
@@ -237,7 +270,7 @@ def load_sheets(fpath):
         for sheet in book.sheets():
             rows = [sheet.row_values(r) for r in range(sheet.nrows)]
             headers, body = rows_from_list(rows)
-            yield sheet.name, headers, body
+            yield sheet.name, apply_header_override(fname, headers), body
         return
     # .xlsx
     try:
@@ -249,7 +282,7 @@ def load_sheets(fpath):
         ws = wb[shname]
         rows = list(ws.iter_rows(values_only=True))
         headers, body = rows_from_list(rows)
-        yield shname, headers, body
+        yield shname, apply_header_override(fname, headers), body
     wb.close()
 
 def rows_from_list(rows):
@@ -548,8 +581,11 @@ def main():
     # go here rather than in the global skip_sheets set above.
     # Nematode_Resistance.xlsx Sheet2 (181 rows, two other nematode-resistance
     # studies) is excluded per instruction, keeping only Sheet1.
+    # N data_revised.xlsx: keep only Sheet2 per instruction, excluding Sheet1
+    # (and Sheet3, already empty/junk).
     FILE_SHEET_SKIP = {
         "Nematode_Resistance.xlsx": {"sheet2"},
+        "N data_revised.xlsx": {"sheet1"},
     }
 
     for fpath in collect_files():

@@ -14,14 +14,13 @@ interface Filters {
   species: string
   trait: string
   chromosome: string
-  method: string
   pveMin: string
   pveMax: string
   hasCandidateGene: boolean
 }
 
 const EMPTY: Filters = {
-  q: '', species: '', trait: '', chromosome: '', method: '',
+  q: '', species: '', trait: '', chromosome: '',
   pveMin: '', pveMax: '', hasCandidateGene: false,
 }
 
@@ -34,30 +33,27 @@ function uniqueValues<T>(rows: T[], key: keyof T): string[] {
   return Array.from(set).sort()
 }
 
-// A handful of source rows have a species name typo'd into the trait column
-// (e.g. "Triticum aestivum") instead of a real trait - drop anything that
-// looks like a species binomial rather than filtering by an explicit list,
-// so this stays correct if new source data introduces the same slip.
-function isSpeciesLikeValue(v: string): boolean {
-  return /^(triticum|aegilops)\b/i.test(v.trim())
+// Some records list more than one species in a single field, joined with
+// ";" or "/" (interspecific-population studies). Split those out so the
+// dropdown offers each real species exactly once instead of also listing
+// every combined-string variant as its own separate (and mostly redundant)
+// option; a record whose field contains a species still matches it via
+// speciesMatches() below.
+function uniqueSpecies<T>(rows: T[], key: keyof T): string[] {
+  const set = new Set<string>()
+  rows.forEach((r) => {
+    String((r as any)[key] ?? '')
+      .split(/[;/]/)
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .forEach((s) => set.add(s))
+  })
+  return Array.from(set).sort()
 }
 
-// Group distinct trait values under the same 16 canonical categories used by
-// the Map/Statistics views (see normalizeTrait), so the dropdown reads as
-// broad category -> specific trait rather than one flat alphabetical list.
-function groupedTraitOptions(traits: string[]): { category: string; options: string[] }[] {
-  const byCategory = new Map<string, string[]>()
-  traits
-    .filter((t) => !isSpeciesLikeValue(t))
-    .forEach((t) => {
-      const category = normalizeTrait({ trait: t, parameter: '' } as any)
-      const list = byCategory.get(category) ?? []
-      list.push(t)
-      byCategory.set(category, list)
-    })
-  return TRAIT_CATEGORIES
-    .filter((cat) => byCategory.has(cat))
-    .map((cat) => ({ category: cat, options: (byCategory.get(cat) ?? []).sort() }))
+function speciesMatches(fieldValue: string, selected: string): boolean {
+  if (!selected) return true
+  return fieldValue.split(/[;/]/).map((s) => s.trim()).includes(selected)
 }
 
 const columns: ColumnDef<QTLRecord, any>[] = [
@@ -101,20 +97,25 @@ export default function AdvancedSearch() {
     setParams(next, { replace: true })
   }, [f, setParams])
 
-  const speciesOpts = useMemo(() => uniqueValues(data, 'species'), [data])
-  const traitOpts = useMemo(() => groupedTraitOptions(uniqueValues(data, 'trait')), [data])
+  const speciesOpts = useMemo(() => uniqueSpecies(data, 'species'), [data])
+  // Real, non-redundant trait options: the fixed 16 canonical categories
+  // (see TRAIT_CATEGORIES / normalizeTrait), not raw per-row trait strings -
+  // those vary wildly in spelling/case/whitespace across source files and
+  // occasionally contain a mis-shifted species value rather than a trait.
+  const traitOpts = useMemo(() => {
+    const present = new Set(data.map((r) => normalizeTrait(r)))
+    return TRAIT_CATEGORIES.filter((cat) => present.has(cat))
+  }, [data])
   const chrOpts = useMemo(() => uniqueValues(data, 'chromosome'), [data])
-  const methodOpts = useMemo(() => uniqueValues(data, 'method'), [data])
 
   const filtered = useMemo(() => {
     const q = f.q.trim().toLowerCase()
     const pMin = f.pveMin ? Number(f.pveMin) : -Infinity
     const pMax = f.pveMax ? Number(f.pveMax) : Infinity
     return data.filter((r) => {
-      if (f.species && r.species !== f.species) return false
-      if (f.trait && r.trait !== f.trait) return false
+      if (!speciesMatches(r.species, f.species)) return false
+      if (f.trait && normalizeTrait(r) !== f.trait) return false
       if (f.chromosome && r.chromosome !== f.chromosome) return false
-      if (f.method && r.method !== f.method) return false
       const p = Number(r.pve)
       if (!Number.isNaN(p) && (p < pMin || p > pMax)) return false
       if (f.hasCandidateGene && !String(r.candidate_gene ?? '').trim()) return false
@@ -155,13 +156,10 @@ export default function AdvancedSearch() {
               <Select value={f.species} onChange={(v) => setF({ ...f, species: v })} options={speciesOpts} />
             </Field>
             <Field label="Trait">
-              <SelectGrouped value={f.trait} onChange={(v) => setF({ ...f, trait: v })} groups={traitOpts} />
+              <Select value={f.trait} onChange={(v) => setF({ ...f, trait: v })} options={traitOpts} />
             </Field>
             <Field label="Chromosome">
               <Select value={f.chromosome} onChange={(v) => setF({ ...f, chromosome: v })} options={chrOpts} />
-            </Field>
-            <Field label="Method">
-              <Select value={f.method} onChange={(v) => setF({ ...f, method: v })} options={methodOpts} />
             </Field>
             <Field label="PVE / R² (%)">
               <div className="flex gap-2">
@@ -198,27 +196,6 @@ function Select({ value, onChange, options }: { value: string; onChange: (v: str
     <select className="input" value={value} onChange={(e) => onChange(e.target.value)}>
       <option value="">Any</option>
       {options.map((o) => <option key={o} value={o}>{o}</option>)}
-    </select>
-  )
-}
-
-function SelectGrouped({
-  value,
-  onChange,
-  groups,
-}: {
-  value: string
-  onChange: (v: string) => void
-  groups: { category: string; options: string[] }[]
-}) {
-  return (
-    <select className="input" value={value} onChange={(e) => onChange(e.target.value)}>
-      <option value="">Any</option>
-      {groups.map((g) => (
-        <optgroup key={g.category} label={g.category}>
-          {g.options.map((o) => <option key={o} value={o}>{o}</option>)}
-        </optgroup>
-      ))}
     </select>
   )
 }

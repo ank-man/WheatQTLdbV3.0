@@ -66,6 +66,13 @@ const resources: Resource[] = [
     logo: '/images/logos/pgdd.svg',
     category: 'Database'
   },
+  {
+    name: 'PGDD2',
+    url: 'https://chibba.agtec.uga.edu',
+    desc: 'Plant Genome Duplication Database 2 — synteny and duplication-block viewer hosted at the University of Georgia.',
+    logo: '/images/logos/pgdd.svg',
+    category: 'Database'
+  },
 ]
 
 const categoryColors: Record<Resource['category'], string> = {
