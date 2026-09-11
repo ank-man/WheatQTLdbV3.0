@@ -45,8 +45,8 @@ const COMPACT_MAX_BAR_HEIGHT = 920
 // bar, then a stack of MetaQTL interval brackets further out - both beside
 // the chromosome rather than drawn on top of it, so the karyotype colour
 // stays legible underneath.
-const QTL_LANE = 40
-const COMPACT_QTL_LANE = 28
+const QTL_LANE = 52
+const COMPACT_QTL_LANE = 38
 const META_LANE_WIDTH = 13
 const COMPACT_META_LANE_WIDTH = 10
 const MAX_META_LANES = 4
@@ -346,7 +346,11 @@ export default function IdeogramMap({
                       const binH = h / QTL_BINS
                       const trait = dominantTrait(bin.traits)
                       const color = TRAIT_COLORS[trait as TraitCategory] ?? '#888'
-                      const barLen = Math.max(2, (bin.count / qtlDensity.max) * qtlLane)
+                      // Minimum length is deliberately generous (not just a
+                      // couple of px) - a bin with even one QTL needs to read
+                      // as a visible mark next to dozens of chromosome bars,
+                      // not disappear at this zoomed-out, side-by-side scale.
+                      const barLen = Math.max(6, (bin.count / qtlDensity.max) * qtlLane)
                       const canLabel = showItemLabels && bin.only && Math.abs(yMid - lastLabelY) >= MIN_LABEL_GAP
                       if (canLabel) lastLabelY = yMid
                       const name = bin.only && bin.only.name.length > 16 ? `${bin.only.name.slice(0, 15)}…` : bin.only?.name
@@ -356,9 +360,12 @@ export default function IdeogramMap({
                             x={cx + half}
                             y={yTop}
                             width={barLen}
-                            height={Math.max(binH, 2.5)}
+                            height={Math.max(binH, 3.5)}
                             fill={color}
-                            fillOpacity={0.8}
+                            fillOpacity={0.92}
+                            stroke={color}
+                            strokeOpacity={0.5}
+                            strokeWidth={0.5}
                           >
                             <title>{`${bin.count.toLocaleString()} QTL(s), mostly ${trait}`}</title>
                           </rect>
