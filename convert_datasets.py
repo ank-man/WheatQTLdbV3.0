@@ -226,11 +226,71 @@ HEADER_OVERRIDE = {
     "Zn content.xls": ["", "Species", "Trait", "Parameter", "Cross", "Population/Germplasm",
                         "Method", "QTL/MTA name", "Chromosome", "Position/Interval in cM/bp",
                         "Associated markers", "PVE/R2", "Candidate gene", "Link to reference"],
+    # Nematode_Resistance.xlsx Sheet1: the header row lists "Cross",
+    # "Population/Germplasm", "Method" BEFORE "Trait"/"Parameter", but the
+    # actual data columns are in the standard order (Trait, Parameter, then
+    # Cross, Population, Method) - the header cells were reordered without
+    # reordering the data. Confirmed against real data (row 1: Species=
+    # "Triticum aestivum", then "Nematode resistance", "Heterodera avenae",
+    # "Trident x Molineux", "DH (182)", "CIM", QTL name "Cre8", ...), which
+    # is why the trait dropdown was showing population sizes ("DH (182)")
+    # instead of "Nematode resistance".
+    "Nematode_Resistance.xlsx": ["S_No", "Species", "Trait", "Parameter", "Cross",
+                                  "Population/Germplasm", "Method", "QTL name", "Chromosome",
+                                  "Position/Interval in cM/bp", "Associated Markers", "PVE/R2",
+                                  "Candidate genes", "Link to reference"],
+}
+
+# Per-(file, sheet) overrides, for workbooks where different sheets have
+# different (and differently broken) header layouts.
+SHEET_HEADER_OVERRIDE = {
+    # Epistatic QTLs_v3.0.xlsx :: Epistatic_yield "QTgw.cerz"-pattern rows
+    # only (see EPISTATIC_YIELD_QTL_PATTERN / split_epistatic_yield below) -
+    # for THESE rows, "Cross"/"Population/Germplasm"/"Method"/"epistatic"
+    # never hold cross/population/method data at all; those 4 columns plus
+    # "Chromosome"/"Position/Interval (cM)"/"Physical interval (Mb)"/
+    # "Associated markers" hold QTL1's and QTL2's name, chromosome, position
+    # and markers back to back. Confirmed against row 1: ('Triticum durum',
+    # 'Yield','Thousand grain weight','QTgw.cerz-1AS.1','1A','0.0-5.5',
+    # 'Bla-wmc95','QTgw.cerz-1BS','1B','31.7-38.1','gwm273-wmc626', ...) -
+    # two complete QTL loci (1A and 1B), the epistatic pair itself.
+    ("Epistatic QTLs_v3.0.xlsx", "Epistatic_yield [named-QTL rows]"): [
+        "S.No.", "Species", "Trait", "Parameter",
+        "QTL 1", "Chromosome 1", "Position/Interval QTL1", "Associated Markers QTL1",
+        "QTL 2", "Chromosome 2", "Position/Interval QTL2", "Associated Markers QTL2",
+        "PVE", "Link to reference",
+    ],
+    # Epistatic QTLs_v3.0.xlsx :: Zn Epistatic QTL: same pattern as
+    # Epistatic_yield (Cross/Population/Method inserted before the QTL1/QTL2
+    # data), confirmed against row 1: Species/Trait/Parameter are correct,
+    # then Cross='Xiaoyan 54 x Jing 411', Population='F11 RIL 184',
+    # Method='CIM', QTL1 name='EQZn-2A1', Chromosome1='2A', Position1='0',
+    # Markers1='Xgwm501-Xgwm156.2'; QTL2 is not populated in this sheet.
+    ("Epistatic QTLs_v3.0.xlsx", "Zn Epistatic QTL"): [
+        "Species", "Trait", "Parameter", "Cross", "Population/Germplasm", "Method",
+        "QTL 1", "Chromosome 1", "Position/Interval QTL1", "Associated Markers QTL1",
+        "QTL 2", "Chromosome 2", "Link to reference", "Reference",
+    ],
+    # Epistatic QTLs_v3.0.xlsx :: Epistatic_nematode resistance: header
+    # LABELS are all individually correct (Cross/Population/Method/Trait/
+    # Parameter genuinely hold that data, just in a non-standard column
+    # order), but the QTL2-side headers ("Chromosome of QTL2", "Position/
+    # Interval in cM/bp", "Associated Markers to QTL 2") don't match
+    # extract_epistatic's ch2i/ps2i/am2i candidate wording, so those 3
+    # fields were silently coming back empty. Renamed to the exact wording
+    # those candidates look for; every other column is left as-is (already
+    # correct).
+    ("Epistatic QTLs_v3.0.xlsx", "Epistatic_nematode resistance"): [
+        "S_No", "Species", "Cross", "Population/Germplasm", "Method", "Trait", "Parameter",
+        "QTL 1", "Chromosome 1", "Position/Interval QTL1", "Associated Markers QTL1",
+        "QTL 2", "Chromosome 2", "Position/Interval QTL2", "Associated Markers QTL2",
+        "PVE/R2", "Candidate genes", "Link to reference", "Full Reference",
+    ],
 }
 
 
-def apply_header_override(fname, headers):
-    override = HEADER_OVERRIDE.get(fname)
+def apply_header_override(fname, shname, headers):
+    override = SHEET_HEADER_OVERRIDE.get((fname, shname)) or HEADER_OVERRIDE.get(fname)
     if override is None:
         return headers
     # Preserve the original length (trailing/extra blank columns, if any)
@@ -239,6 +299,38 @@ def apply_header_override(fname, headers):
     if len(fixed) < len(headers):
         fixed += headers[len(fixed):]
     return fixed[:len(headers)] if len(fixed) > len(headers) else fixed
+
+
+# Epistatic QTLs_v3.0.xlsx :: Epistatic_yield mixes TWO unrelated row
+# layouts in one sheet (different source papers pasted in over time, using
+# different conventions), not a single consistent shift:
+#   - "named-QTL" rows (e.g. col4="QTgw.cerz-1AS.1"): a Q-name matching
+#     standard wheat QTL nomenclature (chromosome+arm suffix). These rows
+#     have NO cross/population/method data; col4-11 hold QTL1's and QTL2's
+#     name/chromosome/position/markers back to back (SHEET_HEADER_OVERRIDE
+#     above handles these once split out).
+#   - "cross-description" rows (majority, e.g. col4="TAM113 and Gallagher"):
+#     a real cross description, and the ORIGINAL header is already correct
+#     for these (col7's ad-hoc environment-code "QTL name", col8
+#     chromosome, col9 position, col11 physical markers) - these only have
+#     ONE locus's data in this sheet, not a QTL1/QTL2 pair, so QTL2 stays
+#     empty for them; that's a real limitation of the source data, not a
+#     bug to paper over.
+# A single static header cannot describe both, so this sheet is split by
+# row into two pseudo-sheets, each processed with the header that's
+# actually correct for its rows.
+EPISTATIC_YIELD_QTL_PATTERN = re.compile(r"-[1-7][ABD][LS]?(?:[._-]|$)", re.I)
+
+
+def split_epistatic_yield(headers, body):
+    named, cross_desc = [], []
+    for row in body:
+        v = str(row[4]) if len(row) > 4 and row[4] is not None else ""
+        (named if EPISTATIC_YIELD_QTL_PATTERN.search(v) else cross_desc).append(row)
+    return [
+        ("Epistatic_yield [named-QTL rows]", headers, named),
+        ("Epistatic_yield [cross-description rows]", headers, cross_desc),
+    ]
 
 
 def load_sheets(fpath):
@@ -259,7 +351,7 @@ def load_sheets(fpath):
                 print(f"  ERROR reading CSV {fname}: {e}")
                 return
         headers, body = rows_from_list(rows)
-        yield fname, apply_header_override(fname, headers), body
+        yield fname, apply_header_override(fname, fname, headers), body
         return
     if ext == ".xls":
         try:
@@ -270,7 +362,7 @@ def load_sheets(fpath):
         for sheet in book.sheets():
             rows = [sheet.row_values(r) for r in range(sheet.nrows)]
             headers, body = rows_from_list(rows)
-            yield sheet.name, apply_header_override(fname, headers), body
+            yield sheet.name, apply_header_override(fname, sheet.name, headers), body
         return
     # .xlsx
     try:
@@ -282,7 +374,11 @@ def load_sheets(fpath):
         ws = wb[shname]
         rows = list(ws.iter_rows(values_only=True))
         headers, body = rows_from_list(rows)
-        yield shname, apply_header_override(fname, headers), body
+        if fname == "Epistatic QTLs_v3.0.xlsx" and shname == "Epistatic_yield":
+            for sub_name, sub_headers, sub_body in split_epistatic_yield(headers, body):
+                yield sub_name, apply_header_override(fname, sub_name, sub_headers), sub_body
+            continue
+        yield shname, apply_header_override(fname, shname, headers), body
     wb.close()
 
 def rows_from_list(rows):
