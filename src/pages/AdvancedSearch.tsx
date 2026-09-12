@@ -5,6 +5,7 @@ import { Filter, RotateCcw } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import DataTable from '../components/DataTable'
 import AsyncBoundary from '../components/AsyncBoundary'
+import GlossaryHeader from '../components/GlossaryHeader'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord } from '../lib/types'
 import { TRAIT_CATEGORIES, normalizeTrait } from '../lib/map'
@@ -77,14 +78,14 @@ function speciesMatches(fieldValue: string, selected: string): boolean {
 
 const columns: ColumnDef<QTLRecord, any>[] = [
   { accessorKey: 'species', header: 'Species' },
-  { accessorKey: 'trait', header: 'Trait' },
-  { accessorKey: 'parameter', header: 'Parameter' },
-  { accessorKey: 'qtl_name', header: 'QTL / MTA' },
-  { accessorKey: 'chromosome', header: 'Chr' },
-  { accessorKey: 'position_interval', header: 'Position / Interval' },
-  { accessorKey: 'pve', header: 'PVE / R²' },
-  { accessorKey: 'candidate_gene', header: 'Cand. Gene' },
-  { accessorKey: 'method', header: 'Method' },
+  { accessorKey: 'trait', header: () => <GlossaryHeader label="Trait" term="trait" /> },
+  { accessorKey: 'parameter', header: () => <GlossaryHeader label="Parameter" term="parameter" /> },
+  { accessorKey: 'qtl_name', header: () => <GlossaryHeader label="QTL / MTA" term="mta" /> },
+  { accessorKey: 'chromosome', header: () => <GlossaryHeader label="Chr" term="chromosome" /> },
+  { accessorKey: 'position_interval', header: () => <GlossaryHeader label="Position / Interval" term="position_interval" /> },
+  { accessorKey: 'pve', header: () => <GlossaryHeader label="PVE / R²" term="pve" /> },
+  { accessorKey: 'candidate_gene', header: () => <GlossaryHeader label="Cand. Gene" term="candidate_gene" /> },
+  { accessorKey: 'method', header: () => <GlossaryHeader label="Method" term="method" /> },
   {
     accessorKey: 'reference', header: 'Reference',
     cell: ({ row }) => {

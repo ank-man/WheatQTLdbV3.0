@@ -145,7 +145,7 @@ export default function Home() {
               <Link to="/data" className="btn-primary"><Database className="h-4 w-4" /> Browse data</Link>
               <Link to="/statistics" className="btn"><BarChart3 className="h-4 w-4" /> Statistics</Link>
               <Link to="/map" className="btn"><Layers className="h-4 w-4" /> Genome map</Link>
-              <a href="https://github.com/ank-man/WheatQTLdbV3.0" target="_blank" rel="noreferrer" className="btn"><Github className="h-4 w-4" /> Star on GitHub</a>
+              <a href="https://github.com/ank-man/WheatQTLdbV3.0" target="_blank" rel="noreferrer" className="btn"><Github className="h-4 w-4" /> View source code</a>
             </div>
           </div>
 

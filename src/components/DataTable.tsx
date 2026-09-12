@@ -9,7 +9,7 @@ import {
   SortingState,
   useReactTable,
 } from '@tanstack/react-table'
-import { ArrowUpDown, ChevronLeft, ChevronRight, Download, Search } from 'lucide-react'
+import { ArrowUpDown, ChevronLeft, ChevronRight, Download, HelpCircle, Search } from 'lucide-react'
 import { downloadCSV } from '../lib/csv'
 
 interface Props<T extends object> {
@@ -64,6 +64,7 @@ export default function DataTable<T extends object>({
           />
         </div>
         <span className="badge">{filtered.length.toLocaleString()} rows</span>
+        <span className="hidden text-xs text-wheat-500 sm:inline">Hover a column's <HelpCircle className="inline h-3 w-3 align-text-bottom" /> for its definition</span>
         <button
           className="btn"
           onClick={() => downloadCSV(filename, filtered)}

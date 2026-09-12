@@ -2,23 +2,24 @@ import { ColumnDef } from '@tanstack/react-table'
 import PageHero from '../components/PageHero'
 import DataTable from '../components/DataTable'
 import AsyncBoundary from '../components/AsyncBoundary'
+import GlossaryHeader from '../components/GlossaryHeader'
 import { useCSV } from '../lib/useCSV'
 import { EpistaticRecord } from '../lib/types'
 
 const columns: ColumnDef<EpistaticRecord, any>[] = [
   { accessorKey: 'id', header: 'ID' },
   { accessorKey: 'species', header: 'Species' },
-  { accessorKey: 'trait', header: 'Trait' },
-  { accessorKey: 'parameter', header: 'Parameter' },
-  { accessorKey: 'qtl1', header: 'QTL 1' },
-  { accessorKey: 'chromosome1', header: 'Chr 1' },
-  { accessorKey: 'position_interval1', header: 'Pos 1' },
-  { accessorKey: 'qtl2', header: 'QTL 2' },
-  { accessorKey: 'chromosome2', header: 'Chr 2' },
-  { accessorKey: 'position_interval2', header: 'Pos 2' },
-  { accessorKey: 'lod', header: 'LOD' },
-  { accessorKey: 'pve', header: 'PVE / R²' },
-  { accessorKey: 'method', header: 'Method' },
+  { accessorKey: 'trait', header: () => <GlossaryHeader label="Trait" term="trait" /> },
+  { accessorKey: 'parameter', header: () => <GlossaryHeader label="Parameter" term="parameter" /> },
+  { accessorKey: 'qtl1', header: () => <GlossaryHeader label="QTL 1" term="epistatic" /> },
+  { accessorKey: 'chromosome1', header: () => <GlossaryHeader label="Chr 1" term="chromosome" /> },
+  { accessorKey: 'position_interval1', header: () => <GlossaryHeader label="Pos 1" term="position_interval" /> },
+  { accessorKey: 'qtl2', header: () => <GlossaryHeader label="QTL 2" term="epistatic" /> },
+  { accessorKey: 'chromosome2', header: () => <GlossaryHeader label="Chr 2" term="chromosome" /> },
+  { accessorKey: 'position_interval2', header: () => <GlossaryHeader label="Pos 2" term="position_interval" /> },
+  { accessorKey: 'lod', header: () => <GlossaryHeader label="LOD" term="lod" /> },
+  { accessorKey: 'pve', header: () => <GlossaryHeader label="PVE / R²" term="pve" /> },
+  { accessorKey: 'method', header: () => <GlossaryHeader label="Method" term="method" /> },
   {
     accessorKey: 'reference', header: 'Reference',
     cell: ({ row }) => {

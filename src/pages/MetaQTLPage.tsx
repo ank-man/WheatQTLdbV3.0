@@ -2,20 +2,21 @@ import { ColumnDef } from '@tanstack/react-table'
 import PageHero from '../components/PageHero'
 import DataTable from '../components/DataTable'
 import AsyncBoundary from '../components/AsyncBoundary'
+import GlossaryHeader from '../components/GlossaryHeader'
 import { useCSV } from '../lib/useCSV'
 import { MetaQTLRecord } from '../lib/types'
 
 const columns: ColumnDef<MetaQTLRecord, any>[] = [
   { accessorKey: 'id', header: 'ID' },
   { accessorKey: 'species', header: 'Species' },
-  { accessorKey: 'trait', header: 'Trait' },
-  { accessorKey: 'parameter', header: 'Parameter' },
-  { accessorKey: 'mqtl_name', header: 'MetaQTL' },
-  { accessorKey: 'chromosome', header: 'Chr' },
-  { accessorKey: 'position_interval', header: 'Position / Interval' },
-  { accessorKey: 'associated_markers', header: 'Markers' },
-  { accessorKey: 'pve', header: 'PVE / R²' },
-  { accessorKey: 'candidate_gene', header: 'Cand. Gene' },
+  { accessorKey: 'trait', header: () => <GlossaryHeader label="Trait" term="trait" /> },
+  { accessorKey: 'parameter', header: () => <GlossaryHeader label="Parameter" term="parameter" /> },
+  { accessorKey: 'mqtl_name', header: () => <GlossaryHeader label="MetaQTL" term="metaqtl" /> },
+  { accessorKey: 'chromosome', header: () => <GlossaryHeader label="Chr" term="chromosome" /> },
+  { accessorKey: 'position_interval', header: () => <GlossaryHeader label="Position / Interval" term="position_interval" /> },
+  { accessorKey: 'associated_markers', header: () => <GlossaryHeader label="Markers" term="associated_markers" /> },
+  { accessorKey: 'pve', header: () => <GlossaryHeader label="PVE / R²" term="pve" /> },
+  { accessorKey: 'candidate_gene', header: () => <GlossaryHeader label="Cand. Gene" term="candidate_gene" /> },
   {
     accessorKey: 'reference', header: 'Reference',
     cell: ({ row }) => {

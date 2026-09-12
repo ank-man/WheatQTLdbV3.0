@@ -1,6 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
+import About from './pages/About'
+import FAQ from './pages/FAQ'
+import Tutorial from './pages/Tutorial'
 import Statistics from './pages/Statistics'
 import Team from './pages/Team'
 import Contact from './pages/Contact'
@@ -20,6 +23,9 @@ export default function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/tutorial" element={<Tutorial />} />
         <Route path="/statistics" element={<Statistics />} />
         <Route path="/data" element={<DataIndex />} />
         <Route path="/data/qtl" element={<QTLPage />} />

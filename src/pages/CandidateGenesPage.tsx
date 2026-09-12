@@ -2,16 +2,17 @@ import { ColumnDef } from '@tanstack/react-table'
 import PageHero from '../components/PageHero'
 import DataTable from '../components/DataTable'
 import AsyncBoundary from '../components/AsyncBoundary'
+import GlossaryHeader from '../components/GlossaryHeader'
 import { useCSV } from '../lib/useCSV'
 import { CandidateGeneRecord } from '../lib/types'
 
 const columns: ColumnDef<CandidateGeneRecord, any>[] = [
   { accessorKey: 'id', header: 'ID' },
-  { accessorKey: 'gene', header: 'Gene' },
-  { accessorKey: 'chromosome', header: 'Chr' },
-  { accessorKey: 'position', header: 'Position' },
-  { accessorKey: 'trait', header: 'Trait' },
-  { accessorKey: 'qtl_name', header: 'QTL' },
+  { accessorKey: 'gene', header: () => <GlossaryHeader label="Gene" term="candidate_gene" /> },
+  { accessorKey: 'chromosome', header: () => <GlossaryHeader label="Chr" term="chromosome" /> },
+  { accessorKey: 'position', header: () => <GlossaryHeader label="Position" term="position_interval" /> },
+  { accessorKey: 'trait', header: () => <GlossaryHeader label="Trait" term="trait" /> },
+  { accessorKey: 'qtl_name', header: () => <GlossaryHeader label="QTL" term="qtl" /> },
   {
     accessorKey: 'reference', header: 'Reference',
     cell: ({ row }) => {
