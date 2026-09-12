@@ -76,10 +76,10 @@ const resources: Resource[] = [
 ]
 
 const categoryColors: Record<Resource['category'], string> = {
-  Database: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-200',
-  Browser: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-200',
-  Programme: 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-200',
-  Portal: 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-200',
+  Database: 'bg-emerald-100 text-emerald-800',
+  Browser: 'bg-blue-100 text-blue-800',
+  Programme: 'bg-amber-100 text-amber-800',
+  Portal: 'bg-purple-100 text-purple-800',
 }
 
 function ResourceCard({ resource }: { resource: Resource }) {
@@ -88,11 +88,11 @@ function ResourceCard({ resource }: { resource: Resource }) {
       href={resource.url}
       target="_blank"
       rel="noreferrer"
-      className="group relative flex flex-col overflow-hidden rounded-xl border border-wheat-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-wheat-400 dark:border-ink-700 dark:bg-ink-800/50"
+      className="group relative flex flex-col overflow-hidden rounded-xl border border-wheat-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-wheat-400"
     >
       <div className="mb-4 flex items-start justify-between">
         <div className="flex items-center gap-3">
-          <div className="flex h-14 w-20 items-center justify-center overflow-hidden rounded-lg bg-wheat-50 p-2 dark:bg-ink-900/50">
+          <div className="flex h-14 w-20 items-center justify-center overflow-hidden rounded-lg bg-wheat-50 p-2">
             <img
               src={resource.logo}
               alt={`${resource.name} logo`}
@@ -108,7 +108,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
             </div>
           </div>
           <div>
-            <h3 className="font-semibold text-wheat-900 group-hover:text-wheat-700 dark:text-wheat-50 dark:group-hover:text-wheat-300">
+            <h3 className="font-semibold text-wheat-900 group-hover:text-wheat-700">
               {resource.name}
             </h3>
             <span className={`mt-1 inline-block rounded-full px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide ${categoryColors[resource.category]}`}>
@@ -116,9 +116,9 @@ function ResourceCard({ resource }: { resource: Resource }) {
             </span>
           </div>
         </div>
-        <ExternalLink className="h-4 w-4 text-wheat-400 transition-colors group-hover:text-wheat-600 dark:text-wheat-600 dark:group-hover:text-wheat-400" />
+        <ExternalLink className="h-4 w-4 text-wheat-400 transition-colors group-hover:text-wheat-600" />
       </div>
-      <p className="text-sm leading-relaxed text-wheat-700 dark:text-wheat-300">
+      <p className="text-sm leading-relaxed text-wheat-700">
         {resource.desc}
       </p>
     </a>
@@ -138,8 +138,8 @@ export default function UsefulLinks() {
 
       <section>
         <div className="mb-6 flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-wheat-900 dark:text-wheat-50">Partner Resources</h2>
-          <span className="text-sm text-wheat-600 dark:text-wheat-400">{resources.length} resources</span>
+          <h2 className="text-lg font-semibold text-wheat-900">Partner Resources</h2>
+          <span className="text-sm text-wheat-600">{resources.length} resources</span>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -149,11 +149,11 @@ export default function UsefulLinks() {
         </div>
       </section>
 
-      <section className="rounded-xl border border-wheat-200 bg-gradient-to-br from-wheat-50 to-white p-6 dark:border-ink-700 dark:from-ink-900/30 dark:to-ink-900/10">
-        <h3 className="mb-3 font-semibold text-wheat-900 dark:text-wheat-50">Suggest a Resource</h3>
-        <p className="text-sm text-wheat-700 dark:text-wheat-300">
+      <section className="rounded-xl border border-wheat-200 bg-white p-6">
+        <h3 className="mb-3 font-semibold text-wheat-900">Suggest a Resource</h3>
+        <p className="text-sm text-wheat-700">
           Know a wheat genomics resource we should list?{' '}
-          <a href="/contact" className="font-medium underline hover:text-wheat-900 dark:hover:text-wheat-50">
+          <a href="/contact" className="font-medium underline hover:text-wheat-900">
             Contact us
           </a>{' '}
           with the URL and a brief description.

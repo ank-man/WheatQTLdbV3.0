@@ -24,19 +24,16 @@ export default function PageHero({
 
   if (variant === 'side') {
     return (
-      <section className="relative -mx-4 -mt-8 mb-10 overflow-hidden border-b border-wheat-200 dark:border-ink-700">
-        <div className="absolute inset-0 bg-grid opacity-50 dark:opacity-25" />
-        <div className="absolute inset-0 bg-radial-glow" />
+      <section className="relative -mx-4 -mt-8 mb-10 overflow-hidden border-b border-wheat-200 bg-white">
         <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 md:grid-cols-[1.3fr_1fr] md:py-16">
           <div className="animate-fade-up">
-            {eyebrow && <div className="text-xs font-semibold uppercase tracking-[0.2em] text-wheat-600 dark:text-wheat-300">{eyebrow}</div>}
-            <h1 className="mt-2 font-serif text-3xl font-bold tracking-tight text-wheat-900 dark:text-wheat-50 sm:text-5xl">{title}</h1>
-            {subtitle && <p className="mt-3 max-w-2xl text-wheat-700 dark:text-wheat-200">{subtitle}</p>}
+            {eyebrow && <div className="text-xs font-semibold uppercase tracking-[0.2em] text-wheat-600">{eyebrow}</div>}
+            <h1 className="mt-2 font-serif text-3xl font-bold tracking-tight text-wheat-900 sm:text-5xl">{title}</h1>
+            {subtitle && <p className="mt-3 max-w-2xl text-wheat-700">{subtitle}</p>}
             {children && <div className="mt-5 flex flex-wrap gap-2">{children}</div>}
           </div>
-          <div className="relative hidden h-56 overflow-hidden rounded-2xl border border-wheat-200 shadow-lg dark:border-ink-700 md:block">
+          <div className="relative hidden h-56 overflow-hidden rounded-2xl border border-wheat-200 shadow-sm md:block">
             <img src={src} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-tr from-wheat-900/30 via-transparent to-transparent" />
           </div>
         </div>
       </section>
@@ -44,15 +41,11 @@ export default function PageHero({
   }
 
   return (
-    <section className="relative -mx-4 -mt-8 mb-10 overflow-hidden border-b border-wheat-200 dark:border-ink-700">
-      <img src={src} alt="" loading="eager" className="absolute inset-0 h-full w-full object-cover opacity-30 dark:opacity-15" />
-      <div className="absolute inset-0 bg-grid opacity-60 dark:opacity-25" />
-      <div className="absolute inset-0 bg-radial-glow" />
-      <div className="absolute inset-0 bg-gradient-to-b from-wheat-50/60 via-wheat-50/85 to-wheat-50 dark:from-ink-900/50 dark:via-ink-900/85 dark:to-ink-900" />
+    <section className="relative -mx-4 -mt-8 mb-10 overflow-hidden border-b border-wheat-200 bg-white">
       <div className="relative mx-auto max-w-7xl px-4 py-14 sm:py-20 animate-fade-up">
-        {eyebrow && <div className="text-xs font-semibold uppercase tracking-[0.2em] text-wheat-600 dark:text-wheat-300">{eyebrow}</div>}
-        <h1 className="mt-2 max-w-4xl text-3xl font-extrabold tracking-tight text-wheat-900 dark:text-wheat-50 sm:text-5xl">{title}</h1>
-        {subtitle && <p className="mt-3 max-w-3xl text-wheat-700 dark:text-wheat-200">{subtitle}</p>}
+        {eyebrow && <div className="text-xs font-semibold uppercase tracking-[0.2em] text-wheat-600">{eyebrow}</div>}
+        <h1 className="mt-2 max-w-4xl text-3xl font-extrabold tracking-tight text-wheat-900 sm:text-5xl">{title}</h1>
+        {subtitle && <p className="mt-3 max-w-3xl text-wheat-700">{subtitle}</p>}
         {children && <div className="mt-5 flex flex-wrap gap-2">{children}</div>}
       </div>
     </section>

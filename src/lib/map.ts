@@ -15,7 +15,7 @@ export const TRAIT_CATEGORIES = [
   'Herbicide tolerance',
   'Developmental',
   'Morphological',
-  'N-use efficiency',
+  'Nitrogen Use efficiency',
   'Physiological traits',
   'Insect resistance',
   'Viral resistance',
@@ -56,7 +56,7 @@ export const TRAIT_COLORS: Record<TraitCategory, string> = {
   'Herbicide tolerance': '#5c6bc0',
   Developmental: '#0f9178',
   Morphological: '#a05a2c',
-  'N-use efficiency': '#0277bd',
+  'Nitrogen Use efficiency': '#0277bd',
   'Physiological traits': '#5e35b1',
   'Insect resistance': '#c2185b',
   'Viral resistance': '#7cb342',
@@ -134,9 +134,9 @@ export function chromosomeLength(chromosome: string): number {
 // `currentColor` + a Tailwind text-* class keeps this responsive to the
 // light/dark theme without JS.
 export const GENOME_COLOR_CLASS: Record<string, string> = {
-  A: 'text-[#e8a33d] dark:text-[#8a6220]',
-  B: 'text-[#4f8fc0] dark:text-[#2f5878]',
-  D: 'text-[#5fa777] dark:text-[#355e42]',
+  A: 'text-[#e8a33d]',
+  B: 'text-[#4f8fc0]',
+  D: 'text-[#5fa777]',
 }
 
 export function genomeOf(chromosome: string): string {
@@ -244,7 +244,7 @@ export function normalizeTrait(record: QTLRecord | MetaQTLRecord): TraitCategory
   // below, so it's checked first even though both mention the same elements.
   // "nue" is matched as a whole word - as a bare substring it also matches
   // inside unrelated words ("continue", "genuine", "revenue", ...).
-  if (c.includes('use efficiency') || c.includes('n-use') || c.includes('n use') || hasWord(c, 'nue') || c.includes('nitrogen')) return 'N-use efficiency'
+  if (c.includes('use efficiency') || c.includes('n-use') || c.includes('n use') || hasWord(c, 'nue') || c.includes('nitrogen')) return 'Nitrogen Use efficiency'
   // "bioforitif" is a known source-data typo for "biofortification" (letters
   // transposed: ...bioFORITIFcation instead of ...bioforTIFIcation).
   if (c.includes('zinc') || c.includes('iron') || c.includes('selenium') || c.includes('biofort') || c.includes('bioforitif') || c.includes('mineral') || c.includes('cadmium') || c.includes('calcium') || c.includes('magnesium') || c.includes('sulph') || c.includes('sulfur') || c.includes('manganese') || c.includes('copper') || c.includes('nickel') || c.includes('molybden') || c.includes('phosphor') || c.includes('potassium') || c.includes('cobalt') || c.includes('rubidium') || c.includes('lead') || c.includes('strontium') || c.includes('arsenic') || c.includes('sodium') || c.includes('boron') || c.includes('lithium') || c.includes('barium') || c.includes('platinum') || c.includes('co ') || c.includes('mo ') || c.includes('grain fe') || c.includes('grain zn')) return 'Biofortification'

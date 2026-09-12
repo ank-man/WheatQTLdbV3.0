@@ -194,7 +194,7 @@ export default function IdeogramMap({
     return (
       <div className="card flex flex-col items-center justify-center py-16 text-center">
         <MapIcon className="h-10 w-10 text-wheat-400" />
-        <p className="mt-3 text-wheat-700 dark:text-wheat-300">No chromosomes match the current genome filter.</p>
+        <p className="mt-3 text-wheat-700">No chromosomes match the current genome filter.</p>
       </div>
     )
   }
@@ -207,15 +207,15 @@ export default function IdeogramMap({
       <div className="mb-4 flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between">
         <div className="flex items-center gap-2">
           <MapIcon className="h-5 w-5 text-wheat-600" />
-          <h3 className="text-lg font-semibold text-wheat-900 dark:text-wheat-50">Ideogram view</h3>
-          <span className="text-sm text-wheat-600 dark:text-wheat-400">
+          <h3 className="text-lg font-semibold text-wheat-900">Ideogram view</h3>
+          <span className="text-sm text-wheat-600">
             — {chromosomes.length} chromosome{chromosomes.length === 1 ? '' : 's'}, coloured by subgenome
           </span>
         </div>
         <div className="flex flex-col items-start gap-2 lg:items-end">
-          <div className="text-sm text-wheat-700 dark:text-wheat-300">
-            <span className="font-semibold text-wheat-900 dark:text-wheat-100">{qtlCount.toLocaleString()}</span> QTLs ·{' '}
-            <span className="font-semibold text-wheat-900 dark:text-wheat-100">{metaCount.toLocaleString()}</span> MetaQTLs
+          <div className="text-sm text-wheat-700">
+            <span className="font-semibold text-wheat-900">{qtlCount.toLocaleString()}</span> QTLs ·{' '}
+            <span className="font-semibold text-wheat-900">{metaCount.toLocaleString()}</span> MetaQTLs
           </div>
           <div className="flex flex-wrap gap-x-3 gap-y-1 text-[10px] lg:justify-end">
             {TRAIT_CATEGORIES.map((trait) => (
@@ -258,13 +258,13 @@ export default function IdeogramMap({
                     y2={y}
                     stroke="currentColor"
                     strokeWidth={0.75}
-                    className="text-wheat-400 dark:text-wheat-500"
+                    className="text-wheat-400"
                   />
                   <text
                     x={margin.left - 11}
                     y={y + 3}
                     textAnchor="end"
-                    className="fill-current text-[9px] text-wheat-500 dark:text-wheat-400"
+                    className="fill-current text-[9px] text-wheat-500"
                   >
                     {mb}
                   </text>
@@ -275,7 +275,7 @@ export default function IdeogramMap({
               x={margin.left - 11}
               y={margin.top - 10}
               textAnchor="end"
-              className="fill-current text-[9px] font-semibold text-wheat-500 dark:text-wheat-400"
+              className="fill-current text-[9px] font-semibold text-wheat-500"
             >
               Mb
             </text>
@@ -292,8 +292,8 @@ export default function IdeogramMap({
             const cyBottom = rowTop + h * (1 - cPos) + 6
             const genome = genomeOf(chr)
             const colorClass = genomeColor
-              ? GENOME_COLOR_CLASS[genome] ?? 'text-wheat-400 dark:text-wheat-600'
-              : 'text-wheat-300 dark:text-wheat-600'
+              ? GENOME_COLOR_CLASS[genome] ?? 'text-wheat-400'
+              :'text-wheat-300'
             const qtlBins = qtlDensity.byChr.get(chr) ?? []
             const metaqtls = filtered.filter((i): i is MetaQTLItem => i.type === 'metaqtl' && i.chromosome === chr)
             // Shared label column for both QTL and MetaQTL name labels, past
@@ -384,7 +384,7 @@ export default function IdeogramMap({
                               <text
                                 x={labelX}
                                 y={yMid + 2.5}
-                                className="fill-current text-[7px] text-wheat-700 dark:text-wheat-300"
+                                className="fill-current text-[7px] text-wheat-700"
                               >
                                 {name}
                               </text>
@@ -444,7 +444,7 @@ export default function IdeogramMap({
                             <text
                               x={labelX}
                               y={yMid + 2.5}
-                              className="fill-current text-[7px] text-wheat-700 dark:text-wheat-300"
+                              className="fill-current text-[7px] text-wheat-700"
                             >
                               {name}
                             </text>
@@ -459,7 +459,7 @@ export default function IdeogramMap({
                     x={cx}
                     y={margin.top + maxBarHeight + 18}
                     textAnchor="middle"
-                    className="fill-current text-xs font-semibold text-wheat-900 dark:text-wheat-50"
+                    className="fill-current text-xs font-semibold text-wheat-900"
                   >
                     {chr}
                   </text>
@@ -470,28 +470,28 @@ export default function IdeogramMap({
         </svg>
       </div>
 
-      <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-wheat-200 pt-4 text-xs dark:border-wheat-700">
+      <div className="mt-4 flex flex-wrap items-center gap-4 border-t border-wheat-200 pt-4 text-xs">
         {genomeColor &&
           (['A', 'B', 'D'] as const).map((g) => (
-            <span key={g} className="inline-flex items-center gap-1.5 text-wheat-600 dark:text-wheat-400">
+            <span key={g} className="inline-flex items-center gap-1.5 text-wheat-600">
               <span className={`h-2.5 w-2.5 rounded-full ${GENOME_COLOR_CLASS[g]}`} style={{ backgroundColor: 'currentColor' }} />
               {g} genome
             </span>
           ))}
-        <span className="text-wheat-500 dark:text-wheat-500">
+        <span className="text-wheat-500">
           Bars: real physical length{genomeColor ? ', coloured by subgenome' : ''}. Beside each bar: QTL density strip (length ∝ local count) and MetaQTL brackets, both coloured by trait.
         </span>
       </div>
 
       {hover && (
         <div
-          className="fixed z-50 max-w-xs rounded-xl border border-wheat-200 bg-white p-3 text-xs shadow-xl dark:border-wheat-700 dark:bg-wheat-900"
+          className="fixed z-50 max-w-xs rounded-xl border border-wheat-200 bg-white p-3 text-xs shadow-xl"
           style={{ left: hover.x + 14, top: hover.y + 14 }}
         >
           {hover.kind === 'chr' && (
             <>
-              <div className="font-semibold text-wheat-900 dark:text-wheat-50">Chromosome {hover.chr}</div>
-              <div className="text-wheat-700 dark:text-wheat-300">
+              <div className="font-semibold text-wheat-900">Chromosome {hover.chr}</div>
+              <div className="text-wheat-700">
                 {(chromosomeLength(hover.chr) / 1_000_000).toFixed(1)} Mb · {genomeOf(hover.chr)} genome
               </div>
             </>
@@ -504,7 +504,7 @@ export default function IdeogramMap({
               >
                 {hover.item.type === 'qtl' ? 'QTL' : 'MetaQTL'} · {hover.item.name}
               </div>
-              <div className="space-y-0.5 text-wheat-700 dark:text-wheat-300">
+              <div className="space-y-0.5 text-wheat-700">
                 <div><span className="font-medium">Chromosome:</span> {hover.item.chromosome}</div>
                 <div><span className="font-medium">Trait:</span> {hover.item.trait}</div>
                 {hover.item.type === 'metaqtl' && (

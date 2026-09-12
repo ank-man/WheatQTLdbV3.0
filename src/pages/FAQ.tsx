@@ -55,7 +55,7 @@ export default function FAQ() {
 function Item({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className="rounded-lg border border-wheat-200 bg-white dark:border-ink-700 dark:bg-ink-800">
+    <div className="rounded-lg border border-wheat-200 bg-white">
       <button
         className="flex w-full items-center justify-between px-4 py-3 text-left font-medium"
         onClick={() => setOpen(!open)}
@@ -63,7 +63,7 @@ function Item({ q, a }: { q: string; a: string }) {
         <span>{q}</span>
         <ChevronDown className={`h-4 w-4 transition ${open ? 'rotate-180' : ''}`} />
       </button>
-      {open && <div className="border-t border-wheat-200 px-4 py-3 text-sm text-wheat-700 dark:border-ink-700 dark:text-wheat-200">{a}</div>}
+      {open && <div className="border-t border-wheat-200 px-4 py-3 text-sm text-wheat-700">{a}</div>}
     </div>
   )
 }

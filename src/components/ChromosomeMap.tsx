@@ -52,9 +52,6 @@ export default function ChromosomeMap({
   const containerRef = useRef<HTMLDivElement>(null)
   const [width, setWidth] = useState(960)
   const [hover, setHover] = useState<HoverInfo | null>(null)
-  const [isDark, setIsDark] = useState(() =>
-    typeof document !== 'undefined' ? document.documentElement.classList.contains('dark') : false
-  )
 
   useEffect(() => {
     const el = containerRef.current
@@ -68,13 +65,6 @@ export default function ChromosomeMap({
       ro.disconnect()
       window.removeEventListener('resize', update)
     }
-  }, [])
-
-  useEffect(() => {
-    const el = document.documentElement
-    const observer = new MutationObserver(() => setIsDark(el.classList.contains('dark')))
-    observer.observe(el, { attributes: true, attributeFilter: ['class'] })
-    return () => observer.disconnect()
   }, [])
 
   const chromosomes = useMemo(() => sortedChromosomes(items), [items])
@@ -220,8 +210,8 @@ export default function ChromosomeMap({
       <div ref={containerRef} className="w-full">
         <div className="card flex flex-col items-center justify-center py-16 text-center">
           <MapIcon className="h-10 w-10 text-wheat-400" />
-          <p className="mt-3 text-wheat-700 dark:text-wheat-300">No QTLs or MetaQTLs match the current filters.</p>
-          <p className="text-sm text-wheat-500 dark:text-wheat-400">Try clearing the search or trait filters.</p>
+          <p className="mt-3 text-wheat-700">No QTLs or MetaQTLs match the current filters.</p>
+          <p className="text-sm text-wheat-500">Try clearing the search or trait filters.</p>
         </div>
       </div>
     )
@@ -234,14 +224,14 @@ export default function ChromosomeMap({
           <div className="mb-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-center gap-2">
               <MapIcon className="h-5 w-5 text-wheat-600" />
-              <h3 className="text-lg font-semibold text-wheat-900 dark:text-wheat-50">Physical QTL Map</h3>
+              <h3 className="text-lg font-semibold text-wheat-900">Physical QTL Map</h3>
             </div>
             <div className="flex flex-wrap items-center gap-4 text-sm">
-              <div className="text-wheat-700 dark:text-wheat-300">
-                <span className="font-semibold text-wheat-900 dark:text-wheat-100">{qtlCount.toLocaleString()}</span> QTLs ·{' '}
-                <span className="font-semibold text-wheat-900 dark:text-wheat-100">{metaCount.toLocaleString()}</span>{' '}
+              <div className="text-wheat-700">
+                <span className="font-semibold text-wheat-900">{qtlCount.toLocaleString()}</span> QTLs ·{' '}
+                <span className="font-semibold text-wheat-900">{metaCount.toLocaleString()}</span>{' '}
                 MetaQTLs ·{' '}
-                <span className="font-semibold text-wheat-900 dark:text-wheat-100">{chromosomes.length}</span>{' '}
+                <span className="font-semibold text-wheat-900">{chromosomes.length}</span>{' '}
                 chromosomes
               </div>
               <div className="flex items-center gap-3">
@@ -276,20 +266,10 @@ export default function ChromosomeMap({
                 <stop offset="50%" stopColor="#efe4ca" />
                 <stop offset="100%" stopColor="#f3ead6" />
               </linearGradient>
-              <linearGradient id="chromFillDark" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#57534e" />
-                <stop offset="50%" stopColor="#44403c" />
-                <stop offset="100%" stopColor="#57534e" />
-              </linearGradient>
               <linearGradient id="centromereFill" x1="0" y1="0" x2="1" y2="0">
                 <stop offset="0%" stopColor="#d6c4a3" />
                 <stop offset="50%" stopColor="#e8d9b5" />
                 <stop offset="100%" stopColor="#d6c4a3" />
-              </linearGradient>
-              <linearGradient id="centromereFillDark" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#44403c" />
-                <stop offset="50%" stopColor="#57534e" />
-                <stop offset="100%" stopColor="#44403c" />
               </linearGradient>
               {chromosomes.map((chr) => (
                 <linearGradient id={`rodHeat-${chr}`} key={chr} x1="0" y1="0" x2="0" y2="1">
@@ -312,7 +292,7 @@ export default function ChromosomeMap({
                   y2={y}
                   stroke="currentColor"
                   strokeOpacity={0.06}
-                  className="text-wheat-900 dark:text-wheat-100"
+                  className="text-wheat-900"
                   strokeDasharray="3 3"
                 />
               )
@@ -327,7 +307,7 @@ export default function ChromosomeMap({
                 y2={plotTop + maxChromHeight}
                 stroke="currentColor"
                 strokeWidth={1}
-                className="text-wheat-400 dark:text-wheat-500"
+                className="text-wheat-400"
               />
               {Array.from({ length: Math.ceil(maxChromHeight / PX_PER_MB / 200) + 1 }).map((_, i) => {
                 const mb = i * 200
@@ -342,7 +322,7 @@ export default function ChromosomeMap({
                       y2={y}
                       stroke="currentColor"
                       strokeWidth={1}
-                      className="text-wheat-400 dark:text-wheat-500"
+                      className="text-wheat-400"
                     />
                     <text x={margin.left - 24} y={y + 3} textAnchor="end" className="fill-current text-[9px] opacity-70">
                       {mb}Mb
@@ -387,7 +367,7 @@ export default function ChromosomeMap({
                         ry={half + 2}
                         fill={`url(#rodHeat-${chr})`}
                         stroke="currentColor"
-                        className="text-wheat-300 dark:text-wheat-600"
+                        className="text-wheat-300"
                         strokeWidth={1}
                         filter="url(#chromShadow)"
                       />
@@ -399,7 +379,7 @@ export default function ChromosomeMap({
                         y2={cMid}
                         stroke="currentColor"
                         strokeOpacity={0.4}
-                        className="text-wheat-800 dark:text-wheat-100"
+                        className="text-wheat-800"
                         strokeWidth={2}
                       />
                     </>
@@ -413,9 +393,9 @@ export default function ChromosomeMap({
                             Q ${cx + half} ${plotTop} ${cx + half} ${plotTop + half}
                             L ${cx + half} ${cyTop}
                             Z`}
-                        fill={isDark ? 'url(#chromFillDark)' : 'url(#chromFill)'}
+                        fill="url(#chromFill)"
                         stroke="currentColor"
-                        className="text-wheat-300 dark:text-wheat-600"
+                        className="text-wheat-300"
                         strokeWidth={1}
                         filter="url(#chromShadow)"
                       />
@@ -428,9 +408,9 @@ export default function ChromosomeMap({
                             Q ${cx + half} ${plotBottomChr} ${cx + half} ${plotBottomChr - half}
                             L ${cx + half} ${cyBottom}
                             Z`}
-                        fill={isDark ? 'url(#chromFillDark)' : 'url(#chromFill)'}
+                        fill="url(#chromFill)"
                         stroke="currentColor"
-                        className="text-wheat-300 dark:text-wheat-600"
+                        className="text-wheat-300"
                         strokeWidth={1}
                         filter="url(#chromShadow)"
                       />
@@ -441,9 +421,9 @@ export default function ChromosomeMap({
                         cy={cMid}
                         rx={half + 1.5}
                         ry={cyBottom - cyTop + 2}
-                        fill={isDark ? 'url(#centromereFillDark)' : 'url(#centromereFill)'}
+                        fill="url(#centromereFill)"
                         stroke="currentColor"
-                        className="text-wheat-300 dark:text-wheat-500"
+                        className="text-wheat-300"
                         strokeWidth={1}
                         filter="url(#chromShadow)"
                       />
@@ -588,8 +568,8 @@ export default function ChromosomeMap({
         </div>
 
         {/* Legend */}
-        <div className="mt-2 border-t border-wheat-200 pt-4 dark:border-ink-700">
-          <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-wheat-600 dark:text-wheat-400">
+        <div className="mt-2 border-t border-wheat-200 pt-4">
+          <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-wheat-600">
             <span>Trait categories</span>
             {focusedTrait && (
               <span className="rounded-full bg-wheat-600 px-2 py-0.5 text-[10px] font-medium text-white">
@@ -609,8 +589,8 @@ export default function ChromosomeMap({
                     focused
                       ? 'border-wheat-600 bg-wheat-600 text-white shadow-sm'
                       : active
-                        ? 'border-wheat-200 bg-white text-wheat-800 dark:border-ink-700 dark:bg-ink-800 dark:text-wheat-100'
-                        : 'border-transparent bg-wheat-100 text-wheat-400 opacity-60 dark:bg-ink-800 dark:text-wheat-500'
+                        ? 'border-wheat-200 bg-white text-wheat-800'
+                        :'border-transparent bg-wheat-100 text-wheat-400 opacity-60'
                   }`}
                   title={trait}
                 >
@@ -629,7 +609,7 @@ export default function ChromosomeMap({
       {/* Tooltip */}
       {hover && (
         <div
-          className="fixed z-50 max-w-xs rounded-xl border border-wheat-200 bg-white p-3 text-xs shadow-xl dark:border-ink-700 dark:bg-ink-900"
+          className="fixed z-50 max-w-xs rounded-xl border border-wheat-200 bg-white p-3 text-xs shadow-xl"
           style={{ left: hover.x + 14, top: hover.y + 14 }}
         >
           <div
@@ -638,7 +618,7 @@ export default function ChromosomeMap({
           >
             {hover.item.type === 'qtl' ? 'QTL' : 'MetaQTL'} · {hover.item.name}
           </div>
-          <div className="space-y-0.5 text-wheat-700 dark:text-wheat-300">
+          <div className="space-y-0.5 text-wheat-700">
             <div><span className="font-medium">Chromosome:</span> {hover.item.chromosome}</div>
             <div><span className="font-medium">Trait:</span> {hover.item.trait}</div>
             {hover.item.type === 'metaqtl' && (

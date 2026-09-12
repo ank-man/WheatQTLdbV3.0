@@ -24,12 +24,12 @@ export default function DataIndex() {
         {items.map(({ to, icon: Icon, title, desc }) => (
           <Link key={to} to={to} className="card block transition hover:border-wheat-400">
             <div className="flex items-center gap-3">
-              <div className="rounded-lg bg-wheat-100 p-2 text-wheat-700 dark:bg-ink-700 dark:text-wheat-100">
+              <div className="rounded-lg bg-wheat-100 p-2 text-wheat-700">
                 <Icon className="h-5 w-5" />
               </div>
               <div className="text-lg font-semibold">{title}</div>
             </div>
-            <p className="mt-2 text-sm text-wheat-700 dark:text-wheat-300">{desc}</p>
+            <p className="mt-2 text-sm text-wheat-700">{desc}</p>
           </Link>
         ))}
       </div>

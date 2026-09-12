@@ -19,49 +19,30 @@ const v3Team: Member[] = [
   {
     name: 'Ankush Sharma',
     role: 'Lead Developer & Maintainer (V3.0)',
-    affiliation: 'Open-source modernisation · Reproducible build system',
+    affiliation: 'University of Georgia, USA',
     github: 'ank-man',
     links: [{ label: 'Repository', url: 'https://github.com/ank-man/WheatQTLdbV3.0' }],
   },
+  {
+    name: 'Kalpana Singh',
+    role: 'Maintainer · Original V1/V2 Developer',
+    affiliation: 'Punjab Agricultural University, Ludhiana, India',
+    email: 'kalpana.iiita@gmail.com',
+  },
 ]
 
-// V1.0 / V2.0 founding team (CCS University, Meerut)
+// V1.0 / V2.0 founding faculty (CCS University, Meerut) plus faculty who
+// have since joined as maintainers/collaborators.
 const facultyLeads: Member[] = [
   { name: 'PK Gupta', role: 'Hony. Emeritus Professor & INSA Senior Scientist', affiliation: 'CCS University, Meerut', email: 'pkgupta36@gmail.com' },
+  { name: 'Sachin Rustgi', role: 'Associate Professor', affiliation: 'Clemson University, USA' },
   { name: 'Harindra Singh Balyan', role: 'Hony. Emeritus Professor & INSA Senior Scientist', affiliation: 'CCS University, Meerut', email: 'hsbalyan@gmail.com' },
   { name: 'Shailendra Sharma', role: 'Professor & Head', affiliation: 'CCS University, Meerut' },
   { name: 'Pradeep Kumar Sharma', role: 'Professor', affiliation: 'CCS University, Meerut' },
   { name: 'Shailendra S Gaurav', role: 'Professor', affiliation: 'CCS University, Meerut' },
   { name: 'Rahul Kumar', role: 'Associate Professor', affiliation: 'CCS University, Meerut' },
   { name: 'Sachin Kumar', role: 'Assistant Professor', affiliation: 'CCS University, Meerut' },
-]
-
-const researchers: Member[] = [
-  { name: 'Kalpana Singh', role: 'Research Associate · Original V1/V2 Developer', affiliation: 'CCS University, Meerut', email: 'kalpana.iiita@gmail.com' },
-  { name: 'Dinesh Kumar Saini', role: 'Research Scholar', affiliation: 'Punjab Agricultural University, Ludhiana' },
-  { name: 'Ritu Batra', role: 'DS Kothari PostDoc Fellow', affiliation: 'CCS University, Meerut' },
-  { name: 'Shiveta Sharma', role: 'BioCARe Women Scientist', affiliation: 'CCS University, Meerut' },
-  { name: 'Gautam Saripalli', role: 'Senior Research Fellow', affiliation: 'CCS University, Meerut' },
-  { name: 'Tinku Gautam', role: 'Senior Research Fellow', affiliation: 'CCS University, Meerut' },
-  { name: 'Jitendra Kumar', role: 'Research Associate', affiliation: 'NABI, Mohali' },
-  { name: 'Sunita Pal', role: 'Research Scholar', affiliation: 'CCS University, Meerut' },
-  { name: 'Parveen Malik', role: 'Research Scholar', affiliation: 'CCS University, Meerut' },
-  { name: 'Manoj Kumar', role: 'Senior Research Fellow', affiliation: 'CCS University, Meerut' },
-  { name: 'Hemant Sharma', role: 'Junior Research Fellow', affiliation: 'CCS University, Meerut' },
-  { name: 'Anuj Kumar', role: 'Junior Research Fellow', affiliation: 'CCS University, Meerut' },
-  { name: 'Kuldeep Kumar', role: 'Junior Research Fellow', affiliation: 'CCS University, Meerut' },
-  { name: 'Anshu Rani', role: 'Research Scholar', affiliation: 'CCS University, Meerut' },
-  { name: 'Anjali Verma', role: 'Research Scholar', affiliation: 'CCS University, Meerut' },
-  { name: 'Deepak Kumar', role: 'Research Scholar', affiliation: 'CCS University, Meerut' },
-  { name: 'Saksham Pundir', role: 'Research Scholar', affiliation: 'CCS University, Meerut' },
-  { name: 'Vikas Kumar Singh', role: 'DST Inspire Fellow', affiliation: 'CCS University, Meerut' },
-  { name: 'Sahadev Singh', role: 'DST Inspire Fellow', affiliation: 'CCS University, Meerut' },
-  { name: 'Rakhi', role: 'Junior Research Fellow', affiliation: 'CCS University, Meerut' },
-  { name: 'Irfat Jan', role: 'Junior Research Fellow', affiliation: 'CCS University, Meerut' },
-  { name: 'Jyoti', role: 'Research Scholar', affiliation: 'CCS University, Meerut' },
-  { name: 'Sourabh Kumar', role: 'Junior Research Fellow', affiliation: 'CCS University, Meerut' },
-  { name: 'Vivudh Pratap Singh', role: 'Junior Research Fellow', affiliation: 'CCS University, Meerut' },
-  { name: 'Deepti Chaturvedi', role: 'Research Scholar', affiliation: 'CCS University, Meerut' },
+  { name: 'Vinay Kumar', role: 'Assistant Professor', affiliation: 'CCS University, Meerut' },
 ]
 
 export default function Team() {
@@ -83,13 +64,19 @@ export default function Team() {
         <Grid members={facultyLeads} />
       </Section>
 
-      <Section title="Researchers, Curators & Developers" caption="Curated published literature into the structured QTL database.">
-        <Grid members={researchers} compact />
-      </Section>
+      <div className="card">
+        <h3 className="font-semibold text-wheat-900">Development &amp; data curation</h3>
+        <p className="mt-2 text-sm text-wheat-700">
+          Developed and maintained by Ankush Sharma, University of Georgia, USA and Kalpana Singh, Punjab
+          Agricultural University, Ludhiana, India. Data curated by Gautam Saripalli, Clemson University, USA and
+          Dinesh Saini, Texas Tech, USA. All the data was jointly collected by the students of the above faculty
+          members.
+        </p>
+      </div>
 
       <div className="card">
         <h3 className="font-semibold">Institution</h3>
-        <p className="mt-2 text-sm text-wheat-700 dark:text-wheat-300">
+        <p className="mt-2 text-sm text-wheat-700">
           The original WheatQTLdb was conceived and curated at the
           <strong> Department of Genetics &amp; Plant Breeding, Ch. Charan Singh University, Meerut, India</strong>.
         </p>
@@ -98,7 +85,7 @@ export default function Team() {
           <img className="h-32 w-full rounded-lg object-cover" alt="Wheat ears" src={img('wheat-ears.jpg')} loading="lazy" />
           <img className="h-32 w-full rounded-lg object-cover" alt="Crop research" src={img('crop-research.jpg')} loading="lazy" />
         </div>
-        <p className="mt-3 text-xs text-wheat-600 dark:text-wheat-400">
+        <p className="mt-3 text-xs text-wheat-600">
           Full original team listing preserved at{' '}
           <a className="underline" href="http://wheatqtldb.net" target="_blank" rel="noreferrer">wheatqtldb.net <ExternalLink className="inline h-3 w-3" /></a>.
         </p>
@@ -110,8 +97,8 @@ export default function Team() {
 function Section({ title, caption, children }: { title: string; caption?: string; children: React.ReactNode }) {
   return (
     <section>
-      <h2 className="text-2xl font-semibold text-wheat-900 dark:text-wheat-50">{title}</h2>
-      {caption && <p className="mt-1 text-sm text-wheat-700 dark:text-wheat-300">{caption}</p>}
+      <h2 className="text-2xl font-semibold text-wheat-900">{title}</h2>
+      {caption && <p className="mt-1 text-sm text-wheat-700">{caption}</p>}
       <div className="mt-4">{children}</div>
     </section>
   )
@@ -123,18 +110,18 @@ function Grid({ members, highlight, compact }: { members: Member[]; highlight?: 
       {members.map((m) => (
         <div
           key={m.name}
-          className={`card flex gap-3 ${highlight ? 'ring-2 ring-wheat-400 dark:ring-wheat-500' : ''}`}
+          className={`card flex gap-3 ${highlight ? 'ring-2 ring-wheat-400' : ''}`}
         >
           <Avatar
             name={m.name}
             src={m.photo}
             size={64}
-            className="h-16 w-16 flex-shrink-0 rounded-full border border-wheat-200 object-cover dark:border-ink-700"
+            className="h-16 w-16 flex-shrink-0 rounded-full border border-wheat-200 object-cover"
           />
           <div className="min-w-0">
-            <div className="truncate font-semibold text-wheat-900 dark:text-wheat-50">{m.name}</div>
-            <div className="text-sm text-wheat-700 dark:text-wheat-300">{m.role}</div>
-            <div className="mt-0.5 text-xs text-wheat-600 dark:text-wheat-400">{m.affiliation}</div>
+            <div className="truncate font-semibold text-wheat-900">{m.name}</div>
+            <div className="text-sm text-wheat-700">{m.role}</div>
+            <div className="mt-0.5 text-xs text-wheat-600">{m.affiliation}</div>
             <div className="mt-1.5 flex flex-wrap gap-2 text-xs">
               {m.email && (
                 <a className="inline-flex items-center gap-1 underline" href={`mailto:${m.email}`}>

@@ -10,7 +10,7 @@ export default function About() {
         image="botanical-illustration.jpg"
         variant="side"
       />
-      <div className="prose prose-wheat max-w-none text-wheat-800 dark:text-wheat-200">
+      <div className="prose prose-wheat max-w-none text-wheat-800">
         <p>
           WheatQTLdb is a manually curated QTL database for wheat that includes information about QTL identified
           through interval mapping and MTA identified using GWAS. Information on metaQTL, epistatic QTL and

@@ -241,7 +241,7 @@ export default function Statistics() {
 
         <div className="grid gap-6 lg:grid-cols-2">
           <ChartCard title="Record totals">
-            <ResponsiveContainer width="100%" height={260} className="text-wheat-700 dark:text-wheat-300">
+            <ResponsiveContainer width="100%" height={260} className="text-wheat-700">
               <BarChart data={totals}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis dataKey="name" tick={{ fill: 'currentColor' }} />
@@ -257,14 +257,14 @@ export default function Statistics() {
                 near-full circle plus 13 unreadable slivers. Called out
                 separately, with a bar chart of the other species (the
                 actually-informative part of this distribution). */}
-            <p className="mb-3 text-sm text-wheat-600 dark:text-wheat-400">
-              <span className="font-semibold text-wheat-900 dark:text-wheat-100">
+            <p className="mb-3 text-sm text-wheat-600">
+              <span className="font-semibold text-wheat-900">
                 {bySpecies[0]?.value.toLocaleString()}
               </span>{' '}
               of {qtl.data.length.toLocaleString()} QTL ({((bySpecies[0]?.value ?? 0) / (qtl.data.length || 1) * 100).toFixed(1)}%)
               are <em>{bySpecies[0]?.name}</em>; other species below.
             </p>
-            <ResponsiveContainer width="100%" height={220} className="text-wheat-700 dark:text-wheat-300">
+            <ResponsiveContainer width="100%" height={220} className="text-wheat-700">
               <BarChart data={bySpecies.slice(1)} layout="vertical" margin={{ left: 12, right: 12, top: 4, bottom: 4 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
@@ -278,7 +278,7 @@ export default function Statistics() {
           </ChartCard>
 
           <ChartCard title="QTL by trait category" wide>
-            <ResponsiveContainer width="100%" height={360} className="text-wheat-700 dark:text-wheat-300">
+            <ResponsiveContainer width="100%" height={360} className="text-wheat-700">
               <BarChart data={byCategoryTop} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
@@ -294,7 +294,7 @@ export default function Statistics() {
           </ChartCard>
 
           <ChartCard title="QTL by chromosome (stacked by top traits)" wide>
-            <ResponsiveContainer width="100%" height={360} className="text-wheat-700 dark:text-wheat-300">
+            <ResponsiveContainer width="100%" height={360} className="text-wheat-700">
               <BarChart data={chromTraitData} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} tick={{ fill: 'currentColor', fontSize: 10 }} />
@@ -309,11 +309,11 @@ export default function Statistics() {
 
           {overlap && (
             <ChartCard title="QTL coverage by MetaQTL consensus intervals" wide>
-              <p className="mb-2 text-sm text-wheat-600 dark:text-wheat-400">
+              <p className="mb-2 text-sm text-wheat-600">
                 {overlap.inside.toLocaleString()} of {overlap.mapped.toLocaleString()} chromosome-mapped QTLs ({overlap.pct}%)
                 fall inside at least one MetaQTL interval on the same chromosome.
               </p>
-              <ResponsiveContainer width="100%" height={340} className="text-wheat-700 dark:text-wheat-300">
+              <ResponsiveContainer width="100%" height={340} className="text-wheat-700">
                 <BarChart data={overlap.perChrom} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                   <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} tick={{ fill: 'currentColor', fontSize: 10 }} />
@@ -327,7 +327,7 @@ export default function Statistics() {
           )}
 
           <ChartCard title="MetaQTL by trait category">
-            <ResponsiveContainer width="100%" height={300} className="text-wheat-700 dark:text-wheat-300">
+            <ResponsiveContainer width="100%" height={300} className="text-wheat-700">
               <BarChart data={mqtlByCategory} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
@@ -343,7 +343,7 @@ export default function Statistics() {
           </ChartCard>
 
           <ChartCard title="MetaQTL by chromosome">
-            <ResponsiveContainer width="100%" height={300} className="text-wheat-700 dark:text-wheat-300">
+            <ResponsiveContainer width="100%" height={300} className="text-wheat-700">
               <BarChart data={mqtlByChrom} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} tick={{ fill: 'currentColor', fontSize: 10 }} />
@@ -355,7 +355,7 @@ export default function Statistics() {
           </ChartCard>
 
           <ChartCard title="Epistatic QTL by trait category">
-            <ResponsiveContainer width="100%" height={300} className="text-wheat-700 dark:text-wheat-300">
+            <ResponsiveContainer width="100%" height={300} className="text-wheat-700">
               <BarChart data={epiByCategory} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
@@ -371,7 +371,7 @@ export default function Statistics() {
           </ChartCard>
 
           <ChartCard title="Epistatic QTL pairs by chromosome">
-            <ResponsiveContainer width="100%" height={300} className="text-wheat-700 dark:text-wheat-300">
+            <ResponsiveContainer width="100%" height={300} className="text-wheat-700">
               <BarChart data={epiChromData} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} tick={{ fill: 'currentColor', fontSize: 10 }} />
@@ -383,7 +383,7 @@ export default function Statistics() {
           </ChartCard>
 
           <ChartCard title="QTLs by publication year">
-            <ResponsiveContainer width="100%" height={280} className="text-wheat-700 dark:text-wheat-300">
+            <ResponsiveContainer width="100%" height={280} className="text-wheat-700">
               <BarChart data={byYear} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis dataKey="name" tick={{ fill: 'currentColor', fontSize: 11 }} interval={2} angle={-45} textAnchor="end" height={50} />
@@ -395,7 +395,7 @@ export default function Statistics() {
           </ChartCard>
 
           <ChartCard title="Top QTL parameters">
-            <ResponsiveContainer width="100%" height={340} className="text-wheat-700 dark:text-wheat-300">
+            <ResponsiveContainer width="100%" height={340} className="text-wheat-700">
               <BarChart data={topParameters} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
@@ -407,7 +407,7 @@ export default function Statistics() {
           </ChartCard>
 
           <ChartCard title="QTL by source dataset" wide>
-            <ResponsiveContainer width="100%" height={360} className="text-wheat-700 dark:text-wheat-300">
+            <ResponsiveContainer width="100%" height={360} className="text-wheat-700">
               <BarChart data={bySource} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
@@ -426,7 +426,7 @@ export default function Statistics() {
 function InsightCard({ label, value, color }: { label: string; value: string; color?: string }) {
   return (
     <div className="card flex flex-col items-center justify-center py-4 text-center">
-      <span className="text-sm font-medium uppercase tracking-wide text-wheat-600 dark:text-wheat-400">{label}</span>
+      <span className="text-sm font-medium uppercase tracking-wide text-wheat-600">{label}</span>
       <span
         className="mt-1 text-2xl font-bold"
         style={{ color: color ?? 'inherit' }}
@@ -440,8 +440,8 @@ function InsightCard({ label, value, color }: { label: string; value: string; co
 function SummaryCard({ label, value }: { label: string; value: number }) {
   return (
     <div className="card flex flex-col items-center justify-center py-5 text-center">
-      <span className="text-3xl font-bold text-wheat-800 dark:text-wheat-100">{value.toLocaleString()}</span>
-      <span className="mt-1 text-sm font-medium uppercase tracking-wide text-wheat-600 dark:text-wheat-400">{label}</span>
+      <span className="text-3xl font-bold text-wheat-800">{value.toLocaleString()}</span>
+      <span className="mt-1 text-sm font-medium uppercase tracking-wide text-wheat-600">{label}</span>
     </div>
   )
 }
@@ -449,7 +449,7 @@ function SummaryCard({ label, value }: { label: string; value: number }) {
 function ChartCard({ title, children, wide }: { title: string; children: React.ReactNode; wide?: boolean }) {
   return (
     <div className={`card ${wide ? 'lg:col-span-2' : ''}`}>
-      <h3 className="mb-3 font-semibold text-wheat-900 dark:text-wheat-50">{title}</h3>
+      <h3 className="mb-3 font-semibold text-wheat-900">{title}</h3>
       {children}
     </div>
   )

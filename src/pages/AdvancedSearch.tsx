@@ -33,6 +33,25 @@ function uniqueValues<T>(rows: T[], key: keyof T): string[] {
   return Array.from(set).sort()
 }
 
+// T. durum, T. turgidum subsp./ssp. dicoccoides and T. turgidum subsp./ssp.
+// dicoccum are all subspecies of Triticum turgidum, so they're grouped and
+// labelled as a single "Triticum turgidum" option/filter rather than four
+// near-duplicate entries in the Species dropdown.
+const TURGIDUM_GROUP = new Set([
+  'triticum turgidum',
+  'triticum durum',
+  'triticum turgidum subsp. dicoccoides',
+  'triticum turgidum subsp. dicoccum',
+  'triticum turgidum ssp. dicoccoides',
+  'triticum turgidum ssp. dicoccum',
+])
+
+function normalizeSpecies(s: string): string {
+  const trimmed = s.trim()
+  const key = trimmed.toLowerCase().replace(/\s+/g, ' ')
+  return TURGIDUM_GROUP.has(key) ? 'Triticum turgidum' : trimmed
+}
+
 // Some records list more than one species in a single field, joined with
 // ";" or "/" (interspecific-population studies). Split those out so the
 // dropdown offers each real species exactly once instead of also listing
@@ -44,7 +63,7 @@ function uniqueSpecies<T>(rows: T[], key: keyof T): string[] {
   rows.forEach((r) => {
     String((r as any)[key] ?? '')
       .split(/[;/]/)
-      .map((s) => s.trim())
+      .map((s) => normalizeSpecies(s))
       .filter(Boolean)
       .forEach((s) => set.add(s))
   })
@@ -53,7 +72,7 @@ function uniqueSpecies<T>(rows: T[], key: keyof T): string[] {
 
 function speciesMatches(fieldValue: string, selected: string): boolean {
   if (!selected) return true
-  return fieldValue.split(/[;/]/).map((s) => s.trim()).includes(selected)
+  return fieldValue.split(/[;/]/).map((s) => normalizeSpecies(s)).includes(selected)
 }
 
 const columns: ColumnDef<QTLRecord, any>[] = [
@@ -185,7 +204,7 @@ export default function AdvancedSearch() {
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="block">
-      <div className="mb-1 text-xs font-medium uppercase tracking-wider text-wheat-600 dark:text-wheat-300">{label}</div>
+      <div className="mb-1 text-xs font-medium uppercase tracking-wider text-wheat-600">{label}</div>
       {children}
     </label>
   )

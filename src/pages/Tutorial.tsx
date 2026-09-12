@@ -10,7 +10,7 @@ export default function Tutorial() {
         image="wheat-grains.jpg"
         variant="side"
       />
-      <div className="space-y-6 text-wheat-800 dark:text-wheat-200">
+      <div className="space-y-6 text-wheat-800">
         <Step n={1} title="Browse a dataset">
           Open <strong>Data</strong> from the menu and pick QTL, MetaQTL, Epistatic QTL or Candidate Genes.
           Each table supports column sorting, full-text search and pagination.
@@ -37,7 +37,7 @@ function Step({ n, title, children }: { n: number; title: string; children: Reac
     <div className="card flex gap-4">
       <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-wheat-600 font-bold text-white">{n}</div>
       <div>
-        <h3 className="font-semibold text-wheat-900 dark:text-wheat-50">{title}</h3>
+        <h3 className="font-semibold text-wheat-900">{title}</h3>
         <p className="mt-1 text-sm">{children}</p>
       </div>
     </div>

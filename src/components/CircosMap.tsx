@@ -203,7 +203,7 @@ export default function CircosMap({
     return (
       <div className="card flex flex-col items-center justify-center py-16 text-center">
         <CircleDot className="h-10 w-10 text-wheat-400" />
-        <p className="mt-3 text-wheat-700 dark:text-wheat-300">No QTLs or MetaQTLs match the current filters.</p>
+        <p className="mt-3 text-wheat-700">No QTLs or MetaQTLs match the current filters.</p>
       </div>
     )
   }
@@ -214,15 +214,15 @@ export default function CircosMap({
         <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex items-center gap-2">
             <CircleDot className="h-5 w-5 text-wheat-600" />
-            <h3 className="text-lg font-semibold text-wheat-900 dark:text-wheat-50">Circos genome view</h3>
+            <h3 className="text-lg font-semibold text-wheat-900">Circos genome view</h3>
           </div>
           <div className="flex flex-wrap items-center gap-4">
-            <div className="text-sm text-wheat-700 dark:text-wheat-300">
-              <span className="font-semibold text-wheat-900 dark:text-wheat-100">{qtlCount.toLocaleString()}</span> QTLs ·{' '}
-              <span className="font-semibold text-wheat-900 dark:text-wheat-100">{metaCount.toLocaleString()}</span> MetaQTLs ·{' '}
-              <span className="font-semibold text-wheat-900 dark:text-wheat-100">{filteredLinks.length.toLocaleString()}</span> epistatic links
+            <div className="text-sm text-wheat-700">
+              <span className="font-semibold text-wheat-900">{qtlCount.toLocaleString()}</span> QTLs ·{' '}
+              <span className="font-semibold text-wheat-900">{metaCount.toLocaleString()}</span> MetaQTLs ·{' '}
+              <span className="font-semibold text-wheat-900">{filteredLinks.length.toLocaleString()}</span> epistatic links
               {links.length > MAX_CHORDS && showLinks && (
-                <span className="ml-2 text-xs text-amber-600 dark:text-amber-400">(capped at {MAX_CHORDS.toLocaleString()})</span>
+                <span className="ml-2 text-xs text-amber-600">(capped at {MAX_CHORDS.toLocaleString()})</span>
               )}
             </div>
             {showLinks && (
@@ -233,7 +233,7 @@ export default function CircosMap({
                   checked={interOnly}
                   onChange={(e) => setInterOnly(e.target.checked)}
                 />
-                <span className="text-wheat-700 dark:text-wheat-300">Inter-chromosomal only</span>
+                <span className="text-wheat-700">Inter-chromosomal only</span>
               </label>
             )}
           </div>
@@ -304,7 +304,7 @@ export default function CircosMap({
                             key={chr}
                             d={arcPath(r0, r1, slice.start, slice.end)}
                             fill="currentColor"
-                            className="text-wheat-50 dark:text-ink-900"
+                            className="text-wheat-50"
                           />
                         )
                       })}
@@ -360,7 +360,7 @@ export default function CircosMap({
                             key={chr}
                             d={arcPath(r0, r1, slice.start, slice.end)}
                             fill="currentColor"
-                            className="text-wheat-50 dark:text-ink-900"
+                            className="text-wheat-50"
                           />
                         )
                       })}
@@ -440,7 +440,7 @@ export default function CircosMap({
                     <path
                       d={arcPath(R_CHROM_IN, R_CHROM_OUT, slice.start, slice.end)}
                       fill="currentColor"
-                      className={`cursor-pointer ${GENOME_COLOR_CLASS[chr.slice(-1)] ?? 'text-wheat-200 dark:text-wheat-700'}`}
+                      className={`cursor-pointer ${GENOME_COLOR_CLASS[chr.slice(-1)] ?? 'text-wheat-200'}`}
                       stroke="currentColor"
                       strokeWidth={0.75}
                       filter="url(#circosGlow)"
@@ -461,7 +461,7 @@ export default function CircosMap({
                       stroke="currentColor"
                       strokeOpacity={0.55}
                       strokeWidth={1.6}
-                      className="pointer-events-none text-wheat-700 dark:text-wheat-200"
+                      className="pointer-events-none text-wheat-700"
                     />
                     {showLabels && (
                       <text
@@ -500,13 +500,13 @@ export default function CircosMap({
         </div>
 
         {/* Ring legend */}
-        <div className="mt-4 grid gap-4 border-t border-wheat-200 pt-4 text-xs dark:border-ink-700 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-4 grid gap-4 border-t border-wheat-200 pt-4 text-xs sm:grid-cols-2 lg:grid-cols-5">
           <div>
-            <p className="font-semibold text-wheat-800 dark:text-wheat-200">Ring 1 — Chromosomes</p>
-            <p className="text-wheat-600 dark:text-wheat-400">Arc length is proportional to physical length; the tick marks the centromere.</p>
+            <p className="font-semibold text-wheat-800">Ring 1 — Chromosomes</p>
+            <p className="text-wheat-600">Arc length is proportional to physical length; the tick marks the centromere.</p>
             <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1">
               {(['A', 'B', 'D'] as const).map((g) => (
-                <span key={g} className="inline-flex items-center gap-1 text-wheat-600 dark:text-wheat-400">
+                <span key={g} className="inline-flex items-center gap-1 text-wheat-600">
                   <span className={`h-2.5 w-2.5 rounded-full ${GENOME_COLOR_CLASS[g]}`} style={{ backgroundColor: 'currentColor' }} />
                   {g} genome
                 </span>
@@ -514,28 +514,28 @@ export default function CircosMap({
             </div>
           </div>
           <div>
-            <p className="font-semibold text-wheat-800 dark:text-wheat-200">Ring 2 — QTL density</p>
+            <p className="font-semibold text-wheat-800">Ring 2 — QTL density</p>
             <div className="mt-1 flex items-center gap-2">
               <div className="h-3 w-24 rounded bg-gradient-to-r from-[hsl(48,90%,82%)] via-[hsl(24,90%,65%)] to-[hsl(0,90%,44%)]" />
-              <span className="text-wheat-600 dark:text-wheat-400">low → high</span>
+              <span className="text-wheat-600">low → high</span>
             </div>
           </div>
           <div>
-            <p className="font-semibold text-wheat-800 dark:text-wheat-200">MetaQTL tracks</p>
-            <p className="text-wheat-600 dark:text-wheat-400">One thin ring per trait category, matching the manuscript circos figure.</p>
+            <p className="font-semibold text-wheat-800">MetaQTL tracks</p>
+            <p className="text-wheat-600">One thin ring per trait category, matching the manuscript circos figure.</p>
           </div>
           <div>
-            <p className="font-semibold text-wheat-800 dark:text-wheat-200">QTL tracks</p>
-            <p className="text-wheat-600 dark:text-wheat-400">One thin ring per trait category, same order as the legend below.</p>
+            <p className="font-semibold text-wheat-800">QTL tracks</p>
+            <p className="text-wheat-600">One thin ring per trait category, same order as the legend below.</p>
           </div>
           <div>
-            <p className="font-semibold text-wheat-800 dark:text-wheat-200">Centre — Epistatic links</p>
-            <p className="text-wheat-600 dark:text-wheat-400">Each chord joins two interacting QTLs, coloured by trait.</p>
+            <p className="font-semibold text-wheat-800">Centre — Epistatic links</p>
+            <p className="text-wheat-600">Each chord joins two interacting QTLs, coloured by trait.</p>
           </div>
         </div>
 
         {/* Trait legend */}
-        <div className="mt-4 flex flex-wrap gap-2 border-t border-wheat-200 pt-4 dark:border-ink-700">
+        <div className="mt-4 flex flex-wrap gap-2 border-t border-wheat-200 pt-4">
           {TRAIT_CATEGORIES.map((trait) => {
             const active = selectedTraits.length === 0 || selectedTraits.includes(trait)
             return (
@@ -543,8 +543,8 @@ export default function CircosMap({
                 key={trait}
                 className={`inline-flex items-center gap-1.5 rounded-full border px-2 py-1 text-xs transition ${
                   active
-                    ? 'border-wheat-200 bg-white text-wheat-800 dark:border-ink-700 dark:bg-ink-800 dark:text-wheat-100'
-                    : 'border-transparent bg-wheat-100 text-wheat-400 opacity-60 dark:bg-ink-800 dark:text-wheat-500'
+                    ? 'border-wheat-200 bg-white text-wheat-800'
+                    :'border-transparent bg-wheat-100 text-wheat-400 opacity-60'
                 }`}
               >
                 <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: TRAIT_COLORS[trait] }} />
@@ -558,13 +558,13 @@ export default function CircosMap({
       {/* Tooltip */}
       {hover && (
         <div
-          className="fixed z-50 max-w-xs rounded-xl border border-wheat-200 bg-white p-3 text-xs shadow-xl dark:border-ink-700 dark:bg-ink-900"
+          className="fixed z-50 max-w-xs rounded-xl border border-wheat-200 bg-white p-3 text-xs shadow-xl"
           style={{ left: hover.x + 14, top: hover.y + 14 }}
         >
           {hover.kind === 'chr' && (
             <>
-              <div className="mb-1 font-semibold text-wheat-900 dark:text-wheat-50">Chromosome {hover.chr}</div>
-              <div className="text-wheat-700 dark:text-wheat-300">
+              <div className="mb-1 font-semibold text-wheat-900">Chromosome {hover.chr}</div>
+              <div className="text-wheat-700">
                 <div>{(chromosomeLength(hover.chr) / 1_000_000).toFixed(1)} Mb</div>
                 <div>{hover.qtl.toLocaleString()} QTLs · {hover.meta.toLocaleString()} MetaQTLs</div>
               </div>
@@ -578,7 +578,7 @@ export default function CircosMap({
               >
                 {hover.item.type === 'qtl' ? 'QTL' : 'MetaQTL'} · {hover.item.name}
               </div>
-              <div className="space-y-0.5 text-wheat-700 dark:text-wheat-300">
+              <div className="space-y-0.5 text-wheat-700">
                 <div><span className="font-medium">Chromosome:</span> {hover.item.chromosome}</div>
                 <div><span className="font-medium">Trait:</span> {hover.item.trait}</div>
                 <div><span className="font-medium">Position:</span> {(hover.item.point / 1_000_000).toFixed(2)} Mb</div>
@@ -594,7 +594,7 @@ export default function CircosMap({
               >
                 Epistatic · {hover.link.name}
               </div>
-              <div className="space-y-0.5 text-wheat-700 dark:text-wheat-300">
+              <div className="space-y-0.5 text-wheat-700">
                 <div>
                   <span className="font-medium">Locus 1:</span> {hover.link.chromosome1} @ {(hover.link.point1 / 1_000_000).toFixed(2)} Mb
                 </div>

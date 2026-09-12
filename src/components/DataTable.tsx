@@ -74,15 +74,15 @@ export default function DataTable<T extends object>({
         </button>
       </div>
 
-      <div className="overflow-x-auto rounded-lg border border-wheat-200 dark:border-ink-700">
-        <table className="min-w-full divide-y divide-wheat-200 text-sm dark:divide-ink-700">
-          <thead className="bg-wheat-100 dark:bg-ink-800">
+      <div className="overflow-x-auto rounded-lg border border-wheat-200">
+        <table className="min-w-full divide-y divide-wheat-200 text-sm">
+          <thead className="bg-wheat-100">
             {table.getHeaderGroups().map((hg) => (
               <tr key={hg.id}>
                 {hg.headers.map((h) => (
                   <th
                     key={h.id}
-                    className="cursor-pointer whitespace-nowrap px-3 py-2 text-left font-semibold text-wheat-800 dark:text-wheat-100"
+                    className="cursor-pointer whitespace-nowrap px-3 py-2 text-left font-semibold text-wheat-800"
                     onClick={h.column.getToggleSortingHandler()}
                   >
                     <span className="inline-flex items-center gap-1">
@@ -96,9 +96,9 @@ export default function DataTable<T extends object>({
               </tr>
             ))}
           </thead>
-          <tbody className="divide-y divide-wheat-100 bg-white dark:divide-ink-800 dark:bg-ink-900">
+          <tbody className="divide-y divide-wheat-100 bg-white">
             {table.getRowModel().rows.map((row) => (
-              <tr key={row.id} className="hover:bg-wheat-50 dark:hover:bg-wheat-800">
+              <tr key={row.id} className="hover:bg-wheat-50">
                 {row.getVisibleCells().map((cell) => (
                   <td key={cell.id} className="whitespace-nowrap px-3 py-2 align-top">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}

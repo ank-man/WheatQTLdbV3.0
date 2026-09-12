@@ -61,13 +61,13 @@ export default function Credits() {
 
       <section className="space-y-4">
         <h2 className="text-xl font-semibold">Imagery</h2>
-        <p className="text-sm text-wheat-700 dark:text-wheat-300">
+        <p className="text-sm text-wheat-700">
           Botanical and agronomic images are sourced from Wikimedia Commons (curated through GBIF where applicable)
           and Unsplash. Each image is reused under its respective licence; please cite the original author when re-using.
         </p>
-        <div className="overflow-x-auto rounded-lg border border-wheat-200 dark:border-ink-700">
-          <table className="min-w-full divide-y divide-wheat-200 text-sm dark:divide-ink-700">
-            <thead className="bg-wheat-100 dark:bg-ink-800">
+        <div className="overflow-x-auto rounded-lg border border-wheat-200">
+          <table className="min-w-full divide-y divide-wheat-200 text-sm">
+            <thead className="bg-wheat-100">
               <tr>
                 <th className="px-3 py-2 text-left font-semibold">File</th>
                 <th className="px-3 py-2 text-left font-semibold">Title</th>
@@ -76,7 +76,7 @@ export default function Credits() {
                 <th className="px-3 py-2 text-left font-semibold">Source</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-wheat-100 bg-white dark:divide-ink-800 dark:bg-ink-900">
+            <tbody className="divide-y divide-wheat-100 bg-white">
               {credits.map((c) => (
                 <tr key={c.file}>
                   <td className="px-3 py-2 font-mono text-xs">{c.file}</td>
@@ -97,12 +97,12 @@ export default function Credits() {
 
       <section className="mt-10 space-y-3">
         <h2 className="text-xl font-semibold">Data</h2>
-        <p className="text-sm text-wheat-700 dark:text-wheat-300">
+        <p className="text-sm text-wheat-700">
           QTL/MTA, MetaQTL, epistatic-QTL and candidate-gene records are manually curated from peer-reviewed
           publications. Each row carries the primary reference (with DOI). Please cite both the original publication
           and the WheatQTLdb papers when reusing data.
         </p>
-        <ul className="ml-6 list-disc text-sm text-wheat-800 dark:text-wheat-200">
+        <ul className="ml-6 list-disc text-sm text-wheat-800">
           <li>Singh, K., Saini, D.K., Saripalli, G. et al. <em>WheatQTLdb V2.0: a supplement to the database for wheat QTL.</em> Mol Breeding 42, 56 (2022). <a className="underline" href="https://doi.org/10.1007/s11032-022-01329-1" target="_blank" rel="noreferrer">doi:10.1007/s11032-022-01329-1</a></li>
           <li>Singh K, Batra R, Sharma S, et al. <em>WheatQTLdb: a QTL database for wheat.</em> Mol Genet Genomics 296, 1051–1056 (2021). <a className="underline" href="https://doi.org/10.1007/s00438-021-01796-9" target="_blank" rel="noreferrer">doi:10.1007/s00438-021-01796-9</a></li>
         </ul>
@@ -110,12 +110,12 @@ export default function Credits() {
 
       <section className="mt-10 space-y-3">
         <h2 className="text-xl font-semibold">Software</h2>
-        <p className="text-sm text-wheat-700 dark:text-wheat-300">
+        <p className="text-sm text-wheat-700">
           The V3.0 web application is released under the MIT License at{' '}
           <a className="underline" href="https://github.com/ank-man/WheatQTLdbV3.0" target="_blank" rel="noreferrer">github.com/ank-man/WheatQTLdbV3.0</a>.
           Built with React, TypeScript, Vite, Tailwind CSS, TanStack Table, Recharts, PapaParse and Lucide icons.
         </p>
-        <p className="text-sm text-wheat-700 dark:text-wheat-300">
+        <p className="text-sm text-wheat-700">
           Coded by Ankush Sharma (<a className="underline" href="mailto:mr.ank2999@gmail.com">mr.ank2999@gmail.com</a>).
         </p>
       </section>

@@ -1,6 +1,6 @@
-import { ReactNode, useEffect, useState } from 'react'
+import { ReactNode, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import { Menu, X, Moon, Sun, Github, Wheat } from 'lucide-react'
+import { Menu, X, Github, Wheat } from 'lucide-react'
 
 const NAV = [
   { to: '/', label: 'Home', end: true },
@@ -15,27 +15,16 @@ const NAV = [
 
 export default function Layout({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false)
-  const [dark, setDark] = useState<boolean>(() => {
-    if (typeof window === 'undefined') return false
-    const saved = localStorage.getItem('theme')
-    if (saved) return saved === 'dark'
-    return window.matchMedia('(prefers-color-scheme: dark)').matches
-  })
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', dark)
-    localStorage.setItem('theme', dark ? 'dark' : 'light')
-  }, [dark])
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-30 border-b border-wheat-200 bg-white/80 backdrop-blur dark:border-ink-700 dark:bg-ink-900/80">
+      <header className="sticky top-0 z-30 border-b border-wheat-200 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
           <Link to="/" className="flex items-center gap-2">
             <Wheat className="h-7 w-7 text-wheat-600" />
             <div className="leading-tight">
-              <div className="text-lg font-bold text-wheat-800 dark:text-wheat-50">WheatQTLdb</div>
-              <div className="text-[10px] uppercase tracking-wider text-wheat-600 dark:text-wheat-300">v3.0 · open source</div>
+              <div className="text-lg font-bold text-wheat-800">WheatQTLdb</div>
+              <div className="text-[10px] uppercase tracking-wider text-wheat-600">v3.0 · open source</div>
             </div>
           </Link>
           <nav className="hidden items-center gap-1 lg:flex">
@@ -62,9 +51,6 @@ export default function Layout({ children }: { children: ReactNode }) {
               <Github className="h-4 w-4" />
               <span className="hidden sm:inline">GitHub</span>
             </a>
-            <button className="btn" onClick={() => setDark(!dark)} aria-label="Toggle theme">
-              {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </button>
             <button
               className="btn lg:hidden"
               onClick={() => setOpen(!open)}
@@ -75,7 +61,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           </div>
         </div>
         {open && (
-          <nav className="border-t border-wheat-200 bg-white px-4 py-2 dark:border-ink-700 dark:bg-ink-900 lg:hidden">
+          <nav className="border-t border-wheat-200 bg-white px-4 py-2 lg:hidden">
             <div className="flex flex-col gap-1">
               {NAV.map((n) => (
                 <NavLink
@@ -95,14 +81,14 @@ export default function Layout({ children }: { children: ReactNode }) {
 
       <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8">{children}</main>
 
-      <footer className="border-t border-wheat-200 bg-white py-6 text-center text-sm text-wheat-700 dark:border-ink-700 dark:bg-ink-900 dark:text-wheat-300">
+      <footer className="border-t border-wheat-200 bg-white py-6 text-center text-sm text-wheat-700">
         <div className="mx-auto max-w-7xl px-4">
           <p>
             © {new Date().getFullYear()} WheatQTLdb · Conceived by Department of Genetics &amp; Plant Breeding,{' '}
-            <a className="underline hover:text-wheat-900 dark:hover:text-wheat-50" href="http://www.ccsuniversity.ac.in/" target="_blank" rel="noreferrer">CCS University, Meerut</a>.
+            <a className="underline hover:text-wheat-900" href="http://www.ccsuniversity.ac.in/" target="_blank" rel="noreferrer">CCS University, Meerut</a>.
           </p>
           <p className="mt-1 text-xs">Open-source rebuild · Reproducible archive · Code openly available for transparency.</p>
-          <p className="mt-1 text-[11px] text-wheat-600 dark:text-wheat-400">
+          <p className="mt-1 text-[11px] text-wheat-600">
             Botanical imagery sourced from Wikimedia Commons / GBIF (CC BY-SA / Public Domain).
             Citing this resource: see <a className="underline" href="/credits">Credits</a>.
           </p>
