@@ -25,10 +25,16 @@ const v3Team: Member[] = [
   },
   {
     name: 'Kalpana Singh',
-    role: 'Maintainer · Original V1/V2 Developer',
-    affiliation: 'Punjab Agricultural University, Ludhiana, India',
+    role: 'Assistant Professor · Maintainer, Original V1/V2 Developer',
+    affiliation: 'Guru Angad Dev Veterinary and Animal Sciences University, Ludhiana, Punjab, India',
     email: 'kalpana.iiita@gmail.com',
   },
+]
+
+// Curated the published literature into the structured V3.0 CSV tables.
+const dataCuration: Member[] = [
+  { name: 'Gautam Saripalli', role: 'Postdoctoral Research Associate', affiliation: 'Clemson University, USA' },
+  { name: 'Dinesh Kumar Saini', role: 'Research Assistant Professor', affiliation: 'Texas Tech University, Lubbock, TX, USA' },
 ]
 
 // V1.0 / V2.0 founding faculty (CCS University, Meerut) plus faculty who
@@ -42,7 +48,7 @@ const facultyLeads: Member[] = [
   { name: 'Shailendra S Gaurav', role: 'Professor', affiliation: 'CCS University, Meerut' },
   { name: 'Rahul Kumar', role: 'Associate Professor', affiliation: 'CCS University, Meerut' },
   { name: 'Sachin Kumar', role: 'Assistant Professor', affiliation: 'CCS University, Meerut' },
-  { name: 'Vinay Kumar', role: 'Assistant Professor', affiliation: 'CCS University, Meerut' },
+  { name: 'Vinay Pawar', role: 'Assistant Professor', affiliation: 'CCS University, Meerut' },
 ]
 
 export default function Team() {
@@ -64,13 +70,18 @@ export default function Team() {
         <Grid members={facultyLeads} />
       </Section>
 
+      <Section title="Data Curation" caption="Curated the published literature into the structured V3.0 database.">
+        <Grid members={dataCuration} />
+      </Section>
+
       <div className="card">
         <h3 className="font-semibold text-wheat-900">Development &amp; data curation</h3>
         <p className="mt-2 text-sm text-wheat-700">
-          Developed and maintained by Ankush Sharma, University of Georgia, USA and Kalpana Singh, Punjab
-          Agricultural University, Ludhiana, India. Data curated by Gautam Saripalli, Clemson University, USA and
-          Dinesh Saini, Texas Tech, USA. All the data was jointly collected by the students of the above faculty
-          members.
+          Developed and maintained by Ankush Sharma, University of Georgia, USA and Kalpana Singh, Guru Angad Dev
+          Veterinary and Animal Sciences University, Ludhiana, Punjab, India.
+        </p>
+        <p className="mt-2 text-sm text-wheat-700">
+          All the data was jointly collected by the students of the above faculty members.
         </p>
       </div>
 

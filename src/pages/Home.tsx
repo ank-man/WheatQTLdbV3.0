@@ -7,7 +7,7 @@ import {
 } from 'lucide-react'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
-import { normalizeTrait } from '../lib/map'
+import { normalizeTrait, normalizeSpecies } from '../lib/map'
 import MiniIdeogram from '../components/MiniIdeogram'
 
 const heroImg = `${import.meta.env.BASE_URL}images/hero-wheat.jpg`
@@ -32,7 +32,7 @@ const TRAIT_CATS = [
   { name: 'Quality',         icon: Layers,     blurb: 'Protein, gluten, sedimentation, dough strength.', color: '#d4a017' },
   { name: 'Biofortification', icon: Sparkles,  blurb: 'Fe, Zn, Se grain content for nutrition.', color: '#7b1fa2' },
   { name: 'Developmental',   icon: Telescope,  blurb: 'Heading date, vernalisation, photoperiod.', color: '#0f9178' },
-  { name: 'Morphological',   icon: Network,    blurb: 'Plant height, tiller number, awns.', color: '#a05a2c' },
+  { name: 'Plant morphology', icon: Network,  blurb: 'Plant height, tiller number, awns, spike length.', color: '#a05a2c' },
   { name: 'Nitrogen Use efficiency', icon: Filter, blurb: 'NUE, N uptake, NUtE under varying nitrogen.', color: '#0277bd' },
 ]
 
@@ -46,7 +46,7 @@ export default function Home() {
 
   const stats = useMemo(() => {
     const speciesSet = new Set<string>()
-    qtl.data.forEach((r) => r.species && speciesSet.add(r.species))
+    qtl.data.forEach((r) => r.species && speciesSet.add(normalizeSpecies(r.species)))
     return {
       qtl: qtl.data.length,
       mqtl: mqtl.data.length,

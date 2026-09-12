@@ -7,7 +7,7 @@ import PageHero from '../components/PageHero'
 import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
-import { TRAIT_COLORS, chromosomeSortKey, normalizeTrait, prepareItems, QTLItem, MetaQTLItem } from '../lib/map'
+import { TRAIT_COLORS, chromosomeSortKey, normalizeTrait, normalizeSpecies, prepareItems, QTLItem, MetaQTLItem } from '../lib/map'
 
 const COLORS = ['#cc9d3f', '#9a6628', '#7c4d24', '#d8b665', '#e7d29c', '#b88231', '#5e3a1f', '#3f2715']
 
@@ -97,8 +97,14 @@ export default function Statistics() {
 
   // Species distribution is extremely skewed (T. aestivum is 93.4% of
   // records) - kept as a sorted bar rather than a pie, where 13 slivers next
-  // to one near-full circle would be unreadable.
-  const bySpecies = useMemo(() => countBy(qtl.data, 'species'), [qtl.data])
+  // to one near-full circle would be unreadable. T. durum and the T.
+  // turgidum subspecies are grouped under "Triticum turgidum" (same
+  // grouping as the Search species filter) rather than shown as separate
+  // near-duplicate bars.
+  const bySpecies = useMemo(
+    () => countBy(qtl.data.map((r) => ({ ...r, species: normalizeSpecies(r.species || '') })), 'species'),
+    [qtl.data]
+  )
   const byChrom = useMemo(() => countBy(qtl.data, 'chromosome'), [qtl.data])
 
   const bySource = useMemo(() => countBy(qtl.data, 'source_file'), [qtl.data])
@@ -236,7 +242,7 @@ export default function Statistics() {
               <BarChart data={bySpecies.slice(1)} layout="vertical" margin={{ left: 12, right: 12, top: 4, bottom: 4 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={170} tick={{ fill: 'currentColor', fontSize: 11 }} />
+                <YAxis type="category" dataKey="name" width={160} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value">
                   {bySpecies.slice(1).map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
@@ -250,7 +256,7 @@ export default function Statistics() {
               <BarChart data={byCategoryTop} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={180} tick={{ fill: 'currentColor', fontSize: 12 }} />
+                <YAxis type="category" dataKey="name" width={170} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value">
                   {byCategoryTop.map((entry, i) => (
@@ -266,7 +272,7 @@ export default function Statistics() {
               <BarChart data={chromTraitData} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} tick={{ fill: 'currentColor', fontSize: 10 }} />
-                <YAxis tick={{ fill: 'currentColor' }} />
+                <YAxis tick={{ fill: 'currentColor', fontSize: 11 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 {topTraits.map((trait, i) => (
                   <Bar key={trait} dataKey={trait} stackId="a" fill={traitColor(trait)} />
@@ -285,7 +291,7 @@ export default function Statistics() {
                 <BarChart data={overlap.perChrom} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                   <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} tick={{ fill: 'currentColor', fontSize: 10 }} />
-                  <YAxis tick={{ fill: 'currentColor' }} />
+                  <YAxis tick={{ fill: 'currentColor', fontSize: 11 }} />
                   <Tooltip contentStyle={{ borderRadius: 8 }} />
                   <Bar dataKey="Within a MetaQTL" stackId="a" fill={OVERLAP_COLORS['Within a MetaQTL']} />
                   <Bar dataKey="Outside all MetaQTLs" stackId="a" fill={OVERLAP_COLORS['Outside all MetaQTLs']} />
@@ -299,7 +305,7 @@ export default function Statistics() {
               <BarChart data={mqtlByCategory} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={165} tick={{ fill: 'currentColor', fontSize: 11 }} />
+                <YAxis type="category" dataKey="name" width={155} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value">
                   {mqtlByCategory.map((entry, i) => (
@@ -315,7 +321,7 @@ export default function Statistics() {
               <BarChart data={mqtlByChrom} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} tick={{ fill: 'currentColor', fontSize: 10 }} />
-                <YAxis tick={{ fill: 'currentColor' }} />
+                <YAxis tick={{ fill: 'currentColor', fontSize: 11 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value" fill="#00695c" />
               </BarChart>
@@ -327,7 +333,7 @@ export default function Statistics() {
               <BarChart data={epiByCategory} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={165} tick={{ fill: 'currentColor', fontSize: 11 }} />
+                <YAxis type="category" dataKey="name" width={155} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value">
                   {epiByCategory.map((entry, i) => (
@@ -343,7 +349,7 @@ export default function Statistics() {
               <BarChart data={epiChromData} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} tick={{ fill: 'currentColor', fontSize: 10 }} />
-                <YAxis tick={{ fill: 'currentColor' }} />
+                <YAxis tick={{ fill: 'currentColor', fontSize: 11 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value" fill="#5c6bc0" />
               </BarChart>
@@ -355,7 +361,7 @@ export default function Statistics() {
               <BarChart data={byYear} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis dataKey="name" tick={{ fill: 'currentColor', fontSize: 11 }} interval={2} angle={-45} textAnchor="end" height={50} />
-                <YAxis tick={{ fill: 'currentColor' }} />
+                <YAxis tick={{ fill: 'currentColor', fontSize: 11 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value" fill="#b88231" />
               </BarChart>
@@ -367,7 +373,7 @@ export default function Statistics() {
               <BarChart data={topParameters} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={175} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis type="category" dataKey="name" width={165} tick={{ fill: 'currentColor', fontSize: 9 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value" fill="#5e3a1f" />
               </BarChart>
@@ -379,7 +385,7 @@ export default function Statistics() {
               <BarChart data={bySource} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={220} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis type="category" dataKey="name" width={210} tick={{ fill: 'currentColor', fontSize: 9 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value" fill="#cc9d3f" />
               </BarChart>

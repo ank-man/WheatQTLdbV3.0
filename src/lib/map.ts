@@ -14,7 +14,8 @@ export const TRAIT_CATEGORIES = [
   'Nematode resistance',
   'Herbicide tolerance',
   'Developmental',
-  'Morphological',
+  'Plant morphology',
+  'Grain morphology',
   'Nitrogen Use efficiency',
   'Physiological traits',
   'Insect resistance',
@@ -35,7 +36,7 @@ export type TraitCategory = (typeof TRAIT_CATEGORIES)[number]
 // "Abiotic stress (other)") is kept only as the residual for genuine data
 // errors (e.g. a row with no trait/parameter text at all).
 //
-// At 20 categories, some hue closeness between adjacent swatches is
+// At 21 categories, some hue closeness between adjacent swatches is
 // unavoidable in a single-channel qualitative palette (the dataviz skill's
 // own guidance puts ~16 as the practical ceiling for full colourblind-safe
 // separation) - every use of these colours is paired with a text label
@@ -55,7 +56,8 @@ export const TRAIT_COLORS: Record<TraitCategory, string> = {
   'Nematode resistance': '#ef6c00',
   'Herbicide tolerance': '#5c6bc0',
   Developmental: '#0f9178',
-  Morphological: '#a05a2c',
+  'Plant morphology': '#a05a2c',
+  'Grain morphology': '#c9973f',
   'Nitrogen Use efficiency': '#0277bd',
   'Physiological traits': '#5e35b1',
   'Insect resistance': '#c2185b',
@@ -150,6 +152,26 @@ export function normalizeChromosome(chromosome: string): string | null {
   const m = raw.match(/^(\d)([ABD])([LS]?)$/)
   if (!m) return null
   return `${m[1]}${m[2]}`
+}
+
+// T. durum, T. turgidum subsp./ssp. dicoccoides and T. turgidum subsp./ssp.
+// dicoccum are all subspecies of Triticum turgidum, so they're grouped and
+// labelled as a single "Triticum turgidum" species everywhere a species name
+// is displayed or counted (Search filter, Statistics, homepage species
+// count) rather than as four near-duplicate entries.
+const TURGIDUM_GROUP = new Set([
+  'triticum turgidum',
+  'triticum durum',
+  'triticum turgidum subsp. dicoccoides',
+  'triticum turgidum subsp. dicoccum',
+  'triticum turgidum ssp. dicoccoides',
+  'triticum turgidum ssp. dicoccum',
+])
+
+export function normalizeSpecies(s: string): string {
+  const trimmed = s.trim()
+  const key = trimmed.toLowerCase().replace(/\s+/g, ' ')
+  return TURGIDUM_GROUP.has(key) ? 'Triticum turgidum' : trimmed
 }
 
 export function chromosomeSortKey(chromosome: string): number {
@@ -258,7 +280,29 @@ export function normalizeTrait(record: QTLRecord | MetaQTLRecord): TraitCategory
   if (c.includes('disease')) return 'Fungal resistance'
   if (c.includes('herbicide')) return 'Herbicide tolerance'
   if (c.includes('development') || c.includes('heading') || c.includes('vernal') || c.includes('photoperiod') || c.includes('earliness') || c.includes('flowering') || c.includes('maturity')) return 'Developmental'
-  if (c.includes('morpholog') || c.includes('plant height') || c.includes('tiller') || c.includes('awn') || c.includes('spike length')) return 'Morphological'
+  // Grain/kernel morphology (size and shape of the seed itself) is
+  // agronomically and visually distinct from whole-plant morphology (height,
+  // tillering, spike length, awns): curated from a dedicated source file
+  // ("Grain morphology.xlsx", 1,028 records, always trait="Grain Morphology")
+  // as well as size/shape parameters recorded under the generic
+  // "Morphological trait(s)" label in "Morphological traits_combined.xls" -
+  // kept as its own category rather than merged into one opaque
+  // "Morphological" bucket. Deliberately excludes weight/count parameters
+  // ("kernel weight", "kernels per spike") - those are yield components, not
+  // morphology, and fall through to whichever category (often 'Other')
+  // already handled them before this split.
+  if (
+    t.includes('grain morphology') ||
+    c.includes('seed morphology') ||
+    c.includes('grain length') || c.includes('grain width') || c.includes('grain diameter') ||
+    c.includes('grain thickness') || c.includes('grain area') || c.includes('grain perimeter') ||
+    c.includes('grain circumference') || c.includes('grain shape') ||
+    c.includes('kernel length') || c.includes('kernel width') || c.includes('kernel diameter') ||
+    c.includes('kernel thickness') || c.includes('kernel area') || c.includes('kernel perimeter') ||
+    c.includes('kernel circumference') || c.includes('kernel shape') || c.includes('kernel size') ||
+    c.includes('seed shape') || c.includes('seed size') || c.includes('characterization system')
+  ) return 'Grain morphology'
+  if (c.includes('morpholog') || c.includes('plant height') || c.includes('tiller') || c.includes('awn') || c.includes('spike length')) return 'Plant morphology'
   if (c.includes('physiological')) return 'Physiological traits'
 
   return 'Other'

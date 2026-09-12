@@ -8,7 +8,7 @@ import AsyncBoundary from '../components/AsyncBoundary'
 import GlossaryHeader from '../components/GlossaryHeader'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord } from '../lib/types'
-import { TRAIT_CATEGORIES, normalizeTrait } from '../lib/map'
+import { TRAIT_CATEGORIES, normalizeTrait, normalizeSpecies } from '../lib/map'
 
 interface Filters {
   q: string
@@ -32,25 +32,6 @@ function uniqueValues<T>(rows: T[], key: keyof T): string[] {
     if (v) set.add(v)
   })
   return Array.from(set).sort()
-}
-
-// T. durum, T. turgidum subsp./ssp. dicoccoides and T. turgidum subsp./ssp.
-// dicoccum are all subspecies of Triticum turgidum, so they're grouped and
-// labelled as a single "Triticum turgidum" option/filter rather than four
-// near-duplicate entries in the Species dropdown.
-const TURGIDUM_GROUP = new Set([
-  'triticum turgidum',
-  'triticum durum',
-  'triticum turgidum subsp. dicoccoides',
-  'triticum turgidum subsp. dicoccum',
-  'triticum turgidum ssp. dicoccoides',
-  'triticum turgidum ssp. dicoccum',
-])
-
-function normalizeSpecies(s: string): string {
-  const trimmed = s.trim()
-  const key = trimmed.toLowerCase().replace(/\s+/g, ' ')
-  return TURGIDUM_GROUP.has(key) ? 'Triticum turgidum' : trimmed
 }
 
 // Some records list more than one species in a single field, joined with
