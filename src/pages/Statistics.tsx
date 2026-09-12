@@ -95,12 +95,6 @@ export default function Statistics() {
   const loading = qtl.loading || mqtl.loading || epi.loading
   const error = qtl.error ?? mqtl.error ?? epi.error
 
-  const totals = [
-    { name: 'QTL', value: qtl.data.length },
-    { name: 'MetaQTL', value: mqtl.data.length },
-    { name: 'Epistatic', value: epi.data.length },
-  ]
-
   // Species distribution is extremely skewed (T. aestivum is 93.4% of
   // records) - kept as a sorted bar rather than a pie, where 13 slivers next
   // to one near-full circle would be unreadable.
@@ -122,23 +116,11 @@ export default function Statistics() {
 
   const topParameters = useMemo(() => topBy(qtl.data, 'parameter', 12), [qtl.data])
 
-  const stats = useMemo(() => {
-    // Distinct trait CATEGORIES (the same normalizeTrait classification the
-    // Search page's Trait dropdown uses), not raw distinct trait strings -
-    // those number in the hundreds across source studies and don't mean
-    // anything as a headline count next to a 20-category filter elsewhere.
-    const traits = new Set(qtl.data.map((r) => normalizeTrait(r)))
-    // "Un" (unknown/unanchored) isn't a real chromosome, so it's excluded here -
-    // the wheat genome has exactly 21 (7 homoeologous groups x A/B/D genomes).
-    const chrs = new Set(qtl.data.map((r) => r.chromosome).filter((c) => c && c !== 'Un'))
-    return {
-      qtl: qtl.data.length,
-      mqtl: mqtl.data.length,
-      epi: epi.data.length,
-      traits: traits.size,
-      chromosomes: chrs.size,
-    }
-  }, [qtl.data, mqtl.data, epi.data])
+  const stats = useMemo(() => ({
+    qtl: qtl.data.length,
+    mqtl: mqtl.data.length,
+    epi: epi.data.length,
+  }), [qtl.data, mqtl.data, epi.data])
 
   // All real categories (normalizeTrait - the same classification the Search
   // page's Trait dropdown uses), not a raw-string tally capped at 8 with
@@ -217,12 +199,10 @@ export default function Statistics() {
       />
       <AsyncBoundary loading={loading} error={error}>
         {/* Summary cards */}
-        <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mb-6 grid gap-4 sm:grid-cols-3">
           <SummaryCard label="QTLs" value={stats.qtl} />
           <SummaryCard label="MetaQTLs" value={stats.mqtl} />
           <SummaryCard label="Epistatic QTLs" value={stats.epi} />
-          <SummaryCard label="Traits" value={stats.traits} />
-          <SummaryCard label="Chromosomes" value={stats.chromosomes} />
         </div>
 
         {/* Insights */}
@@ -240,18 +220,6 @@ export default function Statistics() {
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
-          <ChartCard title="Record totals">
-            <ResponsiveContainer width="100%" height={260} className="text-wheat-700">
-              <BarChart data={totals}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
-                <XAxis dataKey="name" tick={{ fill: 'currentColor' }} />
-                <YAxis tick={{ fill: 'currentColor' }} />
-                <Tooltip contentStyle={{ borderRadius: 8 }} />
-                <Bar dataKey="value" fill="#cc9d3f" />
-              </BarChart>
-            </ResponsiveContainer>
-          </ChartCard>
-
           <ChartCard title="QTL by species">
             {/* T. aestivum is 93.4% of records - a pie here would be one
                 near-full circle plus 13 unreadable slivers. Called out
@@ -282,7 +250,7 @@ export default function Statistics() {
               <BarChart data={byCategoryTop} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={150} tick={{ fill: 'currentColor', fontSize: 12 }} />
+                <YAxis type="category" dataKey="name" width={180} tick={{ fill: 'currentColor', fontSize: 12 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value">
                   {byCategoryTop.map((entry, i) => (
@@ -331,7 +299,7 @@ export default function Statistics() {
               <BarChart data={mqtlByCategory} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={140} tick={{ fill: 'currentColor', fontSize: 11 }} />
+                <YAxis type="category" dataKey="name" width={165} tick={{ fill: 'currentColor', fontSize: 11 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value">
                   {mqtlByCategory.map((entry, i) => (
@@ -359,7 +327,7 @@ export default function Statistics() {
               <BarChart data={epiByCategory} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={140} tick={{ fill: 'currentColor', fontSize: 11 }} />
+                <YAxis type="category" dataKey="name" width={165} tick={{ fill: 'currentColor', fontSize: 11 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value">
                   {epiByCategory.map((entry, i) => (
@@ -399,7 +367,7 @@ export default function Statistics() {
               <BarChart data={topParameters} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={160} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis type="category" dataKey="name" width={175} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value" fill="#5e3a1f" />
               </BarChart>
@@ -425,10 +393,10 @@ export default function Statistics() {
 
 function InsightCard({ label, value, color }: { label: string; value: string; color?: string }) {
   return (
-    <div className="card flex flex-col items-center justify-center py-4 text-center">
+    <div className="card flex flex-col items-center justify-center gap-1 px-3 py-4 text-center">
       <span className="text-sm font-medium uppercase tracking-wide text-wheat-600">{label}</span>
       <span
-        className="mt-1 text-2xl font-bold"
+        className="break-words text-xl font-bold leading-snug sm:text-2xl"
         style={{ color: color ?? 'inherit' }}
       >
         {value}

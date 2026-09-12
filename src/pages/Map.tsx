@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { RotateCcw, Download, Image as ImageIcon, FileImage, Search, SlidersHorizontal } from 'lucide-react'
+import { RotateCcw, Download, Image as ImageIcon, FileImage, Search, SlidersHorizontal, Moon, Sun } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import IdeogramMap from '../components/IdeogramMap'
 import CircosMap from '../components/CircosMap'
@@ -28,6 +28,7 @@ export default function Map() {
   const [showLabels, setShowLabels] = useState(true)
   const [showItemLabels, setShowItemLabels] = useState(false)
   const [genomeColor, setGenomeColor] = useState(true)
+  const [plotDark, setPlotDark] = useState(false)
   const svgRef = useRef<SVGSVGElement>(null)
 
   const allItems = useMemo(() => prepareItems(qtl.data, mqtl.data), [qtl.data, mqtl.data])
@@ -122,7 +123,7 @@ export default function Map() {
       />
 
       <AsyncBoundary loading={qtl.loading || mqtl.loading || epi.loading} error={qtl.error ?? mqtl.error}>
-        <div className="space-y-6">
+        <div className={`space-y-6 ${plotDark ? 'dark' : ''}`}>
           {/* Controls */}
           <div className="card">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
@@ -198,13 +199,13 @@ export default function Map() {
                 )}
               </div>
 
-              <div className="flex items-center rounded-lg border border-wheat-200 bg-wheat-50 p-1">
+              <div className="flex items-center rounded-lg border border-wheat-200 dark:border-ink-700 bg-wheat-50 dark:bg-ink-900/40 p-1">
                 <button
                   onClick={() => setView('ideogram')}
                   className={`rounded-md px-3 py-1 text-xs font-medium transition ${
                     view === 'ideogram'
-                      ? 'bg-white text-wheat-800 shadow-sm'
-                      :'text-wheat-600 hover:text-wheat-800'
+                      ? 'bg-white dark:bg-ink-800 text-wheat-800 dark:text-wheat-100 shadow-sm'
+                      :'text-wheat-600 dark:text-wheat-400 hover:text-wheat-800'
                   }`}
                 >
                   Ideogram
@@ -213,15 +214,25 @@ export default function Map() {
                   onClick={() => setView('circos')}
                   className={`rounded-md px-3 py-1 text-xs font-medium transition ${
                     view === 'circos'
-                      ? 'bg-white text-wheat-800 shadow-sm'
-                      :'text-wheat-600 hover:text-wheat-800'
+                      ? 'bg-white dark:bg-ink-800 text-wheat-800 dark:text-wheat-100 shadow-sm'
+                      :'text-wheat-600 dark:text-wheat-400 hover:text-wheat-800'
                   }`}
                 >
                   Circos
                 </button>
               </div>
+              <button
+                onClick={() => setPlotDark(!plotDark)}
+                className="btn text-xs"
+                title="Toggle dark theme for the plot"
+                aria-pressed={plotDark}
+              >
+                {plotDark ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
+                {plotDark ? 'Light plot' : 'Dark plot'}
+              </button>
+
               <div className="flex items-center gap-2">
-                <span className="text-sm text-wheat-600">Export:</span>
+                <span className="text-sm text-wheat-600 dark:text-wheat-400">Export:</span>
                 <button onClick={() => handleExport('svg')} className="btn text-xs" title="Download SVG">
                   <Download className="h-3.5 w-3.5" />
                   SVG
@@ -239,7 +250,7 @@ export default function Map() {
 
             <div className="mt-4 grid gap-4 md:grid-cols-2">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-wheat-500" />
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-wheat-500 dark:text-wheat-400" />
                 <input
                   type="text"
                   value={search}
@@ -248,9 +259,9 @@ export default function Map() {
                   className="input w-full pl-9"
                 />
               </div>
-              <div className="flex items-center gap-3 rounded-lg border border-wheat-200 bg-wheat-50 px-3 py-2">
-                <SlidersHorizontal className="h-4 w-4 text-wheat-500" />
-                <span className="text-xs font-medium text-wheat-600">Genome:</span>
+              <div className="flex items-center gap-3 rounded-lg border border-wheat-200 dark:border-ink-700 bg-wheat-50 dark:bg-ink-900/40 px-3 py-2">
+                <SlidersHorizontal className="h-4 w-4 text-wheat-500 dark:text-wheat-400" />
+                <span className="text-xs font-medium text-wheat-600 dark:text-wheat-400">Genome:</span>
                 {(['all', 'A', 'B', 'D'] as const).map((g) => (
                   <label key={g} className="inline-flex cursor-pointer items-center gap-1.5 text-xs font-medium">
                     <input
@@ -269,20 +280,20 @@ export default function Map() {
 
             <div className="mt-4">
               <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-                <p className="text-sm font-medium text-wheat-700">
+                <p className="text-sm font-medium text-wheat-700 dark:text-wheat-300">
                   Highlight traits (click or press 1-{Math.min(9, selectableTraits.length)} to toggle)
                 </p>
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => setSelectedTraits([...selectableTraits])}
-                    className="text-xs font-medium text-wheat-600 underline-offset-2 hover:text-wheat-800 hover:underline"
+                    className="text-xs font-medium text-wheat-600 dark:text-wheat-400 underline-offset-2 hover:text-wheat-800 hover:underline"
                   >
                     Select all
                   </button>
-                  <span className="text-wheat-300">|</span>
+                  <span className="text-wheat-300 dark:text-wheat-600">|</span>
                   <button
                     onClick={() => setSelectedTraits([])}
-                    className="text-xs font-medium text-wheat-600 underline-offset-2 hover:text-wheat-800 hover:underline"
+                    className="text-xs font-medium text-wheat-600 dark:text-wheat-400 underline-offset-2 hover:text-wheat-800 hover:underline"
                   >
                     Clear all
                   </button>
@@ -297,8 +308,8 @@ export default function Map() {
                       onClick={() => toggleTrait(trait)}
                       className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
                         active
-                          ? 'border-wheat-600 bg-wheat-600 text-white'
-                          :'border-wheat-300 bg-white text-wheat-700 hover:bg-wheat-100'
+                          ? 'border-wheat-600 dark:border-wheat-500 bg-wheat-600 text-white'
+                          :'border-wheat-300 dark:border-ink-700 bg-white dark:bg-ink-800 text-wheat-700 dark:text-wheat-300 hover:bg-wheat-100'
                       }`}
                       title={`Toggle ${trait} (${idx < 9 ? `key ${idx + 1}` : ''})`}
                     >
@@ -319,7 +330,7 @@ export default function Map() {
           </div>
 
           {(unmapped.qtl > 0 || unmapped.mqtl > 0 || unmapped.links > 0) && !qtl.loading && !mqtl.loading && !epi.loading && (
-            <div className="space-y-0.5 text-xs text-wheat-500">
+            <div className="space-y-0.5 text-xs text-wheat-500 dark:text-wheat-400">
               <p>
                 {unmapped.qtlNoChrOrPos.toLocaleString()} QTL and {unmapped.mqtlNoChrOrPos.toLocaleString()} MetaQTL records have no resolvable
                 chromosome or position (often GWAS studies reported without one); {unmapped.links.toLocaleString()} epistatic pairs likewise
@@ -367,32 +378,32 @@ export default function Map() {
 
           {/* Legend / explanation */}
           <div className="card">
-            <h3 className="mb-3 text-lg font-semibold text-wheat-900">
+            <h3 className="mb-3 text-lg font-semibold text-wheat-900 dark:text-wheat-50">
               How to read this {view === 'ideogram' ? 'ideogram' : 'circos plot'}
             </h3>
             {view === 'ideogram' ? (
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                 <div>
-                  <p className="font-medium text-wheat-800">Chromosomes</p>
-                  <p className="text-sm leading-relaxed text-wheat-700">
+                  <p className="font-medium text-wheat-800 dark:text-wheat-100">Chromosomes</p>
+                  <p className="text-sm leading-relaxed text-wheat-700 dark:text-wheat-300">
                     The 21 hexaploid wheat chromosomes are laid out side by side, arranged 1A-7D, coloured by subgenome (A/B/D). Height is proportional to real IWGSC RefSeq v1.0 physical length against the Mb scale on the left, and the pinched waist marks the centromere.
                   </p>
                 </div>
                 <div>
-                  <p className="font-medium text-wheat-800">QTL density strip</p>
-                  <p className="text-sm leading-relaxed text-wheat-700">
+                  <p className="font-medium text-wheat-800 dark:text-wheat-100">QTL density strip</p>
+                  <p className="text-sm leading-relaxed text-wheat-700 dark:text-wheat-300">
                     Thousands of QTLs per chromosome can't be drawn individually, so they're binned along the length; strip length is proportional to local count, coloured by that bin's dominant trait.
                   </p>
                 </div>
                 <div>
-                  <p className="font-medium text-wheat-800">MetaQTL brackets</p>
-                  <p className="text-sm leading-relaxed text-wheat-700">
+                  <p className="font-medium text-wheat-800 dark:text-wheat-100">MetaQTL brackets</p>
+                  <p className="text-sm leading-relaxed text-wheat-700 dark:text-wheat-300">
                     Stacked into up to 4 lanes when intervals overlap, coloured by trait. Enable “MetaQTL name labels” to print mqtl_name beside each one — a name is only shown when it won't collide with the previous label.
                   </p>
                 </div>
                 <div>
-                  <p className="font-medium text-wheat-800">Trait highlights</p>
-                  <p className="text-sm leading-relaxed text-wheat-700">
+                  <p className="font-medium text-wheat-800 dark:text-wheat-100">Trait highlights</p>
+                  <p className="text-sm leading-relaxed text-wheat-700 dark:text-wheat-300">
                     Click a trait button (or press keys 1–9) to highlight one or several traits. Use the search box or genome filter to narrow results further.
                   </p>
                 </div>
@@ -400,33 +411,33 @@ export default function Map() {
             ) : (
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                 <div>
-                  <p className="font-medium text-wheat-800">Chromosomes</p>
-                  <p className="text-sm leading-relaxed text-wheat-700">
+                  <p className="font-medium text-wheat-800 dark:text-wheat-100">Chromosomes</p>
+                  <p className="text-sm leading-relaxed text-wheat-700 dark:text-wheat-300">
                     Arc length is proportional to physical length; the tick marks the centromere.
                   </p>
                 </div>
                 <div>
-                  <p className="font-medium text-wheat-800">QTL density</p>
+                  <p className="font-medium text-wheat-800 dark:text-wheat-100">QTL density</p>
                   <div className="mt-1 flex items-center gap-2">
                     <div className="h-3 w-24 rounded bg-gradient-to-r from-[hsl(48,90%,82%)] via-[hsl(24,90%,65%)] to-[hsl(0,90%,44%)]" />
-                    <span className="text-xs text-wheat-600">low → high</span>
+                    <span className="text-xs text-wheat-600 dark:text-wheat-400">low → high</span>
                   </div>
                 </div>
                 <div>
-                  <p className="font-medium text-wheat-800">MetaQTL tracks</p>
-                  <p className="text-sm leading-relaxed text-wheat-700">
+                  <p className="font-medium text-wheat-800 dark:text-wheat-100">MetaQTL tracks</p>
+                  <p className="text-sm leading-relaxed text-wheat-700 dark:text-wheat-300">
                     Each trait category gets its own thin ring, matching the manuscript circos figure, so a bar's radial position and colour both encode its trait.
                   </p>
                 </div>
                 <div>
-                  <p className="font-medium text-wheat-800">QTL tracks</p>
-                  <p className="text-sm leading-relaxed text-wheat-700">
+                  <p className="font-medium text-wheat-800 dark:text-wheat-100">QTL tracks</p>
+                  <p className="text-sm leading-relaxed text-wheat-700 dark:text-wheat-300">
                     Each trait category gets its own thin ring too (same order as the trait legend below), so a tick's radial position and colour both encode its trait.
                   </p>
                 </div>
                 <div>
-                  <p className="font-medium text-wheat-800">Epistatic links</p>
-                  <p className="text-sm leading-relaxed text-wheat-700">
+                  <p className="font-medium text-wheat-800 dark:text-wheat-100">Epistatic links</p>
+                  <p className="text-sm leading-relaxed text-wheat-700 dark:text-wheat-300">
                     Chords join interacting QTLs, coloured by trait. Toggle “Epistatic links” to enable them.
                   </p>
                 </div>

@@ -134,9 +134,9 @@ export function chromosomeLength(chromosome: string): number {
 // `currentColor` + a Tailwind text-* class keeps this responsive to the
 // light/dark theme without JS.
 export const GENOME_COLOR_CLASS: Record<string, string> = {
-  A: 'text-[#e8a33d]',
-  B: 'text-[#4f8fc0]',
-  D: 'text-[#5fa777]',
+  A: 'text-[#e8a33d] dark:text-[#8a6220]',
+  B: 'text-[#4f8fc0] dark:text-[#2f5878]',
+  D: 'text-[#5fa777] dark:text-[#355e42]',
 }
 
 export function genomeOf(chromosome: string): string {

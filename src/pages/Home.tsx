@@ -8,6 +8,7 @@ import {
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
 import { normalizeTrait } from '../lib/map'
+import MiniIdeogram from '../components/MiniIdeogram'
 
 const heroImg = `${import.meta.env.BASE_URL}images/hero-wheat.jpg`
 const img = (p: string) => `${import.meta.env.BASE_URL}images/${p}`
@@ -21,23 +22,19 @@ const GALLERY = [
   { file: 'wheat-herbarium.jpg', caption: 'Herbarium specimen' },
 ]
 
+// Colours match this same category's TRAIT_COLORS entry in lib/map.ts (the
+// same palette used by the Search/Map/Statistics views), so the homepage
+// teaser reads as the same coloured taxonomy, not an unrelated rainbow.
 const TRAIT_CATS = [
-  { name: 'Yield',           icon: Sprout,     blurb: 'Grain yield, biomass, harvest index, spike traits.' },
-  { name: 'Abiotic stress',  icon: Zap,        blurb: 'Drought, heat, salinity, water-logging, PHS.' },
-  { name: 'Biotic stress',   icon: Microscope, blurb: 'Rusts, FHB, powdery mildew, insect resistance.' },
-  { name: 'Quality',         icon: Layers,     blurb: 'Protein, gluten, sedimentation, dough strength.' },
-  { name: 'Biofortification', icon: Sparkles,  blurb: 'Fe, Zn, Se grain content for nutrition.' },
-  { name: 'Developmental',   icon: Telescope,  blurb: 'Heading date, vernalisation, photoperiod.' },
-  { name: 'Morphological',   icon: Network,    blurb: 'Plant height, tiller number, awns.' },
-  { name: 'Nitrogen Use efficiency', icon: Filter, blurb: 'NUE, N uptake, NUtE under varying nitrogen.' },
+  { name: 'Yield',           icon: Sprout,     blurb: 'Grain yield, biomass, harvest index, spike traits.', color: '#2e7d32' },
+  { name: 'Abiotic stress',  icon: Zap,        blurb: 'Drought, heat, salinity, water-logging, PHS.', color: '#a16207' },
+  { name: 'Biotic stress',   icon: Microscope, blurb: 'Rusts, FHB, powdery mildew, insect resistance.', color: '#c62828' },
+  { name: 'Quality',         icon: Layers,     blurb: 'Protein, gluten, sedimentation, dough strength.', color: '#d4a017' },
+  { name: 'Biofortification', icon: Sparkles,  blurb: 'Fe, Zn, Se grain content for nutrition.', color: '#7b1fa2' },
+  { name: 'Developmental',   icon: Telescope,  blurb: 'Heading date, vernalisation, photoperiod.', color: '#0f9178' },
+  { name: 'Morphological',   icon: Network,    blurb: 'Plant height, tiller number, awns.', color: '#a05a2c' },
+  { name: 'Nitrogen Use efficiency', icon: Filter, blurb: 'NUE, N uptake, NUtE under varying nitrogen.', color: '#0277bd' },
 ]
-
-const SUBGENOMES: { label: string; key: 'A' | 'B' | 'D' }[] = [
-  { label: 'A genome', key: 'A' },
-  { label: 'B genome', key: 'B' },
-  { label: 'D genome', key: 'D' },
-]
-const HOMOEO = [1, 2, 3, 4, 5, 6, 7]
 
 export default function Home() {
   const qtl = useCSV<QTLRecord>('qtl.csv')
@@ -89,7 +86,10 @@ export default function Home() {
       {/* HERO */}
       <section className="relative -mx-4 -mt-8 overflow-hidden border-b border-wheat-200 bg-white">
         <img src={heroImg} alt="" className="absolute inset-0 h-full w-full object-cover opacity-10" />
-        <div className="absolute inset-0 bg-white/85" />
+        <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-wheat-300/30 blur-3xl" />
+        <div className="absolute -right-16 top-16 h-80 w-80 rounded-full bg-emerald-300/20 blur-3xl" />
+        <div className="absolute bottom-0 left-1/3 h-56 w-56 rounded-full bg-sky-300/20 blur-3xl" />
+        <div className="absolute inset-0 bg-white/70" />
 
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:py-28">
           <div className="flex flex-col items-center text-center">
@@ -101,7 +101,7 @@ export default function Home() {
               v3.0 · open source · reproducible archive
             </span>
             <h1 className="mt-5 max-w-4xl font-serif text-4xl font-bold leading-tight tracking-tight text-wheat-800 sm:text-6xl animate-fade-up" style={{ animationDelay: '.05s' }}>
-              WheatQTLdb <span className="text-wheat-600">V3.0</span>
+              WheatQTLdb <span className="text-gradient-wheat">V3.0</span>
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-wheat-700 animate-fade-up" style={{ animationDelay: '.1s' }}>
               A manually curated, open-access database of <strong>QTL</strong>, <strong>MetaQTL</strong> and <strong>epistatic QTL</strong> in <em>Triticum aestivum</em> and seven related wheat species.
@@ -151,10 +151,10 @@ export default function Home() {
 
           {/* Live stat strip */}
           <div className="relative mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-4 animate-fade-up" style={{ animationDelay: '.3s' }}>
-            <StatTile label="QTL records" value={stats.qtl} loading={qtl.loading} icon={Database} />
-            <StatTile label="MetaQTL" value={stats.mqtl} loading={mqtl.loading} icon={Layers} />
-            <StatTile label="Epistatic QTL" value={stats.epi} loading={epi.loading} icon={Network} />
-            <StatTile label="Species" value={stats.species} loading={qtl.loading} icon={Wheat} suffix="" />
+            <StatTile label="QTL records" value={stats.qtl} loading={qtl.loading} icon={Database} color="#9a6628" />
+            <StatTile label="MetaQTL" value={stats.mqtl} loading={mqtl.loading} icon={Layers} color="#0f9178" />
+            <StatTile label="Epistatic QTL" value={stats.epi} loading={epi.loading} icon={Network} color="#7b1fa2" />
+            <StatTile label="Species" value={stats.species} loading={qtl.loading} icon={Wheat} suffix="" color="#2e7d32" />
           </div>
         </div>
       </section>
@@ -167,21 +167,24 @@ export default function Home() {
           subtitle="Curated QTL spanning abiotic and biotic stress tolerance, yield, quality, biofortification, developmental and physiological traits."
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {TRAIT_CATS.map(({ name, icon: Icon, blurb }, i) => (
+          {TRAIT_CATS.map(({ name, icon: Icon, blurb, color }, i) => (
             <Link
               key={name}
               to={`/search?trait_category=${encodeURIComponent(name)}`}
-              className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-wheat-400 hover:shadow-lg"
-              style={{ animation: `fade-up .5s ease-out ${i * 60}ms both` }}
+              className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
+              style={{ animation: `fade-up .5s ease-out ${i * 60}ms both`, borderTopColor: color, borderTopWidth: 3 }}
             >
-              <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-wheat-200/50 blur-2xl transition group-hover:bg-wheat-300/70" />
+              <div
+                className="absolute -right-6 -top-6 h-24 w-24 rounded-full blur-2xl transition"
+                style={{ backgroundColor: `${color}33` }}
+              />
               <div className="relative">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-wheat-500 to-wheat-700 text-white shadow-md">
+                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl text-white shadow-md" style={{ backgroundColor: color }}>
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-3 font-semibold text-wheat-900">{name}</h3>
                 <p className="mt-1 text-sm text-wheat-700">{blurb}</p>
-                <div className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-wheat-700 transition group-hover:gap-2">
+                <div className="mt-3 inline-flex items-center gap-1 text-xs font-medium transition group-hover:gap-2" style={{ color }}>
                   Explore <ArrowRight className="h-3 w-3" />
                 </div>
               </div>
@@ -196,34 +199,24 @@ export default function Home() {
           <SectionHeader
             eyebrow="Genome map"
             title="Browse by chromosome"
-            subtitle="The hexaploid wheat genome organised as 3 sub-genomes × 7 homoeologous groups. Click any tile to filter the search."
+            subtitle="A miniature, to-scale karyotype of all 21 hexaploid wheat chromosomes — real relative sizes (3B is the largest), coloured by subgenome (A/B/D). Click any bar to filter the search."
           />
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {SUBGENOMES.map((sg, gi) => (
-              <div key={sg.key} className="rounded-2xl border border-wheat-200 bg-wheat-50/60 p-4">
-                <div className="mb-3 flex items-baseline justify-between">
-                  <div className="text-lg font-bold">{sg.label}</div>
-                  <span className="text-3xl font-black text-wheat-300">{sg.key}</span>
-                </div>
-                <div className="grid grid-cols-7 gap-1.5">
-                  {HOMOEO.map((n, hi) => {
-                    const ch = `${n}${sg.key}`
-                    return (
-                      <Link
-                        key={ch}
-                        to={`/search?chromosome=${ch}`}
-                        title={`Chromosome ${ch}`}
-                        className="group relative aspect-[1/3] overflow-hidden rounded-md border border-wheat-300 bg-gradient-to-b from-wheat-200 to-wheat-400 text-center text-[10px] font-bold text-wheat-900 transition hover:scale-[1.06] hover:from-wheat-300 hover:to-wheat-600 hover:text-white"
-                        style={{ animation: `grain-grow .8s ease-out ${(gi * 7 + hi) * 30}ms both` }}
-                      >
-                        <span className="absolute inset-x-0 top-1">{ch}</span>
-                        <span className="absolute inset-x-0 bottom-1 h-1 rounded-full bg-white/60 group-hover:bg-white" />
-                      </Link>
-                    )
-                  })}
-                </div>
-              </div>
+          <div className="mt-6 overflow-x-auto rounded-2xl border border-wheat-200 bg-wheat-50/60 px-4 py-6">
+            <div className="mx-auto max-w-4xl">
+              <MiniIdeogram onSelect={(chr) => navigate(`/search?chromosome=${chr}`)} />
+            </div>
+          </div>
+          <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-wheat-600">
+            {(['A', 'B', 'D'] as const).map((g) => (
+              <span key={g} className="inline-flex items-center gap-1.5">
+                <span
+                  className="h-2.5 w-2.5 rounded-full"
+                  style={{ backgroundColor: g === 'A' ? '#e8a33d' : g === 'B' ? '#4f8fc0' : '#5fa777' }}
+                />
+                {g} genome
+              </span>
             ))}
+            <span>Bar height is proportional to real IWGSC RefSeq v1.0 physical length.</span>
           </div>
         </div>
       </section>
@@ -264,19 +257,19 @@ export default function Home() {
           )}
         </div>
 
-        <div className="card relative overflow-hidden">
-          <Sparkles className="h-7 w-7 text-wheat-600" />
-          <h3 className="mt-3 text-xl font-bold text-wheat-900">What's new in V3.0</h3>
-          <ul className="mt-3 space-y-2 text-sm text-wheat-700">
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-600" /> Updated list of QTLs reported from 2022.</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-600" /> Transparent — open codebase & reproducible builds</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-600" /> Modern, mobile-ready UI</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-600" /> Advanced multi-criteria search</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-600" /> Interactive charts (5+ views)</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-600" /> CSV-based · open data layer</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-600" /> One-click CSV export</li>
+        <div className="card relative overflow-hidden bg-gradient-to-br from-wheat-600 via-wheat-700 to-emerald-800 text-white shadow-lg">
+          <Sparkles className="h-7 w-7 text-wheat-100" />
+          <h3 className="mt-3 text-xl font-bold">What's new in V3.0</h3>
+          <ul className="mt-3 space-y-2 text-sm text-wheat-50/95">
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Updated list of QTLs reported from 2022.</li>
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Transparent — open codebase & reproducible builds</li>
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Modern, mobile-ready UI</li>
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Advanced multi-criteria search</li>
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Interactive charts (5+ views)</li>
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> CSV-based · open data layer</li>
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> One-click CSV export</li>
           </ul>
-          <Link to="/credits" className="mt-5 inline-flex items-center gap-2 rounded-md bg-wheat-100 px-3 py-1.5 text-sm font-medium text-wheat-800 transition hover:bg-wheat-200">
+          <Link to="/credits" className="mt-5 inline-flex items-center gap-2 rounded-md bg-white/15 px-3 py-1.5 text-sm font-medium backdrop-blur transition hover:bg-white/25">
             Read more <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -362,17 +355,17 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden rounded-3xl border border-wheat-200 bg-white p-8 shadow-sm sm:p-14">
+      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-wheat-700 via-wheat-600 to-emerald-700 p-8 text-white shadow-xl sm:p-14">
         <div className="relative max-w-3xl">
-          <h2 className="text-3xl font-extrabold tracking-tight text-wheat-900 sm:text-4xl">Open data, open code, reproducible science.</h2>
-          <p className="mt-3 text-wheat-700">
+          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Open data, open code, reproducible science.</h2>
+          <p className="mt-3 text-wheat-50/90">
             Found a missing reference or want to contribute curated records? Pull requests, issues and email correspondence are all welcome — contributions are credited and versioned in the public repository.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            <a href="https://github.com/ank-man/WheatQTLdbV3.0" target="_blank" rel="noreferrer" className="btn-primary">
+            <a href="https://github.com/ank-man/WheatQTLdbV3.0" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold text-wheat-900 shadow-lg transition hover:bg-wheat-50">
               <Github className="h-4 w-4" /> Contribute on GitHub
             </a>
-            <Link to="/contact" className="btn">
+            <Link to="/contact" className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold backdrop-blur transition hover:bg-white/20">
               Contact the team
             </Link>
           </div>
@@ -382,10 +375,10 @@ export default function Home() {
   )
 }
 
-function StatTile({ label, value, loading, icon: Icon, suffix }: { label: string; value: number; loading: boolean; icon: typeof Database; suffix?: string }) {
+function StatTile({ label, value, loading, icon: Icon, suffix, color = '#9a6628' }: { label: string; value: number; loading: boolean; icon: typeof Database; suffix?: string; color?: string }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white/80 p-4 shadow-sm backdrop-blur transition hover:shadow-md">
-      <div className="absolute -right-3 -top-3 h-16 w-16 rounded-full bg-wheat-100/70 blur-xl transition group-hover:bg-wheat-200" />
+    <div className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white/80 p-4 shadow-sm backdrop-blur transition hover:shadow-md" style={{ borderTopColor: color, borderTopWidth: 3 }}>
+      <div className="absolute -right-3 -top-3 h-16 w-16 rounded-full blur-xl transition" style={{ backgroundColor: `${color}22` }} />
       <div className="relative flex items-start justify-between">
         <div>
           <div className="text-[11px] uppercase tracking-wider text-wheat-600">{label}</div>
@@ -393,7 +386,7 @@ function StatTile({ label, value, loading, icon: Icon, suffix }: { label: string
             {loading ? <span className="inline-block h-7 w-20 animate-pulse rounded bg-wheat-200" /> : value.toLocaleString()}{suffix ?? ''}
           </div>
         </div>
-        <div className="rounded-lg bg-wheat-100 p-2 text-wheat-700">
+        <div className="rounded-lg p-2 text-white" style={{ backgroundColor: color }}>
           <Icon className="h-4 w-4" />
         </div>
       </div>
