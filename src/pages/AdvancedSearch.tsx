@@ -8,7 +8,7 @@ import AsyncBoundary from '../components/AsyncBoundary'
 import GlossaryHeader from '../components/GlossaryHeader'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord } from '../lib/types'
-import { TRAIT_CATEGORIES, normalizeTrait, normalizeSpecies } from '../lib/map'
+import { TRAIT_CATEGORIES, TRAIT_GROUPS, normalizeTrait, normalizeSpecies } from '../lib/map'
 
 interface Filters {
   q: string
@@ -57,6 +57,15 @@ function speciesMatches(fieldValue: string, selected: string): boolean {
   return fieldValue.split(/[;/]/).map((s) => normalizeSpecies(s)).includes(selected)
 }
 
+// `selected` may be an exact TraitCategory (from normalizeTrait) or one of
+// the broader TRAIT_GROUPS umbrella labels (e.g. homepage's "Abiotic
+// stress" tile) - the latter matches any of its constituent categories.
+function traitMatches(category: string, selected: string): boolean {
+  if (!selected) return true
+  const group = TRAIT_GROUPS[selected]
+  return group ? group.includes(category as any) : category === selected
+}
+
 const columns: ColumnDef<QTLRecord, any>[] = [
   { accessorKey: 'species', header: 'Species' },
   { accessorKey: 'trait', header: () => <GlossaryHeader label="Trait" term="trait" /> },
@@ -99,13 +108,18 @@ export default function AdvancedSearch() {
   }, [f, setParams])
 
   const speciesOpts = useMemo(() => uniqueSpecies(data, 'species'), [data])
-  // Real, non-redundant trait options: the fixed 16 canonical categories
-  // (see TRAIT_CATEGORIES / normalizeTrait), not raw per-row trait strings -
-  // those vary wildly in spelling/case/whitespace across source files and
+  // Real, non-redundant trait options: the fixed canonical categories (see
+  // TRAIT_CATEGORIES / normalizeTrait), not raw per-row trait strings - those
+  // vary wildly in spelling/case/whitespace across source files and
   // occasionally contain a mis-shifted species value rather than a trait.
+  // The broader TRAIT_GROUPS umbrella labels (matching the homepage's
+  // "Abiotic stress" / "Biotic stress" tiles) are listed first, so a link
+  // into a group resolves to a real, selectable dropdown option instead of
+  // silently matching nothing.
   const traitOpts = useMemo(() => {
     const present = new Set(data.map((r) => normalizeTrait(r)))
-    return TRAIT_CATEGORIES.filter((cat) => present.has(cat))
+    const groups = Object.keys(TRAIT_GROUPS).filter((g) => TRAIT_GROUPS[g].some((cat) => present.has(cat)))
+    return [...groups, ...TRAIT_CATEGORIES.filter((cat) => present.has(cat))]
   }, [data])
   const chrOpts = useMemo(() => uniqueValues(data, 'chromosome'), [data])
 
@@ -115,7 +129,7 @@ export default function AdvancedSearch() {
     const pMax = f.pveMax ? Number(f.pveMax) : Infinity
     return data.filter((r) => {
       if (!speciesMatches(r.species, f.species)) return false
-      if (f.trait && normalizeTrait(r) !== f.trait) return false
+      if (f.trait && !traitMatches(normalizeTrait(r), f.trait)) return false
       if (f.chromosome && r.chromosome !== f.chromosome) return false
       const p = Number(r.pve)
       if (!Number.isNaN(p) && (p < pMin || p > pMax)) return false

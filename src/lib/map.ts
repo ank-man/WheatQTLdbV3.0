@@ -26,6 +26,17 @@ export const TRAIT_CATEGORIES = [
 
 export type TraitCategory = (typeof TRAIT_CATEGORIES)[number]
 
+// Broader umbrella groupings shown as homepage "highlight" tiles (Home.tsx),
+// each spanning several of the real, individually-filterable categories
+// above. Kept as an explicit map (rather than baking "Abiotic stress" or
+// "Biotic stress" into TRAIT_CATEGORIES itself) so the Search page's trait
+// dropdown/filter can recognise a group name too - selecting one matches any
+// QTL whose normalizeTrait() result is one of its listed categories.
+export const TRAIT_GROUPS: Record<string, TraitCategory[]> = {
+  'Abiotic stress': ['Drought tolerance', 'Salt tolerance', 'Heat stress tolerance', 'Waterlogging tolerance', 'Abiotic stress (other)'],
+  'Biotic stress': ['Fungal resistance', 'Bacterial resistance', 'Viral resistance', 'Nematode resistance', 'Insect resistance'],
+}
+
 // Every trait/parameter string in the data resolves to one of these (see
 // normalizeTrait). The former single "Abiotic stress" bucket (26,517 QTL +
 // 348 MetaQTL) is split into its dominant, individually well-represented

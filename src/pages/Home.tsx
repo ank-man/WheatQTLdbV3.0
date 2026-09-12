@@ -29,7 +29,7 @@ const TRAIT_CATS = [
   { name: 'Yield',           icon: Sprout,     blurb: 'Grain yield, biomass, harvest index, spike traits.', color: '#2e7d32' },
   { name: 'Abiotic stress',  icon: Zap,        blurb: 'Drought, heat, salinity, water-logging, PHS.', color: '#a16207' },
   { name: 'Biotic stress',   icon: Microscope, blurb: 'Rusts, FHB, powdery mildew, insect resistance.', color: '#c62828' },
-  { name: 'Quality',         icon: Layers,     blurb: 'Protein, gluten, sedimentation, dough strength.', color: '#d4a017' },
+  { name: 'Quality traits',  icon: Layers,     blurb: 'Protein, gluten, sedimentation, dough strength.', color: '#d4a017' },
   { name: 'Biofortification', icon: Sparkles,  blurb: 'Fe, Zn, Se grain content for nutrition.', color: '#7b1fa2' },
   { name: 'Developmental',   icon: Telescope,  blurb: 'Heading date, vernalisation, photoperiod.', color: '#0f9178' },
   { name: 'Plant morphology', icon: Network,  blurb: 'Plant height, tiller number, awns, spike length.', color: '#a05a2c' },
@@ -170,7 +170,7 @@ export default function Home() {
           {TRAIT_CATS.map(({ name, icon: Icon, blurb, color }, i) => (
             <Link
               key={name}
-              to={`/search?trait_category=${encodeURIComponent(name)}`}
+              to={`/search?trait=${encodeURIComponent(name)}`}
               className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
               style={{ animation: `fade-up .5s ease-out ${i * 60}ms both`, borderTopColor: color, borderTopWidth: 3 }}
             >
@@ -239,7 +239,7 @@ export default function Home() {
             <ul className="space-y-3">
               {topCategories.map((c, i) => (
                 <li key={c.name} className="animate-fade-up" style={{ animationDelay: `${i * 50}ms` }}>
-                  <Link to={`/search?trait_category=${encodeURIComponent(c.name)}`} className="group block">
+                  <Link to={`/search?trait=${encodeURIComponent(c.name)}`} className="group block">
                     <div className="mb-1 flex items-center justify-between text-sm">
                       <span className="font-medium text-wheat-800 group-hover:text-wheat-900">{c.name}</span>
                       <span className="tabular-nums text-wheat-600">{c.value} QTL</span>
