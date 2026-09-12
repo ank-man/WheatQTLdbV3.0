@@ -27,7 +27,7 @@ const GALLERY = [
 // teaser reads as the same coloured taxonomy, not an unrelated rainbow.
 const TRAIT_CATS = [
   { name: 'Yield',           icon: Sprout,     blurb: 'Grain yield, biomass, harvest index, spike traits.', color: '#2e7d32' },
-  { name: 'Abiotic stress',  icon: Zap,        blurb: 'Drought, heat, salinity, water-logging, PHS.', color: '#a16207' },
+  { name: 'Abiotic stress',  icon: Zap,        blurb: 'Drought, heat, salinity, water-logging, frost.', color: '#a16207' },
   { name: 'Biotic stress',   icon: Microscope, blurb: 'Rusts, FHB, powdery mildew, insect resistance.', color: '#c62828' },
   { name: 'Quality traits',  icon: Layers,     blurb: 'Protein, gluten, sedimentation, dough strength.', color: '#d4a017' },
   { name: 'Biofortification', icon: Sparkles,  blurb: 'Fe, Zn, Se grain content for nutrition.', color: '#7b1fa2' },

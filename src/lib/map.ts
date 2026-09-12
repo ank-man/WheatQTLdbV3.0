@@ -8,7 +8,7 @@ export const TRAIT_CATEGORIES = [
   'Salt tolerance',
   'Heat stress tolerance',
   'Waterlogging tolerance',
-  'Abiotic stress (other)',
+  'Frost tolerance',
   'Biofortification',
   'Bacterial resistance',
   'Nematode resistance',
@@ -33,7 +33,7 @@ export type TraitCategory = (typeof TRAIT_CATEGORIES)[number]
 // dropdown/filter can recognise a group name too - selecting one matches any
 // QTL whose normalizeTrait() result is one of its listed categories.
 export const TRAIT_GROUPS: Record<string, TraitCategory[]> = {
-  'Abiotic stress': ['Drought tolerance', 'Salt tolerance', 'Heat stress tolerance', 'Waterlogging tolerance', 'Abiotic stress (other)'],
+  'Abiotic stress': ['Drought tolerance', 'Salt tolerance', 'Heat stress tolerance', 'Waterlogging tolerance', 'Frost tolerance'],
   'Biotic stress': ['Fungal resistance', 'Bacterial resistance', 'Viral resistance', 'Nematode resistance', 'Insect resistance'],
 }
 
@@ -41,11 +41,11 @@ export const TRAIT_GROUPS: Record<string, TraitCategory[]> = {
 // normalizeTrait). The former single "Abiotic stress" bucket (26,517 QTL +
 // 348 MetaQTL) is split into its dominant, individually well-represented
 // stresses - Drought (18,610), Heat (4,164), Salt (3,615), Waterlogging
-// (369) - with a residual "Abiotic stress (other)" for frost/cold, osmotic,
-// aluminium toxicity and genuinely combined multi-stress records (~430),
-// so nothing reads as an opaque catch-all bucket. "Other" (distinct from
-// "Abiotic stress (other)") is kept only as the residual for genuine data
-// errors (e.g. a row with no trait/parameter text at all).
+// (369) - plus "Frost tolerance", curated from a single dedicated source
+// ("Frost tolerance final_RishiMuni") covering freezing tolerance, winter
+// survival, LT50 and cold-acclimation gene expression - so nothing reads as
+// an opaque catch-all bucket. "Other" is kept only as the residual for
+// genuine data errors (e.g. a row with no trait/parameter text at all).
 //
 // At 21 categories, some hue closeness between adjacent swatches is
 // unavoidable in a single-channel qualitative palette (the dataviz skill's
@@ -61,7 +61,7 @@ export const TRAIT_COLORS: Record<TraitCategory, string> = {
   'Salt tolerance': '#0e7490',
   'Heat stress tolerance': '#e11d48',
   'Waterlogging tolerance': '#1565c0',
-  'Abiotic stress (other)': '#64748b',
+  'Frost tolerance': '#64748b',
   Biofortification: '#7b1fa2',
   'Bacterial resistance': '#0e8fa0',
   'Nematode resistance': '#ef6c00',
@@ -271,7 +271,11 @@ export function normalizeTrait(record: QTLRecord | MetaQTLRecord): TraitCategory
   // (waterlogging / water-logging / water logging) - match regardless of
   // the separator.
   if (c.includes('water-log') || c.includes('water log') || c.includes('waterlog')) return 'Waterlogging tolerance'
-  if (c.includes('cold') || c.includes('abiotic') || c.includes('osmotic') || c.includes('alumin') || c.includes('frost') || c.includes('toxic')) return 'Abiotic stress (other)'
+  // Frost/freezing/winter-hardiness - deliberately narrow (not a generic
+  // "cold/abiotic/osmotic/toxic" catch-all): that broader match used to also
+  // pull in unrelated "osmotic potential" physiological-trait rows that have
+  // nothing to do with frost.
+  if (c.includes('frost') || c.includes('freez') || c.includes('winter surviv') || c.includes('lt50') || c.includes('cold-respons') || c.includes('cold acclimat') || c.includes('cold harden') || c.includes('snow mold')) return 'Frost tolerance'
   // Nutrient *use efficiency* (agronomic input efficiency) is biologically
   // distinct from *biofortification* (grain nutrient content for nutrition)
   // below, so it's checked first even though both mention the same elements.
