@@ -675,12 +675,15 @@ def main():
     # unrelated content (e.g. N data_revised.xlsx's Sheet2 is real, needed
     # data), so exclusions scoped to a specific sheet NAME in a specific FILE
     # go here rather than in the global skip_sheets set above.
-    # Nematode_Resistance.xlsx Sheet2 (181 rows, two other nematode-resistance
-    # studies) is excluded per instruction, keeping only Sheet1.
+    # Nematode_Resistance.xlsx Sheet2 (180 rows: Singh et al. 2010 Euphytica
+    # on T. monococcum, and Pundir et al. 2022 Sci Rep on cereal cyst
+    # nematode in T. aestivum) was previously excluded, keeping only Sheet1's
+    # Trident x Molineux population - confirmed on review to be two genuine,
+    # distinct published studies (not duplicates of Sheet1), so it's included
+    # like every other sheet now.
     # N data_revised.xlsx: keep only Sheet2 per instruction, excluding Sheet1
     # (and Sheet3, already empty/junk).
     FILE_SHEET_SKIP = {
-        "Nematode_Resistance.xlsx": {"sheet2"},
         "N data_revised.xlsx": {"sheet1"},
     }
 
