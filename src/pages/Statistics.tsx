@@ -430,12 +430,12 @@ function ChartCard({ title, children, wide }: { title: string; children: React.R
   const ref = useRef<HTMLDivElement>(null)
 
   function handleExport() {
-    const svg = ref.current?.querySelector('svg')
-    if (svg) exportRaster(svg as SVGSVGElement, 'jpeg', `${slugify(title)}.jpeg`)
+    const svg = ref.current?.querySelector<SVGSVGElement>('svg.recharts-surface')
+    if (svg) exportRaster(svg, 'jpeg', `${slugify(title)}.jpeg`)
   }
 
   return (
-    <div ref={ref} className={`card ${wide ? 'lg:col-span-2' : ''}`}>
+    <div className={`card ${wide ? 'lg:col-span-2' : ''}`}>
       <div className="mb-3 flex items-start justify-between gap-3">
         <h3 className="font-semibold text-wheat-900">{title}</h3>
         <button onClick={handleExport} className="btn shrink-0 text-xs" title={`Download "${title}" as JPEG`}>
@@ -443,7 +443,7 @@ function ChartCard({ title, children, wide }: { title: string; children: React.R
           JPEG
         </button>
       </div>
-      {children}
+      <div ref={ref}>{children}</div>
     </div>
   )
 }
