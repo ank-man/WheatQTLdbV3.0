@@ -1,13 +1,15 @@
-import { useMemo } from 'react'
+import { useMemo, useRef } from 'react'
 import {
   Bar, BarChart, CartesianGrid, ResponsiveContainer,
   Tooltip, XAxis, YAxis, Cell,
 } from 'recharts'
+import { FileImage } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
 import { TRAIT_COLORS, chromosomeSortKey, normalizeTrait, normalizeSpecies, prepareItems, QTLItem, MetaQTLItem } from '../lib/map'
+import { exportRaster } from '../lib/exportMap'
 
 const COLORS = ['#cc9d3f', '#9a6628', '#7c4d24', '#d8b665', '#e7d29c', '#b88231', '#5e3a1f', '#3f2715']
 
@@ -420,10 +422,27 @@ function SummaryCard({ label, value }: { label: string; value: number }) {
   )
 }
 
+function slugify(title: string): string {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+}
+
 function ChartCard({ title, children, wide }: { title: string; children: React.ReactNode; wide?: boolean }) {
+  const ref = useRef<HTMLDivElement>(null)
+
+  function handleExport() {
+    const svg = ref.current?.querySelector('svg')
+    if (svg) exportRaster(svg as SVGSVGElement, 'jpeg', `${slugify(title)}.jpeg`)
+  }
+
   return (
-    <div className={`card ${wide ? 'lg:col-span-2' : ''}`}>
-      <h3 className="mb-3 font-semibold text-wheat-900">{title}</h3>
+    <div ref={ref} className={`card ${wide ? 'lg:col-span-2' : ''}`}>
+      <div className="mb-3 flex items-start justify-between gap-3">
+        <h3 className="font-semibold text-wheat-900">{title}</h3>
+        <button onClick={handleExport} className="btn shrink-0 text-xs" title={`Download "${title}" as JPEG`}>
+          <FileImage className="h-3.5 w-3.5" />
+          JPEG
+        </button>
+      </div>
       {children}
     </div>
   )
