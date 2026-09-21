@@ -1,6 +1,6 @@
 import { useMemo, useRef } from 'react'
 import {
-  Bar, BarChart, CartesianGrid, LabelList, Legend, ResponsiveContainer,
+  Bar, BarChart, CartesianGrid, Customized, LabelList, ResponsiveContainer,
   Tooltip, XAxis, YAxis, Cell,
 } from 'recharts'
 import { FileImage } from 'lucide-react'
@@ -56,6 +56,48 @@ const VALUE_LABEL = {
   fontSize: 10,
   formatter: (v: number) => v.toLocaleString(),
 } as const
+
+// Recharts' own <Legend> is an HTML overlay, so it is absent from the SVG
+// the JPEG export rasterizes - a stacked chart would export as unlabelled
+// colours. This draws the same legend inside the chart surface instead, in
+// the space reserved by the chart's bottom margin.
+function InChartLegend({ entries, width, height }: { entries: { name: string; color: string }[]; width?: number; height?: number }) {
+  const w = width ?? 0
+  const rows: { name: string; color: string; w: number }[][] = []
+  let row: { name: string; color: string; w: number }[] = []
+  let rowWidth = 0
+  entries.forEach(({ name, color }) => {
+    const itemWidth = name.length * 6 + 28
+    if (rowWidth + itemWidth > w - 24 && row.length) {
+      rows.push(row)
+      row = []
+      rowWidth = 0
+    }
+    row.push({ name, color, w: itemWidth })
+    rowWidth += itemWidth
+  })
+  if (row.length) rows.push(row)
+
+  const lineHeight = 16
+  const top = (height ?? 0) - rows.length * lineHeight
+  return (
+    <g>
+      {rows.map((items, ri) => {
+        let x = 16
+        return items.map((item) => {
+          const node = (
+            <g key={`${ri}-${item.name}`} transform={`translate(${x}, ${top + ri * lineHeight})`}>
+              <circle cx={4} cy={0} r={4} fill={item.color} />
+              <text x={13} y={4} fontSize={11} fill="#5e3a1f">{item.name}</text>
+            </g>
+          )
+          x += item.w
+          return node
+        })
+      })}
+    </g>
+  )
+}
 
 // Top-to-bottom shade shift on solid-colour bars - the same trick the site's
 // cards use - so columns read as depth rather than flat blocks.
@@ -299,7 +341,7 @@ export default function Statistics() {
               <BarChart data={bySpecies.slice(1)} layout="vertical" margin={{ left: 12, right: 56, top: 4, bottom: 4 }}>
                 <CartesianGrid {...GRID} vertical horizontal={false} />
                 <XAxis type="number" {...AXIS} />
-                <YAxis type="category" dataKey="name" width={160} {...AXIS} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis type="category" dataKey="name" interval={0} width={160} {...AXIS} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <Tooltip {...TOOLTIP} />
                 <Bar dataKey="value" radius={[0, 5, 5, 0]}>
                   {bySpecies.slice(1).map((d, i) => (
@@ -316,7 +358,7 @@ export default function Statistics() {
               <BarChart data={byCategoryTop} layout="vertical" margin={{ left: 12, right: 60, top: 8, bottom: 8 }}>
                 <CartesianGrid {...GRID} vertical horizontal={false} />
                 <XAxis type="number" {...AXIS} />
-                <YAxis type="category" dataKey="name" width={170} {...AXIS} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis type="category" dataKey="name" interval={0} width={170} {...AXIS} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <Tooltip {...TOOLTIP} />
                 <Bar dataKey="value" radius={[0, 5, 5, 0]}>
                   {byCategoryTop.map((entry, i) => (
@@ -330,12 +372,14 @@ export default function Statistics() {
 
           <ChartCard title="QTL by chromosome (stacked by top traits)" wide>
             <ResponsiveContainer width="100%" height={360} className="text-wheat-700">
-              <BarChart data={chromTraitData} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
+              <BarChart data={chromTraitData} margin={{ top: 8, right: 12, bottom: 44, left: 0 }}>
                 <CartesianGrid {...GRID} />
                 <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} {...AXIS} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <YAxis {...AXIS} />
                 <Tooltip {...TOOLTIP} />
-                <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: 11, paddingTop: 4 }} />
+                <Customized
+                  component={<InChartLegend entries={topTraits.map((t) => ({ name: t, color: traitColor(t) }))} />}
+                />
                 {topTraits.map((trait, i) => (
                   <Bar
                     key={trait}
@@ -356,7 +400,7 @@ export default function Statistics() {
                 fall inside at least one MetaQTL interval on the same chromosome.
               </p>
               <ResponsiveContainer width="100%" height={340} className="text-wheat-700">
-                <BarChart data={overlap.perChrom} margin={{ top: 8, right: 12, bottom: 8, left: 0 }}>
+                <BarChart data={overlap.perChrom} margin={{ top: 8, right: 12, bottom: 28, left: 0 }}>
                   <defs>
                     <Gradient id="grad-inside" from="#43a047" to={OVERLAP_COLORS['Within a MetaQTL']} />
                     <Gradient id="grad-outside" from="#e7d29c" to={OVERLAP_COLORS['Outside all MetaQTLs']} />
@@ -365,7 +409,13 @@ export default function Statistics() {
                   <XAxis dataKey="name" interval={0} angle={-45} textAnchor="end" height={60} {...AXIS} tick={{ fill: 'currentColor', fontSize: 10 }} />
                   <YAxis {...AXIS} />
                   <Tooltip {...TOOLTIP} />
-                  <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontSize: 11, paddingTop: 4 }} />
+                  <Customized
+                    component={
+                      <InChartLegend
+                        entries={Object.entries(OVERLAP_COLORS).map(([name, color]) => ({ name, color }))}
+                      />
+                    }
+                  />
                   <Bar dataKey="Within a MetaQTL" stackId="a" fill="url(#grad-inside)" />
                   <Bar dataKey="Outside all MetaQTLs" stackId="a" fill="url(#grad-outside)" radius={[4, 4, 0, 0]} />
                 </BarChart>
@@ -378,7 +428,7 @@ export default function Statistics() {
               <BarChart data={mqtlByCategory} layout="vertical" margin={{ left: 12, right: 48, top: 8, bottom: 8 }}>
                 <CartesianGrid {...GRID} vertical horizontal={false} />
                 <XAxis type="number" {...AXIS} />
-                <YAxis type="category" dataKey="name" width={155} {...AXIS} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis type="category" dataKey="name" interval={0} width={155} {...AXIS} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <Tooltip {...TOOLTIP} />
                 <Bar dataKey="value" radius={[0, 5, 5, 0]}>
                   {mqtlByCategory.map((entry, i) => (
@@ -410,7 +460,7 @@ export default function Statistics() {
               <BarChart data={epiByCategory} layout="vertical" margin={{ left: 12, right: 48, top: 8, bottom: 8 }}>
                 <CartesianGrid {...GRID} vertical horizontal={false} />
                 <XAxis type="number" {...AXIS} />
-                <YAxis type="category" dataKey="name" width={155} {...AXIS} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis type="category" dataKey="name" interval={0} width={155} {...AXIS} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <Tooltip {...TOOLTIP} />
                 <Bar dataKey="value" radius={[0, 5, 5, 0]}>
                   {epiByCategory.map((entry, i) => (
@@ -456,7 +506,7 @@ export default function Statistics() {
               <BarChart data={topParameters} layout="vertical" margin={{ left: 12, right: 52, top: 8, bottom: 8 }}>
                 <CartesianGrid {...GRID} vertical horizontal={false} />
                 <XAxis type="number" {...AXIS} />
-                <YAxis type="category" dataKey="name" width={165} {...AXIS} tick={{ fill: 'currentColor', fontSize: 9 }} />
+                <YAxis type="category" dataKey="name" interval={0} width={165} {...AXIS} tick={{ fill: 'currentColor', fontSize: 9 }} />
                 <Tooltip {...TOOLTIP} />
                 <Bar dataKey="value" radius={[0, 5, 5, 0]}>
                   {topParameters.map((d, i) => <Cell key={i} fill={rampColor(d.value, maxValue(topParameters))} />)}
@@ -471,7 +521,7 @@ export default function Statistics() {
               <BarChart data={bySource} layout="vertical" margin={{ left: 12, right: 56, top: 8, bottom: 8 }}>
                 <CartesianGrid {...GRID} vertical horizontal={false} />
                 <XAxis type="number" {...AXIS} />
-                <YAxis type="category" dataKey="name" width={210} {...AXIS} tick={{ fill: 'currentColor', fontSize: 9 }} />
+                <YAxis type="category" dataKey="name" interval={0} width={210} {...AXIS} tick={{ fill: 'currentColor', fontSize: 9 }} />
                 <Tooltip {...TOOLTIP} />
                 <Bar dataKey="value" radius={[0, 5, 5, 0]}>
                   {bySource.map((d, i) => <Cell key={i} fill={rampColor(d.value, maxValue(bySource))} />)}
