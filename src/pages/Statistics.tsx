@@ -1,13 +1,18 @@
-import { useMemo } from 'react'
+import { useMemo, useRef } from 'react'
 import {
   Bar, BarChart, CartesianGrid, ResponsiveContainer,
   Tooltip, XAxis, YAxis, Cell,
 } from 'recharts'
+import { Download } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
-import { TRAIT_COLORS, chromosomeSortKey, normalizeTrait, normalizeSpecies, prepareItems, QTLItem, MetaQTLItem } from '../lib/map'
+import {
+  TRAIT_COLORS, chromosomeSortKey, normalizeTrait, normalizeSubTrait, normalizeSpecies,
+  prepareItems, QTLItem, MetaQTLItem,
+} from '../lib/map'
+import { exportRaster } from '../lib/exportMap'
 
 const COLORS = ['#cc9d3f', '#9a6628', '#7c4d24', '#d8b665', '#e7d29c', '#b88231', '#5e3a1f', '#3f2715']
 
@@ -49,6 +54,20 @@ function byTraitCategory(rows: { trait: string; parameter?: string }[]): { name:
     const cat = normalizeTrait(r as unknown as QTLRecord)
     map.set(cat, (map.get(cat) ?? 0) + 1)
   })
+  return Array.from(map.entries()).map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value)
+}
+
+// Sub-trait counts within a single top-level category (Biofortification's
+// Zn/Fe/Se/Ca split, Nutrient use efficiency's NUE/PUE/KUE split) - see
+// TRAIT_SUBCATEGORIES / normalizeSubTrait in lib/map.
+function bySubCategory(rows: QTLRecord[], category: string): { name: string; value: number }[] {
+  const map = new Map<string, number>()
+  rows
+    .filter((r) => normalizeTrait(r) === category)
+    .forEach((r) => {
+      const sub = normalizeSubTrait(r) ?? 'Other'
+      map.set(sub, (map.get(sub) ?? 0) + 1)
+    })
   return Array.from(map.entries()).map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value)
 }
 
@@ -132,6 +151,8 @@ export default function Statistics() {
   // page's Trait dropdown uses), not a raw-string tally capped at 8 with
   // everything else dumped into one opaque "Other" bar.
   const byCategoryTop = useMemo(() => byTraitCategory(qtl.data), [qtl.data])
+  const byBiofortMineral = useMemo(() => bySubCategory(qtl.data, 'Biofortification'), [qtl.data])
+  const byNutrientEfficiency = useMemo(() => bySubCategory(qtl.data, 'Nutrient use efficiency'), [qtl.data])
   // The stacked-by-chromosome view still caps at the top 8 for a legible
   // number of stack segments; anything outside the top 8 folds into "Other"
   // there (chromTraitMatrix), which is a display simplification for that one
@@ -263,6 +284,30 @@ export default function Statistics() {
                     <Cell key={`cell-${i}`} fill={traitColor(entry.name)} />
                   ))}
                 </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          <ChartCard title="Biofortification by mineral">
+            <ResponsiveContainer width="100%" height={260} className="text-wheat-700">
+              <BarChart data={byBiofortMineral} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
+                <XAxis type="number" tick={{ fill: 'currentColor' }} />
+                <YAxis type="category" dataKey="name" width={140} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
+                <Bar dataKey="value" fill={TRAIT_COLORS.Biofortification} />
+              </BarChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          <ChartCard title="Nutrient use efficiency by nutrient">
+            <ResponsiveContainer width="100%" height={260} className="text-wheat-700">
+              <BarChart data={byNutrientEfficiency} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
+                <XAxis type="number" tick={{ fill: 'currentColor' }} />
+                <YAxis type="category" dataKey="name" width={200} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
+                <Bar dataKey="value" fill={TRAIT_COLORS['Nutrient use efficiency']} />
               </BarChart>
             </ResponsiveContainer>
           </ChartCard>
@@ -421,10 +466,24 @@ function SummaryCard({ label, value }: { label: string; value: number }) {
 }
 
 function ChartCard({ title, children, wide }: { title: string; children: React.ReactNode; wide?: boolean }) {
+  const ref = useRef<HTMLDivElement>(null)
+
+  const handleDownload = () => {
+    const svg = ref.current?.querySelector('svg')
+    if (!svg) return
+    const filename = `${title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}.png`
+    exportRaster(svg, 'png', filename)
+  }
+
   return (
     <div className={`card ${wide ? 'lg:col-span-2' : ''}`}>
-      <h3 className="mb-3 font-semibold text-wheat-900">{title}</h3>
-      {children}
+      <div className="mb-3 flex items-center justify-between gap-2">
+        <h3 className="font-semibold text-wheat-900">{title}</h3>
+        <button className="btn text-xs" onClick={handleDownload} title="Download chart as PNG">
+          <Download className="h-3.5 w-3.5" /> PNG
+        </button>
+      </div>
+      <div ref={ref}>{children}</div>
     </div>
   )
 }

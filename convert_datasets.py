@@ -490,7 +490,15 @@ def extract_qtl(headers, body, source_file):
     records = []
     si  = col_idx(headers, "species")
     tri = col_idx(headers, "trait", "Trait")
-    pai = col_idx(headers, "parameter", "paramete")
+    # "Associated traits" (and the source typo "Associatede traits") is the
+    # pleiotropy column used by the multitrait-qtl sheets (Developmental.xls,
+    # Zn multitrait.xlsx) to list every co-mapped trait for a single locus -
+    # the same role "Parameter" plays for the comma-separated multi-parameter
+    # lists in Drought.xls. Without this fallback, col_idx finds no match for
+    # "parameter" on those two files and the pleiotropy data is silently
+    # dropped instead of landing in the parameter column like it does
+    # everywhere else.
+    pai = col_idx(headers, "parameter", "paramete", "associated trait", "associatede trait")
     cri = col_idx(headers, "cross")
     poi = col_idx(headers, "population", "germplasm")
     mei = col_idx(headers, "method")

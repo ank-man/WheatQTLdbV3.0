@@ -33,7 +33,7 @@ const TRAIT_CATS = [
   { name: 'Biofortification', icon: Sparkles,  blurb: 'Fe, Zn, Se grain content for nutrition.', color: '#7b1fa2' },
   { name: 'Developmental',   icon: Telescope,  blurb: 'Heading date, vernalisation, photoperiod.', color: '#0f9178' },
   { name: 'Plant morphology', icon: Network,  blurb: 'Plant height, tiller number, awns, spike length.', color: '#a05a2c' },
-  { name: 'Nitrogen Use efficiency', icon: Filter, blurb: 'NUE, N uptake, NUtE under varying nitrogen.', color: '#0277bd' },
+  { name: 'Nutrient use efficiency', icon: Filter, blurb: 'NUE, PUE, KUE - nitrogen, phosphorus and potassium use efficiency.', color: '#0277bd' },
 ]
 
 export default function Home() {

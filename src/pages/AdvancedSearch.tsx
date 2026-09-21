@@ -8,12 +8,13 @@ import AsyncBoundary from '../components/AsyncBoundary'
 import GlossaryHeader from '../components/GlossaryHeader'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord } from '../lib/types'
-import { TRAIT_CATEGORIES, TRAIT_GROUPS, normalizeTrait, normalizeSpecies } from '../lib/map'
+import { TRAIT_CATEGORIES, TRAIT_GROUPS, TRAIT_SUBCATEGORIES, normalizeTrait, normalizeSubTrait, normalizeSpecies } from '../lib/map'
 
 interface Filters {
   q: string
   species: string
   trait: string
+  subTrait: string
   chromosome: string
   pveMin: string
   pveMax: string
@@ -21,7 +22,7 @@ interface Filters {
 }
 
 const EMPTY: Filters = {
-  q: '', species: '', trait: '', chromosome: '',
+  q: '', species: '', trait: '', subTrait: '', chromosome: '',
   pveMin: '', pveMax: '', hasCandidateGene: false,
 }
 
@@ -64,6 +65,11 @@ function traitMatches(category: string, selected: string): boolean {
   if (!selected) return true
   const group = TRAIT_GROUPS[selected]
   return group ? group.includes(category as any) : category === selected
+}
+
+function subTraitMatches(record: QTLRecord, selected: string): boolean {
+  if (!selected) return true
+  return normalizeSubTrait(record) === selected
 }
 
 const columns: ColumnDef<QTLRecord, any>[] = [
@@ -123,6 +129,17 @@ export default function AdvancedSearch() {
   }, [data])
   const chrOpts = useMemo(() => uniqueValues(data, 'chromosome'), [data])
 
+  // Only offered when the selected Trait is one that actually has a further
+  // breakdown (see TRAIT_SUBCATEGORIES) - e.g. Biofortification -> Zn/Fe/Se,
+  // Nutrient use efficiency -> NUE/PUE/KUE - and only the sub-trait values
+  // genuinely present in the data, same convention as traitOpts above.
+  const subTraitOpts = useMemo(() => {
+    const options = TRAIT_SUBCATEGORIES[f.trait as keyof typeof TRAIT_SUBCATEGORIES]
+    if (!options) return []
+    const present = new Set(data.filter((r) => normalizeTrait(r) === f.trait).map((r) => normalizeSubTrait(r)))
+    return options.filter((o) => present.has(o))
+  }, [data, f.trait])
+
   const filtered = useMemo(() => {
     const q = f.q.trim().toLowerCase()
     const pMin = f.pveMin ? Number(f.pveMin) : -Infinity
@@ -130,6 +147,7 @@ export default function AdvancedSearch() {
     return data.filter((r) => {
       if (!speciesMatches(r.species, f.species)) return false
       if (f.trait && !traitMatches(normalizeTrait(r), f.trait)) return false
+      if (subTraitOpts.length && f.subTrait && !subTraitMatches(r, f.subTrait)) return false
       if (f.chromosome && r.chromosome !== f.chromosome) return false
       const p = Number(r.pve)
       if (!Number.isNaN(p) && (p < pMin || p > pMax)) return false
@@ -141,7 +159,7 @@ export default function AdvancedSearch() {
       }
       return true
     })
-  }, [data, f])
+  }, [data, f, subTraitOpts])
 
   const activeCount = Object.entries(f).filter(([, v]) => (typeof v === 'boolean' ? v : Boolean(v))).length
 
@@ -171,8 +189,13 @@ export default function AdvancedSearch() {
               <Select value={f.species} onChange={(v) => setF({ ...f, species: v })} options={speciesOpts} />
             </Field>
             <Field label="Trait">
-              <Select value={f.trait} onChange={(v) => setF({ ...f, trait: v })} options={traitOpts} />
+              <Select value={f.trait} onChange={(v) => setF({ ...f, trait: v, subTrait: '' })} options={traitOpts} />
             </Field>
+            {subTraitOpts.length > 0 && (
+              <Field label="Sub-trait">
+                <Select value={f.subTrait} onChange={(v) => setF({ ...f, subTrait: v })} options={subTraitOpts} />
+              </Field>
+            )}
             <Field label="Chromosome">
               <Select value={f.chromosome} onChange={(v) => setF({ ...f, chromosome: v })} options={chrOpts} />
             </Field>

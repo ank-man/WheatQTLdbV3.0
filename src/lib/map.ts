@@ -16,7 +16,7 @@ export const TRAIT_CATEGORIES = [
   'Developmental',
   'Plant morphology',
   'Grain morphology',
-  'Nitrogen Use efficiency',
+  'Nutrient use efficiency',
   'Physiological traits',
   'Insect resistance',
   'Viral resistance',
@@ -69,7 +69,7 @@ export const TRAIT_COLORS: Record<TraitCategory, string> = {
   Developmental: '#0f9178',
   'Plant morphology': '#a05a2c',
   'Grain morphology': '#c9973f',
-  'Nitrogen Use efficiency': '#0277bd',
+  'Nutrient use efficiency': '#0277bd',
   'Physiological traits': '#5e35b1',
   'Insect resistance': '#c2185b',
   'Viral resistance': '#7cb342',
@@ -281,7 +281,7 @@ export function normalizeTrait(record: QTLRecord | MetaQTLRecord): TraitCategory
   // below, so it's checked first even though both mention the same elements.
   // "nue" is matched as a whole word - as a bare substring it also matches
   // inside unrelated words ("continue", "genuine", "revenue", ...).
-  if (c.includes('use efficiency') || c.includes('n-use') || c.includes('n use') || hasWord(c, 'nue') || c.includes('nitrogen')) return 'Nitrogen Use efficiency'
+  if (c.includes('use efficiency') || c.includes('n-use') || c.includes('n use') || hasWord(c, 'nue') || c.includes('nitrogen')) return 'Nutrient use efficiency'
   // "bioforitif" is a known source-data typo for "biofortification" (letters
   // transposed: ...bioFORITIFcation instead of ...bioforTIFIcation).
   if (c.includes('zinc') || c.includes('iron') || c.includes('selenium') || c.includes('biofort') || c.includes('bioforitif') || c.includes('mineral') || c.includes('cadmium') || c.includes('calcium') || c.includes('magnesium') || c.includes('sulph') || c.includes('sulfur') || c.includes('manganese') || c.includes('copper') || c.includes('nickel') || c.includes('molybden') || c.includes('phosphor') || c.includes('potassium') || c.includes('cobalt') || c.includes('rubidium') || c.includes('lead') || c.includes('strontium') || c.includes('arsenic') || c.includes('sodium') || c.includes('boron') || c.includes('lithium') || c.includes('barium') || c.includes('platinum') || c.includes('co ') || c.includes('mo ') || c.includes('grain fe') || c.includes('grain zn')) return 'Biofortification'
@@ -321,6 +321,62 @@ export function normalizeTrait(record: QTLRecord | MetaQTLRecord): TraitCategory
   if (c.includes('physiological')) return 'Physiological traits'
 
   return 'Other'
+}
+
+// Finer-grained breakdown within the two categories that actually bundle
+// several distinct nutrients/elements under one umbrella label: a record's
+// TraitCategory alone doesn't distinguish grain Zn content from grain Se
+// content, or N-use efficiency from K-use efficiency, even though those are
+// separately meaningful to a user searching for a specific nutrient. Listed
+// only for categories where the underlying data supports a real split (see
+// normalizeSubTrait) - every other category has none, and the Search page
+// only renders a sub-trait dropdown for a category present here.
+export const TRAIT_SUBCATEGORIES: Partial<Record<TraitCategory, string[]>> = {
+  'Nutrient use efficiency': [
+    'Nitrogen use efficiency (NUE)',
+    'Phosphorus use efficiency (PUE)',
+    'Potassium use efficiency (KUE)',
+    'Other nutrient use efficiency',
+  ],
+  Biofortification: [
+    'Zinc (Zn)',
+    'Iron (Fe)',
+    'Selenium (Se)',
+    'Calcium (Ca)',
+    'Other minerals',
+  ],
+}
+
+// Sub-trait within 'Nutrient use efficiency' / 'Biofortification' only - null
+// for every other category (those have no meaningful further split). Reuses
+// the same trait+parameter blob as normalizeTrait so a record's sub-trait is
+// always consistent with which top-level category it was bucketed into.
+export function normalizeSubTrait(record: QTLRecord | MetaQTLRecord): string | null {
+  const category = normalizeTrait(record)
+  const t = ((record as QTLRecord).trait || (record as MetaQTLRecord).trait || '').toLowerCase().trim()
+  const p = ((record as QTLRecord).parameter || (record as MetaQTLRecord).parameter || '').toLowerCase().trim()
+  const c = `${t} ${p}`
+
+  if (category === 'Nutrient use efficiency') {
+    // Checked in this order so a record mentioning several nutrients still
+    // resolves to its most specific match; "nitrogen"/NUE is the broad
+    // default since it's both the dominant case in this dataset and the
+    // literal name most "use efficiency" rows without a named element imply.
+    if (c.includes('phosphor')) return 'Phosphorus use efficiency (PUE)'
+    if (c.includes('potassium') || hasWord(c, 'kue')) return 'Potassium use efficiency (KUE)'
+    if (c.includes('nitrogen') || c.includes('n-use') || c.includes('n use') || hasWord(c, 'nue')) return 'Nitrogen use efficiency (NUE)'
+    return 'Other nutrient use efficiency'
+  }
+
+  if (category === 'Biofortification') {
+    if (c.includes('zinc')) return 'Zinc (Zn)'
+    if (c.includes('iron')) return 'Iron (Fe)'
+    if (c.includes('selenium')) return 'Selenium (Se)'
+    if (c.includes('calcium')) return 'Calcium (Ca)'
+    return 'Other minerals'
+  }
+
+  return null
 }
 
 export interface QTLItem {
