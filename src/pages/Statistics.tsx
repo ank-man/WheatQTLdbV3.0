@@ -10,7 +10,7 @@ import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
 import {
   TRAIT_COLORS, chromosomeSortKey, normalizeTrait, normalizeSubTrait, normalizeSpecies,
-  prepareItems, QTLItem, MetaQTLItem,
+  prepareItems, QTLItem, MetaQTLItem, isMultiTraitQTL,
 } from '../lib/map'
 import { exportRaster } from '../lib/exportMap'
 
@@ -145,6 +145,7 @@ export default function Statistics() {
     qtl: qtl.data.length,
     mqtl: mqtl.data.length,
     epi: epi.data.length,
+    multiTrait: qtl.data.filter(isMultiTraitQTL).length,
   }), [qtl.data, mqtl.data, epi.data])
 
   // All real categories (normalizeTrait - the same classification the Search
@@ -226,10 +227,11 @@ export default function Statistics() {
       />
       <AsyncBoundary loading={loading} error={error}>
         {/* Summary cards */}
-        <div className="mb-6 grid gap-4 sm:grid-cols-3">
+        <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <SummaryCard label="QTLs" value={stats.qtl} />
           <SummaryCard label="MetaQTLs" value={stats.mqtl} />
           <SummaryCard label="Epistatic QTLs" value={stats.epi} />
+          <SummaryCard label="Multi-trait QTLs" value={stats.multiTrait} />
         </div>
 
         {/* Insights */}

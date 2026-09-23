@@ -10,6 +10,7 @@ import Contact from './pages/Contact'
 import UsefulLinks from './pages/UsefulLinks'
 import DataIndex from './pages/DataIndex'
 import QTLPage from './pages/QTLPage'
+import MultiTraitQTLPage from './pages/MultiTraitQTLPage'
 import MetaQTLPage from './pages/MetaQTLPage'
 import Map from './pages/Map'
 import EpistaticPage from './pages/EpistaticPage'
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/statistics" element={<Statistics />} />
         <Route path="/data" element={<DataIndex />} />
         <Route path="/data/qtl" element={<QTLPage />} />
+        <Route path="/data/multi-trait" element={<MultiTraitQTLPage />} />
         <Route path="/data/metaqtl" element={<MetaQTLPage />} />
         <Route path="/map" element={<Map />} />
         <Route path="/data/epistatic" element={<EpistaticPage />} />

@@ -8,7 +8,7 @@ import AsyncBoundary from '../components/AsyncBoundary'
 import GlossaryHeader from '../components/GlossaryHeader'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord } from '../lib/types'
-import { TRAIT_CATEGORIES, TRAIT_GROUPS, TRAIT_SUBCATEGORIES, normalizeTrait, normalizeSubTrait, normalizeSpecies } from '../lib/map'
+import { TRAIT_CATEGORIES, TRAIT_GROUPS, TRAIT_SUBCATEGORIES, normalizeTrait, normalizeSubTrait, normalizeSpecies, isMultiTraitQTL } from '../lib/map'
 
 interface Filters {
   q: string
@@ -19,11 +19,12 @@ interface Filters {
   pveMin: string
   pveMax: string
   hasCandidateGene: boolean
+  multiTraitOnly: boolean
 }
 
 const EMPTY: Filters = {
   q: '', species: '', trait: '', subTrait: '', chromosome: '',
-  pveMin: '', pveMax: '', hasCandidateGene: false,
+  pveMin: '', pveMax: '', hasCandidateGene: false, multiTraitOnly: false,
 }
 
 function uniqueValues<T>(rows: T[], key: keyof T): string[] {
@@ -152,6 +153,7 @@ export default function AdvancedSearch() {
       const p = Number(r.pve)
       if (!Number.isNaN(p) && (p < pMin || p > pMax)) return false
       if (f.hasCandidateGene && !String(r.candidate_gene ?? '').trim()) return false
+      if (f.multiTraitOnly && !isMultiTraitQTL(r)) return false
       if (q) {
         const blob = [r.qtl_name, r.trait, r.associated_markers, r.candidate_gene, r.reference, r.cross, r.population]
           .map((x) => String(x ?? '').toLowerCase()).join(' ')
@@ -206,10 +208,16 @@ export default function AdvancedSearch() {
               </div>
             </Field>
             <Field label="Other">
-              <label className="flex items-center gap-2 text-sm">
-                <input type="checkbox" checked={f.hasCandidateGene} onChange={(e) => setF({ ...f, hasCandidateGene: e.target.checked })} />
-                Has candidate gene
-              </label>
+              <div className="flex flex-col gap-1.5">
+                <label className="flex items-center gap-2 text-sm">
+                  <input type="checkbox" checked={f.hasCandidateGene} onChange={(e) => setF({ ...f, hasCandidateGene: e.target.checked })} />
+                  Has candidate gene
+                </label>
+                <label className="flex items-center gap-2 text-sm">
+                  <input type="checkbox" checked={f.multiTraitOnly} onChange={(e) => setF({ ...f, multiTraitOnly: e.target.checked })} />
+                  Multi-trait (pleiotropic) QTL only
+                </label>
+              </div>
             </Field>
           </div>
         </div>

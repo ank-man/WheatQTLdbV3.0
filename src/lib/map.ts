@@ -379,6 +379,25 @@ export function normalizeSubTrait(record: QTLRecord | MetaQTLRecord): string | n
   return null
 }
 
+// A QTL/MTA is "multi-trait" (pleiotropic) when its parameter field lists 2+
+// distinct measured traits/parameters for the same locus - the curated
+// multitrait-qtl sheets (Developmental.xls, Zn multitrait.xlsx, Drought.xls,
+// Water logging_revised.xls) record this as a comma- or "&"-joined list
+// (e.g. "Grain Zn content, Grain Fe content, grainprotein content" or
+// "Heading date & Flowering Date"), and the same convention shows up
+// incidentally in several other source files wherever one locus was
+// reported against multiple measured parameters.
+export function multiTraitList(record: Pick<QTLRecord, 'parameter'>): string[] {
+  return (record.parameter || '')
+    .split(/[,&]/)
+    .map((s) => s.trim())
+    .filter(Boolean)
+}
+
+export function isMultiTraitQTL(record: Pick<QTLRecord, 'parameter'>): boolean {
+  return multiTraitList(record).length >= 2
+}
+
 export interface QTLItem {
   id: string
   type: 'qtl'
