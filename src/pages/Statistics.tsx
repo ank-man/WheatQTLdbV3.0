@@ -9,7 +9,7 @@ import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
 import {
-  TRAIT_COLORS, chromosomeSortKey, normalizeTrait, normalizeSubTrait, normalizeSpecies,
+  TRAIT_COLORS, chromosomeSortKey, normalizeTrait, normalizeSpecies,
   prepareItems, QTLItem, MetaQTLItem, isMultiTraitQTL,
 } from '../lib/map'
 import { exportRaster } from '../lib/exportMap'
@@ -54,20 +54,6 @@ function byTraitCategory(rows: { trait: string; parameter?: string }[]): { name:
     const cat = normalizeTrait(r as unknown as QTLRecord)
     map.set(cat, (map.get(cat) ?? 0) + 1)
   })
-  return Array.from(map.entries()).map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value)
-}
-
-// Sub-trait counts within a single top-level category (Biofortification's
-// Zn/Fe/Se/Ca split, Nutrient use efficiency's NUE/PUE/KUE split) - see
-// TRAIT_SUBCATEGORIES / normalizeSubTrait in lib/map.
-function bySubCategory(rows: QTLRecord[], category: string): { name: string; value: number }[] {
-  const map = new Map<string, number>()
-  rows
-    .filter((r) => normalizeTrait(r) === category)
-    .forEach((r) => {
-      const sub = normalizeSubTrait(r) ?? 'Other'
-      map.set(sub, (map.get(sub) ?? 0) + 1)
-    })
   return Array.from(map.entries()).map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value)
 }
 
@@ -126,8 +112,6 @@ export default function Statistics() {
   )
   const byChrom = useMemo(() => countBy(qtl.data, 'chromosome'), [qtl.data])
 
-  const bySource = useMemo(() => countBy(qtl.data, 'source_file'), [qtl.data])
-
   const byYear = useMemo(() => {
     const counts = new Map<string, number>()
     qtl.data.forEach((r) => {
@@ -152,8 +136,6 @@ export default function Statistics() {
   // page's Trait dropdown uses), not a raw-string tally capped at 8 with
   // everything else dumped into one opaque "Other" bar.
   const byCategoryTop = useMemo(() => byTraitCategory(qtl.data), [qtl.data])
-  const byBiofortMineral = useMemo(() => bySubCategory(qtl.data, 'Biofortification'), [qtl.data])
-  const byNutrientEfficiency = useMemo(() => bySubCategory(qtl.data, 'Nutrient use efficiency'), [qtl.data])
   // The stacked-by-chromosome view still caps at the top 8 for a legible
   // number of stack segments; anything outside the top 8 folds into "Other"
   // there (chromTraitMatrix), which is a display simplification for that one
@@ -265,7 +247,7 @@ export default function Statistics() {
               <BarChart data={bySpecies.slice(1)} layout="vertical" margin={{ left: 12, right: 12, top: 4, bottom: 4 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={160} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis type="category" dataKey="name" width={185} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value">
                   {bySpecies.slice(1).map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
@@ -279,37 +261,13 @@ export default function Statistics() {
               <BarChart data={byCategoryTop} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={170} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis type="category" dataKey="name" width={200} tick={{ fill: 'currentColor', fontSize: 11 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value">
                   {byCategoryTop.map((entry, i) => (
                     <Cell key={`cell-${i}`} fill={traitColor(entry.name)} />
                   ))}
                 </Bar>
-              </BarChart>
-            </ResponsiveContainer>
-          </ChartCard>
-
-          <ChartCard title="Biofortification by mineral">
-            <ResponsiveContainer width="100%" height={260} className="text-wheat-700">
-              <BarChart data={byBiofortMineral} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
-                <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={140} tick={{ fill: 'currentColor', fontSize: 10 }} />
-                <Tooltip contentStyle={{ borderRadius: 8 }} />
-                <Bar dataKey="value" fill={TRAIT_COLORS.Biofortification} />
-              </BarChart>
-            </ResponsiveContainer>
-          </ChartCard>
-
-          <ChartCard title="Nutrient use efficiency by nutrient">
-            <ResponsiveContainer width="100%" height={260} className="text-wheat-700">
-              <BarChart data={byNutrientEfficiency} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
-                <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={200} tick={{ fill: 'currentColor', fontSize: 10 }} />
-                <Tooltip contentStyle={{ borderRadius: 8 }} />
-                <Bar dataKey="value" fill={TRAIT_COLORS['Nutrient use efficiency']} />
               </BarChart>
             </ResponsiveContainer>
           </ChartCard>
@@ -352,7 +310,7 @@ export default function Statistics() {
               <BarChart data={mqtlByCategory} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={155} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis type="category" dataKey="name" width={185} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value">
                   {mqtlByCategory.map((entry, i) => (
@@ -380,7 +338,7 @@ export default function Statistics() {
               <BarChart data={epiByCategory} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={155} tick={{ fill: 'currentColor', fontSize: 10 }} />
+                <YAxis type="category" dataKey="name" width={185} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value">
                   {epiByCategory.map((entry, i) => (
@@ -415,26 +373,14 @@ export default function Statistics() {
             </ResponsiveContainer>
           </ChartCard>
 
-          <ChartCard title="Top QTL parameters">
-            <ResponsiveContainer width="100%" height={340} className="text-wheat-700">
+          <ChartCard title="Top QTL parameters" wide>
+            <ResponsiveContainer width="100%" height={360} className="text-wheat-700">
               <BarChart data={topParameters} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
                 <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={165} tick={{ fill: 'currentColor', fontSize: 9 }} />
+                <YAxis type="category" dataKey="name" width={280} tick={{ fill: 'currentColor', fontSize: 10 }} />
                 <Tooltip contentStyle={{ borderRadius: 8 }} />
                 <Bar dataKey="value" fill="#5e3a1f" />
-              </BarChart>
-            </ResponsiveContainer>
-          </ChartCard>
-
-          <ChartCard title="QTL by source dataset" wide>
-            <ResponsiveContainer width="100%" height={360} className="text-wheat-700">
-              <BarChart data={bySource} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
-                <XAxis type="number" tick={{ fill: 'currentColor' }} />
-                <YAxis type="category" dataKey="name" width={210} tick={{ fill: 'currentColor', fontSize: 9 }} />
-                <Tooltip contentStyle={{ borderRadius: 8 }} />
-                <Bar dataKey="value" fill="#cc9d3f" />
               </BarChart>
             </ResponsiveContainer>
           </ChartCard>

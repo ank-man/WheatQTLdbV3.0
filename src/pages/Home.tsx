@@ -7,7 +7,7 @@ import {
 } from 'lucide-react'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
-import { normalizeTrait, normalizeSpecies } from '../lib/map'
+import { normalizeTrait, normalizeSpecies, isMultiTraitQTL } from '../lib/map'
 import MiniIdeogram from '../components/MiniIdeogram'
 
 const heroImg = `${import.meta.env.BASE_URL}images/hero-wheat.jpg`
@@ -52,6 +52,7 @@ export default function Home() {
       mqtl: mqtl.data.length,
       epi: epi.data.length,
       species: speciesSet.size,
+      multiTrait: qtl.data.filter(isMultiTraitQTL).length,
     }
   }, [qtl.data, mqtl.data, epi.data])
 
@@ -86,22 +87,16 @@ export default function Home() {
       {/* HERO */}
       <section className="relative -mx-4 -mt-8 overflow-hidden border-b border-wheat-200 bg-white">
         <img src={heroImg} alt="" className="absolute inset-0 h-full w-full object-cover opacity-10" />
-        <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-wheat-300/30 blur-3xl" />
-        <div className="absolute -right-16 top-16 h-80 w-80 rounded-full bg-emerald-300/20 blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 h-56 w-56 rounded-full bg-sky-300/20 blur-3xl" />
-        <div className="absolute inset-0 bg-white/70" />
+        <div className="absolute inset-0 bg-white/80" />
 
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:py-28">
           <div className="flex flex-col items-center text-center">
             <span className="badge animate-fade-up">
-              <span className="relative mr-1 inline-flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-wheat-500 animate-pulse-ring" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-wheat-600" />
-              </span>
+              <span className="relative mr-1 inline-flex h-2 w-2 rounded-full bg-wheat-600" />
               v3.0 · open source · reproducible archive
             </span>
             <h1 className="mt-5 max-w-4xl font-serif text-4xl font-bold leading-tight tracking-tight text-wheat-800 sm:text-6xl animate-fade-up" style={{ animationDelay: '.05s' }}>
-              WheatQTLdb <span className="text-gradient-wheat">V3.0</span>
+              WheatQTLdb V3.0
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-wheat-700 animate-fade-up" style={{ animationDelay: '.1s' }}>
               A manually curated, open-access database of <strong>QTL</strong>, <strong>MetaQTL</strong> and <strong>epistatic QTL</strong> in <em>Triticum aestivum</em> and seven related wheat species.
@@ -150,10 +145,13 @@ export default function Home() {
           </div>
 
           {/* Live stat strip */}
-          <div className="relative mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-4 animate-fade-up" style={{ animationDelay: '.3s' }}>
+          <div className="relative mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-5 animate-fade-up" style={{ animationDelay: '.3s' }}>
             <StatTile label="QTL records" value={stats.qtl} loading={qtl.loading} icon={Database} color="#9a6628" />
             <StatTile label="MetaQTL" value={stats.mqtl} loading={mqtl.loading} icon={Layers} color="#0f9178" />
             <StatTile label="Epistatic QTL" value={stats.epi} loading={epi.loading} icon={Network} color="#7b1fa2" />
+            <Link to="/data/multi-trait" className="block">
+              <StatTile label="Multi-trait QTL" value={stats.multiTrait} loading={qtl.loading} icon={Layers} color="#0277bd" />
+            </Link>
             <StatTile label="Species" value={stats.species} loading={qtl.loading} icon={Wheat} suffix="" color="#2e7d32" />
           </div>
         </div>

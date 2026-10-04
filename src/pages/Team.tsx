@@ -47,6 +47,7 @@ const facultyLeads: Member[] = [
   { name: 'Pradeep Kumar Sharma', role: 'Professor', affiliation: 'CCS University, Meerut' },
   { name: 'Shailendra S Gaurav', role: 'Professor', affiliation: 'CCS University, Meerut' },
   { name: 'Rahul Kumar', role: 'Associate Professor', affiliation: 'CCS University, Meerut' },
+  { name: 'Dharmendra Pratap', role: 'Associate Professor', affiliation: 'CCS University, Meerut' },
   { name: 'Sachin Kumar', role: 'Assistant Professor', affiliation: 'CCS University, Meerut' },
   { name: 'Vinay Pawar', role: 'Assistant Professor', affiliation: 'CCS University, Meerut' },
 ]

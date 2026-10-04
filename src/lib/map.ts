@@ -333,16 +333,16 @@ export function normalizeTrait(record: QTLRecord | MetaQTLRecord): TraitCategory
 // only renders a sub-trait dropdown for a category present here.
 export const TRAIT_SUBCATEGORIES: Partial<Record<TraitCategory, string[]>> = {
   'Nutrient use efficiency': [
-    'Nitrogen use efficiency (NUE)',
-    'Phosphorus use efficiency (PUE)',
-    'Potassium use efficiency (KUE)',
+    'Nitrogen use efficiency',
+    'Phosphorus use efficiency',
+    'Potassium use efficiency',
     'Other nutrient use efficiency',
   ],
   Biofortification: [
-    'Zinc (Zn)',
-    'Iron (Fe)',
-    'Selenium (Se)',
-    'Calcium (Ca)',
+    'Zinc',
+    'Iron',
+    'Selenium',
+    'Calcium',
     'Other minerals',
   ],
 }
@@ -362,17 +362,17 @@ export function normalizeSubTrait(record: QTLRecord | MetaQTLRecord): string | n
     // resolves to its most specific match; "nitrogen"/NUE is the broad
     // default since it's both the dominant case in this dataset and the
     // literal name most "use efficiency" rows without a named element imply.
-    if (c.includes('phosphor')) return 'Phosphorus use efficiency (PUE)'
-    if (c.includes('potassium') || hasWord(c, 'kue')) return 'Potassium use efficiency (KUE)'
-    if (c.includes('nitrogen') || c.includes('n-use') || c.includes('n use') || hasWord(c, 'nue')) return 'Nitrogen use efficiency (NUE)'
+    if (c.includes('phosphor')) return 'Phosphorus use efficiency'
+    if (c.includes('potassium') || hasWord(c, 'kue')) return 'Potassium use efficiency'
+    if (c.includes('nitrogen') || c.includes('n-use') || c.includes('n use') || hasWord(c, 'nue')) return 'Nitrogen use efficiency'
     return 'Other nutrient use efficiency'
   }
 
   if (category === 'Biofortification') {
-    if (c.includes('zinc')) return 'Zinc (Zn)'
-    if (c.includes('iron')) return 'Iron (Fe)'
-    if (c.includes('selenium')) return 'Selenium (Se)'
-    if (c.includes('calcium')) return 'Calcium (Ca)'
+    if (c.includes('zinc')) return 'Zinc'
+    if (c.includes('iron')) return 'Iron'
+    if (c.includes('selenium')) return 'Selenium'
+    if (c.includes('calcium')) return 'Calcium'
     return 'Other minerals'
   }
 
