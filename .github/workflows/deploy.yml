@@ -26,9 +26,9 @@ jobs:
       - run: npm ci
       - name: Build
         env:
-          # Project-page base path: '/<repo-name>/'.
-          # GITHUB_REPOSITORY is 'owner/repo'.
-          VITE_BASE: /${{ github.event.repository.name }}/
+          # Served from the custom domain's root (see public/CNAME), not a
+          # '/<repo-name>/' project-page subpath.
+          VITE_BASE: /
         run: npm run build
       - name: SPA fallback (copy index.html -> 404.html)
         run: cp dist/index.html dist/404.html

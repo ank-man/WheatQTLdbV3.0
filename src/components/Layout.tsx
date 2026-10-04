@@ -1,6 +1,6 @@
 import { ReactNode, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import { Menu, X, Github, Wheat } from 'lucide-react'
+import { Menu, X, Wheat } from 'lucide-react'
 
 const NAV = [
   { to: '/', label: 'Home', end: true },
@@ -21,10 +21,10 @@ export default function Layout({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-30 border-b border-wheat-200 bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
           <Link to="/" className="flex items-center gap-2">
-            <Wheat className="h-7 w-7 text-wheat-600" />
+            <Wheat className="h-7 w-7 text-green-700" />
             <div className="leading-tight">
-              <div className="text-lg font-bold text-wheat-800">WheatQTLdb</div>
-              <div className="text-[10px] uppercase tracking-wider text-wheat-600">v3.0 · open source</div>
+              <div className="text-lg font-bold text-wheat-900">WheatQTLdb</div>
+              <div className="text-[10px] uppercase tracking-wider text-wheat-500">v3.0</div>
             </div>
           </Link>
           <nav className="hidden items-center gap-1 lg:flex">
@@ -40,17 +40,6 @@ export default function Layout({ children }: { children: ReactNode }) {
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <a
-              href="https://github.com/ank-man/WheatQTLdbV3.0"
-              target="_blank"
-              rel="noreferrer"
-              className="btn"
-              aria-label="GitHub repository"
-              title="GitHub repository"
-            >
-              <Github className="h-4 w-4" />
-              <span className="hidden sm:inline">GitHub</span>
-            </a>
             <button
               className="btn lg:hidden"
               onClick={() => setOpen(!open)}
@@ -108,8 +97,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           <FooterCol title="Project" links={[
             { to: '/team', label: 'Team' },
             { to: '/contact', label: 'Contact' },
-          ]} external={[
-            { href: 'https://github.com/ank-man/WheatQTLdbV3.0', label: 'Source code (GitHub)' },
+            { to: '/credits', label: 'Credits & citation' },
           ]} />
         </div>
 
@@ -119,7 +107,6 @@ export default function Layout({ children }: { children: ReactNode }) {
               © {new Date().getFullYear()} WheatQTLdb · Conceived by Department of Genetics &amp; Plant Breeding,{' '}
               <a className="underline hover:text-wheat-900" href="http://www.ccsuniversity.ac.in/" target="_blank" rel="noreferrer">CCS University, Meerut</a>.
             </p>
-            <p className="mt-1 text-xs">Open-source rebuild · Reproducible archive · Code openly available for transparency.</p>
             <p className="mt-1 text-[11px] text-wheat-600">
               Botanical imagery sourced from Wikimedia Commons / GBIF (CC BY-SA / Public Domain).
               Citing this resource: see <a className="underline" href="/credits">Credits</a>.

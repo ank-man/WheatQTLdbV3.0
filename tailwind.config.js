@@ -8,17 +8,23 @@ export default {
   theme: {
     extend: {
       colors: {
+        // A plain, neutral white/grey scale (every surface, border and text
+        // colour in the app is one of these tokens) - kept under the
+        // "wheat" name so the whole site re-themes just by editing these
+        // ten values, with no per-component class changes needed. A single
+        // green accent (Tailwind's built-in green-*) is used separately for
+        // primary actions/links so the UI isn't flat monochrome.
         wheat: {
-          50:  '#fbf7ef',
-          100: '#f4e9cf',
-          200: '#e7d29c',
-          300: '#d8b665',
-          400: '#cc9d3f',
-          500: '#b88231',
-          600: '#9a6628',
-          700: '#7c4d24',
-          800: '#5e3a1f',
-          900: '#3f2715',
+          50:  '#ffffff',
+          100: '#f6f6f7',
+          200: '#e7e7ea',
+          300: '#d1d1d6',
+          400: '#a8a8b0',
+          500: '#7d7d86',
+          600: '#57575f',
+          700: '#42424a',
+          800: '#2b2b30',
+          900: '#19191c',
         },
         // Dark surfaces for the plotting-area dark mode only.
         ink: {

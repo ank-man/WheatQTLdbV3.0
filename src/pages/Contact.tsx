@@ -1,4 +1,4 @@
-import { Mail, MapPin, Github } from 'lucide-react'
+import { Mail, MapPin } from 'lucide-react'
 import PageHero from '../components/PageHero'
 
 export default function Contact() {
@@ -26,10 +26,6 @@ export default function Contact() {
           <p className="flex items-center gap-2 text-sm">
             <Mail className="h-4 w-4 text-wheat-600" />
             Sachin Rustgi, Associate Professor, Clemson University
-          </p>
-          <p className="flex items-center gap-2 text-sm">
-            <Github className="h-4 w-4 text-wheat-600" />
-            <a className="underline" href="https://github.com/" target="_blank" rel="noreferrer">Open an issue / PR on GitHub</a>
           </p>
         </div>
         <div className="overflow-hidden rounded-xl border border-wheat-200">

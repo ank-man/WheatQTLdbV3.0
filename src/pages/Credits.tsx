@@ -109,14 +109,11 @@ export default function Credits() {
       </section>
 
       <section className="mt-10 space-y-3">
-        <h2 className="text-xl font-semibold">Software</h2>
+        <h2 className="text-xl font-semibold">Maintenance</h2>
         <p className="text-sm text-wheat-700">
-          The V3.0 web application is released under the MIT License at{' '}
-          <a className="underline" href="https://github.com/ank-man/WheatQTLdbV3.0" target="_blank" rel="noreferrer">github.com/ank-man/WheatQTLdbV3.0</a>.
-          Built with React, TypeScript, Vite, Tailwind CSS, TanStack Table, Recharts, PapaParse and Lucide icons.
-        </p>
-        <p className="text-sm text-wheat-700">
-          Coded by Ankush Sharma (<a className="underline" href="mailto:mr.ank2999@gmail.com">mr.ank2999@gmail.com</a>).
+          The V3.0 release is maintained by Ankush Sharma (<a className="underline" href="mailto:mr.ank2999@gmail.com">mr.ank2999@gmail.com</a>).
+          Data is provided as plain CSV so every record can be independently audited and reused in downstream
+          analysis pipelines.
         </p>
       </section>
     </div>

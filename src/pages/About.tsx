@@ -48,11 +48,11 @@ export default function About() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-wheat-900">Why an open, reproducible archive</h2>
+            <h2 className="text-xl font-semibold text-wheat-900">Data availability and reproducibility</h2>
             <p className="mt-2 text-sm leading-relaxed">
-              <strong>V3.0</strong> is a community, open-source rebuild of the original PHP/MySQL WheatQTLdb — openly
-              archived with reproducible builds and a plain-CSV data layer, so every record can be audited, forked
-              or reused without relying on this site staying online.
+              <strong>V3.0</strong> modernises the original WheatQTLdb into a plain-CSV data layer, so every record
+              can be independently audited against its source publication and reused in downstream analysis
+              pipelines without depending on this site staying online.
             </p>
           </section>
 

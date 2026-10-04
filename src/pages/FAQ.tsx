@@ -34,11 +34,11 @@ const faqs = [
   },
   {
     q: 'Can I contribute data?',
-    a: 'Yes. V3.0 is open-source: edit public/data/*.csv files and open a pull request, or email the maintainers a CSV/XLSX through the contact page.',
+    a: 'Yes. Email the maintainers a CSV/XLSX of new or corrected records, with the source publication/DOI, through the contact page. Contributions are credited.',
   },
   {
-    q: 'Why an open, reproducible archive?',
-    a: 'An open architecture ensures long-term accessibility and reproducibility. The data is plain CSV — anyone can audit, fork or reuse it. Search and filtering run entirely in the browser for speed and offline capability.',
+    q: 'Why is the data provided as plain CSV?',
+    a: 'Plain CSV ensures long-term accessibility and reproducibility: records can be independently audited against their source publication and reused directly in R/Python analysis pipelines. Search and filtering run entirely in the browser for speed and offline use.',
   },
 ]
 

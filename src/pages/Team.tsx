@@ -1,4 +1,4 @@
-import { Github, Mail, ExternalLink } from 'lucide-react'
+import { Mail, ExternalLink } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import Avatar from '../components/Avatar'
 
@@ -10,7 +10,6 @@ interface Member {
   affiliation: string
   email?: string
   photo?: string  // optional URL; falls back to auto avatar
-  github?: string
   links?: { label: string; url: string }[]
 }
 
@@ -20,8 +19,6 @@ const v3Team: Member[] = [
     name: 'Ankush Sharma',
     role: 'Lead Developer & Maintainer (V3.0)',
     affiliation: 'University of Georgia, USA',
-    github: 'ank-man',
-    links: [{ label: 'Repository', url: 'https://github.com/ank-man/WheatQTLdbV3.0' }],
   },
   {
     name: 'Kalpana Singh',
@@ -63,7 +60,7 @@ export default function Team() {
         variant="side"
       />
 
-      <Section title="V3.0 — Maintainers" caption="Open-source modernisation, reproducible build, openly archived.">
+      <Section title="V3.0 — Maintainers" caption="Modernisation and reproducible rebuild of the database for the V3.0 release.">
         <Grid members={v3Team} highlight />
       </Section>
 
@@ -138,11 +135,6 @@ function Grid({ members, highlight, compact }: { members: Member[]; highlight?: 
               {m.email && (
                 <a className="inline-flex items-center gap-1 underline" href={`mailto:${m.email}`}>
                   <Mail className="h-3 w-3" /> Email
-                </a>
-              )}
-              {m.github && (
-                <a className="inline-flex items-center gap-1 underline" href={`https://github.com/${m.github}`} target="_blank" rel="noreferrer">
-                  <Github className="h-3 w-3" /> @{m.github}
                 </a>
               )}
               {m.links?.map((l) => (

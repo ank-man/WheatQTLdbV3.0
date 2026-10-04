@@ -25,7 +25,7 @@ export default function Tutorial() {
           The <strong>Statistics</strong> page renders interactive charts: distribution by trait, species, chromosome and publication year.
         </Step>
         <Step n={5} title="Contribute new data">
-          Open a pull request on GitHub adding rows to the appropriate <code>public/data/*.csv</code> file. See the README for the schema.
+          Email the maintainers a CSV/XLSX of new or corrected records, citing the source publication, via the <strong>Contact</strong> page.
         </Step>
       </div>
     </div>

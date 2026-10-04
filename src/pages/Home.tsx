@@ -2,7 +2,7 @@ import { FormEvent, useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {
   ArrowRight, BarChart3, Check, Copy, Database, Download,
-  Filter, Github, Layers, Microscope, Network, Quote, Search, Sparkles,
+  Filter, Layers, Microscope, Network, Quote, Search, Sparkles,
   Sprout, Telescope, Wheat, Zap,
 } from 'lucide-react'
 import { useCSV } from '../lib/useCSV'
@@ -92,11 +92,11 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:py-28">
           <div className="flex flex-col items-center text-center">
             <span className="badge animate-fade-up">
-              <span className="relative mr-1 inline-flex h-2 w-2 rounded-full bg-wheat-600" />
-              v3.0 · open source · reproducible archive
+              <span className="relative mr-1 inline-flex h-2 w-2 rounded-full bg-green-600" />
+              v3.0 · peer-curated QTL database
             </span>
-            <h1 className="mt-5 max-w-4xl font-serif text-4xl font-bold leading-tight tracking-tight text-wheat-800 sm:text-6xl animate-fade-up" style={{ animationDelay: '.05s' }}>
-              WheatQTLdb V3.0
+            <h1 className="mt-5 max-w-4xl font-serif text-4xl font-bold leading-tight tracking-tight text-wheat-900 sm:text-6xl animate-fade-up" style={{ animationDelay: '.05s' }}>
+              WheatQTLdb <span className="text-green-700">V3.0</span>
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-wheat-700 animate-fade-up" style={{ animationDelay: '.1s' }}>
               A manually curated, open-access database of <strong>QTL</strong>, <strong>MetaQTL</strong> and <strong>epistatic QTL</strong> in <em>Triticum aestivum</em> and seven related wheat species.
@@ -140,13 +140,12 @@ export default function Home() {
               <Link to="/data" className="btn-primary"><Database className="h-4 w-4" /> Browse data</Link>
               <Link to="/statistics" className="btn"><BarChart3 className="h-4 w-4" /> Statistics</Link>
               <Link to="/map" className="btn"><Layers className="h-4 w-4" /> Genome map</Link>
-              <a href="https://github.com/ank-man/WheatQTLdbV3.0" target="_blank" rel="noreferrer" className="btn"><Github className="h-4 w-4" /> View source code</a>
             </div>
           </div>
 
           {/* Live stat strip */}
           <div className="relative mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-5 animate-fade-up" style={{ animationDelay: '.3s' }}>
-            <StatTile label="QTL records" value={stats.qtl} loading={qtl.loading} icon={Database} color="#9a6628" />
+            <StatTile label="QTL records" value={stats.qtl} loading={qtl.loading} icon={Database} color="#475569" />
             <StatTile label="MetaQTL" value={stats.mqtl} loading={mqtl.loading} icon={Layers} color="#0f9178" />
             <StatTile label="Epistatic QTL" value={stats.epi} loading={epi.loading} icon={Network} color="#7b1fa2" />
             <Link to="/data/multi-trait" className="block">
@@ -259,13 +258,12 @@ export default function Home() {
           <Sparkles className="h-7 w-7 text-wheat-100" />
           <h3 className="mt-3 text-xl font-bold">What's new in V3.0</h3>
           <ul className="mt-3 space-y-2 text-sm text-wheat-50/95">
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Updated list of QTLs reported from 2022.</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Transparent — open codebase & reproducible builds</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Modern, mobile-ready UI</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Advanced multi-criteria search</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Interactive charts (5+ views)</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> CSV-based · open data layer</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> One-click CSV export</li>
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Updated list of QTLs reported through 2022, {stats.qtl.toLocaleString()} records in total.</li>
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Multi-trait (pleiotropic) QTL now curated and browsable separately.</li>
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Trait sub-categorisation: biofortification (Zn/Fe/Se/Ca), nutrient-use efficiency (NUE/PUE/KUE).</li>
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Advanced multi-criteria search across species, trait, chromosome, PVE and method.</li>
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Interactive statistics with per-chart image export.</li>
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> One-click CSV export of every table.</li>
           </ul>
           <Link to="/credits" className="mt-5 inline-flex items-center gap-2 rounded-md bg-white/15 px-3 py-1.5 text-sm font-medium backdrop-blur transition hover:bg-white/25">
             Read more <ArrowRight className="h-4 w-4" />
@@ -355,16 +353,17 @@ export default function Home() {
       {/* CTA */}
       <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-wheat-700 via-wheat-600 to-emerald-700 p-8 text-white shadow-xl sm:p-14">
         <div className="relative max-w-3xl">
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Open data, open code, reproducible science.</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Help us keep the record complete.</h2>
           <p className="mt-3 text-wheat-50/90">
-            Found a missing reference or want to contribute curated records? Pull requests, issues and email correspondence are all welcome — contributions are credited and versioned in the public repository.
+            Found a missing reference or an error in a record? Email the curators a correction or a CSV/XLSX of new
+            data, citing the source publication — contributions are credited.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            <a href="https://github.com/ank-man/WheatQTLdbV3.0" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold text-wheat-900 shadow-lg transition hover:bg-wheat-50">
-              <Github className="h-4 w-4" /> Contribute on GitHub
-            </a>
-            <Link to="/contact" className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold backdrop-blur transition hover:bg-white/20">
-              Contact the team
+            <Link to="/contact" className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold text-wheat-900 shadow-lg transition hover:bg-wheat-50">
+              Contact the curators
+            </Link>
+            <Link to="/credits" className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold backdrop-blur transition hover:bg-white/20">
+              How to cite this data
             </Link>
           </div>
         </div>
