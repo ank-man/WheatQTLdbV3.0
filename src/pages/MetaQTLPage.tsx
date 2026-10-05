@@ -35,7 +35,6 @@ export default function MetaQTLPage() {
         eyebrow="Data"
         title="MetaQTL"
         subtitle="Consensus QTL regions derived from meta-analysis across multiple studies."
-        image="wheat-field-dusk-2.jpg"
         variant="side"
       />
       <AsyncBoundary loading={loading} error={error}>

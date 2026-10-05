@@ -30,7 +30,6 @@ export default function CandidateGenesPage() {
         eyebrow="Data"
         title="Candidate Genes"
         subtitle="Genes underlying QTL regions, reported in the literature."
-        image="wheat-spike-closeup.jpg"
         variant="side"
       />
       <AsyncBoundary loading={loading} error={error}>

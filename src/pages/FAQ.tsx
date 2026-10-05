@@ -49,7 +49,6 @@ export default function FAQ() {
         eyebrow="FAQ"
         title="Frequently Asked Questions"
         subtitle="Definitions, scope, curation methodology and contribution policy."
-        image="wheat-field-dusk.jpg"
         variant="side"
       />
       <div className="space-y-2">

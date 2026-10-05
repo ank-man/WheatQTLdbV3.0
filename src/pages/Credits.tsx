@@ -7,7 +7,6 @@ export default function Credits() {
         eyebrow="Attribution"
         title="Credits & licences"
         subtitle="Data attribution follows the original WheatQTLdb publications and the source references for each record."
-        image="wheat-spike-closeup.jpg"
         variant="side"
       />
 
@@ -38,6 +37,14 @@ export default function Credits() {
           The V3.0 release is maintained by Ankush Sharma (<a className="underline" href="mailto:mr.ank2999@gmail.com">mr.ank2999@gmail.com</a>).
           Data is provided as plain CSV so every record can be independently audited and reused in downstream
           analysis pipelines.
+        </p>
+      </section>
+
+      <section className="mt-10 space-y-3">
+        <h2 className="text-xl font-semibold">Copyright</h2>
+        <p className="text-sm text-wheat-700">
+          © {new Date().getFullYear()} WheatQTLdb. Jointly copyrighted by the Department of Genetics &amp; Plant
+          Breeding, Ch. Charan Singh University, Meerut, and the Rustgi Lab, Clemson University.
         </p>
       </section>
     </div>

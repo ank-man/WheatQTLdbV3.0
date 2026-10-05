@@ -38,7 +38,6 @@ export default function EpistaticPage() {
         eyebrow="Data"
         title="Epistatic QTL"
         subtitle="QTL × QTL interactions reported in the literature."
-        image="wheat-field-dusk.jpg"
         variant="side"
       />
       <AsyncBoundary loading={loading} error={error}>

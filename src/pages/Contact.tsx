@@ -8,7 +8,6 @@ export default function Contact() {
         eyebrow="Get in touch"
         title="Contact"
         subtitle="Questions, data submissions, errata or collaboration enquiries are welcome."
-        image="wheat-field-sunset.jpg"
         variant="side"
       />
       <div className="grid gap-4 md:grid-cols-2">

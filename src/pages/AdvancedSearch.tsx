@@ -171,7 +171,6 @@ export default function AdvancedSearch() {
         eyebrow="Search"
         title="Advanced Search"
         subtitle="Combine free-text with multiple categorical and numeric filters across the curated QTL dataset."
-        image="wheat-spike-comparison.jpg"
         variant="side"
       />
       <AsyncBoundary loading={loading} error={error}>

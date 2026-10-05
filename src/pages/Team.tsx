@@ -56,7 +56,7 @@ export default function Team() {
         eyebrow="People"
         title="Team"
         subtitle="Authors, curators and maintainers behind WheatQTLdb."
-        image="wheat-field-dusk-2.jpg"
+        image="wheat-spike-comparison.jpg"
         variant="side"
       />
 

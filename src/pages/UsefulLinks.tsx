@@ -132,7 +132,6 @@ export default function UsefulLinks() {
         eyebrow="Resources"
         title="Useful Links"
         subtitle="Allied wheat-genomics databases, genome browsers and breeding programmes."
-        image="wheat-aerial-field.jpg"
         variant="side"
       />
 
