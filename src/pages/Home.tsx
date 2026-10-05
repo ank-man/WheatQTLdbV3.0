@@ -85,7 +85,7 @@ export default function Home() {
     <div className="space-y-20">
       {/* HERO */}
       <section className="relative -mx-4 -mt-8 overflow-hidden border-b border-wheat-200 bg-white">
-        <img src={heroImg} alt="" className="absolute inset-0 h-full w-full object-cover opacity-75" />
+        <img src={heroImg} alt="" className="absolute inset-0 h-full w-full object-cover opacity-70" />
         <div className="absolute inset-0 bg-white/30" />
 
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:py-28">
