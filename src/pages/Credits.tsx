@@ -1,52 +1,4 @@
 import PageHero from '../components/PageHero'
-import { ExternalLink } from 'lucide-react'
-
-interface Credit { file: string; title: string; author?: string; license: string; source: string }
-
-const credits: Credit[] = [
-  {
-    file: 'botanical-illustration.jpg',
-    title: 'Triticum aestivum — botanical illustration',
-    author: 'Otto Wilhelm Thomé, Flora von Deutschland (1885)',
-    license: 'Public domain',
-    source: 'https://commons.wikimedia.org/wiki/File:Illustration_Triticum_aestivum0.jpg',
-  },
-  {
-    file: 'wheat-field-gbif.jpg',
-    title: 'Triticum aestivum field (gewone tarwe veld)',
-    author: 'Rasbak, Wikimedia Commons',
-    license: 'CC BY-SA 3.0',
-    source: 'https://commons.wikimedia.org/wiki/File:Triticum_aestivum_field,_gewone_tarwe_veld.jpg',
-  },
-  {
-    file: 'wheat-grains.jpg',
-    title: 'Wheat grains (Tarwe korrels)',
-    author: 'Rasbak, Wikimedia Commons',
-    license: 'CC BY-SA 3.0',
-    source: 'https://commons.wikimedia.org/wiki/File:Tarwe_korrels_Triticum_aestivum.jpg',
-  },
-  {
-    file: 'wheat-herbarium.jpg',
-    title: 'Triticum aestivum subsp. aestivum (herbarium)',
-    author: 'Roger Culos, Muséum de Toulouse (MHNT)',
-    license: 'CC BY-SA 4.0',
-    source: 'https://commons.wikimedia.org/wiki/File:Triticum_aestivum_subsp._aestivum_MHNT.BOT.2015.2.31.jpg',
-  },
-  {
-    file: 'wheat-spring.jpg',
-    title: 'Triticum aestivum spring wheat (zomertarwe)',
-    author: 'Rasbak, Wikimedia Commons',
-    license: 'CC BY-SA 3.0',
-    source: 'https://commons.wikimedia.org/wiki/Category:Triticum_aestivum',
-  },
-  {
-    file: 'hero-wheat.jpg / wheat-ears.jpg / crop-research.jpg',
-    title: 'Wheat field & ear photographs',
-    author: 'Various photographers via Unsplash',
-    license: 'Unsplash License (free for commercial & non-commercial use)',
-    source: 'https://unsplash.com/s/photos/wheat',
-  },
-]
 
 export default function Credits() {
   return (
@@ -54,45 +6,17 @@ export default function Credits() {
       <PageHero
         eyebrow="Attribution"
         title="Credits & licences"
-        subtitle="All imagery used on this site is openly licensed. Data attribution follows the original WheatQTLdb publications and the source references for each record."
-        image="botanical-illustration.jpg"
+        subtitle="Data attribution follows the original WheatQTLdb publications and the source references for each record."
+        image="wheat-spike-closeup.jpg"
         variant="side"
       />
 
-      <section className="space-y-4">
+      <section className="space-y-3">
         <h2 className="text-xl font-semibold">Imagery</h2>
         <p className="text-sm text-wheat-700">
-          Botanical and agronomic images are sourced from Wikimedia Commons (curated through GBIF where applicable)
-          and Unsplash. Each image is reused under its respective licence; please cite the original author when re-using.
+          Field and specimen photographs throughout the site are original, taken in the curation team's own wheat
+          trial plots.
         </p>
-        <div className="overflow-x-auto rounded-lg border border-wheat-200">
-          <table className="min-w-full divide-y divide-wheat-200 text-sm">
-            <thead className="bg-wheat-100">
-              <tr>
-                <th className="px-3 py-2 text-left font-semibold">File</th>
-                <th className="px-3 py-2 text-left font-semibold">Title</th>
-                <th className="px-3 py-2 text-left font-semibold">Author</th>
-                <th className="px-3 py-2 text-left font-semibold">Licence</th>
-                <th className="px-3 py-2 text-left font-semibold">Source</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-wheat-100 bg-white">
-              {credits.map((c) => (
-                <tr key={c.file}>
-                  <td className="px-3 py-2 font-mono text-xs">{c.file}</td>
-                  <td className="px-3 py-2">{c.title}</td>
-                  <td className="px-3 py-2">{c.author ?? '—'}</td>
-                  <td className="px-3 py-2"><span className="badge">{c.license}</span></td>
-                  <td className="px-3 py-2">
-                    <a className="inline-flex items-center gap-1 underline" href={c.source} target="_blank" rel="noreferrer">
-                      Link <ExternalLink className="h-3 w-3" />
-                    </a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
       </section>
 
       <section className="mt-10 space-y-3">

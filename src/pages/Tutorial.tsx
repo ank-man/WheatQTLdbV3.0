@@ -7,7 +7,7 @@ export default function Tutorial() {
         eyebrow="Tutorial"
         title="How to use WheatQTLdb V3.0"
         subtitle="A short walkthrough of browsing, searching, filtering and exporting curated QTL records."
-        image="wheat-grains.jpg"
+        image="wheat-spike-comparison.jpg"
         variant="side"
       />
       <div className="space-y-6 text-wheat-800">

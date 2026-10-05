@@ -39,7 +39,7 @@ export default function QTLPage() {
         eyebrow="Data"
         title="QTL / MTA"
         subtitle="QTL identified through interval mapping and marker–trait associations identified by GWAS."
-        image="wheat-field-gbif.jpg"
+        image="wheat-field-sunset.jpg"
         variant="side"
       />
       <AsyncBoundary loading={loading} error={error}>

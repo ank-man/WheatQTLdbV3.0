@@ -50,7 +50,7 @@ export default function MultiTraitQTLPage() {
         eyebrow="Data"
         title="Multi-trait (pleiotropic) QTL"
         subtitle="QTL/MTA loci reported against two or more co-mapped traits or parameters in the same study - e.g. a single locus affecting both grain Zn and Fe content, or both heading date and flowering date."
-        image="wheat-grains.jpg"
+        image="wheat-spike-comparison.jpg"
         variant="side"
       />
       <AsyncBoundary loading={loading} error={error}>

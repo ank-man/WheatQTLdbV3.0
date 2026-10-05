@@ -118,7 +118,7 @@ export default function Map() {
         eyebrow="Visualization"
         title="Physical QTL map"
         subtitle="Genome-wide distribution of QTLs and MetaQTLs across the 21 wheat chromosomes, coloured by trait category."
-        image="wheat-field-gbif.jpg"
+        image="wheat-field-sunset.jpg"
         variant="side"
       />
 

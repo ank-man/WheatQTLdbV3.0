@@ -10,16 +10,15 @@ import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
 import { normalizeTrait, normalizeSpecies, isMultiTraitQTL } from '../lib/map'
 import MiniIdeogram from '../components/MiniIdeogram'
 
-const heroImg = `${import.meta.env.BASE_URL}images/hero-wheat.jpg`
+const heroImg = `${import.meta.env.BASE_URL}images/wheat-aerial-field.jpg`
 const img = (p: string) => `${import.meta.env.BASE_URL}images/${p}`
 
-// Open-access photography (Wikimedia Commons, CC BY-SA / public domain); full
-// attribution on the Credits page.
+// Original field photography from the curation team's own trial plots.
 const GALLERY = [
-  { file: 'wheat-field-gbif.jpg', caption: 'Triticum aestivum, field' },
-  { file: 'wheat-spring.jpg', caption: 'Spring wheat (T. aestivum)' },
-  { file: 'wheat-grains.jpg', caption: 'Wheat grains' },
-  { file: 'wheat-herbarium.jpg', caption: 'Herbarium specimen' },
+  { file: 'wheat-field-sunset.jpg', caption: 'Wheat field at sunset' },
+  { file: 'wheat-field-dusk-2.jpg', caption: 'Trial plots at dusk' },
+  { file: 'wheat-spike-comparison.jpg', caption: 'Spike size comparison' },
+  { file: 'wheat-field-dusk.jpg', caption: 'Ripening wheat, field trial' },
 ]
 
 // Colours match this same category's TRAIT_COLORS entry in lib/map.ts (the
@@ -300,8 +299,8 @@ export default function Home() {
       <section className="space-y-6">
         <SectionHeader
           eyebrow="Gallery"
-          title="Triticum aestivum, from field to herbarium"
-          subtitle="Open-access botanical and field photography of bread wheat and its relatives."
+          title="From our own field trials"
+          subtitle="Original photography from the curation team's wheat trial plots."
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {GALLERY.map((g, i) => (
@@ -323,8 +322,8 @@ export default function Home() {
           ))}
         </div>
         <p className="text-xs text-wheat-600">
-          All images are openly licensed (public domain / CC BY-SA via Wikimedia Commons) — see{' '}
-          <Link to="/credits" className="underline">Credits &amp; licences</Link> for full attribution.
+          Photographs are original, taken in the curation team's wheat trial plots — see{' '}
+          <Link to="/credits" className="underline">Credits</Link> for attribution.
         </p>
       </section>
 

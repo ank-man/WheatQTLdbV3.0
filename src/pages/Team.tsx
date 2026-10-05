@@ -56,7 +56,7 @@ export default function Team() {
         eyebrow="People"
         title="Team"
         subtitle="Authors, curators and maintainers behind WheatQTLdb."
-        image="wheat-spring.jpg"
+        image="wheat-field-dusk-2.jpg"
         variant="side"
       />
 
@@ -90,9 +90,9 @@ export default function Team() {
           <strong> Department of Genetics &amp; Plant Breeding, Ch. Charan Singh University, Meerut, India</strong>.
         </p>
         <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
-          <img className="h-32 w-full rounded-lg object-cover" alt="Wheat field" src={img('wheat-field-gbif.jpg')} loading="lazy" />
-          <img className="h-32 w-full rounded-lg object-cover" alt="Wheat ears" src={img('wheat-ears.jpg')} loading="lazy" />
-          <img className="h-32 w-full rounded-lg object-cover" alt="Crop research" src={img('crop-research.jpg')} loading="lazy" />
+          <img className="h-32 w-full rounded-lg object-cover" alt="Wheat field at sunset" src={img('wheat-field-sunset.jpg')} loading="lazy" />
+          <img className="h-32 w-full rounded-lg object-cover" alt="Wheat field under cloudy sky" src={img('wheat-field-cloudy.jpg')} loading="lazy" />
+          <img className="h-32 w-full rounded-lg object-cover" alt="Wheat trial plot rows" src={img('wheat-field-rows.jpg')} loading="lazy" />
         </div>
         <p className="mt-3 text-xs text-wheat-600">
           Full original team listing preserved at{' '}

@@ -204,7 +204,7 @@ export default function Statistics() {
         eyebrow="Analytics"
         title="Database statistics"
         subtitle="Interactive distributions of QTL, MetaQTL and epistatic-QTL records across species, traits, chromosomes and publication years."
-        image="wheat-field-gbif.jpg"
+        image="wheat-field-sunset.jpg"
         variant="side"
       />
       <AsyncBoundary loading={loading} error={error}>

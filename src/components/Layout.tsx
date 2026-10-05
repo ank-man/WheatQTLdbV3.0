@@ -108,7 +108,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               <a className="underline hover:text-wheat-900" href="http://www.ccsuniversity.ac.in/" target="_blank" rel="noreferrer">CCS University, Meerut</a>.
             </p>
             <p className="mt-1 text-[11px] text-wheat-600">
-              Botanical imagery sourced from Wikimedia Commons / GBIF (CC BY-SA / Public Domain).
+              Field photography is original, taken in the curation team's wheat trial plots.
               Citing this resource: see <a className="underline" href="/credits">Credits</a>.
             </p>
           </div>

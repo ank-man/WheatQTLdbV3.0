@@ -9,7 +9,7 @@ export default function About() {
         eyebrow="About"
         title="A manually curated QTL database for wheat"
         subtitle="WheatQTLdb V3.0 is an open-access academic resource consolidating QTL, MetaQTL and epistatic-QTL data from published literature on Triticum aestivum and seven related wheat species."
-        image="botanical-illustration.jpg"
+        image="wheat-spike-closeup.jpg"
         variant="side"
       />
 

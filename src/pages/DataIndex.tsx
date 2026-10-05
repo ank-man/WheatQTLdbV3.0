@@ -18,7 +18,7 @@ export default function DataIndex() {
         eyebrow="Data tables"
         title="Browse the database"
         subtitle="Curated tables of QTL, MetaQTL, epistatic QTL and candidate genes — all sortable, searchable and exportable as CSV."
-        image="wheat-grains.jpg"
+        image="wheat-spike-comparison.jpg"
         variant="side"
       />
       <div className="grid gap-4 md:grid-cols-2">

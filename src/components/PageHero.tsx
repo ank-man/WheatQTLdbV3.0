@@ -16,7 +16,7 @@ export default function PageHero({
   eyebrow,
   title,
   subtitle,
-  image = 'wheat-field-gbif.jpg',
+  image = 'wheat-field-sunset.jpg',
   variant = 'cover',
   children,
 }: Props) {
