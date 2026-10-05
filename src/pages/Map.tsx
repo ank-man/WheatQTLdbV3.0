@@ -332,7 +332,7 @@ export default function Map() {
             <div className="space-y-0.5 text-xs text-wheat-500 dark:text-wheat-400">
               <p>
                 {unmapped.qtlNoChrOrPos.toLocaleString()} QTL and {unmapped.mqtlNoChrOrPos.toLocaleString()} MetaQTL records have no resolvable
-                chromosome or position (often GWAS studies reported without one); {unmapped.links.toLocaleString()} epistatic pairs likewise
+                chromosome or position, often from GWAS studies that reported without one; {unmapped.links.toLocaleString()} epistatic pairs likewise
                 couldn't be resolved to two physical loci. None of these are shown below.
               </p>
               {(unmapped.qtlCm > 0 || unmapped.mqtlCm > 0) && (
