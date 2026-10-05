@@ -260,7 +260,7 @@ export default function Home() {
           <ul className="mt-3 space-y-2 text-sm text-wheat-50/95">
             <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Updated list of QTLs reported through 2022, {stats.qtl.toLocaleString()} records in total.</li>
             <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Multi-trait (pleiotropic) QTL now curated and browsable separately.</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Trait sub-categorisation: biofortification (Zn/Fe/Se/Ca), nutrient-use efficiency (NUE/PUE/KUE).</li>
+            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Trait sub-categorisation for biofortification and nutrient-use efficiency.</li>
             <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Advanced multi-criteria search across species, trait, chromosome, PVE and method.</li>
             <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Interactive statistics with per-chart image export.</li>
             <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> One-click CSV export of every table.</li>
