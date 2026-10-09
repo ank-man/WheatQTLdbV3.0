@@ -7,7 +7,7 @@ import {
 } from 'lucide-react'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
-import { normalizeTrait, normalizeSpecies, isMultiTraitQTL } from '../lib/map'
+import { normalizeTrait, normalizeSpecies, isMultiTraitQTL, locusKey } from '../lib/map'
 import MiniIdeogram from '../components/MiniIdeogram'
 
 const heroImg = `${import.meta.env.BASE_URL}images/wheat-aerial-field.jpg`
@@ -52,6 +52,7 @@ export default function Home() {
       epi: epi.data.length,
       species: speciesSet.size,
       multiTrait: qtl.data.filter(isMultiTraitQTL).length,
+      loci: new Set(qtl.data.map(locusKey)).size,
     }
   }, [qtl.data, mqtl.data, epi.data])
 

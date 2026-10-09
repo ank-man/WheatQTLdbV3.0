@@ -10,7 +10,7 @@ import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
 import {
   TRAIT_COLORS, chromosomeSortKey, normalizeTrait, normalizeSpecies,
-  prepareItems, QTLItem, MetaQTLItem, isMultiTraitQTL,
+  prepareItems, QTLItem, MetaQTLItem, isMultiTraitQTL, locusKey,
 } from '../lib/map'
 import { exportRaster } from '../lib/exportMap'
 
@@ -130,6 +130,9 @@ export default function Statistics() {
     mqtl: mqtl.data.length,
     epi: epi.data.length,
     multiTrait: qtl.data.filter(isMultiTraitQTL).length,
+    // The same locus reported for several traits or environments is several
+    // records but one locus; both numbers are shown so neither misleads.
+    loci: new Set(qtl.data.map(locusKey)).size,
   }), [qtl.data, mqtl.data, epi.data])
 
   // All real categories (normalizeTrait - the same classification the Search
@@ -208,8 +211,9 @@ export default function Statistics() {
       />
       <AsyncBoundary loading={loading} error={error}>
         {/* Summary cards */}
-        <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <SummaryCard label="QTLs" value={stats.qtl} />
+        <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <SummaryCard label="QTL records" value={stats.qtl} />
+          <SummaryCard label="Distinct loci" value={stats.loci} />
           <SummaryCard label="MetaQTLs" value={stats.mqtl} />
           <SummaryCard label="Epistatic QTLs" value={stats.epi} />
           <SummaryCard label="Multi-trait QTLs" value={stats.multiTrait} />

@@ -379,14 +379,20 @@ export function normalizeSubTrait(record: QTLRecord | MetaQTLRecord): string | n
   return null
 }
 
-// A QTL/MTA is "multi-trait" (pleiotropic) when its parameter field lists 2+
-// distinct measured traits/parameters for the same locus - the curated
-// multitrait-qtl sheets (Developmental.xls, Zn multitrait.xlsx, Drought.xls,
-// Water logging_revised.xls) record this as a comma- or "&"-joined list
-// (e.g. "Grain Zn content, Grain Fe content, grainprotein content" or
-// "Heading date & Flowering Date"), and the same convention shows up
-// incidentally in several other source files wherever one locus was
-// reported against multiple measured parameters.
+// A QTL/MTA is "multi-trait" (pleiotropic) when one locus was reported against
+// two or more distinct traits.
+//
+// The decision is made in convert_datasets.py and shipped in the data, not
+// recomputed here, because it needs whole-dataset context that a single record
+// cannot supply. Two corrections it applies that a naive "parameter contains a
+// comma" test misses:
+//
+//   * trait x environment combinations collapse to one trait ("Grain
+//     yield_M_17, Grain yield_S_18" is one trait in two environments); and
+//   * a long parameter string repeated across many rows of one source is the
+//     list of traits that STUDY phenotyped, pasted onto every marker row -
+//     not a claim that each marker affects all of them. In the wheat data that
+//     single artefact accounted for 457 of 1,651 supposed pleiotropic records.
 export function multiTraitList(record: Pick<QTLRecord, 'parameter'>): string[] {
   return (record.parameter || '')
     .split(/[,&]/)
@@ -394,8 +400,15 @@ export function multiTraitList(record: Pick<QTLRecord, 'parameter'>): string[] {
     .filter(Boolean)
 }
 
-export function isMultiTraitQTL(record: Pick<QTLRecord, 'parameter'>): boolean {
-  return multiTraitList(record).length >= 2
+export function isMultiTraitQTL(record: Pick<QTLRecord, 'parameter' | 'multi_trait'>): boolean {
+  return String((record as QTLRecord).multi_trait ?? '').toLowerCase() === 'yes'
+}
+
+/** Distinct locus x study key - the same locus reported for several traits is
+ *  several records but ONE locus, which is what a "how many QTL" headline
+ *  should reflect. */
+export function locusKey(r: QTLRecord): string {
+  return [r.qtl_name, r.associated_markers, r.chromosome, r.position_interval, r.doi].join('|')
 }
 
 export interface QTLItem {

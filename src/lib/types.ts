@@ -15,6 +15,9 @@ export interface QTLRecord {
   reference?: string
   doi?: string
   source_file?: string
+  /** Computed in convert_datasets.py, where whole-dataset context is available. */
+  multi_trait?: string
+  n_traits?: number | string
 }
 
 export interface MetaQTLRecord {

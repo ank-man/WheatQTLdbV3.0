@@ -55,7 +55,10 @@ export default function MultiTraitQTLPage() {
       <AsyncBoundary loading={loading} error={error}>
         <p className="mb-4 text-sm text-wheat-600">
           <span className="font-semibold text-wheat-900">{multiTrait.length.toLocaleString()}</span> of{' '}
-          {data.length.toLocaleString()} QTL/MTA records list 2 or more co-mapped parameters/traits for the same locus.
+          {data.length.toLocaleString()} QTL/MTA records report two or more <em>distinct</em> traits for the
+          same locus. Trait&nbsp;&times;&nbsp;environment repeats of one trait are counted once, and
+          study-wide trait panels — a list of everything a study phenotyped, recorded against every
+          marker — are excluded, since those describe the experiment rather than the locus.
         </p>
         <DataTable data={multiTrait} columns={columns} filename="wheatqtldb_multitrait_qtl.csv" />
       </AsyncBoundary>

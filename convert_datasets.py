@@ -745,14 +745,94 @@ def main():
             print(f"  {label}: dropped {dropped} exact-duplicate row(s) ({len(records)} -> {len(out)})")
         return out
 
+    # ------------------------------------------------------------------
+    # Drop rows that identify no locus at all. A row with neither a QTL name
+    # nor a marker is a footnote, a sub-total or a stray line - it cannot be
+    # a QTL, and counting it inflates the record total.
+    # ------------------------------------------------------------------
+    before = len(all_qtl)
+    all_qtl = [r for r in all_qtl
+               if (r.get("qtl_name") or "").strip() or (r.get("associated_markers") or "").strip()]
+    if before != len(all_qtl):
+        print(f"  QTL: dropped {before - len(all_qtl)} row(s) with no QTL name and no marker")
+
     all_qtl = dedupe_exact("QTL", all_qtl)
     all_metaqtl = dedupe_exact("MetaQTL", all_metaqtl)
     all_epistatic = dedupe_exact("Epistatic", all_epistatic)
 
+    # ------------------------------------------------------------------
+    # Multi-trait (pleiotropic) flag.
+    #
+    # Computed here rather than in the web app because it needs whole-dataset
+    # context. Two corrections over a naive "parameter contains a comma":
+    #
+    #   1. Trait x environment combinations are collapsed. A parameter listing
+    #      "Grain yield_M_17, Grain yield_S_18, ..." describes ONE trait scored
+    #      in several environments, not several traits.
+    #
+    #   2. Study-level trait panels are excluded. In Drought.xls, 457 rows
+    #      share one identical 36-item parameter string: that is the list of
+    #      traits the STUDY phenotyped, pasted onto every marker row, not a
+    #      claim that each marker affects all of them. A long parameter string
+    #      repeated across many rows of one source is therefore treated as an
+    #      experiment description, not as evidence of pleiotropy.
+    # ------------------------------------------------------------------
+    _ENV_SUFFIX = re.compile(
+        r"[_\s-]+(?:[MSE]|E\d+|ENV\d*|LOC\d*|Y\d+|\d{2,4})"
+        r"(?:[_\s-]+(?:\d{2,4}|[MSE]))*$", re.I)
+
+    def _trait_parts(param):
+        return [x.strip() for x in re.split(r"[,&]", param or "") if x.strip()]
+
+    def _distinct_traits(param):
+        out = set()
+        for part in _trait_parts(param):
+            b = re.sub(r"\s+", " ", _ENV_SUFFIX.sub("", part).strip()).lower()
+            if b:
+                out.add(b)
+        return out
+
+    # how often each (source, parameter) string recurs - a long list repeated
+    # across many rows is a panel description
+    panel_counts = {}
+    for r in all_qtl:
+        key = (r.get("source_file", ""), r.get("parameter", ""))
+        panel_counts[key] = panel_counts.get(key, 0) + 1
+
+    PANEL_MIN_PARTS = 5     # only long lists can be panels
+    PANEL_MIN_ROWS = 20     # ...repeated this often in one source
+
+    n_multi = n_panel = 0
+    for r in all_qtl:
+        param = r.get("parameter", "")
+        parts = _trait_parts(param)
+        distinct = _distinct_traits(param)
+        key = (r.get("source_file", ""), param)
+        is_panel = (len(parts) >= PANEL_MIN_PARTS
+                    and panel_counts.get(key, 0) >= PANEL_MIN_ROWS)
+        if is_panel:
+            n_panel += 1
+        multi = (len(distinct) >= 2) and not is_panel
+        r["multi_trait"] = "yes" if multi else ""
+        r["n_traits"] = str(len(distinct)) if distinct else ""
+        if multi:
+            n_multi += 1
+
+    print(f"  QTL: {n_multi} multi-trait (pleiotropic) record(s); "
+          f"{n_panel} excluded as study-level trait panels")
+
+    # distinct loci, for an honest headline alongside the record count: the
+    # same locus reported for several traits is several ROWS but one LOCUS.
+    loci = {(r.get("qtl_name", ""), r.get("associated_markers", ""),
+             r.get("chromosome", ""), r.get("position_interval", ""),
+             r.get("doi", "")) for r in all_qtl}
+    print(f"  QTL: {len(all_qtl)} records covering {len(loci)} distinct locus x study combinations")
+
     # QTL
     qtl_fields = ["id","species","trait","parameter","cross","population","method",
                    "qtl_name","chromosome","position_interval","associated_markers",
-                   "pve","candidate_gene","reference","doi","source_file"]
+                   "pve","candidate_gene","reference","doi","source_file",
+                   "multi_trait","n_traits"]
     for i, r in enumerate(all_qtl, 1):
         r["id"] = f"Q{i:05d}"
     write_csv(os.path.join(OUT, "qtl.csv"), qtl_fields, all_qtl)
