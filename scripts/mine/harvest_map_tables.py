@@ -192,7 +192,7 @@ MAP_HINT = re.compile(
 
 # Skip anything this large: at that size a bundle is raw sequencing or image
 # data, not a table, and downloading it wastes the whole budget.
-MAX_BUNDLE_MB = 120
+MAX_BUNDLE_MB = 400
 
 
 def candidate_pmcids():

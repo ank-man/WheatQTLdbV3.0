@@ -9,6 +9,7 @@ const NAV = [
   { to: '/map', label: 'Map' },
   { to: '/data', label: 'Data' },
   { to: '/search', label: 'Search' },
+  { to: '/data/linkage-maps', label: 'Linkage maps' },
   { to: '/publications', label: 'Publications' },
   { to: '/team', label: 'Team' },
   { to: '/contact', label: 'Contact' },
@@ -97,7 +98,8 @@ export default function Layout({ children }: { children: ReactNode }) {
             { to: '/links', label: 'Related resources' },
           ]} />
           <FooterCol title="Project" links={[
-            { to: '/publications', label: 'Publications' },
+            { to: '/data/linkage-maps', label: 'Linkage maps' },
+  { to: '/publications', label: 'Publications' },
   { to: '/team', label: 'Team' },
             { to: '/contact', label: 'Contact' },
             { to: '/credits', label: 'Credits & citation' },

@@ -486,7 +486,86 @@ def sheet_type(sheet_name, file_name=""):
 # per-table extraction
 # ---------------------------------------------------------------------------
 
+
+# ---------------------------------------------------------------------------
+# Unnamed-column recovery
+#
+# Several source sheets carry real data in a column with NO header. Because
+# columns are mapped to fields by header name, those columns were silently
+# dropped - which is why only 2.7% of records ended up with a reference even
+# though most sheets record one:
+#
+#   N data_revised.xlsx     col 13 (unnamed) = full citation, all 1,873 rows
+#   Combined KUE Data.xlsx  col 13 (unnamed) = full citation, 1,051 rows
+#   Zn content.xls          col 13 (unnamed) = reference URL, while the NAMED
+#                                              "Link to reference" column
+#                                              contains only "-"
+#
+# Rather than hard-code those positions, an unnamed column is identified by
+# what it contains: a column of URLs/DOIs is a reference link, a column of
+# long author-year text is a citation, and a column of ascending integers is a
+# serial number and is ignored.
+# ---------------------------------------------------------------------------
+
+_URLISH = re.compile(r"https?://|\bdoi\.org/|\b10\.\d{4,9}/", re.I)
+# "Han, X., Zhang, M., ... (2023). Title. Journal, 14(6), 1168."
+_CITATIONISH = re.compile(r"\(\s*(19|20)\d{2}\s*\)|\b(19|20)\d{2}\b.*[.,]")
+
+
+def _column_values(body, j, limit=400):
+    out = []
+    for r in body[:limit]:
+        if j < len(r):
+            v = clean(r[j])
+            if v:
+                out.append(v)
+    return out
+
+
+def recover_unnamed_columns(headers, body):
+    """Give a name to unnamed columns that clearly hold reference data.
+
+    Returns a new header list; columns that cannot be identified keep their
+    blank name and continue to be ignored.
+    """
+    headers = list(headers)
+    for j, h in enumerate(headers):
+        if str(h).strip():
+            continue
+        vals = _column_values(body, j)
+        if len(vals) < 5:
+            continue
+        urlish = sum(1 for v in vals if _URLISH.search(v))
+        citeish = sum(1 for v in vals if len(v) > 60 and _CITATIONISH.search(v))
+        numeric = sum(1 for v in vals if re.fullmatch(r"\d+(\.0+)?", v))
+
+        if urlish >= 0.6 * len(vals):
+            headers[j] = "Link to reference (recovered)"
+        elif citeish >= 0.5 * len(vals):
+            headers[j] = "Reference (recovered)"
+        elif numeric >= 0.9 * len(vals):
+            headers[j] = ""          # serial number column - correctly ignored
+    return headers
+
+
+def better_column(body, primary, candidate):
+    """True when `candidate` holds real data where `primary` is empty.
+
+    Zn content.xls names a 'Link to reference' column that contains only "-"
+    and puts the real URL in the unnamed column beside it. Preferring whichever
+    column is actually populated avoids hard-coding that quirk.
+    """
+    if primary is None:
+        return True
+    if candidate is None:
+        return False
+    pv = _column_values(body, primary)
+    cv = _column_values(body, candidate)
+    return len(cv) > max(5, 3 * len(pv))
+
+
 def extract_qtl(headers, body, source_file):
+    headers = recover_unnamed_columns(headers, body)
     records = []
     si  = col_idx(headers, "species")
     tri = col_idx(headers, "trait", "Trait")
@@ -510,6 +589,13 @@ def extract_qtl(headers, body, source_file):
     cgi = col_idx(headers, "candidate gene")
     rei = col_idx(headers, "reference", "full", "apa")
     doi = col_idx(headers, "link to reference", "url to reference", "doi", "link", "url")
+    # a recovered column wins when the named one is effectively empty
+    rec_ref = col_idx(headers, "reference (recovered)")
+    rec_link = col_idx(headers, "link to reference (recovered)")
+    if rec_ref is not None and better_column(body, rei, rec_ref):
+        rei = rec_ref
+    if rec_link is not None and better_column(body, doi, rec_link):
+        doi = rec_link
 
     def g(row, i):
         return clean(row[i]) if i is not None and i < len(row) else ""
@@ -543,6 +629,7 @@ def extract_qtl(headers, body, source_file):
     return records
 
 def extract_metaqtl(headers, body, source_file):
+    headers = recover_unnamed_columns(headers, body)
     records = []
     si  = col_idx(headers, "species")
     tri = col_idx(headers, "trait")
@@ -560,6 +647,13 @@ def extract_metaqtl(headers, body, source_file):
     cgi = col_idx(headers, "candidate gene")
     rei = col_idx(headers, "reference", "full", "apa")
     doi = col_idx(headers, "link to reference", "url to reference", "doi", "link", "url")
+    # a recovered column wins when the named one is effectively empty
+    rec_ref = col_idx(headers, "reference (recovered)")
+    rec_link = col_idx(headers, "link to reference (recovered)")
+    if rec_ref is not None and better_column(body, rei, rec_ref):
+        rei = rec_ref
+    if rec_link is not None and better_column(body, doi, rec_link):
+        doi = rec_link
 
     def g(row, i):
         return clean(row[i]) if i is not None and i < len(row) else ""
@@ -588,6 +682,7 @@ def extract_metaqtl(headers, body, source_file):
     return records
 
 def extract_epistatic(headers, body, source_file):
+    headers = recover_unnamed_columns(headers, body)
     records = []
     si   = col_idx(headers, "species")
     tri  = col_idx(headers, "trait")

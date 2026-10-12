@@ -36,7 +36,7 @@ os.makedirs(OUT, exist_ok=True)
 # raising WORKERS makes a run finish sooner without ever increasing the load
 # the API actually sees beyond REQS_PER_SEC.
 REQS_PER_SEC = 10.0
-WORKERS = 8
+WORKERS = 4
 
 _rate_lock = threading.Lock()
 _next_slot = [0.0]
@@ -198,7 +198,10 @@ def supplementary_zip(pmcid: str) -> bytes | None:
     rather than typeset tables, so this is a second, independent source of
     records beyond the JATS <table-wrap> elements.
     """
-    url = f"{BASE}/{pmcid}/supplementaryFiles"
+    # includeInlineImage=false strips figure images from the bundle, which is
+    # what made these 30-400 MB and caused the timeouts that silently lost
+    # most of them. The spreadsheets we want are unaffected.
+    url = f"{BASE}/{pmcid}/supplementaryFiles?includeInlineImage=false"
     path = _cache_path(url, "zip")
     if os.path.exists(path):
         with open(path, "rb") as f:
@@ -208,14 +211,15 @@ def supplementary_zip(pmcid: str) -> bytes | None:
     _throttle()
     try:
         req = urllib.request.Request(url, headers={"User-Agent": UA})
-        with urllib.request.urlopen(req, timeout=120) as r:
+        with urllib.request.urlopen(req, timeout=600) as r:
             data = r.read()
     except urllib.error.HTTPError as e:
         if e.code == 404:
             open(path, "wb").close()  # cache the miss
             return None
         return None
-    except Exception:
+    except Exception as e:
+        print(f"    ! suppl {pmcid}: {type(e).__name__}", flush=True)
         return None
 
     with open(path, "wb") as f:

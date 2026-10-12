@@ -247,3 +247,57 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def backfill_references(limit_cols=("qtl.csv", "metaqtl.csv", "epistatic.csv")):
+    """Write resolved citations back into the record tables.
+
+    The source spreadsheets record a reference for only ~2.7% of rows - most
+    carry a link and nothing else, and in some files the citation column was
+    dropped when the fuller sheet replaced an older one. Since publications.csv
+    already resolves each DOI to real bibliographic metadata, that text can be
+    filled in wherever a record has a DOI, which covers 97% of rows instead.
+
+    The record's own reference text is never overwritten: a curator-entered
+    citation stays as the authority.
+    """
+    pub_path = os.path.join(DATA, "publications.csv")
+    if not os.path.exists(pub_path):
+        print("publications.csv missing - run the main build first")
+        return
+    cite = {}
+    with open(pub_path, encoding="utf-8") as f:
+        for p in csv.DictReader(f):
+            if not p["doi"] or not p["title"]:
+                continue
+            authors = p["authors"].split("; ")
+            lead = authors[0] if authors and authors[0] else ""
+            etal = " et al." if len(authors) > 1 else ""
+            year = f" ({p['year']})" if p["year"] else ""
+            journal = f" {p['journal']}." if p["journal"] else ""
+            cite[p["doi"]] = f"{lead}{etal}{year} {p['title']}.{journal}".strip()
+
+    for fname in limit_cols:
+        path = os.path.join(DATA, fname)
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding="utf-8") as f:
+            rows = list(csv.DictReader(f))
+            cols = rows[0].keys() if rows else []
+        if not rows or "reference" not in cols:
+            continue
+        filled = 0
+        for r in rows:
+            if r.get("reference", "").strip():
+                continue
+            doi = normalise_doi(r.get("doi", ""))
+            if doi and doi in cite:
+                r["reference"] = cite[doi]
+                filled += 1
+        with open(path, "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=list(cols))
+            w.writeheader()
+            w.writerows(rows)
+        have = sum(1 for r in rows if r.get("reference", "").strip())
+        print(f"{fname:16s} filled {filled:6d} references; now {have}/{len(rows)} "
+              f"({have/len(rows)*100:.1f}%) have one")

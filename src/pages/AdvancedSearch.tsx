@@ -61,9 +61,8 @@ function speciesMatches(fieldValue: string, selected: string): boolean {
   return fieldValue.split(/[;/]/).map((s) => normalizeSpecies(s)).includes(selected)
 }
 
-// `selected` may be an exact TraitCategory (from normalizeTrait) or one of
-// the broader TRAIT_GROUPS umbrella labels (e.g. homepage's "Abiotic
-// stress" tile) - the latter matches any of its constituent categories.
+// Major class and category are separate filters now, so this only ever
+// compares a record's category against a chosen category.
 function traitMatches(category: string, selected: string): boolean {
   return !selected || category === selected
 }
@@ -119,10 +118,8 @@ export default function AdvancedSearch() {
   // TRAIT_CATEGORIES / normalizeTrait), not raw per-row trait strings - those
   // vary wildly in spelling/case/whitespace across source files and
   // occasionally contain a mis-shifted species value rather than a trait.
-  // The broader TRAIT_GROUPS umbrella labels (matching the homepage's
-  // "Abiotic stress" / "Biotic stress" tiles) are listed first, so a link
-  // into a group resolves to a real, selectable dropdown option instead of
-  // silently matching nothing.
+  // Scoped to the selected major class, so the two dropdowns are a strict
+  // parent/child pair rather than a mixed list.
   // Major classes partition the categories, so the subclass list is simply the
   // chosen class's children - never a mix of umbrella labels and categories,
   // which is what previously made "group" and "category" totals irreconcilable.

@@ -74,10 +74,6 @@ export function majorClassOf(category: string): TraitMajorClass {
   return CATEGORY_TO_MAJOR[category] ?? 'Other'
 }
 
-/** Kept so existing homepage tiles that link by major-class name still resolve. */
-export const TRAIT_GROUPS: Record<string, TraitCategory[]> = TRAIT_HIERARCHY as unknown as
-  Record<string, TraitCategory[]>
-
 
 // Every trait/parameter string in the data resolves to one of these (see
 // normalizeTrait). The former single "Abiotic stress" bucket (26,517 QTL +

@@ -10,7 +10,8 @@ import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
 import {
   TRAIT_COLORS, chromosomeSortKey, normalizeTrait, normalizeSpecies,
-  prepareItems, QTLItem, MetaQTLItem, isMultiTraitQTL, locusKey, majorClassOf, TRAIT_MAJOR_CLASSES,
+  prepareItems, QTLItem, MetaQTLItem, isMultiTraitQTL, locusKey, majorClassOf,
+  TRAIT_MAJOR_CLASSES, TRAIT_HIERARCHY,
 } from '../lib/map'
 import { exportRaster } from '../lib/exportMap'
 
@@ -276,9 +277,10 @@ export default function Statistics() {
 
           <ChartCard title="QTL by major trait class" wide>
             <p className="mb-3 text-sm text-wheat-600">
-              Each record belongs to exactly one class, so these
-              sum to all {qtl.data.length.toLocaleString()} records — a record studied for drought
-              but scored on grain yield counts once, under Abiotic stress.
+              Each record belongs to exactly one class, so these sum to all{' '}
+              {qtl.data.length.toLocaleString()} records — a study of drought that scored grain
+              yield counts once, under Abiotic stress. The breakdown below shows each class with
+              its categories, which sum back to it.
             </p>
             <ResponsiveContainer width="100%" height={260} className="text-wheat-700">
               <BarChart data={byMajorClass} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
@@ -289,6 +291,10 @@ export default function Statistics() {
                 <Bar dataKey="value" fill="#2e7d32" />
               </BarChart>
             </ResponsiveContainer>
+          </ChartCard>
+
+          <ChartCard title="Trait class breakdown" wide>
+            <HierarchyTable data={qtl.data} />
           </ChartCard>
 
           <ChartCard title="QTL by trait category" wide>
@@ -421,6 +427,69 @@ export default function Statistics() {
           </ChartCard>
         </div>
       </AsyncBoundary>
+    </div>
+  )
+}
+
+/** Major classes with their categories nested, each class's children summing
+ *  back to it and the classes summing to the record total - so a reader can
+ *  check the partition rather than take it on trust. */
+function HierarchyTable({ data }: { data: QTLRecord[] }) {
+  const counts = useMemo(() => {
+    const m = new Map<string, number>()
+    data.forEach((r) => {
+      const c = normalizeTrait(r)
+      m.set(c, (m.get(c) ?? 0) + 1)
+    })
+    return m
+  }, [data])
+
+  const rows = TRAIT_MAJOR_CLASSES.map((major) => {
+    const cats = (TRAIT_HIERARCHY[major] ?? [])
+      .map((c) => ({ name: c as string, n: counts.get(c) ?? 0 }))
+      .filter((c) => c.n > 0)
+      .sort((a, b) => b.n - a.n)
+    return { major, cats, total: cats.reduce((s, c) => s + c.n, 0) }
+  }).filter((r) => r.total > 0).sort((a, b) => b.total - a.total)
+
+  const grand = rows.reduce((s, r) => s + r.total, 0)
+
+  return (
+    <div className="overflow-x-auto">
+      <table className="min-w-full text-sm">
+        <tbody>
+          {rows.map((r) => (
+            <>
+              <tr key={r.major} className="border-t border-wheat-200">
+                <td className="py-1.5 pr-4 font-semibold text-wheat-900">{r.major}</td>
+                <td className="py-1.5 text-right font-semibold tabular-nums text-wheat-900">
+                  {r.total.toLocaleString()}
+                </td>
+              </tr>
+              {r.cats.map((c) => (
+                <tr key={`${r.major}-${c.name}`}>
+                  <td className="py-0.5 pl-5 pr-4 text-wheat-600">
+                    <span className="text-wheat-400">└─ </span>{c.name}
+                  </td>
+                  <td className="py-0.5 text-right tabular-nums text-wheat-700">
+                    {c.n.toLocaleString()}
+                  </td>
+                </tr>
+              ))}
+            </>
+          ))}
+          <tr className="border-t-2 border-wheat-300">
+            <td className="py-1.5 pr-4 font-bold text-wheat-900">All records</td>
+            <td className="py-1.5 text-right font-bold tabular-nums text-wheat-900">
+              {grand.toLocaleString()}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p className="mt-2 text-xs text-wheat-500">
+        Every record falls in exactly one category and every category in exactly one class, so the
+        categories sum to their class and the classes sum to the record total. Nothing is counted twice.
+      </p>
     </div>
   )
 }
