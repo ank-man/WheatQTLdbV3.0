@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Database, GitBranch, Network, Dna, Map as MapIcon, Layers } from 'lucide-react'
+import { Database, GitBranch, Network, Dna, Map as MapIcon, Layers, BookOpen } from 'lucide-react'
 import PageHero from '../components/PageHero'
 
 const items = [
@@ -9,6 +9,7 @@ const items = [
   { to: '/data/epistatic', icon: Network, title: 'Epistatic QTL', desc: 'QTL × QTL interactions.' },
   { to: '/data/candidate-genes', icon: Dna, title: 'Candidate Genes', desc: 'Genes underlying QTL regions.' },
   { to: '/map', icon: MapIcon, title: 'Physical Map', desc: 'Interactive chromosome view of all QTLs and MetaQTLs.' },
+  { to: '/publications', icon: BookOpen, title: 'Publications', desc: 'Every source study, with the records it contributed.' },
 ]
 
 export default function DataIndex() {

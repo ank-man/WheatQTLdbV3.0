@@ -1,0 +1,459 @@
+
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN" "JATS-archivearticle1-4-mathml3.dtd">
+<article xml:lang="en" article-type="research-article" dtd-version="1.4"><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Vavilovskii Zhurnal Genet Selektsii</journal-id><journal-id journal-id-type="iso-abbrev">Vavilovskii Zhurnal Genet Selektsii</journal-id><journal-id journal-id-type="pmc-domain-id">3805</journal-id><journal-id journal-id-type="pmc-domain">vavilovjgb</journal-id><journal-id journal-id-type="nlm-id">101583566</journal-id><journal-title-group><journal-title>Vavilov Journal of Genetics and Breeding</journal-title></journal-title-group><issn pub-type="ppub">2500-0462</issn><issn pub-type="epub">2500-3259</issn><?publisher_abbrev igbsbras?><publisher><publisher-name>Institute of Cytology and Genetics, Siberian Branch of the Russian Academy of Science</publisher-name></publisher><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://vavilov.elpub.ru/jour/index">
+Website: Vavilov Journal of Genetics and Breeding
+</self-uri></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC8649750</article-id><article-id pub-id-type="pmcid-ver">PMC8649750.1</article-id><article-id pub-id-type="pmcaid">8649750</article-id><article-id pub-id-type="pmcaiid">8649750</article-id><article-id pub-id-type="pmid">34950843</article-id><article-id pub-id-type="doi">10.18699/VJ21.082</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="heading"><subject>Original Article</subject></subj-group></article-categories><title-group><article-title>Complex resistance of spring and winter bread wheat lines
+to biotic and abiotic stresses</article-title><trans-title-group xml:lang="ru"><trans-title>Комплексная устойчивость линий
+яровой и озимой мягкой пшеницы
+к биотическим и абиотическим стрессам</trans-title></trans-title-group></title-group><contrib-group><contrib contrib-type="author"><name name-style="western"><surname>Lapochkina</surname><given-names initials="IF">I.F.</given-names></name><aff>
+<institution>Federal Research Center “Nemchinovka”, Novoivanovskoe, Moscow region, Russia</institution>
+</aff></contrib><contrib contrib-type="author"><name name-style="western"><surname>Gainullin</surname><given-names initials="NR">N.R.</given-names></name><aff>
+<institution>Federal Research Center “Nemchinovka”, Novoivanovskoe, Moscow region, Russia</institution>
+</aff></contrib><contrib contrib-type="author"><name name-style="western"><surname>Baranova</surname><given-names initials="ОA">О.A.</given-names></name><aff>
+<institution>All-Russian Institute of Plant Protection, Pushkin, St. Petersburg, Russia</institution>
+</aff></contrib><contrib contrib-type="author"><name name-style="western"><surname>Kovalenko</surname><given-names initials="NM">N.M.</given-names></name><aff>
+<institution>All-Russian Institute of Plant Protection, Pushkin, St. Petersburg, Russia</institution>
+</aff></contrib><contrib contrib-type="author"><name name-style="western"><surname>Marchenkova</surname><given-names initials="LA">L.A.</given-names></name><aff>
+<institution>Federal Research Center “Nemchinovka”, Novoivanovskoe, Moscow region, Russia</institution>
+</aff></contrib><contrib contrib-type="author"><name name-style="western"><surname>Pavlova</surname><given-names initials="OV">O.V.</given-names></name><aff>
+<institution>Federal Research Center “Nemchinovka”, Novoivanovskoe, Moscow region, Russia</institution>
+</aff></contrib><contrib contrib-type="author"><name name-style="western"><surname>O.V. Mitroshina</surname><given-names initials="OV">O.V.</given-names></name><aff>
+<institution>Federal Research Center “Nemchinovka”, Novoivanovskoe, Moscow region, Russia</institution>
+</aff></contrib></contrib-group><author-notes><fn><p>Correspondence to: I.F. Lapochkina
+<email/>inna-lapochkina@yandex.ru</p></fn></author-notes><pub-date pub-type="ppub"><month>11</month><year>2021</year></pub-date><volume>25</volume><issue>7</issue><issue-id pub-id-type="pmc-issue-id">395175</issue-id><fpage>723</fpage><lpage>731</lpage><history><date date-type="received"><day>23</day><month>7</month><year>2021</year></date><date date-type="rev-recd"><day>11</day><month>8</month><year>2021</year></date><date date-type="accepted"><day>12</day><month>8</month><year>2021</year></date></history><pub-history><event event-type="pmc-release"><date><day>01</day><month>11</month><year>2021</year></date></event><event event-type="pmc-live"><date><day>22</day><month>12</month><year>2021</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2026-05-24 22:25:18.210"><day>24</day><month>05</month><year>2026</year></date></event></pub-history><permissions><copyright-statement>Copyright © AUTHORS</copyright-statement><copyright-year>2021</copyright-year><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/2.5/</ali:license_ref><license-p>This work is licensed under a Creative Commons Attribution 4.0 License</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="VJGB-25-21082.pdf"><?pdf-name VJGB-25-21082.pdf?><?pdf-size 1366054?><?pdf-md5 14e933eb4a9a1e0ff550c0dff171920f?><?pdf-image-server-status NEVER_LOAD?><?pdf-cloudpmc-urn urn:app:0a84/8649750/14e933eb4a9a/VJGB-25-21082.pdf?></self-uri><abstract><p>An original initial material of spring and winter bread wheat with group resistance to stem and leaf rust was developed using new donors of resistance to stem rust: winter soft wheat GT 96/90 (Bulgaria) and accession 119/4-06rw with genetic material of the species Triticum migushovae and (Aegilops speltoides and Secale cereale), respectively, a line of spring wheat 113/00i-4 obtained using the species Ae. triuncialis and T. kiharae, as well as spring accession 145/00i with genetic material of the species Ae. speltoides resistant to leaf rust. The transfer of effective Sr- genes to progeny was monitored using molecular markers. New lines underwent a f ield assessment of resistance to leaf and stem rust in the
+epiphytotic development of diseases in the Central Region of the Russian Federation, as well as in the North Caucasus
+and Western Siberia, and showed high resistance to these pathogens. Fourteen genotypes of spring wheat with group
+resistance to these diseases and parental forms that participated in the origin of the lines were evaluated for resistance
+to spot blotch (Cochliobolus sativus) and tan spot (Pyrenophora tritici-repentis) using
+isolates from Kazakhstan and Omsk
+in laboratory conditions. A highly resistant parental form of winter soft wheat from “Arsenal” collection 119/4-06rw
+(wheat-Ae. speltoides-rye hybrid 2n = 42) with group resistance to two spots, four medium-resistant genotypes to both
+isolates of tan spot from Kazakhstan and Omsk populations of the pathogen, as well as genotypes resistant to the Omsk
+isolate of P. tritici-repentis (parental form 113/00i-4 and lines 1-16i, 6-16i, 9-16i) were isolated. Among the lines of winter
+wheat, four were identif ied with group resistance to spot blotch and tan spot. Additionally, the stress resistance of the
+lines to NaCl salinization and prolonged f looding of seeds with water was evaluated at the early stages of ontogenesis
+in laboratory conditions. Lines 33-16i, 37-16i, 32- 16i and 9-16i showed a high ability to withstand excess moisture. Lines
+33-16i, 37-16i, 32-16i and 3-16i were characterized
+by high salt tolerance, exceeding the average of 49.7 %. Among the
+winter genotypes, lines were identif ied with increased resistance to hypoxia (37-19w, 32-19w, 16-19w, 90-19w) and with
+increased salt tolerance (20- 19w, 9-19w, 37-19w, 90-19w), signif icantly exceeding the standard cv. Moskovskaya
+39.
+The listed lines are of interest as sources of resistance to anaerobic and salt stress, as well as donors of resistance to a
+group of fungal diseases:
+leaf and stem rust and tan spot. We attribute the increased level of resistance of the new initial
+material to the presence of alien translocations in the original parental forms involved in the origin of the lines.</p></abstract><trans-abstract xml:lang="ru"><p>Оригинальный исходный материал яровой и озимой мягкой пшеницы с групповой устойчивостью к стеблевой и бурой ржавчинам создан с использованием новых доноров устойчивости к стеблевой ржавчине – озимой мягкой пшеницы GT 96/90 (Болгария) и линии 119/4-06rw с генетическим материалом соответственно видов Triticum migushovae и (Aegilops speltoides и Secale cereale), линии яровой пшеницы 113/00i-4, полученной с привлечением видов Ae. triuncialis и T. kiharae, а также ярового образца 145/00i с генетическим материалом вида Ae. speltoides, устойчивого к бурой ржавчине. Передачу эффективных Sr-генов потомству отслеживали с помощью молекулярных маркеров. Новые линии прошли полевую оценку устойчивости к бурой и стеблевой ржавчине при эпифитотийном развитии болезней в Центральном регионе Российской Федерации, а также на Северном Кавказе и в Западной Сибири и показали высокую устойчивость к этим патогенам. Четырнадцать генотипов с групповой устойчивостью к этим болезням и родительские формы, принимавшие участие в происхождении линий, в лабораторных условиях оценили на устойчивость к темно-бурой (Cochliobolus sativus) и желтой (Pyrenophora tritici-repentis) пятнистостям c применением изолятов из Казахстана и Омска. Выделена высокоустойчивая родительская форма озимой мягкой пшеницы из коллекции «Арсенал», 119/4-06rw (пшенично-эгилопсно-ржаной гибрид 2n = 42) с групповой устойчивостью к двум пятнистостям и четыре среднеустойчивых генотипа к обоим изолятам желтой пятнистости (из казахстанской и омской популяций патогена), а также генотипы, устойчивые к омскому изоляту P. tritici-repentis (родительская форма 113/00i-4 и линии 1-16i, 6-16i, 9-16i). Среди образцов озимой пшеницы выделено четыре с групповой устойчивостью к темно-бурой и желтой пятнистостям. Дополнительно оценена стрессоустойчивость линий в лабораторных условиях на ранних этапах онтогенеза к засолению NaCl и длительному затоплению семян водой. Линии 33-16i, 37-16i, 32-16i и 9-16i проявили высокую способность противостоять избытку влаги. Высокой солеустойчивостью, превышающей средний показатель, 49.7 %, характеризовались линии 33-16i, 37-16i, 32-16i и 3-16i. Среди озимых генотипов выделены образцы с повышенной устойчивостью к гипоксии, 37-19w, 32-19w, 16-19w, 90-19w, и солеустойчивостью – 20-19w, 9-19w, 37-19w, 90-19w, достоверно превышающие стандартный сорт Московская 39. Эти образцы представляют интерес как источники устойчивости к анаэробному и солевому стрессу, а также как доноры устойчивости к группе грибных заболеваний: бурой и стеблевой ржавчинам и желтой пятнистости листьев. Повышенный уровень устойчивости нового исходного материала мы связываем с наличием чужеродных транслокаций у исходных родительских форм, участвовавших в происхождении линий.</p></trans-abstract><kwd-group><kwd>common wheat</kwd><kwd>stem and leaf rust</kwd><kwd>spot blotch and tan spot</kwd><kwd>salt resistance</kwd><kwd>resistance to hypoxia</kwd></kwd-group><kwd-group xml:lang="ru"><kwd>мягкая пшеница</kwd><kwd>стеблевая и бурая ржавчины</kwd><kwd>темно-бурая и желтая пятнистости</kwd><kwd>солеустойчивость</kwd><kwd>устойчивость к гипоксии</kwd></kwd-group><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec><title>Introduction</title><p>The Non-Black Earth Region belongs to the zone of insecure
+agriculture, which has always been full of abiotic and biotic
+stress factors. Predominant fungal diseases are powdery mildew,
+leaf rust, and in 2010 stem rust, which had not been
+present for 27 years, returned to the fields. In recent years,
+due to global warming, wheat crops are periodically affected
+by leaf spots (spot blotch and tan spot) and septoria. The
+harmfulness of these diseases is high and yield losses can
+reach 40–50 % (Afanasenko et al., 2011; Mikhailova et al.,
+2012; Kim, Volkova, 2020).</p><p>On the one hand, among abiotic stresses, frequent May
+droughts that lead to crops getting thinned are observed, and,
+on the other hand, excess moisture, flooding of crops during
+snowmelt, snow mold damage are possible. Frequent heavy
+rainfall during growing season leads to lodged crop. Despite
+the significant success of breeders in creating highly productive
+varieties of spring and winter wheat for this zone, the
+development of the varieties resistant to biotic and abiotic
+environmental factors remains relevant, especially in recent
+decades, when we’ve been facing real facts of climate change
+leading to a change in the species spectrum of phytopathogenic
+fungi and their racial composition (Lekomtseva et al., 2007,
+2008; Zeleneva et al., 2021).</p><p>The main goal of our research was the development of
+productive competitive spring and winter wheat lines resistant
+to stem rust Puccinia graminis f. sp. tritici (Pgt) and other
+dangerous pathogens (P. triticina, Blumeria graminis, Pyrenophora
+tritici-repentis, Cochliobolus sativus) and the identification
+of other economically valuable qualities and traits of
+the obtained material. The strategy and tactics of developing
+such an initial material were based on the previously
+created
+“Arsenal” bread wheat collection (Lapochkina, 2005), represented
+by genotypes with supplemented Aegilops speltoides chromosomes and alien translocations Ae. speltoides, Ae. triuncialis,
+Triticum kiharae and Secale cereale, as well as the
+search for new sources of resistance to the Ug99 stem rust race.</p></sec><sec><title>Materials and methods</title><p>History of the development of wheat lines with increased
+resistance to rust fungi began in 2010, when part of the
+“Arsenal” collection (90 accessions), as well as accessions
+from All-Russian Research Institute of Plant Genetic Resources
+(VIR) (129 accessions) were evaluated at the University
+of Minnesota for resistance to stem rust of the Ug99
+race at the seedling stage. Seven genotypes of bread wheat
+with 2n = 42 and 2n = 44 from the “Arsenal” collection, as
+well as several genotypes from the VIR collection that showed
+resistance to this dangerous pathogen (type of reaction to the
+penetration of the fungus 0;, 1, 2) were selected. For further
+study and hybridization hexaploid accessions of known origin
+and accessions with alien material were left: winter wheat-
+Ae. speltoides-rye line 119/4-06rw (Ae. speltoides, S. cereale),
+a line from Bulgaria GT 96/90 with genetic material of the
+species Triticum migushchovae, winter wheat variety Donskaya
+polukarlikovaya (Ae. squrrossa) and a spring wheat accession
+113/00i-4 with the genetic material of Ae. triuncialis
+and T. kiharae species.</p><p>The assessment of economically valuable characteristics
+in the field conditions of the Moscow region against the leaf
+rust infectious background highlighted a high resistance to
+the leaf rust population (0–5 % of severity) in all accessions.
+Accessions 113/00i-4 (further in Tables – 113) and 119/4-06rw
+(further – 119) were highly resistant to powdery mildew, and
+accessions from VIR (cv. Donskaya polukarlikovaya) and the
+GT 96/90 line) (further – D/p and 96) were susceptible to this
+disease. However, they had other economically valuable traits:
+precocity (early heading) and short stem. All accessions were productive enough not to cause concerns about a decrease in
+productivity during hybridization.</p><p>The Sr genes were identified in the accessions using
+molecular markers recommended for marker-assisted selection
+(MAS). Molecular markers to 11 Sr genes were used:
+Xgwm533 – Sr2 (Hayden et al., 2004); STS638 – Sr15 (Neu
+et al., 2002); Wpt5343 – Sr17 (Crossa et al., 2007); Xbarc121,
+Xcfa2123, Xcfa2019 – Sr22 (Khan et al., 2005; Yu et al.,
+2010); Sr24#12, Sr24#50 – Sr24/Lr24 (Mago et al., 2005);
+Scm9 – Sr31 (Weng et al., 2007); Xbarc55, Xstm773 – Sr32
+(Somers et al., 2004; Dundas et al., 2007; Yu et al., 2009);
+Xwmc477, Xstm773-2 – Sr36 (Tsilo et al., 2008); Sr39#22 –
+Sr39 (Mago et al., 2009); Xgwm344 – Sr40 (Wu et al., 2009);
+Xgwm501 – Sr47 (Faris et al., 2008).</p><p>The PCR terms are given in the original works, but optimal
+conditions for each marker were selected. Both effective and
+non-effective genes for the Ug99 stem rust race, but showing
+resistance in the Non-Black Earth Region and the North
+Caucasus were identified (Baranova et al., 2015). Since we
+had three winter genotypes and only one spring genotype at
+our disposal, we considered the strategy for developing hybrid
+populations with a spring and winter pattern of life using different
+plant growing backgrounds</p><p>Initially, the parental forms were crossed taking into account
+their alternative characteristics. Namely: a tall source was
+crossed with a short-stemmed one; a late-maturing source –
+with an early-earing one; a genotype resistant to powdery
+mildew was crossed with a susceptible one. In the first year,
+direct and reverse crosses of three samples were performed
+(GT 96/90, 119/4-06rw and 113/00i-4). The Donskaya polukarlikovaya
+variety’s early start of heading made it impossible
+to carry out hybridization with it. F2 seeds were divided in
+half and grown on different backgrounds.</p><p>To obtain spring genotypes, sowing was carried out in spring
+in the field, and the plants that completed the heading process
+were pollinated either with a recurrent parental form – line
+113/00i-4 or with accession 145/05i, which was resistant to
+powdery mildew and leaf rust, but susceptible to stem rust.</p><p>The second half of the seeds was sown in heated ground in
+February. After seedling emergence, heating was turned off.
+The plants were vernalized and went through heading in natural
+conditions. Then, depending on their habitus, they were
+pollinated either with the Donskaya polukarlikovaya variety,
+with the GT96/90 line or the 119/4-06rw winter line. The use
+of heated background, conventional sowing and sowing in
+greenhouse vessels allowed to speed up the process of obtaining
+back-cross progeny of various saturation levels.</p><p>After self-pollination, individual plants with traits of resistance
+to leaf rust and powdery mildew, as well as with other
+valuable traits, were selected from this progeny against the
+infectious background of leaf rust. Identification of stem rust
+resistance genes of these plants was conducted using the molecular
+markers listed above, and plants with several resistance
+genes in a homozygous state and a complex of economically
+valuable characteristics were selected for field tests of resistance
+in the Moscow and Krasnodar Krai regions – as well as
+in Western Siberia (Omsk).</p><p>Immunological assessment of the lines resistance to stem
+rust in the Central and West Siberian regions was carried out
+to the natural population of the fungus in field conditions, and
+in the Krasnodar Krai region – against an artificial infectious
+background of stem and leaf rust development. North Caucasian
+populations of Puccinia spp were used as infectious
+material in the latter case. Plant damage level was recorded
+during the period of maximum development of diseases. The
+evaluation criteria were the type of reaction and the plant damage
+level according to the scale recommended by CIMMYT
+(Roelfs, Singh, 1992).</p><p>The resistance to spot blotch (Cochliobolus sativus) and
+tan spot (P. tritici-repentis) of the parental forms of crossing
+and lines with a complex of economically valuable traits
+was determined. For the latter, two isolates selected from
+P. tritici-repentis populations common in Western Siberia
+were used: (Omsk isolate) from the temperate climatic zone
+with a continental climate of forest-steppe and (Kazakhstan
+isolate) from the sharply continental zone of Northern Kazakhstan.
+Isolates differ in virulence. The assessment was
+carried out in laboratory conditions on leaf sections placed in
+the benzimidazole solution (0.004 %) according to the method
+of L.A. Mikhailova and co-authors (Mikhailova et al., 2012).</p><p>The stress resistance of spring and winter wheat lines to
+abiotic stresses, namely, water flooding (hypoxia) and NaCl
+salinization, was evaluated in laboratory conditions at the
+early stages of ontogenesis according to generally accepted
+methods (Beletskaya, 1976; Semushkina et al., 1976). The
+experiments were carried out in two replicates.</p><p>Statistical indicators and the reliability of their differences
+were determined in comparison with standard varieties using
+statistical analysis (Martynov, 1999).</p></sec><sec><title>Results and discussion</title><p>As a result of Sr genes identification using molecular markers
+recommended for MAS, both effective and non-effective with
+regard to Ug99 but demonstrating resistance in the Non-Black
+Earth Region, genes were identified (Baranova et al., 2015)
+(Table 1).</p><fig position="float" id="Tab-1" orientation="portrait"><label>Table 1.</label><caption><title>Sr genes identif ied in the sources
+of resistance to stem rust race Ug99</title></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="VJGB-25-21082-Tab1.jpg"><?image-name VJGB-25-21082-Tab1.jpg?><?image-size 22611?><?image-md5 e9778e5f98a046096d33490bc1a8ab1f?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 311?><?image-original-width 1144?><?image-scaled-height 207?><?image-scaled-width 762?><?image-cloudpmc-urn urn:cdn:blobs/0a84/8649750/e9778e5f98a0/VJGB-25-21082-Tab1.jpg?><?thumb-name VJGB-25-21082-Tab1.gif?><?thumb-size 1722?><?thumb-md5 ae30340da99713d8768e7befd232f9aa?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 54?><?thumb-scaled-width 200?><?thumb-cloudpmc-urn urn:cdn:blobs/0a84/8649750/ae30340da997/VJGB-25-21082-Tab1.gif?></graphic></fig><p>From 2 to 4 effective resistance genes were recorded in
+backcross
+progeny obtained after self-pollination. The genetic
+diversity of Sr genes among spring and winter wheat
+plants differed. Nine main gene combinations in spring plants were identified: Sr2+Sr36; Sr2+Sr39; Sr2+Sr32; Sr2+Sr22;
+Sr2+Sr36+Sr40; Sr2+Sr32+Sr40; Sr2+Sr22+Sr40;
+Sr2+Sr32+Sr39; Sr2+Sr22+Sr32+Sr40. It is twice as high
+in winter crops, but the frequency of occurrence of the Sr2
+resistance gene of adult plants was noted only in 35 % of
+individual plants selected for gene identification. And in half
+of the cases, the Sr2 gene was in a heterozygous state. Winter
+wheat plants were characterized by a unique combination
+of resistance genes that are rarely used in the breeding process:
+Sr22+Sr32; Sr22+Sr47; Sr32+Sr47; Sr2+Sr22+Sr32;
+Sr22+Sr32+Sr40; Sr36+Sr39+Sr47. A plant with four resistance
+genes was revealed: Sr2+Sr22+Sr32+Sr40.</p><p>The evaluation of the progeny of 198 bread wheat spring
+lines and 367 lines of winter wheat with two-three Sr resistance
+genes was conducted in various geographical points of
+the Russian Federation to leaf and stem rust, differing in the
+spectrum of virulence genes (Lapochkina et al., 2016, 2018).
+This resulted in the selection of lines with group resistance
+to both pathogens (Table 2). Among the spring wheat lines, a
+high frequency of resistant genotypes to the North Caucasian
+population of stem and leaf rust was noted (81–82 %).</p><fig position="float" id="Tab-2" orientation="portrait"><label>Table 2.</label><caption><title>The results of the assessment of lines
+of spring and winter wheat to rust fungi and powdery mildew
+in various regions of the Russian Federation</title></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="VJGB-25-21082-Tab2.jpg"><?image-name VJGB-25-21082-Tab2.jpg?><?image-size 32262?><?image-md5 32e822208910351ee7fe6ff8aa2609a2?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 378?><?image-original-width 1144?><?image-scaled-height 252?><?image-scaled-width 762?><?image-cloudpmc-urn urn:cdn:blobs/0a84/8649750/32e822208910/VJGB-25-21082-Tab2.jpg?><?thumb-name VJGB-25-21082-Tab2.gif?><?thumb-size 2165?><?thumb-md5 8f42a3a63a3efe4241ecbd4f35966d02?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 66?><?thumb-scaled-width 200?><?thumb-cloudpmc-urn urn:cdn:blobs/0a84/8649750/8f42a3a63a3e/VJGB-25-21082-Tab2.gif?></graphic></fig><p>The frequency of occurrence of resistant genotypes to the
+West Siberian population of stem rust was lower (66.5 %).
+These data were facilitated by late sowing of spring crops,
+which was intentionally used as a factor stimulating affection
+by the pathogen. Due to the drought in 2015, 167 of the
+198 lines survived, 111 of them were resistant to stem rust, and
+almost all of the material was resistant to leaf rust. It should
+also be noted that Western Siberia is characterized by the
+presence of aggressive population of the stem rust pathogen.
+This was demonstrated by the assessment results of the collection
+of isogenic lines and cultivars with known genes of
+resistance to stem rust, which showed differentiation only at the first assessment of the damage, and later the results were
+negated due to a strong disease development (Lapochkina et
+al., 2016), as well as by the results of the study on the racial
+composition of Western Siberian populations of this pathogen
+(Skolotneva et al., 2020).</p><p>In the Moscow region in 2015, the development of rust fungi
+was not observed, and an attempt to create an artificial leaf rust
+background failed due to high temperatures and low humidity
+of air and soil. However, 71 lines (36 %) with resistance to
+powdery mildew have been selected this year.</p><p>The resistance of 367 winter wheat lines was evaluated
+under the conditions of epiphytoty development of stem rust
+in Krasnodar and Moscow in 2016. In Krasnodar, 168 lines
+resistant to P. graminis were selected; almost all lines were
+resistant to leaf rust. Under the conditions of stem rust epiphytotic,
+a high yield of resistant genotypes 96–98 % to both
+pathogens) was also noted in Moscow. The frequency of
+occurrence of genotypes resistant to powdery mildew was
+about 40 %.</p><p>According to the assessment results, about 70 lines of
+spring wheat and more than 100 winter lines combining group
+resistance to rust fungi with a complex of other economically
+valuable characteristics (early heading period, optimal height,
+ear productivity of 1.7–2.5 g, large grain and high protein and
+gluten content in the grain) were selected.</p><p>Among the lines with a complex of economically valuable
+characteristics, an additional assessment of resistance to
+pathogens that cause spot blotch and tan spots development on
+the leaves was carried out. In total, 14 lines of spring wheat,
+9 lines of winter wheat and the initial parental forms of crossing
+were evaluated (Table 3).</p><fig position="float" id="Tab-3" orientation="portrait"><label>Table 3.</label><caption><title>The assessment results of the sources of resistance to stem rust and lines of spring and winter wheat
+obtained with the involvement of the sources to tan spot (P. tritici-repentis) and spot blotch (C. sativus)</title></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="VJGB-25-21082-Tab3.jpg"><?image-name VJGB-25-21082-Tab3.jpg?><?image-size 75963?><?image-md5 f65ae303197d70a15d64d54326e6392d?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 776?><?image-original-width 1144?><?image-scaled-height 517?><?image-scaled-width 762?><?image-cloudpmc-urn urn:cdn:blobs/0a84/8649750/f65ae303197d/VJGB-25-21082-Tab3.jpg?><?thumb-name VJGB-25-21082-Tab3.gif?><?thumb-size 1941?><?thumb-md5 ac08bad31fb69713aa625ee99bbb484f?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 79?><?thumb-scaled-width 117?><?thumb-cloudpmc-urn urn:cdn:blobs/0a84/8649750/ac08bad31fb6/VJGB-25-21082-Tab3.gif?></graphic></fig><p>According to the evaluation results, the only mediumresistant
+accession 119/4-06rw from the “Arsenal” collection
+with reaction type 2 to spot blotch was identified. With regard
+to spot blotch, this is an excellent result. It is extremely rare
+for accessions resistant to spot blotch to be selected. Generally,
+reaction type 3–4 is traced in bread wheat accessions.
+The resistance to this pathogen is usually associated with the
+species T. macha, T. vavilovii, T. timopheevii, T. monococcum
+and T. spelta (Mikhailova et al., 2012).</p><p>Two isolates were used to infect the leaf segments with
+P. tritici-repentis: from Kazakhstan and Omsk. Accessions
+119/4-06rw and GT 96/90 demonstrated high resistance to
+both isolates. High resistance to the Omsk tan spot isolate
+was found in the spring wheat line 113/00i-4 with the genetic
+material Ae. triuncialis and T. kiharae.</p><p>Among the 14 tested lines of spring wheat, no resistant
+genotypes to spot blotch were detected. Ten lines were resistant
+to the Omsk tan spot isolate, and 4 lines showed resistance
+to both the Kazakhstan and Omsk tan spot isolate (16i-16i,
+17i-16i, 33-16i, 48-16i).</p><p>Among the 9 lines of winter wheat that got to check plant
+breeding nursery and competitive variety test, 4 were found
+to have resistance to spot blotch: 9-19w, 31-19w, 63-19w,
+90-19w. Being infected with the most virulent tan spot isolate
+from Kazakhstan, the same four lines were selected with high
+resistance to P. tritici-repentis.</p><p>The stress resistance of spring and winter wheat lines to
+water flooding (hypoxia) and NaCl salinization was evaluated
+under laboratory conditions at the early stages of ontogenesis.
+Progeny of 11 lines of spring wheat from the Nursery that had
+been tested for two years and two standard varieties (the modern
+variety Zlata and the previous variety Lada) were tested
+(Table 4). A high level of variation of the resistance to hypoxia
+basis (CV &gt; 40 %) was recorded. Four lines (33-16i, 37-16i,
+32-16i and 9-16i) reliably exceeded the indicators of the Zlata
+variety with regard to the mentioned stress factor; however,
+like this variety, they lagged behind the breeding masterpiece
+of E.D. Nettevich – the Lada variety (Nettevich et al., 1996).</p><fig position="float" id="Tab-4" orientation="portrait"><label>Table 4.</label><caption><title>The reaction of spring wheat lines
+to water f looding of seeds</title></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="VJGB-25-21082-Tab4.jpg"><?image-name VJGB-25-21082-Tab4.jpg?><?image-size 35600?><?image-md5 437310db4cd74b9fb58ea9edbd82c0b6?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 469?><?image-original-width 1144?><?image-scaled-height 312?><?image-scaled-width 762?><?image-cloudpmc-urn urn:cdn:blobs/0a84/8649750/437310db4cd7/VJGB-25-21082-Tab4.jpg?><?thumb-name VJGB-25-21082-Tab4.gif?><?thumb-size 2266?><?thumb-md5 d4227c9a26ee18773b7de89fd7dbee09?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 195?><?thumb-cloudpmc-urn urn:cdn:blobs/0a84/8649750/d4227c9a26ee/VJGB-25-21082-Tab4.gif?></graphic></fig><p>As for the resistance to hypoxia, about two dozen lines of
+winter wheat were evaluated from the check plant nursery
+of 2019 (the conditions for seed formation were favourable)
+and from Competitive Plant Nursery of 2020 (the grain was
+formed in conditions of heavy rainfall and lodged crops).
+A high level of property variation was noted: the number of
+normally sprouted seeds (CV &gt; 30 %). Four genotypes with
+resistance above the average as of the test and standard were
+identified: 37-19w, 32-19w, 16-19w and 9-19w (Table 5).</p><fig position="float" id="Tab-5" orientation="portrait"><label>Table 5.</label><caption><title>The reaction of winter wheat lines
+to water f looding of seeds</title></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="VJGB-25-21082-Tab5.jpg"><?image-name VJGB-25-21082-Tab5.jpg?><?image-size 36564?><?image-md5 22842ea0ac474ccb740b107003027312?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 477?><?image-original-width 1144?><?image-scaled-height 318?><?image-scaled-width 762?><?image-cloudpmc-urn urn:cdn:blobs/0a84/8649750/22842ea0ac47/VJGB-25-21082-Tab5.jpg?><?thumb-name VJGB-25-21082-Tab5.gif?><?thumb-size 2295?><?thumb-md5 ecb42c8ea89d0cdb54b24c7b9e1243b0?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 191?><?thumb-cloudpmc-urn urn:cdn:blobs/0a84/8649750/ecb42c8ea89d/VJGB-25-21082-Tab5.gif?></graphic></fig><p>The results obtained with seeds of winter lines formed under
+unfavourable conditions in 2020 were markedly different.
+Only 50 % of seeds of the standard variety sprouted normally
+after flooding. Against this background, two lines, 90-19w
+and 16-19w, reliably exceeded the resistance to hypoxia level
+of the standard variety.</p><p>The harmful effect of NaCl salinization caused the depression
+of the length of seedlings in spring wheat. Both standard
+varieties and line 37-16i had high resistance to sodium
+chloride, exceeding the average results of the test (49.6 %).
+(Table 6). The comparison of the effect of anaerobic stress
+and salinization on spring wheat showed that the range of
+variability
+for salt tolerance fluctuated from 40 to 62 %, and
+for anaerobic stress – from 8 to 85 % that is a stronger differentiation
+of spring wheat genotypes with regard to water stress.</p><fig position="float" id="Tab-6" orientation="portrait"><label>Table 6.</label><caption><title>Depressive effect of NaCl on growth processes
+in spring wheat lines</title></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="VJGB-25-21082-Tab6.jpg"><?image-name VJGB-25-21082-Tab6.jpg?><?image-size 36906?><?image-md5 daaf5f0214e1ee6afbef878178fd0591?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 479?><?image-original-width 1144?><?image-scaled-height 319?><?image-scaled-width 762?><?image-cloudpmc-urn urn:cdn:blobs/0a84/8649750/daaf5f0214e1/VJGB-25-21082-Tab6.jpg?><?thumb-name VJGB-25-21082-Tab6.gif?><?thumb-size 2252?><?thumb-md5 ec2d7d0d2d7985bb3d7a1ba0d19b9380?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 191?><?thumb-cloudpmc-urn urn:cdn:blobs/0a84/8649750/ec2d7d0d2d79/VJGB-25-21082-Tab6.gif?></graphic></fig><p>A high level of growth depression during salinization was
+also noted in winter wheat lines (CV = 28 %). A high ability
+to resist salt stress exceeding both the average of the test and
+the St variety level was revealed in the lines: 20-19w, 9-19w
+and 37-19w (Table 7).</p><fig position="float" id="Tab-7" orientation="portrait"><label>Table 7.</label><caption><title>Depressive effect of NaCl on growth processes
+in winter wheat lines</title></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="VJGB-25-21082-Tab7.jpg"><?image-name VJGB-25-21082-Tab7.jpg?><?image-size 38058?><?image-md5 c70ce9054059a9d5c9806afa7db16e49?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 482?><?image-original-width 1144?><?image-scaled-height 321?><?image-scaled-width 762?><?image-cloudpmc-urn urn:cdn:blobs/0a84/8649750/c70ce9054059/VJGB-25-21082-Tab7.jpg?><?thumb-name VJGB-25-21082-Tab7.gif?><?thumb-size 2119?><?thumb-md5 f5d4d55b87c1e66adc3ac9869d3e02a9?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 189?><?thumb-cloudpmc-urn urn:cdn:blobs/0a84/8649750/f5d4d55b87c1/VJGB-25-21082-Tab7.gif?></graphic></fig><p>The test with planted seeds formed in the unfavourable
+year of 2020 showed, on the one hand, a decrease in salt
+tolerance level in Moskovskaya 39 from 68 to 49 %, and, on
+the other hand, revealed another 90-19w line resistant to this
+stress, which has been in the nursery of competitive variety
+testing since 2021.</p><p>Some of the lines are already under additional environmental
+testing at the Federal Scientific Agroengineering Center
+VIM in the Ryazan region. Expansion of environmental
+testing of winter wheat lines to Western Siberia (the backcrossed
+progeny of individual plants was transferred to the
+Omsk State Agrarian University), makes it possible to develop
+a new winter wheat crop for this region. There is a high
+probability of selecting winter-hardy winter wheat lines with
+group resistance to fungal diseases that demonstrated a good
+overwintering level according to the results of assessments performed in May 2021 (see the Figure). These lines are
+highly likely to be resistant to rust fungi, since this material
+has already been evaluated for resistance to these pathogens
+in the Krasnodar Krai region and in the Moscow region in
+2016 during the epiphytotic stem rust. Since there are genotypes
+that are resistant to salinization among them, there is a
+high probability of selecting genotypes that are resistant to
+drought, which is important for Western Siberia, since both
+resistances are correlated.</p><fig position="float" id="Fig" orientation="portrait"><label>Fig.</label><caption><title>The winter wheat lines regrowth in Western Siberia in May 2021.</title><p>The photo was kindly provided for publication by Professor V.P. Shamanin,
+Omsk State Agrarian University.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="VJGB-25-21082-Fig.jpg"><?image-name VJGB-25-21082-Fig.jpg?><?image-size 67726?><?image-md5 08c4d72298187ccd5f63f3cd828202cd?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 514?><?image-original-width 1144?><?image-scaled-height 342?><?image-scaled-width 762?><?image-cloudpmc-urn urn:cdn:blobs/0a84/8649750/08c4d7229818/VJGB-25-21082-Fig.jpg?><?thumb-name VJGB-25-21082-Fig.gif?><?thumb-size 6626?><?thumb-md5 117c958643ee8267f4971d51e614e649?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 178?><?thumb-cloudpmc-urn urn:cdn:blobs/0a84/8649750/117c958643ee/VJGB-25-21082-Fig.gif?></graphic></fig></sec><sec id="Conclusion"><title>Conclusion</title><p>After a comprehensive assessment of the obtained initial material
+and the identification of additional positive properties
+has facilitated the selection of breeding lines for reproduction
+and competitive variety testing. While in previous years we
+focused our attention on lines with a high protein and gluten
+content in grain and resistant to rust diseases, now we have
+lines with complex resistance to phytopathogens and abiotic
+stresses: spring wheat lines, 9-16i, 32-16i, 37-16i and 48-16i;
+winter wheat lines, 20-19w, 9-19w, 9-19w, as well as lines
+31-19w and 48-19w with extended group resistance to fungal
+diseases (stem and leaf rust, powdery mildew, tan spot and spot
+blotch). This material can be used as a source of resistance
+to unfavourable environmental factors at the next stage of improving bread wheat, as well as to identify its possibility
+to compete for productivity with modern wheat varieties.</p><p>The obtained initial material is of interest for molecular
+genetic mapping of resistance and QTL genes, as well as for
+MAS for Sr genes, especially for genes that are rarely used to
+increase immunity to stem rust: Sr32, Sr39, Sr40, and Sr47.</p></sec><sec><title>Conflict of interest</title><p>The authors declare no conflict of interest.</p></sec><sec id="References"><title>References</title><p>Afanasenko O.S., Mikhailova L.A., Mironenko N.V., Anisimova A.V.,
+Kovalenko N.M., Baranova O.A., Novozhilov K.V. New and potential
+dangerous diseases of cereal crops in Russia. Vestnik Za-
+shchity Rasteniy = Plant Protection News. 2011;4:3-18. (in Russian)</p><p>Baranova O.A., Lapochkina I.F., Anisimova A.V., Gaynullin N.R.,
+Iordanskaya
+I.V., Makarova I.Yu. Identification of Sr genes in
+new common wheat sources of resistance to stem rust race Ug99
+using
+molecular markers. Vavilovskii Zhurnal Genetiki i Selektsii =
+Vavilov Journal of Genetics and Breeding. 2015;19(3):316-322.
+(in Russian)</p><p>Beletskaya E.K. Guidelines for Determination of Wheat and Rye
+Tolerance of Excess Water at Early Stages of Their Growth. Kiev,
+1976. (in Russian)</p><p>Crossa J., Burgueño J., Dreisigacker S., Vargas M., Herrera-Foessel
+S.A., Lillemo M., Singh R.P., Trethowan R., Warburton M.,
+Franco J., Reynolds M., Crouch J.H., Ortiz R. Association analysis
+of historical bread wheat germplasm using additive genetic covariance
+of relatives and population structure. Genetics. 2007;177:
+1889-1913. DOI 10.1534/genetics.107.078659.</p><p>Dundas I.S., Anugrahwati D.R., Verlin D.C., Park R.F., Bariana H.S.,
+Mago R., Islam A.K.M.R. New sources of rust resistance from
+alien species: Meliorating linked defects and discovery. Aust. J.
+Agric. Res. 2007;58:545-549. DOI 10.1071/AR07056.</p><p>Faris J.D., Xu S.S., Cai X., Friesen T.L., Jin Y. Molecular and cytogenetic
+characterization of a durum wheat-Aegilops speltoides chromosome
+translocation conferring resistance to stem rust. Chromosome
+Res. 2008;16:1097-1105. DOI 10.1007/s10577-008-1261-3.</p><p>Hayden M.J., Kuchel H., Chalmers K.J. Sequence tagged microsatellites
+for the Xgwm533 locus provide new diagnostic markers to
+select for the presence of stem rust resistance gene Sr2 in bread
+wheat (Triticum aestivum L.). Theor. Appl. Genet. 2004;109:1641-
+1647. DOI 10.1007/s00122-004-1787-5.</p><p>Khan R.R., Bariana H.S., Dholakia B.B., Naik S.V., Lagu M.D.,
+Rathjen A.J., Bhavani S., Gupta V.S. Molecular mapping of stem
+and leaf rust resistance in wheat. Theor. Appl. Genet. 2005;111:
+846-850. DOI 10.1007/s00122-005-0005-4.</p><p>Kim Yu.S., Volkova G.V. Tan spot of wheat leaves: distribution, harmfulness,
+and racial composition (review). Vestnik Ulyanovskoy Gosudarstvennoy
+Selskokhozyajstvennoy Akademii = Bulletin of the
+Ulyanovsk State Agricultural Academy. 2020;2(50):105-116. DOI
+10.18286/1816-4501-2020-2-105-116. (in Russian)</p><p>Lapochkina I.F. Alien genetic variability and its role in wheat breeding.
+In: Identified Plant Gene Pool and Breeding. St. Petersburg:
+VIR Publ., 2005;684-740. (in Russian)</p><p>Lapochkina I.F., Baranova O.A., Gainullin N.R., Volkova G.V.,
+Gladkova E.V., Kovaleva E.O., Osipova A.V. The development of
+winter wheat lines with several genes for resistance to Puccinia
+graminis Pers. f. sp. tritici for use in breeding programs in Russia.
+Vavilovskii Zhurnal Genetiki i Selektsii = Vavilov Journal of Genetics
+and Breeding. 2018;22(6):676-684. DOI 10.18699/VJ18.410.
+(in Russian)</p><p>Lapochkina I.F., Baranova O.A., Shamanin V.P., Volkova G.V.,
+Gainullin N.R., Anisimova A.V., Galinger D.N., Lazareva E.N.,
+Gladkova E.V., Vaganova O.F. The development of initial material
+of spring common wheat for breeding for resistance to stem
+rust (Puccinia graminis Pers. f. sp. tritici), uncluding race Ug99,
+in Russia. Vavilovskii Zhurnal Genetiki i Selektsii = Vavilov Journal
+of Genetics and Breeding. 2016;20(3):320-328. DOI 10.18699/
+VJ16.167. (in Russian)</p><p>Lekomtseva S.N., Volkova V.T., Zaitseva L.G., Chaika M.N., Skolotneva
+E.S. Races of Puccinia graminis f. sp. tritici in Russian Federation
+in 2001-2005. Ann. Wheat Newslett. 2007;53:65-67.</p><p>Lekomtseva S.N., Volkova V.T., Zaitseva L.G., Skolotneva E.S.,
+Chaika M.N. Races of Puccinia graminis f. sp. tritici in Russian
+Federation in 2006. Ann. Wheat Newslett. 2008;54:188-119.</p><p>Mago R., Bariana H.S., Dundas I.S., Spielmeyer W., Lawrence G.J.,
+Pryor A.J., Ellis J.G. Development of PCR markers for the selection
+of wheat stem rust resistance genes Sr24 and Sr26 in diverse
+wheat germplasm. Theor. Appl. Genet. 2005;111(3):496-504. DOI
+10.1007/s00122-005-2039-z.</p><p>Mago R., Zhang P., Bariana H.S., Verlin D.C., Bansal U.K., Ellis J.G.,
+Dundas I.S. Development of wheat lines carrying stem rust resistance
+gene Sr39 with reduced Aegilops speltoides chromatin and
+simple PCR markers for marker assisted selection. Theor. Appl.
+Genet. 2009;119:1441-1450. DOI 10.1007/s00122-009-1146-7.</p><p>Martynov S.P. Statistical and Biometric Genetic Analysis in Crop Production
+and Breeding. AGROS Software Package, version 2.09.
+Tver, 1999. (in Russian)</p><p>Mikhailova L.A., Mironenko N.V., Kovalenko N.M. Wheat Yellow
+Spot. Guidelines for the Study of Populations of the Yellow Leaf
+Spot Agent Pyrenophora tritici-repentis and the Resistance of Varieties.
+St. Petersburg: VIZR, 2012. (in Russian)</p><p>Nettevich E.D., Davydova N.V., Sharakhov A.L. The results of spring
+wheat breeding in the Moscow Breeding Center. Selektsiya i Semenovodstvo
+= Selection and Seed Production. 1996;(11):2-9. (in
+Russian)</p><p>Neu C.H., Stein N., Keller B. Genetic mapping of the Lr20-Pm1 resistance
+locus reveals suppressed recombinations on chromosome
+arm 7AL in hexaploid wheat. Genome. 2002;45:737-744. DOI
+10.1139/G02-040.</p><p>Roelfs A.P., Singh R.P. Rust Diseases of Wheat: Concepts and Methods
+of Management. Mexico: CIMMIT, 1992.</p><p>Semushkina L.A., Khazova G.V., Udovenko G.V. Application of the
+analysis of changes in growth processes for the diagnosis of salt
+tolerance
+in plants. In: Methods for Assessing Plant Resistance
+to Adverse
+Environmental Factors. Leningrad, 1976;238-343. (in
+Russian)</p><p>Skolotneva E.S., Kel’bin V.N., Morgunov A.I., Boiko N.I., Shamanin
+V.P., Salina E.A. Races composition of the Novosibirsk population
+of Puccinia graminis f. sp. tritici. Mikologiya i Fitopatologiya
+= Mycology and Phytopathology. 2020;54(1):49-58. DOI
+10.31857/S0026364820010092. (in Russian)</p><p>Somers D.J., Isaac P., Edwards K. A high-density microsatellite
+consensus map for bread wheat (Triticum aestivum L.). Theor.
+Appl. Genet. 2004;109:1105-1114. DOI 10.1007/s00122-004-
+1740-7.</p><p>Tsilo T.J., Jin Y., Anderson J.A. Diagnostic microsatellite markers
+for detection of stem rust resistance gene Sr36 in diverse genetic
+backgrounds of wheat. Crop Sci. 2008;48:253-261. DOI 10.2135/
+cropsci 2007.04.0204.</p><p>Weng Y., Azhaguvel P., Devkota R.N., Rudd J.C. PCR-based markers
+for detection of different sources of 1AL.1RS and 1BL.1RS wheatrye translocations in wheat background. Plant Breed. 2007;126:
+482-486. DOI 10.1111/j.1439-0523.2007.01331.x.</p><p>Wu S., Pumphrey M., Bai G. Molecular mapping of stem-rust-resistance
+gene Sr40 in wheat. Crop Sci. 2009;49:1681-1686. DOI
+10.2135/cropsci2008.11.0666.</p><p>Yu G.T., Zhang Q., Klindworth D.L., Friesen T.L., Knox R., Jin Y.,
+Zhong S., Cai X., Xu S.S. Molecular and cytogenetic characterization
+of wheat introgression lines carrying the stem rust resistance
+gene Sr39. Crop Sci. 2010;50:1393-1400. DOI 10.2135/cropsci
+2009.10.0633.</p><p>Yu L.X., Abate Z., Anderson J.A., Bansal U.K., Bariana H.S., Bhavani
+S., Dubcovsky J., Lagudah E.S., Liu S.X., Sambasivam P.K.,
+Singh R.P., Sorrells M.E. Developing and optimizing markers for
+stem rust resistance in wheat. In: BGRI Technical Workshop, Borlaug
+Global Rust Initiative, Cd. Obregón, Sonora, Mexico; 17-20
+March 2009. 2009;117-130.</p><p>Zeleneva Yu.V., Afanasenko O.S., Sudnikova V.P. Influence of agroclimatic
+conditions, life form, and host species on the species complex
+of wheat septoria pathogens. Biology Bulletin. 2021;48(10):
+74-80. DOI 10.1134/S1062359021100277</p></sec></body><back><ack><p>The study was conducted with the partial support of the Russian Foundation for Basic Research in 2013–2015
+(project No. 13-04-00922).</p></ack></back></article>

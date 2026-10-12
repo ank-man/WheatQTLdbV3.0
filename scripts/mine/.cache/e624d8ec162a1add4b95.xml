@@ -1,0 +1,849 @@
+
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN" "JATS-archivearticle1-4-mathml3.dtd">
+<article xml:lang="en" article-type="research-article" dtd-version="1.4"><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Front Plant Sci</journal-id><journal-id journal-id-type="iso-abbrev">Front Plant Sci</journal-id><journal-id journal-id-type="pmc-domain-id">1787</journal-id><journal-id journal-id-type="pmc-domain">frontplantsci</journal-id><journal-id journal-id-type="nlm-id">101568200</journal-id><journal-id journal-id-type="publisher-id">Front. Plant Sci.</journal-id><journal-title-group><journal-title>Frontiers in Plant Science</journal-title></journal-title-group><issn pub-type="epub">1664-462X</issn><?publisher_abbrev frontiers?><publisher><publisher-name>Frontiers Media SA</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC12722523</article-id><article-id pub-id-type="pmcid-ver">PMC12722523.1</article-id><article-id pub-id-type="pmcaid">12722523</article-id><article-id pub-id-type="pmcaiid">12722523</article-id><article-id pub-id-type="pmid">41446668</article-id><article-id pub-id-type="doi">10.3389/fpls.2025.1680623</article-id><article-version-alternatives><article-version article-version-type="pmc-version">1</article-version><article-version article-version-type="Corrected Version of Record" vocab="NISO-RP-8-2008"/></article-version-alternatives><article-categories><subj-group subj-group-type="heading"><subject>Original Research</subject></subj-group></article-categories><title-group><article-title>Fine mapping and identification of the gene <italic toggle="yes">Cla019481</italic> responsible for patches at the hilum on the testa of watermelon seeds</article-title></title-group><contrib-group><contrib contrib-type="author" equal-contrib="yes"><name name-style="western"><surname>Lv</surname><given-names initials="R">Runbu</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="fn003" ref-type="author-notes">
+<sup>†</sup>
+</xref><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Formal analysis" vocab-term-identifier="https://credit.niso.org/contributor-roles/formal-analysis/">Formal analysis</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – review &amp; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Data curation" vocab-term-identifier="https://credit.niso.org/contributor-roles/data-curation/">Data curation</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role></contrib><contrib contrib-type="author" equal-contrib="yes"><name name-style="western"><surname>Zhou</surname><given-names initials="D">Dan</given-names></name><xref rid="aff2" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="fn003" ref-type="author-notes">
+<sup>†</sup>
+</xref><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – review &amp; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Data curation" vocab-term-identifier="https://credit.niso.org/contributor-roles/data-curation/">Data curation</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software/">Software</role></contrib><contrib contrib-type="author" equal-contrib="yes"><name name-style="western"><surname>Liu</surname><given-names initials="H">Hongyuan</given-names></name><xref rid="aff3" ref-type="aff">
+<sup>3</sup>
+</xref><xref rid="fn003" ref-type="author-notes">
+<sup>†</sup>
+</xref><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Data curation" vocab-term-identifier="https://credit.niso.org/contributor-roles/data-curation/">Data curation</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Formal analysis" vocab-term-identifier="https://credit.niso.org/contributor-roles/formal-analysis/">Formal analysis</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software/">Software</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – review &amp; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role></contrib><contrib contrib-type="author"><name name-style="western"><surname>Xie</surname><given-names initials="C">Chengyuan</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Data curation" vocab-term-identifier="https://credit.niso.org/contributor-roles/data-curation/">Data curation</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – review &amp; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software/">Software</role></contrib><contrib contrib-type="author"><name name-style="western"><surname>Zhang</surname><given-names initials="Y">Yufu</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Data curation" vocab-term-identifier="https://credit.niso.org/contributor-roles/data-curation/">Data curation</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – review &amp; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role></contrib><contrib contrib-type="author"><name name-style="western"><surname>Zhang</surname><given-names initials="X">Xiaoyu</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – original draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-original-draft/">Writing – original draft</role></contrib><contrib contrib-type="author"><name name-style="western"><surname>Li</surname><given-names initials="D">Dongye</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – review &amp; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role></contrib><contrib contrib-type="author"><name name-style="western"><surname>Ma</surname><given-names initials="S">Shuangwu</given-names></name><xref rid="aff2" ref-type="aff">
+<sup>2</sup>
+</xref><uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://loop.frontiersin.org/people/546257/overview"/><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="conceptualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/conceptualization/">Conceptualization</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="methodology" vocab-term-identifier="https://credit.niso.org/contributor-roles/methodology/">Methodology</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – review &amp; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role></contrib><contrib contrib-type="author" corresp="yes"><name name-style="western"><surname>Chen</surname><given-names initials="J">Jifeng</given-names></name><xref rid="aff1" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="c001" ref-type="corresp">
+<sup>*</sup>
+</xref><uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://loop.frontiersin.org/people/1198881/overview"/><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="conceptualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/conceptualization/">Conceptualization</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Formal analysis" vocab-term-identifier="https://credit.niso.org/contributor-roles/formal-analysis/">Formal analysis</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Funding acquisition" vocab-term-identifier="https://credit.niso.org/contributor-roles/funding-acquisition/">Funding acquisition</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="methodology" vocab-term-identifier="https://credit.niso.org/contributor-roles/methodology/">Methodology</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="supervision" vocab-term-identifier="https://credit.niso.org/contributor-roles/supervision/">Supervision</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – original draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-original-draft/">Writing – original draft</role><role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – review &amp; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role></contrib></contrib-group><aff id="aff1"><label>1</label><institution>School of Life Sciences, Zhengzhou University</institution>, <city>Zhengzhou</city>, <state>Henan</state>, <country country="cn">China</country></aff><aff id="aff2"><label>2</label><institution>Zhengzhou Fruit Research Institute, Chinese Academy of Agricultural Sciences</institution>, <city>Zhengzhou</city>, <state>Henan</state>, <country country="cn">China</country></aff><aff id="aff3"><label>3</label><institution>National Supercomputing Center in Zhengzhou, Zhengzhou University</institution>, <city>Zhengzhou</city>, <state>Henan</state>, <country country="cn">China</country></aff><author-notes><corresp id="c001"><label>*</label>Correspondence: Jifeng Chen, <email xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="mailto:chenjifeng@zzu.edu.cn">chenjifeng@zzu.edu.cn</email>; <email xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="mailto:406687626@qq.com">406687626@qq.com</email></corresp><fn fn-type="equal" id="fn003"><label>†</label><p>These authors have contributed equally to this work</p></fn></author-notes><pub-date publication-format="electronic" date-type="pub" iso-8601-date="2025-12-09"><day>09</day><month>12</month><year>2025</year></pub-date><pub-date publication-format="electronic" date-type="corrected" iso-8601-date="2026-01-21"><day>21</day><month>1</month><year>2026</year></pub-date><pub-date publication-format="electronic" date-type="collection"><year>2025</year></pub-date><volume>16</volume><issue-id pub-id-type="pmc-issue-id">481076</issue-id><elocation-id>1680623</elocation-id><history><date date-type="received"><day>06</day><month>8</month><year>2025</year></date><date date-type="accepted"><day>19</day><month>11</month><year>2025</year></date><date date-type="rev-recd"><day>18</day><month>11</month><year>2025</year></date></history><pub-history><event event-type="pmc-release"><date><day>09</day><month>12</month><year>2025</year></date></event><event event-type="pmc-live"><date><day>24</day><month>12</month><year>2025</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2026-02-04 13:25:14.487"><day>04</day><month>02</month><year>2026</year></date></event></pub-history><permissions><copyright-statement>Copyright © 2025 Lv, Zhou, Liu, Xie, Zhang, Zhang, Li, Ma and Chen.</copyright-statement><copyright-year>2025</copyright-year><copyright-holder>Lv, Zhou, Liu, Xie, Zhang, Zhang, Li, Ma and Chen</copyright-holder><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense" start_date="2025-12-09">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p>This is an open-access article distributed under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License (CC BY)</ext-link>. The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="fpls-16-1680623.pdf"><?pdf-name fpls-16-1680623.pdf?><?pdf-size 1612092?><?pdf-md5 788e8761f7354b2a3c1d8b05c0aca419?><?pdf-image-server-status NEVER_LOAD?><?pdf-cloudpmc-urn urn:app:ea06/12722523/788e8761f735/fpls-16-1680623.pdf?></self-uri><abstract><p>The presence or absence of patches at the seed hilum is a valuable phenotypic marker for breeding new cultivars and identifying watermelon germplasm resources, although the candidate gene regulating this trait remains unknown. In this study, the F<sub>1</sub> generation seeds (with patches at the hilum) were derived from a cross between the female parent (no patches at the hilum) and the male parent (with patches at the hilum), and a back cross (BC) population was generated by crossing F<sub>1</sub> with the female parent. The segregation ratio of the patches and no-patches trait conforms to the expected 1:1 Mendelian ratio in the BC population. Restriction-site–associated DNA sequencing was performed on the BC population to construct a high-density genetic map. The analysis revealed a major quantitative trait locus (QTL) on chromosome 3, spanning 5,375,019–5,784,364 bp and harboring 35 annotated genes from <italic toggle="yes">Cla019451</italic> to <italic toggle="yes">Cla019485</italic>, which govern the stably inherited trait of patches at the hilum on the testa of watermelon seeds. A reliable derived cleaved amplified polymorphic sequence (dCAPS) marker was developed within the interval, demonstrating perfect genotype–phenotype co-segregation. Consequently, the target QTL was delimited to a 40-kb region on chromosome 3, which contains the candidate gene <italic toggle="yes">Cla019481</italic> for patches at the hilum. Insertions/deletions (Indel) and single-nucleotide polymorphisms (SNPs) indicated that <italic toggle="yes">Cla019481</italic> was the top candidate gene responsible for the presence or absence of patches at the hilum. Based on dCAPS marker development for SNP genotype identification and visual phenotype classification across different groups of watermelon accessions, no phenotypic inconsistencies were observe in materials lacking patches at the hilum. In other words, the genotype indicated absence of patches at the hilum, and the phenotype corresponded accordingly in the tested materials. Gene expression validation experiments using materials with/without patches at the hilum, combined with quantitative RT-PCR (qRT-PCR), revealed a positive correlation. Elevated <italic toggle="yes">Cla019481</italic> expression coincided with progressive darkening of hilum pigmentation during the three seed development stages (8, 18, and 25 days after flowering). The verification test results demonstrate that <italic toggle="yes">Cla019481</italic> expression critically regulates hilum formation. <italic toggle="yes">Cla019481</italic> thus plays a significant role in the presence of patches at the hilum on watermelon seeds.</p></abstract><kwd-group><kwd><italic toggle="yes">Citrullus lanatus</italic></kwd><kwd><italic toggle="yes">Cla019481</italic></kwd><kwd>patches at hilum</kwd><kwd>INDEL</kwd><kwd>QTL</kwd><kwd>SNP</kwd><kwd>qRT-PCR</kwd></kwd-group><funding-group><funding-statement>The author(s) declare that financial support was received for the research and/or publication of this article. This study was financially supported by the Henan Province Key Research for Development and Promotion Project (Project No.212102110118), and the Henan Provincial Department of Education for Key Scientific Research Project (Project No.16A210014).</funding-statement></funding-group><counts><fig-count count="4"/><table-count count="3"/><equation-count count="0"/><ref-count count="76"/><page-count count="12"/><word-count count="5717"/></counts><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY</meta-value></custom-meta><custom-meta><meta-name>section-at-acceptance</meta-name><meta-value>Plant Genetics, Epigenetics and Chromosome Biology</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec id="s1"><title>Highlights</title><p>We revealed that the gene <italic toggle="yes">Cla019481</italic> is located within a major QTL on chromosome 3, controlling the presence of patches at the hilum on the testa of watermelon seeds.</p></sec><sec sec-type="intro" id="s2"><label>1</label><title>Introduction</title><p>Watermelon (<italic toggle="yes">Citrullus lanatus</italic>) is a globally significant cucurbit crop, cultivated extensively in warm regions, particularly in China and other fruit-producing countries (<xref rid="B48" ref-type="bibr">Rahimi and Abdolinasab, 2022</xref>). The fleshy fruit provides essential nutrients (<xref rid="B17" ref-type="bibr">Guo et al., 2013</xref>) and contains citrulline (<xref rid="B2" ref-type="bibr">Akashi et al., 2001</xref>; <xref rid="B67" ref-type="bibr">Wu et al., 2007</xref>), a compound with documented antioxidant and vasodilatory functions in humans (<xref rid="B52" ref-type="bibr">Rimando and Perkins-Veazie, 2005</xref>). Numerous studies have investigated plant traits, especially seed coat-related traits in watermelon (<xref rid="B45" ref-type="bibr">Paudel et al., 2019</xref>; <xref rid="B16" ref-type="bibr">Guo et al., 2021</xref>) and other crops, including soybean seed coat color (<xref rid="B68" ref-type="bibr">Yang et al., 2023</xref>), testa and hilum color in pea (<xref rid="B26" ref-type="bibr">Konstantopoulos et al., 2023</xref>) and soybean (<xref rid="B21" ref-type="bibr">Kaňovská et al., 2024</xref>), soybean hilum color (<xref rid="B76" ref-type="bibr">Zhou et al., 2024</xref>), and seed coat color in <italic toggle="yes">Brassica napus</italic> (<xref rid="B34" ref-type="bibr">Li et al., 2024</xref>), sesame (<xref rid="B14" ref-type="bibr">Elsafy et al., 2025</xref>), common bean (<italic toggle="yes">Phaseolus vulgaris</italic> L.) (<xref rid="B46" ref-type="bibr">Plestenjak et al., 2025</xref>; <xref rid="B53" ref-type="bibr">Roy et al., 2025</xref>), wheat (<xref rid="B1" ref-type="bibr">Afonnikova et al., 2024</xref>), and peanut (<xref rid="B73" ref-type="bibr">Zhao et al., 2020</xref>). The spotted, dark-hilumed phenotype is an important trait for breeding/selecting new cultivars for fresh-eating watermelon or for seed production for edible seed consumption. To date, no research on this trait has been published.</p><p>In plant trait research, restriction-site–associated DNA sequencing and various other molecular biological techniques have been applied. Many genetic traits have been investigated using quantitative trait locus (QTL) mapping in watermelon and other crops. Li et al. revealed a major QTL controlling watermelon seed size in an F<sub>2</sub> population and successfully narrowed down the physical interval to four genes (<xref rid="B32" ref-type="bibr">Li et al., 2018b</xref>). QTL mapping has also been conducted for ovary traits (<xref rid="B4" ref-type="bibr">Amanullah et al., 2020</xref>) and for pericarp and fruit-related traits in melon (<italic toggle="yes">Cucumis melo</italic>) (<xref rid="B72" ref-type="bibr">Zhang et al., 2020</xref>). Using H-7 and SA-1 as experimental materials, QTLs for rind hardness were mapped to linkage group 4, and red flesh color was mapped to groups of 2 and 8 (<xref rid="B19" ref-type="bibr">Hashizume et al., 2003</xref>). Othe studies have identified QTLs for watermelon rind color (<xref rid="B35" ref-type="bibr">Li et al., 2019</xref>), flesh color (<xref rid="B18" ref-type="bibr">Gusmini and Wehner, 2006</xref>; <xref rid="B7" ref-type="bibr">Bang et al., 2007</xref>), lycopene content (<xref rid="B36" ref-type="bibr">Liu et al., 2014</xref>), sugar accumulation (<xref rid="B51" ref-type="bibr">Ren et al., 2014</xref>, <xref rid="B50" ref-type="bibr">Ren et al., 2018</xref>), bitterness (<xref rid="B56" ref-type="bibr">Shang et al., 2020</xref>), and overall fruit characteristics (<xref rid="B54" ref-type="bibr">Sandlin et al., 2012</xref>). Complementary studies in cucumber (<italic toggle="yes">Cucumis sativus</italic>) revealed QTLs controlling flowering time and fruit dimensions (<xref rid="B58" ref-type="bibr">Sheng et al., 2020</xref>).</p><p>For watermelon seed coat color, the genes at the <italic toggle="yes">R</italic>, <italic toggle="yes">T</italic><sup>1</sup><italic toggle="yes">, W</italic>, and <italic toggle="yes">D</italic> loci were mapped on chromosomes 3, 5, 6, and 8, respectively, using QTL-seq and genotyping-by-sequencing (<xref rid="B45" ref-type="bibr">Paudel et al., 2019</xref>). Through genome-wide association analysis, one QTL associated with seed coat color was detected on chromosome 10, and five QTLs associated with seed coat patches were detected on chromosomes 2, 6, 7, 10, and 11, respectively (<xref rid="B16" ref-type="bibr">Guo et al., 2021</xref>). For lobed leaf traits, the genes <italic toggle="yes">ORF18</italic> and <italic toggle="yes">ORF22</italic> were narrowed down to a physical distance of 127.6 kb and considered candidate genes in watermelon, as confirmed by quantitative RT-PCR (qRT-PCR) (<xref rid="B66" ref-type="bibr">Wei et al., 2017</xref>). Using field data from an F<sub>2:3</sub> segregating population and molecular markers for the F<sub>2</sub> population, a total of 10 QTLs were identified for watermelon fruit quality traits (<xref rid="B10" ref-type="bibr">Cheng et al., 2016</xref>). The major QTL for <italic toggle="yes">Fusarium oxysporum</italic> f. sp. niveum (FON) race 1 resistance was found to be on chromosome 1, and FON race 2 resistance on chromosomes 9 and 10 (<xref rid="B49" ref-type="bibr">Ren et al., 2015</xref>). <xref rid="B27" ref-type="bibr">Lambel et al. (2014)</xref> identified the QTL for resistance to <italic toggle="yes">Fusarium oxysporum</italic> race 1 via genotyping-by-sequencing and fine-mapped an interval of 2.3 to 8.4 cM on chromosome 1. QTLs have also been applied to study powdery mildew resistance, seed size, and fruit shape (<xref rid="B24" ref-type="bibr">Kim et al., 2015</xref>). Collectively, these studies demonstrate that QTL mapping is a robust methodology for dissecting agronomic traits.</p><p>Recent advances in molecular markers and sequencing technologies have enabled the precise identification of genetic loci and candidate genes underlying agronomic traits in plants. Next-generation sequencing facilitates the construction of high-density genetic maps (<xref rid="B59" ref-type="bibr">Shi et al., 2014</xref>; <xref rid="B57" ref-type="bibr">Shang et al., 2016</xref>; <xref rid="B62" ref-type="bibr">Wang et al., 2017b</xref>; <xref rid="B15" ref-type="bibr">Feng et al., 2023</xref>) and genome-wide gene analysis in crops (<xref rid="B15" ref-type="bibr">Feng et al., 2023</xref>). In watermelon, these approaches have successfully mapped fruit traits (<xref rid="B30" ref-type="bibr">Li et al., 2018a</xref>), including yellow skin pigmentation (<xref rid="B12" ref-type="bibr">Dou et al., 2018a</xref>), fruit shape (<xref rid="B13" ref-type="bibr">Dou et al., 2018b</xref>), and other traits. Next-generation sequencing-based genotyping also enables the identification of single-nucleotide polymorphisms (SNPs), which are used to construct genetic linkage map. SNP markers are widely applicable for trait dissection, as demonstrated in studies of fruit yield components (<xref rid="B22" ref-type="bibr">Katuuramu et al., 2023a</xref>), soluble solids content, flesh color, and fruit shape in citron watermelon (<xref rid="B23" ref-type="bibr">Katuuramu et al., 2023b</xref>), and watermelon seed coat color (<xref rid="B45" ref-type="bibr">Paudel et al., 2019</xref>).</p><p>Previous studies have indicated that gene expression levels influence seed coat color and are related to polyphenol oxidase (PPO), which is often associated with browning (<xref rid="B20" ref-type="bibr">Kampatsikas et al., 2017</xref>; <xref rid="B61" ref-type="bibr">Taranto et al., 2017</xref>) and petal color formation (<xref rid="B43" ref-type="bibr">Nakayamaa et al., 2001</xref>; <xref rid="B63" ref-type="bibr">Wang et al., 2024</xref>). The expression level of the gene <italic toggle="yes">MC03g0810</italic> shows a positive correlation with PPO activity in the black testa of bitter gourd (<italic toggle="yes">Momordica</italic> spp.) (<xref rid="B74" ref-type="bibr">Zhong et al., 2022</xref>), and the gene <italic toggle="yes">Cla019481</italic> has been identified as a candidate gene for melanin accumulation in the black seed coat of watermelon (<xref rid="B31" ref-type="bibr">Li et al., 2020</xref>). Therefore, the dark color of patches at the watermelon seed hilum is likely related to gene expression during seed development stages.</p><p>Seeds play a crucial role in the watermelon life cycle. Through domestication and cultivation, watermelon has undergone extensive natural and artificial selection, resulting in diverse varietal characteristics. According to <xref rid="B38" ref-type="bibr">Ma (2005)</xref>, the “hilum” is defined as the eye-like pattern on both sides of the rostral part of watermelon seed. The dark color at the hilum, when visually inconsistent with the color of the seed surface, is referred to as “patches at the hilum.” <xref rid="f1" ref-type="fig"><bold>Figure 1A</bold></xref> shows the hilum position on a schematic diagram of a watermelon seed, <xref rid="f1" ref-type="fig"><bold>Figure 1B</bold></xref> shows the position of the patch-hilum, and <xref rid="f1" ref-type="fig"><bold>Figure 1C</bold></xref> shows seeds with and without patches at the hilum in photos of watermelon seeds. Systematic evaluation of germplasm at the National Mid-term GenBank for Watermelon and Melon (Zhengzhou, China) revealed that the patch-hilum trait is ubiquitous in cultivated watermelon varieties but rare in wild types (data unpublished). Therefore, we propose that the presence/absence of patches at the hilum serves as a robust phenotypic marker for authenticating watermelon genetic resources and tracking domestication signatures in germplasm collections. Despite its diagnostic value, no genetic markers or candidate genes underlying this trait have been identified to date.</p><fig position="float" id="f1" orientation="portrait"><label>Figure 1</label><caption><p>Phenotype information of patches at the hilum on the testa of watermelon seeds. <bold>(A)</bold> Location of the hilum on a watermelon seed diagram. <bold>(B)</bold> Seeds with patches at the hilum on the testa. <bold>(C)</bold> Seeds without patches at the hilum on the testa. <bold>(D)</bold> Female parent, B132, without patches at the hilum on the testa. <bold>(E)</bold> Male parent, B135, with patches at the hilum on the testa. <bold>(F)</bold> F<sub>1</sub> generation, B139, with patches at the hilum on the testa. <bold>(G)</bold> 17CB243 of the BC population, with patches at the hilum on the testa. <bold>(H)</bold> 17CB222 of the BC population, without patches at the hilum on the testa. <bold>(I)</bold> 17CB276 of the BC population, seeds for which patches at the hilum on the testa could not be determined.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="fpls-16-1680623-g001.jpg"><?image-name fpls-16-1680623-g001.jpg?><?image-size 177457?><?image-md5 ab218c292be5bbfac45914ee70355b43?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 2358?><?image-original-width 2070?><?image-scaled-height 786?><?image-scaled-width 690?><?image-cloudpmc-urn urn:cdn:blobs/ea06/12722523/ab218c292be5/fpls-16-1680623-g001.jpg?><?thumb-name fpls-16-1680623-g001.gif?><?thumb-size 18692?><?thumb-md5 8e685502eab00349885b40e0b439e153?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 114?><?thumb-scaled-width 100?><?thumb-cloudpmc-urn urn:cdn:blobs/ea06/12722523/8e685502eab0/fpls-16-1680623-g001.gif?><alt-text content-type="machine-generated">Illustration shows a labeled seed structure and several images of seeds. (A) depicts a seed with the hilum marked. (B) shows seeds with patches at the hilum, (C) shows seeds without patches. (D) to (I) display different seeds with varying colors and appearances, indicating diversity in seed characteristics.(D) Female parent, B132.(E) Male parent, B135.(F) F1 generation, B139.(G) 17CB243, (H) 17CB222 and (I) 17CB276 of the BC population.</alt-text></graphic></fig></sec><sec sec-type="materials|methods" id="s3"><label>2</label><title>Materials and methods</title><sec id="s3_1"><label>2.1</label><title>Plant materials</title><p>The F<sub>1</sub> generation seeds of B139 were derived from a cross between B132 (the female parent, no patches at the hilum) and B135 (the male parent, with patches at the hilum). A backcross (BC) population of 98 individuals (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B1</bold></xref>) was generated by crossing F<sub>1</sub> with the female parent B132. Seventy-one watermelon accessions were used as representatives of local varieties, breeding cultivars/lines, and wild-type germplasm of watermelon (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B2</bold></xref>). Four watermelon materials used for qRT-PCR were 17Q140-18Z and 17QB47, both with no patches at the hilum, and 18CB83 and 18CB90, both with patches at the hilum (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B3</bold></xref>). All of these watermelon materials were from germplasm resources in the National Mid-term GenBank for Watermelon and Melon (Zhengzhou, China) (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.cgris.net/home" ext-link-type="uri">https://www.cgris.net/home</ext-link>).</p></sec><sec id="s3_2"><label>2.2</label><title>Analysis of the patch-hilum trait and DNA extraction</title><p>Mature watermelon fruits were harvested 35–40 days postpollination, and seeds of all populations were collected for visual phenotypic classification, based on the presence or absence of patches at the hilum. Phenotypic screening was performed through manual visual observation by personnel with expertise in watermelon germplasm resources and breeding practices. Young leaves from parental plants, F<sub>1</sub> and BC population (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B1</bold></xref>), were sampled for QTL mapping and genotyping. Segregation ratios were evaluated using the Chi-square test (<italic toggle="yes">χ</italic><sup>2</sup> test) in SPSS Statistics 25.0 (IBM Corp., Armonk, NY, USA). Genomic DNA was extracted from fresh leaf tissues via a modified CTAB method (<xref rid="B29" ref-type="bibr">Li et al., 2009</xref>). DNA was quantified with a NanDrop-1000 spectrophotometer (NanoDrop, Wilmington, DE, USA) and evaluated by electrophoresis in a 1.0% agarose gel.</p></sec><sec id="s3_3"><label>2.3</label><title>Map construction and QTL analysis</title><p>The parent plants and 98 BC population were sequenced using 150-nucleotide paired-end sequencing on the Illumina HiSeq™ platform, and the reads were aligned to the watermelon reference genome (97103) v2 (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.icugi.org/organism/21" ext-link-type="uri">http://www.icugi.org/organism/21</ext-link>). For constructing the genetic map using SNP markers (<xref rid="B41" ref-type="bibr">Murray and Thompson, 1980</xref>), MSTmap software was applied. After filtering out low-quality data to obtain clean reads (<italic toggle="yes">Q</italic> ≥ 30), the sequences were compared with published references using the BWA software (<xref rid="B28" ref-type="bibr">Li and Durbin, 2009</xref>). GATK software (the Genome Analysis Toolkit, Broad Institute, Cambridge, MA, USA) was applied for SNP detection, and the vcfutils tool of SAMtools (<xref rid="B64" ref-type="bibr">Wang et al., 2017a</xref>) was used for identifying high-quality mutation sites. To determine different molecular markers, all SNPs and insertion/deletion (Indel) markers were detected by parental polymorphism markers. Marker encoding was based on parental polymorphism (e.g., AA and CC parents; GT/TG progeny was classified as missing data). Three criteria were used to filter out invalid SNPs: (1) exclusion of sites absent in parental genotypes, (2) removal of loci with &gt; 50% missing data across progeny, and (3) elimination of markers showing segregation distortion (<italic toggle="yes">p</italic> &lt; 0.05). The retained high-confidence SNPs were used for final map construction.</p><p>For grouping the linkage, a single-link clustering method was used, referencing the genomic information. First, the controlling logarithm of odds (LOD) threshold, ranging from 4.0 to 20.0, was applied to ensure that the number of linkage groups corresponded to the species’ chromosomal count. Second, scaffold integrity and chromosomal collinearity were preserved across all linkage groups (LGs), such that all SNPs derived from a single genomic scaffold co-localized to one LG, and genetic map clustering exhibited minimal conflict with the reference genome assembly.</p><p>We performed QTL analysis via composite interval mapping implemented in the R/qtl package (<xref rid="B8" ref-type="bibr">Broman et al., 2003</xref>). LOD thresholds for significant QTL were established by the permutation test (parameter = 1,000). QTL intervals were defined with a minimum 80% support interval. The location of the peak LOD value was designated as the major QTL locus within the significant interval. The linkage map was generated by using the Kosambi mapping function, which converted the recombination frequencies into map distances in centimorgans (cM). MapGene2Chromosome v2 software (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://mg2c.iask.in/mg2c_v2.0/" ext-link-type="uri">http://mg2c.iask.in/mg2c_v2.0/</ext-link>) was used for chromosome (Chr) and LG maps, and Microsoft Paint was used for the other schematic diagrams.</p></sec><sec id="s3_4"><label>2.4</label><title>Marker development and genotype identification</title><p>A total of 96 individuals (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B1</bold></xref>) underwent genotyping analysis, comprising 94 BC progeny (excluding four individuals with visually undetermined seeds, black testa; <xref rid="f1" ref-type="fig"><bold>Figure 1I</bold></xref>) and two validation accessions, B5–8 and 18CB83 (both exhibiting patches at the hilum visually).</p><p>Based on watermelon genome data (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.icugi.org/" ext-link-type="uri">http://www.icugi.org/</ext-link>), about 500 bp of the Indel locus and selected SNP locus were extracted using the Perl language script compiled by the laboratory. The CAPS/derived cleaved amplified polymorphic sequence (dCAPS) primers were designed using the online analysis software dCAPS Finder 2.0 (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://helix.wustl.edu/dcaps/dcaps.html" ext-link-type="uri">http://helix.wustl.edu/dcaps/dcaps.html</ext-link>) and Oligo 7 software. The commonly used restriction endonucleases (e.g., <italic toggle="yes">EcoR</italic>I, <italic toggle="yes">Taq</italic>I, <italic toggle="yes">Alu</italic>I, <italic toggle="yes">Hind</italic>III, <italic toggle="yes">Rsa</italic>I, <italic toggle="yes">Mse</italic>I) were employed. Primer Premier 5 software was used for primer design, and the designed primer sequences were synthesized by Bioengineering Engineering Co. Ltd., Shanghai, China.</p><p>While converting Indels and SNPs in the QTL region to PCR-based markers for fast and reliable analysis, the respective PCR primer sets (Indel and dCAPS) (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST2</bold></xref>) were developed for genotyping and polymorphism screening across 96 individuals (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B1</bold></xref>). PCR amplification was performed in a 25-μl reaction containing 1 μl of 200 ng genomic DNA, 12.5 μl of 2× Power Taq PCR Master Mix, 1 μl of 10 µM per primer (forward/reverse), and 9.5 μl of RNase-free water. The thermal cycling conditions were as follows: predenaturation at 94°C for 5 min; 35 cycles of 94°C for 20 s, 55°C for 1 min, and 72°C for 30 s; and a final extension at 72°C for 5 min, followed by a hold at 4°C. For CAPS/dCAPS digestion, 5 μl of PCR product was incubated with 1.5 μl of 10× reaction buffer, 0.5 μl of restriction endonuclease (Thermo Scientific™, Waltham, MA, USA), and 8 μl of RNase-free water (15 μl total volume) at 37°C for 12 h. The digestion products were resolved by 8% polyacrylamide gel electrophoresis at 260 V for 40 min, silver-stained for 15 min, rinsed, fixed in sodium thiosulfate for 2 min, and visualized using X-ray film imaging (Bio-Rad<sup>®</sup> Gel Doc™ XR+, Hercules, CA, USA). The markers with polymorphism were used for fine mapping.</p></sec><sec id="s3_5"><label>2.5</label><title>Candidate gene prediction and gene expression analysis by qRT-PCR</title><p>The QTL interval was gradually narrowed down within the final mapping range of the candidate gene using the verification of molecular markers, and the coding sequences were found referencing the watermelon genome database (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.icugi.org/" ext-link-type="uri">http://www.icugi.org/</ext-link>). The candidate gene functions were retrieved from NCBI using the BLASTp tool (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" ext-link-type="uri">https://blast.ncbi.nlm.nih.gov/Blast.cgi</ext-link>). The specific primers of the candidate genes were designed using Primer Premier 5, and the housekeeping actin gene (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST3</bold></xref>) was used as an internal control (<xref rid="B25" ref-type="bibr">Kong et al., 2014</xref>) for qRT-PCR based on the Cucurbit Genomic Database (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://cucurbitgenomics.org" ext-link-type="uri">http://cucurbitgenomics.org</ext-link>).</p><p>For gene expression, the watermelon seeds were collected at three growth stages, which were 8 days after flowering (DAF), 18DAF, and 25DAF. RNA was extracted from the collected seeds using the RNAprep Pure Polysaccharide Plant Total RNA Extraction Kit (TIANGEN, Beijing, China), and RNA was reverse transcribed (RT) into complementary DNA (cDNA) using the Transcriptor First Strand cDNA Synthesis Kit (Roche, Basel, Switzerland). Each cDNA product (3 μl containing 200 ng) was diluted 15-fold by adding 42 μl of nuclease-free water. The qRT-PCR reaction (10 μl total volume) contained 1 μl of diluted cDNA, 0.25 μl of 10 μM each primer, 5 μl of SYBR Green I Master Mix 5, and 3.5 μl of RNase-free water. The mixture was set to the following conditions to obtain CT values for every sample: 95°C for 5 min (initial activation), 45 cycles of 95°C for 30 s, 55°C for 30 s, and 72°C for 35 s (amplification); followed by melt curve analysis at 95°C for 1 min, 60°C for 1 min, and 95°C for 10 min.</p><p>The relative expression level of the candidate gene <italic toggle="yes">Cla019481</italic> was determined using qRT-PCR with specific primers (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST3</bold></xref>). Three independent biological replicates were prepared for each sample. The expression of the target gene was estimated by qRT-PCR (<xref rid="B44" ref-type="bibr">Nawaz et al., 2018</xref>) using the LightCycler<sup>®</sup> 480 system (Roche, Switzerland), and the CT values from reactions in triplicate for each sample were calculated with the 2<sup>−ΔΔCt</sup> method (<xref rid="B37" ref-type="bibr">Livak and Schmittgen, 2001</xref>). The significant difference analysis was performed using SPSS 25 software.</p></sec></sec><sec sec-type="results" id="s4"><label>3</label><title>Results and discussion</title><sec id="s4_1"><label>3.1</label><title>Morphological analysis of patches at the hilum in the BC population</title><p>The testa color of B132 (female parent) was yellowish-brown without patches at the hilum (<xref rid="f1" ref-type="fig"><bold>Figure 1D</bold></xref>), and the testa color of B135 (male parent) was dark with patches at the hilum (<xref rid="f1" ref-type="fig"><bold>Figure 1E</bold></xref>). The F<sub>1</sub> generation of B139 displayed uniformly dark testa with hilum patches (<xref rid="f1" ref-type="fig"><bold>Figure 1F</bold></xref>). Among the 98 BC population (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B1</bold></xref>), there were 46 accessions that produced seeds with patches at the hilum (<xref rid="f1" ref-type="fig"><bold>Figure 1G</bold></xref>), 48 accessions that produced seeds without patches at the hilum (<xref rid="f1" ref-type="fig"><bold>Figure 1H</bold></xref>), and four accessions that were unable to be determined because of the dark testa and dark hilum (<xref rid="f1" ref-type="fig"><bold>Figure 1I</bold></xref>). The segregation ratio (with patches: without patches = 46:48) conformed to the expected 1:1 Mendelian ratio (<italic toggle="yes">χ</italic><sup>2</sup> = 0.04, <italic toggle="yes">p</italic> = 0.84) (<xref rid="T1" ref-type="table"><bold>Table 1</bold></xref>) (<xref rid="B70" ref-type="bibr">Zhang, 2019</xref>). The results indicated that a single autosomal dominant gene with a major-effect QTL in the BC population controlled patches at the hilum of watermelon seeds. The 46 patch-hilum accessions and 48 without-patch-at-the-hilum individuals of the BC population (the 94 accessions of the BC population) will be used in genotype–phenotype analysis later.</p><table-wrap position="float" id="T1" orientation="portrait"><label>Table 1</label><caption><p>Information on patches at the hilum of watermelon seeds in different groups.</p></caption><table frame="hsides" rules="groups"><thead><tr><th valign="middle" align="center" rowspan="1" colspan="1">Group</th><th valign="middle" align="center" rowspan="1" colspan="1">Plant No.</th><th valign="middle" align="center" rowspan="1" colspan="1">Patches at the hilum</th><th valign="middle" align="center" rowspan="1" colspan="1">No patches at the hilum</th><th valign="middle" align="center" rowspan="1" colspan="1">Unable to determine (black testa)</th><th valign="middle" align="center" rowspan="1" colspan="1">Expectation ratio</th><th valign="middle" align="center" rowspan="1" colspan="1">Chi-square value (<italic toggle="yes">χ</italic><sup>2</sup>)</th><th valign="middle" align="center" rowspan="1" colspan="1"><italic toggle="yes">p</italic>-value</th></tr></thead><tbody><tr><td valign="middle" align="center" rowspan="1" colspan="1">P<sub>1</sub>(B132)</td><td valign="middle" align="center" rowspan="1" colspan="1">40</td><td valign="middle" align="center" rowspan="1" colspan="1">0</td><td valign="middle" align="center" rowspan="1" colspan="1">40</td><td valign="middle" align="center" rowspan="1" colspan="1">–</td><td valign="middle" align="center" rowspan="1" colspan="1">–</td><td valign="middle" align="center" rowspan="1" colspan="1">–</td><td valign="middle" align="center" rowspan="1" colspan="1">–</td></tr><tr><td valign="middle" align="center" rowspan="1" colspan="1">P<sub>2</sub> (B135)</td><td valign="middle" align="center" rowspan="1" colspan="1">41</td><td valign="middle" align="center" rowspan="1" colspan="1">41</td><td valign="middle" align="center" rowspan="1" colspan="1">0</td><td valign="middle" align="center" rowspan="1" colspan="1">–</td><td valign="middle" align="center" rowspan="1" colspan="1">–</td><td valign="middle" align="center" rowspan="1" colspan="1">–</td><td valign="middle" align="center" rowspan="1" colspan="1">–</td></tr><tr><td valign="middle" align="center" rowspan="1" colspan="1">F<sub>1</sub> (B139)</td><td valign="middle" align="center" rowspan="1" colspan="1">22</td><td valign="middle" align="center" rowspan="1" colspan="1">22</td><td valign="middle" align="center" rowspan="1" colspan="1">0</td><td valign="middle" align="center" rowspan="1" colspan="1">–</td><td valign="middle" align="center" rowspan="1" colspan="1">–</td><td valign="middle" align="center" rowspan="1" colspan="1">–</td><td valign="middle" align="center" rowspan="1" colspan="1">–</td></tr><tr><td valign="middle" align="center" rowspan="1" colspan="1">BC</td><td valign="middle" align="center" rowspan="1" colspan="1">98</td><td valign="middle" align="center" rowspan="1" colspan="1">46</td><td valign="middle" align="center" rowspan="1" colspan="1">48</td><td valign="middle" align="center" rowspan="1" colspan="1">4</td><td valign="middle" align="center" rowspan="1" colspan="1">1:1</td><td valign="middle" align="center" rowspan="1" colspan="1">0.04</td><td valign="middle" align="center" rowspan="1" colspan="1">0.84</td></tr></tbody></table><table-wrap-foot><fn><p>P<sub>1</sub>, female parent (B132) without patches at the hilum; P<sub>2</sub>, male parent (B135) with patches at the hilum; F<sub>1</sub>, hybrid generation (B139) with patches at the hilum; BC, back cross-population, 46 of 98 plants with patches at the hilum. The expected ratio is approximately 1:1.</p></fn></table-wrap-foot></table-wrap></sec><sec id="s4_2"><label>3.2</label><title>QTL mapping of the patch-hilum trait</title><p>Whole-genome sequencing was performed on 100 plant accessions, including parental lines B132 and B135, and 98 BC progeny for genotyping. A total of 896.39 million reads were generated, averaging 10 million reads per individual, of which 94% showed high quality (<italic toggle="yes">Q</italic> ≥ 30). High-throughput sequencing at × 22 depth was conducted, resulting in the detection of 577,866 SNPs and 232,762 Indels between the parental lines. To refine the target QTL interval, reliable Indels and SNP loci were identified within the physical region of the QTL map. Bioinformatics analysis of high-quality reads (<italic toggle="yes">Q</italic> ≥ 30) yielded 515,688 SNP loci. After parental polymorphism screening and removal of markers with segregation distortion (<italic toggle="yes">χ</italic><sup>2</sup> test, <italic toggle="yes">p</italic> &lt; 0.05), a final set of 7,662 SNPs was retained for linkage analysis.</p><p>Using a single-linkage method and genomic information for linkage grouping, a high-density genetic map was constructed comprising 7,327 SNPs distributed across 11 linkage groups (<xref rid="f2" ref-type="fig"><bold>Figure 2A</bold></xref>). The total genetic distance was 1,811.91 cM, with 96% genome coverage and an average intermarker distance of 0.25 cM within each linkage group.</p><fig position="float" id="f2" orientation="portrait"><label>Figure 2</label><caption><p>Genetic map for chromosome 3. <bold>(A)</bold> The resulting association for patches at the hilum is indicated on the watermelon chromosome 3, showing the region controlling the trait. The horizontal axis represents the watermelon chromosomes, with PH marking the gene location. <bold>(B)</bold> A locus for patches at the hilum of watermelon seeds was identified through QTL mapping. The PH gene is located on chromosome 3, within the region spanning <italic toggle="yes">Cla019451~Cla019484</italic> (5.38–5.78 Mb).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="fpls-16-1680623-g002.jpg"><?image-name fpls-16-1680623-g002.jpg?><?image-size 77527?><?image-md5 f8699ea5d07f468a525b8eb8538060ff?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 930?><?image-original-width 1770?><?image-scaled-height 372?><?image-scaled-width 708?><?image-cloudpmc-urn urn:cdn:blobs/ea06/12722523/f8699ea5d07f/fpls-16-1680623-g002.jpg?><?thumb-name fpls-16-1680623-g002.gif?><?thumb-size 10966?><?thumb-md5 8e5f84be455b8354825caf138c2ad778?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 152?><?thumb-cloudpmc-urn urn:cdn:blobs/ea06/12722523/8e5f84be455b/fpls-16-1680623-g002.gif?><alt-text content-type="machine-generated">Panel A shows a genetic map with eleven chromosomes marked by black vertical bars, displaying numerous loci. Chromosome markers are labeled along the horizontal axis, and their locations are indicated on the vertical axis in centimorgans. “PH” is marked in red on one of the chromosomes. Panel B illustrates a line graph plotting LOD scores across chromosomes, with horizontal lines indicating significance thresholds at one percent and five percent. A peak around chromosome 3 is highlighted, and an inset zooms in on this area showing a specific genomic region between markers CI20194551 and CI20194585.</alt-text></graphic></fig><p>Combined with the high-density genetic linkage map and the phenotype data for the presence or absence of patches at the hilum in the BC population, the Rqtl-IM-binary method was applied to locate the QTL. A significant QTL was identified on chromosome 3, with a peak LOD score of 23.39, exceeding the 1% threshold of 3.87, and a confidence interval for the patch-hilum trait of 5,375,019–5,784,364 bp. This region harbors 35 annotated genes (<italic toggle="yes">Cla019451</italic> to <italic toggle="yes">Cla019485</italic>) (<xref rid="f2" ref-type="fig"><bold>Figures 2B</bold></xref>, <xref rid="f3" ref-type="fig"><bold>3A</bold></xref>). Using MapGene2Chromosome v2 (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://mg2c.iask.in/mg2c_v2.0/" ext-link-type="uri">http://mg2c.iask.in/mg2c_v2.0/</ext-link>), the LG map and Chr map were visualized, highlighting the 5,375,019–5,784,364-bp region on chromosome 3 (Chr3) that contains <italic toggle="yes">Cla019481</italic> (<xref rid="f3" ref-type="fig"><bold>Figure 3A</bold></xref>), with a genetic distance of 54.9 cM on linkage group 3 (LG3) (<xref rid="f3" ref-type="fig"><bold>Figure 3B</bold></xref>). <xref rid="f3" ref-type="fig"><bold>Figure 3C</bold></xref> shows the LOD profile across the related region on Chr3 and the patch-hilum status pf different samples, indicating that the candidate gene controlling the patch-hilum trait in watermelon seed likely located within this interval.</p><fig position="float" id="f3" orientation="portrait"><label>Figure 3</label><caption><p>The gene loci and specific Indel and SNP markers at 34.7 cM within a 40-kb interval on chromosome 3. <bold>(A)</bold> The 35 gene loci in the region spanning 5,375,019–5,778,780 bp on watermelon chromosome 3, including gene <italic toggle="yes">Cla019481</italic>. <bold>(B)</bold> Consensus SNP and Indel markers for linkage group 3 (LG3) of <italic toggle="yes">Citrullus lanatus</italic>. Markers from Indel84 to Indel87, together with dCAPs101, cover an approximate genetic distance of 34.7 cM. <bold>(C)</bold> Two individuals (17CB237, 18CB83) of the 96 tested were estimated to carry the fine-mapped patches-at-the-hilum gene between markers Indel84 and Indel87, corresponding to a 40-kb interval on chromosome 3.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="fpls-16-1680623-g003.jpg"><?image-name fpls-16-1680623-g003.jpg?><?image-size 91764?><?image-md5 350d8fc375fe295a313f984c87563f76?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 1028?><?image-original-width 2092?><?image-scaled-height 343?><?image-scaled-width 697?><?image-cloudpmc-urn urn:cdn:blobs/ea06/12722523/350d8fc375fe/fpls-16-1680623-g003.jpg?><?thumb-name fpls-16-1680623-g003.gif?><?thumb-size 10836?><?thumb-md5 9d90f9a0e93cf163f7b1ffe2b98716ca?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 162?><?thumb-cloudpmc-urn urn:cdn:blobs/ea06/12722523/9d90f9a0e93c/fpls-16-1680623-g003.gif?><alt-text content-type="machine-generated">Diagram consisting of three panels. Panel A shows a map of chromosome 3 with genetic markers listed. Panel B presents a linkage group with similar markers, highlighting certain markers in red, including Indel84 and Indel87. Panel C displays a graph of LOD scores across various chromosomes, with high peaks on chromosome 3, indicating significant linkage. A magnified section below shows genetic differences among parental, F1, and other generations, with annotations about presence or absence of patches at the hilum and positions of specific indels.</alt-text></graphic></fig></sec><sec id="s4_3"><label>3.3</label><title>Fine mapping the QTL region for the patch-hilum trait</title><p>To identify the locus controlling patches at the hilum in watermelon seeds, a population of 96 individuals was investigated, including 94 accessions in the BC population (excluding four undetermined individuals) and two other experimental materials (B5–8 and 18CB83, both with patches at the hilum) (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B1</bold></xref>). Genotypic analysis revealed that the accessions of 17CB237 and 18CB83 exhibited consistency between markers Indel84 and Indel87 (<xref rid="f3" ref-type="fig"><bold>Figure 3C</bold></xref>). A reliable dCAPS marker (dCAPS 101) was developed within this interval (<xref rid="f3" ref-type="fig"><bold>Figure 3B</bold></xref>), demonstrating perfect genotype–phenotype co-segregation. Consequently, the target QTL was delimited to a 40-kb region (physical position: 5.69–5.73 Mb) on Chr 3 (<xref rid="f3" ref-type="fig"><bold>Figure 3C</bold></xref>).</p></sec><sec id="s4_4"><label>3.4</label><title>Identification of genes associated with the patch-hilum trait</title><p>Further analysis of the 40-kb genomic interval, based on the watermelon genome database (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.icugi.org/" ext-link-type="uri">http://www.icugi.org/</ext-link>), identified one annotated gene, <italic toggle="yes">Cla019481</italic>, which was predicted to be a PPO gene containing InterPro domain IPR016213. Nucleotide sequence alignment revealed that <italic toggle="yes">Cla019481</italic> shares 78% identity with the <italic toggle="yes">Trifolium pratense</italic> PPO1/4 gene and 59% amino acid sequence identity with the <italic toggle="yes">Momordica charantia</italic> PPO protein. PPOs are ubiquitously expressed in plants (<xref rid="B40" ref-type="bibr">Mayer, 2006</xref>; <xref rid="B65" ref-type="bibr">Webb et al., 2014</xref>) and function in oxidation and color change. Since <italic toggle="yes">Cla019481</italic> is a homologous PPO gene in watermelon, it is likely responsible, at least in part, for the patches at the hilum on watermelon seeds.</p><p>The expression pattern of the candidate gene <italic toggle="yes">Cla019481</italic> was validated across three seed developmental stages (8, 18, and 25DAF) in four watermelon accessions using qRT-PCR. These accessions included two nonpatch controls (17Q140-18Z and 17QB47) and two patch-hilum materials (18CB90 and 18CB83). <italic toggle="yes">Cla019481</italic> expression was significantly higher (<italic toggle="yes">p</italic> &lt; 0.05) in patch-hilum materials at all developmental stages (<xref rid="f4" ref-type="fig"><bold>Figure 4</bold></xref>). These results confirm <italic toggle="yes">Cla019481</italic> as the candidate gene controlling the patch-hilum trait in watermelon seeds.</p><fig position="float" id="f4" orientation="portrait"><label>Figure 4</label><caption><p>Relative expression levels of gene <italic toggle="yes">Cla019481</italic> during different seed developing periods in four materials. 17Q140-18Z and 17QB47 lack patches at the hilum, whereas 18CB90 and 18CB83 possess patches at the hilum. Error bars represent the mean ± standard deviations (SDs) of three biological replicates. DAF, days after flowering.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="fpls-16-1680623-g004.jpg"><?image-name fpls-16-1680623-g004.jpg?><?image-size 56717?><?image-md5 2d727c912df7e839d4afa1e434832808?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 464?><?image-original-width 1063?><?image-scaled-height 309?><?image-scaled-width 708?><?image-cloudpmc-urn urn:cdn:blobs/ea06/12722523/2d727c912df7/fpls-16-1680623-g004.jpg?><?thumb-name fpls-16-1680623-g004.gif?><?thumb-size 9826?><?thumb-md5 8ea85885cbc1f2219206901e03472a9f?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 183?><?thumb-cloudpmc-urn urn:cdn:blobs/ea06/12722523/8ea85885cbc1/fpls-16-1680623-g004.gif?><alt-text content-type="machine-generated">Bar chart displaying relative expression levels at three stages: 8DAF, 18DAF, and 25DAF. Four treatments are represented: 17Q140-18Z, 17QB47, 18CB90, and 18CB83, with the highest expression at 25DAF.</alt-text></graphic></fig></sec><sec id="s4_5"><label>3.5</label><title>Genotype and phenotype consistency analysis in different groups of accessions</title><p>The dCAPS marker, named dCAPS101 (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST2</bold></xref>), was designed based on the sequence information of <italic toggle="yes">Cla019481</italic>. To validate genotype–phenotype concordance, 96 individuals (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B1</bold></xref>), 71 watermelon accessions (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B2</bold></xref>), and the previous four individuals used for qRT-PCR (<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B3</bold></xref>) were evaluated using dCAPS markers and human visual judgment for the patch-hilum trait. The results revealed 100% concordance between dCAPS101 genotypes and phenotypes in both the 96 individuals and the four individuals (<xref rid="T2" ref-type="table"><bold>Table 2</bold></xref>; <xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary Files ST1-B1, B3</bold></xref>). Among the 71 accessions, 49 (69%) exhibited phenotypic consistency with dCAPS101-positive genotypes (<xref rid="T3" ref-type="table"><bold>Table 3</bold></xref>; <xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B2</bold></xref>), while 22 with black testa and black hilum were marked “uncertain” in <xref rid="T2" ref-type="table"><bold>Tables 2</bold></xref>, <xref rid="T3" ref-type="table"><bold>3</bold></xref>. These 22 accessions are listed as “without patches at hilum” in <xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B2</bold></xref>. These results confirm that <italic toggle="yes">Cla019481</italic> functions as a key regulator of patch formation at the hilum in watermelon seeds.</p><table-wrap position="float" id="T2" orientation="portrait"><label>Table 2</label><caption><p>Consistency rate between genotype and phenotype in different material groups.</p></caption><table frame="hsides" rules="groups"><thead><tr><th valign="middle" align="center" rowspan="1" colspan="1">Material group</th><th valign="middle" align="center" rowspan="1" colspan="1">Patch-hilum info.</th><th valign="middle" align="center" rowspan="1" colspan="1">Genotype materials No.</th><th valign="middle" align="center" rowspan="1" colspan="1">Phenotype uncertain (black testa) No.</th><th valign="middle" align="center" rowspan="1" colspan="1">Consistent No.</th><th valign="middle" align="center" rowspan="1" colspan="1">Consistency rate (%)</th><th valign="middle" align="center" rowspan="1" colspan="1">Total consistency rate (%)</th></tr></thead><tbody><tr><td valign="middle" rowspan="2" align="center" colspan="1">96 individuals</td><td valign="middle" align="center" rowspan="1" colspan="1">No</td><td valign="middle" align="center" rowspan="1" colspan="1">48</td><td valign="middle" align="center" rowspan="1" colspan="1">0</td><td valign="middle" align="center" rowspan="1" colspan="1">48</td><td valign="middle" align="center" rowspan="1" colspan="1">100</td><td valign="middle" rowspan="2" align="center" colspan="1">100</td></tr><tr><td valign="middle" align="center" rowspan="1" colspan="1">Yes</td><td valign="middle" align="center" rowspan="1" colspan="1">48</td><td valign="middle" align="center" rowspan="1" colspan="1">0</td><td valign="middle" align="center" rowspan="1" colspan="1">48</td><td valign="middle" align="center" rowspan="1" colspan="1">100</td></tr><tr><td valign="middle" rowspan="2" align="center" colspan="1">4 individuals</td><td valign="middle" align="center" rowspan="1" colspan="1">No</td><td valign="middle" align="center" rowspan="1" colspan="1">2</td><td valign="middle" align="center" rowspan="1" colspan="1">0</td><td valign="middle" align="center" rowspan="1" colspan="1">2</td><td valign="middle" align="center" rowspan="1" colspan="1">100</td><td valign="middle" rowspan="2" align="center" colspan="1">100</td></tr><tr><td valign="middle" align="center" rowspan="1" colspan="1">Yes</td><td valign="middle" align="center" rowspan="1" colspan="1">2</td><td valign="middle" align="center" rowspan="1" colspan="1">0</td><td valign="middle" align="center" rowspan="1" colspan="1">2</td><td valign="middle" align="center" rowspan="1" colspan="1">100</td></tr><tr><td valign="middle" rowspan="2" align="center" colspan="1">71 accessions</td><td valign="middle" align="center" rowspan="1" colspan="1">No</td><td valign="middle" align="center" rowspan="1" colspan="1">16</td><td valign="middle" align="center" rowspan="1" colspan="1">0</td><td valign="middle" align="center" rowspan="1" colspan="1">16</td><td valign="middle" align="center" rowspan="1" colspan="1">100</td><td valign="middle" rowspan="2" align="center" colspan="1">69</td></tr><tr><td valign="middle" align="center" rowspan="1" colspan="1">Yes</td><td valign="middle" align="center" rowspan="1" colspan="1">55</td><td valign="middle" align="center" rowspan="1" colspan="1">22</td><td valign="middle" align="center" rowspan="1" colspan="1">33</td><td valign="middle" align="center" rowspan="1" colspan="1">60</td></tr></tbody></table><table-wrap-foot><fn><p>The genotype–phenotype consistency rate was 100% for 96 individuals and four individuals, and 69% for 71 accessions. Among the 55 genotype patch-hilum materials, 33 displayed a clear trait of patches at the hilum, while 22 had black testa and black hilum seeds, which were marked as uncertain.</p></fn></table-wrap-foot></table-wrap><table-wrap position="float" id="T3" orientation="portrait"><label>Table 3</label><caption><p>Genotype–phenotype consistency rate of the 71 accessions.</p></caption><table frame="hsides" rules="groups"><thead><tr><th valign="middle" align="center" rowspan="1" colspan="1">Genotype same as</th><th valign="middle" align="center" rowspan="1" colspan="1">Patches info.</th><th valign="middle" align="center" rowspan="1" colspan="1">Genotype material No.</th><th valign="middle" align="center" rowspan="1" colspan="1">Phenotype uncertain (black testa) No.</th><th valign="middle" align="center" rowspan="1" colspan="1">Consistency No.</th><th valign="middle" align="center" rowspan="1" colspan="1">Consistency rate (%)</th></tr></thead><tbody><tr><td valign="middle" align="center" rowspan="1" colspan="1">A (B132, <italic toggle="yes">P</italic><sub>1</sub>)</td><td valign="middle" align="center" rowspan="1" colspan="1">No</td><td valign="middle" align="center" rowspan="1" colspan="1">16</td><td valign="middle" align="center" rowspan="1" colspan="1">0</td><td valign="middle" align="center" rowspan="1" colspan="1">16</td><td valign="middle" align="center" rowspan="1" colspan="1">100</td></tr><tr><td valign="middle" align="center" rowspan="1" colspan="1">B (B135, <italic toggle="yes">P</italic><sub>2</sub>)/H (B139, F<sub>1</sub>)</td><td valign="middle" align="center" rowspan="1" colspan="1">Yes</td><td valign="middle" align="center" rowspan="1" colspan="1">55</td><td valign="middle" align="center" rowspan="1" colspan="1">22</td><td valign="middle" align="center" rowspan="1" colspan="1">33</td><td valign="middle" align="center" rowspan="1" colspan="1">60</td></tr><tr><td valign="middle" align="center" rowspan="1" colspan="1">Total</td><td valign="middle" align="center" rowspan="1" colspan="1">–</td><td valign="middle" align="center" rowspan="1" colspan="1">71</td><td valign="middle" align="center" rowspan="1" colspan="1">22</td><td valign="middle" align="center" rowspan="1" colspan="1">49</td><td valign="middle" align="center" rowspan="1" colspan="1">69</td></tr></tbody></table><table-wrap-foot><fn><p>A, genotype same as the female parent (B132, P<sub>1</sub>) without patches at the hilum; B, genotype same as the male parent (B135, P<sub>2</sub>), H, genotype same as F<sub>1</sub> (B139) with patches at the hilum.</p></fn></table-wrap-foot></table-wrap></sec><sec id="s4_6"><label>3.6</label><title>Patch-hilum trait of watermelon seeds</title><p>The black color of the testa occasionally obscured visual identification of patches at the hilum, particularly in accessions with dark testa and dark-hilum seeds (<xref rid="f1" ref-type="fig"><bold>Figures 1E, F, I</bold></xref>). F<sub>1</sub> (B139) (<xref rid="f1" ref-type="fig"><bold>Figure 1F</bold></xref>), crossed back with female parent B132 (<xref rid="f1" ref-type="fig"><bold>Figure 1D</bold></xref>), produced a BC population exhibiting separated phenotypes of seeds with patches at the hilum (<xref rid="f1" ref-type="fig"><bold>Figure 1G</bold></xref>) and seeds without patches at the hilum (<xref rid="f1" ref-type="fig"><bold>Figure 1H</bold></xref>). For this reason, we considered the male parent (B135) (<xref rid="f1" ref-type="fig"><bold>Figure 1E</bold></xref>) and F<sub>1</sub> (B139) (<xref rid="f1" ref-type="fig"><bold>Figure 1F</bold></xref>) as patch-hilum materials for the genotype–phenotype study. For ease of comparison, we selected materials with clearly distinguishable seeds—those with umbilical patches and those without—for a genotype–phenotype consistency study, excluding the four materials with black testa and undetermined patches in the BC population (<xref rid="f1" ref-type="fig"><bold>Figure 1I</bold></xref>). Among the 71 watermelon accessions with complex genotypic germplasm resources, 22 exhibited an uncertain phenotype (<xref rid="T2" ref-type="table"><bold>Table 2</bold></xref>) due to black testa and black hilum. In <xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1-B2</bold></xref>, we marked these as “without patches at hilum” according to the description of <xref rid="B38" ref-type="bibr">Ma (2005)</xref>. Seeds with black testa also exhibited darker coloration in the hilum region compared to other parts during seed development. However, no phenotypic inconsistency was found in materials with the same genotype as B132 (female parent), which had no patches at the hilum (<xref rid="T3" ref-type="table"><bold>Table 3</bold></xref>; <xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary File ST1</bold></xref>). We infer that watermelon seeds with black testa and black hilum can be considered seeds with patches at the hilum.</p><p>Watermelon seed coat color (<xref rid="B45" ref-type="bibr">Paudel et al., 2019</xref>; <xref rid="B31" ref-type="bibr">Li et al., 2020</xref>; <xref rid="B39" ref-type="bibr">Maragal et al., 2022</xref>) and black spots on the watermelon seed hilum are important phenotypes (<xref rid="B47" ref-type="bibr">Poole et al., 1941</xref>), similar to seed coat color in winter squash (<italic toggle="yes">Cucurbita maxima</italic>) (<xref rid="B6" ref-type="bibr">Balkaya et al., 2009</xref>), pumpkin (<italic toggle="yes">Cucurbita maxima</italic>) (<xref rid="B60" ref-type="bibr">Shi et al., 2021</xref>), and luffa (<italic toggle="yes">Luffa</italic> spp.) (<xref rid="B75" ref-type="bibr">Zhou, 2013</xref>). There are a few references concerning patches at the hilum on the testa of watermelon seeds, although research exists for other crops. Seed coat color can serve as a convenient and reliable biomarker for phenotype-based breeding/selection of cultivars (<xref rid="B11" ref-type="bibr">Chukwumah et al., 2009</xref>). Hilum color and testa color have been considered major factors for pea phenotype (<xref rid="B26" ref-type="bibr">Konstantopoulos et al., 2023</xref>). In soybean, seed hilum color and seed coat color are valuable traits for marker-assisted breeding (<xref rid="B68" ref-type="bibr">Yang et al., 2023</xref>; <xref rid="B21" ref-type="bibr">Kaňovská et al., 2024</xref>), similar to watermelon. Soybean hilum color and stem pubescence color can directly or indirectly influence plant growth, development, and yield (<xref rid="B76" ref-type="bibr">Zhou et al., 2024</xref>). In this study, we focused on genetic mapping for gene discovery and functional identification related to patch formation at the watermelon seed hilum, as well as genotype–phenotype analysis of the patch-hilum trait. Endogenous histological observation and developmental biology studies can help reveal the mechanisms underlying the formation of the dark-hilum spotted trait in watermelon seeds. Further research will explore the process and mechanism of patch formation at the hilum in black testa watermelon seeds.</p></sec><sec sec-type="discussion" id="s4_7"><label>3.7</label><title>Discussion of <italic toggle="yes">Cla019481</italic> gene function</title><p><italic toggle="yes">Cla019481</italic> is annotated as a PPO gene. PPO is a copper-containing enzyme that is nearly ubiquitous in plants, animals, and fungi (<xref rid="B33" ref-type="bibr">Li and Steffens, 2002</xref>; <xref rid="B55" ref-type="bibr">Schmitz et al., 2008</xref>). It mediates multiple physiological processes, including enzymatic browning and defense against pests and pathogens (<xref rid="B33" ref-type="bibr">Li and Steffens, 2002</xref>). Specifically, PPO catalyzes the oxidation of polyphenols to quinones, resulting in pigment deposition and tissue discoloration (<xref rid="B9" ref-type="bibr">Chang, 2009</xref>; <xref rid="B3" ref-type="bibr">Ali et al., 2015</xref>). Although PPO is often associated with browning (<xref rid="B20" ref-type="bibr">Kampatsikas et al., 2017</xref>; <xref rid="B61" ref-type="bibr">Taranto et al., 2017</xref>), it is involved in petal color formation (<xref rid="B43" ref-type="bibr">Nakayamaa et al., 2001</xref>; <xref rid="B63" ref-type="bibr">Wang et al., 2024</xref>). PPO catalyzes the conversion of catechins to theaflavins during black tea production, forming the characteristic orange color (<xref rid="B5" ref-type="bibr">Balentine et al., 1997</xref>). The expression level of <italic toggle="yes">MC03g0810</italic> is positively correlated with PPO activity in the black seed coat color of bitter gourd (<italic toggle="yes">Momordica</italic> spp.) (<xref rid="B74" ref-type="bibr">Zhong et al., 2022</xref>). In wheat, <italic toggle="yes">Ppo1</italic> is a major gene controlling PPO activity (<xref rid="B69" ref-type="bibr">Zhai et al., 2023</xref>). PPO is a key enzyme contributing to the time-dependent discoloration of wheat products, and the <italic toggle="yes">Ppo-D1</italic> gene exerts the second-highest effect on grain PPO activity after the <italic toggle="yes">Ppo-A1</italic> gene (<xref rid="B42" ref-type="bibr">Nakamaru et al., 2025</xref>). <xref rid="B71" ref-type="bibr">Zhang (2021)</xref> identified the molecular mechanism underlying peel red color and flesh browning in apples with <italic toggle="yes">Ma1</italic> overexpression, showing that flesh browning at harvest is primarily caused by increased PPO activity. Collectively, these studies demonstrate that PPO and its enzymatic activity are responsible for browning in various crops/fruits.</p><p>The gene <italic toggle="yes">Cla019481</italic>, a PPO ortholog, drives melanin-like pigment deposition in the hilum region of the watermelon testa. We infer that <italic toggle="yes">Cla019481</italic> plays an important role in patch formation at the hilum of watermelon seeds, acting as the candidate gene with melanin as the principal compound responsible for the black seed coat (<xref rid="B31" ref-type="bibr">Li et al., 2020</xref>). Research of <xref rid="B53" ref-type="bibr">Roy et al. (2025)</xref> demonstrated that color deposition in common bean (<italic toggle="yes">Phaseolus vulgaris</italic> L.) originates from the hilum and spreads throughout the seed coat as the seed matures until it becomes entirely black. By analogy, we predict that black seed coat pigmentation in watermelon may similarly originate from the hilum. However, the specific role of PPO in forming patches at the umbilical part of watermelon seeds, and the mechanism by which these patches darken and contribute to the black testa during seed maturation, require further stud.</p></sec></sec><sec sec-type="conclusions" id="s5"><label>4</label><title>Conclusion</title><p>F<sub>1</sub> generation seeds (with patches at the hilum) were derived from a cross between the female parent (without patches at the hilum) and the male parent (with patches at the hilum). The BC population was obtained by crossing F<sub>1</sub> with the female parent. The segregation ratio of the patch and no-patch traits at the hilum in the BC population conformed to the expected 1:1 Mendelian ratio. A major QTL governing the stably inherited patch-hilum trait was identified on chromosome 3, spanning 5,375,019–5,784,364 bp and containing 35 annotated genes (<italic toggle="yes">Cla019451</italic> to <italic toggle="yes">Cla019485</italic>). Using a high-density, fine genetic map, a 40-kb physical genomic region was identified, harboring the candidate gene <italic toggle="yes">Cla019481</italic> for the patch-hilum trait. A reliable dCAPS marker developed within its interval demonstrated perfect genotype–phenotype co-segregation in watermelon accessions. Functional analyses confirmed that elevated genotype–phenotype expression of <italic toggle="yes">Cla019481</italic> correlates with progressive darkening of the hilum during seed development, establishing its causal role in patch formation at the hilum. Overall, <italic toggle="yes">Cla019481</italic> plays a significant role in the formation of patches at the hilum on the testa of watermelon seeds.</p></sec></body><back><ack><title>Acknowledgments</title><p>We sincerely thank the members of Shuangwu Ma’s Research Group for providing the experimental field, assisting with the management of watermelon plants, and offering valuable suggestions.</p></ack><fn-group><fn id="n1" fn-type="edited-by"><p>Edited by: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://loop.frontiersin.org/people/422787" ext-link-type="uri">Muhammad Saeed</ext-link>, Government College University Faisalabad, Pakistan</p></fn><fn id="n2" fn-type="reviewed-by"><p>Reviewed by: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://loop.frontiersin.org/people/916868" ext-link-type="uri">Sikandar Amanullah</ext-link>, North Carolina State University, United States</p><p><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://loop.frontiersin.org/people/3172489" ext-link-type="uri">Dr Lakshmana Reddy DC</ext-link>, ICAR–Indian Institute of Horticultural Research, India</p></fn></fn-group><sec sec-type="data-availability" id="s6"><title>Data availability statement</title><p>The datasets presented in this study can be found in online repositories. The names of the repository/repositories and accession number(s) can be found in the article/<xref rid="SM1" ref-type="supplementary-material"><bold>Supplementary Material</bold></xref>.</p></sec><sec sec-type="author-contributions" id="s7"><title>Author contributions</title><p>RL: Formal analysis, Writing – review &amp; editing, Data curation, Investigation. DZ: Writing – review &amp; editing, Data curation, Investigation, Software. HL: Data curation, Formal analysis, Software, Writing – review &amp; editing. CX: Data curation, Software, Writing – review &amp; editing. YZ: Data curation, Writing – review &amp; editing. XZ: Investigation, Writing – original draft. DL: Investigation, Writing – review &amp; editing. SM: Conceptualization, Investigation, Methodology, Writing – review &amp; editing. JC: Conceptualization, Formal analysis, Funding acquisition, Methodology, Supervision, Writing – original draft, Writing – review &amp; editing.</p></sec><sec sec-type="COI-statement" id="s9"><title>Conflict of interest</title><p>The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest.</p></sec><sec sec-type="correction-statement" id="s10"><title>Correction note</title><p>This article has been corrected with minor changes. These changes do not impact the scientific content of the article.</p></sec><sec sec-type="ai-statement" id="s11"><title>Generative AI statement</title><p>The author(s) declare that no Generative AI was used in the creation of this manuscript.</p><p>Any alternative text (alt text) provided alongside figures in this article has been generated by Frontiers with the support of artificial intelligence and reasonable efforts have been made to ensure accuracy, including review by the authors wherever possible. If you identify any issues, please contact us.</p></sec><sec sec-type="disclaimer" id="s12"><title>Publisher’s note</title><p>All claims expressed in this article are solely those of the authors and do not necessarily represent those of their affiliated organizations, or those of the publisher, the editors and the reviewers. Any product that may be evaluated in this article, or claim that may be made by its manufacturer, is not guaranteed or endorsed by the publisher.</p></sec><sec sec-type="supplementary-material" id="s13"><title>Supplementary material</title><p>The Supplementary Material for this article can be found online at: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.frontiersin.org/articles/10.3389/fpls.2025.1680623/full#supplementary-material" ext-link-type="uri">https://www.frontiersin.org/articles/10.3389/fpls.2025.1680623/full#supplementary-material</ext-link></p><supplementary-material id="SM1" position="float" content-type="local-data" orientation="portrait"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="Image1.png" position="float" orientation="portrait"><?suppdata-name Image1.png?><?suppdata-size 103719?><?suppdata-md5 2a3dcb8e74438569c036c55351e9fdbc?><?suppdata-image-server-status NEVER_LOAD?><?suppdata-mime-type image?><?suppdata-mime-sub-type png?><?suppdata-cloudpmc-urn urn:app:ea06/12722523/2a3dcb8e7443/Image1.png?></media></supplementary-material><supplementary-material id="SM2" position="float" content-type="local-data" orientation="portrait"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="Table2.doc" position="float" orientation="portrait"><?suppdata-name Table2.doc?><?suppdata-size 29696?><?suppdata-md5 f9f2238666bfccbd6fc7cfd65c015619?><?suppdata-image-server-status NEVER_LOAD?><?suppdata-mime-type application?><?suppdata-mime-sub-type msword?><?suppdata-cloudpmc-urn urn:app:ea06/12722523/f9f2238666bf/Table2.doc?></media></supplementary-material><supplementary-material id="SM3" position="float" content-type="local-data" orientation="portrait"><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="Table3.xlsx" position="float" orientation="portrait"><?suppdata-name Table3.xlsx?><?suppdata-size 17903?><?suppdata-md5 1efbca0120b682014b664a07f9d62556?><?suppdata-image-server-status NEVER_LOAD?><?suppdata-mime-type application?><?suppdata-mime-sub-type vnd.openxmlformats-officedocument.spreadsheetml.sheet?><?suppdata-cloudpmc-urn urn:app:ea06/12722523/1efbca0120b6/Table3.xlsx?></media></supplementary-material></sec><ref-list><title>References</title><ref id="B1"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Afonnikova</surname><given-names>S. D.</given-names></name>
+<name name-style="western"><surname>Kiseleva</surname><given-names>A. A.</given-names></name>
+<name name-style="western"><surname>Fedyaeva</surname><given-names>A. V.</given-names></name>
+<name name-style="western"><surname>Komyshev</surname><given-names>E. G.</given-names></name>
+<name name-style="western"><surname>Koval</surname><given-names>V. S.</given-names></name>
+<name name-style="western"><surname>Afonnikov</surname><given-names>D. A.</given-names></name>
+<etal/>
+</person-group>. (<year>2024</year>). 
+<article-title>Identification of novel loci precisely modulating pre-harvest sprouting resistance and red color components of the seed coat in T. aestivum L</article-title>. <source>Plants (Basel)</source>
+<volume>13</volume>, <elocation-id>1309</elocation-id>. doi: <pub-id pub-id-type="doi">10.3390/plants13101309</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">38794380</pub-id>
+<pub-id pub-id-type="pmcid">PMC11126043</pub-id></mixed-citation></ref><ref id="B2"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Akashi</surname><given-names>K.</given-names></name>
+<name name-style="western"><surname>Miyake</surname><given-names>C.</given-names></name>
+<name name-style="western"><surname>Yokota</surname><given-names>A.</given-names></name>
+</person-group> (<year>2001</year>). 
+<article-title>Citrulline, a novel compatible solute in drought-tolerant wild watermelon leaves, is an efficient hydroxyl radical scavenger</article-title>. <source>FEBS Lett.</source>
+<volume>508</volume>, <fpage>438</fpage>–<lpage>442</lpage>. doi: <pub-id pub-id-type="doi">10.1016/S0014-5793(01)03123-4</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">11728468</pub-id>
+</mixed-citation></ref><ref id="B3"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Ali</surname><given-names>H. M.</given-names></name>
+<name name-style="western"><surname>El-Gizawy</surname><given-names>A. M.</given-names></name>
+<name name-style="western"><surname>El-Bassiouny</surname><given-names>R. E.</given-names></name>
+<name name-style="western"><surname>Saleh</surname><given-names>M. A.</given-names></name>
+</person-group> (<year>2015</year>). 
+<article-title>Browning inhibition mechanisms by cysteine, ascorbic acid and citric acid, and identifying PPO-catechol-cysteine reaction products</article-title>. <source>J. Food Sci. Technol.</source>
+<volume>52</volume>, <fpage>3651</fpage>–<lpage>3659</lpage>. doi: <pub-id pub-id-type="doi">10.1007/s13197-014-1437-0</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">26028748</pub-id>
+<pub-id pub-id-type="pmcid">PMC4444905</pub-id></mixed-citation></ref><ref id="B4"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Amanullah</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Saroj</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Osae</surname><given-names>B. A.</given-names></name>
+<name name-style="western"><surname>Liu</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Liu</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Gao</surname><given-names>P.</given-names></name>
+<etal/>
+</person-group>. (<year>2020</year>). 
+<article-title>Detection of putative QTL regions associated with ovary traits in melon using SNP-CAPS markers</article-title>. <source>Sci. Hortic.</source>
+<volume>270</volume>, <elocation-id>109445</elocation-id>. doi: <pub-id pub-id-type="doi">10.1016/j.scienta.2020.109445</pub-id>
+</mixed-citation></ref><ref id="B5"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Balentine</surname><given-names>D. A.</given-names></name>
+<name name-style="western"><surname>Wiseman</surname><given-names>S. A.</given-names></name>
+<name name-style="western"><surname>Bouwens</surname><given-names>L. C.</given-names></name>
+</person-group> (<year>1997</year>). 
+<article-title>The chemistry of tea flavonoids</article-title>. <source>Crit. Rev. Food Sci. Nutr.</source>
+<volume>37</volume>, <fpage>693</fpage>–<lpage>704</lpage>. doi: <pub-id pub-id-type="doi">10.1080/10408399709527797</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">9447270</pub-id>
+</mixed-citation></ref><ref id="B6"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Balkaya</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Yanmaz</surname><given-names>R.</given-names></name>
+<name name-style="western"><surname>Özbakir</surname><given-names>M.</given-names></name>
+</person-group> (<year>2009</year>). 
+<article-title>Evaluation of variation in seed characters of Turkish winter squash (Cucurbita maxima) populations</article-title>. <source>New Z. J. Crop Hortic. Sci.</source>
+<volume>37</volume>, <fpage>167</fpage>–<lpage>178</lpage>. doi: <pub-id pub-id-type="doi">10.1080/01140670909510262</pub-id>
+</mixed-citation></ref><ref id="B7"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Bang</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Kim</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Leskovar</surname><given-names>D.</given-names></name>
+<name name-style="western"><surname>King</surname><given-names>S.</given-names></name>
+</person-group> (<year>2007</year>). 
+<article-title>Development of a codominant CAPS marker for allelic selection between canary yellow and red watermelon based on SNP in lycopene β-cyclase (LCYB) gene</article-title>. <source>Mol. Breed.</source>
+<volume>20</volume>, <fpage>63</fpage>–<lpage>72</lpage>. doi: <pub-id pub-id-type="doi">10.1007/s11032-006-9076-4</pub-id>
+</mixed-citation></ref><ref id="B8"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Broman</surname><given-names>K.</given-names></name>
+<name name-style="western"><surname>Wu</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Sen</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Churchill</surname><given-names>G.</given-names></name>
+</person-group> (<year>2003</year>). 
+<article-title>R/QTL: QTL mapping in experimental crosses</article-title>. <source>Bioinf. (Oxford England)</source>
+<volume>19</volume>, <fpage>889</fpage>–<lpage>890</lpage>. doi: <pub-id pub-id-type="doi">10.1093/bioinformatics/btg112</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">12724300</pub-id>
+</mixed-citation></ref><ref id="B9"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Chang</surname><given-names>T. S.</given-names></name>
+</person-group> (<year>2009</year>). 
+<article-title>An updated review of tyrosinase inhibitors</article-title>. <source>Int. J. Mol. Sci.</source>
+<volume>10</volume>, <fpage>2440</fpage>–<lpage>2475</lpage>. doi: <pub-id pub-id-type="doi">10.3390/ijms10062440</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">19582213</pub-id>
+<pub-id pub-id-type="pmcid">PMC2705500</pub-id></mixed-citation></ref><ref id="B10"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Cheng</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Luan</surname><given-names>F.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>Gao</surname><given-names>P.</given-names></name>
+<name name-style="western"><surname>Zhu</surname><given-names>Z.</given-names></name>
+<name name-style="western"><surname>Liu</surname><given-names>S.</given-names></name>
+<etal/>
+</person-group>. (<year>2016</year>). 
+<article-title>Construction of a genetic linkage map of watermelon (<italic toggle="yes">Citrullus lanatus</italic>) using CAPS and SSR markers and QTL analysis for fruit quality traits</article-title>. <source>Sci. Hortic.</source>
+<volume>202</volume>, <fpage>25</fpage>–<lpage>31</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.scienta.2016.01.004</pub-id>
+</mixed-citation></ref><ref id="B11"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Chukwumah</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Walker</surname><given-names>L. T.</given-names></name>
+<name name-style="western"><surname>Verghese</surname><given-names>M.</given-names></name>
+</person-group> (<year>2009</year>). 
+<article-title>Peanut skin color: A biomarker for total polyphenolic content and antioxidative capacities of peanut cultivars</article-title>. <source>Int. J. Mol. Sci.</source>
+<volume>10</volume>, <fpage>4941</fpage>–<lpage>4952</lpage>. doi: <pub-id pub-id-type="doi">10.3390/ijms10114941</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">20087468</pub-id>
+<pub-id pub-id-type="pmcid">PMC2808014</pub-id></mixed-citation></ref><ref id="B12"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Dou</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Lu</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>Ali</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Zhao</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Zhang</surname><given-names>L.</given-names></name>
+<name name-style="western"><surname>He</surname><given-names>N.</given-names></name>
+<etal/>
+</person-group>. (<year>2018</year>a). 
+<article-title>Genetic mapping reveals a marker for yellow skin in watermelon (<italic toggle="yes">Citrullus lanatus</italic> L.)</article-title>. <source>PloS One</source>
+<volume>13</volume>, <fpage>e0200617</fpage>. doi: <pub-id pub-id-type="doi">10.1371/journal.pone.0200617</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">30265662</pub-id>
+<pub-id pub-id-type="pmcid">PMC6161839</pub-id></mixed-citation></ref><ref id="B13"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Dou</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Zhao</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Lu</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>He</surname><given-names>N.</given-names></name>
+<name name-style="western"><surname>Zhang</surname><given-names>L.</given-names></name>
+<name name-style="western"><surname>Ali</surname><given-names>A.</given-names></name>
+<etal/>
+</person-group>. (<year>2018</year>b). 
+<article-title>Genetic mapping reveals a candidate gene (ClFS1) for fruit shape in watermelon (<italic toggle="yes">Citrullus lanatus</italic> L.)</article-title>. <source>Theor. Appl. Genet.</source>
+<volume>131</volume>, <fpage>947</fpage>–<lpage>958</lpage>. doi: <pub-id pub-id-type="doi">10.1007/s00122-018-3050-5</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">29362832</pub-id>
+</mixed-citation></ref><ref id="B14"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Elsafy</surname><given-names>M.</given-names></name>
+<name name-style="western"><surname>Badawi</surname><given-names>W.</given-names></name>
+<name name-style="western"><surname>Ibrahim</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Hafiz Baillo</surname><given-names>E.</given-names></name>
+<name name-style="western"><surname>Bajgain</surname><given-names>P.</given-names></name>
+<name name-style="western"><surname>Abdelhalim</surname><given-names>T. S.</given-names></name>
+<etal/>
+</person-group>. (<year>2025</year>). 
+<article-title>Genome-wide association scan and candidate gene analysis for seed coat color in sesame (Sesamum indicum L.)</article-title>. <source>Front. Plant Sci.</source>
+<volume>16</volume>. doi: <pub-id pub-id-type="doi">10.3389/fpls.2025.1541656</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">39935952</pub-id>
+<pub-id pub-id-type="pmcid">PMC11810960</pub-id></mixed-citation></ref><ref id="B15"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Feng</surname><given-names>Q.</given-names></name>
+<name name-style="western"><surname>Xiao</surname><given-names>L.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Chen</surname><given-names>C.</given-names></name>
+<name name-style="western"><surname>Sun</surname><given-names>J.</given-names></name>
+<etal/>
+</person-group>. (<year>2023</year>). 
+<article-title>Genome-wide analysis of nuclear factor Y genes and functional investigation of watermelon ClNF-YB9 during seed development</article-title>. <source>Crop J.</source>
+<volume>11</volume>, <fpage>1469</fpage>–<lpage>1479</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.cj.2023.03.005</pub-id>
+</mixed-citation></ref><ref id="B16"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Guo</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Gao</surname><given-names>M.</given-names></name>
+<name name-style="western"><surname>Liu</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>Liu</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>Liu</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Gao</surname><given-names>Y.</given-names></name>
+<etal/>
+</person-group>. (<year>2021</year>). 
+<article-title>Genetic diversity and genome-wide association analysis of appearance traits of watermelon seed(in Chinese)</article-title>. <source>Genomics Appl. Biol.</source>
+<volume>40</volume>, <fpage>3674</fpage>–<lpage>3684</lpage>. doi: <pub-id pub-id-type="doi">10.13417/j.gab.040.003674</pub-id>
+</mixed-citation></ref><ref id="B17"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Guo</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Zhang</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Sun</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Salse</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Lucas</surname><given-names>W. J.</given-names></name>
+<name name-style="western"><surname>Zhang</surname><given-names>H.</given-names></name>
+<etal/>
+</person-group>. (<year>2013</year>). 
+<article-title>The draft genome of watermelon (Citrullus lanatus) and resequencing of 20 diverse accessions</article-title>. <source>Nat. Genet.</source>
+<volume>45</volume>, <fpage>51</fpage>–<lpage>58</lpage>. doi: <pub-id pub-id-type="doi">10.1038/ng.2470</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">23179023</pub-id>
+</mixed-citation></ref><ref id="B18"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Gusmini</surname><given-names>G.</given-names></name>
+<name name-style="western"><surname>Wehner</surname><given-names>T. C.</given-names></name>
+</person-group> (<year>2006</year>). 
+<article-title>Qualitative inheritance of rind pattern and flesh color in watermelon</article-title>. <source>J. Hered.</source>
+<volume>97</volume>, <fpage>177</fpage>–<lpage>185</lpage>. doi: <pub-id pub-id-type="doi">10.1093/jhered/esj023</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">16489140</pub-id>
+</mixed-citation></ref><ref id="B19"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Hashizume</surname><given-names>T.</given-names></name>
+<name name-style="western"><surname>Shimamoto</surname><given-names>I.</given-names></name>
+<name name-style="western"><surname>Hirai</surname><given-names>M.</given-names></name>
+</person-group> (<year>2003</year>). 
+<article-title>Construction of a linkage map and QTL analysis of horticultural traits for watermelon [Citrullus lanatus (THUNB.) MATSUM &amp; NAKAI] using RAPD, RFLP and ISSR markers</article-title>. <source>Theor. Appl. Genet.</source>
+<volume>106</volume>, <fpage>779</fpage>–<lpage>785</lpage>. doi: <pub-id pub-id-type="doi">10.1007/s00122-002-1030-1</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">12647050</pub-id>
+</mixed-citation></ref><ref id="B20"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Kampatsikas</surname><given-names>I.</given-names></name>
+<name name-style="western"><surname>Bijelic</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Pretzler</surname><given-names>M.</given-names></name>
+<name name-style="western"><surname>Rompel</surname><given-names>A.</given-names></name>
+</person-group> (<year>2017</year>). 
+<article-title>Three recombinantly expressed apple tyrosinases suggest the amino acids responsible for mono- versus diphenolase activity in plant polyphenol oxidases</article-title>. <source>Sci. Rep.</source>
+<volume>7</volume>, <fpage>8860</fpage>. doi: <pub-id pub-id-type="doi">10.1038/s41598-017-08097-5</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">28821733</pub-id>
+<pub-id pub-id-type="pmcid">PMC5562730</pub-id></mixed-citation></ref><ref id="B21"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Kaňovská</surname><given-names>I.</given-names></name>
+<name name-style="western"><surname>Biová</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Slivková</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Bilyeu</surname><given-names>K.</given-names></name>
+<name name-style="western"><surname>Škrabišová</surname><given-names>M.</given-names></name>
+</person-group> (<year>2024</year>). 
+<article-title>Identifying rare alleles affecting seed coat and hilum color in soybean (Glycine max) using applied genomics</article-title>. <source>Legume Sci.</source>
+<volume>6</volume>, <fpage>e70019</fpage>. doi: <pub-id pub-id-type="doi">10.1002/leg3.70019</pub-id>
+</mixed-citation></ref><ref id="B22"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Katuuramu</surname><given-names>D. N.</given-names></name>
+<name name-style="western"><surname>Levi</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Wechter</surname><given-names>W. P.</given-names></name>
+</person-group> (<year>2023</year>a). 
+<article-title>Genetic control of flowering time and fruit yield in citron watermelon</article-title>. <source>Front. Plant Sci.</source>
+<volume>14</volume>. doi: <pub-id pub-id-type="doi">10.3389/fpls.2023.1236576</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">37881618</pub-id>
+<pub-id pub-id-type="pmcid">PMC10595160</pub-id></mixed-citation></ref><ref id="B23"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Katuuramu</surname><given-names>D. N.</given-names></name>
+<name name-style="western"><surname>Levi</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Wechter</surname><given-names>W. P.</given-names></name>
+</person-group> (<year>2023</year>b). 
+<article-title>Genome-wide association study of soluble solids content, flesh color, and fruit shape in citron watermelon</article-title>. <source>Plant Genome</source>
+<volume>16</volume>, <fpage>e20391</fpage>. doi: <pub-id pub-id-type="doi">10.1002/tpg2.20391</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">37718629</pub-id>
+<pub-id pub-id-type="pmcid">PMC12807390</pub-id></mixed-citation></ref><ref id="B24"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Kim</surname><given-names>K. H.</given-names></name>
+<name name-style="western"><surname>Hwang</surname><given-names>J. H.</given-names></name>
+<name name-style="western"><surname>Han</surname><given-names>D. Y.</given-names></name>
+<name name-style="western"><surname>Park</surname><given-names>M.</given-names></name>
+<name name-style="western"><surname>Kim</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Choi</surname><given-names>D.</given-names></name>
+<etal/>
+</person-group>. (<year>2015</year>). 
+<article-title>Major Quantitative Trait Loci and Putative Candidate Genes for Powdery Mildew Resistance and Fruit-Related Traits Revealed by an Intraspecific Genetic Map for Watermelon (<italic toggle="yes">Citrullus lanatus</italic> var. <italic toggle="yes">lanatus</italic>)</article-title>. <source>PloS One</source>
+<volume>10</volume>, <fpage>e0145665</fpage>. doi: <pub-id pub-id-type="doi">10.1371/journal.pone.0145665</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">26700647</pub-id>
+<pub-id pub-id-type="pmcid">PMC4689417</pub-id></mixed-citation></ref><ref id="B25"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Kong</surname><given-names>Q.</given-names></name>
+<name name-style="western"><surname>Yuan</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Gao</surname><given-names>L.</given-names></name>
+<name name-style="western"><surname>Zhao</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Jiang</surname><given-names>W.</given-names></name>
+<name name-style="western"><surname>Huang</surname><given-names>Y.</given-names></name>
+<etal/>
+</person-group>. (<year>2014</year>). 
+<article-title>Identification of suitab le reference genes for gene expression normalization in qRT-PCR analysis in watermelon</article-title>. <source>PloS One</source>
+<volume>9</volume>, <fpage>e90612</fpage>. doi: <pub-id pub-id-type="doi">10.1371/journal.pone.0090612</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">24587403</pub-id>
+<pub-id pub-id-type="pmcid">PMC3938773</pub-id></mixed-citation></ref><ref id="B26"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Konstantopoulos</surname><given-names>A. N.</given-names></name>
+<name name-style="western"><surname>Pozoukidou</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Irakli</surname><given-names>M.</given-names></name>
+<name name-style="western"><surname>Tsialtas</surname><given-names>I. T.</given-names></name>
+</person-group> (<year>2023</year>). 
+<article-title>Testa and hilum colour associations with seed traits of a Greek field pea landrace</article-title>. <source>Plant Genet. Resources: Characterization Utilization</source>
+<volume>21</volume>, <fpage>90</fpage>–<lpage>95</lpage>. doi: <pub-id pub-id-type="doi">10.1017/S1479262123000527</pub-id>
+</mixed-citation></ref><ref id="B27"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Lambel</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Lanini</surname><given-names>B.</given-names></name>
+<name name-style="western"><surname>Vivoda</surname><given-names>E.</given-names></name>
+<name name-style="western"><surname>Fauve</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Patrick Wechter</surname><given-names>W.</given-names></name>
+<name name-style="western"><surname>Harris-Shultz</surname><given-names>K. R.</given-names></name>
+<etal/>
+</person-group>. (<year>2014</year>). 
+<article-title>A major QTL associated with Fusarium oxysporum race 1 resistance identified in genetic populations derived from closely related watermelon lines using selective genotyping and genotyping-by-sequencing for SNP discovery</article-title>. <source>Theor. Appl. Genet.</source>
+<volume>127</volume>, <fpage>2105</fpage>–<lpage>2115</lpage>. doi: <pub-id pub-id-type="doi">10.1007/s00122-014-2363-2</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">25104326</pub-id>
+</mixed-citation></ref><ref id="B28"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Li</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Durbin</surname><given-names>R.</given-names></name>
+</person-group> (<year>2009</year>). 
+<article-title>Fast and accurate short read alignment with Burrows-Wheeler transform</article-title>. <source>Bioinformatics.</source>
+<volume>25</volume>, <fpage>1754</fpage>–<lpage>1760</lpage>. doi: <pub-id pub-id-type="doi">10.1093/bioinformatics/btp324</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">19451168</pub-id>
+<pub-id pub-id-type="pmcid">PMC2705234</pub-id></mixed-citation></ref><ref id="B29"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Li</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Handsaker</surname><given-names>B.</given-names></name>
+<name name-style="western"><surname>Wysoker</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Fennell</surname><given-names>T.</given-names></name>
+<name name-style="western"><surname>Ruan</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Homer</surname><given-names>N.</given-names></name>
+<etal/>
+</person-group>. (<year>2009</year>). 
+<article-title>The sequence alignment/map format and SAMtools</article-title>. <source>Bioinformatics.</source>
+<volume>25</volume>, <fpage>2078</fpage>–<lpage>2079</lpage>. doi: <pub-id pub-id-type="doi">10.1093/bioinformatics/btp352</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">19505943</pub-id>
+<pub-id pub-id-type="pmcid">PMC2723002</pub-id></mixed-citation></ref><ref id="B30"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Li</surname><given-names>B.</given-names></name>
+<name name-style="western"><surname>Lu</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>Dou</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Aslam</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Gao</surname><given-names>L.</given-names></name>
+<name name-style="western"><surname>Zhao</surname><given-names>S.</given-names></name>
+<etal/>
+</person-group>. (<year>2018</year>a). 
+<article-title>Construction of a high-density genetic map and mapping of fruit traits in watermelon (<italic toggle="yes">Citrullus lanatus</italic> l.) based on whole-genome resequencing</article-title>. <source>Int. J. Mol. Sci.</source>
+<volume>19</volume>, <elocation-id>3268</elocation-id>. doi: <pub-id pub-id-type="doi">10.3390/ijms19103268</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">30347873</pub-id>
+<pub-id pub-id-type="pmcid">PMC6214002</pub-id></mixed-citation></ref><ref id="B31"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Li</surname><given-names>B.</given-names></name>
+<name name-style="western"><surname>Lu</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>Gebremeskel</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Zhao</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>He</surname><given-names>N.</given-names></name>
+<name name-style="western"><surname>Yuan</surname><given-names>P.</given-names></name>
+<etal/>
+</person-group>. (<year>2020</year>). 
+<article-title>Genetic mapping and discovery of the candidate gene for black seed coat color in watermelon (Citrullus lanatus)</article-title>. <source>Front. Plant Sci.</source>
+<volume>10</volume>. doi: <pub-id pub-id-type="doi">10.3389/fpls.2019.01689</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">32038674</pub-id>
+<pub-id pub-id-type="pmcid">PMC6987421</pub-id></mixed-citation></ref><ref id="B32"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Li</surname><given-names>N.</given-names></name>
+<name name-style="western"><surname>Shang</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Zhou</surname><given-names>D.</given-names></name>
+<name name-style="western"><surname>Li</surname><given-names>N.</given-names></name>
+<name name-style="western"><surname>Ma</surname><given-names>S.</given-names></name>
+</person-group> (<year>2018</year>b). 
+<article-title>Fine mapping and discovery of candidate genes for seed size in watermelon by genome survey sequencing</article-title>. <source>Sci. Rep.</source>
+<volume>8</volume>, <fpage>17843</fpage>. doi: <pub-id pub-id-type="doi">10.1038/s41598-018-36104-w</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">30552379</pub-id>
+<pub-id pub-id-type="pmcid">PMC6294751</pub-id></mixed-citation></ref><ref id="B33"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Li</surname><given-names>L.</given-names></name>
+<name name-style="western"><surname>Steffens</surname><given-names>J. C.</given-names></name>
+</person-group> (<year>2002</year>). 
+<article-title>Overexpression of polyphenol oxidase in transgenic tomato plants results in enhanced bacterial disease resistance</article-title>. <source>Planta.</source>
+<volume>215</volume>, <fpage>239</fpage>–<lpage>247</lpage>. doi: <pub-id pub-id-type="doi">10.1007/s00425-002-0750-4</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">12029473</pub-id>
+</mixed-citation></ref><ref id="B34"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Li</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Yu</surname><given-names>K.</given-names></name>
+<name name-style="western"><surname>Zhang</surname><given-names>Z.</given-names></name>
+<name name-style="western"><surname>Yu</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Wan</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>He</surname><given-names>H.</given-names></name>
+<etal/>
+</person-group>. (<year>2024</year>). 
+<article-title>Targeted mutagenesis of flavonoid biosynthesis pathway genes reveals functional divergence in seed coat colour, oil content and fatty acid composition in</article-title>. <source>Plant Biotechnol. J.</source>
+<volume>22</volume>, <fpage>445</fpage>–<lpage>459</lpage>. doi: <pub-id pub-id-type="doi">10.1111/pbi.14197</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">37856327</pub-id>
+<pub-id pub-id-type="pmcid">PMC10826991</pub-id></mixed-citation></ref><ref id="B35"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Li</surname><given-names>B.</given-names></name>
+<name name-style="western"><surname>Zhao</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Dou</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Ali</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Gebremeskel</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Gao</surname><given-names>L.</given-names></name>
+<etal/>
+</person-group>. (<year>2019</year>). 
+<article-title>Genetic mapping and development of molecular markers for a candidate gene locus controlling rind color in watermelon</article-title>. <source>Theor. Appl. Genet.</source>
+<volume>132</volume>, <fpage>2741</fpage>–<lpage>2753</lpage>. doi: <pub-id pub-id-type="doi">10.1007/s00122-019-03384-3</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">31286160</pub-id>
+</mixed-citation></ref><ref id="B36"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Liu</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Gao</surname><given-names>P.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>Davis</surname><given-names>A. R.</given-names></name>
+<name name-style="western"><surname>Baloch</surname><given-names>A. M.</given-names></name>
+<name name-style="western"><surname>Luan</surname><given-names>F.</given-names></name>
+</person-group> (<year>2014</year>). 
+<article-title>Mapping of quantitative trait loci for lycopene content and fruit traits in Citrullus lanatus</article-title>. <source>Euphytica.</source>
+<volume>202</volume>, <fpage>411</fpage>–<lpage>426</lpage>. doi: <pub-id pub-id-type="doi">10.1007/s10681-014-1308-9</pub-id>
+</mixed-citation></ref><ref id="B37"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Livak</surname><given-names>K. J.</given-names></name>
+<name name-style="western"><surname>Schmittgen</surname><given-names>T. D.</given-names></name>
+</person-group> (<year>2001</year>). 
+<article-title>Analysis of relative gene expression data using real-time quantitative PCR and the 2(-Delta Delta C(T)) Method</article-title>. <source>Methods.</source>
+<volume>25</volume>, <fpage>402</fpage>–<lpage>408</lpage>. doi: <pub-id pub-id-type="doi">10.1006/meth.2001.1262</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">11846609</pub-id>
+</mixed-citation></ref><ref id="B38"><mixed-citation publication-type="book">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Ma</surname><given-names>S.</given-names></name>
+</person-group> (<year>2005</year>). <source>The description specifications and data standards of watermelon germplasm resource</source> (<publisher-loc>Beijing</publisher-loc>: 
+<publisher-name>China Agricultural Publishing House</publisher-name>).
+</mixed-citation></ref><ref id="B39"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Maragal</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Rao</surname><given-names>E. S.</given-names></name>
+<name name-style="western"><surname>Reddy</surname><given-names>D. C. L.</given-names></name>
+</person-group> (<year>2022</year>). 
+<article-title>Genetic mapping of loci determining seed coat color and size in watermelon</article-title>. <source>Euphytica</source>
+<volume>218</volume>, <fpage>152</fpage>. doi: <pub-id pub-id-type="doi">10.1007/s10681-022-03106-9</pub-id>
+</mixed-citation></ref><ref id="B40"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Mayer</surname><given-names>A. M.</given-names></name>
+</person-group> (<year>2006</year>). 
+<article-title>Polyphenol oxidases in plants and fungi: going places? A review</article-title>. <source>Phytochemistry.</source>
+<volume>67</volume>, <fpage>2318</fpage>–<lpage>2331</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.phytochem.2006.08.006</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">16973188</pub-id>
+</mixed-citation></ref><ref id="B41"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Murray</surname><given-names>M. G.</given-names></name>
+<name name-style="western"><surname>Thompson</surname><given-names>W. F.</given-names></name>
+</person-group> (<year>1980</year>). 
+<article-title>Rapid isolation of high molecular weight plant DNA</article-title>. <source>Nucleic Acids Res.</source>
+<volume>8</volume>, <fpage>4321</fpage>–<lpage>4325</lpage>. doi: <pub-id pub-id-type="doi">10.1093/nar/8.19.4321</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">7433111</pub-id>
+<pub-id pub-id-type="pmcid">PMC324241</pub-id></mixed-citation></ref><ref id="B42"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Nakamaru</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Kato</surname><given-names>K.</given-names></name>
+<name name-style="western"><surname>Ikenaga</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Nakamura</surname><given-names>T.</given-names></name>
+<name name-style="western"><surname>Hatakeyama</surname><given-names>K.</given-names></name>
+</person-group> (<year>2025</year>). 
+<article-title>Development and validation of a new co-dominant DNA marker for selecting the null allele of polyphenol oxidase gene Ppo-D1 in common wheat (Triticum aestivum L.)</article-title>. <source>Breed. Science.</source>
+<volume>499</volume>, <fpage>107</fpage>–<lpage>111</lpage>. doi: <pub-id pub-id-type="doi">10.1270/jsbbs.24071</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">40896501</pub-id>
+<pub-id pub-id-type="pmcid">PMC12395200</pub-id></mixed-citation></ref><ref id="B43"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Nakayamaa</surname><given-names>T.</given-names></name>
+<name name-style="western"><surname>Satoa</surname><given-names>T.</given-names></name>
+<name name-style="western"><surname>Fukuib</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Yonekura-Sakakibarab</surname><given-names>K.</given-names></name>
+<name name-style="western"><surname>Hayashic</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Tanakab</surname><given-names>Y.</given-names></name>
+<etal/>
+</person-group>. (<year>2001</year>). 
+<article-title>Specificity analysis and mechanism of aurone synthesis catalyzed by aureussponsible for fower coloration</article-title>. <source>FEBS Lett.</source>
+<volume>499</volume>, <fpage>107</fpage>–<lpage>111</lpage>. doi: <pub-id pub-id-type="doi">10.1016/s0014-5793(01)02529-7</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">11418122</pub-id>
+</mixed-citation></ref><ref id="B44"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Nawaz</surname><given-names>M. A.</given-names></name>
+<name name-style="western"><surname>Jiao</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Chen</surname><given-names>C.</given-names></name>
+<name name-style="western"><surname>Shireen</surname><given-names>F.</given-names></name>
+<name name-style="western"><surname>Zheng</surname><given-names>Z.</given-names></name>
+<name name-style="western"><surname>Imtiaz</surname><given-names>M.</given-names></name>
+<etal/>
+</person-group>. (<year>2018</year>). 
+<article-title>Melatonin pretreatment improves vanadium stress tolerance of watermelon seedlings by reducing vanadium concentration in the leaves and regulating melatonin biosynthesis and antioxidant-related gene expression</article-title>. <source>J. Plant Physiol.</source>
+<volume>220</volume>, <fpage>115</fpage>–<lpage>127</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.jplph.2017.11.003</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">29172132</pub-id>
+</mixed-citation></ref><ref id="B45"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Paudel</surname><given-names>L.</given-names></name>
+<name name-style="western"><surname>Clevenger</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>McGregor</surname><given-names>C.</given-names></name>
+</person-group> (<year>2019</year>). 
+<article-title>Chromosomal locations and interactions of four loci associated with seed coat color in watermelon</article-title>. <source>Front. Plant Sci.</source>
+<volume>10</volume>. doi: <pub-id pub-id-type="doi">10.3389/fpls.2019.00788</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">31293604</pub-id>
+<pub-id pub-id-type="pmcid">PMC6603093</pub-id></mixed-citation></ref><ref id="B46"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Plestenjak</surname><given-names>E.</given-names></name>
+<name name-style="western"><surname>Neji</surname><given-names>M.</given-names></name>
+<name name-style="western"><surname>Sinkovič</surname><given-names>L.</given-names></name>
+<name name-style="western"><surname>Meglič</surname><given-names>V.</given-names></name>
+<name name-style="western"><surname>Pipan</surname><given-names>B.</given-names></name>
+</person-group> (<year>2025</year>). 
+<article-title>). Genomic insights into genetic diversity and seed coat color change in common bean composite populations</article-title>. <source>Front. Plant Sci.</source>
+<volume>15</volume>. doi: <pub-id pub-id-type="doi">10.3389/fpls.2024.1523745</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">39925373</pub-id>
+<pub-id pub-id-type="pmcid">PMC11802580</pub-id></mixed-citation></ref><ref id="B47"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Poole</surname><given-names>C. F.</given-names></name>
+<name name-style="western"><surname>Grimball</surname><given-names>P. C.</given-names></name>
+<name name-style="western"><surname>Porter</surname><given-names>D. R.</given-names></name>
+</person-group> (<year>1941</year>). 
+<article-title>Inheritance of seed characters in watermelon</article-title>. <source>J. Agric. Res.</source>
+<volume>63</volume>, <fpage>24</fpage>.
+</mixed-citation></ref><ref id="B48"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Rahimi</surname><given-names>M.</given-names></name>
+<name name-style="western"><surname>Abdolinasab</surname><given-names>M.</given-names></name>
+</person-group> (<year>2022</year>). 
+<article-title>Examining the inheritance of watermelon fruit traits by hayman’s graphical approach</article-title>. <source>BioMed. Res. Int.</source>
+<volume>2022</volume>, <elocation-id>3059218</elocation-id>. doi: <pub-id pub-id-type="doi">10.1155/2022/3059218</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">35265710</pub-id>
+<pub-id pub-id-type="pmcid">PMC8898807</pub-id></mixed-citation></ref><ref id="B49"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Ren</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Di</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Gong</surname><given-names>G.</given-names></name>
+<name name-style="western"><surname>Zhang</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Guo</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Zhang</surname><given-names>J.</given-names></name>
+<etal/>
+</person-group>. (<year>2015</year>). 
+<article-title>Genetic analysis and chromosome mapping of resistance to <italic toggle="yes">Fusarium oxysporum</italic> f. sp. niveum (FON) race 1 and race 2 in watermelon (<italic toggle="yes">Citrullus lanatus</italic> L.)</article-title>. <source>Mol. Breed.</source>
+<volume>35</volume>, <fpage>183</fpage>. doi: <pub-id pub-id-type="doi">10.1007/s11032-015-0375-5</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">26347205</pub-id>
+<pub-id pub-id-type="pmcid">PMC4552779</pub-id></mixed-citation></ref><ref id="B50"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Ren</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Guo</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Zhang</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>He</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Sun</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Tian</surname><given-names>S.</given-names></name>
+<etal/>
+</person-group>. (<year>2018</year>). 
+<article-title>A tonoplast sugar transporter underlies a sugar accumulation QTL in watermelon</article-title>. <source>Plant Physiology</source>
+<volume>176</volume>, <fpage>836</fpage>–<lpage>850</lpage>. doi: <pub-id pub-id-type="doi">10.1104/pp.17.01290</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">29118248</pub-id>
+<pub-id pub-id-type="pmcid">PMC5761790</pub-id></mixed-citation></ref><ref id="B51"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Ren</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>McGregor</surname><given-names>C.</given-names></name>
+<name name-style="western"><surname>Zhang</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Gong</surname><given-names>G.</given-names></name>
+<name name-style="western"><surname>Zhang</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Guo</surname><given-names>S.</given-names></name>
+<etal/>
+</person-group>. (<year>2014</year>). 
+<article-title>An integrated genetic map based on four mapping populations and quantitative trait loci associated with economically important traits in watermelon</article-title>. <source>BMC Plant Biol.</source>
+<volume>14</volume>, <fpage>2</fpage>–<lpage>6</lpage>. doi: <pub-id pub-id-type="doi">10.1186/1471-2229-14-33</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">24387666</pub-id>
+<pub-id pub-id-type="pmcid">PMC3906910</pub-id></mixed-citation></ref><ref id="B52"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Rimando</surname><given-names>A. M.</given-names></name>
+<name name-style="western"><surname>Perkins-Veazie</surname><given-names>P. M.</given-names></name>
+</person-group> (<year>2005</year>). 
+<article-title>Determination of citrulline in watermelon rind</article-title>. <source>J. Chromatogr. A</source>
+<volume>1078</volume>, <fpage>196</fpage>–<lpage>200</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.chroma.2005.05.009</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">16007998</pub-id>
+</mixed-citation></ref><ref id="B53"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Roy</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Sreedasyam</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Osborne</surname><given-names>C.</given-names></name>
+<name name-style="western"><surname>Lee</surname><given-names>R.</given-names></name>
+<name name-style="western"><surname>McClean</surname><given-names>P. E.</given-names></name>
+</person-group> (<year>2025</year>). 
+<article-title>Seed coat transcriptomic profiling of 5-593, a genotype important for genetic studies of seed coat color and patterning in common bean (Phaseolus vulgaris L.)</article-title>. <source>BMC Plant Biol.</source>
+<volume>25</volume>, <fpage>284</fpage>. doi: <pub-id pub-id-type="doi">10.1186/s12870-025-06282-7</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">40038560</pub-id>
+<pub-id pub-id-type="pmcid">PMC11881399</pub-id></mixed-citation></ref><ref id="B54"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Sandlin</surname><given-names>K.</given-names></name>
+<name name-style="western"><surname>Prothro</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Heesacker</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Khalilian</surname><given-names>N.</given-names></name>
+<name name-style="western"><surname>Okashah</surname><given-names>R.</given-names></name>
+<name name-style="western"><surname>Xiang</surname><given-names>W.</given-names></name>
+<etal/>
+</person-group>. (<year>2012</year>). 
+<article-title>Comparative mapping in watermelon [Citrullus lanatus (Thunb.) Matsum. et Nakai</article-title>. <source>Theor. Appl. Genet.</source>
+<volume>125</volume>, <fpage>1603</fpage>–<lpage>1618</lpage>. doi: <pub-id pub-id-type="doi">10.1007/s00122-012-1938-z</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">22875176</pub-id>
+</mixed-citation></ref><ref id="B55"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Schmitz</surname><given-names>G. E.</given-names></name>
+<name name-style="western"><surname>Sullivan</surname><given-names>M. L.</given-names></name>
+<name name-style="western"><surname>Hatfiel</surname><given-names>R. D.</given-names></name>
+</person-group> (<year>2008</year>). 
+<article-title>Three polyphenol oxidases from red clover (<italic toggle="yes">Trifolium pratense</italic>) differ in enzymatic activities and activation properties</article-title>. <source>J. Agric. Food Chem.</source>
+<volume>56</volume>, <fpage>272</fpage>–<lpage>280</lpage>. doi: <pub-id pub-id-type="doi">10.1021/jf072488u</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">18069787</pub-id>
+</mixed-citation></ref><ref id="B56"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Shang</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Kong</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Li</surname><given-names>N.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Zhou</surname><given-names>D.</given-names></name>
+<name name-style="western"><surname>Li</surname><given-names>N.</given-names></name>
+<etal/>
+</person-group>. (<year>2020</year>). 
+<article-title>Genetic mapping and localization of major QTL for bitterness in melon (<italic toggle="yes">Cucumis melo</italic> L.)</article-title>. <source>Sci. Hortic.</source>
+<volume>266</volume>, <elocation-id>109286</elocation-id>. doi: <pub-id pub-id-type="doi">10.1016/j.scienta.2020.109286</pub-id>
+</mixed-citation></ref><ref id="B57"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Shang</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Li</surname><given-names>N.</given-names></name>
+<name name-style="western"><surname>Li</surname><given-names>N.</given-names></name>
+<name name-style="western"><surname>Xu</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Ma</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>J.</given-names></name>
+</person-group> (<year>2016</year>). 
+<article-title>Construction of a high-density genetic map for watermelon (<italic toggle="yes">Citrullus lanatus</italic> L.) based on large-scale SNP discovery by specific length amplified fragment sequencing (SLAF-seq)</article-title>. <source>Sci. Hortic.</source>
+<volume>203</volume>, <fpage>38</fpage>–<lpage>46</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.scienta.2016.03.007</pub-id>
+</mixed-citation></ref><ref id="B58"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Sheng</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Pan</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Li</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Yang</surname><given-names>L.</given-names></name>
+<name name-style="western"><surname>Weng</surname><given-names>Y.</given-names></name>
+</person-group> (<year>2020</year>). 
+<article-title>Quantitative trait loci for fruit size and flowering time-related traits under domestication and diversifying selection in cucumber (Cucumis sativus)</article-title>. <source>Plant Breed.</source>
+<volume>139</volume>, <fpage>176</fpage>–<lpage>191</lpage>. doi: <pub-id pub-id-type="doi">10.1111/pbr.12754</pub-id>
+</mixed-citation></ref><ref id="B59"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Shi</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Huang</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Zhan</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Yu</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>Hua</surname><given-names>W.</given-names></name>
+<etal/>
+</person-group>. (<year>2014</year>). 
+<article-title>Genome-wide microsatellite characterization and marker development in the sequenced Brassica crop species</article-title>. <source>DNA Res.</source>
+<volume>21</volume>, <fpage>53</fpage>–<lpage>68</lpage>. doi: <pub-id pub-id-type="doi">10.1093/dnares/dst040</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">24130371</pub-id>
+<pub-id pub-id-type="pmcid">PMC3925394</pub-id></mixed-citation></ref><ref id="B60"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Shi</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Zhang</surname><given-names>M.</given-names></name>
+<name name-style="western"><surname>Shu</surname><given-names>Q.</given-names></name>
+<name name-style="western"><surname>Ma</surname><given-names>W.</given-names></name>
+<name name-style="western"><surname>Sun</surname><given-names>T.</given-names></name>
+<name name-style="western"><surname>Xiang</surname><given-names>C.</given-names></name>
+<etal/>
+</person-group>. (<year>2021</year>). 
+<article-title>Genetic mapping and identification of the candidate gene for white seed coat in cucurbita maxima</article-title>. <source>Int. J. Mol. Sci.</source>
+<volume>22</volume>, <elocation-id>2972</elocation-id>. doi: <pub-id pub-id-type="doi">10.3390/ijms22062972</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">33804065</pub-id>
+<pub-id pub-id-type="pmcid">PMC8000038</pub-id></mixed-citation></ref><ref id="B61"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Taranto</surname><given-names>F.</given-names></name>
+<name name-style="western"><surname>Pasqualone</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Mangini</surname><given-names>G.</given-names></name>
+<name name-style="western"><surname>Tripodi</surname><given-names>P.</given-names></name>
+<name name-style="western"><surname>Miazzi</surname><given-names>M. M.</given-names></name>
+<name name-style="western"><surname>Pavan</surname><given-names>S.</given-names></name>
+<etal/>
+</person-group>. (<year>2017</year>). 
+<article-title>Polyphenol oxidases in crops: biochemical, physiological and genetic aspects</article-title>. <source>Int. J. Mol. Sci.</source>
+<volume>18</volume>, <elocation-id>377</elocation-id>. doi: <pub-id pub-id-type="doi">10.3390/ijms18020377</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">28208645</pub-id>
+<pub-id pub-id-type="pmcid">PMC5343912</pub-id></mixed-citation></ref><ref id="B62"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Wang</surname><given-names>L.</given-names></name>
+<name name-style="western"><surname>Li</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>L.</given-names></name>
+<name name-style="western"><surname>Xue</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Wu</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Yin</surname><given-names>H.</given-names></name>
+<etal/>
+</person-group>. (<year>2017</year>b). 
+<article-title>Construction of a high-density genetic linkage map in pear (<italic toggle="yes">Pyrus communis</italic>×<italic toggle="yes">Pyrus pyrifolia nakai</italic>) using SSRs and SNPs developed by SLAF-seq</article-title>. <source>Sci. Hortic.</source>
+<volume>218</volume>, <fpage>198</fpage>–<lpage>204</lpage>. doi: <pub-id pub-id-type="doi">10.1016/j.scienta.2017.02.015</pub-id>
+</mixed-citation></ref><ref id="B63"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Wang</surname><given-names>F.</given-names></name>
+<name name-style="western"><surname>Li</surname><given-names>Z.</given-names></name>
+<name name-style="western"><surname>Wu</surname><given-names>Q.</given-names></name>
+<name name-style="western"><surname>Guo</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Luo</surname><given-names>H.</given-names></name>
+<etal/>
+</person-group>. (<year>2024</year>). 
+<article-title>Floral response to heat: A study of color and biochemical adaptations in purple chrysanthemums</article-title>. <source>Plants (Basel)</source>
+<volume>13</volume>, <elocation-id>1865</elocation-id>. doi: <pub-id pub-id-type="doi">10.3390/plants13131865</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">38999704</pub-id>
+<pub-id pub-id-type="pmcid">PMC11243879</pub-id></mixed-citation></ref><ref id="B64"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Wang</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>Z.</given-names></name>
+<name name-style="western"><surname>Du</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>Yang</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Han</surname><given-names>F.</given-names></name>
+<name name-style="western"><surname>Han</surname><given-names>Y.</given-names></name>
+<etal/>
+</person-group>. (<year>2017</year>a). 
+<article-title>A high-density genetic map and QTL analysis of agronomic traits in foxtail millet [<italic toggle="yes">Setaria italica</italic> (L.) P. Beauv.] using RAD-seq</article-title>. <source>PloS One</source>
+<volume>12</volume>, <fpage>e0179717</fpage>. doi: <pub-id pub-id-type="doi">10.1371/journal.pone.0179717</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">28644843</pub-id>
+<pub-id pub-id-type="pmcid">PMC5482450</pub-id></mixed-citation></ref><ref id="B65"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Webb</surname><given-names>K. J.</given-names></name>
+<name name-style="western"><surname>Cookson</surname><given-names>A.</given-names></name>
+<name name-style="western"><surname>Allison</surname><given-names>G.</given-names></name>
+<name name-style="western"><surname>Sullivan</surname><given-names>M. L.</given-names></name>
+<name name-style="western"><surname>Winters</surname><given-names>A. L.</given-names></name>
+</person-group> (<year>2014</year>). 
+<article-title>Polyphenol oxidase affects normal nodule development in red clover (<italic toggle="yes">Trifolium pratense</italic> L.)</article-title>. <source>Front. Plant Sci.</source>
+<volume>5</volume>. doi: <pub-id pub-id-type="doi">10.3389/fpls.2014.00700</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">25566275</pub-id>
+<pub-id pub-id-type="pmcid">PMC4269121</pub-id></mixed-citation></ref><ref id="B66"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Wei</surname><given-names>C.</given-names></name>
+<name name-style="western"><surname>Chen</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>Z.</given-names></name>
+<name name-style="western"><surname>Liu</surname><given-names>Q.</given-names></name>
+<name name-style="western"><surname>Li</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Zhang</surname><given-names>Y.</given-names></name>
+<etal/>
+</person-group>. (<year>2017</year>). 
+<article-title>Genetic mapping of the LOBED LEAF 1 (ClLL1) gene to a 127.6-kb region in watermelon (<italic toggle="yes">Citrullus lanatus</italic> L.)</article-title>. <source>PloS One</source>
+<volume>12</volume>, <fpage>e0180741</fpage>. doi: <pub-id pub-id-type="doi">10.1371/journal.pone.0180741</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">28704497</pub-id>
+<pub-id pub-id-type="pmcid">PMC5509165</pub-id></mixed-citation></ref><ref id="B67"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Wu</surname><given-names>G.</given-names></name>
+<name name-style="western"><surname>Collins</surname><given-names>J. K.</given-names></name>
+<name name-style="western"><surname>Perkins-Veazie</surname><given-names>P.</given-names></name>
+<name name-style="western"><surname>Siddiq</surname><given-names>M.</given-names></name>
+<name name-style="western"><surname>Dolan</surname><given-names>K. D.</given-names></name>
+<name name-style="western"><surname>Kelly</surname><given-names>K. A.</given-names></name>
+<etal/>
+</person-group>. (<year>2007</year>). 
+<article-title>Dietary supplementation with watermelon pomace juice enhances arginine availability and ameliorates the metabolic syndrome in zucker diabetic fatty rats</article-title>. <source>J. Nutr.</source>
+<volume>137</volume>, <fpage>2680</fpage>–<lpage>2685</lpage>. doi: <pub-id pub-id-type="doi">10.1093/jn/137.12.2680</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">18029483</pub-id>
+</mixed-citation></ref><ref id="B68"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Yang</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Zhao</surname><given-names>T.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>F.</given-names></name>
+<name name-style="western"><surname>Liu</surname><given-names>L.</given-names></name>
+<name name-style="western"><surname>Liu</surname><given-names>B.</given-names></name>
+<name name-style="western"><surname>Zhang</surname><given-names>K.</given-names></name>
+<etal/>
+</person-group>. (<year>2023</year>). 
+<article-title>Identification of candidate genes for soybean seed coat-related traits using QTL mapping and GWAS</article-title>. <source>Front. Plant Sci.</source>
+<volume>14</volume>. doi: <pub-id pub-id-type="doi">10.3389/fpls.2023.1190503</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">37384360</pub-id>
+<pub-id pub-id-type="pmcid">PMC10293793</pub-id></mixed-citation></ref><ref id="B69"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zhai</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Liu</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Xia</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>Li</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Cao</surname><given-names>X.</given-names></name>
+<name name-style="western"><surname>He</surname><given-names>Z.</given-names></name>
+<etal/>
+</person-group>. (<year>2023</year>). 
+<article-title>Functional analysis of polyphenol oxidase 1 gene in common wheat</article-title>. <source>Front. Plant Sci.</source>
+<volume>14</volume>. doi: <pub-id pub-id-type="doi">10.3389/fpls.2023.1171839</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">37583591</pub-id>
+<pub-id pub-id-type="pmcid">PMC10424926</pub-id></mixed-citation></ref><ref id="B70"><mixed-citation publication-type="book">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zhang</surname><given-names>X.</given-names></name>
+</person-group> (<year>2019</year>). <source><italic toggle="yes">Fine mapping of hilum spot</italic> in watermelon based on genomic sequencing information</source>. Ed. 
+<person-group person-group-type="editor">
+<name name-style="western"><surname>Chen</surname><given-names>J.</given-names></name>
+</person-group> (
+<publisher-name>Zhengzhou University</publisher-name>). Available online at: <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://kns.cnki.net">https://kns.cnki.net</uri>.
+</mixed-citation></ref><ref id="B71"><mixed-citation publication-type="book">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zhang</surname><given-names>M.</given-names></name>
+</person-group> (<year>2021</year>). <source>Myb73 negatively regulates both peel color development and flesh browning in apple. Ph.D dissertation</source> (<publisher-loc>Ithaca</publisher-loc>: 
+<publisher-name>Cornell University</publisher-name>).
+</mixed-citation></ref><ref id="B72"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zhang</surname><given-names>T.</given-names></name>
+<name name-style="western"><surname>Ding</surname><given-names>Z.</given-names></name>
+<name name-style="western"><surname>Liu</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Qiu</surname><given-names>B.</given-names></name>
+<name name-style="western"><surname>Gao</surname><given-names>P.</given-names></name>
+</person-group> (<year>2020</year>). 
+<article-title>QTL mapping of pericarp and fruit-related traits in melon (Cucumis melo L.) using SNP-derived CAPS markers</article-title>. <source>Sci. Hortic.</source>
+<volume>265</volume>, <elocation-id>109243</elocation-id>. doi: <pub-id pub-id-type="doi">10.1016/j.scienta.2020.109243</pub-id>
+</mixed-citation></ref><ref id="B73"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zhao</surname><given-names>Y.</given-names></name>
+<name name-style="western"><surname>Ma</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Li</surname><given-names>M.</given-names></name>
+<name name-style="western"><surname>Deng</surname><given-names>L.</given-names></name>
+<name name-style="western"><surname>Li</surname><given-names>G.</given-names></name>
+<name name-style="western"><surname>Xia</surname><given-names>H.</given-names></name>
+<etal/>
+</person-group>. (<year>2020</year>). 
+<article-title>Whole-genome resequencing-based QTL-seq identified AhTc1 gene encoding a R2R3-MYB transcription factor controlling peanut purple testa colour</article-title>. <source>Plant Biotechnol. J.</source>
+<volume>18</volume>, <fpage>96</fpage>–<lpage>105</lpage>. doi: <pub-id pub-id-type="doi">10.1111/pbi.13175</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">31131506</pub-id>
+<pub-id pub-id-type="pmcid">PMC6920131</pub-id></mixed-citation></ref><ref id="B74"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zhong</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Cheng</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Cui</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Hu</surname><given-names>F.</given-names></name>
+<name name-style="western"><surname>Dong</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Liu</surname><given-names>J.</given-names></name>
+<etal/>
+</person-group>. (<year>2022</year>). 
+<article-title>MC03g0810, an important candidate gene controlling black seed coat color in bitter gourd (Momordica spp.)</article-title>. <source>Front. Plant Sci.</source>
+<volume>13</volume>. doi: <pub-id pub-id-type="doi">10.3389/fpls.2022.875631</pub-id>, PMID: 
+<pub-id pub-id-type="pmid">35574132</pub-id>
+<pub-id pub-id-type="pmcid">PMC9094142</pub-id></mixed-citation></ref><ref id="B75"><mixed-citation publication-type="book">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zhou</surname><given-names>Q.</given-names></name>
+</person-group> (<year>2013</year>). <source>Genetic analisis of main agromic traits and gene location of seed coat color in Luffa app</source> (
+<publisher-name>Jiangxi Agricultural University</publisher-name>). Available online at: <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://kns.cnki.net">https://kns.cnki.net</uri>.
+</mixed-citation></ref><ref id="B76"><mixed-citation publication-type="journal">
+<person-group person-group-type="author">
+<name name-style="western"><surname>Zhou</surname><given-names>M.</given-names></name>
+<name name-style="western"><surname>Wang</surname><given-names>J.</given-names></name>
+<name name-style="western"><surname>Chen</surname><given-names>H.</given-names></name>
+<name name-style="western"><surname>Jia</surname><given-names>Q.</given-names></name>
+<name name-style="western"><surname>Hu</surname><given-names>S.</given-names></name>
+<name name-style="western"><surname>Xiong</surname><given-names>Y.</given-names></name>
+<etal/>
+</person-group>. (<year>2024</year>). 
+<article-title>Genome-wide association study on candidate genes associated with soybean stem pubescence and hilum colors</article-title>. <source>Agronomy</source>
+<volume>14</volume>, <elocation-id>512</elocation-id>. doi: <pub-id pub-id-type="doi">10.3390/agronomy14030512</pub-id>
+</mixed-citation></ref></ref-list></back></article>

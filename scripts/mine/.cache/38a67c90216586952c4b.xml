@@ -1,0 +1,1417 @@
+
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN" "JATS-archivearticle1-4-mathml3.dtd">
+<article xml:lang="en" article-type="research-article" dtd-version="1.4"><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Vavilovskii Zhurnal Genet Selektsii</journal-id><journal-id journal-id-type="iso-abbrev">Vavilovskii Zhurnal Genet Selektsii</journal-id><journal-id journal-id-type="pmc-domain-id">3805</journal-id><journal-id journal-id-type="pmc-domain">vavilovjgb</journal-id><journal-id journal-id-type="nlm-id">101583566</journal-id><journal-title-group><journal-title>Vavilov Journal of Genetics and Breeding</journal-title></journal-title-group><issn pub-type="ppub">2500-0462</issn><issn pub-type="epub">2500-3259</issn><?publisher_abbrev igbsbras?><publisher><publisher-name>Institute of Cytology and Genetics, Siberian Branch of the Russian Academy of Science</publisher-name></publisher><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://vavilov.elpub.ru/jour/index">
+Website: Vavilov Journal of Genetics and Breeding
+</self-uri></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC11393651</article-id><article-id pub-id-type="pmcid-ver">PMC11393651.1</article-id><article-id pub-id-type="pmcaid">11393651</article-id><article-id pub-id-type="pmcaiid">11393651</article-id><article-id pub-id-type="pmid">39280845</article-id><article-id pub-id-type="doi">10.18699/vjgb-24-60</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="heading"><subject>Review</subject></subj-group></article-categories><title-group><article-title>Exploitation of the genetic potential
+of Thinopyrum and Agropyron genera to protect wheat
+from diseases and environmental stresses</article-title><trans-title-group xml:lang="ru"><trans-title>Использование генетического потенциала
+родов Thinopyrum и Agropyron для защиты пшеницы
+от болезней и абиотических стрессов</trans-title></trans-title-group></title-group><contrib-group><contrib contrib-type="author"><name name-style="western"><surname>Plotnikova</surname><given-names initials="LY">L.Ya.</given-names></name><aff>
+<institution>Omsk State Agrarian University named after P.A. Stolypin, Omsk, Russia</institution>
+</aff></contrib><contrib contrib-type="author"><name name-style="western"><surname>Knaub</surname><given-names initials="VV">V.V.</given-names></name><aff>
+<institution>Omsk State Agrarian University named after P.A. Stolypin, Omsk, Russia</institution>
+</aff></contrib></contrib-group><author-notes><fn><p>Correspondence to: L.Ya. Plotnikova
+<email>lya.plotnikova@omgau.org</email></p></fn></author-notes><pub-date pub-type="ppub"><month>9</month><year>2024</year></pub-date><volume>28</volume><issue>5</issue><issue-id pub-id-type="pmc-issue-id">470688</issue-id><fpage>536</fpage><lpage>553</lpage><history><date date-type="received"><day>14</day><month>2</month><year>2024</year></date><date date-type="rev-recd"><day>22</day><month>3</month><year>2024</year></date><date date-type="accepted"><day>26</day><month>3</month><year>2024</year></date></history><pub-history><event event-type="pmc-release"><date><day>01</day><month>09</month><year>2024</year></date></event><event event-type="pmc-live"><date><day>14</day><month>09</month><year>2024</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2025-09-28 15:25:44.047"><day>28</day><month>09</month><year>2025</year></date></event></pub-history><permissions><copyright-statement>Copyright © AUTHORS</copyright-statement><copyright-year>2024</copyright-year><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/2.5/</ali:license_ref><license-p>This work is licensed under a Creative Commons Attribution 4.0 License</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="VJGB-28-2460.pdf"><?pdf-name VJGB-28-2460.pdf?><?pdf-size 778925?><?pdf-md5 9008596ac72488a2fd3c52c04c58e1b2?><?pdf-image-server-status NEVER_LOAD?><?pdf-cloudpmc-urn urn:app:b29a/11393651/9008596ac724/VJGB-28-2460.pdf?></self-uri><abstract><p>Common wheat is one of the most important food crops in the world. Grain harvests can be increased by reducing losses from diseases and environmental stresses. The tertiary gene pool, including Thinopyrum spp., is a valuable resource for increasing genetic diversity and wheat resistance to fungal diseases and abiotic stresses. Distant hybridization between wheat and Thinopyrum spp. began in the 1920s in Russia, and later continued in different countries. The main results were obtained using the species Th. ponticum and Th. intermedium. Additionally, introgression material was created based on Th. elongatum, Th. bessarabicum, Th. junceiforme, Agropyron cristatum. The results of introgression for resistance to diseases (leaf, stem, and stripe rusts; powdery mildew; Fusarium head blight; and Septoria blotch) and abiotic stresses (drought, extreme temperatures, and salinity) to wheat was reviewed. Approaches to
+improving the agronomic properties of introgression breeding material (the use of irradiation, ph-mutants and compensating Robertsonian translocations) were described. The experience of long-term use in the world of a number of genes from the tertiary gene pool in protecting wheat from leaf and stem rust was observed. Th. ponticum is a nonhost for Puccinia triticina (Ptr) and P. graminis f. sp. tritici (Pgt) and suppresses the development of rust fungi on the plant surface. Wheat samples with the tall wheatgrass genes Lr19, Lr38, Sr24, Sr25 and Sr26 showed defence mechanisms similar to nonhosts resistance. Their influence led to disruption of the development of surface infection structures and fungal death when trying to penetrate the stomata (prehaustorial resistance or stomatal immunity). Obviously, a change in the chemical properties of fungal surface structures of races virulent to Lr19, Lr24, Sr24, Sr25, and Sr26 leads to a decrease in their adaptability to the environment. This possibly determined the durable resistance of cultivars to leaf and stem rusts in different regions. Alien genes with a similar effect are of interest for breeding cultivars with durable resistance to rust diseases and engineering crops with the help of molecular technologies.</p></abstract><trans-abstract xml:lang="ru"><p>Мягкая пшеница – одна из важнейших продовольственных культур в мире. Сборы ее зерна можно увеличить, сократив потери от болезней и стрессов окружающей среды. Третичный генофонд, включая виды рода Thinopyrum, является ценным ресурсом для увеличения генетического разнообразия и повышения устойчивости пшеницы к грибным заболеваниям и абиотическим стрессам. Отдаленная гибридизация между пшеницей и Thinopyrum spp. была начата в 1920-х гг. в России и позднее продолжена в разных странах. Основные результаты получены с использованием видов Th. ponticum и Th. intermedium. Дополнительно был создан интрогрессивный материал на основе видов Th. elongatum, Th. bessarabicum, Th. junceiforme, Agropyron cristatum. В статье приведен обзор результатов применения генетического материала видов рода Thinopyrum для повышения устойчивости пшеницы к болезням (бурой, стеблевой и желтой ржавчине, мучнистой росе, фузариозу
+колоса и септориозным пятнистостям) и абиотическим стрессам (засухе, экстремальным температурам и засолению). Описаны подходы к улучшению агрономических свойств интрогрессивного селекционного материала
+(применение радиации, ph-мутантов и компенсирующих робертсоновских транслокаций). Проанализирован
+опыт длительной защиты пшеницы от листовой и стеблевой ржавчины в мире с помощью ряда генов третичного генофонда. Вид Th. ponticum является нехозяином для Puccinia triticina (Ptr) и P. graminis f. sp. tritici
+(Pgt) и
+подавляет
+развитие ржавчинных грибов на поверхности растений. Образцы пшеницы с пырейными генами
+Lr19, Lr38, Sr24, Sr25 и Sr26 проявляют защитные механизмы, сходные с механизмами нехозяев, что приводит
+к нарушению развития поверхностных инфекционных структур и гибели грибов при попытке внедрения
+в устьица (прегаусториальная устойчивость или устьичный иммунитет). Очевидно, изменение химических
+свойств поверхностных структур рас, вирулентных к Lr19, Lr24, Sr24, Sr25 и Sr26, приводит к снижению их приспособленности к среде, что влияет на длительность устойчивости сортов к ржавчинным болезням. Чужеродные гены с аналогичным эффектом представляют интерес для селекции сортов с длительной устойчивостью к
+ржавчинным заболеваниям, а также конструирования культуры с помощью молекулярных технологий.</p></trans-abstract><kwd-group><kwd>wheat breeding</kwd><kwd>tertiary gene pool</kwd><kwd>Thinopyrum</kwd><kwd>Agropyron</kwd><kwd>introgression</kwd><kwd>resistance for disease and abiotic stresses</kwd><kwd> nonhost resistance</kwd><kwd>durable resistance</kwd></kwd-group><kwd-group xml:lang="ru"><kwd>селекция пшеницы</kwd><kwd>третичный генофонд</kwd><kwd>Thinopyrum</kwd><kwd>Agropyron</kwd><kwd>интрогрессия</kwd><kwd>устойчивостьк болезням и абиотическим стрессам</kwd><kwd>устойчивость нехозяев</kwd><kwd>длительная устойчивость</kwd></kwd-group><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec><title>Introduction</title><p>Cultivated wheat species, Triticum aestivum L. and T. durum
+Desf., are among the most important crops for world
+nutrition. It is assumed that the world’s population will
+exceed 9.7 billion people by 2050. To provide nutrition for
+such a population, it is necessary to increase grain production
+to 900 million metric tons (Baker et al., 2020; Kumar
+et al., 2022). Common wheat has high plasticity, allowing it
+to be cultivated in most agricultural zones of the world. In
+this regard, wheat grain production has the most significant
+impact on global food security compared to other cereals
+(Kuzmanović et al., 2020; Kumar et al., 2022).</p><p>During centuries-old wheat breeding, most attention was
+paid to increasing yield and grain quality. As a result, a significant
+proportion of the genes determining adaptive capabilities
+to abiotic and biotic stresses was lost. Stressful environmental
+conditions and diseases lead to regular and significant losses
+of grain yield that can reach up to 20–40 % (Curtis, Halford,
+2014). An increase in grain yield can be achieved by expanding
+the crop acreage, increasing the potential productivity by
+photosynthetic activity, and by reducing losses from abiotic
+and biotic factors (Savari et al., 2019; FAO Report, 2021).
+Increasing genetic diversity of wheat is actual for protection
+crop from diseases and stressful abiotic factors. Thinopyrum
+and related genera are promising sourсes for enrichment of
+wheat genetic pool and breeding of cultivars with improved
+properties.</p></sec><sec><title>Impact of major diseases
+and abiotic stresses on wheat crops</title><p>During the 20th century, large scale wheat monocropping,
+often homogeneous in resistance to diseases, has been created
+on different continents. This situation has contributed to
+pathogen coevolution with plants in agroecosystems increasing
+over past 70 years (Zhan J.,McDonald,
+2013). As a result,
+the appearance of new pathogens and virulent races within
+their populations has accelerated, and disease outbreaks have
+become more frequent (Chen X., 2005; Singh R.P. et al., 2016).
+The global burden of pathogens and pests on wheat production
+in 2010–2014 was estimated at 21.5 %, of which 18 %
+was determined by fungal diseases (Savari et al., 2019). The
+main losses in the amount of 15.1 % were determined by eight
+diseases (leaf, stem, and stripe rusts, Septoria tritici blotch
+and Septoria nodorum blotch, powdery mildew, Fusarium
+head blight, and tan spot) spread globally. Grain losses vary
+significantly between world regions, depending on climatic
+conditions, cultivar heterogeneity, and crop production technologies
+(McDonald, Stukenbrock, 2016; Singh R.P. et al., 2016).</p><p>Abbreviations
+APR – adult plant resistance
+ASR – all stage resistance
+ROS – reactive oxygen species
+Resistance gene symbols
+Bdv – barley yellow dwarf virus
+Fhb – Fusarium head blight
+Lr – leaf rust
+Pm – powdery mildew
+Sr – stem rust
+Snb – Septoria nodorum blotch
+Stb – Septoria
+tritici blotch
+Wsm – wheat streak mosaic virus
+Yr – stripe rust</p><p>Wheat is affected by leaf, stem, and stripe (yellow) rusts,
+caused by Puccinia triticina Eriks., P. graminis Pers. f.
+sp. tritici
+Eriks. et Henn, and P. striiformis Westend. f. sp. tritici
+Eriks., respectively. The common features of rust fungi
+are high reproduction, variability, and airborne dispersal of
+urediniospores, often over long distances, to new regions and
+even continents (McDonald, Stukenbrock, 2016; Savari et al.,
+2019). P. triticina is the most plastic species among wheat
+rust fungi and regularly affects common wheat crops in many
+world regions (Kolmer, 2013). In the last decade, leaf rust has
+increased significantly in the main wheat production regions
+in China and India (Gao et al., 2019; Aravindh et al., 2020).
+Wheat stem rust development was suppressed worldwide in the second half of the twentieth century due to the use of
+cultivars carrying the Sr31 gene transferred from cereal rye,
+Secale cereale L. (Singh R.P. et al., 2015). However, in Uganda
+in 1998, the Ug99 race (TTKSK) appeared, which overcame
+the Sr31 gene, and later other races unrelated to Ug99 (such
+as Digalu, and Sicilian) appeared. Over two decades, stem rust
+accelerated in Africa, the Middle East, and in Western Europe
+(Singh R.P. et al., 2015; Patpour et al., 2022).</p><p>Wheat stripe rust used to spread in regions with a cool and
+humid climate. However, following the appearance of P. striiformis
+f. sp. tritici clones adapted to high temperatures, there
+was a rapid spread of the pathogen to new regions. Since the
+2000s, stripe rust has become a new threat to grain production
+in many regions, and regular outbreaks now occur in North
+and South America, Africa, Northwest Europe, India, China
+and Russia (Ali S. et al., 2017; Gultyaeva et al., 2022). FAO
+claims that rusts are the most destructive transborder wheat
+diseases, making them serious threats to food security worldwide
+(Singh et al., 2016; FAO Report, 2021).</p><p>Another important global wheat disease is powdery mildew,
+caused by Blumeria graminis f. sp. tritici (DC.) Speer.
+Previously, powdery mildew, while affecting wheat crops
+worldwide, prevailed in regions with damp and cool climate.
+During recent decades, the disease has increased in warmer
+regions, especially when using intensive technologies with
+high doses of nitrogenous fertilizers (Zhang R.Q. et al., 2020;
+Yang G. et al., 2023). Largest crop losses were noted in China,
+Northwest Europe, and India (Savari et al., 2019).</p><p>Septoria blotch diseases are caused by a complex of
+fungi, the main of them are Zymoseptoria tritici (Roberge
+ex Desm.) Quaedvl. &amp; Crous. (= Septoria tritici Desm.), and
+Parastagonospora nodorum (Berk.) Quaedvl. (= Septoria
+nodorum (Berk.). Significant negative effect of the Septoria
+fungal complex on wheat crops has been noted since 1980.
+In previous decades, Septoria tritici blotch caused high grain
+losses in humid coastal regions of Europe and North America
+(O’Driscoll et al., 2014; Fones, Gurr, 2015). During the last
+decade, Septoria tritici blotch has spread to the arid regions of
+Africa, Northern Kazakhstan, and Western Siberia (Babkenova
+et al., 2020; Tadesse et al., 2020; Plotnikova et al., 2023b). On
+the territory of Russia, wheat leaf and ear Septoria diseases
+are mainly caused by two species – Z. tritici and P. nodorum,
+and the ratio of pathogens varies significantly depending on
+the region (Toropova et al., 2020).</p><p>Fusarium head blight (FHB) is caused by Fusarium graminearum
+Schwabe [teleomorph: Gibberella zeae (Schwein.)].
+FHB impacts include wheat yield loss, deterioration of grain
+quality, and mycotoxin contamination, effecting human and
+animal health (Alisaac, Mahlein, 2023). Frequent FHB epidemics
+have been occurring since the 1990s in the USA,
+Canada, South America, China (Zhu et al., 2019; Alisaac,
+Mahlein, 2023). Tan spot (yellow spot, yellow leaf spot) is
+caused by the necrotrophic fungus Pyrenophora tritici-repentis
+(Died.) Dreches [anamorph Drechslera tritici-repentis
+(Died.) Shoemaker]. The first tan spot epidemics were reported
+in the 1970s in North America, Australia, and Southern Africa,
+and later the disease spread globally (Carmona et al., 2006;
+Phuke et al., 2020).</p><p>Climate change is a threat to sustainable crop production.
+According to the FAO report, the number of disasters (climatological,
+hydrological, biological and geophysical) per year by
+decade grew from 90 in 1970s to 360 in 2010s (FAO Report,
+2021). The largest increase was noted for weather-related
+disasters, such as drought, storms, and extreme temperatures.
+Agriculture is especially vulnerable to increased frequency
+and intensity of extreme weather-related and climate induced
+disasters. Damage and loss in agriculture for 2008–2018
+was estimated at 63 % (FAO Report, 2021). Among abiotic
+stresses, drought, extreme temperatures, and soil salinity
+have the greatest negative impact on wheat grain production
+(Kosová et al., 2014; Ali N., Mujeeb-Kazi, 2021). About one
+third of areas most suitable for agriculture, located in the warm
+regions, are becoming more arid (Goncharov, 2021). Losses in
+grain production in the world related to a lack of precipitation
+and extreme temperatures worldwide can reach 28 % (Kumar
+et al., 2022). Winter varieties produce higher yields compared
+to spring genotypes. However, to expand winter crops to risky
+farming areas, it is necessary to improve their winter hardiness
+(Fisenko, Kuzmina, 2020). The wheat growing area can also
+be increased by using saline land. However, this requires the
+breeding of wheat cultivars with high salt tolerance (Yang Z.
+et al., 2022). The use of a wide range of new genes in breeding
+is the basis for sustainable defence of bread and durum wheat
+from stresses (Ceoloni et al., 2014).</p></sec><sec><title>Enhancement of genetic diversity of wheat
+with alien gene pools</title><p>Genetic protection of cultivars is considered the most costeffective
+and environmentally friendly way to control diseases
+(Singh R.P. et al., 2016; Gultyaeva et al., 2022). Wild and
+cultivated cereal species are the main reservoirs of valuable
+genes for wheat breeding (Ceoloni et al., 2014; Kumar et al.,
+2022). B. Friebe and co-workers (1996) proposed to divide
+plant species into primary, secondary, and tertiary gene pools
+by availability for breeding. Species in primary gene pool have
+genomes that are homologous to the subgenomes of common
+wheat (AABBDD), and secondary gene pool has at least one
+subgenome homologous to wheat. The genetic material of the
+primary and secondary gene pools can be transferred to common
+wheat relatively easily in the form of short translocations
+by recombination of homologous chromosomes</p><p>Tertiary gene pool species have genomes that differ from
+common wheat subgenomes (homoeologous). Introgression
+of genetic material from tertiary gene pool species to wheat is
+difficult due to the differences in homoeologous chromosome
+structure, thus requiring special methods (Friebe et al., 1996;
+Li H., Wang 2009). The tertiary gene pool includes the genera
+Aegilops L. (species with U, C, M, T, X genomes), Secale L.,
+Hordeum L., Thinopyrum Á. Löve, Agropyron Gaertn., Leymus
+Hochst., Haynaldia L. (= Dasypyrum), and Pseudoroegneria
+(Nevski) A. Löve (Friebe et al., 1996; Kroupin et al.,
+2019; Kumar et al., 2022). During the 20th century, the most
+attention in the world was paid to Thinopyrum spp. Perennial
+Thinopyrum spp. are the components of natural ecosystems
+and pastures in different Eurasian regions (Tsvelev, 1984;
+Li H., Wang, 2009). In this regard, they are well adapted to contrasting climatic conditions and have a wide spectrum of
+resistance genes to abiotic and biotic stresses (Lammer et al.,
+2005; Li X. et al., 2017).</p><p>Scientific research of the genetic potential of Thinopyrum
+and related genera and the implementation of the results in
+practice have been ongoing for more than a century (Table 1).
+The first successful work on distant hybridization between
+wheat and Thinopyrum spp. (before Agropyron) was carried
+out by N.V. Tsitsin in Russia during 1920–1930 (Tsitsin,
+1979). A set of species was tested, of which two species were
+most promising for further work, viz. intermediate wheatgrass
+Thinopyrum intermedium Barkworth &amp;D.R. Dewey and the
+tall wheatgrass Th. ponticum (Podp.) Z.-W. Liu &amp; R.-C. Wang.
+It should be noted that the classification of these species has
+changed many times and is still in the process of formation.
+In this regard, different names of these species are found
+in publications of different periods, e. g. Th. intermedium
+(= Agropyron intermedium (Host) Beauv, Ag. glaucum),
+and Th. ponticum (= Th. ponticum (Podp.) Barkworth et
+D.R. Dewey, Ag. elongatum (Host) Beauv, Lophopyrum ponticum
+(Popd.) A. Löve, Elytrigia pontica (Popd.) Holub.). At
+the beginning, both wheatgrass species were selected based
+on perennial habit and tolerance to abiotic stresses (frost
+resistance, winter hardiness, and drought tolerance). Later,
+Thinopyrum spp. were recognized as valuable reservoirs of
+genes for resistance to diseases, and most studies were devoted
+to this problem (Friebe et al., 1996; Li H., Wang, 2009). At the
+first stage, the intergeneric amphiploids were obtained, which
+were crossed with T. aestivum, and later partial amphiploides
+(named Wheat-Wheatgrass Hybrids, WWHs) with different
+sets of wheatgrass chromosomes were produced. Some stable
+WWHs were selected and used as commercial forage regrowing
+and perennial cultivars (Tsitsin, 1979).</p><fig position="float" id="Tab-1" orientation="portrait"><label>Table 1.</label><caption><title>The main stages of introgression of the genetic material from Thinopyrum and related genera to the wheat gene pool</title><p>Notе. WWHs – wheat-wheatgrass hybrids.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="VJGB-28-2460-Tab1.jpg"><?image-name VJGB-28-2460-Tab1.jpg?><?image-size 95656?><?image-md5 9e3724cfd5b53f27a93f0723457d15f6?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 762?><?image-original-width 1144?><?image-scaled-height 508?><?image-scaled-width 762?><?image-cloudpmc-urn urn:cdn:blobs/b29a/11393651/9e3724cfd5b5/VJGB-28-2460-Tab1.jpg?><?thumb-name VJGB-28-2460-Tab1.gif?><?thumb-size 3110?><?thumb-md5 ba51d490e7685d0a32d9bcdbe9741faa?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 120?><?thumb-cloudpmc-urn urn:cdn:blobs/b29a/11393651/ba51d490e768/VJGB-28-2460-Tab1.gif?></graphic></fig><p>Later, on their basis, winter-hardy wheat cultivars were
+bred for the European part of Russia (Upelniek et al., 2012).
+Currently, Tsitsin’s heritage is maintained in the form of octaploid
+partial amphiploid WWHs collection (2n = 56, including
+42 chromosomes of common wheat, and 14 chromosomes
+from different Thinopyrum’s subgenomes) (Main Botanical
+Garden of the Russian Academy of Sciences, Moscow, Russia)
+(Upelniek et al., 2012; Kroupin et al., 2019).</p><p>Work on the introgression of the Thinopyrum spp. genetic
+material into the wheat gene pool was continued in Russia in
+1980–2010s. Breeding material on the base of the Avrocum
+amphiploid was created at the P.P. Lukyanenko National Grain
+Center (Krasnodar, Russia). Avrocum was obtained by the
+hybridization of the tetraploid form tetra-Avrora (common
+wheat cv. Avrora without the D genome) with Th. intermedium
+(Davoyan et al., 2016). At the same time, amphiploids based on
+Th. intermedium and later wheat lines with 6D chromosomes
+substituted by one of the homoeologous chromosomes 6Agi
+(6Agi or 6Agi2) were obtained. Later, introgression spring
+common wheat cultivars with alien 6Agi chromosomes were
+bred at the N.M. Tulaikov Samara Research Institute of Agriculture
+and at the Federal Centre of Agriculture Research
+of the South-East Region (Samara and Saratov, accordingly;
+Russia) for the Volga region (Salina et al., 2015; Sibikeev et
+al., 2017). New introgression lines of spring common wheat
+resistant to rusts and Septoria blotch diseases were bred on
+the basis of Th. ponticum at Omsk State Agrarian University
+(Omsk, Russia) (Plotnikova et al., 2014, 2021, 2023b).</p><p>Introgression of the genetic material of Thinopyrum spp.
+was carried out independently in different countries of the
+world (Table 1). In 1930–1940, distant hybridization of T. aestivum
+with Th. intermedium and Th. ponticum was realized by
+W.J. Sando in the USA, and a collection of partial amphiploids
+was obtained (Sando collection, USDA, National Small Grains
+Germplasm Research Facility, Aberdeen, Idaho, USA) (Hang
+et al., 2005). Similar work was carried out in Germany and
+Canada (Peto, 1936; Smith D.C., 1943). Great attention was
+paid to the introgression of Thinopyrum spp. genetic material
+in China after the 1950s. S.C. Sun created partial amphi-
+ploids
+with Th. intermedium (“Zhong” series), and later, common
+wheat cultivars were created on their basis (Sun et al.,
+1981). Z.S. Li produced a set of partial amphiploids on the
+base of Th. ponticum with resistance to leaf and stripe rusts
+(e. g. Xiaoyan series, including Xiaoyan 68, Xiaoyan 693,
+Xiaoyan 7430, Xiaoyan 7631, and Xiaoyan 784) (Li Z.S. et
+al., 2008). Over time, other series of partial amphiploids
+were created in different countries: Agrotana (Chen Q. et al.,
+1995), PMV (Fedak et al., 2000), SS (Oliver et al., 2006),
+BE-1 (Sepsi et al., 2008), SN (He F. et al., 2017). The partial
+amphiploids were used for the breeding of numerous supplemented,
+substituted, and introgression lines with translocations
+of various size.</p><p>The international classification of Thinopyrum spp. is in
+progress and is being refined using methods of molecular
+cytogenetics. According to current concepts, the Thinopyrum
+genus includes species with a wide range of genomes and
+ploidies (from diploids to decaploids). The diploid accessions
+(2n = 2x = 14) were identified in Th. elongatum D.R. Dewey
+and Th. bessarabicum (Savul &amp; Rayss) Á. Löve. The
+tetraploids (2n = 4x = 28) were determined in Th. junceiforme
+Á. Löve, and the hexaploids were among Th. intermedium
+and Th. junceum (2n = 6x = 42). The decaploids were
+found among Th. ponticum accessions (Chen S. et al., 2013;
+Mo et al., 2017). Based on cytogenetic and molecular genetic
+studies, the genomic composition of the hexaploid Th. intermedium
+is JJJsJsStSt (Chen Q. et al., 1998) or EEEstEstStSt
+(Wang R.R.- C., 2011), and the decaploid Th. ponticum formula
+is JJJJJsJsJsJsJsJs (Chen Q. et al., 1998) or EEEbEbExExStStStSt
+(Zhang X. et al., 1996). The classification of genomes proposed
+by R.R.-C. Wang (2011) is most often used, but in some
+articles genome designation J was used. The J or Js subgenomes
+are highly homologous with the genomes Ee of Th. elongatum
+and Eb of Th. bessarabicum,
+accordingly.
+The St subgenome
+is closely related to the genome of Pseudoroegneria
+strigosa (Chen Q. et al., 1998; Wang L. et al., 2017). Agropyron
+spp. have a different number of P genomes (2n–6n)
+(Wang R.R.- C., 2011).</p></sec><sec><title>Developing methods for effective introgression
+of alien genetic material and improving
+the properties of breeding material</title><p>When transferring the genetic material from tertiary gene
+pool species to wheat, difficulties arise at different stages of
+the work. Common problems include difficulties in intergeneric
+crossing, F1 hybrid sterility, and lack of homeologous chromosomes conjugation. As a result of poor conjugation
+between homoeologous chromosomes, large alien fragments
+(e. g. whole chromosomes, chromosome arms, or large terminal
+translocations) are usually transferred into introgression
+lines (Liu J. et al., 2013; Leonova, 2018). Consequently, the
+material obtained by distant hybridization is significantly
+inferior in properties to commercial varieties (Friebe et al.,
+1996; Li H., Wang et al., 2009). The major reasons for the
+deterioration of wheat properties is a close linkage between
+target and undesirable genes (linkage drag), or insufficient
+genetic complementation between the alien fragment and the
+wheat genome, and the fact that alien translocation does not
+compensate the absence of wheat genetic material (Wulff,
+Moscou, 2014; Hao et al., 2020). In many cases, wheat traits
+decrease is due to the fact that a large alien fragment does not
+compensate the loss of important genetic material (Friebe et
+al., 2005).</p><p>In the 1950–1970s, methods were developed that increased
+the introgression efficiency from relative species to wheat. For
+the first time, the procedure was implemented when transferring
+the genetic material from Ae. umbellulata (UU) to
+common wheat (Sears, 1956). At the first step, an interspecific
+hybrid was obtained, and its chromosomes were doubled using
+colchicine. The resulting amphidiploid was backcrossed with
+wheat, and a substituted line was obtained, which was used
+as a genetic bridge to transfer leaf rust resistance to common
+wheat. To facilitate the transfer of genetic material between
+the U and wheat chromosomes, the pollen of the substituted
+line was irradiated to induce multiple chromosome breaks
+followed by recombination of the fragments. As a result of
+the work, the cv. Transfer was bred, carrying the Lr9 gene for
+resistance to leaf rust (Sears, 1956).</p><p>Later, after the research on wheat meiosis genetic control,
+it was found that wheat chromosome 5B carries the Ph gene
+that suppresses the homoeologous chromosomes conjugation.
+To induce conjugation, it is possible to cross introgression
+lines with aneuploids in 5B chromosome or to use mutants
+with the ph genes. The mutant ph1b gene (or similar ph2a
+and ph2b) facilitates loci exchange between homoeologous
+chromosomes (Sears, 1976). Similar effects may be supplied
+by the chromosome 5P of A. cristatum (PPPP) and some accessions
+of Ae. speltoides (SS) (Friebe et al., 2000; Han et
+al., 2023).</p><p>The hexaploid Th. intermedium crosses relatively easily
+with common wheat (the average seed setting is about 24 %),
+and amphiploids can be obtained by direct crossing (Mo et
+al., 2017). To transfer the genetic material from the decaploid
+Th. ponticum, amphiploids with the tetraploid wheat T. turgidum
+(AABB) need to be created (Tsitsin, 1979). Partial am-phiploids
+with chromosome combinations from various Thinopyrum
+spp. subgenomes were obtained after backcrossing
+to common wheat (Friebe et al., 2000; Li H., Wang, 2009).
+In rare cases, the transfer of homeologous fragment occurs
+by spontaneous translocation (Knott, 1968). But the induction
+of translocations using irradiation or induced homeologous
+recombination with ph1b mutants is more effective
+for transferring small loci to wheat genome (Sears, 1978).
+Using these methods, the transfers of at least 134 loci from
+the Th. ponticum to common wheat were maid (Baker et al.,
+2020). Recently, a large set of lines with wheatgrass introgressions
+of various size were bred (Mo et al., 2017; Kroupin et
+al., 2019).</p><p>The transfer of multiple alien fragments and location of
+introgressions at various chromosomes and their arms is possible
+(Table 2). For example, Lr38 gene in Th. intermedium
+derivatives was transferred to four wheat chromosomes (2A,
+5A, 3D and 6D) (Friebe et al., 1996). The loci with Sr24/Lr24
+genes from the Th. ponticum were identified in two wheat chromosomes
+(1B and 3D). The loci with Lr19/Sr25 genes were
+identified in different arms of the 7D chromosome (McIntosh
+et al., 1995; Friebe et al., 1996). Introgression lines with the
+best properties were selected for breeding the cultivars.</p><fig position="float" id="Tab-2" orientation="portrait"><label>Table 2.</label><caption><title>Results of introgression of genetic material from Thinopyrum spp. to wheat gene pool</title></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="VJGB-28-2460-Tab2.jpg"><?image-name VJGB-28-2460-Tab2.jpg?><?image-size 83472?><?image-md5 a4c24e1d56d03508aec989cb3a581fa8?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 774?><?image-original-width 1144?><?image-scaled-height 516?><?image-scaled-width 762?><?image-cloudpmc-urn urn:cdn:blobs/b29a/11393651/a4c24e1d56d0/VJGB-28-2460-Tab2.jpg?><?thumb-name VJGB-28-2460-Tab2.gif?><?thumb-size 2965?><?thumb-md5 1213b591fbd34244b31f89c57f4a43dc?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 118?><?thumb-cloudpmc-urn urn:cdn:blobs/b29a/11393651/1213b591fbd3/VJGB-28-2460-Tab2.gif?></graphic></fig><fig position="float" id="Tab-2end" orientation="portrait"><label>Table 2end.</label><caption><title>Tab2end.</title></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="VJGB-28-2460-Tab2end.jpg"><?image-name VJGB-28-2460-Tab2end.jpg?><?image-size 32872?><?image-md5 8fac1845aa56779c8e6f8ed3c65a5105?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 311?><?image-original-width 1144?><?image-scaled-height 207?><?image-scaled-width 762?><?image-cloudpmc-urn urn:cdn:blobs/b29a/11393651/8fac1845aa56/VJGB-28-2460-Tab2end.jpg?><?thumb-name VJGB-28-2460-Tab2end.gif?><?thumb-size 2708?><?thumb-md5 297ef0a71a4e57f3f4357c545a957c58?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 54?><?thumb-scaled-width 200?><?thumb-cloudpmc-urn urn:cdn:blobs/b29a/11393651/297ef0a71a4e/VJGB-28-2460-Tab2end.gif?></graphic></fig><p>The improvement of the properties of some introgression
+lines was achieved by reducing alien fragment size using
+γ-irradiation of seeds, plants, and pollen, or induced homeologous
+recombination with ph1b mutants (Sears, 1978). The
+limited application of Lr19/Sr25 from Th. ponticum in breeding
+was associated with its linkage with the Y gene determined
+yellow flour color. Lr19/Sr25 and Y genes were separated using
+Ph1 deletion lines (Zhang W. et al., 2005). The valuable Fhb7
+gene conferring resistance to both Fusarium head blight and
+Fusarium crown rot was tightly linked with the PSY-E2 gene
+that determines yellow flour color. Using the ph1b mutant,
+lines with shortened translocations devoid of the PSY-E2 gene
+were obtained (Li M.Z. et al., 2022). Thanks to ph1-induced
+homoeological recombination, interspecific gene transfer
+from T. aestivum to T. durum was achieved. Three loci with
+alien Lr19/Sr25/Y and Pm13 genes (from Th. ponticum and
+Ae. longissima, respectively), and Gli-D1/Glu-D3 (effecting
+gluten properties) were transferred from common wheat
+chromosomes 7D, 1D and 3B to durum wheat arms 7AL, 3BS
+and 1AS (Kuzmanović et al., 2020).</p><p>In some cases, noncompensating wheat-alien translocations
+occur in introgressive material. This is due to the participation
+in meiosis of homoeologous chromosome arms, which differ
+in gene sets and their order. Noncompensating translocations
+provoke genomic duplications or deficiencies, which lead to
+line genetic instability and prevent the use of a valuable gene
+in breeding (Friebe et al., 1996). Compensating Robertsonian
+translocations (RobTs) are used for functional substitution
+of lost fragments to correct wheat genotypes (Friebe et al.,
+2005). Such a method was used to improve the properties
+of the line with the Sr44 gene from Th. intermedium. As a
+result, the compensating RobT in the form of recombination
+T7DL×7J#1S was identified, consisting of wheat arm 7DL
+translocated to the Th. intermediate arm 7J#1S (Liu W. et al.,
+2013). Similar works were carried out, developing lines with
+the Sr51, Sr52, and Sr53 genes (from Ae. searsii Feldman &amp;
+Kislev ex Hammer, and Ae. geniculata Roth, respectively)
+(Liu W. et al., 2011a, b).</p><p>In the rarest cases, substitution of wheat chromosomes by
+alien ones does not decrease agronomic properties. This was
+the case for spring common wheat cultivars with chromosome
+6D substituted by 6Ai or 6Ai2 from the Th. intermedium
+J(=E) subgenome. A set of cultivars with the 6Ai or 6Ai2
+chromosomes (homologous) were bred in the Russian Volga region (Multi 6R, Belyanka, Voevoda, Lebedushka, Tulaikovskaya
+5, Tulaikovskaya 100, Tulaikovskaya Zolotistaya, and
+others). These cultivars showed broad spectrum resistance to
+leaf and stem rusts, high yield and grain quality, and drought
+tolerance (Salina et al., 2015; Sibikeev et al., 2017). In China,
+the big achievement was the breeding of the cv. Xiaoyan 6
+with double translocations from Th. ponticum on the chromosomes
+2A and 7D. The cv. Xiaoyan 6 was multi-resistant to
+fungal diseases, had high yield, grain quality, and environmental
+plasticity. The cv. Xiaoyan 6 was widely cultivated in the
+1980–1990s, and used as a parent for more than 60 common
+wheat cultivars (Zhang X. et al., 2011).</p></sec><sec><title>Contribution of Th. ponticum and Th. intermedium
+as sources of useful genes</title><p>When introgression of the genetic material of Thinopyrum
+spp., the main attention was paid to emerging disease challenges,
+and the studies have become more intensive in recent
+decades. During 1960–2020, a set of designated resistance
+genes to leaf, stem, and stripe rusts was transferred from
+Th. ponticum to T. aestivum. Some of these genes are closely
+linked and are present in complex translocations, viz. Lr19/
+Sr25, Sr24/Lr24, and others are single, viz. Lr29, Sr26, Sr43,
+Sr61 (=SrB), Yr69 (Table 2) (McIntosh et al., 1995, 2018).</p><p>After stem and stripe rusts progressed in 2000s, the cereal
+species and amphiploid collections were screened for disease
+resistance. Screening of the five Thinopyrum spp. (242 accessions)
+showed, that Th. ponticum and Th. intermedium
+are highly resistant to Ug99 race (Zheng Q. et al., 2014a, b).
+Partial amphiploids created in China in the 1950s (Xiaoyan 68,
+Xiaoyan 7430, and Xiaoyan 784) are highly resistant to Ug99
+group races (Zheng Q. et al., 2014b). A new introgression
+line, WTT34, was created, carrying at least one new Sr gene
+in the T5DS∙5DL translocation (Yang G. et al., 2021). Based
+on the Xiaoyan 784 amphiploid, the ES-7 line was created
+with 5A-St substituted chromosomes carrying adult plant
+resistance (APR) to stripe rust (Mo et al., 2017). Yr69 gene
+was transferred from the Xiaoyan 7430 amphiploid to wheat
+chromosome arm 2AS (Hou et al., 2016). In the A-3 line,
+two putatively new stripe rust resistance genes, YrTp1 and
+YrTp2, were identified in the chromosome arms 2BS and
+7BS, respectively (Yin et al., 2006). Additional undesignated
+genes were determined in other lines (Zheng Q. et al., 2014a;
+Wang Y.Z. et al., 2020).</p><p>The potential of the genus Thinopyrum is poorly used to
+protect wheat from powdery mildew. Currently, only Pm51
+(among 65 designated genes) has been transferred from
+Th. ponticum (McIntosh et al., 2018). Pm51 confers broadspectrum
+all-stage resistance (ASR) to the disease (Zhan H.X.
+et al., 2014). New unknown Pm genes were identified in lines
+SN19647 and CH10A5, in which 1B and 1D chromosomes
+were replaced by 1Js chromosomes (Wang Y.Z. et al., 2020;
+Li M.Z. et al., 2021). Lines 11-20-1 (with the T5DL∙5AgS
+translocation) and SN0293-2 showed ASR resistance to a
+set of races (Li X. et al., 2017; Li M.Z. et al., 2022). In the
+blue-grained wheat line Blue 58 with a chromosome 4Ag(4D)
+substitution, a gene(s) for APR was present in the short arm
+of 4Ag that has determined resistance to powdery mildew for
+over forty years (Yang G. et al., 2023).</p><p>In addition to diseases caused by biotrophic fungi (rusts
+and powdery mildew), an increase of diseases caused by
+hemibiotrophic, necrotrophic and viral pathogens has been
+noted. Septoria blotch diseases cause significant losses in grain
+yield. Crops are mainly protected by the use of fungicides,
+and genetic protection is poorly implemented (Fones, Gurr,
+2015). Currently, there are no resistance genes to Septoria blotches transferred from Thinopyrum spp. among the identified
+ones. Resistance to Septoria nodorum blotch, Fusarium
+head blight and tan spot was revealed in the interspecific
+hybrid Th. ponticum × Th. intermedium (Oliver et al., 2006).
+Among introgression lines with genetic material of Th. ponticum
+bred in Western Siberia, a set of lines highly resistant
+to Septoria tritici blotch and Septoria nodorum blotch, with
+unknown genes (Stb and Snb, accordingly), were determined
+(Plotnikova et al., 2023b). Additionally, from Th. ponticum,
+some resistance genes were transferred, viz. to Fusarium
+head blight (Fhb7), common root rot, barley yellow dwarf
+virus (Bdv), wheat streak mosaic virus (Wsm) (Ceoloni et al.,
+2017; Kumar et al., 2022).</p><p>Tall wheatgrass has also been used as a source of valuable
+traits for wheat, such as resistance to pre-harvest sprouting
+(Kocheshkova et al., 2017), blue aleurone layer (Liu L.Q.
+et al., 2018), frost resistance, winter hardiness (Upelniek et
+al., 2012), and drought tolerance (Kuzmanović et al., 2016;
+Plotnikova et al., 2023c).</p><p>Thinopyrum intermedium is the source of the rust and
+powdery mildew resistance genes Lr38, Sr43, Sr44, Yr50,
+Pm40 and Pm43 (McIntosh et al., 1995, 2018; Friebe et al.,
+1996; He R.L. et al., 2009; Luo et al., 2009а, b; Liu J. et al.,
+2013; Niu et al., 2014). New genes Lr6Agi and Sr6Agi were
+identified in the substitution chromosomes 6Agi and 6Agi2
+(Salina et al., 2015; Sibikeev et al., 2017). Lines with stripe
+rust resistance gene YrYu25 were obtained based on amphiploid
+TAI7047 (Luo et al., 2009a). Four genes for resistance
+to stripe rust were identified in the Th. intermedium St subgenome
+(chromosomes 1St, 2St, 3St, and 7St) (Wang S. et al.,
+2022), and one gene was determined in subgenome J or Js (in
+the short arm of the supplemented chromosome of line Z4)
+(Lang et al., 2018). Lines Zhongke 78 and Zhongke 15 with
+the YrT14 gene in translocations from the alien 7J or 7Js
+chromosome were bred in China (Guo X. et al., 2023). The
+YrL693 gene was reported in introgression line L693 (Huang
+et al., 2014). Potentially new genes for resistance to stripe rust
+(YrCH-1BS) and powdery mildew were determined in lines
+with T1BL.1BS-3Ai and T6BS.6AiL translocations (Zhan H.
+et al., 2015; Zheng X. et al., 2020). Th. intermedium was also
+a good source of resistance genes to barley yellow dwarf virus
+(Bdv2, Bdv3), and wheat streak mosaic virus (Wsm1) (Wells
+et al., 1982; Gill et al., 1995; Hohmann et al., 1996; Ohm et
+al., 2005; Li H., Wang 2009; McIntosh et al., 2018).</p><p>Thinopyrum intermedium can be used not only as a reservoir
+of genes for improving the food common wheat, but also as a
+pasture and forage crop. In the 1980s, the work began on domestication
+of intermedium wheatgrass (Bajgain et al., 2020;
+Pototskaya et al., 2022). For forage crops, some features are
+valuable, e. g., perennial habit, rapid regrowth after cutting
+or grazing, resistance to frost and diseases, and improved
+feed quality (Hassani et al., 2000; Lammer et al., 2005). As a
+result of long-term work, perennial intermediate wheatgrass
+cultivars (Kernza, MN-Clearwater, Sova) were bred for fodder
+grain and dual-use (for grain and hay) (Hassani et al., 2000;
+Bajgain et al., 2020; Pototskaya et al., 2022). These cultivars
+are of interest as gene reservoir for the breeding of wheat
+cultivars for various purposes.</p></sec><sec><title>Introgression of genetic material
+of diploid and tetraploid Thinopyrum spp.
+and relative species to wheat gene pool</title><p>Despite great achievements in distant hybridization, introgression
+from polyploid heterogenomic species is a complex
+problem. In this regard, diploid and tetraploid species with
+genomes similar to the Th. intermedium and Th. ponticum
+subgenomes
+were used as additional reservoirs of valuable
+genes, viz. Th. bessarabicum, Th. elongatum, and Th. junceiforme</p><p>Th. bessarabicum (JJ or EbEb) showed a high level of salt
+tolerance (Gorham et al., 1986). To facilitate the gene transfer
+from Th. bessarabicum, hexaploid and octaploid amphi-ploids
+(2n = 4x = 42, AABBJJ = AABBEbEb, or 2n = 8x = 56,
+AABBDDJJ) were created (Qi et al., 2010). On their basis,
+lines with 5A and 5D chromosomes substituted by 5J were
+produced. Later, a line with translocation T2JS-2BS∙2BL
+from the Th. bessarabicum was obtained (Table 2) (Guo J.
+et al., 2016).</p><p>The genomic composition of Th. elongatum is currently
+being clarified using methods of molecular cytogenetics, and
+di-, tetra-, hexa-, and decaploid forms with the E genome
+were identified in it (Colmer et al., 2006; Chen S. et al., 2013;
+Chen C. et al., 2023; Shi et al., 2023). However, when studying
+decaploids using differentiating GISH subgenomes with Pseudoroegneria
+(St) labeled DNA, two St-like and three E-like
+subgenomes were revealed (Wang L. et al., 2017; Baker et al.,
+2020). In this regard, the decaploid forms probably belong to
+Th. ponticum. Th. elongatum has tolerance to salinity, drought,
+water logging, and extreme temperatures (Li Z.S. et al., 2008;
+Ceoloni et al., 2014; Li X. et al., 2017; Yang Z. et al., 2022).
+Diploid and tetraploid accessions were used in hybridization,
+and lines with supplemented, substituted chromosomes and
+translocations of different size were obtained. Lines with the
+short arm of Th. elongatum chromosome 4Ag carry Pm locus
+for broad-spectrum resistance to powdery mildew (Yang G.
+et al., 2023).</p><p>Tetraploid sea wheatgrass Th. junceiforme (2n = 4x = 28,
+J1J1J2J2) is adapted to the coastal areas and is characterized by
+high tolerance to waterlogging, salinity, manganese toxicity,
+low nitrogen, and heat stress (Singh D. et al., 2019). At first
+stage, an amphiploid on the base of the Th. junceiforme was
+obtained, and then the supplemented and introgression lines
+with translocations were selected. These lines, in addition to
+abiotic stress tolerance, showed high resistance to Fusarium
+head blight and wheat streak mosaic virus (Singh D. et al.,
+2019).</p><p>In addition to Thinopyrum spp., the work has been carried
+out with genus Agropyron. Tetraploid species A. cristatum
+(2n = 4x = 28, PPPP) is resistant to powdery mildew, stripe
+and leaf rusts. Introgression lines with translocations from 2P,
+5P, 6P, and 7P chromosomes of A. cristatum with valuable
+genes were produced (Zhang Z. et al., 2017; Jiang et al., 2018).
+Alien fragments from chromosome 2P and 6P determine a
+compact plant type with high spike length, spikelet number,
+and 1,000 grain weight (Zhang Z. et al., 2017; Xu S. et al.,
+2023). The fragment of a 5P chromosome induced multiple
+structural rearrangements, including translocations between chromosomes of different subgenomes. This property can
+potentially be used as a new tool for inducing wheat–alien
+chromosome recombination (Li W. et al., 2019).</p><p>Currently, information is accumulating that species with
+relative subgenomes may have similar resistance genes. An
+accession of diploid Th. elongatum has a Fusarium head blight
+resistance gene (Fhb-7EL) similar to the designated Fhb7 gene
+from Th. ponticum (accession el2), and in both accessions the
+Fhb genes were linked with the known Lr19 gene (Ceoloni et
+al., 2017; Ma et al., 2018; Kuzmanović et al., 2020). These
+facts emphasize the need for careful study and comparison
+of introgressive material obtained on the basis of Thinopyrum
+spp. for determining new genes for resistance to stresses</p></sec><sec><title>Experience of long-term use of tertiary gene pool
+for defence wheat from diseases</title><p>Currently, more than 100 resistance genes to each of the wheat
+rusts and powdery mildew have been identified, including
+designated, unknown new genes, and quantitative trait loci
+(QTLs) (McIntosh et al., 2018). Most of the resistance genes
+were overcome rather quickly as a result of evolutionary processes
+in pathogen populations (Kolmer, 2013; Patpour et al.,
+2022). The use of the tertiary gene pool began in the 1960s, as
+suitable donor lines were developed. Despite the large amount
+of introgressive material, a small number of alien genes were
+intensively used in world breeding programs. This situation
+was due to the fact that some genes had low protective effect,
+and others significantly decreased the agronomic properties of
+cultivars (Friebe et al., 2000). Thus, some of the designated
+genes transferred from Thinopyrum spp. (viz. Lr29, Lr38,
+Sr43) were not successfully used in breeding due to negative
+effects on agronomic traits (Zhang W. et al., 2005).</p><p>The experience of intensive use of alien genes over several
+decades has given us knowledge about their effectiveness and
+impact on pathogen populations. R. Johnson (1983), based
+on the analysis of crop production experience, proposed the
+concept of “durable resistance”, as resistance that remained
+effective for a long period when a cultivar is deployed over an
+extensive area and in environments favourable for the disease
+(Johnson, 1983). One of the most significant achievements in
+the use of the tertiary gene pool was cultivar breeding with the
+1BL/1RS translocation from rye cv. Petkus, carrying genes
+for resistance to rusts and powdery mildew (Lr26/Sr31/Yr9/
+Pm8). The wide spread of the Sr31-protected cultivars led to
+suppression of the P. graminis f. sp. tritici populations worldwide
+for several decades, until the appearance of race Ug99 in
+Uganda in 1998 (Singh R.P. et al., 2015). As a consequence
+of the spread of races of Ug99 group, Sr31 gene became
+ineffective in Africa and the Middle East (Singh R.P. et al.,
+2015; Patpour et al., 2022), but remains effective in the USA,
+Canada, India, China, and Russia (Brar et al., 2019; Skolotneva
+et al., 2023; Wu et al., 2023). The history of exploiting
+cultivars with Sr31 gene shows that it provided durable wheat
+resistance to stem rust.</p><p>various regions of the world has shown that 12 genes turned
+out to be the most valuable for protection against progressive
+stem rust. Of these, three genes were obtained from
+common wheat (Sr2, Sr23 and SrTmp), and two genes were
+transferred from the primary gene pool (Sr33 and Sr45). The
+remaining Sr genes were transferred from the tertiary and
+secondary gene pools, mainly as part of complex loci, viz.
+from Th. ponticum
+(Sr24/Lr24, Lr19/Sr25), S. cereale (Sr31/
+Lr26/Yr9/Pm8, Sr1RSAmigo/Pm17 and Sr50), T. timopheevii
+(Sr36/Pm6), Ae. ventricosa (Sr38/Lr37/Yr17) (Singh R.P. et
+al., 2015). Taking into account the high risk of spreading of
+Ug99 group races, much attention was paid to the effectiveness
+of known Sr genes against it. The genes Sr25, Sr26, Sr43, Sr61
+from Th. ponticum, as well as Sr44 from Th. intermedium,
+are effective against the races of Ug99 group (Zhang J. et
+al., 2021; Pathotype Tracker, 2023). Before the appearance
+of Ug99 race, virulence to Sr24 was rare in P. graminis f. sp.
+tritici populations worldwide, but by 2006, virulence appeared
+in five Ug99 races in Africa (Jin et al., 2008; Bhavani et al.,
+2019). In Australia, the Sr24 gene has been effective for about
+20 years, and Sr26 has remained effective for several decades,
+which can be considered as long-term resistance to stem rust
+(Zhang J. et al., 2021).</p><p>In the 1983–2012 period, about 12.5 thousand varieties and
+lines of common wheat were created in the world. The genetic
+material of Thinopyrum spp., mainly Th. ponticum (93 %), was
+actively used to protect wheat (Martynov et al., 2016). The
+distribution of known wheatgrass genes in cultivars varied
+significantly by region. This may be determined by cultivar
+adaptation to regional climate, technological requirements for
+product quality, and pathogen populations. More than half of
+the North American cultivars had introgressions from Th. ponticum,
+less often they were present in cultivars in Australia
+(12.6 %), Asia (14.8 %) and South America (8.5 %) (Martynov
+et al., 2016). In the USA, most winter varieties were protected
+by Lr24/Sr24 (Kolmer, 2007), and Lr19/Sr25 was present in
+12 % of cultivars. In Australia, Lr24/Sr24 were mainly used
+to protect wheat from rusts (82 %), and Sr26 and Lr19/Sr25
+were used less often. In South Africa and Egypt, about 5 %
+carried the Lr24/Sr24 genes, and in Russia and China, mainly
+the Lr19/Sr25 translocation was used (Martynov et al., 2016;
+Xu X. et al., 2018; Gultyaeva et al., 2021). Over time, the
+resistance of cultivars with wheatgrass introgressions was
+overcome by rust fungi in some regions. The Lr19 gene was
+overcome in Mexico and India (Huerta-Espino, Singh, 1994;
+Bhardwaj et al., 2005). P. triticina races virulent to Lr24 appeared
+in North and South America, and South Africa, where
+translocation Sr24/Lr24 was used for a long time (Park et
+al., 2002; Kolmer et al., 2007; Li H., Wang, 2009). On the
+examples of P. triticina populations in the USA, it was shown
+that the frequencies of virulent to Lr19 and Lr24 alleles were
+higher in the regions where cultivars with complementary
+genes were mainly cultivated (Kolmer et al., 2007; Kolmer,
+2013). In other world regions, where the Sr24/Lr24 translocation
+has not been used intensively in breeding, cultivars
+protected with Sr24 and Lr24 remain resistant to stem and leaf
+rusts (Xu X. et al., 2018, Gultyaeva et al., 2021).</p><p>Common wheat crops in Russia are an interesting model
+for evaluating the effectiveness of resistance genes to leaf
+and stem rusts. The major cropping areas are located in the
+European (North Caucasian, Central Black Earth, Central, and the Volga regions), and in the Asian (South Ural and Western
+Siberia) parts of the country. Different European and Asian
+populations of P. triticina and P. graminis f. sp. tritici exist
+on these crops (Gultyaeva et al., 2021; Skolotneva et al.,
+2023). The Volga region and the Southern Urals are zones of
+contact between them, due to the spore transfer with air flows
+(Gultyaeva et al., 2021).</p><p>In 1970–2020, regional cultivars with different Lr and
+Sr genes from the tertiary gene pool were bred. Some cultivars
+(from 15 to 30 % in different years) in the Volga region
+included translocations Lr19/Sr25 and Lr6Agi/Sr6Agi (Sibikeev
+et al., 2017; Gultyaeva et al., 2021). Lr9 and LrSp genes
+(from Ae. umbellulata, and Ae. speltoides, respectively) were
+present in South Ural cultivars, and Lr9 was introduced into
+West Siberian cultivars. Lr26/Sr31 genes, as well as combinations
+of less effective Lr and Sr genes, were present in all
+regions, and Sr24/Lr24 were rare (less than 1 % of cultivars)
+(Gultyaeva et al., 2021; Baranova et al., 2023). A long-term
+study of P. triticina populations showed that virulence to Lr19
+prevailed in the population of the Volga region until 2010, but
+as the spectrum of resistance genes expanded, the frequency
+of alleles decreased. Virulent to Lr19 or Lr9 alleles did not
+accumulate in P. triticina populations if cultivars with different
+genes were cultivated in the regions. So, in the Central
+and Northwest regions, close to the Volga region, virulence to
+Lr19 and Lr9 was rare in 2001–2010, and disappeared after
+2010 (Gultyaeva et al., 2023). In the South Ural and West
+Siberian regions, Lr9 gene was overcome in 2008 (Meshkova
+et al., 2012), but Lr19 gene remains effective (Gultyaeva et
+al., 2021). In all populations, virulence to Lr24 was extremely
+rare and virulence to Lr6Agi and LrSp was completely absent.
+There were also no pathotypes virulent to the combinations of
+Lr19+Lr26 and Lr9+Lr26 (Gultyaeva et al., 2021).</p><p>For a long period, stem rust did not significantly affect
+wheat crops in most regions of Russia. The first strong disease
+outbreaks were noted in the Volga region in 2013 and 2014,
+and in Western Siberia and neighbouring Northern Kazakhstan
+in 2015 (Shamanin et al., 2016; Sibikeev et al., 2016).
+At the same time, cultivars with Sr31 gene were damaged in
+both regions (Sibikeev et al., 2016; Plotnikova et al., 2022),
+but virulent races did not belong to Ug99 group (Patpour et
+al., 2022). In the following years, virulent pathotypes disappeared
+from populations, and Sr31 gene remains effective in
+Russia (Baranova et al., 2023; Skolotneva et al., 2023). By the
+end of the epidemic of stem rust in Western Siberia in 2015,
+cultivars and lines with Sr24, Sr25 and Sr26 genes showed
+moderate susceptibility, but later their resistance was restored
+(Plotnikova et al., 2023a). In the Volga region, the lines with
+Sr25 were susceptible to stem rust in 2022, whereas those with
+Sr24 and Sr26 genes remained highly resistant (Baranova et
+al., 2023).</p><p>After the appearance of virulent pathotypes to single resistance
+genes, cultivars began to be protected by gene combinations.
+Combinations of wheatgrass genes (Sr24/Lr24 or
+Lr19/Sr25) with rye Lr26/Sr31 or T. timopheevii’s Sr36/Pm6
+were highly effective against the rusts in different regions of
+the world (Park et al., 2002, Martynov et al., 2016; Gultyaeva
+et al., 2021). In the Volga region, the combinations Lr19/
+Sr25 + Lr6Agi/Sr6Agi or Lr19/Sr25 + Sr22 (from T. monococcum)
+were effective (Sibikeev et al., 2017, 2021). Also, high
+resistance to leaf and stem rusts was demonstrated by cultivars
+with combinations of translocations Sr24/Lr24 or Lr19/Sr25
+with any APR genes present in complex loci, viz. Lr34/Sr57/
+Yr18/Pm38, Sr2/Lr27/Yr30, Lr46/Sr58/Yr29, Lr67/Sr55/Yr46
+(Aravindh et al., 2020).</p></sec><sec><title>Fitness costs of virulence to genes
+from tertiary and secondary gene pools
+and effects of nonhost resistance
+in introgression wheat</title><p>Соevolution of pathogens with host plants is constantly taking
+place in agroecosystems, aimed at overcoming resistance.
+Using the example of P. triticina, it was shown that new pathotypes
+regularly appear in populations, but more than half of
+them occur once, and then disappear (Gultyaeva et al., 2023).
+To gain a foothold in populations, new forms need to acquire
+a set of traits that determine their fitness. Parasitic fitness is
+defined as the relative ability of a parasitic genotype or population
+to persist over time and contribute to the future gene
+pool. Fitness depends on genotype viability and reproductive
+capability (Park et al., 2002). Virulence contributes to the expansion
+of the range of affected plants, but may have different
+fitness costs for pathogens. Under favourable conditions, a
+new pathotype can accumulate additional modifier genes that
+increase its fitness. However, under stressful conditions, new
+genes can lead to a decrease in viability and reproduction,
+which manifests as a fitness penalty for the parasite (Antonovics,
+Alexander, 1989; Zhan J., McDonald, 2013).</p><p>Plants play the role of habitat for parasitic fungi, which
+is why cultivar genotypes and crop diversity have a great
+influence on fungal populations. Fitness cost correlates with
+durable cultivar resistance to fungal diseases. The suppression
+of P. graminis f. sp. tritici populations in most world regions
+after the spread of cultivars protected by the Sr31 gene during
+1960–1990, as well as the disappearance of virulent clones
+to Sr31 from Russian populations in the 2020s, indicates that
+virulence to this gene dramatically reduces pathogen fitness.
+At the same time, the appearance of Ug99 race demonstrated
+the possibility of improving fitness when adapting to wheat
+cultivars with Sr31 gene in African conditions. The increased
+frequency of virulent races to Lr19, Lr24, Sr24, and Sr25 in the
+regions with a significant proportion of cultivars protected by
+complementary wheatgrass genes and lower concentration in
+other regions (Kolmer, 2013; Gultyaeva et al., 2021; Baranova
+et al., 2023) show that the pathotypes gained a competitive
+advantage on such cultivars, but had fitness penalties of different
+degrees on other genotypes. Consequently, virulence
+to Lr28 and LrSp has not been detected in Russian P. triticina
+populations for decades (Gultyaeva et al., 2021). There was
+an outbreak of virulence to Lr47 (frequency up to 70 %) in
+Western Siberia in 2015, but in the following years virulent
+clones rapidly disappeared from the population (Plotnikova
+et al., 2018). It is possible that virulence to Lr47 has a high
+fitness penalty for the pathogen.</p><p>Pathogenic fungi are not able to exist on species for which
+they have not been specialized, so-called nonhosts. Nonhost resistance (NHR) is rarely overcome, so its genetic control
+and protective mechanisms are of great interest (Niks, 2014).
+For breeding varieties with durable resistance to diseases, it is
+considered promising to transfer the defense mechanisms of
+nonhost species into crops. According to the widely accepted
+hypothesis formulated in 2010s, nonhost and host resistance
+is controlled by different genetic systems (PTI and ETI, respectively)
+(Peng et al., 2018).</p><p>When studying the interaction of P. graminis f. sp. tritici
+with nonhost S. cereale and Th. ponticum, it was found that
+pathogen development was disrupted at an early stage. This
+was manifested in the disorientation of fungal infection
+structures on plant surface, and in suppression of appressoria
+formation, necessary for penetration into the stomata (Plotnikova
+et al., 2022, 2023a). When infecting wheat lines and
+cultivars with introgressed rye and wheatgrass genes (Sr31,
+Sr24, Sr25, and Sr26), similar signs of the violation of surface
+fungal structures was revealed. In addition, the generation of
+reactive oxygen species (ROS) by stomatal guard cells upon
+contact with the appressoria was revealed in the lines with
+these genes. ROS generation led to the death of rust fungus
+before penetration into plant tissues (Plotnikova et al., 2022,
+2023a).</p><p>Analogous defence mechanisms were established during
+the interaction of P. triticina with nonhost species, and wheat
+lines with wheatgrass Lr19 and Lr38 genes (Plotnikova, 2008,
+2009). Similar ROS generation by stomatal guard cells, called
+“stomatal immunity”, was found when Arabidopsis thaliana
+was infected with non-pathogenic bacteria Escherichia coli
+and Pseudomonas syringae pv. tomato (Zeng, He, 2010;
+Melotto, 2017). This indicates that single genes of the secondary
+and tertiary gene pools may supply defence mechanisms
+similar to the nonhost ones, which stop infection at the early
+stages and prevent penetration into the tissues. When virulence
+occurs, the chemical composition and immunological properties
+of the fungal cell wall can be changed. Probably, such
+changes reduce the viability of mutant clones, which leads to
+a fitness penalty and their disappearance from populations.
+The appearance of virulence to two genes in the genotype (to
+Sr24 + Sr31, or Lr19 + Lr26, etc.) leads to the loss/change
+of a set of important components, which might be lethal for
+pathotypes. This may explain high cultivar resistance with
+combinations of wheatgrass and rye translocations to stem
+and leaf rusts in different world regions.</p><p>Thanks to progress in the field of molecular genetics, it has
+become possible to transfer a set of resistance genes in the
+form of cassettes (up to five genes) to varieties. The genes
+controlling PTI-type (non-host) resistance are of particular
+interest for construction of cultivars with durable resistance
+to biotrophic pathogens (Liu X. et al., 2021). In this regard,
+the genes of Thinopyrum and related genera, providing protection
+similar to nonhosts, are promising for creating effective
+gene cassettes.</p></sec><sec id="Conclusion"><title>Conclusion</title><p>Increasing the production of wheat grain is a strategic task to
+provide food for the growing world population. For sustainable
+grain production, it is necessary to increase the genetic
+diversity of cultivars. Species of the secondary and tertiary
+gene pools with homoeological genomes are of great value for
+crop protection. Thinopyrum and related genera are reservoirs
+of resistance genes to wheat diseases and abiotic stresses. The
+most valuable species for breeding are polyploids Th. ponticum
+and Th. intermedium. Recently, it has been shown that
+relative species Th. elongatum, Th. bessarabicum, Th. junceiforme,
+and A. cristatum are also potential donors of valuable
+traits for wheat improvement. Currently, a large number of
+introgression lines resistant to a range of wheat diseases (including
+leaf, stem, and stripe rusts, and powdery mildew, etc.)
+and tolerant to abiotic factors (such as drought, salinity, and
+extreme temperature, etc.) have been produced. However, only
+a small number of introgressions were used in wheat breeding,
+due to negative effects on agronomic traits. To improve
+line properties, the work was carried out to reduce the sizes
+of loci or to use compensating Robertsonian translocations
+(RobTs).</p><p>The experience of long-term cultivation of varieties with the
+genes from S. cereale and Th. ponticum has shown that they
+significantly influence P. triticina and P. graminis f. sp. tritici
+populations. Obviously, virulent alleles to tall wheatgrass and
+rye genes reduce the fitness of rust fungi, which leads to partial
+or complete pathotypes elimination from fungal populations.
+Cultivars with combinations of wheatgrass and rye translocations
+showed high resistance to leaf and stem rusts in different
+regions of the world. Th. ponticum and S. cereale are nonhosts
+to P. graminis f. sp. tritici and P. triticina, and their resistance
+leads to disruption of the development of fungal structures at
+the plant surface or when trying to penetrate into the stomata.
+The introgressed Sr24, Sr25, Sr26, Lr19, Lr38, and Sr31 genes
+control manifestations of protective mechanisms similar to
+nonhost resistance. Such action makes these genes (and the
+genes with analogous action) promising for engineering crops
+with the help of molecular technologies</p></sec><sec sec-type="COI-statement"><title>Conflict of interest</title><p>The authors declare no conflict of interest.</p></sec><sec id="References"><title>References</title><p>Ali N., Mujeeb-Kazi A. Food production: global challenges to mitigate
+climate change. In: Physiological, Molecular, and Genetic Perspectives
+of Wheat Improvement. 2021;1-13. DOI 10.1007/978-3-030-
+59577-7_1</p><p>Ali S., Rodriguez-Algaba J., Thach T., Sørensen C.K., Hansen J.G.,
+Lassen P., Nazari K., Hodson D.P., Justesen A.F., Hovmøller M.S.
+Yellow rust epidemics worldwide were caused by pathogen races
+from divergent genetic lineages. Front. Plant Sci. 2017;8:1057. DOI
+10.3389/fpls.2017.01057</p><p>Alisaac E., Mahlein A.-K. Fusarium head blight on wheat: biology,
+modern detection and diagnosis and integrated disease management.
+Toxins. 2023;15(3):192. DOI 10.3390/toxins15030192</p><p>Antonovics J., Alexander H.M. The concept of fitness in plant-fungal
+pathogen systems. In: Leonard K.J., Fry W.E. (Eds.) Plant Disease
+Epidemiology. New York: McGraw-Hill, 1989;2:185-214</p><p>Aravindh R., Sivasamy M., Ganesamurthy K., Jayaprakash P., Gopalakrishnan
+C., Geetha M., Nisha R., Shajitha P., Peter J., Sindhu
+P.A., Vikas V.K. Marker assisted stacking/pyramiding of stem
+rust, leaf rust and powdery mildew disease resistance genes (Sr2/
+Lr27/Yr30, Sr24/Lr24 and Sr36/Pm6) for durable resistance in wheat
+(Triticum aestivum L.). Electron. J. Plant Breed. 2020;11(3):907-
+991. DOI 10.37992/2020.1103.148</p><p>Arora S., Steuernagel B., Gaurav K., Chandramohan S., Long Y.,
+Matny O., Johnson R., Enk J., Periyannan S., Singh N., … Bentley
+A.R., Ayliffe M., Olson E., Xu S.S., Steffenson B.J., Lagudah E.,
+Wulff B.B.H. Resistance gene cloning from a wild crop relative by
+sequence capture and association genetics. Nat. Biotechnol. 2019;
+37(2):139-143. DOI 10.1038/s41587-018-0007-9</p><p>Babkenova S.A., Babkenov A.T., Pakholkova E.V., Kanafin B.K.
+Pathogenic complexity of Septoria spot disease of wheat in northern
+Kazakhstan. Plant Sci. Today. 2020;7(4):601-606. DOI 10.14719/
+pst.2020.7.4.798</p><p>Bajgain P., Zhang X., Jungers J.M., DeHaan L.R., Heim B., Sheaffer
+C.C., Wyse D.L., Anderson J.A. ‘MN-Clearwater’, the first foodgrade
+intermediate wheatgrass (Kernza perennial grain) cultivar.
+J. Plant Regist. 2020;14(3):288-297. DOI 10.1002/plr2.20042</p><p>Baker L., Grewal S., Yang C., Hubbart-Edwards S., Scholefield D.,
+Ashling S., Burridge A., Przewieslik-Allen A., Wilkinson P., King I.,
+King J. Exploiting the genome of Thinopyrum elongatum to expand
+the gene pool of hexaploid wheat. Theor. Appl. Genet. 2020;133(7):
+2213-2226. DOI 10.1007/s00122-020-03591-3</p><p>Baranova O., Solyanikova V., Kyrova E., Konkova E., Gaponov S.,
+Sergeev V., Shevchenko S., Mal’chikov P., Dolzhenko D., Bespalova
+L., Ablova I., Tarhov A., Vasilova N., Askhadullin D., Askhadullin
+D., Sibikeev S.N. Evaluation of resistance to stem rust and identification
+of Sr genes in Russian spring and winter wheat cultivars
+in the Volga region. Agriculture. 2023;13(3):635. DOI 10.3390/
+agriculture13030635</p><p>Bhardwaj S.C., Prashar M., Kumar M., Jain S.K., Datta D. Lr19 resistance
+in wheat becomes susceptible to Puccinia triticina in India.
+Plant Dis. 2005;89(12):1360. DOI 10.1094/PD-89-1360A</p><p>Bhavani S., Hodson D.P., Huerta-Espino J., Randhawa M.S., Singh R.P.
+Progress in breeding for resistance to Ug99 and other races of the
+stem rust fungus in CIMMYT wheat germplasm. Front. Agric. Sci.
+Eng. 2019;6(3):210-224. DOI 10.15302/J-FASE-2019268</p><p>Brar G.S., Fetch T., McCallum B.D., Hucl P.J., Kutcher H.R. Virulence
+dynamics and breeding for resistance to stripe, stem, and leaf rust
+in Canada since 2000. Plant Dis. 2019;103(12):2981-2995. DOI
+10.1094/PDIS-04-19-0866-FE</p><p>Carmona M.A., Ferrazini M., Barreto D.E. Tan spot of wheat caused
+by Drechslera tritici-repentis: detection, transmission, and control
+in wheat seed. Cereal Res. Commun. 2006;34(2-3):1043-1049. DOI
+10.1556/CRC.34.2006.2-3.236</p><p>Ceoloni C., Kuzmanović L., Forte P., Gennaro A., Bitti A. Targeted exploitation
+of gene pools of alien Triticeae species for sustainable and
+multi-faceted improvement of the durum wheat crop. Crop Pasture
+Sci. 2014;65(1):96-111. DOI 10.1071/CP13335</p><p>Ceoloni C., Forte P., Kuzmanović L., Tundo S., Moscetti I., De Vita P.,
+Virili M.E., D’Ovidio R. Cytogenetic mapping of a major locus for
+resistance to Fusarium headblight and crown rot of wheat on Thinopyrum
+elongatum 7EL and its pyramiding with valuable genes from
+a Th. ponticum homoeologous arm onto bread wheat 7DL. Theor.
+Appl. Genet. 2017;130(10):2005-2024. DOI 10.1007/s00122-017-
+2939-8</p><p>Chen C., Han Y., Xiao H., Zou B., Wu D., Sha L., Yang C., Liu S.,
+Cheng Y., Wang Y., Kang H., Fan X., Zhou Y., Zhang T., Zhang H.
+Chromosome-specific painting in Thinopyrum species using bulked
+oligonucleotides. Theor. Appl. Genet. 2023;136(8):177. DOI
+10.1007/s00122-023-04423-</p><p>Chen Q., Conner R.L., Laroche A., Thomas J.B. Genome analysis of
+Thinopyrum intermedium and Thinopyrum ponticum using genomic
+in situ hybridization. Genome. 1998;41(4):580-586. DOI 10.1139/
+g98-055</p><p>Chen S., Huang Z., Dai Y., Qin Y., Zhang L., Gao Y., Chen J. The development
+of 7E chromosome-specific molecular markers for Thinopyrum
+elongatum based on SLAF-seq technology. PLoS One.
+2013;8(6):e65122. DOI 10.1371/journal.pone.0065122</p><p>Chen X.M. Epidemiology and control of stripe rust [Puccinia striiformis
+f. sp. tritici] on wheat. Can. J. Plant Pathol. 2005;27:314-337.
+DOI 10.1080/07060660509507230</p><p>Colmer T.D., Flowers T.J., Munns R. Use of wild relatives to improve
+salt tolerance in wheat. J. Exp. Bot. 2006;57(5):1059-1078. DOI
+10.1093/jxb/erj124</p><p>Curtis T., Halford N.G. The challenge of increasing wheat yield and
+the importance of not compromising food safety. Ann. Appl. Biol.
+2014;164(3):354-372. DOI 10.1111/aab.12108</p><p>Davoyan R.O., Bebyakina I.V., Davoyan E.R., Zinchenco A.N., Zubanova
+Y.S., Mikov D.S. Introgression of common wheat lines with
+genetic material of Agropyron glaucum. Russ. J. Genet. Appl. Res.
+2016;6(1):54-61. DOI 10.1134/S2079059716010056</p><p>FAO Report. The impact of disasters and crises on agriculture and food
+security. Rome: FAO, 2021. DOI 10.4060/cb3673en</p><p>Fedak G., Chen Q., Conner R.L., Laroche A., Petroski R., Armstrong
+K.W. Characterization of wheat-Thinopyrum partial amphiploids
+by meiotic analysis and genomic in situ hybridization. Genome.
+2000;43(4):712-719. DOI 10.1139/g00-027</p><p>Fisenko A.V., Kuzmina N.P. Remote hybridization of wheat in winter
+hardiness selection. Agrarnaya Rossiya = Agricultural Russia.
+2020;5:3-8. DOI 10.30906/1999-5636-2020-5-3-8 (in Russian)</p><p>Fones H., Gurr S. The impact of Septoria tritici Blotch disease on
+wheat: an EU perspective. Fungal Genet. Biol. 2015;79:3-7. DOI
+10.1016/j.fgb.2015.04.004</p><p>Frailie T.B., Innes R.W. Engineering healthy crops: molecular strategies
+for enhancing the plant immune system. Curr. Opin. Biotechnol.
+2021;70:151-157. DOI 10.1016/j.copbio.2021.04.006</p><p>Friebe B., Jiang J., Knott D.R., Gill B.S. Compensation indices of
+radiation-induced wheat-Agropyron elongatum translocations conferring
+resistance to leaf rust and stem rust. Crop Sci. 1994;34(2):
+400-404. DOI 10.2135/cropsci1994.0011183X003400020018x</p><p>Friebe B., Jiang J., Raupp W.J., McIntosh R.A., Gill B.S. Characterization
+of wheat-alien translocations resistance to diseases and pest:
+current status. Euphytica. 1996;91:59-87. DOI 10.1007/BF00035277</p><p>Friebe B., Raupp W.J., Gill B.S. Wheat alien translocation lines. Ann.
+Wheat Newslett. 2000;46:198-202</p><p>Friebe B., Zhang P., Linc G., Gill B.S. Robertsonian translocations in
+wheat arise by centric misdivision of univalents at anaphase I and
+rejoining of broken centromeres during interkinesis of meiosis II.
+Cytogenet. Genome Res. 2005;109(1-3):293-297. DOI 10.1159/
+000082412</p><p>Gao P., Zhou Y., Gebrewahid T.W., Zhang P., Yan X., Li X., Yao Z.,
+Li Z., Liu D. Identification of known leaf rust resistance genes in
+common wheat cultivars from Sichuan province in China. Crop
+Protect.
+2019;115:122-129. DOI 10.1016/j.cropro.2018.09.012</p><p>Gill B.S., Friebe B., Wilson D.L., Cox T.S. Registration of
+KS93WGRC27
+wheat streak mosaic virus-resistant T4DL·4Ai#2S
+wheat germplasm. Crop Sci. 1995;35(4):1236-1237. DOI 10.2135/
+cropsci1995.0011183X003500040100x</p><p>Goncharov N.P. Scientific support to plant breeding and seed production
+in Siberia in the XXI century. Vavilovskii Zhurnal Genetiki i
+Selektsii = Vavilov Journal of Genetics and Breeding. 2021;25(4):
+448-459. DOI 10.18699/VJ21.050</p><p>Gorham J., Forster B.P., Budrewicz E., Wyn J.R.G., Miller T.E.,
+Law C.N. Salt tolerance in the Triticeae: solute accumulation and
+distribution in an amphidiploid derived from Triticum aestivum
+cv. Chinese Spring and Thinopyrum bessarabicum. J. Exp. Bot.
+1986;37(10):1435-1449. DOI 10.1093/jxb/37.10.1435</p><p>Gultyaeva E., Shaydayuk E., Gannibal P. Leaf rust resistance genes in
+wheat cultivars registered in Russia and their influence on adaptation processes in pathogen populations. Agriculture. 2021;11(4):
+319. DOI 10.3390/agriculture11040319</p><p>Gultyaeva E., Shaydayuk E., Kosman E. Virulence diversity of Puccinia
+striiformis f. sp. tritici in common wheat in Russian regions
+in 2019–2021. Agriculture. 2022;12(11):1957. DOI 10.3390/agri
+culture12111957</p><p>Gultyaeva E., Gannibal P., Shaydayuk E. Long-term studies of wheat
+leaf rust in the north-western region of Russia. Agriculture. 2023;
+13(2):255. DOI 10.3390/agriculture13020255</p><p>Guo J., Yu X., Yin H., Liu G., Li A., Wang H., Kong L. Phylogenetic
+relationships of Thinopyrum and Triticum species revealed by SCoT
+and CDDP markers. Plant Syst. Evol. 2016;302:1301-1309. DOI
+10.1007/s00606-016-1332-4</p><p>Guo X., Huang Y., Wang J., Fu S., Wang C., Wang M., Zhou C., Hu X.,
+Wang T., Yang W., Han F. Development and cytological characterization
+of wheat–Thinopyrum intermedium translocation lines with
+novel stripe rust resistance gene. Front. Plant Sci. 2023;14:1135321.
+DOI 10.3389/fpls.2023.1135321</p><p>Han H., Ma X., Wang Z., Qi K., Yang W., Liu W., Zhang J., Zhou S.,
+Lu Y., Yang X., Li X., Li L. Chromosome 5P of Agropyron cristatum
+induces chromosomal translocation by disturbing homologous
+chromosome pairing in a common wheat background. Crop J.
+2023;11(1):228-237. DOI 10.1016/j.cj.2022.06.002</p><p>Hang A., Bockelman H.E., Burton C.S. Cytological and seed morphological
+investigation of 250 accessions from the W.J. Sando collection.
+Agronomy Society of America, Crop Science Society of America,
+Soil Science Society of America meeting, November 6−10,
+2005. Salt Lake City, Utah, 2005</p><p>Hao M., Zhang L., Ning S., Huang L., Yuan Z., Wu B., Yan Z., Dai S.,
+Jiang B., Zheng Y., Liu D. The resurgence of introgression breeding,
+as exemplified in wheat improvement. Front. Plant Sci. 2020;11:
+252. DOI 10.3389/fpls.2020.00252</p><p>Hassani H.S., King I.P., Reader S.M., Caligari P.D.S., Miller T.E. Can
+tritipyrum, a new salt tolerant potential amphiploid, be a successful
+cereal like triticale? J. Agric. Sci. Technol. 2000;2(3):177-195</p><p>He F., Wang Y.H., Bao Y.G., Ma Y.X., Wang X., Li X.F., Wang X.
+Chromosomal constitutions of five wheat-Elytrigia elongata partial
+amphiploids as revealed by GISH, multicolor GISH and FISH.
+Comp. Cyogen. 2017;11(3):525-540. DOI 10.3897/CompCytogen.
+v11i3.11883</p><p>He R.L., Chang Z.J., Yang Z.J., Yuan Z.Y., Zhan H.X., Zhang X.J.,
+Liu J.X. Inheritance and mapping of powdery mildew resistance
+gene Pm43 introgressed from Thinopyrum intermedium into wheat.
+Theor. Appl. Genet. 2009;118(6):1173-1180. DOI 10.1007/s00122-
+009-0971-z</p><p>Hohmann U., Badaeva K., Busch W., Friebe B., Gill B.S. Molecular cytogenetic
+analysis of Agropyron chromatin specifying resistance to
+barley yellow dwarf virus in wheat. Genome. 1996;39(2):336-347.
+DOI 10.1139/g96-044</p><p>Hou L., Jia J., Zhang X., Li X., Yang Z., Ma J., Guo H., Zhan H., Qiao L.,
+Chang Z. Molecular mapping of the stripe rust resistance gene Yr69
+on wheat chromosome 2AS. Plant Dis. 2016;100(8):1717-1724.
+DOI 10.1094/PDIS-05-15-0555-RE</p><p>Huang Q., Li X., Chen W., Xiang Z., Zhong S., Chang Z., Zhang M.,
+Zhang H.Y., Tan F.Q., Ren Z.L., Luo P.G. Genetic mapping of a putative
+Thinopyrum intermedium-derived stripe rust resistance gene
+on wheat chromosome 1B. Theor. Appl. Genet. 2014;127(4):843-
+853. DOI 10.1007/s00122-014-2261-7</p><p>Huerta-Espino J., Singh R.P. First report on virulence in wheat with leaf
+rust resistance gene Lr19 in Mexico. Plant Dis. 1994;78:640. DOI
+10.1094/PD-78-0640C</p><p>Jiang B., Liu T., Li H., Han H., Li L., Zhang J., Yang X., Zhou S.,
+Li X., Liu W. Physical mapping of a novel locus conferring leaf
+rust resistance
+on the long arm of Agropyron cristatum chromosome
+2P. Front. Plant Sci. 2018;9:817. DOI 10.3389/fpls.2018.
+00817</p><p>Jin Y., Szabo L.J., Pretorius Z.A., Singh R.P., Ward R., Fetch T., Jr.
+Detection
+of virulence to resistance gene Sr24 with in race TTKS of
+Puccinia graminis f. sp. tritici. Plant Dis. 2008;92(6):923-926. DOI
+10.1094/PDIS-92-6-0923</p><p>Johnson R. Genetic background of durable resistance. In: Lamberti F.,
+Waller J.M., Vander Graaff N.A. (Eds.) Durable Resistance in Crops.
+New York: Plenum Press, 1983;152-163</p><p>Knott D.R. Translocations involving Triticum chromosomes and Agropyron
+chromosomes carrying rust resistance. Can. J. Genet. Cytol.
+1968;10(3):695-696. DOI 10.1139/g68-087</p><p>Kocheshkova A.A., Kroupin P.Y., Bazhenov M.S., Karlov G.I., Pochtovyy
+A.A., Upelniek V.P., Belov V.I., Divashuk M.G. Pre-harvest
+sprouting resistance and haplotype variation of ThVp-1 gene in the
+collection of wheat-wheatgrass hybrids. PLoS One. 2017;12(11):
+e0188049. DOI 10.1371/journal. pone.0188049</p><p>Kolmer J. Leaf rust of wheat: pathogen biology, variation and host resistance.
+Forests. 2013;4(1):70-84. DOI 10.3390/f4010070</p><p>Kolmer J.A., Jin Y., Long D.L. Wheat leaf and stem rust in the United
+States. Aust. J. Agric. Res. 2007;58(6):631-638. DOI 10.1071/
+AR07057</p><p>Kosová K., Vítámvás P., Urban M.O., Kholová J., Prášil I.T. Breeding
+for enhanced drought resistance in barley and wheat – droughtassociated
+traits, genetic resources and their potential utilization in
+breeding programmes. Czech J. Gen. Pl. Breed. 2014;50(4):247-
+261. DOI 10.17221/118/2014-CJGPB</p><p>Kroupin P.Y., Kuznetsova V.M., Nikitina E.A., Martirosyan Y.T., Karlov
+G.I., Divashuk M.G. Development of new cytogenetic markers
+for Thinopyrum ponticum (Podp.) Z.-W. Liu &amp; R.-C. Wang. Comp.
+Cytogenet. 2019;13(3):231-243. DOI 10.3897/CompCytogen.v13i3.
+36112</p><p>Kumar A., Choudhary A., Kaur H., Mehta S. A walk towards wild
+grasses to unlock the clandestine of gene pools for wheat improvement:
+a review. Plant Stress. 2022;3:100048. DOI 10.1016/j.stress.
+2021.100048</p><p>Kuzmanović L., Ruggeri R., Virili M.E., Rossini F., Ceoloni C. Effects
+of Thinopyrum ponticum chromosome segments transferred into durum
+wheat on yield components and related morpho-physiological
+traits in Mediterranean rain-fed conditions. Field Crops Res. 2016;
+186:86-98. DOI 10.1016/j.fcr.2015.11.007</p><p>Kuzmanović L., Rossini F., Ruggeri R., Pagnotta M.A., Ceoloni C.
+Engineered durum wheat germplasm with multiple alien introgressions:
+agronomic and quality performance agronomy. Agronomy.
+2020;10(4):486. DOI 10.3390/agronomy10040486</p><p>Lammer D., Cai X.W., Li H., Arterburn M., Chatelain J., Greco A.,
+Lyon S., Gollnick M., Murrar T.D., Jones S.S. Utilization of Thynopyrum
+spp. in breeding winter wheat for disease resistance, stress
+tolerance, and perennial habit. In: Increasing Wheat Production in
+Central Asia through Science and International Cooperation. Proc.
+1st Central Asian Wheat Conf. Almaty, Kazakhstan, 10–13 June,
+2003. Almaty, 2005;147-151</p><p>Lang T., La S., Li B., Yu Z., Chen Q., Li J., Yang E., Li G., Yang Z. Precise
+identification of wheat-Thinopyrum intermedium translocation
+chromosomes carrying resistance to wheat stripe rust in line Z4 and
+its derived progenies. Genome. 2018;61(3):177-185. DOI 10.1139/
+gen-2017-0229</p><p>Leonova I.N. Influence of alien genetic material on the manifestation of
+agronomically important traits of common wheat (T. aestivum L.).
+Vavilovskii Zhurnal Genetiki i Selektsii = Vavilov Journal of Genetics
+and Breeding. 2018;22(3):321-328. DOI 10.18699/VJ18.367 (in
+Russian)</p><p>Li H., Wang X. Thinopyrum ponticum and Th. intermedium: the promising
+source of resistance to fungal and viral diseases of wheat.
+J. Genet. Genomics. 2009;36(9):557-565. DOI 10.1016/S1673-8527
+(08)60147-2</p><p>Li H., Boshoff W.H.P., Pretorius Z.A., Zheng Q., Li B., Li Z. Establishment
+of wheat-Thinopyrum ponticum translocation lines with resistance to Puccinia graminis f. sp. tritici Ug99. J. Genet. Genom.
+2019;46(8):405-407. DOI 10.1016/j.jgg.2019.07.005</p><p>Li M.Z., Wang Y.Z., Liu X.J., Li X.F., Wang H.G., Bao Y.G. Molecular
+cytogenetic identification of a novel wheat–Th. ponticum 1Js (1B)
+substitution line resistant to powdery mildew and leaf rust. Front.
+Plant Sci. 2021;12:727734. DOI 10.3389/fpls.2021.727734</p><p>Li M.Z., Yuan Y.Y., Ni F., Li X.F., Wang H.G., Bao Y.G. Characterization
+of two wheat-Thinopyrum ponticum introgression lines with
+pyramiding resistance to powdery mildew. Front. Plant Sci. 2022;
+13:943669. DOI 10.3389/fpls.2022.943669</p><p>Li W., Zhang Q., Wang S., Langham M.A., Singh D., Bowden R.L.,
+Xu S.S. Development and characterization of wheat–sea wheatgrass
+(Thinopyrum junceiforme) amphiploids for biotic stress resistance
+and abiotic stress tolerance. Theor. Appl. Gen. 2019;132(1):163-175.
+DOI 10.1007/s00122-018-3205-4</p><p>Li X., Jiang X., Chen X., Song J., Ren C., Xiao Y., Gao X., Ru Z.
+Molecular cytogenetic identification of a novel wheat-Agropyron
+elongatum chromosome translocation line with powdery mildew
+resistance. PLoS One. 2017;12(9):e0184462. DOI 10.1371/journal.
+pone.0184462</p><p>Li Z.S., Li B., Tong Y.P. The contribution of distant hybridization with
+decaploid Agropyron elongatum to wheat improvement in China.
+J. Genet. Genomics. 2008;35(8):451-456. DOI 10.1016/S1673-8527
+(08)60062-4</p><p>Liu J., Chang Z., Zhang X., Yang Z., Li X., Jia J., Zhan H., Guo H.,
+Wang J. Putative Thinopyrum intermedium-derived stripe rust resistance
+gene Yr50 maps on wheat chromosome arm 4BL. Theor.
+Appl. Genet. 2013;126(1):265-274. DOI 10.1007/s00122-012-
+1979-3</p><p>Liu L.Q., Luo Q.L., Li H.W., Li B., Li Z.S., Zheng Q. Physical mapping
+of the blue-grained gene from Thinopyrum ponticum chromosome
+4Ag and development of blue-grain-related molecular markers
+and a FISH probe based on SLAF-seq technology. Theor. Appl.
+Genet. 2018;131(11):2359-2370. DOI 10.1007/s00122-018-3158-7</p><p>Liu W., Jin Y., Rouse M., Friebe B., Gill B., Pumphrey M.O. Development
+and characterization of wheat-Ae. searsii Robertsonian
+translocations and a recombinant chromosome conferring resistance
+to stem rust. Theor. Appl. Genet. 2011a;122(8):1537-1545. DOI
+10.1007/s00122-011-1553-4</p><p>Liu W., Rouse M., Friebe B., Jin Y., Gill B., Pumphrey M.O. Discovery
+and molecular mapping of a new gene conferring resistance to stem
+rust, Sr53, derived from Aegilops geniculata and characterization
+of spontaneous translocation stocks with reduced alien chromatin.
+Chromosome Res. 2011b;19(5):669-682. DOI 10.1007/s10577-011-
+9226-3</p><p>Liu W., Danilova T.V., Rouse M.N., Bowden R.L., Friebe B., Gill B.S.,
+Pumphrey M.O. Development and characterization of a compensating
+wheat-Thinopyrum intermedium Robertsonian translocation
+with Sr44 resistance to stem rust (Ug99). Theor. Appl. Genet.
+2013;126(5):1167-1177. DOI 10.1007/s00122-013-2044-6</p><p>Liu X., Ao K., Yao J., Zhang Y., Li X. Engineering plant disease resistance
+against biotrophic pathogens. Curr. Opin. Plant Biol. 2021;60:
+101987. DOI 10.1016/j.pbi.2020.101987</p><p>Luo P., Hu X., Chang Z., Zhang M., Zhang H., Ren Z. A new stripe
+rust resistance gene transferred from Thinopyrum intermedium to
+hexaploid wheat (Triticum aestivum). Phytoprotection. 2009a;90(2):
+57-63. DOI 10.7202/044023ar</p><p>Luo P.G., Luo H.Y., Chang Z.J., Zhang H.Y., Zhang M., Ren Z.L. Characterization
+and chromosomal location of Pm40 in common wheat:
+a new gene for resistance to powdery mildew derived from Elytrigia
+intermedium. Theor. Appl. Genet. 2009b;118(6):1059-1064. DOI
+10.1007/s00122-009-0962-0</p><p>Ma F.F., Xu Y.F., Ma Z.Q., Li L.H., An D.G. Genome-wide association
+and validation of key loci for yield-related traits in wheat founder
+parent Xiaoyan 6. Mol. Breed. 2018;38:91. DOI 10.1007/s11032-
+018-0837-7 158</p><p>Martynov S.P., Dobrotvorskaya T.V., Krupnov V.A. Genealogical
+analysis
+of the use of two wheatgrass (Agropyron) species in common
+wheat (Triticum aestivum L.) breeding for disease resistance.
+Russ. J. Genet. 2016;52(2):154-163. DOI 10.1134/S10227954160
+20071</p><p>McDonald B.A., Stukenbrock E.H. Rapid emergence of pathogens
+in agro-ecosystems: global threats to agricultural sustainability
+and food security. Philos. Trans. R. Soc. Lond. B Biol. Sci. 2016;
+371(1709):20160026. DOI 10.1098/rstb.2016.0026</p><p>McIntosh R.A., Wellings C.R., Park R.F. (Eds.) Wheat Rusts. An Atlas
+of Resistance Genes. Springer Dordrecht, 1995. DOI 10.1071/
+9780643101463</p><p>McIntosh R.A., Dubcovsky J., Rogers W.J., Xia X.C., Raupp W.J. Catalogue
+of gene symbols for wheat: 2018 Supplement. Ann. Wheat
+Newslett. 2018;64:73-93</p><p>Melotto M., Zhang L., Oblessuc P.R., He S.Y. Stomatal defense a decade
+later. Plant Physiol. 2017;174(2):561-571. DOI 10.1104/pp.16.
+01853</p><p>Meshkova L.V., Rosseeva L.P., Korenyuk E.A., Belan I.A. Dynamics
+of distribution of the wheat leaf rust pathotypes virulent to the cultivars
+with Lr9 gene in Omsk region. Mikologiya i Fitopatologiya
+=
+Mycology and Phytopathology. 2012;46(6):397-400 (in Russian)</p><p>Mo Q., Wang C.Y., Chen C.H., Wang Y.J., Zhang H., Liu X.L., Ji W.Q.
+Molecular cytogenetic identification of a wheat Thinopyrum ponticum
+substitution line with stripe rust resistance. Cereal Res. Commun.
+2017;45(4):564-573. DOI 10.1556/0806.45.2017.037</p><p>Niks R.E. How specific is non-hypersensitive host and nonhost resistance
+of barley to rust and mildew fungi? J. Integr. Agric. 2014;
+13(2):244-254. DOI 10.1016/S2095-3119(13)60648-6</p><p>Niu Z., Klindworth D.L., Yu G., Friessen T.L., Chao S., Jin Y., Cai X.,
+Ohm J.-B., Rasmussen J.B., Xu S.S. Development and characterization
+of wheat lines carrying stem rust resistance gene Sr43 derived
+from Thinopyrum ponticum. Theor. Appl. Genet. 2014;127(4):969-
+980. DOI 10.1007/s00122-014-2272-4</p><p>O’Driscoll A., Kildea S., Doohan F., Spink J., Mullins E. The wheat–
+Septoria conflict: a new front opening up? Trends Plant Sci. 2014;
+19(9):602-610. DOI 10.1016/j.tplants.2014.04.011</p><p>Ohm H.W., Anderson J.M., Sharma H.C., Ayala L., Thompson N., Uphaus
+J.J. Registration of yellow dwarf viruses resistant wheat germplasm
+line P961341. Crop Sci. 2005;45(2):805-806. DOI 10.2135/
+cropsci2005.0805</p><p>Oliver R.E., Xu S.S., Stack R.W., Friesen T.L., Jin Y., Cai X. Molecular
+cytogenetic characterization of four partial wheat–Thinopyrum
+ponticum amphiploids and their reactions to Fusarium head blight,
+tan spot, and Stagonospora nodorum blotch. Theor. Appl. Genet.
+2006;112(8):1473-1479. DOI 10.1007/s00122-006-0250-1</p><p>Park R.F., Bariana H.S., Wellings C.R., Wallwork H. Detection and occurrence
+of a new pathotype of Puccinia triticina with virulence for
+Lr24 in Australia. Aust. J. Agric. Res. 2002;53(9):1069-1076. DOI
+10.1071/AR02018</p><p>Pathotype Tracker – Where is Ug99? 2023. [Available at: https://rust
+tracker.cimmyt.org/?page_id=22]</p><p>Patpour M., Hovmøller M.S., Rodriguez-Algaba J., Randazzo B., Villegas
+D., Shamanin V.P., Berlin A., Flath K., Czembor P., Hanzalova
+A., Sliková S., Skolotneva E.S., Jin Y., Szabo L., Meyer K.J.G.,
+Valade R., Thach T., Hansen J.G., Justesen A.F. Wheat stem rust
+back in Europe: diversity, prevalence and impact on host resistance.
+Front. Plant Sci. 2022;13:882440. DOI 10.3389/fpls.2022.882440</p><p>Peng Y., Wersch R., Zhang Y. Convergent and divergent signaling in
+pamp-triggered immunity and effector-triggered immunity. Mol.
+Plant Microbe Interact. 2018;31(4):403-409. DOI 10.1094/MPMI-
+06-17-0145-CR</p><p>Peto F.H. Hybridization of Triticum and Agropyron. II. Cytology of the
+male parents and F1 generation. Can. J. Res. 1936;14(5):203-214.
+DOI 10.1139/cjr36c-017</p><p>Phuke R.M., He X., Juliana P., Bishnoi S.K., Singh G.P., Kabir M.R.,
+Roy K.K., Joshi A.K., Singh R.P., Singh P.K. Association mapping of
+seedling resistance to tan spot (Pyrenophora tritici-repentis Race 1)
+in CIMMYT and South Asian wheat germplasm. Front. Plant Sci.
+2020;11:1309. DOI 10.3389/fpls.2020.01309</p><p>Plotnikova L.Ya. Influence of the surface features and physiological
+reactions of non-host species on the development of cellular structures
+of rust fungi. Tsitologiya = Cytology. 2008;50(5):439-446 (in
+Russian)</p><p>Plotnikova L.Ya. The involvement of reactive oxygen species in defense
+of wheat lines with the genes introgressed from Agropyron
+species contributing the resistance against brown rust. Russ. J. Plant
+Physiol. 2009;56(2):181-189. DOI 10.1134/S102144370902006X</p><p>Plotnikova L.Ya., Aidosova A.T., Rispekova A.N., Myasnikov
+A. Yu.
+Introgressive lines of common wheat with genes of wheat grass
+Agropyron elongatum resistant to leaf diseases in the South West
+Siberia. Vestnik OmGAU = OmskSAU Bull. 2014;4(16):3-7 (in Russian)</p><p>Plotnikova L.Ya., Meshkova L.V., Gultyaeva E.I., Mitrofanova O.P.,
+Lapochkina I.F. A tendency towards leaf rust resistance decrease in
+common wheat introgression lines with genetic material from Aegilops
+speltoides Tausch. Vavilovskii Zhurnal Genetiki i Selektsii =
+Vavilov Journal of Genetics and Breeding. 2018;22(5):560-567.
+DOI 10.18699/VJ18.395 (in Russian)</p><p>Plotnikova L.Ya., Sagendykova A.T., Ignatyeva E.Y. Defence of bread
+wheat with the tall wheatgrass genes while accelerating the physiological
+specialization of the causative agent of stem rust. Vestnik
+OmGAU = OmskSAU Bull. 2021;4:35-44. DOI 10.48136/2222-
+0364_2021_4_35 (in Russian)</p><p>Plotnikova L.Ya., Pozherukova V., Knaub V., Kashuba Y. What was
+the reason for the durable effect of Sr31 against wheat stem rust?
+Agriculture. 2022;12(12):2116. DOI 10.3390/agriculture12122116</p><p>Plotnikova L.Ya., Knaub V., Pozherukova V. Nonhost resistance of Thinopyrum
+ponticum to Puccinia graminis f. sp. tritici and the effects
+of the Sr24, Sr25, and Sr26 genes introgressed to wheat. Int. J. Plant
+Biol. 2023a;14(2):435-457. DOI 10.3390/ijpb14020034</p><p>Plotnikova L.Ya., Sagendykova A., Pozherukova V. The use of genetic
+material of tall wheatgrass to protect common wheat from Septoria
+blotch in Western Siberia. Agriculture. 2023b;13(1):203. DOI
+10.3390/agriculture13010203</p><p>Plotnikova L.Ya., Sagendykova A.T., Kuzmina S.P. Drought resistance
+of introgressive spring common wheat lines with genetic material
+of tall wheatgrass. Proceedings on Applied Botany, Genetics and
+Breeding. 2023c;184(2):38-50. DOI 10.30901/2227-8834-2023-2-
+38-50</p><p>Pototskaya I.V., Shamanin V.P., Aydarov A.N., Morgounov A.I. The use
+of wheatgrass (Thinopyrum intermedium) in breeding. Vavilovskii
+Zhurnal Genetiki i Selektsii = Vavilov Journal of Genetics and
+Breeding. 2022;26(5):413-421. DOI 10.18699/VJGB-22-51 (in Russian)</p><p>Pugliese J.Y., Culman S.W., Sprunger C.D. Harvesting forage of the
+perennial grain crop Kernza (Thinopyrum intermedium) increases
+root biomass and soil nitrogen cycling. Plant Soil. 2019;437(2):241-
+254. DOI 10.1007/s11104-019-03974-6</p><p>Qi Z.J., Du P., Qian B.L., Zhuang L., Chen H., Chen T., Shen J., Guo J.,
+Feng Y., Pei Z. Characterization of a wheat–Thinopyrum bessarabicum
+(T2JS-2BS·2BL) translocation line. Theor. Appl. Genet. 2010;
+121(3):589-597. DOI 10.1007/s00122-010-1332-7</p><p>Salina E.A., Adonina I.G., Badaeva E.D., Kroupin P.Yu., Stasyuk A.I.,
+Leonova I.N., Shishkina A.A., Divashuk M.G., Starikova E.V.,
+Khuat T.M.L., Syukov V.V., Karlov G.I. A Thinopyrum intermedium
+chromosome in bread wheat cultivars as a source of gene conferring
+resistance to fungal diseases. Euphytica. 2015;204:91-101. DOI
+10.1007/s10681-014-1344-5</p><p>Savari S., Willocquet L., Pethybridge S.J., Esker P., McRoberts N.,
+Nelson A. The global burden of pathogens and pests on major food
+crops. Nat. Ecol. Evol. 2019;3(3):430-439. DOI 10.1038/s41559-
+018-0793-y</p><p>Sears E.R. The transfer of leaf rust resistance from Aegilops umbellulata
+to wheat. Broohaven Sympos. Biol. 1956;9:1-21</p><p>Sears E.R. Genetic control of chromosome pairing in wheat. Annu.
+Rev. Genet. 1976;10:31-51. DOI 10.1146/annurev.ge.10.120176.
+000335</p><p>Sears E.R. Analysis of wheat-Agropyron recombinant chromosomes.
+In: Proceedings of the 8th Eucarpia Congress, Madrid, Spain, 23–
+25 May 1977. 1978;63-72</p><p>Sepsi A., Molnar I., Szalay D., Molnar-Lang M. Characterization of a
+leaf rust resistant wheat-Thinopyrum ponticum partial amphiploid
+BE-1, using sequential multicolor GISH and FISH. Theor. Appl.
+Genet. 2008;116(6):825-834. DOI 10.1007/s00122-008-0716-4</p><p>Shamanin V.P., Salina E., Wanyera R., Zelenskiy Y., Olivera P., Morgunov
+A. Genetic diversity of spring wheat from Kazakhstan and Russia
+for resistance to stem rust Ug99. Euphytica. 2016;212:287-296.
+DOI 10.1007/s10681-016-1769-0</p><p>Shi Q., Guo X., Su H., Zhang Y., Hu Z., Zhang J., Han F. Autoploid
+origin and rapid diploidization of the tetraploid Thinopyrum elongatum
+revealed by genome differentiation and chromosome pairing
+in meiosis. Plant J. 2023;113(3):536-545. DOI 10.1111/tpj.16066</p><p>Sibikeev S.N., Markelova T.S., Baukenova E.A., Druzhin A.E. Likely
+threat of the spread of race Ug99 of Puccinia graminis f. sp. tritici
+on wheat in Southeastern Russia. Russ. Agric. Sci. 2016; 42(2):145-
+148. DOI 10.3103/S1068367416020154</p><p>Sibikeev S.N., Badaeva E.D., Gultyaeva E.I., Druzhin A.E., Shishkina
+A.A., Dragovich A.Y., Kroupin P.Y., Karlov G.I., Khuat T.M.,
+Divashuk M.G. Comparative analysis of Agropyron intermedium
+(Host) Beauv 6Agi and 6Agi2 chromosomes in bread wheat cultivars
+and lines with wheat–wheatgrass substitutions. Russ. J. Genet.
+2017;53(3):314-324. DOI 10.1134/S1022795417030115</p><p>Sibikeev S.N., Baranova O.A., Druzhin A.E. A prebreeding study of introgression
+spring bread wheat lines carrying combinations of stem
+rust resistance genes, Sr22+Sr25 and Sr35+Sr25. Vavilovskii Zhurnal
+Genetiki i Selektsii = Vavilov Journal of Genetics and Breeding.
+2021;25(7):713-722. DOI 10.18699/VJ21.081</p><p>Singh D. Development and Characterization of Wheat-Thinopyrum
+Junceiforme chromosome addition lines. Thesis. South Dakota State
+Univ., 2019 [https://openprairie.sdstate.edu/etd/3368]</p><p>Singh R.P., Hodson D.P., Jin Y., Ldaaguh E.S., Ayliffe M.A., Bhavani
+S., Rouse M.N., Pretorius Z.A., Szabo L.J., Huerta-Espino J.,
+Basnet B.R., Lan C., Hovmøller M.S. Emergence and spread of new
+races of wheat stem rust fungus: continued threat to food security
+and prospects of genetic control. Phytopathology. 2015;105(7):872-
+884. DOI 10.1094/PHYTO-01-15-0030-FI</p><p>Singh R.P., Singh P.K., Rutkoski J., Hodson D.P., He X., Jørgensen L.N.,
+Hovmøller M.S., Huerta-Espino J. Disease impact on wheat yield
+potential and prospects of genetic control. Annu. Rev. Phytopathol.
+2016;54:303-322. DOI 10.1146/annurev-phyto-080615-095835</p><p>Skolotneva E.S., Kelbin V.N., Morgunov A.I., Boiko N.I., Shamanin
+V.P., Salina E.A. Races composition of the Novosibirsk population
+of Puccinia graminis f. sp. tritici. Biol. Bull. Rev. 2023;13(1):
+S114-S122. DOI 10.1134/S2079086423070125</p><p>Smith D.C. Intergeneric hybridization of Triticum and other grasses,
+principally Agropyron. J. Hered. 1943;34(7):219-224. DOI 10.1093/
+oxfordjournals.jhered.a105291</p><p>Smith E.L., Schlehuber A.M., Young H.C., Edwards L.H. Registration
+of Agent wheat. (Reg. No. 471). Crop Sci. 1968;8(4):511-512. DOI
+10.2135/cropsci1968.0011183X000800040039x</p><p>Sun S.C. The approach and methods of breeding new varieties and
+new species from Agrotriticum hybrids. Acta Agron. Sin. 1981;7(1):
+51-58</p><p>Tadesse Y., Chala A., Kassa B. Yield loss due to Septoria tritici blotch
+(Septoria tritici) of bread wheat (Triticum aestivum L.) in the central
+highlands of Ethiopia. J. Biol. Agric. Healthc. 2020;10(10):1-7. DOI
+10.7176/JBAH/10-10-01</p><p>Toropova E.Yu., Kazakova O.A., Piskarev V.V. Septoria blotch epidemic
+process on spring wheat varieties. Vavilovskii Zhurnal Genetiki
+i Selektsii = Vavilov Journal of Genetics and Breeding. 2020;
+24(2):139-148. DOI 10.18699/VJ20.609</p><p>Tsitsin N.V. Problems of distant hybridization. In: Problems of Distant
+Hybridization. Moscow: Kolos Publ., 1979;5-20 (in Russian)</p><p>Tsvelev N.N. Grasses of the Soviet Union (Russian translations series,
+8). Abingdon, UK: Routledge, 1984</p><p>Upelniek V.P., Belov V.I., Ivanova L.P., Dolgova S.P., Demidov A.S.
+Heritage of academician N.V. Tsitsin: state-of-the-art and potential
+of the collection of intermediate wheat × couch grass hybrids.
+Vavilovskii Zhurnal Genetiki i Selektsii = Vavilov Journal of Genetics
+and Breeding. 2012;16(3):667-674 (in Russian)</p><p>Wang H.W., Sun S.L., Ge W.Y., Zhao L.F., Hou B.Q., Wang K.,
+Lyu Z.F., Chen L.Y., Xu S.S., Guo J., … Li A.F., Xu S.S., Bai G.H.,
+Nevo E., Gao C.X., Ohm H., Kong L.R. Horizontal gene transfer
+of Fhb7 from fungus underlies Fusarium head blight resistance in
+wheat. Science. 2020;368(6493):eaba5435. DOI 10.1126/science.
+aba5435</p><p>Wang L., Shi Q., Su H., Wang Y., Sha L., Fan X., Kang H., Zhang H.,
+Zhou Y. St2-80: a new FISH marker for St genome and genome
+analysis in Triticeae. Genome. 2017;60(7):553-563. DOI 10.1139/
+gen-2016-0228</p><p>Wang R.R.-C. Agropyron and Psathyrostachys. In: Kole C. (Ed.) Wild
+Crop Relatives: Genomic and Breeding Resources. Berlin, Heidelberg:
+Springer, 2011;77-108. DOI 10.1007/978-3-642-14228-4_2</p><p>Wang S., Wang C., Feng X., Zhao J., Deng P., Wang Y., Zhang H.,
+Liu X., Li T., Chen C., Wang B., Ji W. Molecular cytogenetics and
+development of St-chromosome-specific molecular markers of novel
+stripe rust resistant wheat-Thinopyrum intermedium and wheat-
+Thinopyrum ponticum substitution lines. BMC Plant Biol. 2022;
+22(1):111. DOI 10.1186/s12870-022-03496-x</p><p>Wang Y.Z., Cao Q., Zhang J.J., Wang S.W., Chen C.H., Wang C.Y.,
+Zhang H., Wang Y., Ji W. Cytogenetic analysis and molecular marker
+development for a new wheat–Thinopyrum ponticum 1Js (1D)
+disomic
+substitution line with resistance to stripe rust and powdery
+mildew. Front. Plant Sci. 2020;11:1282. DOI 10.3389/fpls.2020.
+01282</p><p>Wells D.G., Kota R.S., Sandhu H.S., Gardner W.A.S., Finney K.F. Registration
+of one disomic substitution line and five translocation lines
+of winter wheat germ plasm resistant to wheat streak mosaic virus.
+Crop Sci. 1982;22(6):1277-1278. DOI 10.2135/cropsci1982.001118
+3X002200060083x</p><p>Wu X., Zang C., Zhang Y., Xu Y., Wang S., Li T., Gao L. Characterization
+of wheat monogenic lines with known Sr genes and wheat
+cultivars for resistance to three new races of Puccinia graminis
+f. sp. tritici in China. J. Integr. Agric. 2023;22(6):1740-1749. DOI
+10.1016/j.jia.2022.08.125</p><p>Wulff B.B.H., Moscou M.J. Strategies for transferring resistance into
+wheat: from wide crosses to GM cassettes. Front Plant Sci. 2014;5:
+692. DOI 10.3389/fpls.2014.00692</p><p>Xu S., Jiang B., Han H., Ji X., Zhang J., Zhou S., Yang X., Li X., Li L.,
+Liu W. Genetic effects of Agropyron cristatum 2P chromosome
+translocation fragments in a wheat background. J. Integr Agr. 2023;
+22(1):52-62. DOI 10.1016/j.jia.2022.08.094</p><p>Xu X., Yuan D., Li D., Gao Y., Wang Z., Liu Y., Wang S., Xuan Y.,
+Zhao H., Li T., Wu Y. Identification of stem rust resistance genes in
+wheat cultivars in China using molecular markers. PeerJ. 2018;6:
+e4882. DOI 10.7717/peerj.4882</p><p>Yang G., Boshoff W., Li H., Pretorius Z., Luo Q., Li B., Li Z., Zheng Q.
+Chromosomal composition analysis and molecular marker development
+for the novel Ug99‐resistant wheat–Thinopyrum ponticum
+translocation line WTT34. Theor. Appl. Genet. 2021;134(5):1587-
+1599. DOI 10.1007/s00122‐021‐03796‐0</p><p>Yang G., Deng P., Ji W., Fu S., Li H., Li B., Li Z., Zheng Q. Physical
+mapping of a new powdery mildew resistance locus from Thinopyrum
+ponticum chromosome 4AgS. Front. Plant Sci. 2023;14:
+1131205. DOI 10.3389/fpls.2023.1131205</p><p>Yang Z., Mu Y., Wang Y., He F., Shi L., Fang Z., Zhang J., Zhang Q.,
+Geng G., Zhang S. Characterization of a novel TtLEA2 gene from
+Tritipyrum and its transformation in wheat to enhance salt tolerance.
+Front. Plant Sci. 2022;13:830848. DOI 10.3389/fpls.2022.830848</p><p>Yin X., Shang X., Pang B., Song J., Cao S., Li J., Zhang X. Molecular
+mapping of two novel stripe rust resistant genes YrTp1 and YrTp2
+in A-3 derived from Triticum aestivum × Thinopyrum ponticum.
+Agric.
+Sci. China. 2006;5(7):483-490. DOI 10.1016/S1671-2927(06)
+60081-3</p><p>Zeng W., He S.Y. A prominent role of the flagellin receptor
+FLAGELLIN-
+SENSING2 in mediating stomatal response to Pseudomonas
+syringae pv tomato DC3000 in Arabidopsis. Plant Physiol.
+2010;153(3):1188-1198. DOI 10.1104/pp.110.157016</p><p>Zhan H.X., Li G.R., Zhang X.J., Li X., Guo H.J., Gong W.P., Jia J.,
+Qiao L., Ren Y., Yang Z., Chang Z. Chromosomal location and
+comparative genomics analysis of powdery mildew resistance
+gene Pm51 in a putative wheat–Thinopyrum ponticum introgression
+line. PloS One. 2014;9:e113455. DOI 10.1371/journal.pone.
+0113455</p><p>Zhan H., Zhang X., Li G., Pan Z., Hu J., Li X., Qiao L., Jia J., Guo H.,
+Chang Z., Yang Z. Molecular characterization of a new wheat–Thinopyrum
+intermedium translocation line with resistance to powdery
+mildew and stripe rust. Int. J. Mol. Sci. 2015;16(1):2162-2173. DOI
+10.3390/ijms16012162</p><p>Zhan J., McDonald B.A. Experimental measures of pathogen competition
+and relative fitness. Annu. Rev. Phytopathol. 2013;51:131-153.
+DOI 10.1146/annurev-phyto-082712-102302</p><p>Zhang J., Hewitt T.C., Boshoff W.H.P., Dundas I., Upadhyaya N.,
+Li J., Patpour M., Chandramohan S., Pretorius Z.A., Hovmøller M.,
+Schnippenkoetter W., Park R.F., Mago R., Periyannan S., Bhatt D.,
+Hoxha S., Chakraborty S., Luo M., Dodds P., Steuernagel B.,
+Wulff B.B.H., Ayliffe M., McIntosh R.A., Zhang P., Lagudah E.S.
+A recombined Sr26 and Sr61 disease resistance gene stack in wheat
+encodes unrelated NLR genes. Nat. Commun. 2021;12:3378. DOI
+10.1038/s41467-021-23738-0</p><p>Zhang R.Q., Xiong C.X., Mu H.Q., Yao R.N., Meng X.R., Kong L.N.,
+Xing L., Wu J., Feng Y., Cao A. Pm67, a new powdery mildew resistance
+gene transferred from Dasypyrum villosum chromosome 1V
+to common wheat (Triticum aestivum L.). Crop J. 2020;9(4):882-
+888. DOI 10.1016/j.cj.2020.09.012</p><p>Zhang W., Lukaszewski A.J., Kolmer J., Soria M.A., Goyal S., Dubcovsky
+J. Molecular characterization of durum and common wheat
+recombinant lines carrying leaf rust resistance (Lr19) and yellow
+pigment (Y) genes from Lophopyrum ponticum. Theor. Appl. Genet.
+2005;111(3):573-582. DOI 10.1007/s00122-005-2048-y</p><p>Zhang X., Dong Y., Wang R.R.C. Characterization of genomes and
+chromosomes in partial amphiploids of the hybrid Triticum aestivum
+× Thinopyrum ponticum by in situ hybridization, isozyme analysis,
+and RAPD. Genome. 1996;39(6):1062-1071. DOI 10.1139/
+g96-133</p><p>Zhang X., Shen X., Hao Y., Cai J., Ohm H.W., Kong L. A genetic map
+of Lophopyrum ponticum chromosome 7E, harboring resistance genes to Fusarium head blight and leaf rust. Theor. Appl. Genet.
+2011;122(2):263-270. DOI 10.1007/s00122-010-1441-3</p><p>Zhang Z., Song L., Han H., Zhou S., Zhang J., Yang X., Li X., Liu W.,
+Li L. Physical localization of a locus from Agropyron cristatum conferring
+resistance to stripe rust in common wheat. Int. J. Mol. Sci.
+2017;18(11):2403. DOI 10.3390/ijms18112403</p><p>Zheng Q., Klindworth D.L., Friesen T.L., Liu A., Li Z., Zhong S., Jin Y.,
+Xu S.S. Characterization of Thinopyrum species for wheat stem rust
+resistance and ploidy level. Crop Sci. 2014а;54(6):2663-2672. DOI
+10.2135/CROPSCI2014.02.0093</p><p>Zheng Q., Lv Z., Niu Z., Li B., Li H., Xu S.S., Han F., Li Z. Molecular
+cytogenetic characterization and stem rust resistance of five wheat–
+Thinopyrum ponticum partial amphiploids. J. Genet. Genomics.
+2014b;41(11):591-599. DOI 10.1016/j.jgg.2014.06.003</p><p>Zheng X., Tang C., Han R., Zhao J., Qiao L., Zhang S., Qiao L., Ge C.,
+Zheng J., Liu C. Identification, characterization, and evaluation of
+novel stripe rust resistant wheat–Thinopyrum intermedium chromosome
+translocation lines. Plant Dis. Publ. 2020;104(3):875-881.
+DOI 10.1094/PDIS-01-19-0001-RE</p><p>Zhu Z., Hao Y., Mergoum M., Bai G., Humphreys G., Cloutier S.,
+Xia X., He Z. Breeding wheat for resistance to Fusarium head blight
+in the global north: China, USA, and Canada. Crop J. 2019;7(6):
+730-738. DOI 10.1016/j.cj.2019.06.003</p></sec></body><back><ack><p>The work was supported by Russian Science Foundation (project 22-24-20067),
+https://rscf.ru/project/22-24-20067.</p></ack></back></article>

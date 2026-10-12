@@ -1,0 +1,1101 @@
+
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN" "JATS-archivearticle1-4-mathml3.dtd">
+<article id="tpg270276" xml:lang="en" article-type="other" dtd-version="1.4"><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">Plant Genome</journal-id><journal-id journal-id-type="iso-abbrev">Plant Genome</journal-id><journal-id journal-id-type="pmc-domain-id">4810</journal-id><journal-id journal-id-type="pmc-domain">plantgen</journal-id><journal-id journal-id-type="nlm-id">101273919</journal-id><journal-id journal-id-type="publisher-id">TPG2</journal-id><journal-title-group><journal-title>The Plant Genome</journal-title></journal-title-group><issn pub-type="epub">1940-3372</issn><?publisher_abbrev blackwell?><publisher><publisher-name>Wiley</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC13338916</article-id><article-id pub-id-type="pmcid-ver">PMC13338916.2</article-id><article-id pub-id-type="pmcaid">13338916</article-id><article-id pub-id-type="pmcaiid">13492621</article-id><article-id pub-id-type="pmid">42411466</article-id><article-id pub-id-type="doi">10.1002/tpg2.70276</article-id><article-id pub-id-type="publisher-id">TPG270276</article-id><article-version article-version-type="pmc-version">2</article-version><article-categories><subj-group subj-group-type="overline"><subject>Perspective</subject></subj-group><subj-group subj-group-type="heading"><subject>Perspective</subject></subj-group></article-categories><title-group><article-title>Revisiting the foundation era of plant genomics with a commentary on the pioneering contributions of Prof. Chittaranjan Kole</article-title><alt-title alt-title-type="left-running-head">NAGESWARA‐RAO <sc>et al</sc>.</alt-title></title-group><contrib-group><contrib id="tpg270276-cr-0001" contrib-type="author" corresp="yes"><name name-style="western"><surname>Nageswara‐Rao</surname><given-names initials="M">Madhugiri</given-names></name><xref rid="tpg270276-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><address><email>madhugiri.nageswara-rao@usda.gov</email><email>mnrbhav@gmail.com</email></address></contrib><contrib id="tpg270276-cr-0002" contrib-type="author"><name name-style="western"><surname>Pandey</surname><given-names initials="S">Sarita</given-names></name><xref rid="tpg270276-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="tpg270276-cr-0003" contrib-type="author"><name name-style="western"><surname>Bhattacharjee</surname><given-names initials="P">Poulami</given-names></name><xref rid="tpg270276-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="tpg270276-cr-0004" contrib-type="author"><name name-style="western"><surname>Kumar Saini</surname><given-names initials="D">Dinesh</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-6347-6183</contrib-id><xref rid="tpg270276-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="tpg270276-cr-0005" contrib-type="author"><name name-style="western"><surname>Soneji</surname><given-names initials="JR">Jaya R.</given-names></name><xref rid="tpg270276-aff-0004" ref-type="aff">
+<sup>4</sup>
+</xref></contrib><contrib id="tpg270276-cr-0006" contrib-type="author"><name name-style="western"><surname>Fakrudin</surname><given-names initials="B">Bashasab</given-names></name><xref rid="tpg270276-aff-0005" ref-type="aff">
+<sup>5</sup>
+</xref></contrib><contrib id="tpg270276-cr-0007" contrib-type="author"><name name-style="western"><surname>Chandappa</surname><given-names initials="LH">Lohithaswa Hirenallur</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-6777-5965</contrib-id><xref rid="tpg270276-aff-0006" ref-type="aff">
+<sup>6</sup>
+</xref></contrib><contrib id="tpg270276-cr-0008" contrib-type="author"><name name-style="western"><surname>Khoddamzadeh</surname><given-names initials="AA">Amir Ali</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-7114-1906</contrib-id><xref rid="tpg270276-aff-0007" ref-type="aff">
+<sup>7</sup>
+</xref></contrib><contrib id="tpg270276-cr-0009" contrib-type="author"><name name-style="western"><surname>Tucker</surname><given-names initials="DA">Daniel A.</given-names></name><xref rid="tpg270276-aff-0007" ref-type="aff">
+<sup>7</sup>
+</xref></contrib><contrib id="tpg270276-cr-0010" contrib-type="author"><name name-style="western"><surname>Zhang</surname><given-names initials="J">Jinfa</given-names></name><xref rid="tpg270276-aff-0008" ref-type="aff">
+<sup>8</sup>
+</xref></contrib><contrib id="tpg270276-cr-0011" contrib-type="author"><name name-style="western"><surname>Eltaher</surname><given-names initials="S">Shamseldeen</given-names></name><xref rid="tpg270276-aff-0009" ref-type="aff">
+<sup>9</sup>
+</xref></contrib><contrib id="tpg270276-cr-0012" contrib-type="author"><name name-style="western"><surname>Ali</surname><given-names initials="J">Jauhar</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-3177-2607</contrib-id><xref rid="tpg270276-aff-0010" ref-type="aff">
+<sup>10</sup>
+</xref></contrib><contrib id="tpg270276-cr-0013" contrib-type="author"><name name-style="western"><surname>Henry</surname><given-names initials="R">Robert</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0002-4060-0292</contrib-id><xref rid="tpg270276-aff-0011" ref-type="aff">
+<sup>11</sup>
+</xref></contrib><contrib id="tpg270276-cr-0014" contrib-type="author"><name name-style="western"><surname>Porth</surname><given-names initials="IM">Ilga Mercedes</given-names></name><xref rid="tpg270276-aff-0012" ref-type="aff">
+<sup>12</sup>
+</xref></contrib><contrib id="tpg270276-cr-0015" contrib-type="author"><name name-style="western"><surname>Radanović</surname><given-names initials="A">Aleksandra</given-names></name><xref rid="tpg270276-aff-0013" ref-type="aff">
+<sup>13</sup>
+</xref></contrib><contrib id="tpg270276-cr-0016" contrib-type="author"><name name-style="western"><surname>Hori</surname><given-names initials="K">Kiyosumi</given-names></name><xref rid="tpg270276-aff-0014" ref-type="aff">
+<sup>14</sup>
+</xref></contrib><contrib id="tpg270276-cr-0017" contrib-type="author"><name name-style="western"><surname>Dwiyanti</surname><given-names initials="MS">Maria Stefanie</given-names></name><xref rid="tpg270276-aff-0015" ref-type="aff">
+<sup>15</sup>
+</xref></contrib><contrib id="tpg270276-cr-0018" contrib-type="author"><name name-style="western"><surname>Branca</surname><given-names initials="F">Ferdinando</given-names></name><xref rid="tpg270276-aff-0016" ref-type="aff">
+<sup>16</sup>
+</xref></contrib><contrib id="tpg270276-cr-0019" contrib-type="author"><name name-style="western"><surname>Tiwari</surname><given-names initials="S">Shalini</given-names></name><xref rid="tpg270276-aff-0017" ref-type="aff">
+<sup>17</sup>
+</xref></contrib><contrib id="tpg270276-cr-0020" contrib-type="author"><name name-style="western"><surname>Blair</surname><given-names initials="M">Matthew</given-names></name><xref rid="tpg270276-aff-0018" ref-type="aff">
+<sup>18</sup>
+</xref></contrib><contrib id="tpg270276-cr-0021" contrib-type="author"><name name-style="western"><surname>Lim</surname><given-names initials="YP">Yong Pyo</given-names></name><xref rid="tpg270276-aff-0019" ref-type="aff">
+<sup>19</sup>
+</xref></contrib><contrib id="tpg270276-cr-0022" contrib-type="author"><name name-style="western"><surname>Horn</surname><given-names initials="R">Renate</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0003-1174-8658</contrib-id><xref rid="tpg270276-aff-0020" ref-type="aff">
+<sup>20</sup>
+</xref></contrib><contrib id="tpg270276-cr-0023" contrib-type="author"><name name-style="western"><surname>Danilevskaya</surname><given-names initials="O">Olga</given-names></name><xref rid="tpg270276-aff-0021" ref-type="aff">
+<sup>21</sup>
+</xref></contrib><contrib id="tpg270276-cr-0024" contrib-type="author" corresp="yes"><name name-style="western"><surname>Adhikari</surname><given-names initials="S">Sunita</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0009-0000-3991-5708</contrib-id><xref rid="tpg270276-aff-0022" ref-type="aff">
+<sup>22</sup>
+</xref><address><email>sadhikari769@gmail.com</email></address></contrib></contrib-group><aff id="tpg270276-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<institution>USDA‐ARS Subtropical Horticulture Research Station</institution>
+<city>Miami</city>
+<named-content content-type="country-part">Florida</named-content>
+<country country="US">USA</country>
+</aff><aff id="tpg270276-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<named-content content-type="organisation-division">School of Agriculture and Allied Sciences</named-content>
+<institution>The Neotia University</institution>
+<city>Sarisha</city>
+<named-content content-type="country-part">West Bengal</named-content>
+<country country="IN">India</country>
+</aff><aff id="tpg270276-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<named-content content-type="organisation-division">Department of Plant and Soil Science</named-content>
+<institution>Texas Tech University</institution>
+<city>Lubbock</city>
+<named-content content-type="country-part">Texas</named-content>
+<country country="US">USA</country>
+</aff><aff id="tpg270276-aff-0004">
+<label>
+<sup>4</sup>
+</label>
+<institution>Bayer Crop Science</institution>
+<city>Chesterfield</city>
+<named-content content-type="country-part">Missouri</named-content>
+<country country="US">USA</country>
+</aff><aff id="tpg270276-aff-0005">
+<label>
+<sup>5</sup>
+</label>
+<named-content content-type="organisation-division">Department of Biotechnology and Crop Improvement</named-content>
+<institution>University of Horticultural Sciences</institution>
+<city>Bagalkot</city>
+<named-content content-type="country-part">Karnataka</named-content>
+<country country="IN">India</country>
+</aff><aff id="tpg270276-aff-0006">
+<label>
+<sup>6</sup>
+</label>
+<named-content content-type="organisation-division">Zonal Agricultural Research Station, GKVK</named-content>
+<institution>University of Agricultural Sciences</institution>
+<city>Bangalore</city>
+<named-content content-type="country-part">Karnataka</named-content>
+<country country="IN">India</country>
+</aff><aff id="tpg270276-aff-0007">
+<label>
+<sup>7</sup>
+</label>
+<named-content content-type="organisation-division">Department of Earth and Environment, Institute of Environment</named-content>
+<institution>Florida International University</institution>
+<city>Miami</city>
+<named-content content-type="country-part">Florida</named-content>
+<country country="US">USA</country>
+</aff><aff id="tpg270276-aff-0008">
+<label>
+<sup>8</sup>
+</label>
+<named-content content-type="organisation-division">School of Agriculture</named-content>
+<institution>Tennessee Tech University</institution>
+<city>Cookeville</city>
+<named-content content-type="country-part">Tennessee</named-content>
+<country country="US">USA</country>
+</aff><aff id="tpg270276-aff-0009">
+<label>
+<sup>9</sup>
+</label>
+<named-content content-type="organisation-division">Department of Plant Biotechnology, Faculty of Biotechnology</named-content>
+<institution>University of Sadat City</institution>
+<city>Sadat City</city>
+<country country="EG">Egypt</country>
+</aff><aff id="tpg270276-aff-0010">
+<label>
+<sup>10</sup>
+</label>
+<institution>International Rice Research Institute</institution>
+<city>Los Baños</city>
+<country country="PH">Philippines</country>
+</aff><aff id="tpg270276-aff-0011">
+<label>
+<sup>11</sup>
+</label>
+<named-content content-type="organisation-division">Queensland Alliance for Agriculture and Food Innovation</named-content>
+<institution>University of Queensland</institution>
+<city>Brisbane</city>
+<named-content content-type="country-part">Queensland</named-content>
+<country country="AU">Australia</country>
+</aff><aff id="tpg270276-aff-0012">
+<label>
+<sup>12</sup>
+</label>
+<named-content content-type="organisation-division">Department of Wood Science and Forestry, Charles‐Eugène‐Marchand Pavilion</named-content>
+<institution>Laval University</institution>
+<city>Quebec City</city>
+<country country="CA">Canada</country>
+</aff><aff id="tpg270276-aff-0013">
+<label>
+<sup>13</sup>
+</label>
+<named-content content-type="organisation-division">Institute of Field and Vegetable Crops</named-content>
+<institution>National Institute of the Republic of Serbia</institution>
+<city>Novi Sad</city>
+<country country="RS">Serbia</country>
+</aff><aff id="tpg270276-aff-0014">
+<label>
+<sup>14</sup>
+</label>
+<named-content content-type="organisation-division">Institute of Crop Science</named-content>
+<institution>National Agriculture and Food Research Organization (NARO)</institution>
+<city>Tsukuba</city>
+<country country="JP">Japan</country>
+</aff><aff id="tpg270276-aff-0015">
+<label>
+<sup>15</sup>
+</label>
+<named-content content-type="organisation-division">Research Faculty of Agriculture</named-content>
+<institution>Hokkaido University</institution>
+<city>Sapporo</city>
+<country country="JP">Japan</country>
+</aff><aff id="tpg270276-aff-0016">
+<label>
+<sup>16</sup>
+</label>
+<named-content content-type="organisation-division">Department of Agriculture, Food and Environment</named-content>
+<institution>University of Catania</institution>
+<city>Catania</city>
+<country country="IT">Italy</country>
+</aff><aff id="tpg270276-aff-0017">
+<label>
+<sup>17</sup>
+</label>
+<named-content content-type="organisation-division">Department of Biology</named-content>
+<institution>University of the Ozarks, Wilson Science Center</institution>
+<city>Clarksville</city>
+<named-content content-type="country-part">Arkansas</named-content>
+<country country="US">USA</country>
+</aff><aff id="tpg270276-aff-0018">
+<label>
+<sup>18</sup>
+</label>
+<named-content content-type="organisation-division">Department of Agricultural and Environmental Sciences</named-content>
+<institution>Tennessee State University</institution>
+<city>Nashville</city>
+<named-content content-type="country-part">Tennessee</named-content>
+<country country="US">USA</country>
+</aff><aff id="tpg270276-aff-0019">
+<label>
+<sup>19</sup>
+</label>
+<named-content content-type="organisation-division">Department of Smart Farming</named-content>
+<institution>Konyang University</institution>
+<city>Nonsan</city>
+<country country="KR">South Korea</country>
+</aff><aff id="tpg270276-aff-0020">
+<label>
+<sup>20</sup>
+</label>
+<named-content content-type="organisation-division">Institute of Biological Sciences, Department of Plant Genetics</named-content>
+<institution>University of Rostock</institution>
+<city>Rostock</city>
+<country country="DE">Germany</country>
+</aff><aff id="tpg270276-aff-0021">
+<label>
+<sup>21</sup>
+</label>
+<institution>DuPont Pioneer</institution>
+<city>Johnston</city>
+<named-content content-type="country-part">Iowa</named-content>
+<country country="US">USA</country>
+</aff><aff id="tpg270276-aff-0022">
+<label>
+<sup>22</sup>
+</label>
+<institution>Himalayan College of Agricultural Sciences and Technology HICAST(PU)</institution>
+<city>Kathmandu</city>
+<country country="NP">Nepal</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>
+<bold>Correspondence</bold>
+<break/>Sunita Adhikari, Himalayan College of Agricultural Sciences and Technology HICAST(PU), Kalanki, Kathmandu, 25535, Nepal. Email: <email>sadhikari769@gmail.com</email>
+<break/>Madhugiri Nageswara‐Rao, USDA‐ARS Subtropical Horticulture Research Station, Miami, FL 33158, USA. Email: <email>madhugiri.nageswara-rao@usda.gov</email>; <email>mnrbhav@gmail.com</email>
+<break/>
+</corresp></author-notes><pub-date pub-type="epub"><day>07</day><month>7</month><year>2026</year></pub-date><pub-date pub-type="collection"><month>9</month><year>2026</year></pub-date><volume>19</volume><issue seq="30">3</issue><issue-id pub-id-type="pmc-issue-id">518407</issue-id><issue-id pub-id-type="doi">10.1002/tpg2.v19.3</issue-id><elocation-id>e70276</elocation-id><history>
+<date date-type="received"><day>05</day><month>4</month><year>2026</year></date>
+<date date-type="accepted"><day>11</day><month>6</month><year>2026</year></date>
+</history><pub-history><event event-type="pmc-release"><date><day>07</day><month>07</month><year>2026</year></date></event><event event-type="pmc-live"><date><day>25</day><month>08</month><year>2026</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2026-08-26 11:25:17.167"><day>26</day><month>08</month><year>2026</year></date></event><event event-type="pmc-version" specific-use="live"><article-id pub-id-type="pmcaiid">13338916</article-id><article-id pub-id-type="doi">10.1002/tpg2.70276</article-id><article-version>1</article-version><pub-date><day>07</day><month>07</month><year>2026</year></pub-date></event><event event-type="pmc-version" specific-use="live"><article-id pub-id-type="pmcaiid">13492621</article-id><article-id pub-id-type="doi">10.1002/tpg2.70276</article-id><article-version>2</article-version><pub-date><day>07</day><month>07</month><year>2026</year></pub-date></event></pub-history><permissions><copyright-statement content-type="article-copyright">© 2026 The Author(s). <italic toggle="yes">The Plant Genome</italic> published by Wiley Periodicals LLC on behalf of Crop Science Society of America.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbyncndlicense">https://creativecommons.org/licenses/by-nc-nd/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by-nc-nd/4.0/">http://creativecommons.org/licenses/by-nc-nd/4.0/</ext-link> License, which permits use and distribution in any medium, provided the original work is properly cited, the use is non‐commercial and no modifications or adaptations are made.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="TPG2-19-e70276.pdf"><?pdf-name TPG2-19-e70276.pdf?><?pdf-size 2177426?><?pdf-md5 dea4e25ec6fee5e020c80b4023efa7a8?><?pdf-image-server-status NEVER_LOAD?><?pdf-cloudpmc-urn urn:app:3584/13492621/dea4e25ec6fe/TPG2-19-e70276.pdf?></self-uri><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pdf" xlink:href="file:TPG2-19-e70276.pdf"/><abstract><title>Abstract</title><p>The evolution of plant genomics has been shaped by several pioneering milestones, beginning with the introduction of restriction fragment length polymorphism–based genetic linkage maps in the mid‐1980s. Among the global contributors, Prof. Chittaranjan Kole stands as a distinguished figure whose work fundamentally shifted the trajectory of plant genomics and molecular breeding. This tribute highlights his scientific journey and groundbreaking contributions, from being the first Indian scientist to physically map and sequence a plant gene in barley to establishing the foundations of molecular cytogenetics, comparative genomics, and molecular evolution and phylogenetic relationships in plants. His landmark research on <italic toggle="yes">Brassica</italic> genomics, including high‐resolution mapping, Mendelization of quantitative trait loci (QTLs), and innovative use of recombinant inbred lines, enabled unprecedented insights into trait evolution, stress biology, and genome homology between <italic toggle="yes">Brassica</italic> species and <italic toggle="yes">Arabidopsis</italic>. Prof. Kole's work on mapping genes and QTLs associated with flowering time, biotic stress resistance, abiotic stress tolerance, and genome evolution has provided a framework now integral to marker‐assisted selection, genomic breeding, and climate‐resilient crop development. This article offers a scholarly reflection on his pioneering contributions, establishing Prof. Kole as a founding architect of plant genomics research in India and one of its most influential contributors globally.</p></abstract><abstract abstract-type="plain-language-summary"><title>Plain Language Summary</title><p>This article discusses the life and achievements of Prof. Chittaranjan Kole, a world‐renowned scientist in plant genetics referred to as the “Father of Plant Genomics in India.” Prof. Kole was able to revolutionize agriculture through the application of “genomics,” or the study of an entire plant's code of genes, to learn how plants grow and live. Prof. Kole was also the first Indian scientist to physically map out and read the chemical code in a plant gene, specifically in barley plants. This was significant because it provided a blueprint on how scientists could identify important genes in plants. This was particularly significant in improving “<italic toggle="yes">Brassica</italic>” plants like mustard and cabbage because he was able to identify genes that protect plants from harmful diseases like “white rust,” as well as genes that allow plants to survive harsh weather conditions in winter. By discovering these “markers,” Prof. Kole was able to develop a system where plant breeders could select the best seedlings without having to wait for them to fully grow, a system that is now essential in developing plants that can withstand the effects of climate variabilities. Prof. Kole was also able to develop “agri‐nanotechnology” to improve crop production and establish international organizations to facilitate cooperation among scientists worldwide to address food security issues. Prof. Kole's decades‐long research in plant genetics were able to transform agriculture from traditional farming to a high‐tech “precision breeding.”</p></abstract><counts><fig-count count="7"/><table-count count="0"/><page-count count="12"/><word-count count="7438"/></counts><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY-NC-ND</meta-value></custom-meta><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>September 2026</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.8.6 mode:remove_FC converted:20.08.2026</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="tpg270276-cite-0001">
+<string-name name-style="western">
+<surname>Nageswara‐Rao</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Pandey</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bhattacharjee</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kumar Saini</surname>, <given-names>D.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Soneji</surname>, <given-names>J. R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fakrudin</surname>, <given-names>B.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Chandappa</surname>, <given-names>L. H.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Khoddamzadeh</surname>, <given-names>A. A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tucker</surname>, <given-names>D. A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Zhang</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Eltaher</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ali</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Henry</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Porth</surname>, <given-names>I. M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Radanović</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hori</surname>, <given-names>K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Dwiyanti</surname>, <given-names>M. S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Branca</surname>, <given-names>F.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tiwari</surname>, <given-names>S.</given-names>
+</string-name>, … <string-name name-style="western">
+<surname>Adhikari</surname>, <given-names>S.</given-names>
+</string-name> (<year>2026</year>). <article-title>Revisiting the foundation era of plant genomics with a commentary on the pioneering contributions of Prof. Chittaranjan Kole</article-title>. <source>The Plant Genome</source>, <volume>19</volume>, <elocation-id>e70276</elocation-id>. <pub-id pub-id-type="doi">10.1002/tpg2.70276</pub-id>
+<pub-id pub-id-type="pmid">42411466</pub-id>
+<pub-id pub-id-type="pmcid">PMC13338916</pub-id></mixed-citation>
+</p><fn-group><fn id="tpg270276-note-0001"><p>Assigned to Associate Editor Manish Pandey.</p></fn></fn-group></notes></front><body><def-list list-content="abbreviations" id="tpg270276-dl-0001"><title>Abbreviations</title><def-item><term>AFLP</term><def><p>amplified fragment length polymorphism</p></def></def-item><def-item><term>DBT</term><def><p>Department of Biotechnology</p></def></def-item><def-item><term>QTL</term><def><p>quantitative trait locus</p></def></def-item><def-item><term>RFLP</term><def><p>restriction fragment length polymorphism</p></def></def-item></def-list><sec id="tpg270276-sec-0010"><label>1</label><title>INTRODUCTION</title><p>The subject of plant genomics, in a broad sense, was born in 1986 coinciding exactly with the introduction of the term “genomics” by Tom Roderick and marked by the construction of the first genetic linkage maps using the DNA‐based molecular marker, restriction fragment length polymorphism (RFLP) for the first time applied for genetic maps in maize and tomato (Helentjaris et al., <xref rid="tpg270276-bib-0014" ref-type="bibr">1986</xref>) and tomato by Bernatzky and Tanksley (<xref rid="tpg270276-bib-0003" ref-type="bibr">1986</xref>) followed up the first work on using RFLPs in studies of plant diversity and development in maize and tomato by Helentjaris et al. (<xref rid="tpg270276-bib-0013" ref-type="bibr">1985</xref>). These two linkage maps were immediately followed by another linkage map in maize (Helentjaris, <xref rid="tpg270276-bib-0012" ref-type="bibr">1987</xref>), a linkage map in lettuce (Landry et al., <xref rid="tpg270276-bib-0035" ref-type="bibr">1987</xref>), and a linkage map in tomato (Osborn et al., <xref rid="tpg270276-bib-0043" ref-type="bibr">1987</xref>), all using RFLP markers and simply inherited trait loci. RFLP linkage maps in two other major crops and maize again were reported in the next year, one in rice (McCouch et al., <xref rid="tpg270276-bib-0041" ref-type="bibr">1988</xref>) and another in potato (Bonierbale et al., <xref rid="tpg270276-bib-0004" ref-type="bibr">1988</xref>), along with another RFLP map in maize (Burr et al., <xref rid="tpg270276-bib-0005" ref-type="bibr">1988</xref>). The first RFLP maps in <italic toggle="yes">Brassica rapa</italic> (Song et al., <xref rid="tpg270276-bib-0058" ref-type="bibr">1991</xref>) and two polyploid crops, including <italic toggle="yes">Brassica napus</italic> (Landry et al., <xref rid="tpg270276-bib-0034" ref-type="bibr">1991</xref>) and wheat (Y. Liu &amp; Tsunewaki, <xref rid="tpg270276-bib-0038" ref-type="bibr">1991</xref>), were constructed in the next 2 years. A few genes and quantitative trait loci (QTLs) were also positioned on some of these linkage maps by a few scientists during this period. However, there was no information on the nucleotide sequence of the genes and the flanking RFLP markers. The physical positions of these genes on the chromosomes were also obviously not available from these genetic mapping efforts. Simple sequence repeat or microsatellite markers, constituting DNA stretches consisting of short, tandemly repeated di‐, tri‐, tetra‐, or penta‐nucleotide motifs, were first applied to plants only in 1992 (Akkaya et al., <xref rid="tpg270276-bib-0001" ref-type="bibr">1992</xref>) and used in genetic map construction in the latter period (Devey et al., <xref rid="tpg270276-bib-0008" ref-type="bibr">1996</xref>; Cadalen et al., <xref rid="tpg270276-bib-0006" ref-type="bibr">1997</xref>).</p><p>In the same period, a large group of about 40 scientists was working on completely different frontiers of plant genomics under the supervision of the legendary scientist, Dr. Evgenii V. Ananiev, in the N.I. Vavilov Institute of General Genetics of the USSR Academy of Sciences. One of his teams, including scientists as Dr. Alexander Kolchinsky, Dr. Elena Yakovleva, and Dr. Anna Gazumyan, started working on genes constituting repetitive elements in cereals. In 1997, this group received a significant boost with the arrival of a bright young scientist from India, Dr. Chittaranjan Kole.</p><p>It is worthwhile to mention that the Department of Biotechnology (DBT) of India was established in 1986. Before that, scientists in India, like in any other country, particularly in the Global South, were engaged in research on optimizing in vitro culture development, isozyme markers, and seed protein analysis using SDS‐PAGE, DNA‐DNA hybridizations, etc. The Government of India planned to develop human resources in the field of biotechnology and started deputing scientists abroad for training, and Dr. Kole was one of the first scientists to participate in this program.</p><p>After 2 years of intensive research, Dr. Kole presented his report on mapping the 5S‐RNA genes in barley at the 15th EMBO Annual Symposium on “Molecular Communication in Higher Plants” held at the European Molecular Biology Laboratory, Heidelberg, on behalf of the team. Thus, this group became one of the first laboratories to physically map a plant gene, and by this Dr. Kole became the first Indian to “map a gene” in any plant or crop by any means. This group sequenced the 5S‐RNA gene (301 bp) and thus pioneered plant gene sequencing (Kolchinsky et al., <xref rid="tpg270276-bib-0017" ref-type="bibr">1990</xref>; Ananiev et al., <xref rid="tpg270276-bib-0002" ref-type="bibr">1991</xref>; Kole et al., <xref rid="tpg270276-bib-0025" ref-type="bibr">1992</xref>), and Dr. Kole became the first Indian to “sequence a gene.” Sequencing a 301 bp gene using the Maxam and Gilbert (<xref rid="tpg270276-bib-0040" ref-type="bibr">1980</xref>) method was not easy in the late 1980s (1987–1989). Follow‐up research focused on interspecific homology of barley 5S‐RNA genes as “markers” with wheat and rye, thereby marking the beginning of “comparative genome homology” in plants, paving the way for the frontiers of “molecular evolution” and “molecular phylogenetic relationships.” Dr. Kole was also a pioneer in this aspect among Indians. Tanksley et al. (<xref rid="tpg270276-bib-0060" ref-type="bibr">1988</xref>) reported comparative mapping between pepper and tomato but only using molecular genetic mapping. The use of repetitive elements of the 5S‐RNA gene as a “molecular marker” for these studies was also a first effort. An extension of this mapping work was “molecular cytogenetics,” again done for the first time, using in situ hybridization with a DNA probe to confirm the position of the 5S‐RNA genes on the 2nd chromosome of barley. Obviously, Dr. Kole pioneered “molecular cytogenetics” in India. Some of these pioneering works are presented in Figure <xref rid="tpg270276-fig-0001" ref-type="fig">1</xref>.</p><fig position="float" fig-type="FIGURE" id="tpg270276-fig-0001" orientation="portrait"><label>FIGURE 1</label><caption><p>Early molecular characterization of 5S‐rRNA genes in cereals by Dr. Chittaranjan Kole and coworkers. These autoradiographs illustrate the structural organization, interspecific variation, and hybridization patterns of 5S‐rRNA gene repeats in barley and wheat. Distinct banding profiles obtained through restriction enzyme digestion and blot hybridization demonstrate species‐specific signatures, confirm chromosomal localization, and provide early molecular evidence for comparative genome relationships among cereals. Together, these results formed the foundation for Dr. Kole's pioneering contributions to plant gene mapping, comparative genomics, and molecular cytogenetics (figures reproduced from Kolchinsky et al. [<xref rid="tpg270276-bib-0017" ref-type="bibr">1990</xref>] in <italic toggle="yes">Theoretical and Applied Genetics</italic>).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-1" orientation="portrait" xlink:href="TPG2-19-e70276-g003.webp"><?image-name TPG2-19-e70276-g003.webp?><?image-size 12130?><?image-md5 793505ba9413fecaf592dffd86dcde10?><?image-image-server-status NEVER_LOAD?><?image-original-height 321?><?image-original-width 400?><?image-scaled-height 321?><?image-scaled-width 400?><?image-cloudpmc-urn urn:cdn:blobs/3584/13492621/793505ba9413/TPG2-19-e70276-g003.webp?><?thumb-name TPG2-19-e70276-g003.gif?><?thumb-size 4282?><?thumb-md5 eb49a18f426005e92c1b6172785e10dc?><?thumb-image-server-status NEVER_LOAD?><?thumb-cloudpmc-urn urn:cdn:blobs/3584/13492621/eb49a18f4260/TPG2-19-e70276-g003.gif?></graphic></fig><p>In another project, this team of Dr. Ananiev used “repetitive DNA” as a source of molecular markers, the so‐called “genomic dactyloscopy” for studying “interspecific and intervarietal polymorphism” in major cereals including barley, wheat, and maize (Kolchinsky et al., <xref rid="tpg270276-bib-0018" ref-type="bibr">1991</xref>) (Figure <xref rid="tpg270276-fig-0002" ref-type="fig">2</xref>). They successfully used small families of repetitive genes, such as histones and hordein, in depicting both interspecific and intervarietial polymorphism. This was another pioneering research on the detection of molecular markers based on repetitive DNAs and their use in elucidating evolution and phylogenetic relationships. All these are the first works on plant genomics and biotechnology by an Indian scientist, and this is why Prof. Kole is regarded as the “Father of Plant Genomics in India,” and broadly “Father of Plant Biotechnology in India.”</p><fig position="float" fig-type="FIGURE" id="tpg270276-fig-0002" orientation="portrait"><label>FIGURE 2</label><caption><p>This figure, from Dr. Chittaranjan Kole's early work on repetitive DNA, shows high‐resolution electrophoretic patterns generated by end‐labeled cereal DNA digested with restriction enzymes. The distinct banding profiles of barley, wheat, and multiple maize varieties demonstrate characteristic species‐ and variety‐specific patterns, providing the first evidence that repetitive DNA sequences could be used as reliable molecular fingerprints. Through these patterns, Dr. Kole established the concept of “genomic dactyloscopy,” showing that the organization of repetitive DNA varies sufficiently among species to enable their identification and comparative analysis (figures reproduced from Kolchinsky et al. [<xref rid="tpg270276-bib-0018" ref-type="bibr">1991</xref>] in <italic toggle="yes">Nucleus</italic>).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-3" orientation="portrait" xlink:href="TPG2-19-e70276-g004.webp"><?image-name TPG2-19-e70276-g004.webp?><?image-size 30616?><?image-md5 e838e8fbbd6aa2bca7644d2d21885ca9?><?image-image-server-status NEVER_LOAD?><?image-original-height 575?><?image-original-width 360?><?image-scaled-height 575?><?image-scaled-width 360?><?image-cloudpmc-urn urn:cdn:blobs/3584/13492621/e838e8fbbd6a/TPG2-19-e70276-g004.webp?><?thumb-name TPG2-19-e70276-g004.gif?><?thumb-size 4882?><?thumb-md5 f4a20599769d52f8072c2ae28a0547ae?><?thumb-image-server-status NEVER_LOAD?><?thumb-cloudpmc-urn urn:cdn:blobs/3584/13492621/f4a20599769d/TPG2-19-e70276-g004.gif?></graphic></fig><p>The next phase of Indian biotechnology research marks the golden period for India, when Dr. Kole worked on the broad project entitled “Molecular Mapping in Oilseed Brassicas” at the University of Wisconsin‐Madison from 1993 to 1997, for his DBT Overseas Research Associateship project. Here too, Dr. Kole made many discoveries that were unique worldwide, obviously as the first Indian to do so, with the assistance of his host professor, Dr. Thomas C. Osborn, his wife and colleague, Phullara Kole, and others.</p><p>More than 50 molecular maps were reported in 25‐plus crop plants during 1986–2000. So, the development of a molecular map for <italic toggle="yes">B. rapa</italic> by Dr. Kole's team (Kole, Kole, et al., <xref rid="tpg270276-bib-0020" ref-type="bibr">1996a</xref>; Kole, Teutonico, et al., 1996; Kole, Kole, Vogelzang, et al., <xref rid="tpg270276-bib-0023" ref-type="bibr">1997</xref>) was nothing unusual in itself. However, the molecular genetic linkage map of <italic toggle="yes">B. rapa</italic>, first reported in 1995, was the first “complete molecular map” developed by an Indian scientist. The next molecular map constructed by an Indian scientist was created by Dr. M. Maheswaran, whose team produced a molecular map for rice in 1997 (Maheswaran et al., <xref rid="tpg270276-bib-0039" ref-type="bibr">1997</xref>). Dr. Kole used “recombinant inbred lines (RILs)” as the mapping population, and that was the first time an Indian developed an RI population for molecular mapping, followed by Sharma et al. (<xref rid="tpg270276-bib-0055" ref-type="bibr">2002</xref>) and the third instance in the world, following those in maize (Burr et al., <xref rid="tpg270276-bib-0005" ref-type="bibr">1988</xref>) and lentil (Tahir &amp; Muehlbauer, <xref rid="tpg270276-bib-0059" ref-type="bibr">1994</xref>). Dr. Kole used this molecular map to map the genes (<italic toggle="yes">AC2</italic>/<italic toggle="yes">ACA1</italic>) conferring resistance to the most destructive disease, white rust of oilseed Brassicas caused by the fungus, <italic toggle="yes">Albugo candida</italic> race 2 (Kole, Kole, et al., <xref rid="tpg270276-bib-0020" ref-type="bibr">1996a</xref>; Kole, Teutonico, et al., 1996). He also mapped a gene controlling leaf pubescence (<italic toggle="yes">PUB1</italic>) close to the <italic toggle="yes">ACA1/AC2</italic> locus, leading to the scope of indirect selection of lines for white rust resistance, and a gene controlling seed color (<italic toggle="yes">YLS1</italic>) (Figure <xref rid="tpg270276-fig-0003" ref-type="fig">3</xref>). Previously, a gene controlling resistance to white rust <italic toggle="yes">Brassica carinata</italic> pathotype (<italic toggle="yes">ACA1</italic>) was mapped in <italic toggle="yes">B. napus</italic> (Ferreira et al., <xref rid="tpg270276-bib-0010" ref-type="bibr">1995</xref>), and the genes controlling seed color and leaf pubescence were mapped in <italic toggle="yes">B. rapa</italic> (Teutonico &amp; Osborn, <xref rid="tpg270276-bib-0061" ref-type="bibr">1994</xref>). But the gene controlling resistance to <italic toggle="yes">A. candida</italic> race 2 was identified for the first time in <italic toggle="yes">Brassica</italic> crops and resistance to <italic toggle="yes">A. candida</italic> of any race for the first time in <italic toggle="yes">B. rapa</italic> by Kole, Kole, et al. (<xref rid="tpg270276-bib-0020" ref-type="bibr">1996a</xref>), and Kole, Teutonico, et al. (1996). Thus, Dr. Kole became the first Indian to “map any gene in plants” using RFLP markers. It must be noted that during this period, two Indian teams reported molecular “tagging” of major genes that also confer disease resistance in rice (Hittalmani et al., <xref rid="tpg270276-bib-0015" ref-type="bibr">1995</xref>) and mustard (Prabhu et al., <xref rid="tpg270276-bib-0054" ref-type="bibr">1998</xref>), but by using random amplified polymorphic DNA markers—a type of anonymous markers. Therefore, Dr. Kole became also the first Indian to “map” any gene and in addition the first Indian to map any gene controlling “disease resistance” or “biotic stress” resistance, and a gene related to “crop quality.”</p><fig position="float" fig-type="FIGURE" id="tpg270276-fig-0003" orientation="portrait"><label>FIGURE 3</label><caption><p>Linkage map of <italic toggle="yes">B. rapa</italic> linkage group 4 constructed from F<sub>3</sub> families derived from the cross Per × R‐500. The resistance locus ACA1, conferring resistance to <italic toggle="yes">Albugo candida</italic> race 2, is shown to be mapped among restriction fragment length polymorphism (RFLP) markers detected using <italic toggle="yes">Brassica</italic> genomic (wg, tg) and cDNA (ec) probes, along with heterologous probes. The gene controlling leaf pubescence (PUB1) is also shown. Genetic distances in centimorgans are indicated on the left. This map provided one of the earliest molecular characterizations of white rust resistance loci in <italic toggle="yes">Brassica</italic> and formed the basis for subsequent comparative and high‐resolution mapping studies (figure reproduced from Kole, Teutonico, et al. [<xref rid="tpg270276-bib-0031" ref-type="bibr">1996b</xref>] in <italic toggle="yes">Phytopathology</italic>).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-5" orientation="portrait" xlink:href="TPG2-19-e70276-g002.webp"><?image-name TPG2-19-e70276-g002.webp?><?image-size 19290?><?image-md5 9c43ff82726e95021999805afb815ec1?><?image-image-server-status NEVER_LOAD?><?image-original-height 478?><?image-original-width 300?><?image-scaled-height 478?><?image-scaled-width 300?><?image-cloudpmc-urn urn:cdn:blobs/3584/13492621/9c43ff82726e/TPG2-19-e70276-g002.webp?><?thumb-name TPG2-19-e70276-g002.gif?><?thumb-size 5176?><?thumb-md5 cb5c4db266d1e59fa4ba52f2fb5cae0c?><?thumb-image-server-status NEVER_LOAD?><?thumb-cloudpmc-urn urn:cdn:blobs/3584/13492621/cb5c4db266d1/TPG2-19-e70276-g002.gif?></graphic></fig><p>On their <italic toggle="yes">B. rapa</italic> map, Dr. Kole and coworkers also mapped 32 marker loci, detected by 22 orthologous cloned genes of <italic toggle="yes">Arabidopsis thaliana</italic> and <italic toggle="yes">B. napus</italic>, most of them controlling flowering time and stress resistance, marking the first instance of using markers detected by heterologous gene probes. This pragmatic inclusion of orthologous probes in molecular mapping opened a new vista for elucidation of the molecular evolution of genes underlying flowering time and stress resistance in plants. Dr. Kole observed clustering of marker loci skewed to either of the parents in different genomic locations, evidencing their involvement with biological fitness (Kole, Kole, Vogelzang, et al., <xref rid="tpg270276-bib-0023" ref-type="bibr">1997</xref>). These particular genomic locations were therefore assumed to contain loci with some deleterious alleles inherited from either of the parents. He also discovered frequent clustering of duplicated loci, even when detected early on with cDNA probes or cloned genes and conjectured the existence of “paleoploidy” that was substantiated much later by his peers.</p><p>Later, Dr. Kole and colleagues constructed an enriched molecular map of <italic toggle="yes">B. napus</italic> with 480 loci by the addition of 268 amplified fragment length polymorphism (AFLP) loci (Osborn, Kole, Parkin, et al., <xref rid="tpg270276-bib-0046" ref-type="bibr">1997b</xref>) to a map developed earlier by using a double haploid population and 203 RFLP loci, five isozyme loci, two disease resistance loci, and two erucic acid loci (Ferreira et al., <xref rid="tpg270276-bib-0009" ref-type="bibr">1994</xref>; Thormann et al., <xref rid="tpg270276-bib-0062" ref-type="bibr">1996</xref>). Dr. Kole's team members became the first scientists to develop an “enriched” molecular map, which also used “AFLP markers” for the first time, and then used it for mapping genes and QTLs. Molecular maps based on AFLPs in addition to RFLPs were reported next in rice (Maheswaran et al., <xref rid="tpg270276-bib-0039" ref-type="bibr">1997</xref>; Penner et al., <xref rid="tpg270276-bib-0052" ref-type="bibr">1998</xref>).</p><p>Dr. Kole is also the first Indian to map any QTL when his team reported the mapping of QTLs controlling resistance to white rust race 2 and 7, flowering time (<italic toggle="yes">FR</italic>) and vernalization responsive flowering time (<italic toggle="yes">VFR</italic>) and winter survival in <italic toggle="yes">B. rapa</italic> (Kole, Kole, et al., <xref rid="tpg270276-bib-0020" ref-type="bibr">1996a</xref>; Kole, Kole, &amp; Osborn, <xref rid="tpg270276-bib-0021" ref-type="bibr">1997</xref>; Osborn, Kole, Parkin, et al., <xref rid="tpg270276-bib-0046" ref-type="bibr">1997b</xref>; Osborn, Kole, &amp; Butruille, <xref rid="tpg270276-bib-0044" ref-type="bibr">1997a</xref>). He was also the first Indian scientist to conduct “comparative mapping” using molecular markers while studying “genome homology” among <italic toggle="yes">B. rapa</italic>, <italic toggle="yes">B. napus</italic>, and <italic toggle="yes">A. thaliana</italic>. Through this research, his team was one of the first teams in the world to use QTLs in comparative mapping along with molecular markers (Osborn, Kole, Parkin, et al., <xref rid="tpg270276-bib-0046" ref-type="bibr">1997b</xref>; Osborn, Kole, &amp; Butruille 1997; Kole, Kole, &amp; Osborn, et al., <xref rid="tpg270276-bib-0021" ref-type="bibr">1997</xref>), and along with others (Pereira et al., <xref rid="tpg270276-bib-0053" ref-type="bibr">1994</xref>; Lin et al., <xref rid="tpg270276-bib-0036" ref-type="bibr">1995</xref>; Paterson et al., <xref rid="tpg270276-bib-0051" ref-type="bibr">1995</xref>). They detected two QTLs, named <italic toggle="yes">VFR1</italic> and <italic toggle="yes">VFR2</italic>, for vernalization‐responsive flowering time in <italic toggle="yes">B. rapa</italic>. These two genomic regions containing these QTLs were shown to be homologous to two regions in <italic toggle="yes">B. napus</italic>, which contain QTLs (<italic toggle="yes">VFN1</italic> and <italic toggle="yes">VFN2</italic>) controlling vernalization‐responsive flowering time. The <italic toggle="yes">Brassica</italic> regions carrying <italic toggle="yes">VFR2</italic> and <italic toggle="yes">VFN2</italic> were also shown to be homologous to a region at the top of chromosome 5 in the related crucifer <italic toggle="yes">A. thaliana</italic>, where in addition the flowering‐time genes <italic toggle="yes">CONSTANS</italic> (<italic toggle="yes">CO</italic>), <italic toggle="yes">FY</italic> (homologous to the yeast polyadenylation factor Pfs2p), and <italic toggle="yes">FLOWERING LOCUS C</italic> (<italic toggle="yes">FLC</italic>) are located, and at the top of chromosome 4 where <italic toggle="yes">FRIGIDA</italic> (<italic toggle="yes">FRI</italic>) is located. Later, Kole et al. (<xref rid="tpg270276-bib-0029" ref-type="bibr">2001</xref>) reported elaboratively of the genome homology of the <italic toggle="yes">VFR2</italic> QTL of <italic toggle="yes">B. rapa</italic> and the <italic toggle="yes">FLC</italic> gene of <italic toggle="yes">Arabidopsis</italic>, suggesting evolution of polygenes from single genes (Figure <xref rid="tpg270276-fig-0004" ref-type="fig">4</xref>).</p><fig position="float" fig-type="FIGURE" id="tpg270276-fig-0004" orientation="portrait"><label>FIGURE 4</label><caption><p>Comparative mapping of the vernalization‐responsive flowering‐time locus VFR2 in <italic toggle="yes">Brassica rapa</italic> and its homologous region containing <italic toggle="yes">FLOWERING LOCUS C</italic> (<italic toggle="yes">FLC</italic>) on <italic toggle="yes">Arabidopsis thaliana</italic> chromosome 5. The figure shows a portion of <italic toggle="yes">B. rapa</italic> linkage group 8 (Br8) harboring the flowering‐time QTL VFR2, aligned with the corresponding genomic region on <italic toggle="yes">A. thaliana</italic> chromosome 5 (At5). Positions of restriction fragment length polymorphism (RFLP) markers and genetic distances (cM) are indicated along both linkage groups. Homologous loci detected using <italic toggle="yes">A. thaliana</italic> DNA probes, including FLC, CO, mi174, and mi438, are connected by lines between the two species, demonstrating conserved synteny. The exon–intron structure of FLC is shown, and an RFLP detected in <italic toggle="yes">B. rapa</italic> by exons 2–6 of FLC co‐segregates precisely with the VFR2 phenotype. This comparative map provided key evidence for the evolutionary homology between VFR2 in <italic toggle="yes">B. rapa</italic> and FLC in <italic toggle="yes">A. thaliana</italic> (figures reproduced from Kole et al. [<xref rid="tpg270276-bib-0029" ref-type="bibr">2001</xref>] in <italic toggle="yes">Theoretical and Applied Genetics</italic>).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-7" orientation="portrait" xlink:href="TPG2-19-e70276-g007.webp"><?image-name TPG2-19-e70276-g007.webp?><?image-size 11956?><?image-md5 a0595925700fe936e622e5558fa52ff9?><?image-image-server-status NEVER_LOAD?><?image-original-height 356?><?image-original-width 400?><?image-scaled-height 356?><?image-scaled-width 400?><?image-cloudpmc-urn urn:cdn:blobs/3584/13492621/a0595925700f/TPG2-19-e70276-g007.webp?><?thumb-name TPG2-19-e70276-g007.gif?><?thumb-size 4480?><?thumb-md5 fa7feab88ec07589c7078c801c50a5bb?><?thumb-image-server-status NEVER_LOAD?><?thumb-cloudpmc-urn urn:cdn:blobs/3584/13492621/fa7feab88ec0/TPG2-19-e70276-g007.gif?></graphic></fig><p>India and the world witnessed another outstanding discovery—the “Mendelization of QTL.” In 1997, Dr. Kole and colleagues reported “high‐resolution mapping” around the polygenic cluster <italic toggle="yes">VFR2</italic> in such a way that flowering time exhibited Mendelian (monogenic) segregation (Kole, Kole, &amp; Osborn, et al., <xref rid="tpg270276-bib-0021" ref-type="bibr">1997</xref>). This work was extended further, which laid the foundation of “molecular evolution of flowering time genes” in plants, and precisely, “evolution of polygenes from single genes.” In 2001, Dr. Kole and his colleagues depicted the perfect homology of the <italic toggle="yes">VFR2</italic> locus with the flowering locus C (<italic toggle="yes">FLC</italic>) of <italic toggle="yes">A. thaliana</italic>, elucidating the molecular pathway of evolution of the <italic toggle="yes">VFR2</italic> polygenic cluster from the <italic toggle="yes">FLC</italic> gene, probably through a series of tandem duplications (Kole et al., <xref rid="tpg270276-bib-0029" ref-type="bibr">2001</xref>). This discovery led to the depiction of homology of another two clusters, <italic toggle="yes">VFR1</italic> and <italic toggle="yes">VFR3</italic>, with <italic toggle="yes">FLC</italic> genes, and the use of the “<italic toggle="yes">FLC</italic> genes” (<italic toggle="yes">FLC1, FLC2</italic>, and <italic toggle="yes">FLC3</italic>) in breeding programs in an array of crop plants. This strategy became widely popular to practice marker‐assisted monitoring of QTLs during breeding (Figure <xref rid="tpg270276-fig-0004" ref-type="fig">4</xref>).</p><p>Stress resistance has recently reemerged in the genomics era as one of the most important breeding objectives, especially for climate resilience, and stupendous efforts have been made toward molecular mapping and genomics of biotic and abiotic stresses. It is amazing to imagine that even in the early 1990s, Prof. Kole thought about it and mapped the R‐gene for resistance to white rust (Kole, Teutonico, et al., <xref rid="tpg270276-bib-0031" ref-type="bibr">1996b</xref>). He also detected the QTLs controlling resistance to both the races AC2 and AC7 of this fungus in <italic toggle="yes">B. rapa</italic> (Kole, Teutonico, et al., <xref rid="tpg270276-bib-0031" ref-type="bibr">1996b</xref>; Kole, Williams, et al., <xref rid="tpg270276-bib-0033" ref-type="bibr">2002</xref>). Resistance to these two races was found to be controlled by a single major gene or two tightly related genes on linkage group 4 (BR4). Another minor QTL on BR2 was also found to control resistance to race 2. Comparative mapping of these map positions with corresponding regions on the <italic toggle="yes">B. napus</italic> molecular map and the <italic toggle="yes">A. thaliana</italic> “physical map” did not show any distinct genome homology (Figure <xref rid="tpg270276-fig-0005" ref-type="fig">5</xref>).</p><fig position="float" fig-type="FIGURE" id="tpg270276-fig-0005" orientation="portrait"><label>FIGURE 5</label><caption><p>Mapping of the gene <italic toggle="yes">Aca1</italic> onto the linkage group BR4 conferring resistance to the races AC2 and AC7 of the fungus <italic toggle="yes">Albugo candida</italic>, causing the white rust disease, and a quantitative trait locus (QTL) (shown by cross‐hatching) conferring resistance to the race AC2 on linkage group BR2 of <italic toggle="yes">Brassica rapa</italic>. Comparative mapping with the corresponding chromosomes of <italic toggle="yes">B. napus</italic>, BN19 and BN9 carrying the <italic toggle="yes">Aca1</italic> gene, conferring resistance to the <italic toggle="yes">B. carinata</italic> pathotype of <italic toggle="yes">A. candida</italic>, <italic toggle="yes">B. napus</italic>, and the physical positions of <italic toggle="yes">A. thaliana</italic> did not show any clear homology (for details of markers and maps see Kole, Williams, et al. [<xref rid="tpg270276-bib-0033" ref-type="bibr">2002</xref>]).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-9" orientation="portrait" xlink:href="TPG2-19-e70276-g006.webp"><?image-name TPG2-19-e70276-g006.webp?><?image-size 21598?><?image-md5 91df91587153dadd0685a5efa82d3cf0?><?image-image-server-status NEVER_LOAD?><?image-original-height 543?><?image-original-width 360?><?image-scaled-height 543?><?image-scaled-width 360?><?image-cloudpmc-urn urn:cdn:blobs/3584/13492621/91df91587153/TPG2-19-e70276-g006.webp?><?thumb-name TPG2-19-e70276-g006.gif?><?thumb-size 3504?><?thumb-md5 ebc22fb7f103a62af989f715eeeb2b6c?><?thumb-image-server-status NEVER_LOAD?><?thumb-cloudpmc-urn urn:cdn:blobs/3584/13492621/ebc22fb7f103/TPG2-19-e70276-g006.gif?></graphic></fig><p>In another pioneering research, Dr. Kole and his colleagues mapped QTLs controlling an important abiotic stress trait, winter survival (Kole, Kole, et al., <xref rid="tpg270276-bib-0020" ref-type="bibr">1996a</xref>, <xref rid="tpg270276-bib-0031" ref-type="bibr">1996b</xref>), and thus he became one of the first scientists to map genes controlling abiotic stress tolerance genes and obviously the first Indian to do so. His team conducted extensive studies on molecular mapping of winter survival and freezing tolerance (acclimatized and non‐acclimatized) in <italic toggle="yes">B. rapa</italic> and <italic toggle="yes">B. napus</italic> (Kole, Thormann, et al., <xref rid="tpg270276-bib-0032" ref-type="bibr">2002</xref>) (Figure <xref rid="tpg270276-fig-0006" ref-type="fig">6</xref>). In addition, he demonstrated linkage of genes controlling winter survival and freezing tolerance in each of these crops and in addition genes underlying vernalization responsive flowering time and flowering time per se, and homology of some genetic regions in these two species concerning the two abiotic stresses. Interestingly, he also showed an association of some of the genomic regions conferring stress tolerance to cold‐related genes of <italic toggle="yes">A. thaliana</italic>.</p><fig position="float" fig-type="FIGURE" id="tpg270276-fig-0006" orientation="portrait"><label>FIGURE 6</label><caption><p>Comparative mapping of quantitative trait loci (QTLs) controlling winter survival, freezing tolerance, and flowering time in <italic toggle="yes">Brassica rapa</italic> and <italic toggle="yes">Brassica napus</italic>. The figure shows the positions of QTLs for winter survival (WS), acclimated freezing tolerance (FTA), and flowering time (V/F) mapped in corresponding linkage groups of <italic toggle="yes">B. rapa</italic> and <italic toggle="yes">B. napus</italic>. Marker loci are shown along each linkage group, with homologous regions between the two species connected by lines, demonstrating conserved synteny. Shaded regions indicate the one‐LOD confidence intervals for significant QTLs, and arrows denote approximate positions of homologous markers identified in independent mapping populations. This comparative analysis revealed shared genomic regions controlling cold tolerance and flowering‐related traits in <italic toggle="yes">Brassica</italic> species, providing key insights into the genetic basis of winter survival and adaptive traits (figures reproduced from Kole, Thormann, et al. [<xref rid="tpg270276-bib-0032" ref-type="bibr">2002</xref>] in <italic toggle="yes">Molecular Breeding</italic>). LOD, logarithm of the odds.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-11" orientation="portrait" xlink:href="TPG2-19-e70276-g001.webp"><?image-name TPG2-19-e70276-g001.webp?><?image-size 36244?><?image-md5 6298f7db4999f24a45ebec52849cdf5b?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 411?><?image-original-width 820?><?image-scaled-height 411?><?image-scaled-width 820?><?image-cloudpmc-urn urn:cdn:blobs/3584/13492621/6298f7db4999/TPG2-19-e70276-g001.webp?><?thumb-name TPG2-19-e70276-g001.gif?><?thumb-size 3390?><?thumb-md5 58e5752d2a0d12dca3f2e1c0e5977a77?><?thumb-image-server-status NEVER_LOAD?><?thumb-cloudpmc-urn urn:cdn:blobs/3584/13492621/58e5752d2a0d/TPG2-19-e70276-g001.gif?></graphic></fig><p>Comprehensive research by Dr. Kole on molecular mapping in oilseed Brassicas led to the emergence of several novel concepts (see Figure <xref rid="tpg270276-fig-0007" ref-type="fig">7</xref>). The linkage of genes controlling flowering time with those underlying winter survival and freezing stress in his research demonstrated for the first time that flowering is not a beautiful happening as depicted in poems, but a clear symptom of stress. The linkage of biotic and abiotic stress‐related genes, as evidenced in his research, substantiated the clustering nature of these genes, indicating a shared or overlapping molecular mechanism. His research also detected some genes underlying abiotic stress tolerance that are contributed even by the sensitive parent genotype (R‐500 in <italic toggle="yes">B. rapa</italic> and Stellar in <italic toggle="yes">B. napus</italic>). This amazing observation led to the search for favorable genes in unfavorable genotypes by scientists in later years (for example, Xiao et al. [<xref rid="tpg270276-bib-0066" ref-type="bibr">1998</xref>]).</p><fig position="float" fig-type="FIGURE" id="tpg270276-fig-0007" orientation="portrait"><label>FIGURE 7</label><caption><p>Overview of the major scientific contributions of Prof. Chittaranjan Kole to plant genomics. The schematic highlights pioneering advances in cereals (5S‐rRNA sequencing, molecular cytogenetics, genomic fingerprinting, and phylogenetic analysis) alongside genetic mapping innovations in <italic toggle="yes">Brassica rapa</italic> and <italic toggle="yes">Brassica napus</italic>, including restriction fragment length polymorphism (RFLP)– and amplified fragment length polymorphism (AFLP)–based maps, recombinant inbred lines, and heterologous <italic toggle="yes">Arabidopsis</italic> probes. These efforts enabled mapping of R‐genes, QTLs for biotic and abiotic stress, flowering‐time loci, and quality traits. Comparative analyses among <italic toggle="yes">Brassica</italic> species and <italic toggle="yes">A. thaliana</italic> revealed conserved synteny and <italic toggle="yes">FLC–VFR2</italic> homology, leading to the Mendelization of QTL and insights into the molecular evolution of polygenes. Collectively, these contributions shaped numerous frameworks for modern marker‐assisted and climate‐resilient breeding.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-13" orientation="portrait" xlink:href="TPG2-19-e70276-g005.webp"><?image-name TPG2-19-e70276-g005.webp?><?image-size 72550?><?image-md5 a5d00bff791f553d4e9ec4dcb3369b26?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 707?><?image-original-width 820?><?image-scaled-height 707?><?image-scaled-width 820?><?image-cloudpmc-urn urn:cdn:blobs/3584/13492621/a5d00bff791f/TPG2-19-e70276-g005.webp?><?thumb-name TPG2-19-e70276-g005.gif?><?thumb-size 5504?><?thumb-md5 76ea3ebbbeb19c75f6799a43ce6e6054?><?thumb-image-server-status NEVER_LOAD?><?thumb-cloudpmc-urn urn:cdn:blobs/3584/13492621/76ea3ebbbeb1/TPG2-19-e70276-g005.gif?></graphic></fig><p>In addition to his pioneering contributions to plant genomics in the formative period, Prof. Koles’ contributions to genome sciences have also been outstanding through his later works in India and in the United States. Works of Prof. Kole and his colleagues covered almost all crop types including rice among cereals (Tiwari et al., <xref rid="tpg270276-bib-0063" ref-type="bibr">2005</xref>; Padmavathi et al., <xref rid="tpg270276-bib-0047" ref-type="bibr">2007</xref>; Singh et al., <xref rid="tpg270276-bib-0057" ref-type="bibr">2011</xref>; Khera et al., <xref rid="tpg270276-bib-0016" ref-type="bibr">2012</xref>; Upadhyay et al., <xref rid="tpg270276-bib-0064" ref-type="bibr">2012</xref>), Indian rape among oilseeds (Panigrahi et al., <xref rid="tpg270276-bib-0050" ref-type="bibr">2009</xref>, <xref rid="tpg270276-bib-0049" ref-type="bibr">2011</xref>), chickpea among grain legumes (Danakumara et al., <xref rid="tpg270276-bib-0007" ref-type="bibr">2024</xref>), apricot (Olukolu et al., <xref rid="tpg270276-bib-0042" ref-type="bibr">2009</xref>) and peach among fruit crops, tomato among vegetable crops (Kole et al., <xref rid="tpg270276-bib-0019" ref-type="bibr">2006</xref>), and <italic toggle="yes">Cannabis sativa</italic> among medicinal plants (J. Liu et al., <xref rid="tpg270276-bib-0037" ref-type="bibr">2023</xref>). Contributions of his teams from molecular mapping to genome sequencing in cultivated and wild bitter gourd have been pioneering (Kole et al., <xref rid="tpg270276-bib-0027" ref-type="bibr">2010</xref>, <xref rid="tpg270276-bib-0028" ref-type="bibr">2012</xref>; Vinay et al., <xref rid="tpg270276-bib-0065" ref-type="bibr">2024</xref>) among many others. It is during this period that his team pioneered in chromosome‐level de novo genome assemblies using over 100 plant species (Shirasawa et al., <xref rid="tpg270276-bib-0056" ref-type="bibr">2021</xref>). Prof. Kole's team also led to the birth of the new discipline of “agri‐nanotechnology” when they successfully demonstrated the use of nanoparticles to increase plant biomass, fruit yield, and phytomedicine content in bitter gourd (Kole et al., <xref rid="tpg270276-bib-0022" ref-type="bibr">2013</xref>). The pioneering contributions of Prof. Kole and his team to the foundation of plant proteomics through their enormous works on seed proteins have already been enumerated recently by a group of scientists (Pandey et al., <xref rid="tpg270276-bib-0048" ref-type="bibr">2025</xref>). As a legendary scientist, Prof. Kole has mentored and inspired innumerable scientists across the globe directly or indirectly.</p><p>Prof. Kole is highly regarded in India for his contributions to capacity building, primarily by developing facilities for research on genome sciences. He established the Laboratory of Molecular Biology and Biotechnology in the Odisha University of Agriculture &amp; Technology at Bhubaneswar in 1990. He was also the Founder Head of the Department of Genetics &amp; Plant Breeding and the Department of Seed technology of the Allahabad Agricultural Institute, presently named as the Sam Higginbottom University of Agriculture, Technology &amp; Sciences at Allahabad; Founder Project Coordinator of the Indo‐Russian Centre of Biotechnology at the Indian Institute of Information Technology at Allahabad and the Founder Director of the Regional Nuclear Agriculture Center in Bidhan Chandra Krishi Viswavidyalaya, Mohanpur.</p><p>Prof. Kole is an internationally reputed science leader. He established three scientific organizations in the field of genome sciences alone. He has been acting as the Founder President of the Genome India International since 2005, International Phytomedomics and Nutriomics Consortium since 2011, and the International Climate Resilient Crop Genomics Consortium since 2012. He led a group of 40 scientist members of the International Climate Resilient Crop Genomics Consortium from 13 countries including Australia, Brazil, China, Columbia, India, Italy, Japan, Malaysia, Nigeria, Philippines, Sweden, United Kingdom, and United States to draft the White Paper on climate change genomics and breeding as a guide to scientists, policy makers and funding agencies for preparation of action plans on future research and its funding on climate change (Kole et al., <xref rid="tpg270276-bib-0026" ref-type="bibr">2015</xref>).</p><p>All these multifarious contributions of Prof. Kole beyond the formative stage of plant genomics as a scientist, scientific capacity builder, science leader, and as an editor of over 200 books on genome sciences have been only briefed here but obviously deserve detailed deliberations in the future.</p></sec><sec id="tpg270276-sec-0020"><label>2</label><title>CONCLUSIONS</title><p>Prof. Chittaranjan Kole's legacy represents a transformative era in plant genomics, one defined by scientific rigor, innovation, and vision. His pioneering work, beginning with the first physical gene mapping and extending to comparative genomics and QTL evolution, laid the foundation for modern molecular breeding and accelerated the global transition from classical genetics to genomics‐driven crop improvement (Figure <xref rid="tpg270276-fig-0007" ref-type="fig">7</xref>). The conceptual advances emerging from his research, such as genomic dactyloscopy, Mendelization of QTLs, and linkage between stress biology and flowering networks, continue to influence current approaches to genome mapping, molecular diagnostics, and climate‐resilient agriculture. His work remains highly relevant in the era of genomic selection, pan‐genomics, and precision breeding, reflecting his role not only as a legendary scientist but also as a visionary leader. This tribute stands as recognition of a career that shaped the discipline and inspired generations to pursue excellence in plant genomics research.</p></sec><sec id="tpg270276-sec-0030"><title>AUTHOR CONTRIBUTIONS</title><p>
+<bold>Madhugiri Nageswara‐Rao</bold>: Conceptualization; investigation; resources; supervision; validation; visualization; writing—original draft; writing—review and editing. <bold>Sarita Pandey</bold>: Conceptualization; resources; writing—original draft; writing—review and editing. <bold>Poulami Bhattacharjee</bold>: Formal analysis; investigation; writing—original draft. <bold>Dinesh Kumar Saini</bold>: Visualization; writing—original draft. <bold>Jaya R. Soneji</bold>: Formal analysis; resources; writing—original draft; writing—review and editing. <bold>Bashasab Fakrudin</bold>: Resources; validation; writing—original draft. <bold>Lohithaswa Hirenallur Chandappa</bold>: Investigation; resources; writing—original draft. <bold>Amir Ali Khoddamzadeh</bold>: Resources; validation; writing—original draft. <bold>Daniel A. Tucker</bold>: Formal analysis; investigation; writing—original draft. <bold>Jinfa Zhang</bold>: Formal analysis; investigation; resources; validation; writing—review and editing. <bold>Shamseldeen Eltaher</bold>: Investigation; resources; writing—original draft. <bold>Jauhar Ali</bold>: Investigation; resources; validation. <bold>Robert Henry</bold>: Investigation; resources; validation; writing—review and editing. <bold>Ilga Mercedes Porth</bold>: Formal analysis; investigation; methodology; resources. <bold>Aleksandra Radanović</bold>: Investigation; resources; validation; visualization. <bold>Kiyosumi Hori</bold>: Investigation; resources; validation. <bold>Maria Stefanie Dwiyanti</bold>: Data curation; investigation; resources. <bold>Ferdinando Branca</bold>: Formal analysis; investigation; resources; validation. <bold>Shalini Tiwari</bold>: Investigation; methodology; resources; validation. <bold>Matthew Blair</bold>: Formal analysis; investigation; resources; visualization. <bold>Yong Pyo Lim</bold>: Investigation; resources; validation; visualization. <bold>Renate Horn</bold>: Formal analysis; investigation; resources; validation. <bold>Olga Danilevskaya</bold>: Data curation; investigation; resources; visualization. <bold>Sunita Adhikari</bold>: Investigation; supervision; validation; writing—review and editing.</p></sec><sec sec-type="COI-statement" id="tpg270276-sec-0050"><title>CONFLICT OF INTEREST STATEMENT</title><p>The authors declare no conflicts of interest.</p></sec></body><back><ack id="tpg270276-sec-0040"><title>ACKNOWLEDGMENTS</title><p>The project 6038‐13210‐004‐000‐D is acknowledged. The views expressed in this review article are those of the authors and do not reflect the views of Bayer Crop Science or its affiliates or any Agencies. This is a “perspective article”. All authors agree with that, and no data associated with a manuscript.</p></ack><ref-list id="tpg270276-bibl-0001"><title>REFERENCES</title><ref id="tpg270276-bib-0001"><mixed-citation publication-type="journal" id="tpg270276-cite-0002">
+<string-name name-style="western">
+<surname>Akkaya</surname>, <given-names>M. S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bhagwat</surname>, <given-names>A. A.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Cregan</surname>, <given-names>P. B.</given-names>
+</string-name> (<year>1992</year>). <article-title>Length polymorphism of simple sequence repeat DNA in soybean</article-title>. <source>Genetics</source>, <volume>132</volume>, <fpage>1131</fpage>–<lpage>1139</lpage>.<pub-id pub-id-type="pmid">1459432</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/genetics/132.4.1131</pub-id><pub-id pub-id-type="pmcid">PMC1205234</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0002"><mixed-citation publication-type="journal" id="tpg270276-cite-0003">
+<string-name name-style="western">
+<surname>Ananiev</surname>, <given-names>E.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kolchinsky</surname>, <given-names>A.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Kanazin</surname>, <given-names>V.</given-names>
+</string-name> (<year>1991</year>). <article-title>5S‐RNA genes of barley are located on the second chromosome</article-title>. <source>The Nucleus</source>, <volume>34</volume>, <fpage>115</fpage>–<lpage>117</lpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/BF00210068</pub-id><pub-id pub-id-type="pmid">24220965</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0003"><mixed-citation publication-type="journal" id="tpg270276-cite-0004">
+<string-name name-style="western">
+<surname>Bernatzky</surname>, <given-names>R.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Tanksley</surname>, <given-names>S. D.</given-names>
+</string-name> (<year>1986</year>). <article-title>Toward a saturated linkage map in tomato based on isozymes and random cDNA sequences</article-title>. <source>Genetics</source>, <volume>112</volume>, <fpage>887</fpage>–<lpage>898</lpage>.<pub-id pub-id-type="pmid">17246322</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/genetics/112.4.887</pub-id><pub-id pub-id-type="pmcid">PMC1202783</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0004"><mixed-citation publication-type="journal" id="tpg270276-cite-0005">
+<string-name name-style="western">
+<surname>Bonierbale</surname>, <given-names>M. W.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Plaisted</surname>, <given-names>R. L.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Tanksley</surname>, <given-names>S. D.</given-names>
+</string-name> (<year>1988</year>). <article-title>RFLP maps based on a common set of clones reveal modes of chromosomal evolution in potato and tomato</article-title>. <source>Genetics</source>, <volume>120</volume>, <fpage>1095</fpage>–<lpage>1103</lpage>.<pub-id pub-id-type="pmid">17246486</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/genetics/120.4.1095</pub-id><pub-id pub-id-type="pmcid">PMC1203572</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0005"><mixed-citation publication-type="journal" id="tpg270276-cite-0006">
+<string-name name-style="western">
+<surname>Burr</surname>, <given-names>B.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Burr</surname>, <given-names>F. A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Thompson</surname>, <given-names>K. H.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Albertson</surname>, <given-names>M. C.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Stuber</surname>, <given-names>C. W.</given-names>
+</string-name> (<year>1988</year>). <article-title>Gene mapping with recombinant inbreds in maize</article-title>. <source>Genetics</source>, <volume>118</volume>(<issue>3</issue>), <fpage>519</fpage>–<lpage>526</lpage>.<pub-id pub-id-type="pmid">3366363</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/genetics/118.3.519</pub-id><pub-id pub-id-type="pmcid">PMC1203305</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0006"><mixed-citation publication-type="journal" id="tpg270276-cite-0007">
+<string-name name-style="western">
+<surname>Cadalen</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Boeuf</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bernard</surname>, <given-names>S.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Bernard</surname>, <given-names>M.</given-names>
+</string-name> (<year>1997</year>). <article-title>An intervarietal molecular marker map in <italic toggle="yes">Triticum aestivum</italic> L. em. Thell. and comparison with a map from a wide cross</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>94</volume>, <fpage>367</fpage>–<lpage>377</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0007"><mixed-citation publication-type="journal" id="tpg270276-cite-0008">
+<string-name name-style="western">
+<surname>Danakumara</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kumar</surname>, <given-names>N.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Patil</surname>, <given-names>B. S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kumar</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bharadwaj</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Jain</surname>, <given-names>P. K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Nimmy</surname>, <given-names>M. S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Joshi</surname>, <given-names>N.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Parida</surname>, <given-names>S. K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bindra</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Varshney</surname>, <given-names>R. K.</given-names>
+</string-name> (<year>2024</year>). <article-title>Unraveling the genetics of heat tolerance in chickpea landraces (<italic toggle="yes">Cicer arietinum</italic> L.) using genome‐wide association studies</article-title>. <source>Frontiers in Plant Science</source>, <volume>15</volume>, <elocation-id>1376381</elocation-id>. <pub-id pub-id-type="doi">10.3389/fpls.2024.1376381</pub-id>
+<pub-id pub-id-type="pmid">38590753</pub-id>
+<pub-id pub-id-type="pmcid">PMC10999645</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0008"><mixed-citation publication-type="journal" id="tpg270276-cite-0009">
+<string-name name-style="western">
+<surname>Devey</surname>, <given-names>M. E.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bell</surname>, <given-names>J. C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Smith</surname>, <given-names>D. N.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Neale</surname>, <given-names>D. B.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Moran</surname>, <given-names>G. F.</given-names>
+</string-name> (<year>1996</year>). <article-title>A genetic map for <italic toggle="yes">Pinus radiata</italic> based on RFLP, RAPD and microsatellite markers</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>92</volume>, <fpage>673</fpage>–<lpage>679</lpage>.<pub-id pub-id-type="pmid">24166390</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/BF00226088</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0009"><mixed-citation publication-type="journal" id="tpg270276-cite-0010">
+<string-name name-style="western">
+<surname>Ferreira</surname>, <given-names>M. E.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Williams</surname>, <given-names>P. H.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name> (<year>1994</year>). <article-title>RFLP mapping of <italic toggle="yes">Brassica napus</italic> using doubled haploid lines</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>89</volume>, <fpage>615</fpage>–<lpage>621</lpage>.<pub-id pub-id-type="pmid">24177938</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/BF00222456</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0010"><mixed-citation publication-type="journal" id="tpg270276-cite-0011">
+<string-name name-style="western">
+<surname>Ferreira</surname>, <given-names>M. E.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Williams</surname>, <given-names>P. H.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name> (<year>1995</year>). <article-title>Mapping of a locus controlling resistance to <italic toggle="yes">Albugo candida</italic> in <italic toggle="yes">Brassica napus</italic> using molecular markers</article-title>. <source>Phytopathology</source>, <volume>85</volume>, <fpage>218</fpage>–<lpage>220</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0012"><mixed-citation publication-type="journal" id="tpg270276-cite-0013">
+<string-name name-style="western">
+<surname>Helentjaris</surname>, <given-names>T.</given-names>
+</string-name> (<year>1987</year>). <article-title>A genetic linkage map for maize based on RFLPs</article-title>. <source>Trends in Genetics</source>, <volume>3</volume>, <fpage>217</fpage>–<lpage>221</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0013"><mixed-citation publication-type="journal" id="tpg270276-cite-0014">
+<string-name name-style="western">
+<surname>Helentjaris</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>King</surname>, <given-names>G.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Slocum</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Siedenstrang</surname>, <given-names>C.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Wegman</surname>, <given-names>S.</given-names>
+</string-name> (<year>1985</year>). <article-title>Restriction fragment polymorphisms as probes for plant diversity and their development as tools for applied plant breeding</article-title>. <source>Plant Molecular Biology</source>, <volume>5</volume>, <fpage>109</fpage>–<lpage>118</lpage>.<pub-id pub-id-type="pmid">24306570</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/BF00020093</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0014"><mixed-citation publication-type="journal" id="tpg270276-cite-0015">
+<string-name name-style="western">
+<surname>Helentjaris</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Slocum</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Wright</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Schaefer</surname>, <given-names>A.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Nienhuis</surname>, <given-names>J.</given-names>
+</string-name> (<year>1986</year>). <article-title>Construction of genetic linkage maps in maize and tomato using restriction fragment length polymorphisms</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>72</volume>, <fpage>761</fpage>–<lpage>769</lpage>.<pub-id pub-id-type="pmid">24248197</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/BF00266542</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0015"><mixed-citation publication-type="journal" id="tpg270276-cite-0016">
+<string-name name-style="western">
+<surname>Hittalmani</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Foolad</surname>, <given-names>M. R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mew</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Rodriguez</surname>, <given-names>R. L.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Huang</surname>, <given-names>N.</given-names>
+</string-name> (<year>1995</year>). <article-title>Development of a PCR based marker to identify rice blast resistance gene, Pi‐2(t) in a segregating population</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>91</volume>, <fpage>9</fpage>–<lpage>14</lpage>.<pub-id pub-id-type="pmid">24169661</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/BF00220852</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0016"><mixed-citation publication-type="journal" id="tpg270276-cite-0017">
+<string-name name-style="western">
+<surname>Khera</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Priyadarsh</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Singh</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mohan</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gangashett</surname>, <given-names>M. G.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Singh</surname>, <given-names>B. N.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Shenoy</surname>, <given-names>V.</given-names>
+</string-name> (<year>2012</year>). <article-title>Molecular characterization of different cytoplasmic male sterile lines using mitochondrial DNA specific markers in rice</article-title>. <source>Journal of Biological Sciences</source>, <volume>12</volume>(<issue>3</issue>), <fpage>154</fpage>–<lpage>160</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0017"><mixed-citation publication-type="journal" id="tpg270276-cite-0018">
+<string-name name-style="western">
+<surname>Kolchinsky</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kanazin</surname>, <given-names>V.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yakovleva</surname>, <given-names>E.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gazumyan</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Ananiev</surname>, <given-names>E.</given-names>
+</string-name> (<year>1990</year>). <article-title>5S‐RNA genes of barley are located on the second chromosome</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>80</volume>, <fpage>333</fpage>–<lpage>336</lpage>.<pub-id pub-id-type="pmid">24220965</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/BF00210068</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0018"><mixed-citation publication-type="journal" id="tpg270276-cite-0019">
+<string-name name-style="western">
+<surname>Kolchinsky</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kanazin</surname>, <given-names>V.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Shchipkova</surname>, <given-names>N.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Ananiev</surname>, <given-names>E.</given-names>
+</string-name> (<year>1991</year>). <article-title>Repetitive elements of barley genome as molecular markers</article-title>. <source>The Nucleus</source>, <volume>34</volume>, <fpage>80</fpage>–<lpage>84</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0019"><mixed-citation publication-type="book" id="tpg270276-cite-0020">
+<string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ashrafi</surname>, <given-names>H.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Lin</surname>, <given-names>G.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Foolad</surname>, <given-names>M.</given-names>
+</string-name> (<year>2006</year>). <article-title>Identification and molecular mapping of a new R‐gene, Ph‐4, conferring resistance to late blight in tomato</article-title>. In <article-title>
+<italic toggle="yes">Proceedings of</italic>
+<italic toggle="yes">Solanaceae Conference</italic>
+</article-title> (Abstract 449). <publisher-name>University of Wisconsin</publisher-name>.</mixed-citation></ref><ref id="tpg270276-bib-0020"><mixed-citation publication-type="journal" id="tpg270276-cite-0021">
+<string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>P.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name> (<year>1996a</year>). <part-title>RFLP mapping of <italic toggle="yes">Brassica rapa</italic> using recombinant inbred lines</part-title>. In <source>International Plant and Animal Genome Conference</source> (Vol. <volume>73</volume>).</mixed-citation></ref><ref id="tpg270276-bib-0021"><mixed-citation publication-type="miscellaneous" id="tpg270276-cite-0022">
+<string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>P.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name> (<year>1997</year>). <article-title>A high‐resolution map around VFR2, a vernalization‐responsive flowering time gene in <italic toggle="yes">Brassica rapa</italic>
+</article-title>. In <article-title>
+International conference on the status of plant genome research
+</article-title> (pp. <fpage>107</fpage>).</mixed-citation></ref><ref id="tpg270276-bib-0022"><mixed-citation publication-type="journal" id="tpg270276-cite-0023">
+<string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Randunu</surname>, <given-names>K. M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Choudhary</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Podila</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ke</surname>, <given-names>P. C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Rao</surname>, <given-names>A. M.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Marcus</surname>, <given-names>R. K.</given-names>
+</string-name> (<year>2013</year>). <article-title>Nanobiotechnology can boost crop production and quality: First evidence from increased plant biomass, fruit yield and phytomedicine content in bitter melon (<italic toggle="yes">Momordica charantia</italic>)</article-title>. <source>BMC Biotechnology</source>, <volume>13</volume>, <fpage>37</fpage>.<pub-id pub-id-type="pmid">23622112</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/1472-6750-13-37</pub-id><pub-id pub-id-type="pmcid">PMC3644254</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0023"><mixed-citation publication-type="journal" id="tpg270276-cite-0024">
+<string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Vogelzang</surname>, <given-names>R.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Osbom</surname>, <given-names>T. C.</given-names>
+</string-name> (<year>1997</year>). <article-title>Genetic linkage map of <italic toggle="yes">Brassica rapa</italic> recombinant inbred population</article-title>. <source>Journal of Heredity</source>, <volume>88</volume>, <fpage>553</fpage>–<lpage>557</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0025"><mixed-citation publication-type="miscellaneous" id="tpg270276-cite-0026">
+<string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kolchinsky</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kanazin</surname>, <given-names>V.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Ananiev</surname>, <given-names>E.</given-names>
+</string-name> (<year>1992</year>). <article-title>Molecular elucidation on 5S‐RNA genes of barley: Cloning, sequencing, mapping and RFLP</article-title>. In <article-title>
+Proceedings of GJ Mendel birthday lecture series and symposium international
+</article-title> (pp. <fpage>29</fpage>).</mixed-citation></ref><ref id="tpg270276-bib-0026"><mixed-citation publication-type="journal" id="tpg270276-cite-0027">
+<string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Muthamilarasan</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Henry</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Edwards</surname>, <given-names>D.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sharma</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Abberton</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Batley</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bentley</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Blakeney</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bryant</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cai</surname>, <given-names>H.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cakir</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cseke</surname>, <given-names>L. J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cockram</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>de Oliveira</surname>, <given-names>A. C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>De Pace</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Dempewolf</surname>, <given-names>H.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ellison</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gepts</surname>, <given-names>P.</given-names>
+</string-name>, … <string-name name-style="western">
+<surname>Prasad</surname>, <given-names>M.</given-names>
+</string-name> (<year>2015</year>). <article-title>Application of genomics for generation of climate resilient crops: Progress and prospects</article-title>. <source>Frontiers in Plant Science</source>, <volume>6</volume>, <elocation-id>563</elocation-id>. <pub-id pub-id-type="doi">10.3389/fpls.2015.00563</pub-id>
+<pub-id pub-id-type="pmid">26322050</pub-id>
+<pub-id pub-id-type="pmcid">PMC4531421</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0027"><mixed-citation publication-type="book" id="tpg270276-cite-0028">
+<string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Olukolu</surname>, <given-names>B. A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>P.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Abbott</surname>, <given-names>A. G.</given-names>
+</string-name> (<year>2010</year>). <article-title>Association mapping of fruit traits and phytomedicine contents in a structured population of bitter melon (<italic toggle="yes">Momordica charantia</italic> L.)</article-title>. In <person-group person-group-type="editor">
+<string-name name-style="western">
+<given-names>J. A.</given-names>
+<surname>Thies</surname>
+</string-name>
+</person-group>, <person-group person-group-type="editor">
+<string-name name-style="western">
+<given-names>S.</given-names>
+<surname>Kousik</surname>
+</string-name>
+</person-group>, &amp; <person-group person-group-type="editor">
+<string-name name-style="western">
+<given-names>A.</given-names>
+<surname>Levi</surname>
+</string-name>
+</person-group> (Eds.), <article-title>
+Cucurbitaceae 2010 proceedings
+</article-title> (pp. <fpage>42</fpage>–<lpage>45</lpage>). <publisher-name>ASHS</publisher-name>.</mixed-citation></ref><ref id="tpg270276-bib-0028"><mixed-citation publication-type="journal" id="tpg270276-cite-0029">
+<string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Olukolu</surname>, <given-names>B. A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Rao</surname>, <given-names>V. K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bajpai</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Backiyarani</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Singh</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Elanchezhian</surname>, <given-names>R.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Abbott</surname>, <given-names>A. G.</given-names>
+</string-name> (<year>2012</year>). <article-title>The first genetic map and positions of trait loci governing the major fruit characters of bitter melon (<italic toggle="yes">Momordica charantia</italic>)</article-title>. <source>Journal of Plant Science and Molecular Breeding</source>, <volume>1</volume>(<issue>1</issue>), <fpage>1</fpage>–<lpage>6</lpage>. <pub-id pub-id-type="doi">10.7243/2050-2389-1-1</pub-id>
+</mixed-citation></ref><ref id="tpg270276-bib-0029"><mixed-citation publication-type="journal" id="tpg270276-cite-0030">
+<string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Quijada</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Michaels</surname>, <given-names>S. D.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Amasino</surname>, <given-names>R. M.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name> (<year>2001</year>). <article-title>Evidence for homology of flowering‐time genes VFR2 from <italic toggle="yes">Brassica rapa</italic> and FLC from <italic toggle="yes">Arabidopsis thaliana</italic>
+</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>102</volume>, <fpage>425</fpage>–<lpage>430</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0031"><mixed-citation publication-type="journal" id="tpg270276-cite-0032">
+<string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Teutonico</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mengistu</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Williams</surname>, <given-names>P. H.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name> (<year>1996b</year>). <article-title>Molecular mapping of a locus controlling resistance to <italic toggle="yes">Albugo candida</italic> in <italic toggle="yes">Brassica rapa</italic>
+</article-title>. <source>Phytopathology</source>, <volume>86</volume>, <fpage>367</fpage>–<lpage>369</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0032"><mixed-citation publication-type="journal" id="tpg270276-cite-0033">
+<string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Thormann</surname>, <given-names>C. E.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Karlsson</surname>, <given-names>B. H.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Palta</surname>, <given-names>J. P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gaffney</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yandell</surname>, <given-names>B.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name> (<year>2002</year>). <article-title>Comparative mapping of loci controlling winter survival and related traits in oilseed <italic toggle="yes">Brassica rapa</italic> and <italic toggle="yes">B. napus</italic>
+</article-title>. <source>Molecular Breeding</source>, <volume>9</volume>(<issue>3</issue>), <fpage>201</fpage>–<lpage>210</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0033"><mixed-citation publication-type="journal" id="tpg270276-cite-0034">
+<string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Williams</surname>, <given-names>P. H.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Rimmer</surname>, <given-names>S. R.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name> (<year>2002</year>). <article-title>Linkage mapping of genes controlling resistance to white rust (<italic toggle="yes">Albugo candida</italic>) in <italic toggle="yes">Brassica rapa</italic> (syn. campestris) and comparative mapping to <italic toggle="yes">B. napus</italic> and <italic toggle="yes">Arabidopsis thaliana</italic>
+</article-title>. <source>Genome</source>, <volume>45</volume>, <fpage>22</fpage>–<lpage>27</lpage>.<pub-id pub-id-type="pmid">11908664</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1139/g01-123</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0034"><mixed-citation publication-type="journal" id="tpg270276-cite-0035">
+<string-name name-style="western">
+<surname>Landry</surname>, <given-names>B. S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hubert</surname>, <given-names>N.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Etoh</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Harada</surname>, <given-names>J. J.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Lincoln</surname>, <given-names>S. E.</given-names>
+</string-name> (<year>1991</year>). <article-title>A genetic map for <italic toggle="yes">Brassica napus</italic> based on restriction fragment length polymorphisms detected with expressed DNA sequences</article-title>. <source>Genome</source>, <volume>34</volume>, <fpage>543</fpage>–<lpage>552</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0035"><mixed-citation publication-type="journal" id="tpg270276-cite-0036">
+<string-name name-style="western">
+<surname>Landry</surname>, <given-names>B. S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kesseli</surname>, <given-names>R. V.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Farrara</surname>, <given-names>B.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Michelmore</surname>, <given-names>R. W.</given-names>
+</string-name> (<year>1987</year>). <article-title>A genetic map of lettuce (<italic toggle="yes">Lactuca sativa</italic> L.) with restriction fragment length polymorphism, isozyme, disease resistance and morphological markers</article-title>. <source>Genetics</source>, <volume>116</volume>, <fpage>331</fpage>–<lpage>337</lpage>.<pub-id pub-id-type="pmid">17246387</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/genetics/116.2.331</pub-id><pub-id pub-id-type="pmcid">PMC1203143</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0036"><mixed-citation publication-type="journal" id="tpg270276-cite-0037">
+<string-name name-style="western">
+<surname>Lin</surname>, <given-names>Y. R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Schertz</surname>, <given-names>K. F.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Paterson</surname>, <given-names>A. H.</given-names>
+</string-name> (<year>1995</year>). <article-title>Comparative analysis of QTLs affecting plant height and maturity across the Poaceae, in reference to an interspecific sorghum population</article-title>. <source>Genetics</source>, <volume>141</volume>, <fpage>391</fpage>–<lpage>411</lpage>.<pub-id pub-id-type="pmid">8536986</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/genetics/141.1.391</pub-id><pub-id pub-id-type="pmcid">PMC1206736</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0037"><mixed-citation publication-type="journal" id="tpg270276-cite-0038">
+<string-name name-style="western">
+<surname>Liu</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Zhang</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Jiang</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ni</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Xu</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Wu</surname>, <given-names>W.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Huang</surname>, <given-names>L.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Newmaster</surname>, <given-names>S. G.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Wu</surname>, <given-names>B.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Liu</surname>, <given-names>C.</given-names>
+</string-name> (<year>2023</year>). <article-title>Identification of circular RNAs of <italic toggle="yes">Cannabis sativa</italic> L. potentially involved in the biosynthesis of cannabinoids</article-title>. <source>Planta</source>, <volume>257</volume>(<issue>4</issue>), <fpage>72</fpage>. <pub-id pub-id-type="doi">10.1007/s00425-023-04104-4</pub-id>
+<pub-id pub-id-type="pmid">36862222</pub-id>
+</mixed-citation></ref><ref id="tpg270276-bib-0038"><mixed-citation publication-type="journal" id="tpg270276-cite-0039">
+<string-name name-style="western">
+<surname>Liu</surname>, <given-names>Y. G.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Tsunewaki</surname>, <given-names>K.</given-names>
+</string-name> (<year>1991</year>). <article-title>Restriction fragment length polymorphism (RFLP) analysis in wheat. II. Linkage maps of the RFLP sites in common wheat</article-title>. <source>The Japanese Journal of Genetics</source>, <volume>66</volume>, <fpage>617</fpage>–<lpage>633</lpage>.<pub-id pub-id-type="pmid">1685660</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1266/jjg.66.617</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0039"><mixed-citation publication-type="journal" id="tpg270276-cite-0040">
+<string-name name-style="western">
+<surname>Maheswaran</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Subudhi</surname>, <given-names>P. K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Nandi</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Xu</surname>, <given-names>J. C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Parco</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yang</surname>, <given-names>D. C.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Huang</surname>, <given-names>N.</given-names>
+</string-name> (<year>1997</year>). <article-title>Polymorphism, distribution, and segregation of AFLP markers in a doubled haploid rice population</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>94</volume>, <fpage>39</fpage>–<lpage>45</lpage>.<pub-id pub-id-type="pmid">19352743</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/s001220050379</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0040"><mixed-citation publication-type="journal" id="tpg270276-cite-0041">
+<string-name name-style="western">
+<surname>Maxam</surname>, <given-names>A. M.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Gilbert</surname>, <given-names>W.</given-names>
+</string-name> (<year>1980</year>). <article-title>Sequencing end‐labeled DNA with base‐specific chemical cleavages</article-title>. <source>Methods in Enzymology</source>, <volume>65</volume>(<issue>1</issue>), <fpage>499</fpage>–<lpage>560</lpage>.<pub-id pub-id-type="pmid">6246368</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/s0076-6879(80)65059-9</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0041"><mixed-citation publication-type="journal" id="tpg270276-cite-0042">
+<string-name name-style="western">
+<surname>McCouch</surname>, <given-names>S. R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kochert</surname>, <given-names>G.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yu</surname>, <given-names>Z. H.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Wang</surname>, <given-names>Z. Y.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Khush</surname>, <given-names>G. S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Coffman</surname>, <given-names>W. R.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Tanksley</surname>, <given-names>S. D.</given-names>
+</string-name> (<year>1988</year>). <article-title>Molecular mapping of rice chromosomes</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>76</volume>, <fpage>815</fpage>–<lpage>829</lpage>.<pub-id pub-id-type="pmid">24232389</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/BF00273666</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0042"><mixed-citation publication-type="journal" id="tpg270276-cite-0043">
+<string-name name-style="western">
+<surname>Olukolu</surname>, <given-names>B. A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Trainin</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fan</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bielenberg</surname>, <given-names>D. G.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Reighard</surname>, <given-names>G. L.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Abbott</surname>, <given-names>A. G.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Holland</surname>, <given-names>D.</given-names>
+</string-name> (<year>2009</year>). <article-title>Genetic linkage mapping for molecular dissection of chilling requirement and budbreak in apricot (<italic toggle="yes">Prunus armeniaca</italic> L.)</article-title>. <source>Genome</source>, <volume>52</volume>(<issue>10</issue>), <fpage>819</fpage>–<lpage>828</lpage>.<pub-id pub-id-type="pmid">19935906</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1139/g09-050</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0043"><mixed-citation publication-type="journal" id="tpg270276-cite-0044">
+<string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Alexander</surname>, <given-names>D. C.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Fobes</surname>, <given-names>J. F.</given-names>
+</string-name> (<year>1987</year>). <article-title>Identification of restriction fragment length polymorphisms linked to genes controlling soluble solids content in tomato fruit</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>73</volume>, <fpage>350</fpage>–<lpage>356</lpage>.<pub-id pub-id-type="pmid">24240994</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/BF00262500</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0044"><mixed-citation publication-type="miscellaneous" id="tpg270276-cite-0045">
+<string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Butruille</surname>, <given-names>D.</given-names>
+</string-name> (<year>1997a</year>). <article-title>Organization and evolution of flowering time genes in <italic toggle="yes">Brassica</italic>
+</article-title>. In <article-title>
+Keystone symposium
+</article-title> (pp. <fpage>7</fpage>).</mixed-citation></ref><ref id="tpg270276-bib-0046"><mixed-citation publication-type="journal" id="tpg270276-cite-0047">
+<string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Parkin</surname>, <given-names>I. A. P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sharpe</surname>, <given-names>A. G.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kuiper</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Lydiate</surname>, <given-names>D. J.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Trick</surname>, <given-names>M.</given-names>
+</string-name> (<year>1997b</year>). <article-title>Comparison of vernalization responsive flowering time genes in <italic toggle="yes">Brassica rapa</italic>, <italic toggle="yes">B. napus</italic> and <italic toggle="yes">Arabidopsis thaliana</italic>
+</article-title>. <source>Genetics</source>, <volume>146</volume>(<issue>3</issue>), <fpage>1123</fpage>–<lpage>1129</lpage>.<pub-id pub-id-type="pmid">9215913</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/genetics/146.3.1123</pub-id><pub-id pub-id-type="pmcid">PMC1208040</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0047"><mixed-citation publication-type="journal" id="tpg270276-cite-0048">
+<string-name name-style="western">
+<surname>Padmavathi</surname>, <given-names>G.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Krishnaiah</surname>, <given-names>N. V.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Siddiq</surname>, <given-names>E. A.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name> (<year>2007</year>). <article-title>The identification of random amplified polymorphic DNA markers for green leafhopper (<italic toggle="yes">Nephotettix virescens</italic> distant) resistance in rice</article-title>. <source>SABRAO Journal of Breeding and Genetics</source>, <volume>39</volume>(<issue>2</issue>), <fpage>127</fpage>–<lpage>143</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0048"><mixed-citation publication-type="journal" id="tpg270276-cite-0049">
+<string-name name-style="western">
+<surname>Pandey</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tiwari</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bhattacharjee</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Anand</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Pazhamala</surname>, <given-names>L. T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yasin</surname>, <given-names>J. K.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Yadav</surname>, <given-names>R. K.</given-names>
+</string-name> (<year>2025</year>). <article-title>Seed protein electrophoresis in plant genetics: Commemorating the pioneering contributions of Prof. Chittaranjan Kole and team to the foundation of plant proteomics</article-title>. <source>The Plant Genome</source>, <volume>18</volume>, <elocation-id>e70027</elocation-id>. <pub-id pub-id-type="doi">10.1002/tpg2.70027</pub-id>
+<pub-id pub-id-type="pmid">40646713</pub-id>
+<pub-id pub-id-type="pmcid">PMC12254572</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0049"><mixed-citation publication-type="journal" id="tpg270276-cite-0050">
+<string-name name-style="western">
+<surname>Panigrahi</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>P.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name> (<year>2011</year>). <article-title>RFLP mapping of a loci controlling self‐incompatibility in <italic toggle="yes">Brassica campestris</italic> (syn. rapa) and their comparative mapping to <italic toggle="yes">B. napus</italic> and <italic toggle="yes">B. oleracea</italic>
+</article-title>. <source>Biologia plantarum</source>, <volume>55</volume>(<issue>1</issue>), <fpage>54</fpage>–<lpage>60</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0050"><mixed-citation publication-type="journal" id="tpg270276-cite-0051">
+<string-name name-style="western">
+<surname>Panigrahi</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Patnaik</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>P.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name> (<year>2009</year>). <article-title>Addition of RFLP markers to the genetic linkage map of <italic toggle="yes">Brassica rapa</italic> L. (syn. campestris) and detection of new QTLs for <italic toggle="yes">Albugo candida</italic> race‐7 (AC‐7)</article-title>. <source>Zeitschrift für Naturforschung C</source>, <volume>64</volume>, <fpage>882</fpage>–<lpage>890</lpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1515/znc-2009-11-1221</pub-id><pub-id pub-id-type="pmid">20158162</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0051"><mixed-citation publication-type="journal" id="tpg270276-cite-0052">
+<string-name name-style="western">
+<surname>Paterson</surname>, <given-names>A. H.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Lin</surname>, <given-names>Y. R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Li</surname>, <given-names>Z.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Schertz</surname>, <given-names>K. F.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Doebley</surname>, <given-names>J. F.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Pinson</surname>, <given-names>S. R. M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Liu</surname>, <given-names>S.‐C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Stansel</surname>, <given-names>J. W.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Irvine</surname>, <given-names>J. E.</given-names>
+</string-name> (<year>1995</year>). <article-title>Convergent evolution of cereal crops by independent mutations of corresponding genetic loci</article-title>. <source>Science</source>, <volume>269</volume>, <fpage>1714</fpage>–<lpage>1718</lpage>.<pub-id pub-id-type="pmid">17821643</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1126/science.269.5231.1714</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0052"><mixed-citation publication-type="book" id="tpg270276-cite-0053">
+<string-name name-style="western">
+<surname>Penner</surname>, <given-names>G. A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Zirino</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kruger</surname>, <given-names>S.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Townley‐Smith</surname>, <given-names>F.</given-names>
+</string-name> (<year>1998</year>). <article-title>Accelerated recurrent parent selection in wheat with microsatellite markers</article-title>. In <person-group person-group-type="editor">
+<string-name name-style="western">
+<given-names>A.E.</given-names>
+<surname>Slinkard</surname>
+</string-name>
+</person-group> (Ed.), <article-title>
+Proceedings of the 9th International Wheat Genetics Symposium
+</article-title> (pp. <fpage>131</fpage>–<lpage>134</lpage>). <publisher-name>University Extension Press</publisher-name>.</mixed-citation></ref><ref id="tpg270276-bib-0053"><mixed-citation publication-type="miscellaneous" id="tpg270276-cite-0054">
+<string-name name-style="western">
+<surname>Pereira</surname>, <given-names>M. G.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Lee</surname>, <given-names>M.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Rayapati</surname>, <given-names>P. J.</given-names>
+</string-name> (<year>1994</year>). <article-title>
+<italic toggle="yes">Comparative RFLP and QTL mapping in sorghum and maize</italic> [Poster presentation]. Second International Conference on the Plant Genome</article-title>.</mixed-citation></ref><ref id="tpg270276-bib-0054"><mixed-citation publication-type="journal" id="tpg270276-cite-0055">
+<string-name name-style="western">
+<surname>Prabhu</surname>, <given-names>K. V.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Somers</surname>, <given-names>D. J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Rakow</surname>, <given-names>G.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Gugel</surname>, <given-names>R. K.</given-names>
+</string-name> (<year>1998</year>). <article-title>Molecular markers linked to white rust resistance in mustard <italic toggle="yes">Brassica juncea</italic>
+</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>97</volume>, <fpage>865</fpage>–<lpage>870</lpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/s00122-001-0812-1</pub-id><pub-id pub-id-type="pmid">12582621</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0055"><mixed-citation publication-type="journal" id="tpg270276-cite-0056">
+<string-name name-style="western">
+<surname>Sharma</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Aggarwal</surname>, <given-names>R. A. K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kumar</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mohapatra</surname>, <given-names>T.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Sharma</surname>, <given-names>R. P.</given-names>
+</string-name> (<year>2002</year>). <article-title>Construction of a RAPD linkage map and localization of QTLs for oleic acid level using recombinant inbreds in mustard (<italic toggle="yes">Brassica juncea</italic>)</article-title>. <source>Genome</source>, <volume>45</volume>(<issue>3</issue>), <fpage>467</fpage>–<lpage>472</lpage>.<pub-id pub-id-type="pmid">12033614</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1139/g02-001</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0056"><mixed-citation publication-type="journal" id="tpg270276-cite-0057">
+<string-name name-style="western">
+<surname>Shirasawa</surname>, <given-names>K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Harada</surname>, <given-names>D.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hirakawa</surname>, <given-names>H.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Isobe</surname>, <given-names>S.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name> (<year>2021</year>). <article-title>Chromosome‐level de novo genome assemblies of over 100 plant species</article-title>. <source>Breeding Science</source>, <volume>71</volume>(<issue>2</issue>), <fpage>117</fpage>–<lpage>124</lpage>. <pub-id pub-id-type="doi">10.1270/jsbbs.20146</pub-id>
+<pub-id pub-id-type="pmid">34377059</pub-id>
+<pub-id pub-id-type="pmcid">PMC8329882</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0057"><mixed-citation publication-type="journal" id="tpg270276-cite-0058">
+<string-name name-style="western">
+<surname>Singh</surname>, <given-names>V. K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Upadhyay</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sinha</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mall</surname>, <given-names>A. K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Jaiswal</surname>, <given-names>S. K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Singh</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ellur</surname>, <given-names>R. K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Biradar</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sundaram</surname>, <given-names>R. M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Singh</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ahmed</surname>, <given-names>I.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mishra</surname>, <given-names>B.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Singh</surname>, <given-names>A. K.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name> (<year>2011</year>). <article-title>Determination of genetic relationships among elite thermo‐sensitive genic male sterile lines (TGMS) of rice (<italic toggle="yes">Oryza sativa</italic> L.) employing morphological and simple sequence repeat (SSR) markers</article-title>. <source>Journal of Genetics</source>, <volume>90</volume>, <fpage>11</fpage>–<lpage>19</lpage>.<pub-id pub-id-type="pmid">21677384</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/s12041-011-0018-5</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0058"><mixed-citation publication-type="journal" id="tpg270276-cite-0059">
+<string-name name-style="western">
+<surname>Song</surname>, <given-names>K. M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Suzuki</surname>, <given-names>J. Y.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Slocum</surname>, <given-names>M. K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Williams</surname>, <given-names>P. H.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name> (<year>1991</year>). <article-title>A linkage map for <italic toggle="yes">Brassica rapa</italic> (syn. campestris) based on restriction fragment length polymorphism loci</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>82</volume>, <fpage>296</fpage>–<lpage>304</lpage>.<pub-id pub-id-type="pmid">24213173</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/BF02190615</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0059"><mixed-citation publication-type="journal" id="tpg270276-cite-0060">
+<string-name name-style="western">
+<surname>Tahir</surname>, <given-names>M.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Muehlbauer</surname>, <given-names>F. J.</given-names>
+</string-name> (<year>1994</year>). <article-title>Gene mapping in lentil with recombinant inbred lines</article-title>. <source>Journal of Heredity</source>, <volume>85</volume>, <fpage>306</fpage>–<lpage>310</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0060"><mixed-citation publication-type="journal" id="tpg270276-cite-0061">
+<string-name name-style="western">
+<surname>Tanksley</surname>, <given-names>S. D.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bernatzky</surname>, <given-names>R.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Lapitan</surname>, <given-names>N. L.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Prince</surname>, <given-names>J. P.</given-names>
+</string-name> (<year>1988</year>). <article-title>Conservation of gene repertoire but not gene order in pepper and tomato</article-title>. <source>Proceedings of the National Academy of Sciences</source>, <volume>85</volume>, <fpage>6419</fpage>–<lpage>6423</lpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.1073/pnas.85.17.6419</pub-id><pub-id pub-id-type="pmcid">PMC281983</pub-id><pub-id pub-id-type="pmid">16593975</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0061"><mixed-citation publication-type="journal" id="tpg270276-cite-0062">
+<string-name name-style="western">
+<surname>Teutonico</surname>, <given-names>R. A.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name> (<year>1994</year>). <article-title>Mapping of RFLP and qualitative trait loci in Brassica rapa and comparison to the linkage maps of <italic toggle="yes">B. napus</italic>, <italic toggle="yes">B. oleracea</italic>, and <italic toggle="yes">Arabidopsis thaliana</italic>
+</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>89</volume>, <fpage>885</fpage>–<lpage>894</lpage>.<pub-id pub-id-type="pmid">24178100</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/BF00224514</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0062"><mixed-citation publication-type="journal" id="tpg270276-cite-0063">
+<string-name name-style="western">
+<surname>Thormann</surname>, <given-names>C. E.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Romero</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mantet</surname>, <given-names>J.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Osborn</surname>, <given-names>T. C.</given-names>
+</string-name> (<year>1996</year>). <article-title>Mapping loci controlling the concentrations of erucic and linolenic acids in seed oil of <italic toggle="yes">Brassica napus</italic> L</article-title>. <source>Theoretical and Applied Genetics</source>, <volume>93</volume>(<issue>1–2</issue>), <fpage>282</fpage>–<lpage>286</lpage>.<pub-id pub-id-type="pmid">24162230</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/BF00225758</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0063"><mixed-citation publication-type="journal" id="tpg270276-cite-0064">
+<string-name name-style="western">
+<surname>Tiwari</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bentur</surname>, <given-names>J. S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mishra</surname>, <given-names>B.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Aravind Kumar</surname>, <given-names>A.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name> (<year>2005</year>). <article-title>Reaction of gene differential rice varieties against gall midge <italic toggle="yes">Orseolia oryzae</italic> (Wood‐Mason) biotypes in the greenhouse</article-title>. <source>Indian Journal of Genetics and Plant Breeding</source>, <volume>65</volume>(<issue>4</issue>), <fpage>313</fpage>–<lpage>314</lpage>.</mixed-citation></ref><ref id="tpg270276-bib-0064"><mixed-citation publication-type="journal" id="tpg270276-cite-0065">
+<string-name name-style="western">
+<surname>Upadhyay</surname>, <given-names>P.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Neeraja</surname>, <given-names>C. N.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Singh</surname>, <given-names>V. K.</given-names>
+</string-name> (<year>2012</year>). <article-title>Population structure and genetic diversity in popular rice varieties of India as evidenced from SSR analysis</article-title>. <source>Biochemical Genetics</source>, <volume>50</volume>(<issue>9–10</issue>), <fpage>770</fpage>–<lpage>783</lpage>.<pub-id pub-id-type="pmid">22689049</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/s10528-012-9519-z</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0065"><mixed-citation publication-type="journal" id="tpg270276-cite-0066">
+<string-name name-style="western">
+<surname>Vinay</surname>, <given-names>N. D.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Singh</surname>, <given-names>K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ellur</surname>, <given-names>R. K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Chinnusamy</surname>, <given-names>V.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Jaiswal</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Iquebal</surname>, <given-names>M. A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Munshi</surname>, <given-names>A. D.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Matsumura</surname>, <given-names>H.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Boopalakrishnan</surname>, <given-names>G.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Jat</surname>, <given-names>G. S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kole</surname>, <given-names>C.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gaikwad</surname>, <given-names>A. B.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kumar</surname>, <given-names>D.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Dey</surname>, <given-names>S. S.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>Behera</surname>, <given-names>T. K.</given-names>
+</string-name> (<year>2024</year>). <article-title>High‐quality <italic toggle="yes">Momordica balsamina</italic> genome elucidates its potential use in improving stress resilience and therapeutic properties of bitter gourd</article-title>. <source>Frontiers in Plant Science</source>, <volume>14</volume>, <elocation-id>1258042</elocation-id>. <pub-id pub-id-type="doi">10.3389/fpls.2023.1258042</pub-id>
+<pub-id pub-id-type="pmid">38333042</pub-id>
+<pub-id pub-id-type="pmcid">PMC10851156</pub-id></mixed-citation></ref><ref id="tpg270276-bib-0066"><mixed-citation publication-type="journal" id="tpg270276-cite-0067">
+<string-name name-style="western">
+<surname>Xiao</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Li</surname>, <given-names>J.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Grandillo</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ahn</surname>, <given-names>S. N.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yuan</surname>, <given-names>L.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tanksley</surname>, <given-names>S. D.</given-names>
+</string-name>, &amp; <string-name name-style="western">
+<surname>McCouch</surname>, <given-names>S. R.</given-names>
+</string-name> (<year>1998</year>). <article-title>Identification of trait‐improving quantitative trait loci alleles from a wild rice relative, <italic toggle="yes">Oryza rufipogon</italic>
+</article-title>. <source>Genetics</source>, <volume>150</volume>, <fpage>899</fpage>–<lpage>909</lpage>.<pub-id pub-id-type="pmid">9755218</pub-id>
+<pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/genetics/150.2.899</pub-id><pub-id pub-id-type="pmcid">PMC1460369</pub-id></mixed-citation></ref></ref-list></back></article>

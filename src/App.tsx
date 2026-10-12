@@ -17,6 +17,7 @@ import EpistaticPage from './pages/EpistaticPage'
 import CandidateGenesPage from './pages/CandidateGenesPage'
 import AdvancedSearch from './pages/AdvancedSearch'
 import Credits from './pages/Credits'
+import PublicationsPage from './pages/PublicationsPage'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
         <Route path="/search" element={<AdvancedSearch />} />
         <Route path="/team" element={<Team />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/publications" element={<PublicationsPage />} />
         <Route path="/credits" element={<Credits />} />
         <Route path="/links" element={<UsefulLinks />} />
         <Route path="*" element={<NotFound />} />

@@ -1,0 +1,1270 @@
+<?xml version="1.0" encoding="UTF-8"?><article xml:lang="en" article-type="research-article"><front><journal-meta><journal-id journal-id-type="pmc-domain-id">4810</journal-id><journal-id journal-id-type="pmc-domain">plantgen</journal-id><journal-title-group><journal-title>The Plant Genome</journal-title><abbrev-journal-title>Plant Genome</abbrev-journal-title></journal-title-group><publisher><publisher-name>Wiley</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC11760652</article-id><article-id pub-id-type="pmcaid">11760652</article-id><article-id pub-id-type="pmcaiid">12806270</article-id><article-id pub-id-type="pmid">39853960</article-id><article-id pub-id-type="doi">10.1002/tpg2.20548</article-id><title-group><article-title>A novel quantitative trait locus for <italic>barley yellow dwarf virus</italic> resistance and kernel traits on chromosome 2D of a wheat cultivar Jagger</article-title></title-group><contrib-group content-type="author"><contrib><name name-style="western"><surname>Bian</surname><given-names initials="R">Ruolin</given-names></name><xref ref-type="aff" rid="tpg220548-aff-0001">1</xref></contrib><contrib><name name-style="western"><surname>Liu</surname><given-names initials="N">Na</given-names></name><xref ref-type="aff" rid="tpg220548-aff-0002">2</xref><xref ref-type="author-notes" rid="_fncrsp93pmc__">✉</xref></contrib><contrib><name name-style="western"><surname>Xu</surname><given-names initials="Y">Yuzhou</given-names></name><xref ref-type="aff" rid="tpg220548-aff-0001">1</xref></contrib><contrib><name name-style="western"><surname>Su</surname><given-names initials="Z">Zhenqi</given-names></name><xref ref-type="aff" rid="tpg220548-aff-0001">1</xref><xref ref-type="aff" rid="tpg220548-aff-0003">3</xref></contrib><contrib><name name-style="western"><surname>Chai</surname><given-names initials="L">Lingling</given-names></name><xref ref-type="aff" rid="tpg220548-aff-0001">1</xref><xref ref-type="aff" rid="tpg220548-aff-0003">3</xref></contrib><contrib><name name-style="western"><surname>Bernardo</surname><given-names initials="A">Amy</given-names></name><xref ref-type="aff" rid="tpg220548-aff-0004">4</xref></contrib><contrib><name name-style="western"><surname>St Amand</surname><given-names initials="P">Paul</given-names></name><xref ref-type="aff" rid="tpg220548-aff-0004">4</xref></contrib><contrib><name name-style="western"><surname>Rupp</surname><given-names initials="J">Jessica</given-names></name><xref ref-type="aff" rid="tpg220548-aff-0005">5</xref></contrib><contrib><name name-style="western"><surname>Pumphrey</surname><given-names initials="M">Michael</given-names></name><xref ref-type="aff" rid="tpg220548-aff-0006">6</xref></contrib><contrib><name name-style="western"><surname>Fritz</surname><given-names initials="A">Allan</given-names></name><xref ref-type="aff" rid="tpg220548-aff-0001">1</xref></contrib><contrib><name name-style="western"><surname>Zhang</surname><given-names initials="G">Guorong</given-names></name><xref ref-type="aff" rid="tpg220548-aff-0001">1</xref></contrib><contrib><name name-style="western"><surname>Jordan</surname><given-names initials="KW">Katherine W</given-names></name><xref ref-type="aff" rid="tpg220548-aff-0004">4</xref></contrib><contrib><name name-style="western"><surname>Bai</surname><given-names initials="G">Guihua</given-names></name><xref ref-type="aff" rid="tpg220548-aff-0001">1</xref><xref ref-type="aff" rid="tpg220548-aff-0004">4</xref><xref ref-type="author-notes" rid="_fncrsp93pmc__">✉</xref></contrib></contrib-group><aff id="tpg220548-aff-0001"><label>
+<sup>1</sup>
+</label>Department of Agronomy, Kansas State University, Manhattan, Kansas, USA</aff><aff id="tpg220548-aff-0002"><label>
+<sup>2</sup>
+</label>College of Life Sciences, Henan Agricultural University, Zhengzhou, China</aff><aff id="tpg220548-aff-0003"><label>
+<sup>3</sup>
+</label>China Agricultural University, Beijing, China</aff><aff id="tpg220548-aff-0004"><label>
+<sup>4</sup>
+</label>USDA‐ARS, Hard Winter Wheat Genetics Research Unit, Manhattan, Kansas, USA</aff><aff id="tpg220548-aff-0005"><label>
+<sup>5</sup>
+</label>Department of Plant Pathology, Kansas State University, Manhattan, Kansas, USA</aff><aff id="tpg220548-aff-0006"><label>
+<sup>6</sup>
+</label>Department of Crop and Soil Sciences, Washington State University, Pullman, Washington, USA</aff><author-notes><fn id="correspondenceTo"><label>*</label><p>
+
+<bold>Correspondence</bold>
+, Na Liu, College of Life Sciences, Henan Agricultural University, Zhengzhou, China. Email: <email>naliu@henau.edu.cn</email>
+, 
+Guihua Bai, USDA‐ARS, Hard Winter Wheat Genetics Research Unit, Manhattan, KS 66506, USA. Email: <email>guihua.bai@usda.gov</email>
+
+</p></fn><fn id="_fncrsp93pmc__"><label>✉</label><p>Corresponding author.</p></fn></author-notes><pub-date><day>24</day><month>1</month><year>2025</year></pub-date><volume>18</volume><issue>1</issue><fpage>e20548</fpage><page-range>e20548</page-range><pub-history><event event-type="pmc-release"><date><day>25</day><month>8</month><year>2026</year></date></event></pub-history><permissions><copyright-statement>Published 2025. This article is a U.S. Government work and is in the public domain in the USA. <italic>The Plant Genome</italic> published by Wiley Periodicals LLC on behalf of Crop Science Society of America.</copyright-statement><license><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://creativecommons.org/licenses/by-nc-nd/4.0/" ext-link-type="uri">http://creativecommons.org/licenses/by-nc-nd/4.0/</ext-link> License, which permits use and distribution in any medium, provided the original work is properly cited, the use is non‐commercial and no modifications or adaptations are made.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="TPG2-18-e20548.pdf" content-type="pmc-pdf"><?cloudpmc-path c13e/12806270/02b222a5adb3/TPG2-18-e20548.pdf?><?cloudpmc-bucket app?><?size 977421?></self-uri><abstract id="abstract1"><title>Abstract</title><p>Barley yellow dwarf (BYD) is one of the most serious viral diseases in cereal crops worldwide. Identification of quantitative trait loci (QTLs) underlining wheat resistance to <italic>barley yellow dwarf virus</italic> (BYDV) is essential for breeding BYDV‐tolerant wheat cultivars. In this study, a recombinant inbred line (RIL) population was developed from the cross between Jagger (PI 593688) and a Jagger mutant (JagMut1095). A linkage map of 3106 cM consisting of 21 wheat chromosomes was developed using 1003 unique single nucleotide polymorphisms (SNPs) from the RIL population and was used to identify QTLs for BYDV resistance and yield‐related traits, including 1000‐kernel weight (TKW), kernel area (KA), kernel width (KW), and kernel length (KL). <italic>QByd.hwwg‐2DL</italic>, a QTL on chromosome arm 2DL for BYDV resistance, was consistently identified in three field experiments and explained 11.6%–44.5% of the phenotypic variation. For yield‐related traits, six major and repeatable QTLs were identified on 1AS (<italic>QKa.hwwg‐1AS</italic>), 2DL (<italic>QTkw.hwwg‐2DL</italic>, <italic>QKa.hwwg‐2DL</italic>, <italic>QKw.hwwg‐2DL</italic>, and <italic>QKl.hwwg‐2DL</italic>), and 5AL (<italic>QKw.hwwg‐5AL</italic>). The major QTLs on chromosome 2DL for TKW, KA, KW, and KL were mapped between 621 and 643 Mb, overlapping with <italic>QByd.hwwg‐2DL</italic> with all the favorable alleles from Jagger. This study reports the first native BYDV resistance QTL (<italic>QByd.hwwg‐2DL</italic>) originating from common wheat and tightly linked markers to the QTL for improvement of wheat BYDV resistance in wheat breeding.</p></abstract><abstract id="abstract2" abstract-type="short"><title>Core Ideas</title>
+<list list-type="bullet" id="tpg220548-list-10001"><list-item><p>One novel quantitative trait locus (QTL) (<italic>QByd.hwwg‐2DL</italic>) on chromosome arm 2DL showed a stable major effect on <italic>barley yellow dwarf virus</italic> (BYDV) resistance in wheat.</p></list-item><list-item><p>Four yield‐related QTLs overlap with <italic>QByd.hwwg‐2DL</italic> under multiple environments.</p></list-item><list-item><p>Tightly linked markers to <italic>QByd.hwwg‐2DL</italic> were developed for improvement of wheat BYDV resistance in wheat breeding.</p></list-item></list>
+</abstract><custom-meta-group><custom-meta><meta-name>status</meta-name><meta-value>released</meta-value></custom-meta><custom-meta><meta-name>display-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>is-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-journal-matter</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-scanned</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>is-retracted</meta-name><meta-value>no</meta-value></custom-meta></custom-meta-group></article-meta><notes notes-type="article-notes"><sec id="historyarticle-meta1" sec-type="history" disp-level="2"><p>Revised 2024 Nov 19; Received 2024 Aug 29; Accepted 2024 Nov 19; Collection date 2025 Mar.</p></sec></notes></front><body><def-list id="tpg220548-dl-0001"><title>Abbreviations</title><def-item><term>BLUE</term><def><p>best linear unbiased estimator</p></def></def-item><def-item><term>BYD</term><def><p>barley yellow dwarf</p></def></def-item><def-item><term>BYDV</term><def><p>
+<italic>barley yellow dwarf virus</italic>
+</p></def></def-item><def-item><term>CIM</term><def><p>composite interval mapping</p></def></def-item><def-item><term>GBS</term><def><p>genotyping‐by‐sequencing</p></def></def-item><def-item><term>HD</term><def><p>heading date</p></def></def-item><def-item><term>KA</term><def><p>kernel area</p></def></def-item><def-item><term>KASP</term><def><p>kompetitive allele‐specific PCR</p></def></def-item><def-item><term>KL</term><def><p>kernel length</p></def></def-item><def-item><term>KW</term><def><p>kernel width</p></def></def-item><def-item><term>PACE</term><def><p>PCR allele competitive extension</p></def></def-item><def-item><term>PH</term><def><p>plant height</p></def></def-item><def-item><term>QTL</term><def><p>quantitative trait locus</p></def></def-item><def-item><term>RIL</term><def><p>recombinant inbred line</p></def></def-item><def-item><term>SL</term><def><p>spike length</p></def></def-item><def-item><term>SNP</term><def><p>single nucleotide polymorphism</p></def></def-item><def-item><term>SNS</term><def><p>spikelet number per spike</p></def></def-item><def-item><term>TKW</term><def><p>1000‐kernel weight</p></def></def-item></def-list><sec id="tpg220548-sec-0010" disp-level="1"><label>1.</label><title>INTRODUCTION</title><p>Barley yellow dwarf (BYD), caused by <italic>barley yellow dwarf virus</italic> (BYDV), is one of the most serious and widely spread viral diseases in cereal crops worldwide. BYDV infection usually results in leaf discoloration from shades of yellow to red or purple, and sometimes stunted plants that are often misdiagnosed as nutrient deficiency (Miller &amp; Rasochová, <xref rid="tpg220548-bib-0037" ref-type="bibr">1997</xref>). BYDV is phloem‐limited and transmitted by aphids in a non‐propagative, but persistent and circulated manner (Gray, <xref rid="tpg220548-bib-0072" ref-type="bibr">1996</xref>). Its infection can cause significant yield losses in wheat, barley, rice, maize, oat, and ryegrass (d'Arcy &amp; Domier, <xref rid="tpg220548-bib-0016" ref-type="bibr">2005</xref>; Ayala et al., <xref rid="tpg220548-bib-0002" ref-type="bibr">2001</xref>).</p><p>Seven virus species can cause the BYD disease, including BYDV‐PAV, BYDV‐MAV, BYDV‐PAS, BYDV‐Ker II, BYDV‐Ker III, BYDV‐SGV, and BYDV‐GAP, which belong to different or unassigned genera in the family <italic>Luteoviridae</italic> (Hu et al., <xref rid="tpg220548-bib-0021" ref-type="bibr">2019</xref>). Among them, BYDV‐PAV is the most prevalent species to cause BYD disease worldwide and can be transmitted most efficiently by both bird cherry‐oat aphid (<italic>Rhopalosiphum padi</italic>) and English grain aphid (<italic>Sitobion avenae</italic>) (Aradottir &amp; Crespo‐Herrera, <xref rid="tpg220548-bib-0001" ref-type="bibr">2021</xref>; Parry et al., <xref rid="tpg220548-bib-0041" ref-type="bibr">2012</xref>); thus, it has more economical impact than other viruses. In wheat, yield losses due to BYDV were 40%–50% in severely infected fields (Larkin et al., <xref rid="tpg220548-bib-0027" ref-type="bibr">2002</xref>) and up to 25% in the fields with minimal or near‐invisible BYD symptoms (Jarošová et al., <xref rid="tpg220548-bib-0024" ref-type="bibr">2016</xref>). Although BYD can be partially controlled by agronomic practices such as delaying wheat planting date to avoid winter aphid infestation and applying insecticides to kill aphids, currently using BYDV‐resistant or tolerant cultivars is the most effective way to control this disease (Choudhury et al., <xref rid="tpg220548-bib-0010" ref-type="bibr">2017</xref>; Royer et al., <xref rid="tpg220548-bib-0051" ref-type="bibr">2005</xref>).</p><p>Barley and wheat are two major cereal crops that have been mostly infected by BYDV. To date, several BYDV tolerance genes have been reported in barley, including <italic>Ryd1</italic> (Rasmusson &amp; Schaller, <xref rid="tpg220548-bib-0049" ref-type="bibr">1959</xref>; Suneson, <xref rid="tpg220548-bib-0059" ref-type="bibr">1955</xref>), <italic>Ryd2</italic> (Collins et al., <xref rid="tpg220548-bib-0013" ref-type="bibr">1996</xref>), <italic>Ryd3</italic> (Niks et al., <xref rid="tpg220548-bib-0039" ref-type="bibr">2004</xref>), and <italic>Ryd4<sup>Hb</sup>
+</italic> (Scholz et al., <xref rid="tpg220548-bib-0052" ref-type="bibr">2009</xref>). In wheat, four BYDV resistance genes, <italic>Bdv1</italic>, <italic>Bdv2</italic>, <italic>Bdv3</italic>, and <italic>Bdv4</italic>, have been named, but most of them were from wheat wild relatives (Banks et al., <xref rid="tpg220548-bib-0005" ref-type="bibr">2011</xref>; Singh et al., <xref rid="tpg220548-bib-0057" ref-type="bibr">1993</xref>; Sharma et al., <xref rid="tpg220548-bib-0054" ref-type="bibr">1995</xref>; Zhang et al., <xref rid="tpg220548-bib-0069" ref-type="bibr">2009</xref>). Only <italic>Bdv1</italic> on 7DS that has been reported near the rust resistance <italic>Lr34</italic>/<italic>Yr18/Sr57</italic> gene complex originated from a Brazilian spring wheat cultivar Frontana (Singh et al., <xref rid="tpg220548-bib-0057" ref-type="bibr">1993</xref>). However, Ayala et al. (<xref rid="tpg220548-bib-0003" ref-type="bibr">2002</xref>) reported that <italic>Bdv1</italic> showed a minor effect and only expressed in some wheat backgrounds; thus, it might not be sufficient to protect the losses of biomass or grain yield under severe BYDV infection. In addition to the four <italic>Bdv</italic> genes, many quantitative trait loci (QTLs) were reported from different wheat populations. For example, Ayala et al. (<xref rid="tpg220548-bib-0003" ref-type="bibr">2002</xref>) identified 22 BYDV tolerance QTLs in Opata × Synthetic population and seven QTLs in Frontana × INIA66 population, including one overlapping with <italic>Bdv1</italic>. Choudhury et al. (<xref rid="tpg220548-bib-0011" ref-type="bibr">2019</xref>) identified four QTLs for BYDV resistance on chromosomes 2A, 2B, 6A, and 7A in a genome‐wide association study (GWAS). Silva et al. (<xref rid="tpg220548-bib-0056" ref-type="bibr">2022</xref>) identified significant marker‐trait associations for BYD severity on chromosome arms 5AS, 7AL, and 7DL using GWAS and confirmed 7DL QTL as <italic>Bdv2</italic> in the 571–637 Mbp region. However, all these reported QTLs have less than 10% of the phenotypic effects and showed minor effects on BYDV resistance, and therefore, they have not been widely deployed in wheat breeding programs yet. Thus, exploring stable major QTLs for BYDV resistance from common wheat will facilitate improvement of BYDV resistance in wheat.</p><p>Expression of disease resistance genes may affect wheat grain yield. Understanding the genetic relationship between BYDV resistance and yield‐related traits is critical for selecting the right gene combinations for deployment in breeding (Curtis &amp; Halford, <xref rid="tpg220548-bib-0073" ref-type="bibr">2014</xref>). To date, many yield‐related genes have been identified or cloned in rice and maize (G. Li et al., <xref rid="tpg220548-bib-0029" ref-type="bibr">2021</xref>; J. Liu et al., <xref rid="tpg220548-bib-0034" ref-type="bibr">2020</xref>). Using comparative genomics, some rice and maize gene homologs for kernel traits have been cloned in wheat (<italic>Triticum aestivum</italic>) (F. Li et al., <xref rid="tpg220548-bib-0028" ref-type="bibr">2018</xref>), including <italic>TaGW2</italic> (Song et al., <xref rid="tpg220548-bib-0058" ref-type="bibr">2007</xref>), <italic>TaGS5</italic> for 1000‐kernel weight (TKW) (S. Wang et al., <xref rid="tpg220548-bib-0064" ref-type="bibr">2016</xref>), and <italic>TaGW8</italic> (Yan et al., <xref rid="tpg220548-bib-0067" ref-type="bibr">2019</xref>). In addition, QTLs for kernel and other yield‐related QTLs were reported on almost all 21 wheat chromosomes (Brinton et al., <xref rid="tpg220548-bib-0008" ref-type="bibr">2017</xref>; Cui et al., <xref rid="tpg220548-bib-0014" ref-type="bibr">2016</xref>, <xref rid="tpg220548-bib-0015" ref-type="bibr">2014</xref>; Q. Li et al., <xref rid="tpg220548-bib-0030" ref-type="bibr">2015</xref>; Wu et al., <xref rid="tpg220548-bib-0065" ref-type="bibr">2015</xref>; Yu et al., <xref rid="tpg220548-bib-0068" ref-type="bibr">2018</xref>). However, most of these QTLs or gene homologs showed inconsistent effects across environments and their effects in hexaploid wheat were much smaller than in diploid rice (Uauy, <xref rid="tpg220548-bib-0060" ref-type="bibr">2017</xref>). Also, most of them were mapped in large genetic intervals, which significantly reduced the selection efficiency when those linked markers were used in wheat breeding (Ma et al., <xref rid="tpg220548-bib-0036" ref-type="bibr">2019</xref>). Thus, it is necessary to search for novel QTLs associated with wheat kernel traits, such as TKW, kernel area (KA), kernel width (KW), and kernel length (KL), that can be pyramided with BYDV resistance QTLs in new cultivars through breeding.</p><p>Single nucleotide polymorphisms (SNPs) and insertion‐deletions are common nucleotide variations in the wheat genome (Rasheed et al., <xref rid="tpg220548-bib-0048" ref-type="bibr">2016</xref>) and can be detected using high‐throughput genotyping platforms such as genotyping‐by‐sequencing (GBS). These sequence variations can be used directly for QTL identification and for marker‐assisted breeding after being converted into kompetitive allele‐specific PCR (KASP) markers, a low‐cost marker system suitable for medium‐ to high‐throughput screening (Semagn et al., <xref rid="tpg220548-bib-0053" ref-type="bibr">2014</xref>). Currently, KASP markers are not available for any BYDV resistance genes or QTLs in wheat. In this study, we characterized BYDV resistance and yield‐related traits (TKW, KA, KW, and KL) in a recombinant inbred line (RIL) population of JagMut1095 × Jagger (PI 593688) using a GBS–SNP map and identified novel QTLs for BYDV resistance and yield‐related traits that can be used for the development of high BYDV‐resistant wheat cultivars.</p></sec><sec id="tpg220548-sec-0020" disp-level="1"><label>2.</label><title>MATERIALS AND METHODS</title><sec id="tpg220548-sec-0030" disp-level="2"><label>2.1.</label><title>Plant materials</title><p>A population of 154 F<sub>5</sub> RILs was generated from JagMut1095 × Jagger by single‐seed‐descent method. Jagger is a hard winter wheat cultivar from Kansas and has a much lower BYDV score than JagMut1095 in fields. JagMut1095 is a mutant selected from an ethyl methanesulfonate‐treated Jagger population (Rawat et al., <xref rid="tpg220548-bib-0050" ref-type="bibr">2019</xref>) and showed severe BYD symptoms in the field experiments. One plant per F<sub>5</sub> line was used for DNA isolation, and the seeds from the plants were advanced for further phenotyping of BYDV resistance and yield‐related traits, including TKW, KA, KW, and KL in the fields.</p><boxed-text id="boxed-text1" position="float"><sec id="tpg220548-sec-0040" disp-level="3"><title>Core Ideas</title>
+<list list-type="bullet" id="tpg220548-list-0001"><list-item><p>One novel quantitative trait locus (QTL) (<italic>QByd.hwwg‐2DL</italic>) on chromosome arm 2DL showed a stable major effect on <italic>barley yellow dwarf virus</italic> (BYDV) resistance in wheat.</p></list-item><list-item><p>Four yield‐related QTLs overlap with <italic>QByd.hwwg‐2DL</italic> under multiple environments.</p></list-item><list-item><p>Tightly linked markers to <italic>QByd.hwwg‐2DL</italic> were developed for improvement of wheat BYDV resistance in wheat breeding.</p></list-item></list>
+</sec></boxed-text></sec><sec id="tpg220548-sec-0050" disp-level="2"><label>2.2.</label><title>Evaluation of BYD severity and yield‐related traits of the RIL population in fields</title><p>The F<sub>5:8</sub> RIL population and parents were evaluated for BYDV resistance in three field experiments from 2020 to 2022 at Kansas State University (KSU) Rocky Ford Experimental Station, Manhattan, KS. Plants were naturally infected by BYDV and scored using a 1–5 scale at the heading stage (Choudhury et al., <xref rid="tpg220548-bib-0011" ref-type="bibr">2019</xref>) (Figure <xref rid="tpg220548-supinfo-0001" ref-type="supplementary-material">S1</xref>). The population was also evaluated for developmental and yield‐related traits, including TKW, KA, KW, KL, spikelet number per spike (SNS), spike length (SL), heading date (HD), and plant height (PH), in three field environments at KSU Ashland Bottoms Research Farm, Manhattan, KS (2020 and 2021) and Agricultural Research Center, Hays, KS (2020). All the field experiments used a randomized complete block design with two replicates for the RILs and five replicates for each parent. About 30 seeds per line were sowed in a 1.4 m row plot with 30 cm between rows. Ten spikes per line were randomly selected and harvested at maturity. The plants were hand‐threshed for evaluation of kernel traits.</p></sec><sec id="tpg220548-sec-0060" disp-level="2"><label>2.3.</label><title>Genotyping the parents and RIL population</title><p>Methods for DNA isolation, genotyping, and map construction were described previously (Bian et al., <xref rid="tpg220548-bib-0006" ref-type="bibr">2023</xref>). Briefly, leaf tissues were collected from a single plant of each F5 RIL and their parents at the three‐leaf stage for DNA isolation using a modified cetyltrimethyl ammonium bromide method (Bai et al., <xref rid="tpg220548-bib-0004" ref-type="bibr">1999</xref>). DNA concentration was estimated and normalized to 20 ng/µL for construction of GBS library (Poland &amp; Rife, <xref rid="tpg220548-bib-0043" ref-type="bibr">2012</xref>) that was sequenced in an Ion Torrent Proton sequencer (ThermoFisher Scientific). The SNPs were called from GBS reads using a reference‐based pipeline in TASSEL 5.0 (Bradbury et al., <xref rid="tpg220548-bib-0007" ref-type="bibr">2007</xref>) and the IWGSC reference genome RefSeq v2.1 (International Wheat Genome Sequencing Consortium [IWGSC], <xref rid="tpg220548-bib-0023" ref-type="bibr">2018</xref>). The raw data were filtered by removing SNPs with &gt;20% missing data, &gt;10% heterozygotes, or &lt;20% minor allele frequency. Additionally, previously generated exome‐capture data of JagMut1095 and Jagger (Jordan et al., <xref rid="tpg220548-bib-0025" ref-type="bibr">2015</xref>) were used to increase marker density in the target QTL regions.</p></sec><sec id="tpg220548-sec-0070" disp-level="2"><label>2.4.</label><title>KASP marker development and validation</title><p>In the interval of the major QTLs for BYDV resistance and yield‐related traits, KASP primers were designed based on the sequences harboring the SNPs identified from both GBS and exome capture using a web version of Primer3 v.4.1.0 (<ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://primer3.wi.mit.edu/" ext-link-type="uri">http://primer3.wi.mit.edu/</ext-link>). The newly designed primers were screened in the parents and RILs using PCR allele competitive extension (PACE) assay mix (3CR Bioscience). Each KASP assay includes 1.94 µL of 2X PACE reaction mix, 0.06 µL of primer assay mix, and 2 µL of 20 ng/µL DNA. The polymerase chain reaction (PCR) profile started initially at 94°C for 15 min, then 10 cycles at 94°C for 20 s, 65°C for 1 min with −0.8°C in each subsequent cycle to 57°C, followed by 30 cycles of 94°C for 20 s and 57°C for 1 min. The normally segregated markers among the RILs were used to refine the genetic map.</p></sec><sec id="tpg220548-sec-0080" disp-level="2"><label>2.5.</label><title>QTL analysis</title><p>The previously constructed linkage map (Bian et al., <xref rid="tpg220548-bib-0006" ref-type="bibr">2023</xref>) was used for initial QTL mapping. The phenotypic values of each trait over two replications in each environment and the adjusted mean values of the best linear unbiased estimators (BLUEs) across all environments were calculated for the RILs and used for QTL mapping. QTL analysis was performed using the composite interval mapping (CIM) module in QTL Cartographer v2.5 (J. Wang, <xref rid="tpg220548-bib-0063" ref-type="bibr">2009</xref>) with a walking speed of 1.0 cM. A significant QTL was claimed for a trait based on 1000 times of permutations (Doerge &amp; Churchill, <xref rid="tpg220548-bib-0017" ref-type="bibr">1996</xref>) using the QTL Cartographer v2.5. QTL names were designated using standard QTL nomenclature, starting with Q for QTLs, followed by the abbreviations of a trait name, such as BYD for barley yellow dwarf, and an institute name (Hwwg for Hard Winter Wheat Genetic Research Unit), then by a chromosome (or chromosome arm) location where the QTL is located after a dash line. QTLs that were mapped at the same or overlapping locations were considered as the same QTL and a QTL that was significant in two or more experiments was considered as a repeatable QTL. The putative candidate genes in the QTL region were selected based on the Chinese Spring RefSeq v.2.1 developed by the International Wheat Genome Sequencing Consortium (International Wheat Genome Sequencing Consortium [IWGSC], <xref rid="tpg220548-bib-0023" ref-type="bibr">2018</xref>) and Jagger genome assembly PGSBv2.1 (Walkowiak et al., <xref rid="tpg220548-bib-0062" ref-type="bibr">2020</xref>).</p></sec><sec id="tpg220548-sec-0090" disp-level="2"><label>2.6.</label><title>Statistical analysis</title><p>Analysis of variance and calculation of mean, standard deviation, correlation coefficients, broad‐sense heritability, and BLUEs across environments were carried out using QTL IciMapping V4.2 (Meng et al., <xref rid="tpg220548-bib-0074" ref-type="bibr">2015</xref>). The broad‐sense heritability for each trait was calculated using the formula <italic>H</italic>
+<sup>2 </sup>= V<sub>G</sub>/(V<sub>G</sub> + V<sub>G×E</sub>/E + V<sub>e</sub>/ER), where V<sub>G</sub> represents the genotypic variance, V<sub>G×E</sub> was the variance in genetics by environment, V<sub>e</sub> was the residual variance, <italic>E</italic> was the number of environments, and <italic>R</italic> was the number of replications. The BLUE was estimated using a mixed linear model, <italic>Y</italic> = <italic>G</italic> + <italic>E</italic> + <italic>G</italic> × <italic>E</italic> + <italic>R</italic>, assuming fixed effects for the genotype.</p></sec></sec><sec id="tpg220548-sec-0100" disp-level="1"><label>3.</label><title>RESULTS</title><sec id="tpg220548-sec-0110" disp-level="2"><label>3.1.</label><title>BYDV severity and yield traits in parents and RILs</title><p>The mean BLUE values of BYD scores from three field experiments were significantly different between the two parents (<italic>p</italic> &lt; 0.001; Figure <xref rid="tpg220548-fig-0001" ref-type="fig">1a</xref>), with an average of 3.7 for JagMut1095 and 1.6 for Jagger across all environments in a 1–5 scale (Figure <xref rid="tpg220548-fig-0001" ref-type="fig">1b</xref>). Although variation in BYD severities was observed due to inconsistent natural infection conditions among 3 years of field experiments, the correlations in BYD scores were significant among years (0.25–0.50, <italic>p</italic> &lt; 0.001). Additionally, the broad‐sense heritability for BYDV resistance was medium high (0.66). The effects of genotype, environment, and genotype‐by‐environment interaction on BYD severity were highly significant at <italic>p</italic> &lt; 0.0001 across the three environments (Table <xref rid="tpg220548-supinfo-0001" ref-type="supplementary-material">S1</xref>).</p><fig id="tpg220548-fig-0001" position="float"><?disp-level 3?><label>FIGURE 1</label><caption><p>(a) Frequency distribution of mean barley yellow dwarf (BYD) severity of JagMut1095 <bold>×</bold> Jagger recombinant inbred lines (RILs) evaluated in three field experiments and the best linear unbiased estimator (BLUE); (b) <italic>barley yellow dwarf virus</italic> (BYDV) symptoms on JagMut1095 (left) and Jagger (right).</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="jats-graphic-1" xlink:href="TPG2-18-e20548-g002.jpg"><?cloudpmc-path blobs/c13e/12806270/21cdce35dd16/TPG2-18-e20548-g002.jpg?><?cloudpmc-bucket cdn?><?image-server-status LOAD_COMPLETED?><?original-height 867?><?original-width 680?><?scaled-height 867?><?scaled-width 680?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="TPG2-18-e20548-g002.gif"><?cloudpmc-path blobs/c13e/12806270/3a3ac24ecd4c/TPG2-18-e20548-g002.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>In addition to the BYDV resistance, Jagger had higher BLUE values of TKW, KA, KW, and KL, but lower BLUE values of PH, HD, SNS, and SL than JagMut1095 (Table <xref rid="tpg220548-tbl-0001" ref-type="table">1</xref>). The broad‐sense heritability was high for all these traits ranging from 0.79 for SNS to 0.92 for PH. Additionally, TKW showed significantly high positive correlations with KA and KW and a moderate positive correlation with KL (Table <xref rid="tpg220548-tbl-0002" ref-type="table">2</xref>). All four kernel‐related traits were negatively correlated with HD and BYD severity, although those traits were evaluated in fields different from the BYD nursery where the BYDV infections were not observed.</p><table-wrap id="tpg220548-tbl-0001" position="float"><?disp-level 3?><label>TABLE 1</label><caption><p>The best linear unbiased estimators (BLUEs) of JagMut1095 and Jagger and the heritability of nine traits estimated in the population of JagMut1095 × Jagger recombinant inbred lines (RILs).</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="left" span="1"/><thead><tr style="border-bottom:solid 1px #000000"><th align="left" rowspan="1" colspan="1">Traits</th><th align="left" rowspan="1" colspan="1">JagMut1095</th><th align="left" rowspan="1" colspan="1">Jagger</th><th align="left" rowspan="1" colspan="1">Heritability</th></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">BYD</td><td align="center" rowspan="1" colspan="1">3.1</td><td align="center" rowspan="1" colspan="1">1.4</td><td align="left" rowspan="1" colspan="1">0.66</td></tr><tr><td align="left" rowspan="1" colspan="1">TKW (g)</td><td align="center" rowspan="1" colspan="1">23.4</td><td align="center" rowspan="1" colspan="1">31.9</td><td align="left" rowspan="1" colspan="1">0.81</td></tr><tr><td align="left" rowspan="1" colspan="1">KA (mm<sup>2</sup>)</td><td align="center" rowspan="1" colspan="1">12.0</td><td align="center" rowspan="1" colspan="1">14.1</td><td align="left" rowspan="1" colspan="1">0.84</td></tr><tr><td align="left" rowspan="1" colspan="1">KW (mm)</td><td align="center" rowspan="1" colspan="1">2.7</td><td align="center" rowspan="1" colspan="1">3.1</td><td align="left" rowspan="1" colspan="1">0.87</td></tr><tr><td align="left" rowspan="1" colspan="1">KL (mm)</td><td align="center" rowspan="1" colspan="1">6.1</td><td align="center" rowspan="1" colspan="1">6.3</td><td align="left" rowspan="1" colspan="1">0.88</td></tr><tr><td align="left" rowspan="1" colspan="1">SNS</td><td align="center" rowspan="1" colspan="1">18.7</td><td align="center" rowspan="1" colspan="1">16.6</td><td align="left" rowspan="1" colspan="1">0.79</td></tr><tr><td align="left" rowspan="1" colspan="1">SL (cm)</td><td align="center" rowspan="1" colspan="1">9.4</td><td align="center" rowspan="1" colspan="1">9.0</td><td align="left" rowspan="1" colspan="1">0.86</td></tr><tr><td align="left" rowspan="1" colspan="1">HD (days)</td><td align="center" rowspan="1" colspan="1">136.1</td><td align="center" rowspan="1" colspan="1">126.6</td><td align="left" rowspan="1" colspan="1">0.80</td></tr><tr><td align="left" rowspan="1" colspan="1">PH (cm)</td><td align="center" rowspan="1" colspan="1">104.5</td><td align="center" rowspan="1" colspan="1">89.9</td><td align="left" rowspan="1" colspan="1">0.92</td></tr></tbody></table><table-wrap-foot><fn id="tpg220548-tbl1-note-0001"><p>
+<italic>Note</italic>: Barley yellow dwarf severity was evaluated in Rocky Ford, Manhattan, KS and other agronomic traits were evaluated in three Kansas locations (Rocky Ford, Ashland Bottoms, and Hays).</p></fn><fn id="tpg220548-tbl1-note-0002"><p>Abbreviations: BYD, barley yellow dwarf severity evaluated in Rocky Ford, Manhattan, KS; HD, heading date; KA, kernel area; KL, kernel length; KW, kernel width; PH, plant height.; SL, spike length; SNS, spikelet number per spike; TKW, 1000‐kernel weight.</p></fn></table-wrap-foot></table-wrap><table-wrap id="tpg220548-tbl-0002" position="float"><?disp-level 3?><label>TABLE 2</label><caption><p>The correlation coefficients of nine traits in the population of JagMut1095 × Jagger recombinant inbred lines (RILs) evaluated across three Kansas field environments.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><thead><tr style="border-bottom:solid 1px #000000"><th align="left" rowspan="1" colspan="1"/><th align="left" rowspan="1" colspan="1">TKW</th><th align="left" rowspan="1" colspan="1">KA</th><th align="left" rowspan="1" colspan="1">KW</th><th align="left" rowspan="1" colspan="1">KL</th><th align="left" rowspan="1" colspan="1">SNS</th><th align="left" rowspan="1" colspan="1">SL</th><th align="left" rowspan="1" colspan="1">HD</th><th align="left" rowspan="1" colspan="1">PH</th></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">KA</td><td align="center" rowspan="1" colspan="1">0.95***</td><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/></tr><tr><td align="left" rowspan="1" colspan="1">KW</td><td align="center" rowspan="1" colspan="1">0.92***</td><td align="center" rowspan="1" colspan="1">0.88***</td><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/></tr><tr><td align="left" rowspan="1" colspan="1">KL</td><td align="center" rowspan="1" colspan="1">0.54***</td><td align="center" rowspan="1" colspan="1">0.70***</td><td align="center" rowspan="1" colspan="1">0.31***</td><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/></tr><tr><td align="left" rowspan="1" colspan="1">SNS</td><td align="center" rowspan="1" colspan="1">−0.15</td><td align="center" rowspan="1" colspan="1">−0.10</td><td align="center" rowspan="1" colspan="1">−0.15</td><td align="center" rowspan="1" colspan="1">0.04</td><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/></tr><tr><td align="left" rowspan="1" colspan="1">SL</td><td align="center" rowspan="1" colspan="1">0.06</td><td align="center" rowspan="1" colspan="1">0.16*</td><td align="center" rowspan="1" colspan="1">−0.07</td><td align="center" rowspan="1" colspan="1">0.41***</td><td align="center" rowspan="1" colspan="1">0.36***</td><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/></tr><tr><td align="left" rowspan="1" colspan="1">HD</td><td align="center" rowspan="1" colspan="1">−0.38***</td><td align="center" rowspan="1" colspan="1">−0.34***</td><td align="center" rowspan="1" colspan="1">−0.32***</td><td align="center" rowspan="1" colspan="1">−0.17*</td><td align="center" rowspan="1" colspan="1">0.32***</td><td align="center" rowspan="1" colspan="1">−0.06</td><td align="center" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1"/></tr><tr><td align="left" rowspan="1" colspan="1">PH</td><td align="center" rowspan="1" colspan="1">0.32***</td><td align="center" rowspan="1" colspan="1">0.29***</td><td align="center" rowspan="1" colspan="1">0.20*</td><td align="center" rowspan="1" colspan="1">0.30***</td><td align="center" rowspan="1" colspan="1">0.28***</td><td align="center" rowspan="1" colspan="1">0.24**</td><td align="center" rowspan="1" colspan="1">0.19*</td><td align="center" rowspan="1" colspan="1"/></tr><tr><td align="left" rowspan="1" colspan="1">BYD</td><td align="center" rowspan="1" colspan="1">−0.44***</td><td align="center" rowspan="1" colspan="1">−0.42***</td><td align="center" rowspan="1" colspan="1">−0.35***</td><td align="center" rowspan="1" colspan="1">−0.25**</td><td align="center" rowspan="1" colspan="1">0.26***</td><td align="center" rowspan="1" colspan="1">−0.06</td><td align="center" rowspan="1" colspan="1">0.29***</td><td align="center" rowspan="1" colspan="1">0.06</td></tr></tbody></table><table-wrap-foot><fn id="tpg220548-tbl2-note-0001"><p>
+<italic>Note</italic>: Barley yellow dwarf severity was evaluated in Rocky Ford, Manhattan, KS and other agronomic traits were evaluated in three Kansas locations (Rocky Ford, Ashland Bottoms, and Hays).</p></fn><fn id="tpg220548-tbl2-note-0002"><p>Abbreviations: BYD, barley yellow dwarf severity; HD, heading date; KA, kernel area; KL, kernel length; KW, kernel width; PH, plant height.; SL, spike length; SNS, spikelet number per spike; TKW, 1000‐kernel weight.</p></fn><fn id="tpg220548-tbl2-note-0003"><p>Significant at *<italic>p</italic> &lt; 0.05, **<italic>p</italic> &lt; 0.01, ***<italic>p</italic> &lt; 0.001 level.</p></fn></table-wrap-foot></table-wrap></sec><sec id="tpg220548-sec-0120" disp-level="2"><label>3.2.</label><title>QTLs for BYDV resistance and yield‐related traits</title><p>CIM using the SNP map and the BYD data from the three field experiments identified four QTLs for BYDV resistance on chromosome arms 1DL, 2AL, 2DL, and 5AL (Table <xref rid="tpg220548-supinfo-0001" ref-type="supplementary-material">S2</xref>). Among them, only <italic>QByd.hwwg‐2DL</italic> was consistently detected in all three experiments and for the BLUE values. <italic>QByd.hwwg‐2DL</italic> was located between markers <italic>S2D_642415923</italic> (642,415,923 bp) and <italic>Exon2D‐19</italic> (642,998,925 bp) and explained 11.6%–44.5% of the phenotypic variations for BYDV resistance (Table <xref rid="tpg220548-tbl-0003" ref-type="table">3</xref>; Figure <xref rid="tpg220548-fig-0002" ref-type="fig">2</xref>). Jagger contributes the allele for low BYD severity, consistent with parental BYD scores. Besides the 2DL QTL, the other three QTLs were unstable with minor effects, which were detected in only one of the three field experiments (Table <xref rid="tpg220548-supinfo-0001" ref-type="supplementary-material">S2</xref>). <italic>QByd.hwwg‐2AL</italic> and <italic>QByd.hwwg‐5AL</italic> were detected in the 2020 experiment and mapped between 748.38 and 754.79 Mb on 2AL, and between 472.15 and 547.10 Mb on 5AL, respectively. <italic>QByd.hwwg‐1DL</italic> was detected in the 2021 experiment and mapped between 466.62 and 484.15 Mb on 1DL. The results indicated that <italic>QByd.hwwg‐2DL</italic> is the only major stable QTL across environments and the other three QTLs might be spurious showing minor effects only in a single experiment</p><table-wrap id="tpg220548-tbl-0003" position="float"><?disp-level 3?><label>TABLE 3</label><caption><p>Quantitative trait loci (QTLs) detected in multiple experiments for <italic>barley yellow dwarf virus</italic> (BYDV) resistance, 1000‐kernel weight (TKW), kernel area (KA), kernel width (KW), kernel length (KL), spikelet number per spike (SNS), spike length (SL), heading date (HD), and plant height (PH) using the population of JagMut1095 × Jagger recombinant inbred lines (RILs) evaluated in Hays (H), Ashland (A), and Rocky Ford (R) field environments in years 2020 (20), 2021 (21), and 2022 (22).</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><col align="char" char="." span="1"/><thead><tr style="border-bottom:solid 1px #000000"><th align="left" rowspan="1" colspan="1">QTL name</th><th align="left" rowspan="1" colspan="1">Traits</th><th align="left" rowspan="1" colspan="1">Genetic interval (cM)</th><th align="left" rowspan="1" colspan="1">Physical interval (Mb)</th><th align="left" rowspan="1" colspan="1">LOD</th><th align="left" rowspan="1" colspan="1">Add</th><th align="left" rowspan="1" colspan="1">
+<italic>R</italic>
+<sup>2</sup>
+</th></tr></thead><tbody><tr><td rowspan="4" align="left" colspan="1">
+<italic>QTkw.hwwg‐2DL</italic>
+</td><td align="left" rowspan="1" colspan="1">TKW‐20H</td><td align="left" rowspan="1" colspan="1">80.1–95.5</td><td rowspan="4" align="left" colspan="1">623.58–643.10</td><td align="center" rowspan="1" colspan="1">6.61</td><td align="center" rowspan="1" colspan="1">−1.29</td><td align="center" rowspan="1" colspan="1">0.163</td></tr><tr><td align="left" rowspan="1" colspan="1">TKW‐20A</td><td align="left" rowspan="1" colspan="1">95.9–98.8</td><td align="center" rowspan="1" colspan="1">7.52</td><td align="center" rowspan="1" colspan="1">−1.34</td><td align="center" rowspan="1" colspan="1">0.159</td></tr><tr><td align="left" rowspan="1" colspan="1">TKW‐21A</td><td align="left" rowspan="1" colspan="1">95.5–98.4</td><td align="center" rowspan="1" colspan="1">6.99</td><td align="center" rowspan="1" colspan="1">−1.61</td><td align="center" rowspan="1" colspan="1">0.157</td></tr><tr><td align="left" rowspan="1" colspan="1">TKW‐BLUEs</td><td align="left" rowspan="1" colspan="1">98.8–99.9</td><td align="center" rowspan="1" colspan="1">6</td><td align="center" rowspan="1" colspan="1">−0.95</td><td align="center" rowspan="1" colspan="1">0.119</td></tr><tr><td rowspan="3" align="left" colspan="1">
+<italic>QKa.hwwg‐1AS</italic>
+</td><td align="left" rowspan="1" colspan="1">KA‐20H</td><td align="left" rowspan="1" colspan="1">2.2–7.6</td><td rowspan="3" align="left" colspan="1">3.44–9.48</td><td align="center" rowspan="1" colspan="1">4.44</td><td align="center" rowspan="1" colspan="1">−0.3</td><td align="center" rowspan="1" colspan="1">0.096</td></tr><tr><td align="left" rowspan="1" colspan="1">KA‐20A</td><td align="left" rowspan="1" colspan="1">0.3–7.7</td><td align="center" rowspan="1" colspan="1">7.17</td><td align="center" rowspan="1" colspan="1">−0.35</td><td align="center" rowspan="1" colspan="1">0.136</td></tr><tr><td align="left" rowspan="1" colspan="1">KA‐BLUEs</td><td align="left" rowspan="1" colspan="1">0–2.6</td><td align="center" rowspan="1" colspan="1">6.04</td><td align="center" rowspan="1" colspan="1">−0.33</td><td align="center" rowspan="1" colspan="1">0.125</td></tr><tr><td rowspan="4" align="left" colspan="1">
+<italic>QKa.hwwg‐2DL</italic>
+</td><td align="left" rowspan="1" colspan="1">KA‐20H</td><td align="left" rowspan="1" colspan="1">78.8–94.4</td><td rowspan="4" align="left" colspan="1">623.58–643.10</td><td align="center" rowspan="1" colspan="1">7.06</td><td align="center" rowspan="1" colspan="1">−0.38</td><td align="center" rowspan="1" colspan="1">0.181</td></tr><tr><td align="left" rowspan="1" colspan="1">KA‐20A</td><td align="left" rowspan="1" colspan="1">91.8–94.9</td><td align="center" rowspan="1" colspan="1">6.23</td><td align="center" rowspan="1" colspan="1">−0.35</td><td align="center" rowspan="1" colspan="1">0.143</td></tr><tr><td align="left" rowspan="1" colspan="1">KA‐21A</td><td align="left" rowspan="1" colspan="1">98.8–99.9</td><td align="center" rowspan="1" colspan="1">5.44</td><td align="center" rowspan="1" colspan="1">−0.28</td><td align="center" rowspan="1" colspan="1">0.11</td></tr><tr><td align="left" rowspan="1" colspan="1">KA‐BLUEs</td><td align="left" rowspan="1" colspan="1">86.5–96.0</td><td align="center" rowspan="1" colspan="1">5.66</td><td align="center" rowspan="1" colspan="1">−0.29</td><td align="center" rowspan="1" colspan="1">0.136</td></tr><tr><td rowspan="4" align="left" colspan="1">
+<italic>QKw.hwwg‐2DL</italic>
+</td><td align="left" rowspan="1" colspan="1">KW‐20H</td><td align="left" rowspan="1" colspan="1">87.3–95.5</td><td rowspan="4" align="left" colspan="1">630.91–643.10</td><td align="center" rowspan="1" colspan="1">4.81</td><td align="center" rowspan="1" colspan="1">−0.04</td><td align="center" rowspan="1" colspan="1">0.101</td></tr><tr><td align="left" rowspan="1" colspan="1">KW‐20A</td><td align="left" rowspan="1" colspan="1">87.0–95.9</td><td align="center" rowspan="1" colspan="1">5.02</td><td align="center" rowspan="1" colspan="1">−0.06</td><td align="center" rowspan="1" colspan="1">0.142</td></tr><tr><td align="left" rowspan="1" colspan="1">KW‐21A</td><td align="left" rowspan="1" colspan="1">98.8–99.8</td><td align="center" rowspan="1" colspan="1">6.61</td><td align="center" rowspan="1" colspan="1">−0.05</td><td align="center" rowspan="1" colspan="1">0.11</td></tr><tr><td align="left" rowspan="1" colspan="1">KW‐BLUEs</td><td align="left" rowspan="1" colspan="1">98.8–99.8</td><td align="center" rowspan="1" colspan="1">7.28</td><td align="center" rowspan="1" colspan="1">−0.04</td><td align="center" rowspan="1" colspan="1">0.119</td></tr><tr><td rowspan="4" align="left" colspan="1">
+<italic>QKw.hwwg‐5AL</italic>
+</td><td align="left" rowspan="1" colspan="1">KW‐20H</td><td align="left" rowspan="1" colspan="1">37.3–39.7</td><td rowspan="4" align="left" colspan="1">455.34–407.29</td><td align="center" rowspan="1" colspan="1">15</td><td align="center" rowspan="1" colspan="1">−0.08</td><td align="center" rowspan="1" colspan="1">0.316</td></tr><tr><td align="left" rowspan="1" colspan="1">KW‐20A</td><td align="left" rowspan="1" colspan="1">36.1–41.4</td><td align="center" rowspan="1" colspan="1">10.39</td><td align="center" rowspan="1" colspan="1">−0.06</td><td align="center" rowspan="1" colspan="1">0.194</td></tr><tr><td align="left" rowspan="1" colspan="1">KW‐21A</td><td align="left" rowspan="1" colspan="1">33.0–37.5</td><td align="center" rowspan="1" colspan="1">8.46</td><td align="center" rowspan="1" colspan="1">−0.06</td><td align="center" rowspan="1" colspan="1">0.156</td></tr><tr><td align="left" rowspan="1" colspan="1">KW‐BLUEs</td><td align="left" rowspan="1" colspan="1">37.8–39.6</td><td align="center" rowspan="1" colspan="1">17.58</td><td align="center" rowspan="1" colspan="1">−0.07</td><td align="center" rowspan="1" colspan="1">0.333</td></tr><tr><td rowspan="4" align="left" colspan="1">
+<italic>QKl.hwwg‐2DL</italic>
+</td><td align="left" rowspan="1" colspan="1">KL‐20H</td><td align="left" rowspan="1" colspan="1">76.2–85.4</td><td rowspan="4" align="left" colspan="1">621.81–641.82</td><td align="center" rowspan="1" colspan="1">8.86</td><td align="center" rowspan="1" colspan="1">−0.1</td><td align="center" rowspan="1" colspan="1">0.234</td></tr><tr><td align="left" rowspan="1" colspan="1">KL‐20A</td><td align="left" rowspan="1" colspan="1">78.5–89.0</td><td align="center" rowspan="1" colspan="1">5.74</td><td align="center" rowspan="1" colspan="1">−0.08</td><td align="center" rowspan="1" colspan="1">0.124</td></tr><tr><td align="left" rowspan="1" colspan="1">KL‐21A</td><td align="left" rowspan="1" colspan="1">77.2–85.1</td><td align="center" rowspan="1" colspan="1">5.33</td><td align="center" rowspan="1" colspan="1">−0.06</td><td align="center" rowspan="1" colspan="1">0.116</td></tr><tr><td align="left" rowspan="1" colspan="1">KL‐BLUEs</td><td align="left" rowspan="1" colspan="1">75.0–85.1</td><td align="center" rowspan="1" colspan="1">8.57</td><td align="center" rowspan="1" colspan="1">−0.08</td><td align="center" rowspan="1" colspan="1">0.198</td></tr><tr><td rowspan="4" align="left" colspan="1">
+<italic>QByd.hwwg‐2DL</italic>
+</td><td align="left" rowspan="1" colspan="1">BYDV‐20R</td><td align="left" rowspan="1" colspan="1">95.9–98.2</td><td rowspan="4" align="left" colspan="1">642.42–643.00</td><td align="center" rowspan="1" colspan="1">5.04</td><td align="center" rowspan="1" colspan="1">0.26</td><td align="center" rowspan="1" colspan="1">0.116</td></tr><tr><td align="left" rowspan="1" colspan="1">BYDV‐21R</td><td align="left" rowspan="1" colspan="1">95.9–98.3</td><td align="center" rowspan="1" colspan="1">19.46</td><td align="center" rowspan="1" colspan="1">1.01</td><td align="center" rowspan="1" colspan="1">0.383</td></tr><tr><td align="left" rowspan="1" colspan="1">BYDV‐22R</td><td align="left" rowspan="1" colspan="1">97.2–98.8</td><td align="center" rowspan="1" colspan="1">11.49</td><td align="center" rowspan="1" colspan="1">0.44</td><td align="center" rowspan="1" colspan="1">0.251</td></tr><tr><td align="left" rowspan="1" colspan="1">BYDV‐BLUEs</td><td align="left" rowspan="1" colspan="1">96.1–98.3</td><td align="center" rowspan="1" colspan="1">21.55</td><td align="center" rowspan="1" colspan="1">0.51</td><td align="center" rowspan="1" colspan="1">0.445</td></tr><tr><td rowspan="4" align="left" colspan="1">
+<italic>QSns.hwwg‐2BS</italic>
+</td><td align="left" rowspan="1" colspan="1">SNS‐20H</td><td align="left" rowspan="1" colspan="1">117.4–122.4</td><td rowspan="4" align="left" colspan="1">46.34–57.83</td><td align="center" rowspan="1" colspan="1">6.51</td><td align="center" rowspan="1" colspan="1">0.7</td><td align="center" rowspan="1" colspan="1">0.155</td></tr><tr><td align="left" rowspan="1" colspan="1">SNS‐20A</td><td align="left" rowspan="1" colspan="1">117.6–123.4</td><td align="center" rowspan="1" colspan="1">7.99</td><td align="center" rowspan="1" colspan="1">0.38</td><td align="center" rowspan="1" colspan="1">0.17</td></tr><tr><td align="left" rowspan="1" colspan="1">SNS‐21A</td><td align="left" rowspan="1" colspan="1">120.3–123.7</td><td align="center" rowspan="1" colspan="1">11.65</td><td align="center" rowspan="1" colspan="1">0.39</td><td align="center" rowspan="1" colspan="1">0.214</td></tr><tr><td align="left" rowspan="1" colspan="1">SNS‐BLUEs</td><td align="left" rowspan="1" colspan="1">120.1–123.6</td><td align="center" rowspan="1" colspan="1">10.33</td><td align="center" rowspan="1" colspan="1">0.35</td><td align="center" rowspan="1" colspan="1">0.19</td></tr><tr><td rowspan="4" align="left" colspan="1">
+<italic>QSns.hwwg‐7BS</italic>
+</td><td align="left" rowspan="1" colspan="1">SNS‐20H</td><td rowspan="4" align="left" colspan="1">113.0–118.9</td><td rowspan="4" align="left" colspan="1">116.51–245.74</td><td align="center" rowspan="1" colspan="1">6.16</td><td align="center" rowspan="1" colspan="1">0.33</td><td align="center" rowspan="1" colspan="1">0.135</td></tr><tr><td align="left" rowspan="1" colspan="1">SNS‐20A</td><td align="center" rowspan="1" colspan="1">4.41</td><td align="center" rowspan="1" colspan="1">0.29</td><td align="center" rowspan="1" colspan="1">0.091</td></tr><tr><td align="left" rowspan="1" colspan="1">SNS‐21A</td><td align="center" rowspan="1" colspan="1">9.83</td><td align="center" rowspan="1" colspan="1">0.37</td><td align="center" rowspan="1" colspan="1">0.182</td></tr><tr><td align="left" rowspan="1" colspan="1">SNS‐BLUEs</td><td align="center" rowspan="1" colspan="1">7.17</td><td align="center" rowspan="1" colspan="1">0.29</td><td align="center" rowspan="1" colspan="1">0.127</td></tr><tr><td rowspan="4" align="left" colspan="1">
+<italic>QSl.hwwg‐1AS</italic>
+</td><td align="left" rowspan="1" colspan="1">SL‐20H</td><td align="left" rowspan="1" colspan="1">0–13.7</td><td rowspan="4" align="left" colspan="1">3.44–11.01</td><td align="center" rowspan="1" colspan="1">5.04</td><td align="center" rowspan="1" colspan="1">−0.24</td><td align="center" rowspan="1" colspan="1">0.11</td></tr><tr><td align="left" rowspan="1" colspan="1">SL‐20A</td><td align="left" rowspan="1" colspan="1">0–8.0</td><td align="center" rowspan="1" colspan="1">4.7</td><td align="center" rowspan="1" colspan="1">−0.25</td><td align="center" rowspan="1" colspan="1">0.096</td></tr><tr><td align="left" rowspan="1" colspan="1">SL‐21A</td><td align="left" rowspan="1" colspan="1">0–12.1</td><td align="center" rowspan="1" colspan="1">4.31</td><td align="center" rowspan="1" colspan="1">−0.21</td><td align="center" rowspan="1" colspan="1">0.097</td></tr><tr><td align="left" rowspan="1" colspan="1">SL‐BLUEs</td><td align="left" rowspan="1" colspan="1">2.2–8.3</td><td align="center" rowspan="1" colspan="1">6.51</td><td align="center" rowspan="1" colspan="1">−0.22</td><td align="center" rowspan="1" colspan="1">0.129</td></tr><tr><td rowspan="4" align="left" colspan="1">
+<italic>QSl.hwwg‐5AL</italic>
+</td><td align="left" rowspan="1" colspan="1">SL‐20H</td><td align="left" rowspan="1" colspan="1">32.7–44.9</td><td rowspan="4" align="left" colspan="1">455.34–445.42</td><td align="center" rowspan="1" colspan="1">3.76</td><td align="center" rowspan="1" colspan="1">0.22</td><td align="center" rowspan="1" colspan="1">0.078</td></tr><tr><td align="left" rowspan="1" colspan="1">SL‐20A</td><td align="left" rowspan="1" colspan="1">34.5–38.4</td><td align="center" rowspan="1" colspan="1">9.27</td><td align="center" rowspan="1" colspan="1">0.35</td><td align="center" rowspan="1" colspan="1">0.199</td></tr><tr><td align="left" rowspan="1" colspan="1">SL‐21A</td><td align="left" rowspan="1" colspan="1">36.1–39.7</td><td align="center" rowspan="1" colspan="1">4.92</td><td align="center" rowspan="1" colspan="1">0.24</td><td align="center" rowspan="1" colspan="1">0.103</td></tr><tr><td align="left" rowspan="1" colspan="1">SL‐BLUEs</td><td align="left" rowspan="1" colspan="1">33.5–39.7</td><td align="center" rowspan="1" colspan="1">6.63</td><td align="center" rowspan="1" colspan="1">0.22</td><td align="center" rowspan="1" colspan="1">0.121</td></tr><tr><td rowspan="3" align="left" colspan="1">
+<italic>QSl.hwwg‐7AL</italic>
+</td><td align="left" rowspan="1" colspan="1">SL‐20H</td><td align="left" rowspan="1" colspan="1">9.3–24.3</td><td rowspan="3" align="left" colspan="1">624.05–656.40</td><td align="center" rowspan="1" colspan="1">5.39</td><td align="center" rowspan="1" colspan="1">−0.28</td><td align="center" rowspan="1" colspan="1">0.117</td></tr><tr><td align="left" rowspan="1" colspan="1">SL‐21A</td><td align="left" rowspan="1" colspan="1">14.9–22.1</td><td align="center" rowspan="1" colspan="1">4.79</td><td align="center" rowspan="1" colspan="1">−0.23</td><td align="center" rowspan="1" colspan="1">0.096</td></tr><tr><td align="left" rowspan="1" colspan="1">SL‐BLUEs</td><td align="left" rowspan="1" colspan="1">9.3–22.1</td><td align="center" rowspan="1" colspan="1">3.75</td><td align="center" rowspan="1" colspan="1">−0.16</td><td align="center" rowspan="1" colspan="1">0.067</td></tr><tr><td rowspan="3" align="left" colspan="1">
+<italic>QHd.hwwg‐1DL</italic>
+</td><td align="left" rowspan="1" colspan="1">HD‐20H</td><td align="left" rowspan="1" colspan="1">74.8–84.0</td><td rowspan="3" align="left" colspan="1">466.62–491.18</td><td align="center" rowspan="1" colspan="1">4.87</td><td align="center" rowspan="1" colspan="1">0.62</td><td align="center" rowspan="1" colspan="1">0.132</td></tr><tr><td align="left" rowspan="1" colspan="1">HD‐20A</td><td align="left" rowspan="1" colspan="1">72.3–84.0</td><td align="center" rowspan="1" colspan="1">4.83</td><td align="center" rowspan="1" colspan="1">0.74</td><td align="center" rowspan="1" colspan="1">0.099</td></tr><tr><td align="left" rowspan="1" colspan="1">HD‐BLUEs</td><td align="left" rowspan="1" colspan="1">63.6–84.0</td><td align="center" rowspan="1" colspan="1">4.36</td><td align="center" rowspan="1" colspan="1">0.52</td><td align="center" rowspan="1" colspan="1">0.088</td></tr><tr><td rowspan="3" align="left" colspan="1">
+<italic>QHd.hwwg‐7BL</italic>
+</td><td align="left" rowspan="1" colspan="1">HD‐20H</td><td rowspan="3" align="left" colspan="1">85.8–112.6</td><td rowspan="3" align="left" colspan="1">474.37–640.88</td><td align="center" rowspan="1" colspan="1">4.9</td><td align="center" rowspan="1" colspan="1">1.36</td><td align="center" rowspan="1" colspan="1">0.116</td></tr><tr><td align="left" rowspan="1" colspan="1">HD‐21A</td><td align="center" rowspan="1" colspan="1">5.17</td><td align="center" rowspan="1" colspan="1">0.69</td><td align="center" rowspan="1" colspan="1">0.09</td></tr><tr><td align="left" rowspan="1" colspan="1">HD‐BLUEs</td><td align="center" rowspan="1" colspan="1">6.49</td><td align="center" rowspan="1" colspan="1">0.63</td><td align="center" rowspan="1" colspan="1">0.127</td></tr><tr><td rowspan="2" align="left" colspan="1">
+<italic>QPh.hwwg‐1AS</italic>
+</td><td align="left" rowspan="1" colspan="1">PH‐20H</td><td align="left" rowspan="1" colspan="1">20.9–42.7</td><td rowspan="2" align="left" colspan="1">3.44–23.55</td><td align="center" rowspan="1" colspan="1">3.87</td><td align="center" rowspan="1" colspan="1">−2.08</td><td align="center" rowspan="1" colspan="1">0.068</td></tr><tr><td align="left" rowspan="1" colspan="1">PH‐20A</td><td align="left" rowspan="1" colspan="1">0–8.7</td><td align="center" rowspan="1" colspan="1">5.26</td><td align="center" rowspan="1" colspan="1">−3.53</td><td align="center" rowspan="1" colspan="1">0.111</td></tr><tr><td rowspan="4" align="left" colspan="1">
+<italic>QPh.hwwg‐4BS</italic>
+</td><td align="left" rowspan="1" colspan="1">PH‐20H</td><td align="left" rowspan="1" colspan="1">50.4–59.3</td><td rowspan="4" align="left" colspan="1">31.18–38.24</td><td align="center" rowspan="1" colspan="1">16.54</td><td align="center" rowspan="1" colspan="1">4.5</td><td align="center" rowspan="1" colspan="1">0.339</td></tr><tr><td align="left" rowspan="1" colspan="1">PH‐20A</td><td align="left" rowspan="1" colspan="1">50.1–61.0</td><td align="center" rowspan="1" colspan="1">19.14</td><td align="center" rowspan="1" colspan="1">7.07</td><td align="center" rowspan="1" colspan="1">0.435</td></tr><tr><td align="left" rowspan="1" colspan="1">PH‐21A</td><td align="left" rowspan="1" colspan="1">50.6‐59.4</td><td align="center" rowspan="1" colspan="1">26.37</td><td align="center" rowspan="1" colspan="1">8.5</td><td align="center" rowspan="1" colspan="1">0.474</td></tr><tr><td align="left" rowspan="1" colspan="1">PH‐BLUEs</td><td align="left" rowspan="1" colspan="1">50.6–52.3</td><td align="center" rowspan="1" colspan="1">24.78</td><td align="center" rowspan="1" colspan="1">5.32</td><td align="center" rowspan="1" colspan="1">0.421</td></tr><tr><td rowspan="3" align="left" colspan="1">
+<italic>QPh.hwwg‐5AL</italic>
+</td><td align="left" rowspan="1" colspan="1">PH‐20A</td><td align="left" rowspan="1" colspan="1">68.7–76</td><td align="left" rowspan="1" colspan="1">547.10–552.73</td><td align="center" rowspan="1" colspan="1">4.13</td><td align="center" rowspan="1" colspan="1">2.83</td><td align="center" rowspan="1" colspan="1">0.072</td></tr><tr><td align="left" rowspan="1" colspan="1">PH‐21A</td><td align="left" rowspan="1" colspan="1">36.1–38.6</td><td align="left" rowspan="1" colspan="1">415.34–417.22</td><td align="center" rowspan="1" colspan="1">4.26</td><td align="center" rowspan="1" colspan="1">3.01</td><td align="center" rowspan="1" colspan="1">0.056</td></tr><tr><td align="left" rowspan="1" colspan="1">PH‐BLUEs</td><td align="left" rowspan="1" colspan="1">34–39.7</td><td align="left" rowspan="1" colspan="1"/><td align="center" rowspan="1" colspan="1">4.24</td><td align="center" rowspan="1" colspan="1">1.89</td><td align="center" rowspan="1" colspan="1">0.053</td></tr><tr><td rowspan="3" align="left" colspan="1">
+<italic>QPh.hwwg‐7BL</italic>
+</td><td align="left" rowspan="1" colspan="1">PH‐20H</td><td rowspan="3" align="left" colspan="1">85.8–112.6</td><td rowspan="3" align="left" colspan="1">474.37–640.88</td><td align="center" rowspan="1" colspan="1">3.63</td><td align="center" rowspan="1" colspan="1">1.74</td><td align="center" rowspan="1" colspan="1">0.059</td></tr><tr><td align="left" rowspan="1" colspan="1">PH‐20A</td><td align="center" rowspan="1" colspan="1">4</td><td align="center" rowspan="1" colspan="1">2.42</td><td align="center" rowspan="1" colspan="1">0.055</td></tr><tr><td align="left" rowspan="1" colspan="1">PH‐BLUEs</td><td align="center" rowspan="1" colspan="1">3.7</td><td align="center" rowspan="1" colspan="1">1.79</td><td align="center" rowspan="1" colspan="1">0.048</td></tr></tbody></table><table-wrap-foot><fn id="tpg220548-tbl3-note-0001"><p>Abbreviations: ADD, additive effect in which a positive value indicates alleles for increased value contributed by the JagMut1095; BLUEs, best linear unbiased estimators.; LOD, log likelihood ratios, which is significant when comparing hypothesis H<sub>1</sub> (there is QTL linked) versus H<sub>0</sub> (there is no QTL linked) (Churchill &amp; Doerge, <xref rid="tpg220548-bib-0012" ref-type="bibr">1994</xref>); <italic>R</italic>
+<sup>2</sup>, phenotypic variation explained by the QTL.</p></fn></table-wrap-foot></table-wrap><fig id="tpg220548-fig-0002" position="float"><?disp-level 3?><label>FIGURE 2</label><caption><p>Map of quantitative trait loci (QTL) for <italic>barley yellow dwarf virus</italic> (BYDV) resistance, 1000‐kernel weight (TKW), kernel area (KA), kernel width (KW), and kernel length (KL) in the population of JagMut1095 <bold>×</bold> Jagger recombinant inbred lines (RILs). LOD is the log likelihood ratio. Centimorgan (cM) is a unit to measure the frequency of genetic recombination. BLUE, best linear unbiased estimator.</p></caption><alternatives><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="image" id="jats-graphic-3" xlink:href="TPG2-18-e20548-g001.jpg"><?cloudpmc-path blobs/c13e/12806270/f7ff33e0f058/TPG2-18-e20548-g001.jpg?><?cloudpmc-bucket cdn?><?image-server-status NEVER_LOAD?><?original-height 374?><?original-width 800?><?scaled-height 374?><?scaled-width 800?></graphic><graphic xmlns:xlink="http://www.w3.org/1999/xlink" content-type="thumb" xlink:href="TPG2-18-e20548-g001.gif"><?cloudpmc-path blobs/c13e/12806270/d5180586a81d/TPG2-18-e20548-g001.gif?><?cloudpmc-bucket cdn?></graphic></alternatives></fig><p>For the yield‐related traits, five QTLs were detected for TKW on chromosome arms 1AS, 2DL, 4BS, 5AL, and 5DL. <italic>QTkw.hwwg‐2DL</italic> mapped between 623.58 and 643.10 Mb was the only repeatable QTL for TKW across all environments. It overlapped with <italic>QByd.hwwg‐2DL</italic> and explained 11.9%–16.3% of the phenotypic variations for TKW. Among the other TKW QTLs, <italic>QTkw.hwwg‐1AS</italic> and <italic>QTkw.hwwg‐5DL</italic> were detected only in 2020 Ashland and explained 13.1% and 12.8% of the phenotypic variations, respectively. <italic>QTkw.hwwg‐5AL</italic> was detected in 2020 Hays and for BLUE values and explained 15.8% and 10.1% of the phenotypic variations, respectively. <italic>QTkw.hwwg‐4BS</italic> was mapped at the 31.18–38.24 Mb interval on 4BS where a reduced height (<italic>Rht</italic>) gene, <italic>Rht1</italic>, is located. This QTL explained 20.3% of the phenotypic variation in 2021 Ashland and is the only TKW QTL with the beneficial allele from JagMut1095.</p><p>Six QTLs were detected for KA on chromosome arms 1AS, 2DL, 4BS, 5AL, 5DL, and 6AS. <italic>QKa.hwwg‐2DL</italic> was in the same interval as <italic>QTkw.hwwg‐2DL</italic> and was significant in all three environments and for BLUE values. The QTL explained 11.0%–18.1% of the phenotypic variations. <italic>QKa.hwwg‐1AS</italic> between 3.44 and 9.48 Mb bp on 1AS was detected in two environments and by BLUE values and explained 9.6%–13.6% of the phenotypic variations. The other four QTLs (<italic>QKa.hwwg‐4BS</italic>, <italic>QKa.hwwg‐5AL</italic>, <italic>QKa.hwwg‐5DL</italic>, and <italic>QKa.hwwg‐6AS</italic>) were detected in a single environment and explained 6.9%–17.9% of the phenotypic variations. Same as for TKW, Jagger contributed the positive alleles at all these QTLs for KA except <italic>QKa.hwwg‐4BS</italic> that overlaps with <italic>Rht1</italic> and was contributed by JagMut1095.</p><p>Four QTLs were identified for KW on 1AS, 2DL, 4BS, and 5AL. Two of them (<italic>QKw.hwwg‐2DL</italic> and <italic>QKw.hwwg‐5AL</italic>) were significant in all the three environments and for BLUE values. <italic>QKw.hwwg‐5AL</italic> in the interval between 407.29 and 455.33 Mb showed the largest effect, explaining 15.6%–33.3% of the phenotypic variations. The second stable QTL, <italic>QKw.hwwg‐2DL</italic>, was physically mapped between 630.91 and 643.10 Mb and explained 10.1%–14.2% of the phenotypic variations. The other two QTLs were significant only in one or two experiments. <italic>QKw.hwwg‐1AS</italic> and <italic>QKw.hwwg‐4BS</italic> were detected in 2020 and 2021 Ashland experiments and explained 7.8% and 14.5% of the phenotypic variations, respectively. Jagger contributed positive alleles at all the QTLs for KW except for <italic>QKw.hwwg‐4BS</italic> overlapping with <italic>Rht1</italic>.</p><p>Five QTLs were detected for KL on chromosome arms 1AS, 1DL, 2DL, 4BS, and 5AL. <italic>QKl.hwwg‐2DL</italic> within the interval between 621.8 and 641.8 Mb was the only stable QTL that was detected in all three environments and by BLUE values. This QTL explained 11.6%–23.4% of the phenotypic variations. The other four QTLs, <italic>QKl.hwwg‐1AS</italic>, <italic>QKl.hwwg‐1DL</italic>, <italic>QKl.hwwg‐4BS</italic>, and <italic>QKl.hwwg‐5AL</italic>, were detected only in 2020 or 2021 in Ashland and explained 7.5%–15.1% of the phenotypic variations. <italic>QKl.hwwg‐1AS</italic> and <italic>QKl.hwwg‐2DL</italic> had the preferred alleles from Jagger, and the positive alleles in other three QTLs were from JagMut1095.</p><p>All the four yield‐related QTLs on chromosome arm 2DL (<italic>QTkw.hwwg‐2DL</italic>, <italic>QKa.hwwg‐2DL</italic>, <italic>QKw.hwwg‐2DL</italic>, and <italic>QKl.hwwg‐2DL</italic>) overlapped with <italic>QByd.hwwg‐2DL</italic> for BYDV resistance with the preferred alleles from Jagger. However, QTLs were not significant for SNS, SL, HD, and PH in the 2DL interval (Table <xref rid="tpg220548-supinfo-0001" ref-type="supplementary-material">S2</xref>). These results indicate that the 2DL QTL for BYDV resistance might have pleiotropic effects on or tight linkage with kernel traits (TKW, KA, KW, and KL), but not on SNS, SL, HD, and PH. Interestingly, the major QTL <italic>QPh.hwwg‐4BS</italic>, which contributed up to 47.4% of the phenotypic variation for reduced PH, overlaps with the green revolution gene <italic>Rht1</italic> and four yield‐related QTLs on chromosome 4BS (<italic>QTkw.hwwg‐4BS</italic>, <italic>QKa.hwwg‐4BS</italic>, <italic>QKw.hwwg‐4BS</italic>, and <italic>QKl.hwwg‐4BS</italic>) that were detected in a single environment. JagMut1095 contributed the taller allele for PH and favorable alleles for TKW, KA, KW, and KL.</p></sec><sec id="tpg220548-sec-0130" disp-level="2"><label>3.3.</label><title>Development of tightly linked markers to <italic>QByd.hwwg‐2DL</italic>
+</title><p>To develop KASP markers that are tightly linked to the QTLs on 2DL, the flanking sequences of four GBS–SNPs in the QTL interval were selected to design primers. Genotyping of the RIL population using the four KASP markers (<italic>2D‐641819218</italic>, <italic>2D‐642415923</italic>, <italic>2D‐642166246</italic>, and <italic>2D‐643101947</italic>) showed the same segregation pattern as the original GBS–SNPs, but the KASP markers filled missing datapoints of the corresponding GBS–SNPs. To increase SNP density in the <italic>QByd.hwwg‐2DL</italic> region, four additional co‐dominant KASP markers between 642.42 and 643.12 Mb were developed using sequence information discovered from an exome capture assay of the two parents. These four markers were polymorphic between the two parents and segregated in the RIL population; thus, were also used to reconstruct the 2DL linkage map (Table <xref rid="tpg220548-supinfo-0001" ref-type="supplementary-material">S3</xref>). All the RILs were grouped into allelic group of Jagger or JagMut1095 based on their marker alleles within the 2DL overlapping QTL region in the RIL population (Table <xref rid="tpg220548-supinfo-0001" ref-type="supplementary-material">S4</xref>). The BLUE values were compared between the two allelic groups for each marker. Overall, the Jagger group (B) had significantly better BYDV resistance and higher values of TKW, KA, KW, and KL than the JagMut1095 group (A).</p></sec><sec id="tpg220548-sec-0140" disp-level="2"><label>3.4.</label><title>Candidate genes analysis of <italic>QByd.hwwg‐2DL</italic>
+</title><p>Searching for candidate genes in the IWGSC reference genome RefSeq v2.1 (International Wheat Genome Sequencing Consortium [IWGSC], <xref rid="tpg220548-bib-0023" ref-type="bibr">2018</xref>) identified a total of 14 high‐confidence (HC) genes in the <italic>QByd.hwwg‐2DL</italic> interval (Table <xref rid="tpg220548-tbl-0004" ref-type="table">4</xref>). Meanwhile, sequences of the <italic>QByd.hwwg‐2DL</italic> flanking markers were blasted in the Jagger genome assembly PGSBv2.1 (Walkowiak et al., <xref rid="tpg220548-bib-0062" ref-type="bibr">2020</xref>), which identified 16 genes with 10 genes in common with Chinese Spring. The six other HC genes from the <italic>QByd.hwwg‐2DL</italic> interval of Jagger were mapped on chromosome 2B instead of 2D of Chinese Spring based on the IWGSC reference RefSeq v2.1.</p><table-wrap id="tpg220548-tbl-0004" position="float"><?disp-level 3?><label>TABLE 4</label><caption><p>A list of putative candidate genes identified in the candidate interval of <italic>QByd.hwwg‐2DL</italic> in Chinese Spring reference genome RefSeq v.2.1 and Jagger genome assembly PGSBv2.1.</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><col align="left" span="1"/><thead><tr style="border-bottom:solid 1px #000000"><th align="left" rowspan="1" colspan="1">Gene‐ID (CSv2.1)</th><th align="left" rowspan="1" colspan="1">Description</th><th align="left" rowspan="1" colspan="1">Jagger PGSBv2.1</th><th align="left" rowspan="1" colspan="1">RefSeq v2.1</th><th align="left" rowspan="1" colspan="1">Description</th></tr></thead><tbody><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1277500</italic>
+</td><td align="left" rowspan="1" colspan="1">Wall‐associated receptor kinase‐like protein</td><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1277600</italic>
+</td><td align="left" rowspan="1" colspan="1">AT hook motif DNA‐binding family protein, putative</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G630600</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1277600</italic>
+</td><td align="left" rowspan="1" colspan="1">AT hook motif DNA‐binding family protein, putative</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1277700</italic>
+</td><td align="left" rowspan="1" colspan="1">Glutathione peroxidase</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G630800</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1277700</italic>
+</td><td align="left" rowspan="1" colspan="1">Glutathione peroxidase</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">–</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G630700</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2B03G1512800</italic>
+</td><td align="left" rowspan="1" colspan="1">Glutathione peroxidase</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1277800</italic>
+</td><td align="left" rowspan="1" colspan="1">DNA‐directed RNA polymerase subunit beta</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G630900</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1277800</italic>
+</td><td align="left" rowspan="1" colspan="1">DNA‐directed RNA polymerase subunit beta</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1277900</italic>
+</td><td align="left" rowspan="1" colspan="1">C2 calcium/lipid‐binding and GRAM domain protein</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G631000</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1277900</italic>
+</td><td align="left" rowspan="1" colspan="1">C2 calcium/lipid‐binding and GRAM domain protein</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1278100</italic>
+</td><td align="left" rowspan="1" colspan="1">Oxidoreductase/transition metal ion binding protein</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G631100</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1278100</italic>
+</td><td align="left" rowspan="1" colspan="1">Oxidoreductase/transition metal ion binding protein</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1278200</italic>
+</td><td align="left" rowspan="1" colspan="1">Envelope glycoprotein B</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G631200</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1278200</italic>
+</td><td align="left" rowspan="1" colspan="1">Envelope glycoprotein B</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1278500</italic>
+</td><td align="left" rowspan="1" colspan="1">Acetyl‐coenzyme A synthetase</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G631300</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1278500</italic>
+</td><td align="left" rowspan="1" colspan="1">Acetyl‐coenzyme A synthetase</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1278700</italic>
+</td><td align="left" rowspan="1" colspan="1">Defensin</td><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1278900</italic>
+</td><td align="left" rowspan="1" colspan="1">Defensin</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G631400</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1278900</italic>
+</td><td align="left" rowspan="1" colspan="1">Defensin</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1279000</italic>
+</td><td align="left" rowspan="1" colspan="1">lectin‐receptor kinase</td><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">–</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G631500</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2B03G1516800</italic>
+</td><td align="left" rowspan="1" colspan="1">Tyrosine decarboxylase</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">–</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G631600</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2B03G1517000</italic>
+</td><td align="left" rowspan="1" colspan="1">Agmatine coumaroyltransferase‐2</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">–</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G631700</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2B03G1516600</italic>
+</td><td align="left" rowspan="1" colspan="1">O‐methyltransferase‐like protein</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">–</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G631800</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2B03G1517200</italic>
+</td><td align="left" rowspan="1" colspan="1">Cytochrome P450</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">–</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G631900</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2B03G1517300</italic>
+</td><td align="left" rowspan="1" colspan="1">Pleiotropic drug resistance ABC transporter</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1279200</italic>
+</td><td align="left" rowspan="1" colspan="1">Dihydroflavonol 4‐reductase</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G632000</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1279200</italic>
+</td><td align="left" rowspan="1" colspan="1">Dihydroflavonol 4‐reductase</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1279300</italic>
+</td><td align="left" rowspan="1" colspan="1">Cytochrome P450</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesJAG2D01G632100</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1279300</italic>
+</td><td align="left" rowspan="1" colspan="1">Cytochrome P450</td></tr><tr><td align="left" rowspan="1" colspan="1">
+<italic>TraesCS2D03G1279400</italic>
+</td><td align="left" rowspan="1" colspan="1">Cytochrome P450</td><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">
+<italic>–</italic>
+</td><td align="left" rowspan="1" colspan="1">–</td></tr></tbody></table></table-wrap></sec></sec><sec id="tpg220548-sec-0150" disp-level="1"><label>4.</label><title>DISCUSSION</title><p>As one of the most widespread and economically important plant viral diseases, BYD has caused significant yield losses in wheat and other cereal crops (Perry et al., <xref rid="tpg220548-bib-0042" ref-type="bibr">2000</xref>). This study used a RIL population from the cross between Jagger and its mutant to identify novel BYDV resistance loci in wheat. The population segregated for the BYD severity and yield‐related traits in multiple field experiments. Medium‐high (0.66) heritability of BYDV resistance suggested relatively high consistency of BYD phenotypic data across three environments in this study even under field natural infection conditions. Usually, plant resistance to insect‐transmitted diseases has a low heritability since the transmission is highly influenced by the environments, especially under natural infection conditions where insect infestation on host plants occurs randomly (Price &amp; Schluter, <xref rid="tpg220548-bib-0045" ref-type="bibr">1991</xref>).</p><p>Using the CIM method, one stable major QTL (<italic>QByd.hwwg‐2DL</italic>) controlling BYDV resistance was consistently detected in three field environments. This major QTL located in a short interval of 0.58 Mb between 642.42 and 643.00 Mb on 2DL explained up to 51% of the phenotypic variance, indicating a stable major effect on BYDV resistance under multiple environments. To date, four wheat BYDV resistance genes (<italic>Bdv1</italic>, <italic>Bdv2</italic>, <italic>Bdv3</italic>, and <italic>Bdv4</italic>) have been reported. Among them, <italic>Bdv4</italic> originated from the intermediate wheatgrass <italic>Thinopyrum intermedium</italic> and was transferred to wheat chromosome 2D through centric fusion as 2D‐2Ai‐2 (Choudhury et al., <xref rid="tpg220548-bib-0011" ref-type="bibr">2019</xref>; Zhang et al., <xref rid="tpg220548-bib-0069" ref-type="bibr">2009</xref>). <italic>QByd.hwwg‐2DL</italic> in the present study has the resistance allele from Jagger, which does not carry any known translocation from <italic>T. intermedium</italic>. In addition, all reported QTLs from wheat showed minor effects on BYDV resistance (Ayala et al., <xref rid="tpg220548-bib-0003" ref-type="bibr">2002</xref>; Choudhury et al., <xref rid="tpg220548-bib-0011" ref-type="bibr">2019</xref>; Silva et al., <xref rid="tpg220548-bib-0056" ref-type="bibr">2022</xref>). Therefore, <italic>QByd.hwwg‐2DL</italic> identified in this study is most likely a novel major QTL for BYDV resistance in wheat.</p><p>Compared to those resistance genes identified from wheat relatives, <italic>QByd.hwwg‐2DL</italic> did not show linkage drag. Instead, its resistance allele co‐segregated with preferred alleles at the QTLs for kernel traits (TKW, KA, KW, and KL) and did not show any negative effect on SNS, SL, HD, and PH. The co‐segregated QTLs in the region might be due to either tightly linked QTLs or pleiotropic effects. All the favorable alleles at the five overlapping QTLs are from Jagger; therefore, incorporation of <italic>QByd.hwwg‐2DL</italic> into new cultivars could simultaneously improve wheat BYDV resistance and kernel traits to increase grain yield, suggesting high application potential of <italic>QByd.hwwg‐2DL</italic> in breeding.</p><p>We blasted the sequences of the flanking markers from the <italic>QByd.hwwg‐2DL</italic> interval in the IWGSC RefSeq 2.1 (International Wheat Genome Sequencing Consortium [IWGSC], <xref rid="tpg220548-bib-0023" ref-type="bibr">2018</xref>) and found 14 annotated HC genes (Table <xref rid="tpg220548-tbl-0004" ref-type="table">4</xref>). Eight of them were predicted to be pathogen‐defense‐related genes in different plant species, including <italic>TraesCS2D03G1277500</italic> encoding a wall‐associated receptor kinase‐like protein, <italic>TraesCS2D03G1277700</italic> encoding a glutathione peroxidase, <italic>TraesCS2D03G1277900</italic> encoding a C2 calcium/lipid‐binding and GRAM domain protein, <italic>TraesCS2D03G1278700</italic> and <italic>TraesCS2D03G1278900</italic> encoding defensin, <italic>TraesCS2D03G1279000</italic> encoding a lectin‐receptor kinase, and <italic>TraesCS2D03G1279300</italic> and <italic>TraesCS2D03G1279400</italic> encoding cytochrome P450 (Table <xref rid="tpg220548-tbl-0004" ref-type="table">4</xref>). Among these genes, the lectin‐receptor kinase (Shumayla et al., <xref rid="tpg220548-bib-0055" ref-type="bibr">2016</xref>; Xiao et al., <xref rid="tpg220548-bib-0066" ref-type="bibr">2021</xref>) and cytochrome P450 (Gunupuru et al., <xref rid="tpg220548-bib-0019" ref-type="bibr">2018</xref>; Y. Li &amp; Wei, <xref rid="tpg220548-bib-0032" ref-type="bibr">2020</xref>) have been reported to enhance both plant defense and grain yield in wheat previously, which could potentially confer pleiotropic effects on both BYDV resistance and TKW, KA, and KW traits. Additionally, <italic>TraesCS2D03G1277500</italic>, <italic>TraesCS2D03G1277700</italic>, and <italic>TraesCS2D03G1279400</italic> have SNPs between two parents from the exome‐capture assays and these SNPs have been successfully converted to KASP markers as <italic>Exon2D‐3</italic>, <italic>Exon2D‐13</italic>, and <italic>Exon2D‐19</italic> (Table <xref rid="tpg220548-supinfo-0001" ref-type="supplementary-material">S3</xref>), respectively.</p><p>Interestingly, comparison of the annotated genes in the <italic>QByd.hwwg‐2DL</italic> interval between Jagger and Chinese Spring reference genomes identified only 10 genes in common, whereas the six other genes from Jagger reference were mapped in one block on chromosome 2B in Chinese Spring reference, the IWGSC RefSeq 2.1 (Table <xref rid="tpg220548-tbl-0004" ref-type="table">4</xref>). All the six genes were predicted to have functions on stress responses or disease defense and four of them have functions different from the 14 candidate genes identified in the QTL region of Chinese Spring based on IWGSC RefSeq 2.1. The four unique genes include <italic>TraesCS2B03G1516800</italic> encoding a tyrosine decarboxylase, <italic>TraesCS2B03G1517000</italic> encoding an agmatine coumaroyltransferase‐2, <italic>TraesCS2B03G1516600</italic> encoding a o‐methyltransferase‐like protein, and <italic>TraesCS2B03G1517300</italic> encoding a pleiotropic drug resistance ABC transporter (Bureau et al., <xref rid="tpg220548-bib-0009" ref-type="bibr">2007</xref>; Gao et al., <xref rid="tpg220548-bib-0018" ref-type="bibr">2021</xref>; Muroi et al., <xref rid="tpg220548-bib-0038" ref-type="bibr">2009</xref>; Nuruzzaman et al., <xref rid="tpg220548-bib-0040" ref-type="bibr">2014</xref>). Further fine mapping of the region will narrow down the list of candidate genes to eventually identify the causal gene for <italic>QByd.hwwg‐2DL</italic>.</p><p>QTL intervals for the yield‐related traits in this region were much larger than for <italic>QByd.hwwg‐2DL</italic>, which might be due to a much larger QTL effect of BYDV than the yield‐related traits (Figure <xref rid="tpg220548-fig-0002" ref-type="fig">2</xref>). The overlapping QTL region (621,811,756–643,101,947 bp) for yield traits contains 568 annotated HC genes. This interval remains too large to determine the causal genes for these yield‐related traits. However, several genes have been reported as the candidate genes for yield and kernel traits in this interval. For instance, the E3 ubiquitin ligase related to the ubiquitin‐proteasome pathway that has the potential to modulate crop productivity by influencing agronomic traits (Varshney &amp; Majee, <xref rid="tpg220548-bib-0061" ref-type="bibr">2022</xref>); serine/threonine‐protein kinase, SHAGGY‐like kinase, phosphatase and auxin response factors related to the phytohormone signaling and homeostasis (Kong et al., <xref rid="tpg220548-bib-0026" ref-type="bibr">2015</xref>); growth‐regulating factor zinc finger family protein related to plant development and stress response (Huang et al., <xref rid="tpg220548-bib-0022" ref-type="bibr">2021</xref>); B3 domain transcription factor related to grain development and filling (Y. C. Liu et al., <xref rid="tpg220548-bib-0035" ref-type="bibr">2023</xref>); basic helix‐loop‐helix transcription factors involved in stress response, plant development, metabolite biosynthesis and trait development (Guo &amp; Wang, <xref rid="tpg220548-bib-0020" ref-type="bibr">2017</xref>); and α‐tubulin and cytochrome P450 related to plant development.</p><p>To date, QTL mapping has identified many important QTLs for disease resistance, yield, and other agronomic traits from <italic>Aegilops tauschii</italic> and confirmed that 2D had a higher gene density and harbored more yield‐related genes than other <italic>A. tauschii</italic> chromosomes (Qu et al., <xref rid="tpg220548-bib-0046" ref-type="bibr">2022</xref>; Zhao et al., <xref rid="tpg220548-bib-0070" ref-type="bibr">2017</xref>). Meanwhile, many QTL clusters related to kernel traits on 2D have been reported. For example, several QTLs for the wheat yield components were located between 481 and 601 Mb (Li et al., <xref rid="tpg220548-bib-0031" ref-type="bibr">2021</xref>; Qu et al., <xref rid="tpg220548-bib-0046" ref-type="bibr">2022</xref>, <xref rid="tpg220548-bib-0047" ref-type="bibr">2021</xref>). In our study, the 2DL QTL cluster (621–643 Mb) was located at least 20 Mb away from the previously reported 2DL region, indicating that the 2DL cluster identified in this study is more likely a novel genomic region for both kernel traits and BYDV resistance with a high potential to be used in wheat breeding. Further fine‐mapping and functional studies are required to narrow down the interval and characterize the causal genes for both kernel traits and BYDV resistance, which will also provide significant insight into the genetic relationships between <italic>QByd.hwwg‐2DL</italic> and these kernel traits. Significant QTLs were not detected for SNS, SL, HD, and PH, suggesting deployment of <italic>QByd.hwwg‐2DL</italic> in breeding will not negatively affect these traits.</p></sec><sec id="tpg220548-sec-0160" disp-level="1"><title>AUTHOR CONTRIBUTIONS</title><p>
+<bold>Ruolin Bian</bold>: Formal analysis; investigation; validation; visualization; writing—original draft. <bold>Na Liu</bold>: Investigation; validation; visualization. <bold>Yuzhou Xu</bold>: Investigation. <bold>Zhenqi Su</bold>: Investigation. <bold>Lingling Chai</bold>: Investigation. <bold>Amy Bernando</bold>: Investigation. <bold>Paul St. Amand</bold>: Investigation. <bold>Jessica Rupp</bold>: Investigation. <bold>Michael Pumphrey</bold>: Resources. <bold>Allan Fritz</bold>: Writing—review and editing. <bold>Guorong Zhang</bold>: Writing—review and editing. <bold>Katherine W. Jordan</bold>: Data curation; writing—review and editing. <bold>Guihua Bai</bold>: Conceptualization; funding acquisition; project administration; resources; writing—review and editing.</p></sec><sec id="tpg220548-sec-0180" disp-level="1"><title>CONFLICT OF INTEREST STATEMENT</title><p>The authors declare no conflicts of interest.</p></sec><sec id="sec18" disp-level="1"><title>Supporting information</title><supplementary-material id="tpg220548-supinfo-0001" position="float"/><supplementary-material id="tpg220548-supitem-0001" position="float"><caption><p>Supplemental Material</p><p>The supplementary material is available in the online version. All data analyzed during this study were included in this article and its supplementary information files. The original GBS sequence data were available at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://doi.org/10.5061/dryad.8sf7m0d0b" ext-link-type="uri">https://doi.org/10.5061/dryad.8sf7m0d0b</ext-link>.</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="TPG2-18-e20548-s001.docx" mimetype="application" mime-subtype="vnd.openxmlformats-officedocument.wordprocessingml.document"><?cloudpmc-path c13e/12806270/dbe27409998b/TPG2-18-e20548-s001.docx?><?cloudpmc-bucket app?><?size 2791058?></media></supplementary-material></sec><sec id="tpg220548-sec-0170" sec-type="ack" disp-level="1"><title>ACKNOWLEDGMENTS</title><p>This is contribution number 24‐257‐J from the Kansas Agricultural Experiment Station. This project was partially supported by the National Research Initiative Competitive Grants 2022‐68013‐36439 from the National Institute of Food and Agriculture, US Department of Agriculture (USDA). Mention of trade names or commercial products in this publication is solely for the purpose of providing specific information and does not imply recommendation or endorsement by the US Department of Agriculture. The USDA is an equal opportunity provider and employer.</p></sec><sec id="notes1" disp-level="1"><p>
+
+
+Bian, R.
+, 
+Liu, N.
+, 
+Xu, Y.
+, 
+Su, Z.
+, 
+Chai, L.
+, 
+Bernardo, A.
+, 
+St. Amand, P.
+, 
+Rupp, J.
+, 
+Pumphrey, M.
+, 
+Fritz, A.
+, 
+Zhang, G.
+, 
+Jordan, K. W.
+, &amp; 
+Bai, G.
+ (2025). A novel quantitative trait locus for <italic>barley yellow dwarf virus</italic> resistance and kernel traits on chromosome 2D of a wheat cultivar Jagger. The Plant Genome, 18, e20548. 10.1002/tpg2.20548
+
+
+</p><sec id="fn-group1" sec-type="fn-group" disp-level="2"><fn-group><fn id="tpg220548-note-0001"><p>Assigned to Associate Editor Devinder Sandhu.</p></fn></fn-group></sec></sec><sec id="_ci93_" xml:lang="en" sec-type="contrib-info" disp-level="1"><title>Contributor Information</title><p>Na Liu, Email: naliu@henau.edu.cn.</p><p>Guihua Bai, Email: guihua.bai@usda.gov.</p></sec><sec id="tpg220548-bibl-0001" sec-type="ref-list" disp-level="1"><title>REFERENCES</title><sec id="tpg220548-bibl-0001_sec2" disp-level="2"><ref-list><ref id="tpg220548-bib-0001"><mixed-citation id="tpg220548-cit-0001"><named-content content-type="citation-string">
+
+Aradottir, G. I.
+, &amp; 
+Crespo‐Herrera, L.
+ (2021). Host plant resistance in wheat to <italic>barley yellow dwarf viruses</italic> and their aphid vectors: A review. Current Opinion Insect Science, 45, 59–68. 10.1016/j.cois.2021.01.002
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cois.2021.01.002"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33545435"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Current Opinion Insect Science&amp;title=Host plant resistance in wheat to barley yellow dwarf viruses and their aphid vectors: A review&amp;author=G. I. Aradottir&amp;author=L. Crespo‐Herrera&amp;volume=45&amp;publication_year=2021&amp;pages=59-68&amp;pmid=33545435&amp;doi=10.1016/j.cois.2021.01.002&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0002"><mixed-citation id="tpg220548-cit-0002"><named-content content-type="citation-string">
+
+Ayala, L.
+, 
+Henry, M.
+, 
+Gonzalez‐de‐Leon, D.
+, 
+Van Ginkel, M.
+, 
+Mujeeb‐Kazi, A.
+, 
+Keller, B.
+, &amp; 
+Khairallah, M.
+ (2001). A diagnostic molecular marker allowing the study of <italic>Th. intermedium</italic>‐derived resistance to BYDV in bread wheat segregating populations. Theoretical Applied Genetics, 102, 942–949. 10.1007/s001220000476
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s001220000476"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Theoretical Applied Genetics&amp;title=A diagnostic molecular marker allowing the study of Th. intermedium‐derived resistance to BYDV in bread wheat segregating populations&amp;author=L. Ayala&amp;author=M. Henry&amp;author=D. Gonzalez‐de‐Leon&amp;author=M. Van Ginkel&amp;author=A. Mujeeb‐Kazi&amp;volume=102&amp;publication_year=2001&amp;pages=942-949&amp;doi=10.1007/s001220000476&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0003"><mixed-citation id="tpg220548-cit-0003"><named-content content-type="citation-string">
+
+Ayala, L.
+, 
+Henry, M.
+, 
+van Ginkel, M.
+, 
+Singh, R.
+, 
+Keller, B.
+, &amp; 
+Khairallah, M.
+ (2002). Identification of QTLs for BYDV tolerance in bread wheat. Euphytica, 128, 249–259. 10.1023/A:1020883414410
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1023/A:1020883414410"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Euphytica&amp;title=Identification of QTLs for BYDV tolerance in bread wheat&amp;author=L. Ayala&amp;author=M. Henry&amp;author=M. van Ginkel&amp;author=R. Singh&amp;author=B. Keller&amp;volume=128&amp;publication_year=2002&amp;pages=249-259&amp;doi=10.1023/A:1020883414410&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0004"><mixed-citation id="tpg220548-cit-0004"><named-content content-type="citation-string">
+
+Bai, G.
+, 
+Kolb, F. L.
+, 
+Shaner, G.
+, &amp; 
+Domier, L. L.
+ (1999). Amplified fragment length polymorphism markers linked to a major quantitative trait locus controlling scab resistance in wheat. Phytopathology, 89, 343–348. 10.1094/PHYTO.1999.89.4.343
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1094/PHYTO.1999.89.4.343"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="18944781"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phytopathology&amp;title=Amplified fragment length polymorphism markers linked to a major quantitative trait locus controlling scab resistance in wheat&amp;author=G. Bai&amp;author=F. L. Kolb&amp;author=G. Shaner&amp;author=L. L. Domier&amp;volume=89&amp;publication_year=1999&amp;pages=343-348&amp;pmid=18944781&amp;doi=10.1094/PHYTO.1999.89.4.343&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0005"><mixed-citation id="tpg220548-cit-0005"><named-content content-type="citation-string">
+
+Banks, P. M.
+, 
+Larkin, P. J.
+, 
+Bariana, H. S.
+, 
+Lagudah, E. S.
+, 
+Appels, R.
+, 
+Waterhouse, P. M.
+, 
+Brettell, R. I.
+, 
+Chen, X.
+, 
+Xu, H. J.
+, 
+Xin, Z. Y.
+, &amp; 
+Qian, Y. T.
+ (2011). The use of cell culture for subchromosomal introgressions of <italic>barley yellow dwarf virus</italic> resistance from <italic>Thinopyrum intermedium</italic> to wheat. Genome, 38(2), 395–405. 10.1139/g95-051
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1139/g95-051"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="18470178"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Genome&amp;title=The use of cell culture for subchromosomal introgressions of barley yellow dwarf virus resistance from Thinopyrum intermedium to wheat&amp;author=P. M. Banks&amp;author=P. J. Larkin&amp;author=H. S. Bariana&amp;author=E. S. Lagudah&amp;author=R. Appels&amp;volume=38&amp;issue=2&amp;publication_year=2011&amp;pages=395-405&amp;pmid=18470178&amp;doi=10.1139/g95-051&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0006"><mixed-citation id="tpg220548-cit-0006"><named-content content-type="citation-string">
+
+Bian, R.
+, 
+Liu, N.
+, 
+Xu, Y.
+, 
+Su, Z.
+, 
+Chai, L.
+, 
+Bernardo, A.
+, 
+St Amand, P.
+, 
+Fritz, A.
+, 
+Zhang, G.
+, 
+Rupp, J.
+, &amp; 
+Akhunov, E.
+ (2023). Quantitative trait loci for rolled leaf in a wheat EMS mutant from Jagger. Theoretical Applied Genetics, 136, Article 52. 10.1007/s00122-023-04284-3
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00122-023-04284-3"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="36912970"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Theoretical Applied Genetics&amp;title=Quantitative trait loci for rolled leaf in a wheat EMS mutant from Jagger&amp;author=R. Bian&amp;author=N. Liu&amp;author=Y. Xu&amp;author=Z. Su&amp;author=L. Chai&amp;volume=136&amp;publication_year=2023&amp;pages=52&amp;pmid=36912970&amp;doi=10.1007/s00122-023-04284-3&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0007"><mixed-citation id="tpg220548-cit-0007"><named-content content-type="citation-string">
+
+Bradbury, P. J.
+, 
+Zhang, Z.
+, 
+Kroon, D. E.
+, 
+Casstevens, T. M.
+, 
+Ramdoss, Y.
+, &amp; 
+Buckler, E. S.
+ (2007). TASSEL: Software for association mapping of complex traits in diverse samples. Bioinformatics, 23, 2633–2635. 10.1093/bioinformatics/btm308
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/bioinformatics/btm308"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="17586829"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Bioinformatics&amp;title=TASSEL: Software for association mapping of complex traits in diverse samples&amp;author=P. J. Bradbury&amp;author=Z. Zhang&amp;author=D. E. Kroon&amp;author=T. M. Casstevens&amp;author=Y. Ramdoss&amp;volume=23&amp;publication_year=2007&amp;pages=2633-2635&amp;pmid=17586829&amp;doi=10.1093/bioinformatics/btm308&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0008"><mixed-citation id="tpg220548-cit-0008"><named-content content-type="citation-string">
+
+Brinton, J.
+, 
+Simmonds, J.
+, 
+Minter, F.
+, 
+Leverington‐Waite, M.
+, 
+Snape, J.
+, &amp; 
+Uauy, C.
+ (2017). Increased pericarp cell length underlies a major quantitative trait locus for grain weight in hexaploid wheat. New Phytologist, 215, 1026–1038. 10.1111/nph.14624
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/nph.14624"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28574181"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=New Phytologist&amp;title=Increased pericarp cell length underlies a major quantitative trait locus for grain weight in hexaploid wheat&amp;author=J. Brinton&amp;author=J. Simmonds&amp;author=F. Minter&amp;author=M. Leverington‐Waite&amp;author=J. Snape&amp;volume=215&amp;publication_year=2017&amp;pages=1026-1038&amp;pmid=28574181&amp;doi=10.1111/nph.14624&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0009"><mixed-citation id="tpg220548-cit-0009"><named-content content-type="citation-string">
+
+Bureau, T.
+, 
+Lam, K. C.
+, 
+Ibrahim, R. K.
+, 
+Behdad, B.
+, &amp; 
+Dayanandan, S.
+ (2007). Structure, function, and evolution of plant O‐methyltransferases. Genome, 50, 1001–1013.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1139/g07-077"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="18059546"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Genome&amp;title=Structure, function, and evolution of plant O‐methyltransferases&amp;author=T. Bureau&amp;author=K. C. Lam&amp;author=R. K. Ibrahim&amp;author=B. Behdad&amp;author=S. Dayanandan&amp;volume=50&amp;publication_year=2007&amp;pages=1001-1013&amp;pmid=18059546&amp;doi=10.1139/g07-077&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0010"><mixed-citation id="tpg220548-cit-0010"><named-content content-type="citation-string">
+
+Choudhury, S.
+, 
+Hu, H.
+, 
+Meinke, H.
+, 
+Shabala, S.
+, 
+Westmore, G.
+, 
+Larkin, P.
+, &amp; 
+Zhou, M.
+ (2017). 
+<italic>Barley yellow dwarf viruses</italic>: Infection mechanisms and breeding strategies. Euphytica, 213, 1–22. 10.1007/s10681-017-1955-8
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s10681-017-1955-8"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Euphytica&amp;title=Barley yellow dwarf viruses: Infection mechanisms and breeding strategies&amp;author=S. Choudhury&amp;author=H. Hu&amp;author=H. Meinke&amp;author=S. Shabala&amp;author=G. Westmore&amp;volume=213&amp;publication_year=2017&amp;pages=1-22&amp;doi=10.1007/s10681-017-1955-8&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0011"><mixed-citation id="tpg220548-cit-0011"><named-content content-type="citation-string">
+
+Choudhury, S.
+, 
+Larkin, P.
+, 
+Xu, R.
+, 
+Hayden, M.
+, 
+Forrest, K.
+, 
+Meinke, H.
+, 
+Hu, H.
+, 
+Zhou, M.
+, &amp; 
+Fan, Y.
+ (2019). Genome wide association study reveals novel QTL for <italic>barley yellow dwarf virus</italic> resistance in wheat. BMC Genomics, 20, Article 891. 10.1186/s12864-019-6249-1
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s12864-019-6249-1"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6873737"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31752676"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=BMC Genomics&amp;title=Genome wide association study reveals novel QTL for barley yellow dwarf virus resistance in wheat&amp;author=S. Choudhury&amp;author=P. Larkin&amp;author=R. Xu&amp;author=M. Hayden&amp;author=K. Forrest&amp;volume=20&amp;publication_year=2019&amp;pages=891&amp;pmid=31752676&amp;doi=10.1186/s12864-019-6249-1&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0012"><mixed-citation id="tpg220548-cit-0012"><named-content content-type="citation-string">
+
+Churchill, G. A.
+, &amp; 
+Doerge, R. W.
+ (1994). Empirical threshold values for quantitative trait mapping. Genetics, 138, 963. 10.1093/genetics/138.3.963
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/genetics/138.3.963"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC1206241"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="7851788"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Genetics&amp;title=Empirical threshold values for quantitative trait mapping&amp;author=G. A. Churchill&amp;author=R. W. Doerge&amp;volume=138&amp;publication_year=1994&amp;pages=963&amp;pmid=7851788&amp;doi=10.1093/genetics/138.3.963&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0013"><mixed-citation id="tpg220548-cit-0013"><named-content content-type="citation-string">
+
+Collins, N. C.
+, 
+Paltridge, N. G.
+, 
+Ford, C. M.
+, &amp; 
+Symons, R. H.
+ (1996). The <italic>Yd2</italic> gene for <italic>barley yellow dwarf virus</italic> resistance maps close to the centromere on the long arm of barley chromosome 3. Theoretical Applied Genetics, 92, 858–864. 10.1007/BF00221898
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/BF00221898"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24166551"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Theoretical Applied Genetics&amp;title=The Yd2 gene for barley yellow dwarf virus resistance maps close to the centromere on the long arm of barley chromosome 3&amp;author=N. C. Collins&amp;author=N. G. Paltridge&amp;author=C. M. Ford&amp;author=R. H. Symons&amp;volume=92&amp;publication_year=1996&amp;pages=858-864&amp;pmid=24166551&amp;doi=10.1007/BF00221898&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0014"><mixed-citation id="tpg220548-cit-0014"><named-content content-type="citation-string">
+
+Cui, F.
+, 
+Fan, X.
+, 
+Chen, M.
+, 
+Zhang, N.
+, 
+Zhao, C.
+, 
+Zhang, W.
+, 
+Han, J.
+, 
+Ji, J.
+, 
+Zhao, X.
+, 
+Yang, L.
+, &amp; 
+Zhao, Z.
+ (2016). QTL detection for wheat kernel size and quality and the responses of these traits to low nitrogen stress. Theoretical Applied Genetics, 129, 469–484. 10.1007/s00122-015-2641-7
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00122-015-2641-7"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="26660466"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Theoretical Applied Genetics&amp;title=QTL detection for wheat kernel size and quality and the responses of these traits to low nitrogen stress&amp;author=F. Cui&amp;author=X. Fan&amp;author=M. Chen&amp;author=N. Zhang&amp;author=C. Zhao&amp;volume=129&amp;publication_year=2016&amp;pages=469-484&amp;pmid=26660466&amp;doi=10.1007/s00122-015-2641-7&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0015"><mixed-citation id="tpg220548-cit-0015"><named-content content-type="citation-string">
+
+Cui, F.
+, 
+Zhao, C.
+, 
+Ding, A.
+, 
+Li, J.
+, 
+Wang, L.
+, 
+Li, X.
+, 
+Bao, Y.
+, 
+Li, J.
+, &amp; 
+Wang, H.
+ (2014). Construction of an integrative linkage map and QTL mapping of grain yield‐related traits using three related wheat RIL populations. Theoretical Applied Genetics, 127, 659–675. 10.1007/s00122-013-2249-8
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00122-013-2249-8"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24326459"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Theoretical Applied Genetics&amp;title=Construction of an integrative linkage map and QTL mapping of grain yield‐related traits using three related wheat RIL populations&amp;author=F. Cui&amp;author=C. Zhao&amp;author=A. Ding&amp;author=J. Li&amp;author=L. Wang&amp;volume=127&amp;publication_year=2014&amp;pages=659-675&amp;pmid=24326459&amp;doi=10.1007/s00122-013-2249-8&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0073"><mixed-citation id="tpg220548-cit-0073"><named-content content-type="citation-string">
+
+Curtis, T.
+, &amp; 
+Halford, N. G.
+ (2014). Food security: The challenge of increasing wheat yield and the importance of not compromising food safety. Annals of Applied Biology, 164, 354–372.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/aab.12108"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4240735"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25540461"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Annals of Applied Biology&amp;title=Food security: The challenge of increasing wheat yield and the importance of not compromising food safety&amp;author=T. Curtis&amp;author=N. G. Halford&amp;volume=164&amp;publication_year=2014&amp;pages=354-372&amp;pmid=25540461&amp;doi=10.1111/aab.12108&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0016"><mixed-citation id="tpg220548-cit-0016"><named-content content-type="citation-string">
+
+d'Arcy, C. J.
+, &amp; 
+Domier, L. L.
+ (2005). Family Luteoviridae. In Fauquet C. M., Mayo M. A., Maniloff J., Desselberger U., &amp; Ball L. A. (Eds.), Virus taxonomy VIII (pp. 891–900). Elsevier.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Virus taxonomy VIII&amp;author=C. J. d'Arcy&amp;author=L. L. Domier&amp;publication_year=2005&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0017"><mixed-citation id="tpg220548-cit-0017"><named-content content-type="citation-string">
+
+Doerge, R. W.
+, &amp; 
+Churchill, G. A.
+ (1996). Permutation tests for multiple loci affecting a quantitative character. Genetics, 142, 285–294. 10.1093/genetics/142.1.285
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/genetics/142.1.285"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC1206957"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="8770605"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Genetics&amp;title=Permutation tests for multiple loci affecting a quantitative character&amp;author=R. W. Doerge&amp;author=G. A. Churchill&amp;volume=142&amp;publication_year=1996&amp;pages=285-294&amp;pmid=8770605&amp;doi=10.1093/genetics/142.1.285&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0018"><mixed-citation id="tpg220548-cit-0018"><named-content content-type="citation-string">
+
+Gao, T.
+, 
+Wang, Y.
+, 
+Liu, Y.
+, 
+Ma, M.
+, 
+Li, X.
+, 
+Zhang, D.
+, 
+Ding, K.
+, 
+Li, C.
+, 
+Zou, Y.
+, &amp; 
+Ma, F.
+ (2021). Overexpression of tyrosine decarboxylase (MdTYDC) enhances drought tolerance in <italic>Malus domestica</italic>
+. Scientia Horticulturae, 289, 110425. 10.1016/j.scienta.2021.110425
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.scienta.2021.110425"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Scientia Horticulturae&amp;title=Overexpression of tyrosine decarboxylase (MdTYDC) enhances drought tolerance in Malus domestica&amp;author=T. Gao&amp;author=Y. Wang&amp;author=Y. Liu&amp;author=M. Ma&amp;author=X. Li&amp;volume=289&amp;publication_year=2021&amp;pages=110425&amp;doi=10.1016/j.scienta.2021.110425&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0072"><mixed-citation id="tpg220548-cit-0072"><named-content content-type="citation-string">
+
+Gray, S. M.
+ (1996). Plant virus proteins involved in natural vector transmission. Trend in Microbiology, 4, 259–264.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/0966-842X(96)10040-8"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7133367"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="8829333"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Trend in Microbiology&amp;title=Plant virus proteins involved in natural vector transmission&amp;author=S. M. Gray&amp;volume=4&amp;publication_year=1996&amp;pages=259-264&amp;pmid=8829333&amp;doi=10.1016/0966-842X(96)10040-8&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0019"><mixed-citation id="tpg220548-cit-0019"><named-content content-type="citation-string">
+
+Gunupuru, L. R.
+, 
+Arunachalam, C.
+, 
+Malla, K. B.
+, 
+Kahla, A.
+, 
+Perochon, A.
+, 
+Jia, J.
+, 
+Thapa, G.
+, &amp; 
+Doohan, F. M.
+ (2018). A wheat cytochrome P450 enhances both resistance to deoxynivalenol and grain yield. PLoS One, 13(10), e0204992. 10.1371/journal.pone.0204992
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1371/journal.pone.0204992"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6185721"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30312356"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=PLoS One&amp;title=A wheat cytochrome P450 enhances both resistance to deoxynivalenol and grain yield&amp;author=L. R. Gunupuru&amp;author=C. Arunachalam&amp;author=K. B. Malla&amp;author=A. Kahla&amp;author=A. Perochon&amp;volume=13&amp;issue=10&amp;publication_year=2018&amp;pages=e0204992&amp;pmid=30312356&amp;doi=10.1371/journal.pone.0204992&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0020"><mixed-citation id="tpg220548-cit-0020"><named-content content-type="citation-string">
+
+Guo, X. J.
+, &amp; 
+Wang, J. R.
+ (2017). Global identification, structural analysis and expression characterization of bHLH transcription factors in wheat. BMC Plant Biology, 17, Article 90. 10.1186/s12870-017-1038-y
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s12870-017-1038-y"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC5450219"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28558686"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=BMC Plant Biology&amp;title=Global identification, structural analysis and expression characterization of bHLH transcription factors in wheat&amp;author=X. J. Guo&amp;author=J. R. Wang&amp;volume=17&amp;publication_year=2017&amp;pages=90&amp;pmid=28558686&amp;doi=10.1186/s12870-017-1038-y&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0021"><mixed-citation id="tpg220548-cit-0021"><named-content content-type="citation-string">
+
+Hu, H.
+, 
+Choudhury, S.
+, 
+Shabala, S.
+, 
+Gupta, S.
+, &amp; 
+Zhou, M.
+ (2019). Genomic regions on chromosome 5H containing a novel QTL conferring <italic>barley yellow dwarf virus</italic>‐PAV (BYDV‐PAV) tolerance in barley. Scientific Reports, 9, Article 11298. 10.1038/s41598-019-47820-2
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41598-019-47820-2"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6683297"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31383904"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Scientific Reports&amp;title=Genomic regions on chromosome 5H containing a novel QTL conferring barley yellow dwarf virus‐PAV (BYDV‐PAV) tolerance in barley&amp;author=H. Hu&amp;author=S. Choudhury&amp;author=S. Shabala&amp;author=S. Gupta&amp;author=M. Zhou&amp;volume=9&amp;publication_year=2019&amp;pages=11298&amp;pmid=31383904&amp;doi=10.1038/s41598-019-47820-2&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0022"><mixed-citation id="tpg220548-cit-0022"><named-content content-type="citation-string">
+
+Huang, W.
+, 
+He, Y.
+, 
+Yang, L.
+, 
+Lu, C.
+, 
+Zhu, Y.
+, 
+Sun, C.
+, 
+Ma, D.
+, &amp; 
+Yin, J.
+ (2021). Genome‐wide analysis of growth‐regulating factors (GRFs) in <italic>Triticum aestivum</italic>
+. PeerJ, 9, e10701. 10.7717/peerj.10701
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.7717/peerj.10701"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7821759"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33552727"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=PeerJ&amp;title=Genome‐wide analysis of growth‐regulating factors (GRFs) in Triticum aestivum&amp;author=W. Huang&amp;author=Y. He&amp;author=L. Yang&amp;author=C. Lu&amp;author=Y. Zhu&amp;volume=9&amp;publication_year=2021&amp;pages=e10701&amp;pmid=33552727&amp;doi=10.7717/peerj.10701&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0023"><mixed-citation id="tpg220548-cit-0023"><named-content content-type="citation-string">
+International Wheat Genome Sequencing Consortium (IWGSC)
+. (2018). Shifting the limits in wheat research and breeding using a fully annotated reference genome. Science, 361(6403), eaar7191. 10.1126/science.aar7191
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1126/science.aar7191"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30115783"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Science&amp;title=Shifting the limits in wheat research and breeding using a fully annotated reference genome&amp;volume=361&amp;issue=6403&amp;publication_year=2018&amp;pages=eaar7191&amp;pmid=30115783&amp;doi=10.1126/science.aar7191&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0024"><mixed-citation id="tpg220548-cit-0024"><named-content content-type="citation-string">
+
+Jarošová, J.
+, 
+Beoni, E.
+, &amp; 
+Kundu, J. K.
+ (2016). 
+<italic>Barley yellow dwarf virus</italic> resistance in cereals: Approaches, strategies and prospects. Field Crops Research, 198, 200–214. 10.1016/j.fcr.2016.08.030
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.fcr.2016.08.030"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Field Crops Research&amp;title=Barley yellow dwarf virus resistance in cereals: Approaches, strategies and prospects&amp;author=J. Jarošová&amp;author=E. Beoni&amp;author=J. K. Kundu&amp;volume=198&amp;publication_year=2016&amp;pages=200-214&amp;doi=10.1016/j.fcr.2016.08.030&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0025"><mixed-citation id="tpg220548-cit-0025"><named-content content-type="citation-string">
+
+Jordan, K. W.
+, 
+Wang, S.
+, 
+Lun, Y.
+, 
+Gardiner, L. J.
+, 
+MacLachlan, R.
+, 
+Hucl, P.
+, 
+Wiebe, K.
+, 
+Wong, D.
+, 
+Forrest, K. L.
+, &amp; 
+Sharpe, A. G.
+, IWGS Consortium
+. (2015). A haplotype map of allohexaploid wheat reveals distinct patterns of selection on homoeologous genomes. Genome Biology, 16, Article 48. 10.1186/s13059-015-0606-4
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s13059-015-0606-4"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4389885"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25886949"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Genome Biology&amp;title=A haplotype map of allohexaploid wheat reveals distinct patterns of selection on homoeologous genomes&amp;author=K. W. Jordan&amp;author=S. Wang&amp;author=Y. Lun&amp;author=L. J. Gardiner&amp;author=R. MacLachlan&amp;volume=16&amp;publication_year=2015&amp;pages=48&amp;pmid=25886949&amp;doi=10.1186/s13059-015-0606-4&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0026"><mixed-citation id="tpg220548-cit-0026"><named-content content-type="citation-string">
+
+Kong, L.
+, 
+Guo, H.
+, &amp; 
+Sun, M.
+ (2015). Signal transduction during wheat grain development. Planta, 241, 789–801. 10.1007/s00425-015-2260-1
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00425-015-2260-1"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25680351"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Planta&amp;title=Signal transduction during wheat grain development&amp;author=L. Kong&amp;author=H. Guo&amp;author=M. Sun&amp;volume=241&amp;publication_year=2015&amp;pages=789-801&amp;pmid=25680351&amp;doi=10.1007/s00425-015-2260-1&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0027"><mixed-citation id="tpg220548-cit-0027"><named-content content-type="citation-string">
+
+Larkin, P. J.
+, 
+Kleven, S.
+, &amp; 
+Banks, P. M.
+ (2002). Utilizing <italic>Bdv2</italic>, the <italic>Thinopyrum intermedium</italic> source of BYDV resistance, to develop wheat cultivars. In Henry M. &amp; McNab A. (Eds.), Recent advances and future strategies (pp. 60–63). CIMMYT.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="title=Recent advances and future strategies&amp;author=P. J. Larkin&amp;author=S. Kleven&amp;author=P. M. Banks&amp;publication_year=2002&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0028"><mixed-citation id="tpg220548-cit-0028"><named-content content-type="citation-string">
+
+Li, F.
+, 
+Wen, W.
+, 
+He, Z.
+, 
+Liu, J.
+, 
+Jin, H.
+, 
+Cao, S.
+, 
+Geng, H.
+, 
+Yan, J.
+, 
+Zhang, P.
+, 
+Wan, Y.
+, &amp; 
+Xia, X.
+ (2018). Genome‐wide linkage mapping of yield‐related traits in three Chinese bread wheat populations using high‐density SNP markers. Theoretical Applied Genetics, 131, 1903–1924. 10.1007/s00122-018-3122-6
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00122-018-3122-6"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29858949"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Theoretical Applied Genetics&amp;title=Genome‐wide linkage mapping of yield‐related traits in three Chinese bread wheat populations using high‐density SNP markers&amp;author=F. Li&amp;author=W. Wen&amp;author=Z. He&amp;author=J. Liu&amp;author=H. Jin&amp;volume=131&amp;publication_year=2018&amp;pages=1903-1924&amp;pmid=29858949&amp;doi=10.1007/s00122-018-3122-6&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0029"><mixed-citation id="tpg220548-cit-0029"><named-content content-type="citation-string">
+
+Li, G.
+, 
+Tang, J.
+, 
+Zheng, J.
+, &amp; 
+Chu, C.
+ (2021). Exploration of rice yield potential: Decoding agronomic and physiological traits. The Crop Journal, 9, 577–589. 10.1016/j.cj.2021.03.014
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.cj.2021.03.014"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=The Crop Journal&amp;title=Exploration of rice yield potential: Decoding agronomic and physiological traits&amp;author=G. Li&amp;author=J. Tang&amp;author=J. Zheng&amp;author=C. Chu&amp;volume=9&amp;publication_year=2021&amp;pages=577-589&amp;doi=10.1016/j.cj.2021.03.014&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0030"><mixed-citation id="tpg220548-cit-0030"><named-content content-type="citation-string">
+
+Li, Q.
+, 
+Zhang, Y.
+, 
+Liu, T.
+, 
+Wang, F.
+, 
+Liu, K.
+, 
+Chen, J.
+, &amp; 
+Tian, J.
+ (2015). Genetic analysis of kernel weight and kernel size in wheat (<italic>Triticum aestivum</italic> L.) using unconditional and conditional QTL mapping. Molecular Breeding, 35, 1–15. 10.1007/s11032-015-0202-z
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s11032-015-0202-z"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Breeding&amp;title=Genetic analysis of kernel weight and kernel size in wheat (Triticum aestivum L.) using unconditional and conditional QTL mapping&amp;author=Q. Li&amp;author=Y. Zhang&amp;author=T. Liu&amp;author=F. Wang&amp;author=K. Liu&amp;volume=35&amp;publication_year=2015&amp;pages=1-15&amp;doi=10.1007/s11032-015-0202-z&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0031"><mixed-citation id="tpg220548-cit-0031"><named-content content-type="citation-string">
+
+Li, S.
+, 
+Wang, L.
+, 
+Meng, Y.
+, 
+Hao, Y.
+, 
+Xu, H.
+, 
+Hao, M.
+, 
+Lan, S.
+, 
+Zhang, Y.
+, 
+Lv, L.
+, 
+Zhang, K.
+, &amp; 
+Peng, X.
+ (2021). Dissection of genetic basis underpinning kernel weight‐related traits in common wheat. Plants, 10(4), 713. 10.3390/plants10040713
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3390/plants10040713"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8103506"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33916985"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Plants&amp;title=Dissection of genetic basis underpinning kernel weight‐related traits in common wheat&amp;author=S. Li&amp;author=L. Wang&amp;author=Y. Meng&amp;author=Y. Hao&amp;author=H. Xu&amp;volume=10&amp;issue=4&amp;publication_year=2021&amp;pages=713&amp;pmid=33916985&amp;doi=10.3390/plants10040713&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0032"><mixed-citation id="tpg220548-cit-0032"><named-content content-type="citation-string">
+
+Li, Y.
+, &amp; 
+Wei, K.
+ (2020). Comparative functional genomics analysis of cytochrome P450 gene superfamily in wheat and maize. BMC Plant Biology, 20, Article 93.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s12870-020-2288-7"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7052972"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="32122306"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=BMC Plant Biology&amp;title=Comparative functional genomics analysis of cytochrome P450 gene superfamily in wheat and maize&amp;author=Y. Li&amp;author=K. Wei&amp;volume=20&amp;publication_year=2020&amp;pages=93&amp;pmid=32122306&amp;doi=10.1186/s12870-020-2288-7&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0033"><mixed-citation id="tpg220548-cit-0033"><named-content content-type="citation-string">
+
+Li, Y.
+, 
+Xiao, J.
+, 
+Chen, L.
+, 
+Huang, X.
+, 
+Cheng, Z.
+, 
+Han, B.
+, 
+Zhang, Q.
+, &amp; 
+Wu, C.
+ (2018). Rice functional genomics research: Past decade and future. Molecular Plant, 11, 359–380. 10.1016/j.molp.2018.01.007
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.molp.2018.01.007"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29409893"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Plant&amp;title=Rice functional genomics research: Past decade and future&amp;author=Y. Li&amp;author=J. Xiao&amp;author=L. Chen&amp;author=X. Huang&amp;author=Z. Cheng&amp;volume=11&amp;publication_year=2018&amp;pages=359-380&amp;pmid=29409893&amp;doi=10.1016/j.molp.2018.01.007&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0034"><mixed-citation id="tpg220548-cit-0034"><named-content content-type="citation-string">
+
+Liu, J.
+, 
+Fernie, A. R.
+, &amp; 
+Yan, J.
+ (2020). The past, present, and future of maize improvement: Domestication, genomics, and functional genomic routes toward crop enhancement. Plant Communications, 1, 100010. 10.1016/j.xplc.2019.100010
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.xplc.2019.100010"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7747985"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33404535"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Plant Communications&amp;title=The past, present, and future of maize improvement: Domestication, genomics, and functional genomic routes toward crop enhancement&amp;author=J. Liu&amp;author=A. R. Fernie&amp;author=J. Yan&amp;volume=1&amp;publication_year=2020&amp;pages=100010&amp;pmid=33404535&amp;doi=10.1016/j.xplc.2019.100010&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0035"><mixed-citation id="tpg220548-cit-0035"><named-content content-type="citation-string">
+
+Liu, Y. C.
+, 
+Wang, X. L.
+, 
+Hao, C. Y.
+, 
+Irshad, A.
+, 
+Tian, L. I.
+, 
+Liu, H. X.
+, 
+Jian, H. O.
+, &amp; 
+Zhang, X. Y.
+ (2023). 
+<italic>TaABI19</italic> positively regulates grain development in wheat. Journal of Integrative Agriculture, 22(1), 41–51. 10.1016/j.jia.2022.08.049
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.jia.2022.08.049"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Journal of Integrative Agriculture&amp;title=TaABI19 positively regulates grain development in wheat&amp;author=Y. C. Liu&amp;author=X. L. Wang&amp;author=C. Y. Hao&amp;author=A. Irshad&amp;author=L. I. Tian&amp;volume=22&amp;issue=1&amp;publication_year=2023&amp;pages=41-51&amp;doi=10.1016/j.jia.2022.08.049&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0036"><mixed-citation id="tpg220548-cit-0036"><named-content content-type="citation-string">
+
+Ma, J.
+, 
+Zhang, H.
+, 
+Li, S.
+, 
+Zou, Y.
+, 
+Li, T.
+, 
+Liu, J.
+, 
+Ding, P.
+, 
+Mu, Y.
+, 
+Tang, H.
+, 
+Deng, M.
+, &amp; 
+Liu, Y.
+ (2019). Identification of quantitative trait loci for kernel traits in a wheat cultivar Chuannong16. BMC Genetics, 20, Article 77. 10.1186/s12863-019-0782-4
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1186/s12863-019-0782-4"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6796374"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="31619163"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=BMC Genetics&amp;title=Identification of quantitative trait loci for kernel traits in a wheat cultivar Chuannong16&amp;author=J. Ma&amp;author=H. Zhang&amp;author=S. Li&amp;author=Y. Zou&amp;author=T. Li&amp;volume=20&amp;publication_year=2019&amp;pages=77&amp;pmid=31619163&amp;doi=10.1186/s12863-019-0782-4&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0074"><mixed-citation id="tpg220548-cit-0074"><named-content content-type="citation-string">
+
+Meng, L.
+, 
+Li, H.
+, 
+Zhang, L.
+, &amp; 
+Wang, J.
+ (2015). QTL IciMapping: Integrated software for genetic linkage map construction and quantitative trait locus mapping in biparental populations. Crop Journal, 3(3), 269–283.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Crop Journal&amp;title=QTL IciMapping: Integrated software for genetic linkage map construction and quantitative trait locus mapping in biparental populations&amp;author=L. Meng&amp;author=H. Li&amp;author=L. Zhang&amp;author=J. Wang&amp;volume=3&amp;issue=3&amp;publication_year=2015&amp;pages=269-283&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0037"><mixed-citation id="tpg220548-cit-0037"><named-content content-type="citation-string">
+
+Miller, W. A.
+, &amp; 
+Rasochová, L.
+ (1997). Barley yellow dwarf viruses. Annual Review of Phytopathology, 35, 167–190. 10.1146/annurev.phyto.35.1.167
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1146/annurev.phyto.35.1.167"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="15012520"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Annual Review of Phytopathology&amp;title=Barley yellow dwarf viruses&amp;author=W. A. Miller&amp;author=L. Rasochová&amp;volume=35&amp;publication_year=1997&amp;pages=167-190&amp;pmid=15012520&amp;doi=10.1146/annurev.phyto.35.1.167&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0038"><mixed-citation id="tpg220548-cit-0038"><named-content content-type="citation-string">
+
+Muroi, A.
+, 
+Ishihara, A.
+, 
+Tanaka, C.
+, 
+Ishizuka, A.
+, 
+Takabayashi, J.
+, 
+Miyoshi, H.
+, &amp; 
+Nishioka, T.
+ (2009). Accumulation of hydroxycinnamic acid amides induced by pathogen infection and identification of agmatine coumaroyltransferase in <italic>Arabidopsis thaliana</italic>
+. Planta, 230, 517–527. 10.1007/s00425-009-0960-0
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00425-009-0960-0"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19521717"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Planta&amp;title=Accumulation of hydroxycinnamic acid amides induced by pathogen infection and identification of agmatine coumaroyltransferase in Arabidopsis thaliana&amp;author=A. Muroi&amp;author=A. Ishihara&amp;author=C. Tanaka&amp;author=A. Ishizuka&amp;author=J. Takabayashi&amp;volume=230&amp;publication_year=2009&amp;pages=517-527&amp;pmid=19521717&amp;doi=10.1007/s00425-009-0960-0&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0039"><mixed-citation id="tpg220548-cit-0039"><named-content content-type="citation-string">
+
+Niks, R. E.
+, 
+Habekuß, A.
+, 
+Bekele, B.
+, &amp; 
+Ordon, F.
+ (2004). A novel major gene on chromosome 6H for resistance of barley against the <italic>barley yellow dwarf virus</italic>
+. Theoretical Applied Genetics, 109, 1536–1543. 10.1007/s00122-004-1777-7
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00122-004-1777-7"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="15338133"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Theoretical Applied Genetics&amp;title=A novel major gene on chromosome 6H for resistance of barley against the barley yellow dwarf virus&amp;author=R. E. Niks&amp;author=A. Habekuß&amp;author=B. Bekele&amp;author=F. Ordon&amp;volume=109&amp;publication_year=2004&amp;pages=1536-1543&amp;pmid=15338133&amp;doi=10.1007/s00122-004-1777-7&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0040"><mixed-citation id="tpg220548-cit-0040"><named-content content-type="citation-string">
+
+Nuruzzaman, M.
+, 
+Zhang, R.
+, 
+Cao, H. Z.
+, &amp; 
+Luo, Z. Y.
+ (2014). Plant pleiotropic drug resistance transporters: Transport mechanism, gene expression, and function. Journal of Integrative Plant Biology, 56, 729–740. 10.1111/jipb.12196
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/jipb.12196"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="24645852"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Journal of Integrative Plant Biology&amp;title=Plant pleiotropic drug resistance transporters: Transport mechanism, gene expression, and function&amp;author=M. Nuruzzaman&amp;author=R. Zhang&amp;author=H. Z. Cao&amp;author=Z. Y. Luo&amp;volume=56&amp;publication_year=2014&amp;pages=729-740&amp;pmid=24645852&amp;doi=10.1111/jipb.12196&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0041"><mixed-citation id="tpg220548-cit-0041"><named-content content-type="citation-string">
+
+Parry, H. R.
+, 
+MacFadyen, S.
+, &amp; 
+Kriticos, D. J.
+ (2012). The geographical distribution of yellow dwarf viruses and their aphid vectors in Australian grasslands and wheat. Australasian Plant Pathology, 41, 375–387. 10.1007/s13313-012-0133-7
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s13313-012-0133-7"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Australasian Plant Pathology&amp;title=The geographical distribution of yellow dwarf viruses and their aphid vectors in Australian grasslands and wheat&amp;author=H. R. Parry&amp;author=S. MacFadyen&amp;author=D. J. Kriticos&amp;volume=41&amp;publication_year=2012&amp;pages=375-387&amp;doi=10.1007/s13313-012-0133-7&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0042"><mixed-citation id="tpg220548-cit-0042"><named-content content-type="citation-string">
+
+Perry, K. L.
+, 
+Kolb, F. L.
+, 
+Sammons, B.
+, 
+Lawson, C.
+, 
+Cisar, G.
+, &amp; 
+Ohm, H.
+ (2000). Yield effects of <italic>barley yellow dwarf virus</italic> in soft red winter wheat. Phytopathology, 90, 1043–1048. 10.1094/PHYTO.2000.90.9.1043
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1094/PHYTO.2000.90.9.1043"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="18944532"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Phytopathology&amp;title=Yield effects of barley yellow dwarf virus in soft red winter wheat&amp;author=K. L. Perry&amp;author=F. L. Kolb&amp;author=B. Sammons&amp;author=C. Lawson&amp;author=G. Cisar&amp;volume=90&amp;publication_year=2000&amp;pages=1043-1048&amp;pmid=18944532&amp;doi=10.1094/PHYTO.2000.90.9.1043&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0043"><mixed-citation id="tpg220548-cit-0043"><named-content content-type="citation-string">
+
+Poland, J. A.
+, &amp; 
+Rife, T. W.
+ (2012). Genotyping‐by‐sequencing for plant breeding and genetics. The Plant Genome, 5, 92.</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=The Plant Genome&amp;title=Genotyping‐by‐sequencing for plant breeding and genetics&amp;author=J. A. Poland&amp;author=T. W. Rife&amp;volume=5&amp;publication_year=2012&amp;pages=92&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0045"><mixed-citation id="tpg220548-cit-0045"><named-content content-type="citation-string">
+
+Price, T.
+, &amp; 
+Schluter, D.
+ (1991). On the low heritability of life‐history traits. Evolution; International Journal of Organic Evolution, 45(4), 853–861. 10.2307/2409693
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.2307/2409693"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28564058"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Evolution; International Journal of Organic Evolution&amp;title=On the low heritability of life‐history traits&amp;author=T. Price&amp;author=D. Schluter&amp;volume=45&amp;issue=4&amp;publication_year=1991&amp;pages=853-861&amp;pmid=28564058&amp;doi=10.2307/2409693&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0046"><mixed-citation id="tpg220548-cit-0046"><named-content content-type="citation-string">
+
+Qu, X.
+, 
+Li, C.
+, 
+Liu, H.
+, 
+Liu, J.
+, 
+Luo, W.
+, 
+Xu, Q.
+, 
+Tang, H.
+, 
+Mu, Y.
+, 
+Deng, M.
+, 
+Pu, Z.
+, &amp; 
+Ma, J.
+ (2022). Quick mapping and characterization of a co‐located kernel length and thousand‐kernel weight‐related QTL in wheat. Theoretical Applied Genetics, 135, 2849–2860. 10.1007/s00122-022-04154-4
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00122-022-04154-4"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35804167"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Theoretical Applied Genetics&amp;title=Quick mapping and characterization of a co‐located kernel length and thousand‐kernel weight‐related QTL in wheat&amp;author=X. Qu&amp;author=C. Li&amp;author=H. Liu&amp;author=J. Liu&amp;author=W. Luo&amp;volume=135&amp;publication_year=2022&amp;pages=2849-2860&amp;pmid=35804167&amp;doi=10.1007/s00122-022-04154-4&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0047"><mixed-citation id="tpg220548-cit-0047"><named-content content-type="citation-string">
+
+Qu, X.
+, 
+Liu, J.
+, 
+Xie, X.
+, 
+Xu, Q.
+, 
+Tang, H.
+, 
+Mu, Y.
+, 
+Pu, Z.
+, 
+Li, Y.
+, 
+Ma, J.
+, 
+Gao, Y.
+, &amp; 
+Jiang, Q.
+ (2021). Genetic mapping and validation of loci for yield‐related traits in wheat (<italic>Triticum aestivum</italic> L.). Frontiers in Plant Science, 12, 667493. 10.3389/fpls.2021.667493
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fpls.2021.667493"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8215603"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34163507"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Frontiers in Plant Science&amp;title=Genetic mapping and validation of loci for yield‐related traits in wheat (Triticum aestivum L.)&amp;author=X. Qu&amp;author=J. Liu&amp;author=X. Xie&amp;author=Q. Xu&amp;author=H. Tang&amp;volume=12&amp;publication_year=2021&amp;pages=667493&amp;pmid=34163507&amp;doi=10.3389/fpls.2021.667493&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0048"><mixed-citation id="tpg220548-cit-0048"><named-content content-type="citation-string">
+
+Rasheed, A.
+, 
+Wen, W.
+, 
+Gao, F.
+, 
+Zhai, S.
+, 
+Jin, H.
+, 
+Liu, J.
+, 
+Guo, Q.
+, 
+Zhang, Y.
+, 
+Dreisigacker, S.
+, 
+Xia, X.
+, &amp; 
+He, Z.
+ (2016). Development and validation of KASP assays for genes underpinning key economic traits in bread wheat. Theoretical Applied Genetics, 129, 1843–1860. 10.1007/s00122-016-2743-x
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00122-016-2743-x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27306516"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Theoretical Applied Genetics&amp;title=Development and validation of KASP assays for genes underpinning key economic traits in bread wheat&amp;author=A. Rasheed&amp;author=W. Wen&amp;author=F. Gao&amp;author=S. Zhai&amp;author=H. Jin&amp;volume=129&amp;publication_year=2016&amp;pages=1843-1860&amp;pmid=27306516&amp;doi=10.1007/s00122-016-2743-x&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0049"><mixed-citation id="tpg220548-cit-0049"><named-content content-type="citation-string">
+
+Rasmusson, D. C.
+, &amp; 
+Schaller, C. W.
+ (1959). The inheritance of resistance in barley to the yellow‐dwarf virus. Agronomy Journal, 51, 661–664. 10.2134/agronj1959.00021962005100110009x
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.2134/agronj1959.00021962005100110009x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Agronomy Journal&amp;title=The inheritance of resistance in barley to the yellow‐dwarf virus&amp;author=D. C. Rasmusson&amp;author=C. W. Schaller&amp;volume=51&amp;publication_year=1959&amp;pages=661-664&amp;doi=10.2134/agronj1959.00021962005100110009x&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0050"><mixed-citation id="tpg220548-cit-0050"><named-content content-type="citation-string">
+
+Rawat, N.
+, 
+Joshi, A.
+, 
+Pumphrey, M.
+, 
+Singh, L.
+, 
+Mahlandt, A.
+, 
+Chhabra, B.
+, 
+Wilson, D.
+, 
+Gill, B.
+, 
+Poland, J.
+, &amp; 
+Tiwari, V.
+ (2019). A TILLING resource for hard red winter wheat variety Jagger. Crop Science, 59(4), 1666–1671. 10.2135/cropsci2019.01.0011
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.2135/cropsci2019.01.0011"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Crop Science&amp;title=A TILLING resource for hard red winter wheat variety Jagger&amp;author=N. Rawat&amp;author=A. Joshi&amp;author=M. Pumphrey&amp;author=L. Singh&amp;author=A. Mahlandt&amp;volume=59&amp;issue=4&amp;publication_year=2019&amp;pages=1666-1671&amp;doi=10.2135/cropsci2019.01.0011&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0051"><mixed-citation id="tpg220548-cit-0051"><named-content content-type="citation-string">
+
+Royer, T. A.
+, 
+Giles, K. L.
+, 
+Nyamanzi, T.
+, 
+Hunger, R. M.
+, 
+Krenzer, E. G.
+, 
+Elliott, N. C.
+, 
+Kindler, S. D.
+, &amp; 
+Payton, M.
+ (2005). Economic evaluation of the effects of planting date and application rate of imidacloprid for management of cereal aphids and barley yellow dwarf in winter wheat. Journal of Economic Entomology, 98(1), 95–102. 10.1093/jee/98.1.95
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/jee/98.1.95"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="15765670"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Journal of Economic Entomology&amp;title=Economic evaluation of the effects of planting date and application rate of imidacloprid for management of cereal aphids and barley yellow dwarf in winter wheat&amp;author=T. A. Royer&amp;author=K. L. Giles&amp;author=T. Nyamanzi&amp;author=R. M. Hunger&amp;author=E. G. Krenzer&amp;volume=98&amp;issue=1&amp;publication_year=2005&amp;pages=95-102&amp;pmid=15765670&amp;doi=10.1093/jee/98.1.95&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0052"><mixed-citation id="tpg220548-cit-0052"><named-content content-type="citation-string">
+
+Scholz, M.
+, 
+Ruge‐Wehling, B.
+, 
+Habekuß, A.
+, 
+Schrader, O.
+, 
+Pendinen, G.
+, 
+Fischer, K.
+, &amp; 
+Wehling, P.
+ (2009). 
+<italic>Ryd4Hb
+</italic>: A novel resistance gene introgressed from <italic>Hordeum bulbosum i</italic>nto barley and conferring complete and dominant resistance to the <italic>barley yellow dwarf virus</italic>
+. Theoretical Applied Genetics, 119, 837–849. 10.1007/s00122-009-1093-3
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00122-009-1093-3"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19585100"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Theoretical Applied Genetics&amp;title=Ryd4Hb : A novel resistance gene introgressed from Hordeum bulbosum into barley and conferring complete and dominant resistance to the barley yellow dwarf virus&amp;author=M. Scholz&amp;author=B. Ruge‐Wehling&amp;author=A. Habekuß&amp;author=O. Schrader&amp;author=G. Pendinen&amp;volume=119&amp;publication_year=2009&amp;pages=837-849&amp;pmid=19585100&amp;doi=10.1007/s00122-009-1093-3&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0053"><mixed-citation id="tpg220548-cit-0053"><named-content content-type="citation-string">
+
+Semagn, K.
+, 
+Babu, R.
+, 
+Hearne, S.
+, &amp; 
+Olsen, M.
+ (2014). Single nucleotide polymorphism genotyping using kompetitive allele specific PCR (KASP): Overview of the technology and its application in crop improvement. Molecular Breeding, 33, 1–14. 10.1007/s11032-013-9917-x
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s11032-013-9917-x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Molecular Breeding&amp;title=Single nucleotide polymorphism genotyping using kompetitive allele specific PCR (KASP): Overview of the technology and its application in crop improvement&amp;author=K. Semagn&amp;author=R. Babu&amp;author=S. Hearne&amp;author=M. Olsen&amp;volume=33&amp;publication_year=2014&amp;pages=1-14&amp;doi=10.1007/s11032-013-9917-x&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0054"><mixed-citation id="tpg220548-cit-0054"><named-content content-type="citation-string">
+
+Sharma, H.
+, 
+Ohm, H.
+, 
+Goulart, L.
+, 
+Lister, R.
+, 
+Appels, R.
+, &amp; 
+Benlhabib, O.
+ (1995). Introgression and characterization of <italic>barley yellow dwarf virus</italic> resistance from <italic>Thinopyrum intermedium</italic> into wheat. Genome, 38(2), 406–413. 10.1139/g95-052
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1139/g95-052"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="18470179"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Genome&amp;title=Introgression and characterization of barley yellow dwarf virus resistance from Thinopyrum intermedium into wheat&amp;author=H. Sharma&amp;author=H. Ohm&amp;author=L. Goulart&amp;author=R. Lister&amp;author=R. Appels&amp;volume=38&amp;issue=2&amp;publication_year=1995&amp;pages=406-413&amp;pmid=18470179&amp;doi=10.1139/g95-052&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0055"><mixed-citation id="tpg220548-cit-0055"><named-content content-type="citation-string">
+
+Shumayla, S. S.
+, 
+Pandey, A. K.
+, 
+Singh, K.
+, &amp; 
+Upadhyay, S. K.
+ (2016). Molecular characterization and global expression analysis of lectin receptor kinases in bread wheat (<italic>Triticum aestivum</italic>). PLoS One, 11(4), e0153925. 10.1371/journal.pone.0153925
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1371/journal.pone.0153925"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4844157"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27111449"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=PLoS One&amp;title=Molecular characterization and global expression analysis of lectin receptor kinases in bread wheat (Triticum aestivum)&amp;author=S. S. Shumayla&amp;author=A. K. Pandey&amp;author=K. Singh&amp;author=S. K. Upadhyay&amp;volume=11&amp;issue=4&amp;publication_year=2016&amp;pages=e0153925&amp;pmid=27111449&amp;doi=10.1371/journal.pone.0153925&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0056"><mixed-citation id="tpg220548-cit-0056"><named-content content-type="citation-string">
+
+Silva, P.
+, 
+Evers, B.
+, 
+Kieffaber, A.
+, 
+Wang, X.
+, 
+Brown, R.
+, 
+Gao, L.
+, 
+Fritz, A.
+, 
+Crain, J.
+, &amp; 
+Poland, J.
+ (2022). Applied phenomics and genomics for improving barley yellow dwarf resistance in winter wheat. G3 Genes|Genomes|Genetics, 12(7), jkac064. 10.1093/g3journal/jkac064
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/g3journal/jkac064"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC9258586"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35353191"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=G3 Genes|Genomes|Genetics&amp;title=Applied phenomics and genomics for improving barley yellow dwarf resistance in winter wheat&amp;author=P. Silva&amp;author=B. Evers&amp;author=A. Kieffaber&amp;author=X. Wang&amp;author=R. Brown&amp;volume=12&amp;issue=7&amp;publication_year=2022&amp;pages=jkac064&amp;pmid=35353191&amp;doi=10.1093/g3journal/jkac064&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0057"><mixed-citation id="tpg220548-cit-0057"><named-content content-type="citation-string">
+
+Singh, R. P.
+, 
+Burnett, P. A.
+, 
+Albarrán, M.
+, &amp; 
+Rajaram, S.
+ (1993). 
+<italic>Bdv1</italic>: A gene for tolerance to <italic>barley yellow dwarf virus</italic> in bread wheats. Crop Science, 33, 231–234. 10.2135/cropsci1993.0011183X003300020002x
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.2135/cropsci1993.0011183X003300020002x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Crop Science&amp;title=Bdv1: A gene for tolerance to barley yellow dwarf virus in bread wheats&amp;author=R. P. Singh&amp;author=P. A. Burnett&amp;author=M. Albarrán&amp;author=S. Rajaram&amp;volume=33&amp;publication_year=1993&amp;pages=231-234&amp;doi=10.2135/cropsci1993.0011183X003300020002x&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0058"><mixed-citation id="tpg220548-cit-0058"><named-content content-type="citation-string">
+
+Song, X. J.
+, 
+Huang, W.
+, 
+Shi, M.
+, 
+Zhu, M. Z.
+, &amp; 
+Lin, H. X.
+ (2007). A QTL for rice grain width and weight encodes a previously unknown RING‐type E3 ubiquitin ligase. Nature Genetics, 39, 623–630. 10.1038/ng2014
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/ng2014"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="17417637"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature Genetics&amp;title=A QTL for rice grain width and weight encodes a previously unknown RING‐type E3 ubiquitin ligase&amp;author=X. J. Song&amp;author=W. Huang&amp;author=M. Shi&amp;author=M. Z. Zhu&amp;author=H. X. Lin&amp;volume=39&amp;publication_year=2007&amp;pages=623-630&amp;pmid=17417637&amp;doi=10.1038/ng2014&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0059"><mixed-citation id="tpg220548-cit-0059"><named-content content-type="citation-string">
+
+Suneson, C. A.
+ (1955). Breeding for resistance to yellow dwarf virus in barley. Agronomy Journal, 47, 283–283. 10.2134/agronj1955.00021962004700060014x
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.2134/agronj1955.00021962004700060014x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Agronomy Journal&amp;title=Breeding for resistance to yellow dwarf virus in barley&amp;author=C. A. Suneson&amp;volume=47&amp;publication_year=1955&amp;pages=283-283&amp;doi=10.2134/agronj1955.00021962004700060014x&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0060"><mixed-citation id="tpg220548-cit-0060"><named-content content-type="citation-string">
+
+Uauy, C.
+ (2017). Wheat genomics comes of age. Current Opinion in Plant Biology, 36, 142–148. 10.1016/j.pbi.2017.01.007
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/j.pbi.2017.01.007"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="28346895"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Current Opinion in Plant Biology&amp;title=Wheat genomics comes of age&amp;author=C. Uauy&amp;volume=36&amp;publication_year=2017&amp;pages=142-148&amp;pmid=28346895&amp;doi=10.1016/j.pbi.2017.01.007&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0061"><mixed-citation id="tpg220548-cit-0061"><named-content content-type="citation-string">
+
+Varshney, V.
+, &amp; 
+Majee, M.
+ (2022). Emerging roles of the ubiquitin–proteasome pathway in enhancing crop yield by optimizing seed agronomic traits. Plant Cell Reports, 41, 1805–1826. 10.1007/s00299-022-02884-9
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1007/s00299-022-02884-9"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="35678849"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Plant Cell Reports&amp;title=Emerging roles of the ubiquitin–proteasome pathway in enhancing crop yield by optimizing seed agronomic traits&amp;author=V. Varshney&amp;author=M. Majee&amp;volume=41&amp;publication_year=2022&amp;pages=1805-1826&amp;pmid=35678849&amp;doi=10.1007/s00299-022-02884-9&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0062"><mixed-citation id="tpg220548-cit-0062"><named-content content-type="citation-string">
+
+Walkowiak, S.
+, 
+Gao, L.
+, 
+Monat, C.
+, 
+Haberer, G.
+, 
+Kassa, M. T.
+, 
+Brinton, J.
+, 
+Ramirez‐Gonzalez, R. H.
+, 
+Kolodziej, M. C.
+, 
+Delorean, E.
+, 
+Thambugala, D.
+, &amp; 
+Klymiuk, V.
+ (2020). Multiple wheat genomes reveal global variation in modern breeding. Nature, 588(7837), 277–283. 10.1038/s41586-020-2961-x
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41586-020-2961-x"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC7759465"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="33239791"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature&amp;title=Multiple wheat genomes reveal global variation in modern breeding&amp;author=S. Walkowiak&amp;author=L. Gao&amp;author=C. Monat&amp;author=G. Haberer&amp;author=M. T. Kassa&amp;volume=588&amp;issue=7837&amp;publication_year=2020&amp;pages=277-283&amp;pmid=33239791&amp;doi=10.1038/s41586-020-2961-x&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0063"><mixed-citation id="tpg220548-cit-0063"><named-content content-type="citation-string">
+
+Wang, J.
+ (2009). Inclusive composite interval mapping of quantitative trait genes. Acta Agronomica Sinica, 35(2), 239–245. 10.3724/SP.J.1006.2009.00239
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3724/SP.J.1006.2009.00239"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Acta Agronomica Sinica&amp;title=Inclusive composite interval mapping of quantitative trait genes&amp;author=J. Wang&amp;volume=35&amp;issue=2&amp;publication_year=2009&amp;pages=239-245&amp;doi=10.3724/SP.J.1006.2009.00239&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0064"><mixed-citation id="tpg220548-cit-0064"><named-content content-type="citation-string">
+
+Wang, S.
+, 
+Yan, X.
+, 
+Wang, Y.
+, 
+Liu, H.
+, 
+Cui, D.
+, &amp; 
+Chen, F.
+ (2016). Haplotypes of the <italic>TaGS5‐A1</italic> gene are associated with thousand‐kernel weight in Chinese bread wheat. Frontiers in Plant Science, 7, 783.
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.3389/fpls.2016.00783"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4891348"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="27375643"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Frontiers in Plant Science&amp;title=Haplotypes of the TaGS5‐A1 gene are associated with thousand‐kernel weight in Chinese bread wheat&amp;author=S. Wang&amp;author=X. Yan&amp;author=Y. Wang&amp;author=H. Liu&amp;author=D. Cui&amp;volume=7&amp;publication_year=2016&amp;pages=783&amp;pmid=27375643&amp;doi=10.3389/fpls.2016.00783&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0065"><mixed-citation id="tpg220548-cit-0065"><named-content content-type="citation-string">
+
+Wu, Q. H.
+, 
+Chen, Y. X.
+, 
+Zhou, S. H.
+, 
+Fu, L.
+, 
+Chen, J. J.
+, 
+Xiao, Y.
+, 
+Zhang, D.
+, 
+Ouyang, S. H.
+, 
+Zhao, X. J.
+, 
+Cui, Y.
+, &amp; 
+Zhang, D. Y.
+ (2015). High‐density genetic linkage map construction and QTL mapping of grain shape and size in the wheat population Yanda1817 × Beinong6. PLoS One, 10(2), e0118144. 10.1371/journal.pone.0118144
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1371/journal.pone.0118144"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC4326355"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="25675376"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=PLoS One&amp;title=High‐density genetic linkage map construction and QTL mapping of grain shape and size in the wheat population Yanda1817 × Beinong6&amp;author=Q. H. Wu&amp;author=Y. X. Chen&amp;author=S. H. Zhou&amp;author=L. Fu&amp;author=J. J. Chen&amp;volume=10&amp;issue=2&amp;publication_year=2015&amp;pages=e0118144&amp;pmid=25675376&amp;doi=10.1371/journal.pone.0118144&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0066"><mixed-citation id="tpg220548-cit-0066"><named-content content-type="citation-string">
+
+Xiao, W.
+, 
+Hu, S.
+, 
+Zou, X.
+, 
+Cai, R.
+, 
+Liao, R.
+, 
+Lin, X.
+, 
+Yao, R.
+, &amp; 
+Guo, X.
+ (2021). Lectin receptor‐like kinase LecRK‐VIII. 2 is a missing link in MAPK signaling‐mediated yield control. Plant Physiology, 187(1), 303–320. 10.1093/plphys/kiab241
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1093/plphys/kiab241"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC8418426"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="34618128"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Plant Physiology&amp;title=Lectin receptor‐like kinase LecRK‐VIII. 2 is a missing link in MAPK signaling‐mediated yield control&amp;author=W. Xiao&amp;author=S. Hu&amp;author=X. Zou&amp;author=R. Cai&amp;author=R. Liao&amp;volume=187&amp;issue=1&amp;publication_year=2021&amp;pages=303-320&amp;pmid=34618128&amp;doi=10.1093/plphys/kiab241&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0067"><mixed-citation id="tpg220548-cit-0067"><named-content content-type="citation-string">
+
+Yan, X.
+, 
+Zhao, L.
+, 
+Ren, Y.
+, 
+Dong, Z.
+, 
+Cui, D.
+, &amp; 
+Chen, F.
+ (2019). Genome‐wide association study revealed that the <italic>TaGW8</italic> gene was associated with kernel size in Chinese bread wheat. Scientific Reports, 9(1), Article 2702. 10.1038/s41598-019-38570-2
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41598-019-38570-2"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmcid" xlink:href="PMC6389898"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="30804359"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Scientific Reports&amp;title=Genome‐wide association study revealed that the TaGW8 gene was associated with kernel size in Chinese bread wheat&amp;author=X. Yan&amp;author=L. Zhao&amp;author=Y. Ren&amp;author=Z. Dong&amp;author=D. Cui&amp;volume=9&amp;issue=1&amp;publication_year=2019&amp;pages=2702&amp;pmid=30804359&amp;doi=10.1038/s41598-019-38570-2&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0068"><mixed-citation id="tpg220548-cit-0068"><named-content content-type="citation-string">
+
+Yu, M.
+, 
+Mao, S. L.
+, 
+Hou, D. B.
+, 
+Chen, G. Y.
+, 
+Pu, Z. E.
+, 
+Li, W.
+, 
+Lan, X. J.
+, 
+Jiang, Q. T.
+, 
+Liu, Y. X.
+, 
+Deng, M.
+, &amp; 
+Wei, Y. M.
+ (2018). Analysis of contributors to grain yield in wheat at the individual quantitative trait locus level. Plant Breeding, 137(1), 35–49. 10.1111/pbr.12555
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1111/pbr.12555"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Plant Breeding&amp;title=Analysis of contributors to grain yield in wheat at the individual quantitative trait locus level&amp;author=M. Yu&amp;author=S. L. Mao&amp;author=D. B. Hou&amp;author=G. Y. Chen&amp;author=Z. E. Pu&amp;volume=137&amp;issue=1&amp;publication_year=2018&amp;pages=35-49&amp;doi=10.1111/pbr.12555&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0069"><mixed-citation id="tpg220548-cit-0069"><named-content content-type="citation-string">
+
+Zhang, Z.
+, 
+Lin, Z.
+, &amp; 
+Xin, Z.
+ (2009). Research progress in BYDV resistance genes derived from wheat and its wild relatives. Journal of Genetics and Genomics, 36, 567–573. 10.1016/S1673-8527(08)60148-4
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1016/S1673-8527(08)60148-4"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="19782958"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Journal of Genetics and Genomics&amp;title=Research progress in BYDV resistance genes derived from wheat and its wild relatives&amp;author=Z. Zhang&amp;author=Z. Lin&amp;author=Z. Xin&amp;volume=36&amp;publication_year=2009&amp;pages=567-573&amp;pmid=19782958&amp;doi=10.1016/S1673-8527(08)60148-4&amp;"/></mixed-citation></ref><ref id="tpg220548-bib-0070"><mixed-citation id="tpg220548-cit-0070"><named-content content-type="citation-string">
+
+Zhao, G.
+, 
+Zou, C.
+, 
+Li, K.
+, 
+Wang, K.
+, 
+Li, T.
+, 
+Gao, L.
+, 
+Zhang, X.
+, 
+Wang, H.
+, 
+Yang, Z.
+, 
+Liu, X.
+, &amp; 
+Jiang, W.
+ (2017). The <italic>Aegilops tauschii</italic> genome reveals multiple impacts of transposons. Nature Plants, 3(12), 946–955. 10.1038/s41477-017-0067-8
+
+</named-content><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="doi" xlink:href="10.1038/s41477-017-0067-8"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="pmid" xlink:href="29158546"/><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="google-scholar" xlink:href="journal=Nature Plants&amp;title=The Aegilops tauschii genome reveals multiple impacts of transposons&amp;author=G. Zhao&amp;author=C. Zou&amp;author=K. Li&amp;author=K. Wang&amp;author=T. Li&amp;volume=3&amp;issue=12&amp;publication_year=2017&amp;pages=946-955&amp;pmid=29158546&amp;doi=10.1038/s41477-017-0067-8&amp;"/></mixed-citation></ref></ref-list></sec></sec><sec id="_ad93_" xml:lang="en" sec-type="associated-data" disp-level="1"><title>Associated Data</title><sec id="_adsm93_" xml:lang="en" sec-type="supplementary-materials" disp-level="2"><title>Supplementary Materials</title><supplementary-material id="db_ds_supplementary-material1_reqid_" position="float"/><supplementary-material id="db_ds_supplementary-material2_reqid_" position="float"><caption><p>Supplemental Material</p><p>The supplementary material is available in the online version. All data analyzed during this study were included in this article and its supplementary information files. The original GBS sequence data were available at <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://doi.org/10.5061/dryad.8sf7m0d0b" ext-link-type="uri">https://doi.org/10.5061/dryad.8sf7m0d0b</ext-link>.</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="TPG2-18-e20548-s001.docx" mimetype="application" mime-subtype="vnd.openxmlformats-officedocument.wordprocessingml.document"><?cloudpmc-path c13e/12806270/dbe27409998b/TPG2-18-e20548-s001.docx?><?cloudpmc-bucket app?><?size 2791058?></media></supplementary-material></sec></sec></body></article>

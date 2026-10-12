@@ -69,3 +69,21 @@ export interface CandidateGeneRecord {
   reference?: string
   doi?: string
 }
+
+/** A source publication behind one or more records, enriched from Crossref. */
+export interface PublicationRecord {
+  id: string
+  doi: string
+  title: string
+  authors: string
+  journal: string
+  year: string
+  type: string
+  publisher: string
+  citations: string
+  records: number | string
+  record_types: string
+  species: string
+  top_trait: string
+  url: string
+}
