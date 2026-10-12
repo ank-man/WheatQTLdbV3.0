@@ -131,6 +131,9 @@ export default function LinkageMapsPage() {
                   focusGroup={lg}
                   onFocusGroup={setLg}
                 />
+                {activeMap.reference && (
+                  <p className="mt-3 text-xs text-wheat-600">Source: {activeMap.reference}</p>
+                )}
               </div>
             )}
 
@@ -138,11 +141,16 @@ export default function LinkageMapsPage() {
               <label className="text-xs font-medium uppercase tracking-wider text-wheat-600">Map</label>
               <select className="input w-auto" value={active ?? ''}
                       onChange={(e) => { setSelected(e.target.value); setLg(null) }}>
-                {maps.data.map((m) => (
-                  <option key={m.map_id} value={m.map_id} disabled={!byMap.has(m.map_id)}>
-                    {m.name}{byMap.has(m.map_id) ? '' : ' (metadata only)'}
-                  </option>
-                ))}
+                <optgroup label="Maps with marker positions">
+                  {maps.data.filter((m) => byMap.has(m.map_id)).map((m) => (
+                    <option key={m.map_id} value={m.map_id}>{m.name}</option>
+                  ))}
+                </optgroup>
+                <optgroup label="Catalogue records (metadata only)">
+                  {maps.data.filter((m) => !byMap.has(m.map_id)).map((m) => (
+                    <option key={m.map_id} value={m.map_id} disabled>{m.name}</option>
+                  ))}
+                </optgroup>
               </select>
               <span className="text-xs text-wheat-500">
                 {stats.withLoci} of {stats.maps} maps have marker positions available to plot;

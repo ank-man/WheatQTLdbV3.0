@@ -6,14 +6,11 @@ GrainGenes is the curatorial home of Triticeae maps and lists 428 of them with
 the metadata that matters for choosing one: both parents, the number of mapped
 markers, the marker technology, the year, and which chromosomes it covers.
 
-What this does NOT do is download the marker-level data. Every data endpoint on
-graingenes.org - report.cgi, browse.cgi and the whole CMap installation under
-/cgi-bin/ - sits behind a Cloudflare challenge and returns 403 to a program.
-That is the site telling automated clients not to pull its data, and this script
-respects it: it reads the one page GrainGenes serves openly, and records the
-link so a reader reaches the full map record in a browser, where the challenge
-resolves normally. Marker positions in this database come from the open-access
-literature instead (see extract_wheat_maps.py).
+This script only reads the public catalogue; GrainGenes' CMap data endpoint
+returns a browser challenge to command-line requests. Marker positions for its
+Wheat_2014_90KSNP record are imported separately from the open-access source
+paper's Table S13 by build_linkage_maps.py. Other catalogue rows retain links
+to their GrainGenes records until a verifiable position table is available.
 
 Writes out/graingenes_maps.csv
 

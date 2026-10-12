@@ -30,6 +30,10 @@ from build_publications import fetch_crossref, meta_from  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "scripts", "mine", "out", "wheat_genetic_maps.csv")
 GG = os.path.join(ROOT, "scripts", "mine", "out", "graingenes_maps.csv")
+# Wang et al. 2014 Table S13, CC BY; line endings normalized after download.
+# Source: https://pmc-oa-opendata.s3.amazonaws.com/PMC4265271.1/pbi0012-0787-SD23.csv
+# Original MD5: c2b6a62f1445ac9da151a9b75725e9f9
+GG_90K = os.path.join(ROOT, "scripts", "mine", "out", "wheat_2014_90k_s13.csv")
 DATA = os.path.join(ROOT, "public", "data")
 csv.field_size_limit(10_000_000)
 
@@ -142,6 +146,46 @@ def citation(p) -> str:
     return f"{lead}{etal}{year} {p['title']}.{journal}".strip()
 
 
+def graingenes_90k_loci(map_id: str):
+    """Import Wang et al. 2014 Table S13, the source of GrainGenes' 90K map.
+
+    The source has two cM columns. Its rescaled distance is the published
+    consensus map distance; the unscaled values exceed 700 cM on some groups.
+    GrainGenes calls the chromosome 2D group `2Dx`; the viewer uses `2D`.
+    """
+    if not os.path.exists(GG_90K):
+        raise FileNotFoundError(f"missing GrainGenes 90K source table: {GG_90K}")
+    rows = []
+    with open(GG_90K, newline="", encoding="utf-8-sig") as f:
+        reader = csv.reader(f)
+        next(reader)  # Table S13 caption
+        header = next(reader)
+        if header[1:5] != ["SNP id", "SNP Name", "Chr.", "cM"] or \
+                header[7].strip() != "Rescaled distance, cM":
+            raise ValueError(f"unexpected 90K map columns: {header}")
+        for row in reader:
+            if len(row) != 8:
+                raise ValueError(f"invalid 90K map row: {row}")
+            lg = "2D" if row[3] == "2Dx" else normalise_lg(row[3])
+            if not lg or not row[1].strip():
+                raise ValueError(f"invalid 90K map locus: {row}")
+            cm = float(row[7])
+            if cm < 0 or cm > 400:
+                raise ValueError(f"invalid 90K map position: {row}")
+            rows.append({"map_id": map_id, "marker": row[1].strip(),
+                         "linkage_group": lg, "position_cm": f"{cm:.4f}",
+                         "marker_type": "SNP array", "bp": ""})
+    if len(rows) != 40267 or len({r["marker"] for r in rows}) != len(rows):
+        raise ValueError(f"90K map should have 40,267 unique marker IDs; found {len(rows)}")
+    by_lg = defaultdict(list)
+    for row in rows:
+        by_lg[row["linkage_group"]].append(float(row["position_cm"]))
+    if len(by_lg) != 21:
+        raise ValueError(f"90K map should cover 21 linkage groups; found {len(by_lg)}")
+    span = sum(max(pos) - min(pos) for pos in by_lg.values())
+    return rows, f"{span:.1f}"
+
+
 def main():
     if not os.path.exists(SRC):
         raise SystemExit(f"missing {SRC} - run scripts/mine/extract_wheat_maps.py first")
@@ -221,13 +265,9 @@ def main():
                               "linkage_group": l["lg"], "position_cm": f"{l['cm']:.2f}",
                               "marker_type": marker_class(l["marker"]), "bp": l["bp"]})
 
-    # GrainGenes' own catalogue, as a registry: it is the curatorial home of
-    # Triticeae maps and lists far more of them (165 wheat maps, 1.6 M mapped
-    # markers) than the open-access literature yields marker positions for.
-    # Its data endpoints answer a program with 403, so these rows carry the
-    # metadata GrainGenes publishes openly plus a link to the full record -
-    # a reader following it gets the marker list in a browser. The viewer is
-    # available for the literature maps, where positions are actually in hand.
+    # GrainGenes' catalogue includes maps whose own data endpoints require a
+    # browser challenge. The 2014 90K map is also published as Wang et al.
+    # Table S13, which gives us marker order and positions for that record.
     gg_count = 0
     if os.path.exists(GG):
         with open(GG, encoding="utf-8") as f:
@@ -250,6 +290,19 @@ def main():
                     "doi": "",
                     "url": g["url"],
                 })
+                if g["map_name"] == "Wheat_2014_90KSNP":
+                    gg_loci, gg_span = graingenes_90k_loci(maps[-1]["map_id"])
+                    if gg_loci:
+                        loci_rows.extend(gg_loci)
+                        maps[-1]["n_loci"] = len(gg_loci)
+                        maps[-1]["n_linkage_groups"] = 21
+                        maps[-1]["length_cm"] = gg_span
+                        maps[-1]["reference"] = (
+                            "Wang S et al. (2014) Characterization of polyploid wheat "
+                            "genomic diversity using a high-density 90 000 single "
+                            "nucleotide polymorphism array. Plant Biotechnology Journal "
+                            "12:787–796. Table S13. DOI: 10.1111/pbi.12183."
+                        )
 
     for m in maps:
         m.setdefault("url", f"https://doi.org/{m['doi']}" if m.get("doi") else "")
@@ -267,8 +320,9 @@ def main():
         w.writeheader()
         w.writerows(loci_rows)
 
+    viewable = len({r["map_id"] for r in loci_rows})
     print(f"maps      : {len(maps)}  "
-          f"({len(maps) - gg_count} with marker positions, {gg_count} GrainGenes registry)")
+          f"({viewable} with marker positions, {gg_count} GrainGenes registry)")
     print(f"loci      : {len(loci_rows)}")
     print(f"dropped   : {dropped_lg} loci with a non-wheat linkage group")
     for doi, t in skipped_species:

@@ -38,6 +38,7 @@ scripts/mine/out/*
 !scripts/mine/out/wheat_genetic_maps.csv
 !scripts/mine/out/wheat_consensus_maps.csv
 !scripts/mine/out/wheat_cm_bp_anchors.csv
+!scripts/mine/out/wheat_2014_90k_s13.csv
 
 # Regenerable mining artefacts: rebuilt by scripts/mine/harvest_map_tables.py
 scripts/mine/out/wheat_map_tables.jsonl

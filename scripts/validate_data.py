@@ -142,6 +142,10 @@ def main():
         lying = [m["map_id"] for m in maps
                  if m["source"].startswith("Literature") and counts[m["map_id"]] == 0]
         check("every literature map ships its loci", not lying, f"{len(lying)} empty")
+        mismatched = [m["map_id"] for m in maps if counts[m["map_id"]]
+                      and int(m["n_loci"] or 0) != counts[m["map_id"]]]
+        check("viewable map locus counts match", not mismatched,
+              f"{len(mismatched)} mismatched")
 
     print("\nreferences")
     if qtl and pubs:
