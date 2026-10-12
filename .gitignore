@@ -33,7 +33,11 @@ __pycache__/
 # mining / enrichment caches (regenerable, large)
 scripts/.crossref_cache/
 scripts/mine/.cache/
-scripts/mine/out/
+scripts/mine/out/*
+!scripts/mine/out/graingenes_maps.csv
+!scripts/mine/out/wheat_genetic_maps.csv
+!scripts/mine/out/wheat_consensus_maps.csv
+!scripts/mine/out/wheat_cm_bp_anchors.csv
 
 # Regenerable mining artefacts: rebuilt by scripts/mine/harvest_map_tables.py
 scripts/mine/out/wheat_map_tables.jsonl

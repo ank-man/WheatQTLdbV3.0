@@ -1,0 +1,166 @@
+map_name,species,year,parent1,parent2,n_markers,map_type,linkage_groups,url
+Wheat-2019-KASP_YldQTL,Triticum aestivum,2019,Zhongmai 871,Zhongmai 895,36,"Yield QTL, KASP","1A, 2B, 3A, 5A",https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2019-KASP_YldQTL
+Wheat-Yr82-2019,Triticum aestivum,2019,AUS 27969,Avocet,12,"Yr82, KASP",3BL,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_Yr82_2019
+Wheat-Yr81-2019,Triticum aestivum,2019,Aus27430,Avocet 'S',10,"Yr81 (YrAW5), KASP, SSR",6A,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_Yr81_2019
+Wheat-Yr80-2019,Triticum aestivum,2019,Aus27284,Avocet 'S',39,"Yr80 (YrAW11), KASP, SSR with synonyms",3B,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_Yr80_2019
+Wheat-Yr79-2018,Triticum aestivum,2018,PI 182103,Avocet 'S',263,"Yr79, QTL, KASP, SSR and SNPs with synonyms","2AS, 3AL, 4DS, 5BL, 7BL",https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_Yr79_2018
+Wheat-2018-NAM1-Berkut-x-DharwarDry,Triticum aestivum,2018,Berkut,DharwarDry,47104,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM1-Berkut-x-DharwarDry
+Wheat-2018-NAM10-Berkut-x-PI9791,Triticum aestivum,2018,Berkut,PI9791,39974,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM10-Berkut-x-PI9791
+Wheat-2018-NAM11-Berkut-x-CItr4175,Triticum aestivum,2018,Berkut,CItr4175,59064,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM11-Berkut-x-CItr4175
+Wheat-2018-NAM12-Berkut-x-CItr11223,Triticum aestivum,2018,Berkut,CItr11223,54569,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM12-Berkut-x-CItr11223
+Wheat-2018-NAM13-Berkut-x-PI262611,Triticum aestivum,2018,Berkut,PI262611,62102,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM13-Berkut-x-PI262611
+Wheat-2018-NAM14-Berkut-x-PI70613,Triticum aestivum,2018,Berkut,PI70613,38348,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM14-Berkut-x-PI70613
+Wheat-2018-NAM15-Berkut-x-CItr7635,Triticum aestivum,2018,Berkut,CItr7635,45760,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM15-Berkut-x-CItr7635
+Wheat-2018-NAM16-Berkut-x-PI8813,Triticum aestivum,2018,Berkut,PI8813,35946,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM16-Berkut-x-PI8813
+Wheat-2018-NAM17-Berkut-x-PI82469,Triticum aestivum,2018,Berkut,PI82469,47668,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM17-Berkut-x-PI82469
+Wheat-2018-NAM18-Berkut-x-CItr15144,Triticum aestivum,2018,Berkut,CItr15144,26008,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM18-Berkut-x-CItr15144
+Wheat-2018-NAM19-Berkut-x-PI43355,Triticum aestivum,2018,Berkut,PI43355,54078,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM19-Berkut-x-PI43355
+Wheat-2018-NAM2-Berkut-x-PI572692,Triticum aestivum,2018,Berkut,PI572692,56059,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM2-Berkut-x-PI572692
+Wheat-2018-NAM20-Berkut-x-PI94567,Triticum aestivum,2018,Berkut,PI94567,27317,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM20-Berkut-x-PI94567
+Wheat-2018-NAM23-Berkut-x-PI192001,Triticum aestivum,2018,Berkut,PI192001,49681,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM23-Berkut-x-PI192001
+Wheat-2018-NAM24-Berkut-x-PI192147,Triticum aestivum,2018,Berkut,PI192147,62030,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM24-Berkut-x-PI192147
+Wheat-2018-NAM25-Berkut-x-CItr15134,Triticum aestivum,2018,Berkut,CItr15134,41375,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM25-Berkut-x-CItr15134
+Wheat-2018-NAM26-Berkut-x-PI185715,Triticum aestivum,2018,Berkut,PI185715,51695,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM26-Berkut-x-PI185715
+Wheat-2018-NAM27-Berkut-x-PI192569,Triticum aestivum,2018,Berkut,PI192569,43931,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM27-Berkut-x-PI192569
+Wheat-2018-NAM28-Berkut-x-PI210945,Triticum aestivum,2018,Berkut,PI210945,47984,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM28-Berkut-x-PI210945
+Wheat-2018-NAM29-Berkut-x-PI220431,Triticum aestivum,2018,Berkut,PI220431,44053,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM29-Berkut-x-PI220431
+Wheat-2018-NAM3-Berkut-x-PI283147,Triticum aestivum,2018,Berkut,PI283147,50021,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM3-Berkut-x-PI283147
+Wheat-2018-NAM30-Berkut-x-PI278297,Triticum aestivum,2018,Berkut,PI278297,44562,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM30-Berkut-x-PI278297
+Wheat-2018-NAM4-Berkut-x-PI366716,Triticum aestivum,2018,Berkut,PI366716,58015,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM4-Berkut-x-PI366716
+Wheat-2018-NAM5-Berkut-x-PI382150,Triticum aestivum,2018,Berkut,PI382150,61578,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM5-Berkut-x-PI382150
+Wheat-2018-NAM6-Berkut-x-PI470817,Triticum aestivum,2018,Berkut,PI470817,59355,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM6-Berkut-x-PI470817
+Wheat-2018-NAM7-Berkut-x-PI565213,Triticum aestivum,2018,Berkut,PI565213,29692,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM7-Berkut-x-PI565213
+Wheat-2018-NAM8-Berkut-x-PBW343,Triticum aestivum,2018,Berkut,PBW343,46178,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM8-Berkut-x-PBW343
+Wheat-2018-NAM9-Berkut-x-Vida,Triticum aestivum,2018,Berkut,Vida,54120,"NAM tags, SNP",1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2018-NAM9-Berkut-x-Vida
+"Wheat, CM28xCM28TP, Pis1 QTL",Triticum aestivum,2017,Chaunmai 28,CM28TP,124,"Pis1 QTL, SNPs, tagged genes",2DL,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+CM28xCM28TP,+Pis1+QTL"
+"Wheat, Finch x Eltan",Triticum aestivum,2017,Finch,Eltan,663,"SNP, SSR, QTL","1A-7B,1D","https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Finch+x+Eltan"
+"Wheat, NSGC Yr",Triticum aestivum,2017,GWAS,,54,"Yr QTL, SNP, SSR",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+NSGC+Yr"
+"Wheat, WH542 x Synthetic",Triticum aestivum,2017,WH542,Syntetic,74,"QTL, SSR","1A-5A,7A,2B,5B,7B","https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+WH542+x+Synthetic"
+Wheat_2017_LRC,Triticum aestivum,2017,Landrace Consensus,,2406,"SNP, SSR",1A-7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_2017_LRC
+"Wheat, PI 374670 x LMPG-6",Triticum aestivum,2015,PI 374670,LMPG-6,5,"Sr QTL, SNP",2D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+PI+374670+x+LMPG-6"
+"Wheat, Yr genes and QTL",Triticum aestivum,2015,GWAS,,53471,"Genes, QTL, SSR, DArT, SNP",1A-7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Yr+genes+and+QTL"
+Wheat_Consensus_2014_Ug99_Rust,Triticum aestivum,2014,Consensus,,1106,"SNP, SSR, DArT, Genes",1A-7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_Consensus_2014_Ug99_Rust
+Wheat-2014-Consensus-Ug99-Update,Triticum aestivum,2014,Consensus,,1106,"SNP, SSR, DArT, Genes",1A-7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat-2014-Consensus-Ug99-Update
+Wheat_2014_90KSNP,Triticum aestivum,2014,Consensus,,40267,SNP,1A-7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_2014_90KSNP
+Wheat_2014_i9K_Ug99_PIxLMPG,Triticum aestivum,2014,LMPG-6,PI 626573,2847,SNP,1A-7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_2014_i9K_Ug99_PIxLMPG
+Wheat_2014_SSR_Ug99_PIxLMPG,Triticum aestivum,2014,LMPG-6,PI 626573,12,"SSR, Genes",2B,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_2014_SSR_Ug99_PIxLMPG
+"Wheat, 2013 9K Consensus",Triticum aestivum,2013,Consensus,,7140,SNP,1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+2013+9K+Consensus"
+"Wheat, SynOpDH GBS 2013",Triticum aestivum,2013,Altar84/Ae. squarrosa,Opata M 85,400,"SNP, DArT, SSR",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+SynOpDH+GBS+2013"
+"Wheat, 2013, Brittle culm",Triticum aestivum,2013,Triticum boeoticum pau5088,Triticum monococcum pau14087,4,"brc5, SSR",5A,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;;name=Wheat,+2013,+Brittle+culm"
+"Wheat, 2012, Brittle culm",Triticum aestivum,2012,Triticum boeoticum pau5088,Triticum monococcum pau14087,12,"brc genes, SSR","1A, 3A, 6A","https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;;name=Wheat,+2012,+Brittle+culm"
+"Wheat, Klein Proteo x Klein Chaja",Triticum aestivum,2012,Klein Proteo,Klein Chaha,2805,"SSR, SNP",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Klein+Proteo+x+Klein+Chaja"
+"Wheat, Avalon x Cadenza",Triticum aestivum,2011,Avalon,Cadenza,1023,SNP,1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Avalon+x+Cadenza"
+"Wheat, UC1110 x PI610750",Triticum aestivum,2011,UC1110,PI610750,1493,"QTL, SSR, DArT",1A-7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+UC1110+x+PI610750"
+"Wheat, Xiaoyan 54 x Jing 411_6A",Triticum aestivum,2011,Xiaoyan 54,Jing 411,11,"SSR, Genes",6A,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Xiaoyan+54+x+Jing+411_6A"
+"Wheat, Cadmium 5B, 2010",Triticum aestivum,2010,W9262-260D3,Kofa,12,"Cdu Gene, SSR, SSCP",5B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Cadmium+5B,+2010"
+"Wheat, Branched spike gene, 2009",Triticum aestivum,2009,"Ra1, Ruc163-1-02","Ruc167-1-02, D40 (rye)",17,"mrs1(bh-D1) Gene, SSR, RFLP",2D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Branched+spike+gene,+2009"
+"Wheat, Conan x Reeder",Triticum aestivum,2009,Conan,Reeder,432,"SSR, DArT, Genes",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Conan+x+Reeder"
+"Wheat, Louise x Penawawa",Triticum aestivum,2009,Louise,Penawawa,243,SSR,1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Louise+x+Penawawa"
+"Wheat, P91193D1 x P92201D5",Triticum aestivum,2009,P91193D1,P92201D5,291,"DArT, SSR",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+P91193D1+x+P92201D5"
+"Wheat, USG3209 x Jaypee",Triticum aestivum,2009,USG3209,Jaypee,261,"SSR, DArT",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+USG3209+x+Jaypee"
+3B Physical,Triticum aestivum,2008,13 populations,,849,"SSR, STS, DArT",3B,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=3B+Physical
+"Wheat, Nanda2419 x Wangshuibai",Triticum aestivum,2008,Nanda2419,Wangshuibai,887,"SSR, STS",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Nanda2419+x+Wangshuibai"
+"Wheat 2008, Coda x Brundage, C gene",Triticum aestivum,2008,Coda,Brundage,5,"C gene, SSRs",2D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat+2008,+Coda+x+Brundage,+C+gene"
+"Wheat 2008, Corrigin x CS(T2D), C gene",Triticum aestivum,2008,Corrigin,CS T2D,29,"C gene, SSRs",2D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat+2008,+Corrigin+x+CS(T2D),+C+gene"
+"Wheat, 2008, B Tolerance",Triticum aestivum,2008,"Cranbrook, Halberd","Lingzhi, Yalloroi",5,"Bo Gene, SSR, RFLP",7BL,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+2008,+B+Tolerance"
+"Wheat, CIMMYT Integrated",Triticum aestivum,2007,"Composite, 12 mapping studies",,821,"DArT, SSR, AFLP",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+CIMMYT+Integrated"
+"Wheat, 2006, purple grain",Triticum aestivum,2006,"Purple K-4926, Purple Feed K-49990","Novosibirskaya 67, Saratovskaya 29",31,"Pp Genes, SSR","2A, 7B","https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+2006,+purple+grain"
+"Wheat, Chinese Spring x SQ1",Triticum aestivum,2005,Chinese Spring,SQ1,640,"SSR, RFLP, AFLP",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Chinese+Spring+x+SQ1"
+"Wheat, Grandin x BR34",Triticum aestivum,2005,Grandin,BR34,368,"SSR, TRAP",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Grandin+x+BR34"
+"Wheat, Composite, 2004",Triticum aestivum,2004,"Composite, 11 mapping studies",,3741,"RFLP, SSR, AFLP, Genes",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Composite,+2004"
+"Wheat, Consensus SSR, 2004",Triticum aestivum,2004,8 - data from 4 mapping studies,,1249,"SSR, Genes",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Consensus+SSR,+2004"
+"Wheat, Courtot x Chinese Spring, GPW",Triticum aestivum,2004,Courtot,Chinese Spring,680,"SSR, RFLP",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Courtot+x+Chinese+Spring,+GPW"
+"Wheat, Physical, R Genes",Triticum aestivum,2004,Chinese Spring Deletion Lines,,309,"ESTs, STS",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Physical,+R+Genes"
+"Wheat, Physical, SSR",Triticum aestivum,2004,Chinese Spring Deletion Lines,,774,SSR,1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Physical,+SSR"
+"Wheat, Synthetic x Opata, GPW",Triticum aestivum,2004,Altar84/Ae. squarrosa,Opata M 85,2400,"RFLP, SSR",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Synthetic+x+Opata,+GPW"
+"Wheat, Arina x Forno",Triticum aestivum,2003,Forno,Arina,401,"SSR, RFLP",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Arina+x+Forno"
+"Wheat, FHB QTL, Physical",Triticum aestivum,2003,Chinese Spring Deletion Lines,,11,"QTL, SSR",3B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+FHB+QTL,+Physical"
+"Wheat, NxB, FHB QTL",Triticum aestivum,2003,ND2603,BUTTE 86,9,"QTL, SSR",3B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+NxB,+FHB+QTL"
+"Wheat, NxC, FHB QTL",Triticum aestivum,2003,Ning 7840,CLARK,17,"QTL, AFLP, STS",3B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+NxC,+FHB+QTL"
+"Wheat, Physical, EST",Triticum aestivum,2003,Chinese Spring Deletion Lines,,6963,ESTs,1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Physical,+EST"
+"Wheat, SxS, FHB QTL, 2003",Triticum aestivum,2003,Sumai 3,STOA,16,"QTL, SSR, RFLP",3B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+SxS,+FHB+QTL,+2003"
+"Wheat, Synthetic x Opata, BARC",Triticum aestivum,2003,Altar84/Ae. squarrosa,Opata M 85,1410,"SSR, RFLP",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Synthetic+x+Opata,+BARC"
+"Wheat, TA4152-4 x Karl92",Triticum aestivum,2003,TA4152-4,Karl92,151,"QTL, SSR","2D, 3B, 3D, 5D, 7D","https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+TA4152-4+x+Karl92"
+"Wheat, WxH, KBunt QTL",Triticum aestivum,2003,WL711,HD29,7,"QTL, SSR",4BL,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+WxH,+KBunt+QTL"
+"Wheat, WxM, FHB QTL",Triticum aestivum,2003,WUHAN #1,MARINGA,68,"QTL, SSR","2D, 3B, 4B, 5A","https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+WxM,+FHB+QTL"
+"5A, DS 5AIran",Triticum aestivum,2002,Chinese Spring Monotelosomic 5AL,DS 5AIran,10,RFLP,5A,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=5A,+DS+5AIran"
+"5AL, CS x CS-TDIC DS5A",Triticum aestivum,2002,CS-TDIC DS5A,Chinese Spring,25,"Gene, RFLP, Breakpoints",5AL,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=5AL,+CS+x+CS-TDIC+DS5A"
+"Wheat, 2002, coleoptile color",Triticum aestivum,2002,"Synthetic, Opata","TRI15010, TRI12732",28,"Rc genes, SSR",7A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+2002,+coleoptile+color"
+"Wheat, Synthetic x Opata, SSR 2",Triticum aestivum,2002,Altar84/Ae. squarrosa,Opata M 85,312,"RFLP, SSR",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Synthetic+x+Opata,+SSR+2"
+"2DL, Augusta x Geneva",Triticum aestivum,2000,Augusta,Geneva,5,"QTL, RFLP",2DL,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=2DL,+Augusta+x+Geneva"
+"5A, DS 5AEurope",Triticum aestivum,2000,Chinese Spring Monotelosomic 5AL,DS 5AEurope,7,"Genes, RFLP",5A,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=5A,+DS+5AEurope"
+"5BL, CS, 0.75-0.79 interval",Triticum aestivum,2000,Chinese Spring- T.dicoccoides 5B TDIC (5B CS),Chinese Spring,42,"Genes, SSR, RFLP,",5BL,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=5BL,+CS,+0.75-0.79+interval"
+"T1BL-1RS, Helios x Helami-105",Triticum aestivum,2000,Helios,Helami-105,8,"Genes, AFLP, RFLP",T1BL-1RS,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T1BL-1RS,+Helios+x+Helami-105"
+"Wheat, Physical, Group 5",Triticum aestivum,2000,Chinese Spring,,95,"Breakpoints, RFLP",5A - 5D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Physical,+Group+5"
+"Wheat, Sphaerococcoid Genes",Triticum aestivum,2000,MS 3287,Novosibirskaya 67,29,"Genes, SSR","3A,3B,3D","https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Sphaerococcoid+Genes"
+"Wheat, Synthetic x Opata, SSR-D",Triticum aestivum,2000,Altar84/Ae. squarrosa,Opata M 85,149,"RFLP, SSR",1D - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Synthetic+x+Opata,+SSR-D"
+"Wheat, Synthetic x Opata, update",Triticum aestivum,2000,Altar84/Ae. squarrosa,Opata M 85,224,"RFLP, SSR",3A - 3D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Synthetic+x+Opata,+update"
+"3A, CNN x WI",Triticum aestivum,1999,CHEYENNE,Cheyenne-Wichita Disomic,15,"QTL, RFLP",3A,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=3A,+CNN+x+WI"
+"Wheat, Forno x Oberkulmer",Triticum aestivum,1999,Forno,Oberkulmer,246,"RFLP, SSR",1A - 7S,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Forno+x+Oberkulmer"
+"Wheat, SxS, FHB QTL",Triticum aestivum,1999,Sumai 3,STOA,25,"QTL, RFLP","2A, 3B","https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+SxS,+FHB+QTL"
+"Wheat, Synthetic x Opata, DR Genes",Triticum aestivum,1999,Altar84/Ae. squarrosa,Opata M 85,514,"Defense Response Genes, RFLP",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Synthetic+x+Opata,+DR+Genes"
+"Wheat, Synthetic x Opata, gbx RFLP",Triticum aestivum,1999,Altar84/Ae. squarrosa,Opata M 85,423,RFLP,1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Synthetic+x+Opata,+gbx+RFLP"
+"Wheat, Synthetic x Opata, SSR",Triticum aestivum,1998,Altar84/Ae. squarrosa,Opata M 85,606,"RFLP, SSR",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Synthetic+x+Opata,+SSR"
+Triticeae consensus,Triticum aestivum,1996,Consensus,,323,"Genes, QTL, RFLP","1,2,3,6",https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Triticeae+consensus
+"1BS, CS x CNN",Triticum aestivum,1995,Chinese Spring,CHEYENNE,16,"Genes, RFLP",1BS,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=1BS,+CS+x+CNN"
+"5DS, CS x RL5406",Triticum aestivum,1995,Chinese Spring,RL5406,8,"Genes, RFLP",5DS,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=5DS,+CS+x+RL5406"
+"Triticum, CS-G1777 DS1A^m^(1A) RSL",Triticum aestivum,1995,Chinese Spring,Chinese Spring- T.monococcum Disomic Substitution 1A^m^(1A),88,"Genes, RFLP",1A,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Triticum,+CS-G1777+DS1A^m^(1A)+RSL"
+"Wheat, CS x CS-CNN DS1A",Triticum aestivum,1995,Chinese Spring,Chinese Spring-Cheyenne Disomic Substitution 1A,30,RFLP,1A,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+CS+x+CS-CNN+DS1A"
+"Wheat, Gale",Triticum aestivum,1995,Consensus,,1028,"Genes, RFLP",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Gale"
+"Wheat, Physical",Triticum aestivum,1995,Chinese Spring,,332,"Breakpoints, RFLP",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Physical"
+"Wheat, Synthetic x Opata",Triticum aestivum,1995,Altar84/Ae. squarrosa,Opata M 85,1042,"Genes, QTL, RFLP",1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Synthetic+x+Opata"
+"5AL, CS q deletions, physical",Triticum aestivum,1994,Chinese Spring Deletion Lines,,21,"Gene, RFLP, Breakpoints",5AL,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=5AL,+CS+q+deletions,+physical"
+Wheat genes,Triticum aestivum,1993,Consensus,,157,Genes,1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat+genes
+Wheat sprouting markers,Triticum aestivum,1993,NY6432-18,Clark's Cream,53,"QTL, RFLP","1A, 2",https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat+sprouting+markers
+Wheat C-bands,Triticum aestivum,1992,Chinese Spring,,,C-Bands,,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat+C-bands
+Wheat.Rye recombinant,Triticum aestivum,1992,Chinese Spring,Chinese Spring,55,RFLP,1D.1R,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat.Rye+recombinant
+"Wheat, Kyoto",Triticum aestivum,1991,Chinese Spring,Triticum spelta var. duhamelia,197,RFLP,1A - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+Kyoto"
+Wheat deletion-line bins,Triticum aestivum,,Chinese Spring,,,Breakpoints,1A - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat+deletion-line+bins
+"Wheat AB, Carotenoid QTL, 2017",Triticum turgidum,2017,Consensus,,198,"SSR, Genes, 41 yellowness QTL","1A-7B, 6D, 7D","https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat+AB,+Carotenoid+QTL,+2017"
+"Durum Wheat, NSGC Sr",Triticum turgidum,2017,NSGC durum collection,,3268,"37 Lr QTL, SNP",1A-7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Durum+Wheat,+NSGC+Sr"
+"Durum Wheat, NSGC Lr",Triticum turgidum,2016,NSGC durum collection,,4280,"Sr QTL, SNP, SSR",9 A or B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Durum+Wheat,+NSGC+Lr"
+Langdon_Deletion_PHS_2B,Triticum turgidum,2015,LDN(521-2B),Langdon,254,"SNP, SSR, Genes",2B,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Langdon_Deletion_PHS_2B
+"Wheat_AB, Ben x PI41025",Triticum turgidum,2015,Ben,PI 41025,2567,"SNP, SSR",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB,+Ben+x+PI41025"
+"Wheat_AB, Colosseo x Lloyd",Triticum turgidum,2015,Colosseo,Lloyd,7944,"SNP, SSR, DArT",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB,+Colosseo+x+Lloyd"
+"Wheat_AB, Kofa x Svevo",Triticum turgidum,2015,Kofa,Svevo,243,SSR,1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB,+Kofa+x+Svevo"
+"Wheat_AB, Kofa x UC1113",Triticum turgidum,2015,Kofa,UC1113,203,SSR,1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB,+Kofa+x+UC1113"
+"Wheat_AB, Langdon x G18-16",Triticum turgidum,2015,Langdon,G18-16,266,"SSR, DArT",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB,+Langdon+x+G18-16"
+"Wheat_AB, Latino x MG5323",Triticum turgidum,2015,Latino,MG5323,10810,"SSR, SNP",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB,+Latino+x+MG5323"
+"Wheat_AB, Meridiano x Claudio",Triticum turgidum,2015,Meridiano,Claudio,5969,"SSR, SNP, DArT",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB,+Meridiano+x+Claudio"
+"Wheat_AB, Mohawk x Cocorit69",Triticum turgidum,2015,Mohawk,COCORIT 69,5553,"SSR, SNP, DArT",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB,+Mohawk+x+Cocorit69"
+"Wheat_AB, Simeto x Levante",Triticum turgidum,2015,Simeto,Levante,5798,"SSR, SNP, DArT",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB,+Simeto+x+Levante"
+"Wheat_AB, Simeto x Molise Colli",Triticum turgidum,2015,Simeto,Molise Colli,8942,"SSR, SNP, DArT",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB,+Simeto+x+Molise+Colli"
+"Wheat_AB, Svevo x Ciccio",Triticum turgidum,2015,Svevo,Ciccio,5487,"SSR, SNP, DArT",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB,+Svevo+x+Ciccio"
+"Wheat_AB, Svevo x Zavitan",Triticum turgidum,2015,Svevo,Zavitan,10911,"SSR, SNP, DArT",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB,+Svevo+x+Zavitan"
+"Wheat_AB, W9292-260D3 x Kofa",Triticum turgidum,2015,W9292-260D3,Kofa,3712,"SSR, SNP",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB,+W9292-260D3+x+Kofa"
+Wheat_AB_2015_Consensus,Triticum aestivum,2015,Consensus,,29719,"SNP, SSR, DArT, Genes",1A - 7B,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat_AB_2015_Consensus
+"Durum Wheat, Anthocyanin, 2010",Triticum turgidum,2010,TRI 15744,TRI 2719,16,"Genes, SSR","2A, 7B","https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Durum+Wheat,+Anthocyanin,+2010"
+"Durum wheat, Svevo x Ciccio",Triticum turgidum,2009,Svevo,Ciccio,252,SSR,1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Durum+wheat,+Svevo+x+Ciccio"
+"Durum wheat, Kofa x UC1113",Triticum turgidum,2008,Kofa,UC1113,269,"QTL, SSR, SNP",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Durum+wheat,+Kofa+x+UC1113"
+"T. turgidum, Langdon x G18-16",Triticum turgidum,2008,Langdon,T. dicoccoides G18-16,307,"SSR, DArT",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.+turgidum,+Langdon+x+G18-16"
+"T. turgidum, Omrabi5 x dicoccoides, QTL",Triticum turgidum,2004,Omrabi5,T. dicoccoides 600545,295,"QTL, AFLP, SSR",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.+turgidum,+Omrabi5+x+dicoccoides,+QTL"
+"Wheat, P Gene, 2002",Triticum aestivum,2002,TRI 2719,"TRI 12908, TRI 1896",17,"Elongated glume gene, SSR",7A,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Wheat,+P+Gene,+2002"
+T. dicoccoides FHB QTL,Triticum turgidum,2002,3A LDN,,19,"QTL, RFLP, SSR",3AS,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.+dicoccoides+FHB+QTL
+"T. turgidum, JK x Cham1",Triticum turgidum,2001,Jennah Khetifa (Tamgurt),Cham1 IC71,319,"AFLP, RFLP, SSR",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.+turgidum,+JK+x+Cham1"
+"T. turgidum, JK x Cham1, 2",Triticum turgidum,2001,Jennah Khetifa (Tamgurt),Cham1 IC71,470,"AFLP, RFLP, SSR",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.+turgidum,+JK+x+Cham1,+2"
+"T. turgidum, Messapia x dicoccoides, AFLP",Triticum turgidum,2001,MESSAPIA,MG4343,315,"AFLP, RFLP",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.+turgidum,+Messapia+x+dicoccoides,+AFLP"
+"T. turgidum, durum x dicoccoides",Triticum turgidum,1999,Langdon-T. dicoccoides,Langdon-T. dicoccoides,141,RFLP,"6A, 6B","https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.+turgidum,+durum+x+dicoccoides"
+"T. turgidum, Messapia x dicoccoides, SSR",Triticum turgidum,1999,MESSAPIA,MG4343,294,"RFLP, SSR",1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.+turgidum,+Messapia+x+dicoccoides,+SSR"
+"T. turgidum, Messapia x dicoccoides",Triticum turgidum,1998,MESSAPIA,MG4343,227,RFLP,1A - 7B,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.+turgidum,+Messapia+x+dicoccoides"
+"1BS, durum x dicoccoides",Triticum aestivum,1995,LANGDON,Langdon-T. dicoccoides 1B TDIC (1B LDN),17,"Gene, RFLP",1BS,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=1BS,+durum+x+dicoccoides"
+"Ae. umbellulata, 2017 Consensus",Aegilops spp.,2017,"PI298905, PI542369","PI554395, PI542375",5404,SNP,1U - 7U,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Ae.+umbellulata,+2017+Consensus"
+T. boeoticum x monococcum,Triticum monococcum,2007,T. boeoticum pau5088,T. monococcum pau14087,190,"EST, SSR",1A - 7A,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.+boeoticum+x+monococcum
+"5AL, Vrn1 region",Triticum aestivum,2003,T. monococcum L.,T. monococcum L.,9,Genes,5AL,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=5AL,+Vrn1+region"
+"Ae. longissima, YxY",Aegilops spp.,2001,Y154-1,Y431-1,74,RFLP,1S - 7S,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Ae.+longissima,+YxY"
+"1DS, Ae. tauschii",Triticum aestivum,2000,AUS 18911,CPI 110799,24,RFLP,1D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=1DS,+Ae.+tauschii"
+"1DS, A.tauschii, AUS x CPI",Triticum aestivum,2000,AUS 18913,CPI 110856,17,RFLP,1D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=1DS,+A.tauschii,+AUS+x+CPI"
+"3A, SxY, QTL",Triticum aestivum,1999,Schomburgk,Yarralinka,25,"RFLP,SSR, QTL",3A,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=3A,+SxY,+QTL"
+"Ae. umbellulata, A x C",Aegilops spp.,1998,JIC2010001,JIC2010003,89,RFLP,1U - 7U,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=Ae.+umbellulata,+A+x+C"
+"1AS, T.m. G3116 x DV92",Triticum aestivum,1996,T. monococcum L.,T. monococcum L.,21,"Genes, RFLP",1AS,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=1AS,+T.m.+G3116+x+DV92"
+"5AS, T.m. G3116 x DV92",Triticum aestivum,1996,T. monococcum L.,T. monococcum L.,12,"Genes, RFLP",5AS,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=5AS,+T.m.+G3116+x+DV92"
+"T. monococcum, DV92 x G3116",Triticum monococcum,1996,T. monococcum,T. monococcum,357,RFLP,1A - 7A,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.+monococcum,+DV92+x+G3116"
+"1AS, T.m. G1777 x G2528",Triticum aestivum,1995,T. monococcum L.,T. monococcum L.,27,"Genes, RFLP",1AS,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=1AS,+T.m.+G1777+x+G2528"
+"5AS, T.m. G1777 x G2528",Triticum aestivum,1995,T. monococcum L.,T. monococcum L.,9,"Genes, RFLP",5AS,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=5AS,+T.m.+G1777+x+G2528"
+"T. monococcum, G1777 x G2528",Triticum monococcum,1995,T. monococcum,T. monococcum,54,RFLP,1A,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.+monococcum,+G1777+x+G2528"
+T.tauschii,Aegilops tauschii,1991,Triticum tauschii TA1691,Triticum tauschii TA1704,291,RFLP,1D - 7D,https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.tauschii
+"T.tauschii, Appels",Aegilops tauschii,,T. tauschii vs. T. aestivum,,123,RFLP,1D - 7D,"https://graingenes.org/cgi-bin/GG3/report.cgi?class=mapdata;name=T.tauschii,+Appels"
