@@ -10,7 +10,7 @@ import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
 import {
   TRAIT_COLORS, chromosomeSortKey, normalizeTrait, normalizeSpecies,
-  prepareItems, QTLItem, MetaQTLItem, isMultiTraitQTL, locusKey,
+  prepareItems, QTLItem, MetaQTLItem, isMultiTraitQTL, locusKey, majorClassOf, TRAIT_MAJOR_CLASSES,
 } from '../lib/map'
 import { exportRaster } from '../lib/exportMap'
 
@@ -139,6 +139,21 @@ export default function Statistics() {
   // page's Trait dropdown uses), not a raw-string tally capped at 8 with
   // everything else dumped into one opaque "Other" bar.
   const byCategoryTop = useMemo(() => byTraitCategory(qtl.data), [qtl.data])
+
+  // Major classes partition the categories exactly, so these counts sum to the
+  // record total - stated on the chart so the two numbers can be checked
+  // against each other rather than taken on trust.
+  const byMajorClass = useMemo(() => {
+    const m = new Map<string, number>()
+    qtl.data.forEach((r) => {
+      const k = majorClassOf(normalizeTrait(r))
+      m.set(k, (m.get(k) ?? 0) + 1)
+    })
+    return TRAIT_MAJOR_CLASSES
+      .map((name) => ({ name, value: m.get(name) ?? 0 }))
+      .filter((d) => d.value > 0)
+      .sort((a, b) => b.value - a.value)
+  }, [qtl.data])
   // The stacked-by-chromosome view still caps at the top 8 for a legible
   // number of stack segments; anything outside the top 8 folds into "Other"
   // there (chromTraitMatrix), which is a display simplification for that one
@@ -255,6 +270,23 @@ export default function Statistics() {
                 <Bar dataKey="value">
                   {bySpecies.slice(1).map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
                 </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          <ChartCard title="QTL by major trait class" wide>
+            <p className="mb-3 text-sm text-wheat-600">
+              Each record belongs to exactly one class, so these
+              sum to all {qtl.data.length.toLocaleString()} records — a record studied for drought
+              but scored on grain yield counts once, under Abiotic stress.
+            </p>
+            <ResponsiveContainer width="100%" height={260} className="text-wheat-700">
+              <BarChart data={byMajorClass} layout="vertical" margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#d8b66533" />
+                <XAxis type="number" tick={{ fill: 'currentColor' }} />
+                <YAxis type="category" dataKey="name" width={200} tick={{ fill: 'currentColor', fontSize: 11 }} />
+                <Tooltip contentStyle={{ borderRadius: 8 }} />
+                <Bar dataKey="value" fill="#2e7d32" />
               </BarChart>
             </ResponsiveContainer>
           </ChartCard>

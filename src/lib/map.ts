@@ -32,10 +32,52 @@ export type TraitCategory = (typeof TRAIT_CATEGORIES)[number]
 // "Biotic stress" into TRAIT_CATEGORIES itself) so the Search page's trait
 // dropdown/filter can recognise a group name too - selecting one matches any
 // QTL whose normalizeTrait() result is one of its listed categories.
-export const TRAIT_GROUPS: Record<string, TraitCategory[]> = {
-  'Abiotic stress': ['Drought tolerance', 'Salt tolerance', 'Heat stress tolerance', 'Waterlogging tolerance', 'Frost tolerance'],
-  'Biotic stress': ['Fungal resistance', 'Bacterial resistance', 'Viral resistance', 'Nematode resistance', 'Insect resistance'],
+export const TRAIT_MAJOR_CLASSES = [
+  'Abiotic stress',
+  'Biotic stress',
+  'Yield & agronomy',
+  'Grain quality & composition',
+  'Development & morphology',
+  'Nutrient use efficiency',
+  'Other',
+] as const
+
+export type TraitMajorClass = (typeof TRAIT_MAJOR_CLASSES)[number]
+
+// Every category belongs to exactly ONE major class, so a record counted under
+// a major class is never also counted under another. The earlier TRAIT_GROUPS
+// was an overlapping set of umbrella labels shown alongside the categories
+// themselves, which meant a "by group" total and a "by category" total could
+// not be reconciled.
+export const TRAIT_HIERARCHY: Record<TraitMajorClass, TraitCategory[]> = {
+  'Abiotic stress': [
+    'Drought tolerance', 'Heat stress tolerance', 'Salt tolerance',
+    'Waterlogging tolerance', 'Frost tolerance',
+  ],
+  'Biotic stress': [
+    'Fungal resistance', 'Bacterial resistance', 'Viral resistance',
+    'Nematode resistance', 'Insect resistance',
+  ],
+  'Yield & agronomy': ['Yield', 'Plant morphology', 'Pre-harvest sprouting'],
+  'Grain quality & composition': ['Quality traits', 'Grain morphology', 'Biofortification'],
+  'Development & morphology': ['Developmental', 'Physiological traits'],
+  'Nutrient use efficiency': ['Nutrient use efficiency'],
+  Other: ['Herbicide tolerance', 'Other'],
 }
+
+const CATEGORY_TO_MAJOR: Record<string, TraitMajorClass> = {}
+;(Object.keys(TRAIT_HIERARCHY) as TraitMajorClass[]).forEach((m) => {
+  TRAIT_HIERARCHY[m].forEach((c) => (CATEGORY_TO_MAJOR[c] = m))
+})
+
+export function majorClassOf(category: string): TraitMajorClass {
+  return CATEGORY_TO_MAJOR[category] ?? 'Other'
+}
+
+/** Kept so existing homepage tiles that link by major-class name still resolve. */
+export const TRAIT_GROUPS: Record<string, TraitCategory[]> = TRAIT_HIERARCHY as unknown as
+  Record<string, TraitCategory[]>
+
 
 // Every trait/parameter string in the data resolves to one of these (see
 // normalizeTrait). The former single "Abiotic stress" bucket (26,517 QTL +
@@ -246,81 +288,94 @@ function hasWord(haystack: string, word: string): boolean {
   return new RegExp(`\\b${word}\\b`).test(haystack)
 }
 
-export function normalizeTrait(record: QTLRecord | MetaQTLRecord): TraitCategory {
-  const t = ((record as QTLRecord).trait || (record as MetaQTLRecord).trait || '').toLowerCase().trim()
-  const p = ((record as QTLRecord).parameter || (record as MetaQTLRecord).parameter || '').toLowerCase().trim()
-  const c = `${t} ${p}`
+/**
+ * Classify a record into one trait category.
+ *
+ * The TRAIT field states what the study was about; the PARAMETER field states
+ * what was measured. These are different questions, and conflating them was
+ * the source of a large miscount: a drought-tolerance study that scores grain
+ * yield under drought has trait="Drought tolerance", parameter="Grain yield",
+ * and the old rules - which tested trait and parameter together - filed it
+ * under Yield. That moved 4,880 records out of the stress categories and into
+ * Yield, inflating Yield from ~9,800 to ~14,700 while emptying the categories
+ * the studies were actually about.
+ *
+ * So the trait field is classified FIRST and alone. The parameter is consulted
+ * only when the trait text is too generic to place (empty, or something like
+ * "agronomic traits"), where it is the only signal available.
+ */
+function classifyText(c: string): TraitCategory | null {
+  if (!c.trim()) return null
 
-  if (t.includes('yield') || p.includes('yield') || p.includes('grain weight') || p.includes('tgw')) return 'Yield'
-  // "puccinia" covers rust pathogens reported by Latin genus name only
-  // (Puccinia striiformis/graminis/triticina) with no English "rust" nearby.
-  if (c.includes('fungal') || c.includes('fhb') || c.includes('rust') || c.includes('mildew') || c.includes('blight') || c.includes('smut') || c.includes('bunt') || c.includes('powdery') || c.includes('septoria') || c.includes('tan spot') || c.includes('puccinia')) return 'Fungal resistance'
-  if (c.includes('quality') || c.includes('protein') || c.includes('gluten') || c.includes('hardness') || c.includes('sediment') || c.includes('dough') || c.includes('test weight')) return 'Quality traits'
-  if (c.includes('sprouting') || c.includes('dormancy')) return 'Pre-harvest sprouting'
-  // Former single "Abiotic stress" bucket, split into its dominant
-  // individual stresses. Order matters for records mentioning more than one
-  // stress together (e.g. "drought and heat stress tolerance") - drought is
-  // checked first as the single largest category in the source data.
-  // "heat" is matched as a whole word (hasWord), not includes() - "wheat"
-  // (in "wheat dwarf virus", "wheat blossom midge", etc.) contains "heat" as
-  // a bare substring and was wrongly landing disease/insect QTL here.
-  if (c.includes('drought')) return 'Drought tolerance'
-  if (c.includes('salt')) return 'Salt tolerance'
-  if (hasWord(c, 'heat')) return 'Heat stress tolerance'
-  // "waterlogging" is spelled inconsistently across source studies
-  // (waterlogging / water-logging / water logging) - match regardless of
-  // the separator.
-  if (c.includes('water-log') || c.includes('water log') || c.includes('waterlog')) return 'Waterlogging tolerance'
-  // Frost/freezing/winter-hardiness - deliberately narrow (not a generic
-  // "cold/abiotic/osmotic/toxic" catch-all): that broader match used to also
-  // pull in unrelated "osmotic potential" physiological-trait rows that have
-  // nothing to do with frost.
-  if (c.includes('frost') || c.includes('freez') || c.includes('winter surviv') || c.includes('lt50') || c.includes('cold-respons') || c.includes('cold acclimat') || c.includes('cold harden') || c.includes('snow mold')) return 'Frost tolerance'
-  // Nutrient *use efficiency* (agronomic input efficiency) is biologically
-  // distinct from *biofortification* (grain nutrient content for nutrition)
-  // below, so it's checked first even though both mention the same elements.
-  // "nue" is matched as a whole word - as a bare substring it also matches
-  // inside unrelated words ("continue", "genuine", "revenue", ...).
-  if (c.includes('use efficiency') || c.includes('n-use') || c.includes('n use') || hasWord(c, 'nue') || c.includes('nitrogen')) return 'Nutrient use efficiency'
-  // "bioforitif" is a known source-data typo for "biofortification" (letters
-  // transposed: ...bioFORITIFcation instead of ...bioforTIFIcation).
-  if (c.includes('zinc') || c.includes('iron') || c.includes('selenium') || c.includes('biofort') || c.includes('bioforitif') || c.includes('mineral') || c.includes('cadmium') || c.includes('calcium') || c.includes('magnesium') || c.includes('sulph') || c.includes('sulfur') || c.includes('manganese') || c.includes('copper') || c.includes('nickel') || c.includes('molybden') || c.includes('phosphor') || c.includes('potassium') || c.includes('cobalt') || c.includes('rubidium') || c.includes('lead') || c.includes('strontium') || c.includes('arsenic') || c.includes('sodium') || c.includes('boron') || c.includes('lithium') || c.includes('barium') || c.includes('platinum') || c.includes('co ') || c.includes('mo ') || c.includes('grain fe') || c.includes('grain zn')) return 'Biofortification'
+  // Pathogen names first: they are unambiguous, and a disease study often also
+  // mentions yield or quality in the same string.
+  if (c.includes('fungal') || c.includes('fhb') || c.includes('rust') || c.includes('mildew') ||
+      c.includes('blight') || c.includes('smut') || c.includes('bunt') || c.includes('powdery') ||
+      c.includes('septoria') || c.includes('tan spot') || c.includes('puccinia')) return 'Fungal resistance'
   if (c.includes('bacterial') || c.includes('leaf streak') || c.includes('bls')) return 'Bacterial resistance'
   if (c.includes('virus') || c.includes('viral')) return 'Viral resistance'
   if (c.includes('nematode') || c.includes('cereal cyst')) return 'Nematode resistance'
   if (c.includes('insect')) return 'Insect resistance'
-  // Bare "disease severity" with no pathogen named defaults to fungal, the
-  // overwhelmingly dominant disease type in this dataset; bacterial/viral/
-  // nematode/insect above already had first claim on anything more specific.
-  if (c.includes('disease')) return 'Fungal resistance'
-  if (c.includes('herbicide')) return 'Herbicide tolerance'
-  if (c.includes('development') || c.includes('heading') || c.includes('vernal') || c.includes('photoperiod') || c.includes('earliness') || c.includes('flowering') || c.includes('maturity')) return 'Developmental'
-  // Grain/kernel morphology (size and shape of the seed itself) is
-  // agronomically and visually distinct from whole-plant morphology (height,
-  // tillering, spike length, awns): curated from a dedicated source file
-  // ("Grain morphology.xlsx", 1,028 records, always trait="Grain Morphology")
-  // as well as size/shape parameters recorded under the generic
-  // "Morphological trait(s)" label in "Morphological traits_combined.xls" -
-  // kept as its own category rather than merged into one opaque
-  // "Morphological" bucket. Deliberately excludes weight/count parameters
-  // ("kernel weight", "kernels per spike") - those are yield components, not
-  // morphology, and fall through to whichever category (often 'Other')
-  // already handled them before this split.
-  if (
-    t.includes('grain morphology') ||
-    c.includes('seed morphology') ||
-    c.includes('grain length') || c.includes('grain width') || c.includes('grain diameter') ||
-    c.includes('grain thickness') || c.includes('grain area') || c.includes('grain perimeter') ||
-    c.includes('grain circumference') || c.includes('grain shape') ||
-    c.includes('kernel length') || c.includes('kernel width') || c.includes('kernel diameter') ||
-    c.includes('kernel thickness') || c.includes('kernel area') || c.includes('kernel perimeter') ||
-    c.includes('kernel circumference') || c.includes('kernel shape') || c.includes('kernel size') ||
-    c.includes('seed shape') || c.includes('seed size') || c.includes('characterization system')
-  ) return 'Grain morphology'
-  if (c.includes('morpholog') || c.includes('plant height') || c.includes('tiller') || c.includes('awn') || c.includes('spike length')) return 'Plant morphology'
-  if (c.includes('physiological')) return 'Physiological traits'
 
-  return 'Other'
+  // Abiotic stresses: the stress IS the subject of such a study, whatever
+  // phenotype was used to score it.
+  if (c.includes('drought')) return 'Drought tolerance'
+  if (c.includes('salt') || c.includes('salin')) return 'Salt tolerance'
+  if (hasWord(c, 'heat') || c.includes('high temperature')) return 'Heat stress tolerance'
+  if (c.includes('water-log') || c.includes('water log') || c.includes('waterlog')) return 'Waterlogging tolerance'
+  if (c.includes('frost') || c.includes('freez') || c.includes('winter surviv') || c.includes('lt50') ||
+      c.includes('cold-respons') || c.includes('cold acclimat') || c.includes('cold harden') ||
+      c.includes('snow mold')) return 'Frost tolerance'
+
+  if (c.includes('use efficiency') || c.includes('n-use') || c.includes('n use') ||
+      hasWord(c, 'nue') || c.includes('nitrogen') || c.includes('phosphor') ||
+      c.includes('potassium')) return 'Nutrient use efficiency'
+
+  if (c.includes('sprouting') || c.includes('dormancy')) return 'Pre-harvest sprouting'
+  if (c.includes('herbicide')) return 'Herbicide tolerance'
+
+  if (c.includes('zinc') || c.includes('iron') || c.includes('selenium') || c.includes('biofort') ||
+      c.includes('bioforitif') || c.includes('mineral') || c.includes('grain fe') ||
+      c.includes('grain zn')) return 'Biofortification'
+
+  if (c.includes('yield') || c.includes('grain weight') || c.includes('tgw')) return 'Yield'
+
+  if (c.includes('quality') || c.includes('protein') || c.includes('gluten') || c.includes('hardness') ||
+      c.includes('sediment') || c.includes('dough') || c.includes('test weight')) return 'Quality traits'
+
+  if (c.includes('grain morphology') || c.includes('seed morphology') ||
+      c.includes('grain length') || c.includes('grain width') || c.includes('grain shape') ||
+      c.includes('kernel length') || c.includes('kernel width') || c.includes('kernel shape') ||
+      c.includes('kernel size') || c.includes('seed size')) return 'Grain morphology'
+
+  if (c.includes('development') || c.includes('heading') || c.includes('vernal') ||
+      c.includes('photoperiod') || c.includes('earliness') || c.includes('flowering') ||
+      c.includes('maturity')) return 'Developmental'
+
+  if (c.includes('morpholog') || c.includes('plant height') || c.includes('tiller') ||
+      c.includes('awn') || c.includes('spike length')) return 'Plant morphology'
+
+  if (c.includes('physiolog')) return 'Physiological traits'
+  if (c.includes('disease')) return 'Fungal resistance'
+
+  return null
+}
+
+// Trait strings too generic to classify on their own - for these the measured
+// parameter is the only usable signal.
+const GENERIC_TRAIT = /^(agronomic|morphological|physiological|quantitative|multiple|various|other|misc)/i
+
+export function normalizeTrait(record: QTLRecord | MetaQTLRecord): TraitCategory {
+  const t = ((record as QTLRecord).trait || '').toLowerCase().trim()
+  const p = ((record as QTLRecord).parameter || '').toLowerCase().trim()
+
+  if (t && !GENERIC_TRAIT.test(t)) {
+    const fromTrait = classifyText(t)
+    if (fromTrait) return fromTrait
+  }
+  // trait absent, generic, or unrecognised: fall back to the parameter
+  const fromParam = classifyText(`${t} ${p}`)
+  return fromParam ?? 'Other'
 }
 
 // Finer-grained breakdown within the two categories that actually bundle

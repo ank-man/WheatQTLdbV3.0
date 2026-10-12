@@ -8,11 +8,13 @@ import AsyncBoundary from '../components/AsyncBoundary'
 import GlossaryHeader from '../components/GlossaryHeader'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord } from '../lib/types'
-import { TRAIT_CATEGORIES, TRAIT_GROUPS, TRAIT_SUBCATEGORIES, normalizeTrait, normalizeSubTrait, normalizeSpecies, isMultiTraitQTL } from '../lib/map'
+import { TRAIT_CATEGORIES, TRAIT_SUBCATEGORIES, TRAIT_MAJOR_CLASSES, TRAIT_HIERARCHY,
+  normalizeTrait, normalizeSubTrait, normalizeSpecies, isMultiTraitQTL, majorClassOf } from '../lib/map'
 
 interface Filters {
   q: string
   species: string
+  majorClass: string
   trait: string
   subTrait: string
   chromosome: string
@@ -23,7 +25,7 @@ interface Filters {
 }
 
 const EMPTY: Filters = {
-  q: '', species: '', trait: '', subTrait: '', chromosome: '',
+  q: '', species: '', majorClass: '', trait: '', subTrait: '', chromosome: '',
   pveMin: '', pveMax: '', hasCandidateGene: false, multiTraitOnly: false,
 }
 
@@ -63,9 +65,7 @@ function speciesMatches(fieldValue: string, selected: string): boolean {
 // the broader TRAIT_GROUPS umbrella labels (e.g. homepage's "Abiotic
 // stress" tile) - the latter matches any of its constituent categories.
 function traitMatches(category: string, selected: string): boolean {
-  if (!selected) return true
-  const group = TRAIT_GROUPS[selected]
-  return group ? group.includes(category as any) : category === selected
+  return !selected || category === selected
 }
 
 function subTraitMatches(record: QTLRecord, selected: string): boolean {
@@ -123,11 +123,21 @@ export default function AdvancedSearch() {
   // "Abiotic stress" / "Biotic stress" tiles) are listed first, so a link
   // into a group resolves to a real, selectable dropdown option instead of
   // silently matching nothing.
+  // Major classes partition the categories, so the subclass list is simply the
+  // chosen class's children - never a mix of umbrella labels and categories,
+  // which is what previously made "group" and "category" totals irreconcilable.
+  const majorOpts = useMemo(() => {
+    const present = new Set(data.map((r) => majorClassOf(normalizeTrait(r))))
+    return TRAIT_MAJOR_CLASSES.filter((m) => present.has(m))
+  }, [data])
+
   const traitOpts = useMemo(() => {
     const present = new Set(data.map((r) => normalizeTrait(r)))
-    const groups = Object.keys(TRAIT_GROUPS).filter((g) => TRAIT_GROUPS[g].some((cat) => present.has(cat)))
-    return [...groups, ...TRAIT_CATEGORIES.filter((cat) => present.has(cat))]
-  }, [data])
+    const pool = f.majorClass
+      ? TRAIT_HIERARCHY[f.majorClass as keyof typeof TRAIT_HIERARCHY] ?? []
+      : TRAIT_CATEGORIES
+    return pool.filter((cat) => present.has(cat))
+  }, [data, f.majorClass])
   const chrOpts = useMemo(() => uniqueValues(data, 'chromosome'), [data])
 
   // Only offered when the selected Trait is one that actually has a further
@@ -147,7 +157,9 @@ export default function AdvancedSearch() {
     const pMax = f.pveMax ? Number(f.pveMax) : Infinity
     return data.filter((r) => {
       if (!speciesMatches(r.species, f.species)) return false
-      if (f.trait && !traitMatches(normalizeTrait(r), f.trait)) return false
+      const cat = normalizeTrait(r)
+      if (f.majorClass && majorClassOf(cat) !== f.majorClass) return false
+      if (f.trait && !traitMatches(cat, f.trait)) return false
       if (subTraitOpts.length && f.subTrait && !subTraitMatches(r, f.subTrait)) return false
       if (f.chromosome && r.chromosome !== f.chromosome) return false
       const p = Number(r.pve)
@@ -188,6 +200,13 @@ export default function AdvancedSearch() {
             </Field>
             <Field label="Species">
               <Select value={f.species} onChange={(v) => setF({ ...f, species: v })} options={speciesOpts} />
+            </Field>
+            <Field label="Trait class">
+              <Select
+                value={f.majorClass}
+                onChange={(v) => setF({ ...f, majorClass: v, trait: '', subTrait: '' })}
+                options={majorOpts as unknown as string[]}
+              />
             </Field>
             <Field label="Trait">
               <Select value={f.trait} onChange={(v) => setF({ ...f, trait: v, subTrait: '' })} options={traitOpts} />

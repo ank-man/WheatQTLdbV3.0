@@ -7,7 +7,8 @@ import {
 } from 'lucide-react'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
-import { normalizeTrait, normalizeSpecies, isMultiTraitQTL, locusKey } from '../lib/map'
+import { normalizeTrait, normalizeSpecies, isMultiTraitQTL, locusKey,
+  TRAIT_MAJOR_CLASSES, majorClassOf } from '../lib/map'
 import MiniIdeogram from '../components/MiniIdeogram'
 
 const heroImg = `${import.meta.env.BASE_URL}images/wheat-aerial-field.jpg`
@@ -34,6 +35,17 @@ const TRAIT_CATS = [
   { name: 'Plant morphology', icon: Network,  blurb: 'Plant height, tiller number, awns, spike length.', color: '#a05a2c' },
   { name: 'Nutrient use efficiency', icon: Filter, blurb: 'NUE, PUE, KUE - nitrogen, phosphorus and potassium use efficiency.', color: '#0277bd' },
 ]
+
+
+// A tile names either a major trait class or a single category. They are now
+// separate filters on the Search page, so the link has to target the right
+// one - sending a major class as `trait` would match no category and return
+// an empty result.
+function traitSearchHref(name: string): string {
+  const isMajor = (TRAIT_MAJOR_CLASSES as readonly string[]).includes(name)
+  const key = isMajor ? 'majorClass' : 'trait'
+  return `/search?${key}=${encodeURIComponent(name)}`
+}
 
 export default function Home() {
   const qtl = useCSV<QTLRecord>('qtl.csv')
@@ -167,7 +179,7 @@ export default function Home() {
           {TRAIT_CATS.map(({ name, icon: Icon, blurb, color }, i) => (
             <Link
               key={name}
-              to={`/search?trait=${encodeURIComponent(name)}`}
+              to={traitSearchHref(name)}
               className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
               style={{ animation: `fade-up .5s ease-out ${i * 60}ms both`, borderTopColor: color, borderTopWidth: 3 }}
             >
@@ -236,7 +248,7 @@ export default function Home() {
             <ul className="space-y-3">
               {topCategories.map((c, i) => (
                 <li key={c.name} className="animate-fade-up" style={{ animationDelay: `${i * 50}ms` }}>
-                  <Link to={`/search?trait=${encodeURIComponent(c.name)}`} className="group block">
+                  <Link to={traitSearchHref(c.name)} className="group block">
                     <div className="mb-1 flex items-center justify-between text-sm">
                       <span className="font-medium text-wheat-800 group-hover:text-wheat-900">{c.name}</span>
                       <span className="tabular-nums text-wheat-600">{c.value} QTL</span>
