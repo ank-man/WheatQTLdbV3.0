@@ -285,6 +285,32 @@ function hasWord(haystack: string, word: string): boolean {
 }
 
 /**
+ * Elements measured as a grain concentration or content in this dataset.
+ *
+ * Deliberately a closed list of element names rather than a pattern: "boron"
+ * and "barium" are grain minerals, "bread-making" and "basal" are not, and a
+ * loose rule here would quietly reclassify unrelated traits. Zinc, iron and
+ * selenium are included so every element reaches the category by one rule.
+ */
+const MINERAL_ELEMENTS = [
+  'zinc', 'iron', 'selenium', 'calcium', 'magnesium', 'manganese', 'copper',
+  'sulphur', 'sulfur', 'sodium', 'cadmium', 'nickel', 'cobalt', 'chromium',
+  'lead', 'arsenic', 'mercury', 'aluminium', 'aluminum', 'boron', 'barium',
+  'molybdenum', 'rubidium', 'strontium', 'lithium', 'caesium', 'cesium',
+  'platinum', 'titanium', 'vanadium', 'silicon', 'iodine', 'chloride',
+  'phosphorus', 'phosphorous', 'potassium',
+] as const
+
+// Matches when an element name appears alongside a composition measurement
+// ("Sulphur / Grain Sulphur Concentration"), or when the text names a grain
+// element directly. The measurement requirement is what keeps nitrogen,
+// phosphorus and potassium USE-EFFICIENCY rows out of this category.
+const GRAIN_MINERAL = new RegExp(
+  '(^|[^a-z])(' + MINERAL_ELEMENTS.join('|') + ')([^a-z]|$)' +
+  '(?=[\\s\\S]*(concentration|content|conc\\.|accumulation|/grain))' +
+  '|\\bgrain\\s+(' + MINERAL_ELEMENTS.join('|') + ')\\b', 'i')
+
+/**
  * Classify a record into one trait category.
  *
  * The TRAIT field states what the study was about; the PARAMETER field states
@@ -323,6 +349,21 @@ function classifyText(c: string): TraitCategory | null {
       c.includes('cold-respons') || c.includes('cold acclimat') || c.includes('cold harden') ||
       c.includes('snow mold')) return 'Frost tolerance'
 
+  // Grain mineral composition, before the nutrient-use-efficiency rule.
+  //
+  // The Minerals files record one element per row - trait "Sulphur",
+  // "Manganese", "Cadmium", "Nickel" and so on, with parameter "Grain <X>
+  // Concentration". None of those words appeared in any rule, so 2,948
+  // records - every element outside Zn/Fe/Se/Ca - fell through to 'Other',
+  // which made Other the fourth-largest category in the database and hid real
+  // grain-composition data from the Biofortification view it belongs to.
+  //
+  // This sits above the nutrient-use rule because "Phosphorous / Grain
+  // Phosphorus Concentration" is a composition measurement whereas
+  // "Phosphorous use efficiency" is an efficiency trait - the explicit
+  // "use efficiency" wording is what separates them.
+  if (GRAIN_MINERAL.test(c) && !/use efficiency|uptake efficien/.test(c)) return 'Biofortification'
+
   if (c.includes('use efficiency') || c.includes('n-use') || c.includes('n use') ||
       hasWord(c, 'nue') || c.includes('nitrogen') || c.includes('phosphor') ||
       c.includes('potassium')) return 'Nutrient use efficiency'
@@ -330,9 +371,8 @@ function classifyText(c: string): TraitCategory | null {
   if (c.includes('sprouting') || c.includes('dormancy')) return 'Pre-harvest sprouting'
   if (c.includes('herbicide')) return 'Herbicide tolerance'
 
-  if (c.includes('zinc') || c.includes('iron') || c.includes('selenium') || c.includes('biofort') ||
-      c.includes('bioforitif') || c.includes('mineral') || c.includes('grain fe') ||
-      c.includes('grain zn')) return 'Biofortification'
+  if (c.includes('biofort') || c.includes('bioforitif') || c.includes('mineral') ||
+      c.includes('grain fe') || c.includes('grain zn')) return 'Biofortification'
 
   if (c.includes('yield') || c.includes('grain weight') || c.includes('tgw')) return 'Yield'
 
@@ -389,11 +429,14 @@ export const TRAIT_SUBCATEGORIES: Partial<Record<TraitCategory, string[]>> = {
     'Potassium use efficiency',
     'Other nutrient use efficiency',
   ],
+  // One entry per element actually present, because a single "Other minerals"
+  // bucket is what made this category unusable: it held cadmium, lead and
+  // arsenic - contaminants a breeder selects DOWN - alongside manganese and
+  // copper, micronutrients to select UP.
   Biofortification: [
-    'Zinc',
-    'Iron',
-    'Selenium',
-    'Calcium',
+    'Zinc', 'Iron', 'Selenium', 'Calcium', 'Magnesium', 'Manganese', 'Copper',
+    'Sulphur', 'Phosphorus', 'Potassium', 'Sodium', 'Molybdenum', 'Boron',
+    'Cadmium', 'Lead', 'Arsenic', 'Nickel', 'Cobalt', 'Chromium',
     'Other minerals',
   ],
 }
@@ -420,10 +463,19 @@ export function normalizeSubTrait(record: QTLRecord | MetaQTLRecord): string | n
   }
 
   if (category === 'Biofortification') {
-    if (c.includes('zinc')) return 'Zinc'
-    if (c.includes('iron')) return 'Iron'
-    if (c.includes('selenium')) return 'Selenium'
-    if (c.includes('calcium')) return 'Calcium'
+    // Most specific first, so "Zn and Fe concentration" is filed under Zinc
+    // rather than falling into the catch-all.
+    const byElement: [string, RegExp][] = [
+      ['Zinc', /zinc|\bzn\b/], ['Iron', /iron|\bfe\b/], ['Selenium', /selenium|\bse\b/],
+      ['Calcium', /calcium|\bca\b/], ['Magnesium', /magnesium|\bmg\b/],
+      ['Manganese', /manganese|\bmn\b/], ['Copper', /copper|\bcu\b/],
+      ['Sulphur', /sulphur|sulfur/], ['Phosphorus', /phosphor/],
+      ['Potassium', /potassium/], ['Sodium', /sodium|\bna\b/],
+      ['Molybdenum', /molybdenum/], ['Boron', /boron/], ['Cadmium', /cadmium|\bcd\b/],
+      ['Lead', /\blead\b|\bpb\b/], ['Arsenic', /arsenic|\bas\b/],
+      ['Nickel', /nickel/], ['Cobalt', /cobalt/], ['Chromium', /chromium/],
+    ]
+    for (const [label, rx] of byElement) if (rx.test(c)) return label
     return 'Other minerals'
   }
 

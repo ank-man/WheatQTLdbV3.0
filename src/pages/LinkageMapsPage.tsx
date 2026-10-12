@@ -21,6 +21,7 @@ interface MapRecord {
   year: string
   reference: string
   doi: string
+  url: string
 }
 
 const columns: ColumnDef<MapRecord, any>[] = [
@@ -38,15 +39,17 @@ const columns: ColumnDef<MapRecord, any>[] = [
     cell: ({ getValue }) => <span className="badge">{String(getValue() ?? '')}</span>,
   },
   {
-    accessorKey: 'doi',
-    header: 'Reference',
+    accessorKey: 'url',
+    header: 'Record',
     cell: ({ row }) => {
-      const u = doiUrl(row.original.doi)
-      return u
-        ? <a className="inline-flex items-center gap-1 underline" href={u} target="_blank" rel="noreferrer">
-            paper <ExternalLink className="h-3 w-3" />
-          </a>
-        : <span className="text-wheat-400">—</span>
+      const r = row.original
+      const u = doiUrl(r.doi) ?? (r.url || null)
+      if (!u) return <span className="text-wheat-400">—</span>
+      return (
+        <a className="inline-flex items-center gap-1 underline" href={u} target="_blank" rel="noreferrer">
+          {r.doi ? 'paper' : 'GrainGenes'} <ExternalLink className="h-3 w-3" />
+        </a>
+      )
     },
   },
 ]
@@ -75,7 +78,9 @@ export default function LinkageMapsPage() {
     maps: maps.data.length,
     withLoci: maps.data.filter((m) => byMap.has(m.map_id)).length,
     loci: loci.data.length,
-    sources: new Set(maps.data.map((m) => m.source)).size,
+    // Markers across every catalogued map, which is far larger than the loci
+    // this site can plot - most maps are only reachable as a GrainGenes record.
+    catalogued: maps.data.reduce((n, m) => n + (Number(m.n_loci) || 0), 0),
   }), [maps.data, loci.data, byMap])
 
   return (
@@ -83,7 +88,7 @@ export default function LinkageMapsPage() {
       <PageHero
         eyebrow="Data"
         title="Genetic & linkage maps"
-        subtitle="Marker-order maps underlying the mapped QTL, drawn from the published literature rather than any single repository, so maps from any study can sit alongside each other."
+        subtitle="Marker-order maps underlying the mapped QTL: the GrainGenes catalogue of Triticeae maps, plus maps rebuilt from open-access papers where the marker positions themselves are available to plot."
         variant="side"
       />
 
@@ -92,18 +97,12 @@ export default function LinkageMapsPage() {
           <div className="card flex items-start gap-3">
             <Info className="mt-0.5 h-5 w-5 flex-shrink-0 text-wheat-500" />
             <div className="text-sm text-wheat-700">
-              <p className="font-semibold text-wheat-900">No linkage maps loaded yet.</p>
+              <p className="font-semibold text-wheat-900">No maps to show.</p>
               <p className="mt-1">
-                Run <code>scripts/mine/search_wheat_maps.py</code>, then{' '}
-                <code>scripts/mine/harvest_map_tables.py</code> and{' '}
-                <code>scripts/mine/extract_wheat_maps.py</code> to build them from the
-                literature.
-              </p>
-              <p className="mt-2">
-                GrainGenes holds 4,756 maps but serves them behind bot protection, so they are
-                not harvested automatically — browse them at{' '}
-                <a className="underline" href="https://graingenes.org/GG3/maps-short"
-                   target="_blank" rel="noreferrer">GrainGenes Maps</a>.
+                The map table could not be loaded. The GrainGenes catalogue of Triticeae
+                maps is available directly at{' '}
+                <a className="underline" href="https://graingenes.org/GG3/node/876"
+                   target="_blank" rel="noreferrer">graingenes.org</a>.
               </p>
             </div>
           </div>
@@ -111,9 +110,9 @@ export default function LinkageMapsPage() {
           <>
             <div className="mb-6 grid gap-4 sm:grid-cols-4">
               <Stat label="Maps" value={stats.maps} />
-              <Stat label="With marker order" value={stats.withLoci} />
-              <Stat label="Mapped loci" value={stats.loci} />
-              <Stat label="Sources" value={stats.sources} />
+              <Stat label="Viewable (marker order)" value={stats.withLoci} />
+              <Stat label="Plotted loci" value={stats.loci} />
+              <Stat label="Catalogued markers" value={stats.catalogued} />
             </div>
 
             {activeMap && activeLoci.length > 0 && (
@@ -145,9 +144,13 @@ export default function LinkageMapsPage() {
                   </option>
                 ))}
               </select>
+              <span className="text-xs text-wheat-500">
+                {stats.withLoci} of {stats.maps} maps have marker positions available to plot;
+                the rest are catalogued with a link to their full record.
+              </span>
               <a className="btn ml-auto text-xs" target="_blank" rel="noreferrer"
-                 href={grainGenesSearchUrl('wheat genetic map') ?? 'https://graingenes.org/GG3/maps-short'}>
-                <ExternalLink className="h-3.5 w-3.5" /> More maps at GrainGenes
+                 href="https://graingenes.org/GG3/node/876">
+                <ExternalLink className="h-3.5 w-3.5" /> GrainGenes map catalogue
               </a>
             </div>
 

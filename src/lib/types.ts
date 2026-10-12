@@ -62,10 +62,15 @@ export interface EpistaticRecord {
 export interface CandidateGeneRecord {
   id: string
   gene: string
+  /** Symbol / gene model / functional annotation - decides which link fits. */
+  gene_type?: string
   chromosome: string
   position?: string
   trait: string
   qtl_name?: string
+  /** How many QTL/MetaQTL records name this gene. */
+  records?: number | string
+  record_types?: string
   reference?: string
   doi?: string
 }

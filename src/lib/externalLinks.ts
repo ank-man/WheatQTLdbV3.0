@@ -98,3 +98,35 @@ export function doiUrl(doi?: string | null): string | null {
   const m = d.match(/10\.\d{4,9}\/\S+/)
   return m ? `https://doi.org/${m[0]}` : null
 }
+
+/**
+ * Ensembl Plants gene page for an annotation gene model.
+ *
+ * Gene-model ids are assembly-specific, and the release is encoded in the id
+ * itself: TraesCS5A01G... is IWGSC RefSeq v1.0, ...02G... is v1.1 and ...03G...
+ * is v2.1. Ensembl Plants serves the v1.1 annotation for Triticum aestivum, so
+ * only an 02G id resolves there; a v1.0 or v2.1 id is returned as null rather
+ * than linked to a page that will not exist. Durum models (TRITD...) resolve
+ * against Triticum turgidum, which Ensembl Plants also carries.
+ */
+export function ensemblGeneUrl(gene: string): string | null {
+  const g = (gene || '').trim().replace(/^\((?:HC|LC)\)\s*/i, '').replace(/\.\d+$/, '')
+  if (!g) return null
+  if (/^TraesCS(?:U|[1-7][ABD])02G\d{6}(LC)?$/i.test(g)) {
+    return `https://plants.ensembl.org/Triticum_aestivum/Gene/Summary?g=${encodeURIComponent(g)}`
+  }
+  if (/^TRITD[1-7][ABU]v1G\d{6}$/i.test(g)) {
+    return `https://plants.ensembl.org/Triticum_turgidum/Gene/Summary?g=${encodeURIComponent(g)}`
+  }
+  return null
+}
+
+/**
+ * EnsemblPlants search, for a gene model from an assembly release Ensembl does
+ * not serve directly - it still finds the gene by name in most cases, which is
+ * more useful than offering nothing.
+ */
+export function ensemblSearchUrl(gene: string, species = 'Triticum_aestivum'): string | null {
+  const g = (gene || '').trim()
+  return g ? `https://plants.ensembl.org/${species}/Search/Results?q=${encodeURIComponent(g)}` : null
+}

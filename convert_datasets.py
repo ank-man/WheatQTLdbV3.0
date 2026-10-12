@@ -28,12 +28,31 @@ SOURCES = [
 # helpers
 # ---------------------------------------------------------------------------
 
+# "No value" is written a dozen ways across these spreadsheets, and not only as
+# the ASCII hyphen: curators used the Unicode minus sign, en/em dashes, the
+# box-drawing horizontal that Excel autocorrect produces, a fullwidth hyphen, a
+# bare underscore, and the word "nothing". Treating only "-" as empty left
+# 5,938 placeholder values sitting in the candidate-gene column, where they
+# counted as real genes - the "has a candidate gene" filter returned 10,893
+# records when only 4,955 of them name one.
+_PLACEHOLDER = {
+    "-", "--", "---", "_", "__", ".", "..", "?", "??",
+    "\u2010", "\u2011", "\u2012", "\u2013", "\u2014", "\u2015",  # hyphen/dash variants
+    "\u2212", "\uff0d", "\uff3f", "\u2500", "\u2501", "\u254c",   # minus, fullwidth, box-drawing
+    "na", "n/a", "nil", "none", "nan", "nd", "n.d.", "nothing", "not available",
+    "not reported", "not determined", "absent",
+}
+
+
 def clean(v):
     if v is None:
         return ""
     s = str(v).strip()
     s = re.sub(r"\s+", " ", s)
-    return s if s not in ("-", "NA", "N/A", "na", "n/a", "nil", "Nil", "--") else ""
+    # strip a value made only of repeated dash/underscore glyphs ("──", "___")
+    if s and all(ch in "-_.\u2010\u2011\u2012\u2013\u2014\u2015\u2212\uff0d\uff3f\u2500\u2501\u254c" for ch in s):
+        return ""
+    return "" if s.lower() in _PLACEHOLDER else s
 
 # ---------------------------------------------------------------------------
 # chromosome / species normalization
@@ -445,6 +464,26 @@ def rows_from_sheet(ws):
     body    = data[hdr_idx + 1:]
     return headers, body
 
+# "Drought stress and drought control.xlsx" splits one experiment across two
+# sheets: QTL detected under imposed drought, and QTL detected on the same
+# populations under well-watered control conditions. The control sheet's 10,388
+# rows were previously excluded on the reasoning that a non-stress result is not
+# a drought result. That was wrong twice over: an association reported under
+# control conditions is still a published QTL (only 182 of the 10,388 duplicate
+# a stress row), and dropping them put the database 10,206 records below its own
+# source data. They are included, and the treatment is recorded so that a count
+# of drought-STRESS QTL is still available and is not silently inflated by them.
+TREATMENT_SHEETS = {
+    ("drought stress and drought control.xlsx", "control"): "Well-watered control",
+    ("drought stress and drought control.xlsx", "drought"): "Drought stress",
+}
+
+
+def treatment_of(file_name, sheet_name):
+    return TREATMENT_SHEETS.get(
+        (file_name.lower().strip(), sheet_name.lower().strip()), "")
+
+
 def sheet_type(sheet_name, file_name=""):
     """Classify a sheet name into qtl / metaqtl / epistatic / skip."""
     n = sheet_name.lower().strip()
@@ -625,6 +664,7 @@ def extract_qtl(headers, body, source_file):
             "reference":        g(row, rei),
             "doi":              g(row, doi),
             "source_file":      source_file,
+            "treatment":        "",
         })
     return records
 
@@ -759,6 +799,25 @@ def write_csv(path, fieldnames, records):
         w.writerows(records)
     print(f"\nWrote {len(records)} rows -> {path}")
 
+skip_sheets = {"apa format references", "references", "list", "root traits_mqtl"}
+
+# Sheet names like "Sheet1"/"Sheet2" are reused across many files with
+# unrelated content (e.g. N data_revised.xlsx's Sheet2 is real, needed
+# data), so exclusions scoped to a specific sheet NAME in a specific FILE
+# go here rather than in the global skip_sheets set above.
+# Nematode_Resistance.xlsx Sheet2 (180 rows: Singh et al. 2010 Euphytica
+# on T. monococcum, and Pundir et al. 2022 Sci Rep on cereal cyst
+# nematode in T. aestivum) was previously excluded, keeping only Sheet1's
+# Trident x Molineux population - confirmed on review to be two genuine,
+# distinct published studies (not duplicates of Sheet1), so it's included
+# like every other sheet now.
+# N data_revised.xlsx: keep only Sheet2 per instruction, excluding Sheet1
+# (and Sheet3, already empty/junk).
+FILE_SHEET_SKIP = {
+    "N data_revised.xlsx": {"sheet1"},
+}
+
+
 def main():
     all_qtl       = []
     all_metaqtl   = []
@@ -769,27 +828,6 @@ def main():
     # (candidate genes), under "Morphological traits" elsewhere in the same
     # workbook - every one of its 94 rows shares chromosome+position+markers
     # with a row in another sheet of that file.
-    # "Control" (in "Drought stress and drought control.xlsx") is the
-    # well-watered/non-stressed condition sheet - excluded so this dataset
-    # only contributes its actual drought-stress QTL records.
-    skip_sheets = {"apa format references", "references", "list", "root traits_mqtl", "control"}
-
-    # Sheet names like "Sheet1"/"Sheet2" are reused across many files with
-    # unrelated content (e.g. N data_revised.xlsx's Sheet2 is real, needed
-    # data), so exclusions scoped to a specific sheet NAME in a specific FILE
-    # go here rather than in the global skip_sheets set above.
-    # Nematode_Resistance.xlsx Sheet2 (180 rows: Singh et al. 2010 Euphytica
-    # on T. monococcum, and Pundir et al. 2022 Sci Rep on cereal cyst
-    # nematode in T. aestivum) was previously excluded, keeping only Sheet1's
-    # Trident x Molineux population - confirmed on review to be two genuine,
-    # distinct published studies (not duplicates of Sheet1), so it's included
-    # like every other sheet now.
-    # N data_revised.xlsx: keep only Sheet2 per instruction, excluding Sheet1
-    # (and Sheet3, already empty/junk).
-    FILE_SHEET_SKIP = {
-        "N data_revised.xlsx": {"sheet1"},
-    }
-
     for fpath in collect_files():
         fname = os.path.basename(fpath)
         src = os.path.splitext(fname)[0]
@@ -807,6 +845,10 @@ def main():
                     continue
                 if stype == "qtl":
                     recs = extract_qtl(headers, body, src)
+                    treat = treatment_of(fname, shname)
+                    if treat:
+                        for r in recs:
+                            r["treatment"] = treat
                     all_qtl.extend(recs)
                     print(f"  QTL      {shname}: {len(recs)} records")
                 elif stype == "metaqtl":
@@ -927,7 +969,7 @@ def main():
     qtl_fields = ["id","species","trait","parameter","cross","population","method",
                    "qtl_name","chromosome","position_interval","associated_markers",
                    "pve","candidate_gene","reference","doi","source_file",
-                   "multi_trait","n_traits"]
+                   "treatment","multi_trait","n_traits"]
     for i, r in enumerate(all_qtl, 1):
         r["id"] = f"Q{i:05d}"
     write_csv(os.path.join(OUT, "qtl.csv"), qtl_fields, all_qtl)
