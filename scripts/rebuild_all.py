@@ -13,6 +13,7 @@ That has now happened once; this script exists so it cannot happen again.
   3. backfill_references()      publications.csv -> back into the tables
   4. build_candidate_genes.py   the tables -> candidate_genes.csv
   5. build_linkage_maps.py      mined maps + GrainGenes -> maps / map_loci
+  6. validate_data.py           check the result, and fail loudly if wrong
 
 Steps 2-5 all read what step 1 wrote, so any of them run alone against stale
 tables will produce a file that disagrees with the rest.
@@ -53,20 +54,21 @@ def main():
                     help="keep the existing publications.csv instead of rebuilding it")
     args = ap.parse_args()
 
-    run("1/5  Final_data -> record tables", ["convert_datasets.py"])
+    run("1/6  Final_data -> record tables", ["convert_datasets.py"])
     if args.skip_crossref:
-        print("\n2/5  skipped: keeping the existing publications.csv")
+        print("\n2/6  skipped: keeping the existing publications.csv")
     else:
-        run("2/5  record tables -> publications.csv", ["scripts/build_publications.py"])
-    run("3/5  publications.csv -> references in the record tables",
+        run("2/6  record tables -> publications.csv", ["scripts/build_publications.py"])
+    run("3/6  publications.csv -> references in the record tables",
         ["-c", "import sys; sys.path.insert(0, 'scripts');"
                " from build_publications import backfill_references; backfill_references()"])
-    run("4/5  record tables -> candidate_genes.csv", ["scripts/build_candidate_genes.py"])
-    run("5/5  mined maps + GrainGenes -> maps.csv, map_loci.csv",
+    run("4/6  record tables -> candidate_genes.csv", ["scripts/build_candidate_genes.py"])
+    run("5/6  mined maps + GrainGenes -> maps.csv, map_loci.csv",
         ["scripts/build_linkage_maps.py"])
+    run("6/6  validate what was written", ["scripts/validate_data.py"])
 
-    print(f"\n{'=' * 70}\nAll of public/data rebuilt. "
-          f"Check it with: python3 scripts/reconcile_final_data.py\n{'=' * 70}")
+    print(f"\n{'=' * 70}\nAll of public/data rebuilt and validated.\n"
+          f"For the source-row ledger: python3 scripts/reconcile_final_data.py\n{'=' * 70}")
 
 
 if __name__ == "__main__":
