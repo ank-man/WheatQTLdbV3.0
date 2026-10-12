@@ -18,6 +18,7 @@ interface Filters {
   trait: string
   subTrait: string
   chromosome: string
+  treatment: string
   pveMin: string
   pveMax: string
   hasCandidateGene: boolean
@@ -26,7 +27,7 @@ interface Filters {
 
 const EMPTY: Filters = {
   q: '', species: '', majorClass: '', trait: '', subTrait: '', chromosome: '',
-  pveMin: '', pveMax: '', hasCandidateGene: false, multiTraitOnly: false,
+  treatment: '', pveMin: '', pveMax: '', hasCandidateGene: false, multiTraitOnly: false,
 }
 
 function uniqueValues<T>(rows: T[], key: keyof T): string[] {
@@ -83,6 +84,14 @@ const columns: ColumnDef<QTLRecord, any>[] = [
   { accessorKey: 'candidate_gene', header: () => <GlossaryHeader label="Cand. Gene" term="candidate_gene" /> },
   { accessorKey: 'method', header: () => <GlossaryHeader label="Method" term="method" /> },
   {
+    accessorKey: 'treatment',
+    header: 'Treatment',
+    cell: ({ getValue }) => {
+      const v = String(getValue() ?? '')
+      return v ? <span className="badge text-[10px]">{v}</span> : <span className="text-wheat-400">—</span>
+    },
+  },
+  {
     accessorKey: 'reference', header: 'Reference',
     cell: ({ row }) => {
       const r = row.original
@@ -136,6 +145,9 @@ export default function AdvancedSearch() {
     return pool.filter((cat) => present.has(cat))
   }, [data, f.majorClass])
   const chrOpts = useMemo(() => uniqueValues(data, 'chromosome'), [data])
+  // Only the studies that ran a treatment contrast carry this, so the filter
+  // appears only when such records are present.
+  const treatmentOpts = useMemo(() => uniqueValues(data, 'treatment'), [data])
 
   // Only offered when the selected Trait is one that actually has a further
   // breakdown (see TRAIT_SUBCATEGORIES) - e.g. Biofortification -> Zn/Fe/Se,
@@ -159,6 +171,7 @@ export default function AdvancedSearch() {
       if (f.trait && !traitMatches(cat, f.trait)) return false
       if (subTraitOpts.length && f.subTrait && !subTraitMatches(r, f.subTrait)) return false
       if (f.chromosome && r.chromosome !== f.chromosome) return false
+      if (f.treatment && (r.treatment ?? '') !== f.treatment) return false
       const p = Number(r.pve)
       if (!Number.isNaN(p) && (p < pMin || p > pMax)) return false
       if (f.hasCandidateGene && !String(r.candidate_gene ?? '').trim()) return false
@@ -216,6 +229,11 @@ export default function AdvancedSearch() {
             <Field label="Chromosome">
               <Select value={f.chromosome} onChange={(v) => setF({ ...f, chromosome: v })} options={chrOpts} />
             </Field>
+            {treatmentOpts.length > 0 && (
+              <Field label="Treatment">
+                <Select value={f.treatment} onChange={(v) => setF({ ...f, treatment: v })} options={treatmentOpts} />
+              </Field>
+            )}
             <Field label="PVE / R² (%)">
               <div className="flex gap-2">
                 <input className="input" type="number" placeholder="min" value={f.pveMin} onChange={(e) => setF({ ...f, pveMin: e.target.value })} />

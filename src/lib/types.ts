@@ -15,6 +15,13 @@ export interface QTLRecord {
   reference?: string
   doi?: string
   source_file?: string
+  /**
+   * Which arm of a treatment-contrast experiment the QTL was detected in
+   * ("Drought stress" / "Well-watered control"), where the source recorded
+   * both. Empty for the great majority of records, whose study had no such
+   * contrast - so filtering on it narrows to the studies that did.
+   */
+  treatment?: string
   /** Computed in convert_datasets.py, where whole-dataset context is available. */
   multi_trait?: string
   n_traits?: number | string
