@@ -9,6 +9,7 @@ export const TRAIT_CATEGORIES = [
   'Heat stress tolerance',
   'Waterlogging tolerance',
   'Frost tolerance',
+  'Multiple abiotic stress',
   'Biofortification',
   'Bacterial resistance',
   'Nematode resistance',
@@ -52,7 +53,7 @@ export type TraitMajorClass = (typeof TRAIT_MAJOR_CLASSES)[number]
 export const TRAIT_HIERARCHY: Record<TraitMajorClass, TraitCategory[]> = {
   'Abiotic stress': [
     'Drought tolerance', 'Heat stress tolerance', 'Salt tolerance',
-    'Waterlogging tolerance', 'Frost tolerance',
+    'Waterlogging tolerance', 'Frost tolerance', 'Multiple abiotic stress',
   ],
   'Biotic stress': [
     'Fungal resistance', 'Bacterial resistance', 'Viral resistance',
@@ -100,6 +101,8 @@ export const TRAIT_COLORS: Record<TraitCategory, string> = {
   'Heat stress tolerance': '#e11d48',
   'Waterlogging tolerance': '#1565c0',
   'Frost tolerance': '#64748b',
+  // Deliberately a mix of the drought and heat hues: it IS the combination.
+  'Multiple abiotic stress': '#b45309',
   Biofortification: '#7b1fa2',
   'Bacterial resistance': '#0e8fa0',
   'Nematode resistance': '#ef6c00',
@@ -326,28 +329,77 @@ const GRAIN_MINERAL = new RegExp(
  * only when the trait text is too generic to place (empty, or something like
  * "agronomic traits"), where it is the only signal available.
  */
-function classifyText(c: string): TraitCategory | null {
-  if (!c.trim()) return null
+/**
+ * How many DISTINCT abiotic stresses a trait description names.
+ *
+ * Each stress is counted once however many ways it is spelled in the string,
+ * so "drought stress, drought tolerance" is one stress and "heat and drought"
+ * is two. Used only to recognise combined-stress studies; a single stress
+ * falls through to its own rule below.
+ */
+const STRESS_TERMS: [string, RegExp][] = [
+  ['drought', /drought|water deficit|water stress/],
+  ['heat', /\bheat\b|high temperature/],
+  ['salt', /\bsalt|salin/],
+  ['waterlogging', /water-?\s?log/],
+  ['cold', /frost|freez|cold acclimat|cold harden|winter surviv/],
+  ['sprouting', /sprouting|dormancy/],
+  ['aluminium', /alumini?um|\bal toxicity/],
+  ['boron', /boron toxicity/],
+]
 
+function countStresses(c: string): number {
+  return STRESS_TERMS.filter(([, rx]) => rx.test(c)).length
+}
+
+/**
+ * The classification rules, in priority order, as data rather than as a chain
+ * of returns.
+ *
+ * Written this way for one reason: the order is doing real work, and that is
+ * only auditable if the rules can be walked more than once. `classifyText`
+ * takes the first match, while `matchingCategories` returns every rule that
+ * fires - which is what scripts/audit_trait_overlap.ts uses to report where
+ * two categories compete for the same records, and how often. A chain of
+ * early returns hides that entirely: it always produces exactly one answer and
+ * never admits that a second rule would also have matched.
+ */
+export const TRAIT_RULES: [TraitCategory, (c: string) => boolean][] = [
   // Pathogen names first: they are unambiguous, and a disease study often also
   // mentions yield or quality in the same string.
-  if (c.includes('fungal') || c.includes('fhb') || c.includes('rust') || c.includes('mildew') ||
-      c.includes('blight') || c.includes('smut') || c.includes('bunt') || c.includes('powdery') ||
-      c.includes('septoria') || c.includes('tan spot') || c.includes('puccinia')) return 'Fungal resistance'
-  if (c.includes('bacterial') || c.includes('leaf streak') || c.includes('bls')) return 'Bacterial resistance'
-  if (c.includes('virus') || c.includes('viral')) return 'Viral resistance'
-  if (c.includes('nematode') || c.includes('cereal cyst')) return 'Nematode resistance'
-  if (c.includes('insect')) return 'Insect resistance'
+  ['Fungal resistance', (c) =>
+    c.includes('fungal') || c.includes('fhb') || c.includes('rust') || c.includes('mildew') ||
+    c.includes('blight') || c.includes('smut') || c.includes('bunt') || c.includes('powdery') ||
+    c.includes('septoria') || c.includes('tan spot') || c.includes('puccinia')],
+  ['Bacterial resistance', (c) =>
+    c.includes('bacterial') || c.includes('leaf streak') || c.includes('bls')],
+  ['Viral resistance', (c) => c.includes('virus') || c.includes('viral')],
+  ['Nematode resistance', (c) => c.includes('nematode') || c.includes('cereal cyst')],
+  ['Insect resistance', (c) => c.includes('insect')],
+
+  // Combined-stress studies, before the single-stress rules.
+  //
+  // 571 records read "heat and drought tolerance" and a further ~250 name three
+  // or more stresses ("multiple abiotic stress tolerance: drought and heat
+  // stress, salinity, pre-harvest sprouting"). First-match ordering filed every
+  // one of them under whichever stress happened to be listed earliest in the
+  // rules, so a jointly mapped drought+heat QTL was counted as drought only and
+  // the heat total lost it entirely. A combined-stress QTL is its own finding -
+  // tolerance to two stresses at one locus is the thing such a study reports -
+  // so it gets its own category rather than being forced into one of them.
+  ['Multiple abiotic stress', (c) => countStresses(c) >= 2],
 
   // Abiotic stresses: the stress IS the subject of such a study, whatever
   // phenotype was used to score it.
-  if (c.includes('drought')) return 'Drought tolerance'
-  if (c.includes('salt') || c.includes('salin')) return 'Salt tolerance'
-  if (hasWord(c, 'heat') || c.includes('high temperature')) return 'Heat stress tolerance'
-  if (c.includes('water-log') || c.includes('water log') || c.includes('waterlog')) return 'Waterlogging tolerance'
-  if (c.includes('frost') || c.includes('freez') || c.includes('winter surviv') || c.includes('lt50') ||
-      c.includes('cold-respons') || c.includes('cold acclimat') || c.includes('cold harden') ||
-      c.includes('snow mold')) return 'Frost tolerance'
+  ['Drought tolerance', (c) => c.includes('drought')],
+  ['Salt tolerance', (c) => c.includes('salt') || c.includes('salin')],
+  ['Heat stress tolerance', (c) => hasWord(c, 'heat') || c.includes('high temperature')],
+  ['Waterlogging tolerance', (c) =>
+    c.includes('water-log') || c.includes('water log') || c.includes('waterlog')],
+  ['Frost tolerance', (c) =>
+    c.includes('frost') || c.includes('freez') || c.includes('winter surviv') ||
+    c.includes('lt50') || c.includes('cold-respons') || c.includes('cold acclimat') ||
+    c.includes('cold harden') || c.includes('snow mold')],
 
   // Grain mineral composition, before the nutrient-use-efficiency rule.
   //
@@ -362,39 +414,79 @@ function classifyText(c: string): TraitCategory | null {
   // Phosphorus Concentration" is a composition measurement whereas
   // "Phosphorous use efficiency" is an efficiency trait - the explicit
   // "use efficiency" wording is what separates them.
-  if (GRAIN_MINERAL.test(c) && !/use efficiency|uptake efficien/.test(c)) return 'Biofortification'
+  ['Biofortification', (c) =>
+    GRAIN_MINERAL.test(c) && !/use efficiency|uptake efficien/.test(c)],
 
-  if (c.includes('use efficiency') || c.includes('n-use') || c.includes('n use') ||
-      hasWord(c, 'nue') || c.includes('nitrogen') || c.includes('phosphor') ||
-      c.includes('potassium')) return 'Nutrient use efficiency'
+  ['Nutrient use efficiency', (c) =>
+    c.includes('use efficiency') || c.includes('n-use') || c.includes('n use') ||
+    hasWord(c, 'nue') || c.includes('nitrogen') || c.includes('phosphor') ||
+    c.includes('potassium')],
 
-  if (c.includes('sprouting') || c.includes('dormancy')) return 'Pre-harvest sprouting'
-  if (c.includes('herbicide')) return 'Herbicide tolerance'
+  ['Pre-harvest sprouting', (c) => c.includes('sprouting') || c.includes('dormancy')],
+  ['Herbicide tolerance', (c) => c.includes('herbicide')],
 
-  if (c.includes('biofort') || c.includes('bioforitif') || c.includes('mineral') ||
-      c.includes('grain fe') || c.includes('grain zn')) return 'Biofortification'
+  // Zinc, iron and selenium are biofortification targets whatever phenotype
+  // was scored, so they do not need a composition word the way the other
+  // elements do. Requiring one left 73 records unclassified entirely -
+  // "Iron / GFeC", "Zinc / Zn deficiency score", "Iron / Fe bioavailability" -
+  // because the measurement is named in an abbreviation the rule did not know.
+  ['Biofortification', (c) =>
+    c.includes('biofort') || c.includes('bioforitif') || c.includes('mineral') ||
+    /\b(zinc|iron|selenium)\b/.test(c) || /\bgrain\s+(fe|zn|se)\b/.test(c) ||
+    /\b(gfec|gznc|gzn|gfe)\b/.test(c)],
 
-  if (c.includes('yield') || c.includes('grain weight') || c.includes('tgw')) return 'Yield'
+  ['Yield', (c) => c.includes('yield') || c.includes('grain weight') || c.includes('tgw')],
 
-  if (c.includes('quality') || c.includes('protein') || c.includes('gluten') || c.includes('hardness') ||
-      c.includes('sediment') || c.includes('dough') || c.includes('test weight')) return 'Quality traits'
+  ['Quality traits', (c) =>
+    c.includes('quality') || c.includes('protein') || c.includes('gluten') ||
+    c.includes('hardness') || c.includes('sediment') || c.includes('dough') ||
+    c.includes('test weight')],
 
-  if (c.includes('grain morphology') || c.includes('seed morphology') ||
-      c.includes('grain length') || c.includes('grain width') || c.includes('grain shape') ||
-      c.includes('kernel length') || c.includes('kernel width') || c.includes('kernel shape') ||
-      c.includes('kernel size') || c.includes('seed size')) return 'Grain morphology'
+  ['Grain morphology', (c) =>
+    c.includes('grain morphology') || c.includes('seed morphology') ||
+    c.includes('grain length') || c.includes('grain width') || c.includes('grain shape') ||
+    c.includes('kernel length') || c.includes('kernel width') || c.includes('kernel shape') ||
+    c.includes('kernel size') || c.includes('seed size')],
 
-  if (c.includes('development') || c.includes('heading') || c.includes('vernal') ||
-      c.includes('photoperiod') || c.includes('earliness') || c.includes('flowering') ||
-      c.includes('maturity')) return 'Developmental'
+  ['Developmental', (c) =>
+    c.includes('development') || c.includes('heading') || c.includes('vernal') ||
+    c.includes('photoperiod') || c.includes('earliness') || c.includes('flowering') ||
+    c.includes('maturity')],
 
-  if (c.includes('morpholog') || c.includes('plant height') || c.includes('tiller') ||
-      c.includes('awn') || c.includes('spike length')) return 'Plant morphology'
+  // "morpholog" alone also matches "grain morphology", so all 1,419 grain
+  // morphology records were claimed by this rule too and only lost it because
+  // Grain morphology happens to be listed first. A rule that is correct only
+  // because of its position is a latent bug: reorder the list and the records
+  // move. The grain/seed/kernel qualifiers are excluded explicitly instead.
+  ['Plant morphology', (c) =>
+    (c.includes('morpholog') && !/\b(grain|seed|kernel|spike)\s+morpholog/.test(c)) ||
+    c.includes('plant height') || c.includes('tiller') ||
+    c.includes('awn') || c.includes('spike length')],
 
-  if (c.includes('physiolog')) return 'Physiological traits'
-  if (c.includes('disease')) return 'Fungal resistance'
+  ['Physiological traits', (c) => c.includes('physiolog')],
+  // Last resort: "disease resistance" with no pathogen named. Fungal pathogens
+  // are the overwhelming majority of wheat disease QTL, but this is a guess,
+  // and it is deliberately the final rule so a named pathogen always wins.
+  ['Fungal resistance', (c) => c.includes('disease')],
+]
 
+function classifyText(c: string): TraitCategory | null {
+  if (!c.trim()) return null
+  for (const [category, matches] of TRAIT_RULES) if (matches(c)) return category
   return null
+}
+
+/**
+ * Every category whose rule fires for this text, in priority order, not just
+ * the winner. Used to audit where the taxonomy genuinely overlaps.
+ */
+export function matchingCategories(c: string): TraitCategory[] {
+  if (!c.trim()) return []
+  const out: TraitCategory[] = []
+  for (const [category, matches] of TRAIT_RULES) {
+    if (matches(c) && !out.includes(category)) out.push(category)
+  }
+  return out
 }
 
 // Trait strings too generic to classify on their own - for these the measured

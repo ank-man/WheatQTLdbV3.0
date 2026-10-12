@@ -14,6 +14,15 @@ That has now happened once; this script exists so it cannot happen again.
   4. build_candidate_genes.py   the tables -> candidate_genes.csv
   5. build_linkage_maps.py      mined maps + GrainGenes -> maps / map_loci
   6. validate_data.py           check the result, and fail loudly if wrong
+  7. audit/trait_overlap        check the taxonomy itself: nothing unclassified,
+                                nothing heavily contested, no dead category
+
+Two further audits are reports rather than steps, because they describe the
+SOURCE rather than the output, and are worth reading when a count surprises
+you:
+
+  python3 scripts/reconcile_final_data.py      every source row, accounted for
+  python3 scripts/audit_multi_table_sheets.py  sheets holding more than one table
 
 Steps 2-5 all read what step 1 wrote, so any of them run alone against stale
 tables will produce a file that disagrees with the rest.
@@ -54,18 +63,40 @@ def main():
                     help="keep the existing publications.csv instead of rebuilding it")
     args = ap.parse_args()
 
-    run("1/6  Final_data -> record tables", ["convert_datasets.py"])
+    run("1/7  Final_data -> record tables", ["convert_datasets.py"])
     if args.skip_crossref:
-        print("\n2/6  skipped: keeping the existing publications.csv")
+        print("\n2/7  skipped: keeping the existing publications.csv")
     else:
-        run("2/6  record tables -> publications.csv", ["scripts/build_publications.py"])
-    run("3/6  publications.csv -> references in the record tables",
+        run("2/7  record tables -> publications.csv", ["scripts/build_publications.py"])
+    run("3/7  publications.csv -> references in the record tables",
         ["-c", "import sys; sys.path.insert(0, 'scripts');"
                " from build_publications import backfill_references; backfill_references()"])
-    run("4/6  record tables -> candidate_genes.csv", ["scripts/build_candidate_genes.py"])
-    run("5/6  mined maps + GrainGenes -> maps.csv, map_loci.csv",
+    run("4/7  record tables -> candidate_genes.csv", ["scripts/build_candidate_genes.py"])
+    run("5/7  mined maps + GrainGenes -> maps.csv, map_loci.csv",
         ["scripts/build_linkage_maps.py"])
-    run("6/6  validate what was written", ["scripts/validate_data.py"])
+    run("6/7  validate what was written", ["scripts/validate_data.py"])
+
+    # The taxonomy lives in TypeScript, so its audit is bundled and run with
+    # node. Skipped rather than failed when the bundler is not installed, so a
+    # data rebuild does not depend on node_modules being present.
+    esbuild = os.path.join(ROOT, "node_modules", ".bin", "esbuild")
+    if os.path.exists(esbuild):
+        src = os.path.join(ROOT, "scripts", "audit", "trait_overlap.ts")
+        out = os.path.join(ROOT, "scripts", "audit", "trait_overlap.mjs")
+        print(f"\n{'=' * 70}\n7/7  audit the trait taxonomy\n{'=' * 70}", flush=True)
+        if subprocess.run([esbuild, "--bundle", "--platform=node", "--format=esm",
+                           f"--outfile={out}", src, "--log-level=error"],
+                          cwd=ROOT).returncode == 0:
+            r = subprocess.run(["node", out], cwd=ROOT, capture_output=True, text=True)
+            # The report is long; show the verdict and anything that failed.
+            tail = [l for l in r.stdout.splitlines() if l.strip()][-6:]
+            print("\n".join(tail))
+            if r.returncode != 0:
+                sys.exit("\ntaxonomy audit failed - see the full report with: "
+                         "node scripts/audit/trait_overlap.mjs")
+    else:
+        print("\n7/7  skipped: node_modules not installed, so the taxonomy audit "
+              "cannot be bundled")
 
     print(f"\n{'=' * 70}\nAll of public/data rebuilt and validated.\n"
           f"For the source-row ledger: python3 scripts/reconcile_final_data.py\n{'=' * 70}")
