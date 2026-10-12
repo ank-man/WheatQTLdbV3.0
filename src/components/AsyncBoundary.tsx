@@ -24,9 +24,18 @@ export default function AsyncBoundary({ loading, error, empty, emptyMessage, chi
         <div>
           <div className="font-semibold">Failed to load data</div>
           <div className="text-sm">{error}</div>
+          {/* A visitor sees this, not a developer: the table failing to load
+              is a network or deployment problem, never something they can fix
+              by putting a file somewhere. Telling them to "add your CSV files
+              to public/data" is both useless and alarming - it reads as if the
+              database were empty. */}
           <div className="mt-2 text-xs opacity-80">
-            Add your CSV files to <code>public/data/</code>. See <code>README.md</code> for the schema.
+            This is a problem loading the page, not missing data. Reloading usually fixes it;
+            if it persists, please let us know via the Contact page.
           </div>
+          <button className="btn mt-3 text-xs" onClick={() => window.location.reload()}>
+            Reload
+          </button>
         </div>
       </div>
     )
