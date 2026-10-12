@@ -34,3 +34,7 @@ __pycache__/
 scripts/.crossref_cache/
 scripts/mine/.cache/
 scripts/mine/out/
+
+# Regenerable mining artefacts: rebuilt by scripts/mine/harvest_map_tables.py
+scripts/mine/out/wheat_map_tables.jsonl
+scripts/mine/.cache/
