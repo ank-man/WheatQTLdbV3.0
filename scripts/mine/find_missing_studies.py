@@ -165,6 +165,16 @@ def main():
         w.writeheader()
         w.writerows(rows)
 
+    # The same list, trimmed, for the site's "Studies awaiting curation" page.
+    # It is a list of PAPERS: no QTL record is created from it, and it is not
+    # part of any count of curated records.
+    site_cols = ["year", "title", "authors", "journal", "study_type", "mapping_in", "trait_hint",
+                 "doi", "pmid", "open_access", "in_gwas_atlas", "preprint", "url"]
+    with open(os.path.join(DATA, "pending_studies.csv"), "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=site_cols, extrasaction="ignore")
+        w.writeheader()
+        w.writerows(rows)
+
     for reason, n in skipped.most_common():
         print(f"  skipped {n:>5}  {reason}")
     print(f"candidate studies not in the database : {len(rows)}")

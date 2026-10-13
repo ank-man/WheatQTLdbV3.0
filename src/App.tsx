@@ -21,6 +21,7 @@ import PublicationsPage from './pages/PublicationsPage'
 import LinkageMapsPage from './pages/LinkageMapsPage'
 import GwasAtlasPage from './pages/GwasAtlasPage'
 import NewsPage from './pages/NewsPage'
+import PendingStudiesPage from './pages/PendingStudiesPage'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/news" element={<NewsPage />} />
+        <Route path="/data/pending-studies" element={<PendingStudiesPage />} />
         <Route path="/publications" element={<PublicationsPage />} />
         <Route path="/credits" element={<Credits />} />
         <Route path="/links" element={<UsefulLinks />} />

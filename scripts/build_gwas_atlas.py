@@ -149,6 +149,13 @@ def main():
         w.writeheader()
         w.writerows(rows)
 
+    # One-line summary, so pages that only need the totals do not have to
+    # download the whole table.
+    with open(os.path.join(DATA, "gwas_atlas_summary.csv"), "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["associations", "publications", "traits"])
+        w.writerow([len(rows), len({r["pmid"] for r in rows}), len({r["trait"] for r in rows})])
+
     for reason, n in skipped.most_common():
         print(f"  skipped {n:>6}  {reason}")
     print(f"associations written          : {len(rows)} from "

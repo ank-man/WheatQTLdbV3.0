@@ -1,5 +1,6 @@
 import { Fragment, useMemo } from 'react'
 import type { Data } from 'plotly.js'
+import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
 import AsyncBoundary from '../components/AsyncBoundary'
 import StatisticsPlot from '../components/StatisticsPlot'
@@ -36,6 +37,8 @@ export default function Statistics() {
   const mqtl = useCSV<MetaQTLRecord>('metaqtl.csv')
   const epi = useCSV<EpistaticRecord>('epistatic.csv')
   const pubs = useCSV<PublicationRecord>('publications.csv')
+  const atlas = useCSV<{ publications: string }>('gwas_atlas_summary.csv')
+  const pending = useCSV<{ mapping_in: string }>('pending_studies.csv')
 
   const loading = qtl.loading || mqtl.loading || epi.loading || pubs.loading
   const error = qtl.error ?? mqtl.error ?? epi.error ?? pubs.error
@@ -110,7 +113,10 @@ export default function Statistics() {
   const species = useMemo(() => {
     const counts = new Map<string, number>()
     qtl.data.forEach((r) => {
-      const s = normalizeSpecies(r.species || '') || 'Not recorded'
+      // A field naming several species ("A; B") is an interspecific study:
+      // counted once under its own row, so the rows still sum to the total.
+      const names = [...new Set((r.species || '').split(/[;/]/).map((x) => normalizeSpecies(x)).filter(Boolean))]
+      const s = names.length === 0 ? 'Not recorded' : names.length === 1 ? names[0] : 'Two or more species'
       counts.set(s, (counts.get(s) ?? 0) + 1)
     })
     return Array.from(counts.entries()).sort((a, b) => b[1] - a[1])
@@ -218,7 +224,7 @@ export default function Statistics() {
             <dl className="space-y-2 text-sm">
               {species.slice(0, 6).map(([name, n]) => (
                 <div key={name} className="flex items-center gap-2">
-                  <dt className="italic text-wheat-700">{name}</dt>
+                  <dt className={/^(Two|Not)/.test(name) ? 'text-wheat-700' : 'italic text-wheat-700'}>{name}</dt>
                   <dd className="ml-auto tabular-nums font-medium text-wheat-900">{n.toLocaleString()}</dd>
                   <dd className="w-14 text-right tabular-nums text-wheat-500">{pct(n, total)}</dd>
                 </div>
@@ -234,6 +240,24 @@ export default function Statistics() {
               )}
             </dl>
           </section>
+          <section className="card lg:col-span-2">
+            <Heading title="Literature coverage"
+                     note="How much of the wheat QTL and GWAS literature is in the database. Only the first row contributes to the QTL counts above." />
+            <dl className="space-y-2 text-sm">
+              {[
+                { name: 'Publications curated into WheatQTLdb', n: pubs.data.length, to: '/publications' },
+                { name: 'Further publications imported from GWAS Atlas', n: Number(atlas.data[0]?.publications ?? 0), to: '/data/gwas-atlas' },
+                { name: 'Papers awaiting curation that name QTL / GWAS in the title', n: pending.data.filter((r) => r.mapping_in === 'title').length, to: '/data/pending-studies' },
+                { name: 'Other candidate papers (mapping mentioned in the abstract only)', n: pending.data.filter((r) => r.mapping_in !== 'title').length, to: '/data/pending-studies' },
+              ].map((row) => (
+                <div key={row.name} className="flex items-center gap-2">
+                  <dt className="text-wheat-700"><Link className="hover:underline" to={row.to}>{row.name}</Link></dt>
+                  <dd className="ml-auto tabular-nums font-medium text-wheat-900">{row.n.toLocaleString()}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+
         </div>
         {import.meta.env.PROD && (
           <p className="mt-6 text-xs text-wheat-500">

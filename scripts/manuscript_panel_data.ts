@@ -18,7 +18,7 @@ import path from 'node:path'
 import Papa from 'papaparse'
 import {
   normalizeTrait, normalizeSubTrait, normalizeSpecies, normalizeChromosome, majorClassOf,
-  parsePositionInterval, qtlPhysicalPoint, chromosomeSortKey,
+  parsePositionInterval, qtlPhysicalPoint, chromosomeSortKey, CHROMOSOME_LENGTHS, centromerePosition,
   TRAIT_MAJOR_CLASSES, TRAIT_HIERARCHY, TRAIT_SUBCATEGORIES,
 } from '../src/lib/map'
 
@@ -88,9 +88,51 @@ write('qtl_by_position_type.csv', [
   { position_type: 'No usable position', records: qtl.length - physical - genetic },
 ])
 
+// A record naming several species in one field ("A; B") is an interspecific
+// study. It is counted once, under its own row, so the rows still sum to the
+// record total instead of listing each combination as if it were a species.
+const speciesOf = (raw: string) => {
+  const names = [...new Set((raw || '').split(/[;/]/).map((x) => normalizeSpecies(x)).filter(Boolean))]
+  return names.length === 0 ? 'Not recorded' : names.length === 1 ? names[0] : 'Two or more species'
+}
 const species = new Map<string, number>()
-qtl.forEach((r) => { const s = normalizeSpecies(r.species || '') || 'Not recorded'; species.set(s, (species.get(s) ?? 0) + 1) })
+qtl.forEach((r) => { const s = speciesOf(r.species); species.set(s, (species.get(s) ?? 0) + 1) })
 write('qtl_by_species.csv', [...species.entries()].sort((a, b) => b[1] - a[1]).map(([name, records]) => ({ species: name, records })))
+
+// QTL density along each chromosome, for the karyotype heat map: physical
+// positions only, in 10 Mb windows on IWGSC RefSeq v1.0.
+const BIN = 10_000_000
+const density = new Map<string, number>()
+qtl.forEach((r) => {
+  const chr = normalizeChromosome(r.chromosome)
+  if (!chr) return
+  const p = qtlPhysicalPoint(r, chr)
+  if (p === null) return
+  const bin = Math.floor(Math.min(p, CHROMOSOME_LENGTHS[chr] - 1) / BIN)
+  density.set(`${chr}|${bin}`, (density.get(`${chr}|${bin}`) ?? 0) + 1)
+})
+const densityRows: object[] = []
+Object.keys(CHROMOSOME_LENGTHS)
+  .sort((a, b) => chromosomeSortKey(a) - chromosomeSortKey(b))
+  .forEach((chr) => {
+    const n = Math.ceil(CHROMOSOME_LENGTHS[chr] / BIN)
+    for (let b = 0; b < n; b++) {
+      densityRows.push({
+        chromosome: chr,
+        start_mb: (b * BIN) / 1e6,
+        end_mb: Math.min((b + 1) * BIN, CHROMOSOME_LENGTHS[chr]) / 1e6,
+        records: density.get(`${chr}|${b}`) ?? 0,
+      })
+    }
+  })
+write('qtl_density_10mb.csv', densityRows)
+write('chromosomes.csv', Object.keys(CHROMOSOME_LENGTHS)
+  .sort((a, b) => chromosomeSortKey(a) - chromosomeSortKey(b))
+  .map((chr) => ({
+    chromosome: chr,
+    length_mb: CHROMOSOME_LENGTHS[chr] / 1e6,
+    centromere_mb: (centromerePosition(chr) * CHROMOSOME_LENGTHS[chr]) / 1e6,
+  })))
 
 const classOf = (r: any) => majorClassOf(normalizeTrait(r))
 const cls = (rows: any[]) => TRAIT_MAJOR_CLASSES.map((m) => rows.filter((r) => classOf(r) === m).length)
