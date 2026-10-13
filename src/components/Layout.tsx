@@ -12,6 +12,7 @@ const NAV = [
   { to: '/data/linkage-maps', label: 'Linkage maps' },
   { to: '/publications', label: 'Publications' },
   { to: '/news', label: 'News' },
+  { to: '/tutorial', label: 'Tutorial' },
   { to: '/team', label: 'Team' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -32,7 +33,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               <div className="text-[10px] uppercase tracking-wider text-wheat-500">v3.0</div>
             </div>
           </Link>
-          <nav className="hidden items-center gap-1 lg:flex">
+          <nav className="hidden items-center gap-0.5 lg:flex xl:gap-1">
             {NAV.map((n) => (
               <NavLink
                 key={n.to}

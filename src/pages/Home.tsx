@@ -1,6 +1,6 @@
 import { FormEvent, useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { ArrowRight, BarChart3, Check, Copy, Database, Layers, Search } from 'lucide-react'
+import { ArrowRight, BarChart3, BookOpen, Check, Copy, Database, Layers, Search } from 'lucide-react'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
 import NewsList from '../components/NewsList'
@@ -133,6 +133,7 @@ export default function Home() {
             <Link to="/data" className="btn-primary"><Database className="h-4 w-4" /> Browse data</Link>
             <Link to="/statistics" className="btn"><BarChart3 className="h-4 w-4" /> Statistics</Link>
             <Link to="/map" className="btn"><Layers className="h-4 w-4" /> Genome map</Link>
+            <Link to="/tutorial" className="btn"><BookOpen className="h-4 w-4" /> User guide</Link>
           </div>
         </div>
 

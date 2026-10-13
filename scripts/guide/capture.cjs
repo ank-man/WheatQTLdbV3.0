@@ -25,7 +25,7 @@ const SECTIONS = [
     id: 'home', title: 'Home page', url: '/', height: 1040,
     intro: 'The home page is the starting point: search the whole database, see how much it holds, and jump straight to a trait.',
     callouts: [
-      { find: (p) => p.locator('header nav').first(), side: 'bottom', label: 'Menu', text: 'Every part of the database is one click away: Statistics, Map, Data, Search, Linkage maps, Publications and News.' },
+      { find: (p) => p.locator('header nav').first(), side: 'bottom', label: 'Menu', text: 'Every part of the database is one click away: Statistics, Map, Data, Search, Linkage maps, Publications, News and this Tutorial.' },
       { find: (p) => p.getByPlaceholder('Search QTL, trait, marker, gene, reference…'), side: 'left', label: 'Search box', text: 'Type a QTL name, trait, marker, gene or author and press Search. The examples below it (Drought, Rht-B1, Fhb1 …) run a search in one click.' },
       { find: (p) => p.getByRole('link', { name: 'Browse data' }), side: 'left', label: 'Quick links', text: 'Open the data tables, the Statistics page or the Genome map.' },
       { find: (p) => p.locator('dl').first(), side: 'top', label: 'Live counts', text: 'The number of QTL, MetaQTL, epistatic QTL pairs, multi-trait QTL and species, read from the current data. Click a number to open that table.' },
