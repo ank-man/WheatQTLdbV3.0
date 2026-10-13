@@ -22,6 +22,8 @@ const TRAITS = [
   { name: 'Plant morphology', blurb: 'Plant height, tillers, awns, spike length.', color: '#a05a2c' },
 ]
 
+const heroImg = `${import.meta.env.BASE_URL}images/wheat-aerial-field.jpg`
+
 const isMainTrait = (name: string) => (TRAIT_MAJOR_CLASSES as readonly string[]).includes(name)
 
 // A main trait and a sub-category are separate filters on the Search page, so
@@ -79,8 +81,13 @@ export default function Home() {
   return (
     <div className="space-y-14">
       {/* HERO */}
-      <section className="-mx-4 -mt-8 border-b border-wheat-200 bg-gradient-to-b from-wheat-100 to-white">
-        <div className="mx-auto flex max-w-3xl flex-col items-center px-4 pb-12 pt-16 text-center sm:pt-24">
+      <section className="relative -mx-4 -mt-8 overflow-hidden border-b border-wheat-200 bg-white">
+        {/* Field photograph behind the hero. The wash over it is heavy enough
+            for the text to keep its contrast, and fades to white at the bottom
+            so the counts sit on a clean surface. */}
+        <img src={heroImg} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/75 to-white" />
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-4 pb-12 pt-16 text-center sm:pt-24">
           <span className="badge animate-fade-up">
             <span className="mr-1 inline-flex h-2 w-2 rounded-full bg-green-600" />
             Version 3.0 · curated from the published literature
@@ -88,7 +95,7 @@ export default function Home() {
           <h1 className="mt-6 font-serif text-5xl font-bold leading-[1.05] tracking-tight text-wheat-900 sm:text-7xl animate-fade-up" style={{ animationDelay: '.05s' }}>
             WheatQTLdb <span className="text-green-700">V3.0</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-wheat-700 animate-fade-up" style={{ animationDelay: '.1s' }}>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-wheat-800 animate-fade-up" style={{ animationDelay: '.1s' }}>
             A manually curated, open-access database of <strong className="text-wheat-900">QTL</strong>,{' '}
             <strong className="text-wheat-900">MetaQTL</strong> and{' '}
             <strong className="text-wheat-900">epistatic QTL</strong> in <em>Triticum aestivum</em> and seven
@@ -130,7 +137,7 @@ export default function Home() {
         </div>
 
         {/* Live counts, read from the data files */}
-        <div className="mx-auto max-w-5xl px-4 pb-12">
+        <div className="relative mx-auto max-w-5xl px-4 pb-12">
           <dl className="grid grid-cols-2 divide-wheat-200 overflow-hidden rounded-2xl border border-wheat-200 bg-white shadow-sm sm:grid-cols-5 sm:divide-x">
             <Stat label="QTL / MTA records" value={stats.qtl} loading={qtl.loading} to="/data/qtl" />
             <Stat label="MetaQTLs" value={stats.mqtl} loading={mqtl.loading} to="/data/metaqtl" />
