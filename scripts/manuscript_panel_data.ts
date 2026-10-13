@@ -126,6 +126,25 @@ Object.keys(CHROMOSOME_LENGTHS)
     }
   })
 write('qtl_density_10mb.csv', densityRows)
+
+// MetaQTL per 10 Mb window: each MetaQTL is counted in every window its
+// consensus interval overlaps (physical intervals only).
+const metaDensity = new Map<string, number>()
+mqtl.forEach((r) => {
+  const chr = normalizeChromosome(r.chromosome)
+  const pos = parsePositionInterval(r.position_interval || '')
+  if (!chr || pos.point === null || ![pos.point, pos.start, pos.end].some((v) => v !== null && v >= 1000)) return
+  const len = CHROMOSOME_LENGTHS[chr]
+  const from = Math.floor(Math.min(pos.start ?? pos.point, len - 1) / BIN)
+  const to = Math.floor(Math.min(pos.end ?? pos.point, len - 1) / BIN)
+  for (let b = Math.min(from, to); b <= Math.max(from, to); b++) {
+    metaDensity.set(`${chr}|${b}`, (metaDensity.get(`${chr}|${b}`) ?? 0) + 1)
+  }
+})
+write('metaqtl_density_10mb.csv', (densityRows as any[]).map((d) => ({
+  chromosome: d.chromosome, start_mb: d.start_mb, end_mb: d.end_mb,
+  records: metaDensity.get(`${d.chromosome}|${Math.round(d.start_mb / 10)}`) ?? 0,
+})))
 write('chromosomes.csv', Object.keys(CHROMOSOME_LENGTHS)
   .sort((a, b) => chromosomeSortKey(a) - chromosomeSortKey(b))
   .map((chr) => ({

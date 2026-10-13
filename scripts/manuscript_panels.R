@@ -167,36 +167,67 @@ p <- ggplot(chr, aes(subgenome, records, fill = subgenome)) +
         legend.position = "none")
 save_panel(p, "Fig_QTL_by_chromosome", 3.0)
 
-# ---- 3. QTL density along the chromosomes ------------------------------------
-dens <- rd("qtl_density_10mb.csv")
-chrs <- rd("chromosomes.csv")
-ord  <- rev(chrs$chromosome)
-dens$chromosome <- factor(dens$chromosome, levels = ord)
-chrs$chromosome <- factor(chrs$chromosome, levels = ord)
-p <- ggplot(dens) +
-  geom_rect(aes(xmin = start_mb, xmax = end_mb,
-                ymin = as.numeric(chromosome) - 0.36, ymax = as.numeric(chromosome) + 0.36,
-                fill = records)) +
-  geom_rect(data = chrs, aes(xmin = 0, xmax = length_mb,
-                             ymin = as.numeric(chromosome) - 0.36, ymax = as.numeric(chromosome) + 0.36),
-            fill = NA, colour = MUTED, linewidth = 0.2) +
-  geom_point(data = chrs, aes(centromere_mb, as.numeric(chromosome) + 0.5), shape = 25,
-             size = 1.1, fill = INK, colour = INK) +
-  scale_y_continuous(breaks = seq_along(ord), labels = ord, expand = expansion(add = 0.6)) +
-  scale_x_continuous(expand = expansion(mult = c(0, 0.02)), breaks = seq(0, 800, 100)) +
-  # square-root colour scale: a few windows hold hundreds of QTL and would
-  # otherwise leave the rest of the genome indistinguishable from empty
-  scale_fill_gradientn(colours = SEQ, trans = "sqrt", labels = comma,
-                       breaks = function(l) { b <- c(0, 25, 100, 250, 500, 1000, 2000); b[b <= l[2]] },
-                       guide = guide_colourbar(barwidth = unit(55, "mm"), barheight = unit(2.2, "mm"),
-                                               title.position = "left", title.vjust = 0.9,
-                                               frame.colour = RULE, ticks.colour = "white")) +
-  labs(x = "Physical position, Mb (IWGSC RefSeq v1.0)", y = NULL,
-       fill = "QTL / MTA per 10 Mb window") +
-  theme_panel() +
-  theme(panel.grid = element_blank(), axis.line.y = element_blank(), axis.ticks.y = element_blank(),
-        legend.title = element_text(size = 8.5, colour = MUTED))
-save_panel(p, "Fig_QTL_density_along_chromosomes", 5.2)
+# ---- 3. QTL density along the chromosomes (RIdeogram) -----------------------
+# Idiograms of the 21 chromosomes at their RefSeq v1.0 lengths with the
+# centromere constriction, QTL density overlaid on each chromosome and MetaQTL
+# density as a second strip beside it (Hao et al. 2020, PeerJ Comput Sci 6:e251).
+if (requireNamespace("RIdeogram", quietly = TRUE) && requireNamespace("rsvg", quietly = TRUE)) {
+  chrs <- rd("chromosomes.csv")
+  bp <- function(mb) as.integer(round(mb * 1e6))
+  karyotype <- data.frame(
+    Chr = chrs$chromosome, Start = 0L, End = bp(chrs$length_mb),
+    CE_start = bp(pmax(chrs$centromere_mb - 6, 0)),
+    CE_end = bp(pmin(chrs$centromere_mb + 6, chrs$length_mb)),
+    stringsAsFactors = FALSE)
+  track <- function(name) {
+    d <- rd(name)
+    data.frame(Chr = d$chromosome, Start = bp(d$start_mb) + 1L, End = bp(d$end_mb),
+               # square-root scale, as a few windows hold hundreds of QTL and
+               # would leave the rest of the genome looking empty
+               Value = sqrt(d$records), stringsAsFactors = FALSE)
+  }
+  svg <- file.path(OUT, "Fig_QTL_density_along_chromosomes.svg")
+  RIdeogram::ideogram(
+    karyotype = karyotype, overlaid = track("qtl_density_10mb.csv"),
+    label = track("metaqtl_density_10mb.csv"), label_type = "heatmap",
+    colorset1 = c("#f3f6fb", "#86b6ef", "#1c5cab", "#0d366b"),
+    colorset2 = c("#fdf3ea", "#f3b58f", "#d95926", "#8a3210"),
+    width = 170, Lx = 22, Ly = 187, output = svg)
+  # Tidy the SVG RIdeogram writes: it is an A4 page with the lower third
+  # empty, a transparent background, and colour keys labelled only "Low" and
+  # "High". Crop to the drawing, paint it white, and label the keys in records
+  # per window (the colours are on a square-root scale).
+  qmax <- max(rd("qtl_density_10mb.csv")$records); mmax <- max(rd("metaqtl_density_10mb.csv")$records)
+  txt <- paste(readLines(svg, warn = FALSE), collapse = "\n")
+  txt <- gsub("<text[^>]*>(Low|High)</text>", "", txt)
+  # The keys are drawn at (Lx, Ly) = (22 mm, 187 mm); 1 mm is 3.543 px in this
+  # SVG, the second key sits 46 px below the first, and each is ~72 px long.
+  kx <- 22 * 3.543 + 80; ky <- 187 * 3.543 + 8
+  key <- function(y, label, hi) sprintf(
+    '<text x="%.1f" y="%.1f" font-size="9" font-family="Arial" fill="#19191c">%s: 0 to %s</text>',
+    kx, y, label, comma(hi))
+  keys <- paste0(key(ky, "QTL / MTA per 10 Mb window (on each chromosome)", qmax),
+                 key(ky + 46, "MetaQTL per 10 Mb window (strip to the right)", mmax),
+                 sprintf('<text x="%.1f" y="%.1f" font-size="8" font-family="Arial" fill="#57575f">Colour on a square-root scale. Physical positions, IWGSC RefSeq v1.0; the constriction marks the centromere.</text>',
+                         22 * 3.543, ky + 78))
+  txt <- sub('<svg id="svg" width="[0-9.]+" height="[0-9.]+">',
+             '<svg id="svg" xmlns="http://www.w3.org/2000/svg" width="700" height="695" viewBox="30 70 700 695"><rect x="30" y="70" width="700" height="695" fill="white"/>',
+             txt)
+  txt <- sub("</svg>", paste0(keys, "</svg>"), txt, fixed = TRUE)
+  writeLines(txt, svg)
+  base <- sub("\\.svg$", "", svg)
+  rsvg::rsvg_pdf(svg, paste0(base, ".pdf"))
+  px <- round(W * DPI)
+  rsvg::rsvg_png(svg, paste0(base, ".png"), width = px)
+  img <- png::readPNG(paste0(base, ".png"))
+  ragg::agg_tiff(paste0(base, ".tiff"), width = ncol(img), height = nrow(img), units = "px",
+                 res = DPI, compression = "lzw", background = "white")
+  grid::grid.raster(img, width = grid::unit(1, "npc"), height = grid::unit(1, "npc"), interpolate = FALSE)
+  invisible(dev.off())
+  message(sprintf("  %-32s RIdeogram, %d px wide at %d dpi", "Fig_QTL_density_along_chromosomes", px, DPI))
+} else {
+  message("  RIdeogram / rsvg not installed - skipping the chromosome density idiogram")
+}
 
 # ---- 4. QTL by publication year ----------------------------------------------
 yr <- rd("qtl_by_year.csv")
