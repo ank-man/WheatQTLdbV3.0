@@ -7,6 +7,8 @@ import {
 } from 'lucide-react'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
+import NewsList from '../components/NewsList'
+import { useNews } from '../lib/news'
 import { normalizeTrait, normalizeSpecies, isMultiTraitQTL, locusKey,
   TRAIT_MAJOR_CLASSES, majorClassOf } from '../lib/map'
 import MiniIdeogram from '../components/MiniIdeogram'
@@ -48,6 +50,7 @@ function traitSearchHref(name: string): string {
 }
 
 export default function Home() {
+  const news = useNews()
   const qtl = useCSV<QTLRecord>('qtl.csv')
   const mqtl = useCSV<MetaQTLRecord>('metaqtl.csv')
   const epi = useCSV<EpistaticRecord>('epistatic.csv')
@@ -229,6 +232,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* NEWS */}
+      {news.items.length > 0 && (
+        <section className="card">
+          <div className="mb-1 flex items-center justify-between">
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-wider text-wheat-600">Updates</div>
+              <h3 className="mt-1 text-xl font-bold">News</h3>
+            </div>
+            <Link to="/news" className="btn">All news</Link>
+          </div>
+          <NewsList items={news.items.slice(0, 3)} />
+        </section>
+      )}
 
       {/* TOP TRAIT CATEGORIES (live from data) */}
       <section className="grid gap-6 lg:grid-cols-3">

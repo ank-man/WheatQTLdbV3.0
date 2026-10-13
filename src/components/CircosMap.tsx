@@ -196,7 +196,9 @@ export default function CircosMap({
   }, [filtered, chromosomes])
 
 
-  const qtlCount = filtered.filter((i) => i.type === 'qtl').length
+  const isAtlas = (i: MapItem) => i.raw.source_file === 'GWAS Atlas'
+  const qtlCount = filtered.filter((i) => i.type === 'qtl' && !isAtlas(i)).length
+  const atlasCount = filtered.filter((i) => i.type === 'qtl' && isAtlas(i)).length
   const metaCount = filtered.filter((i) => i.type === 'metaqtl').length
 
   if (chromosomes.length === 0) {
@@ -219,6 +221,9 @@ export default function CircosMap({
           <div className="flex flex-wrap items-center gap-4">
             <div className="text-sm text-wheat-700 dark:text-wheat-300">
               <span className="font-semibold text-wheat-900 dark:text-wheat-50">{qtlCount.toLocaleString()}</span> QTLs ·{' '}
+              {atlasCount > 0 && (
+                <><span className="font-semibold text-wheat-900 dark:text-wheat-50">{atlasCount.toLocaleString()}</span> GWAS Atlas MTAs ·{' '}</>
+              )}
               <span className="font-semibold text-wheat-900 dark:text-wheat-50">{metaCount.toLocaleString()}</span> MetaQTLs ·{' '}
               <span className="font-semibold text-wheat-900 dark:text-wheat-50">{filteredLinks.length.toLocaleString()}</span> epistatic links
               {links.length > MAX_CHORDS && showLinks && (

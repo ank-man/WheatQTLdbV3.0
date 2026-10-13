@@ -12,7 +12,7 @@ metaQTL and epistatic QTL in *Triticum aestivum* and related wheat species.
 - **Free, fast, static hosting** on GitHub Pages — automated CI/CD via Actions.
 - **Modern responsive UI** (React + TypeScript + Tailwind) with dark mode.
 - **Powerful tables** with column sort, full-text search, pagination, CSV export.
-- **Interactive charts** (totals, by species, trait category, chromosome, year).
+- **Interactive Plotly charts** (totals, by species, trait category, chromosome, year).
 - **CSV-based data layer** in `public/data/` — community PRs welcome.
 - **Schema-typed** in `src/lib/types.ts` for editor autocomplete & validation.
 - **DOI auto-linking** in reference columns.
@@ -27,7 +27,7 @@ metaQTL and epistatic QTL in *Triticum aestivum* and related wheat species.
 | UI              | React 18 + Tailwind CSS                       |
 | Routing         | react-router-dom                              |
 | Tables          | @tanstack/react-table                         |
-| Charts          | recharts                                      |
+| Charts          | Plotly.js dashboard; R plotly companion report |
 | Icons           | lucide-react                                  |
 | CSV             | papaparse                                     |
 | Hosting         | GitHub Pages (via GitHub Actions)             |
@@ -53,6 +53,14 @@ Drop CSV files into `public/data/`:
 Schema and column lists are documented in
 [`public/data/README.md`](public/data/README.md). The site reloads them at
 runtime — no rebuild required for local dev.
+
+The Statistics dashboard reads these CSVs directly and redraws its Plotly
+figures when the data changes. `npm run build` also runs
+`scripts/plot_statistics.R`, producing `dist/statistics-r.html` and its
+dependencies from the current CSVs. Install R packages `plotly` and
+`htmltools` for a local production build. GitHub Actions installs them and
+regenerates the report on each deployment. The companion report displays
+source trait labels; the dashboard groups traits into curated categories.
 
 ## Deploy to GitHub Pages
 

@@ -9,10 +9,13 @@ citations and leaves the site showing 2.4% reference coverage instead of 71%.
 That has now happened once; this script exists so it cannot happen again.
 
   1. convert_datasets.py        Final_data -> qtl / metaqtl / epistatic
-  2. build_publications.py      those tables -> publications.csv (Crossref)
-  3. backfill_references()      publications.csv -> back into the tables
+  2. build_publications.py      those tables -> publications.csv and
+                                reference_index.csv (Crossref, NCBI)
+  3. backfill_references()      citation + publication year -> back into the tables
   4. build_candidate_genes.py   the tables -> candidate_genes.csv
   5. build_linkage_maps.py      mined maps + GrainGenes -> maps / map_loci
+     build_gwas_atlas.py        GWAS Atlas wheat associations from papers not
+                                already curated here -> gwas_atlas.csv
   6. validate_data.py           check the result, and fail loudly if wrong
   7. audit/trait_overlap        check the taxonomy itself: nothing unclassified,
                                 nothing heavily contested, no dead category
@@ -74,6 +77,8 @@ def main():
     run("4/7  record tables -> candidate_genes.csv", ["scripts/build_candidate_genes.py"])
     run("5/7  mined maps + GrainGenes -> maps.csv, map_loci.csv",
         ["scripts/build_linkage_maps.py"])
+    run("5b   GWAS Atlas associations from publications not held here -> gwas_atlas.csv",
+        ["scripts/build_gwas_atlas.py"])
     run("6/7  validate what was written", ["scripts/validate_data.py"])
 
     # The taxonomy lives in TypeScript, so its audit is bundled and run with

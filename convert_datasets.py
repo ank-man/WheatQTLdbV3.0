@@ -466,13 +466,11 @@ def rows_from_sheet(ws):
 
 # "Drought stress and drought control.xlsx" splits one experiment across two
 # sheets: QTL detected under imposed drought, and QTL detected on the same
-# populations under well-watered control conditions. The control sheet's 10,388
-# rows were previously excluded on the reasoning that a non-stress result is not
-# a drought result. That was wrong twice over: an association reported under
-# control conditions is still a published QTL (only 182 of the 10,388 duplicate
-# a stress row), and dropping them put the database 10,206 records below its own
-# source data. They are included, and the treatment is recorded so that a count
-# of drought-STRESS QTL is still available and is not silently inflated by them.
+# populations under well-watered control conditions. Only the drought sheet is
+# part of the database - the control sheet is excluded on the curators'
+# instruction (see FILE_SHEET_SKIP below), and the published trait statistics
+# (80,641 QTL; 18,430 drought tolerance) are counted without it. Re-including
+# it added 10,373 well-watered records to the drought total.
 TREATMENT_SHEETS = {
     ("drought stress and drought control.xlsx", "control"): "Well-watered control",
     ("drought stress and drought control.xlsx", "drought"): "Drought stress",
@@ -813,8 +811,12 @@ skip_sheets = {"apa format references", "references", "list", "root traits_mqtl"
 # like every other sheet now.
 # N data_revised.xlsx: keep only Sheet2 per instruction, excluding Sheet1
 # (and Sheet3, already empty/junk).
+# Drought stress and drought control.xlsx: the "Control" sheet is the
+# well-watered arm of the experiment and is excluded per instruction, so the
+# file contributes only its drought-stress QTL.
 FILE_SHEET_SKIP = {
     "N data_revised.xlsx": {"sheet1"},
+    "Drought stress and drought control.xlsx": {"control"},
 }
 
 
@@ -883,15 +885,23 @@ def main():
         return out
 
     # ------------------------------------------------------------------
-    # Drop rows that identify no locus at all. A row with neither a QTL name
-    # nor a marker is a footnote, a sub-total or a stray line - it cannot be
-    # a QTL, and counting it inflates the record total.
+    # Rows with neither a QTL name nor a marker.
+    #
+    # These were dropped for a while, on the reasoning that an unnamed locus
+    # cannot be a QTL. But they are real curated rows - a trait, a chromosome,
+    # usually a position and a reference - whose source study simply did not
+    # name the locus, and dropping them left the database short of the
+    # curators' own count. They are kept, with a placeholder name that says
+    # what is missing rather than an empty cell.
     # ------------------------------------------------------------------
-    before = len(all_qtl)
-    all_qtl = [r for r in all_qtl
-               if (r.get("qtl_name") or "").strip() or (r.get("associated_markers") or "").strip()]
-    if before != len(all_qtl):
-        print(f"  QTL: dropped {before - len(all_qtl)} row(s) with no QTL name and no marker")
+    UNNAMED = "Unnamed locus"
+    unnamed = 0
+    for r in all_qtl:
+        if not (r.get("qtl_name") or "").strip() and not (r.get("associated_markers") or "").strip():
+            r["qtl_name"] = UNNAMED
+            unnamed += 1
+    if unnamed:
+        print(f"  QTL: {unnamed} row(s) with no QTL name and no marker kept as '{UNNAMED}'")
 
     all_qtl = dedupe_exact("QTL", all_qtl)
     all_metaqtl = dedupe_exact("MetaQTL", all_metaqtl)

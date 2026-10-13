@@ -156,6 +156,33 @@ def main():
         check("publications.csv has no duplicate DOIs", len(dois) == len(
             [p for p in pubs if p["doi"]]), f"{len(pubs)} rows")
 
+        # Years come from the resolved publication. A year outside this range
+        # means one was scraped out of a DOI or URL again (the "QTL published
+        # in 2077" defect).
+        this_year = __import__("datetime").date.today().year
+        for name, rows in (("qtl.csv", qtl), ("metaqtl.csv", mq), ("epistatic.csv", ep)):
+            if not rows or "year" not in rows[0]:
+                check(f"{name} carries a publication year column", False, "column missing")
+                continue
+            bad = Counter(r["year"] for r in rows
+                          if r["year"] and not (r["year"].isdigit() and 1980 <= int(r["year"]) <= this_year))
+            check(f"{name} publication years within 1980-{this_year}", not bad,
+                  dict(bad.most_common(3)) if bad else "clean")
+        dated = sum(1 for r in qtl if r.get("year"))
+        check("qtl.csv publication-year coverage above 85%", dated / len(qtl) > 0.85,
+              f"{dated}/{len(qtl)} = {dated / len(qtl) * 100:.1f}%")
+        # One row per article: a link-only "publication" credited with thousands
+        # of records is several papers merged under their publisher's hostname.
+        merged = [p for p in pubs if p["title"].startswith("[") and int(p["records"] or 0) > 1500]
+        check("no link-only publication stands in for many papers", not merged,
+              "; ".join(f"{p['title']} {p['records']}" for p in merged[:3]) or "clean")
+
+    print("\nexcluded sheets stay excluded")
+    if qtl:
+        control = [r for r in qtl if "control" in r.get("treatment", "").lower()]
+        check("no well-watered control records (Drought ... control.xlsx, 'Control' sheet)",
+              not control, f"{len(control)} rows")
+
     print("\n" + "=" * 60)
     if failures:
         print(f"{len(failures)} CHECK(S) FAILED:")

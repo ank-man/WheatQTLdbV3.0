@@ -187,7 +187,8 @@ export default function IdeogramMap({
     return h - ratio * h
   }
 
-  const qtlCount = filtered.filter((i) => i.type === 'qtl').length
+  const qtlCount = filtered.filter((i) => i.type === 'qtl' && i.raw.source_file !== 'GWAS Atlas').length
+  const atlasCount = filtered.filter((i) => i.type === 'qtl' && i.raw.source_file === 'GWAS Atlas').length
   const metaCount = filtered.filter((i) => i.type === 'metaqtl').length
 
   if (chromosomes.length === 0) {
@@ -215,6 +216,9 @@ export default function IdeogramMap({
         <div className="flex flex-col items-start gap-2 lg:items-end">
           <div className="text-sm text-wheat-700 dark:text-wheat-300">
             <span className="font-semibold text-wheat-900 dark:text-wheat-50">{qtlCount.toLocaleString()}</span> QTLs ·{' '}
+            {atlasCount > 0 && (
+              <><span className="font-semibold text-wheat-900 dark:text-wheat-50">{atlasCount.toLocaleString()}</span> GWAS Atlas MTAs ·{' '}</>
+            )}
             <span className="font-semibold text-wheat-900 dark:text-wheat-50">{metaCount.toLocaleString()}</span> MetaQTLs
           </div>
           <div className="flex flex-wrap gap-x-3 gap-y-1 text-[10px] lg:justify-end">

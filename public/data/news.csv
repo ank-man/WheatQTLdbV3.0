@@ -1,0 +1,5 @@
+date,title,summary,link
+2026-10-13,GWAS Atlas associations added,"25,449 wheat marker–trait associations for 125 traits, curated by GWAS Atlas from 64 publications not previously in WheatQTLdb, are available as their own table and as a layer on the genome map. Each has a physical position on IWGSC RefSeq v1.0.",/data/gwas-atlas
+2026-10-13,Linkage (cM) view on the genome map,"The 37,653 QTL published with a genetic-map position only are now drawn on a linkage (cM) view, alongside the ideogram and circos views for QTL with a physical position.",/map
+2026-10-13,Data release: 80,640 QTL records,"The QTL table was rebuilt from the final curated data set: 80,640 QTL/MTA records, 3,058 MetaQTLs and 1,226 epistatic QTL pairs. Trait statistics follow the curators' trait table, and loci reported without a name are kept as “Unnamed locus”.",/statistics
+2026-10-13,"Source publications resolved: 1,385 studies","Every reference is now listed as its own publication with title, authors, journal and year, and 93% of QTL records carry the year of the study they came from.",/publications

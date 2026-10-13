@@ -8,7 +8,8 @@ const items = [
   { to: '/data/metaqtl', icon: GitBranch, title: 'MetaQTL', desc: 'Consensus QTL regions across studies.' },
   { to: '/data/epistatic', icon: Network, title: 'Epistatic QTL', desc: 'QTL × QTL interactions.' },
   { to: '/data/candidate-genes', icon: Dna, title: 'Candidate Genes', desc: 'Genes underlying QTL regions.' },
-  { to: '/map', icon: MapIcon, title: 'Physical Map', desc: 'Interactive chromosome view of all QTLs and MetaQTLs.' },
+  { to: '/data/gwas-atlas', icon: Database, title: 'GWAS Atlas associations', desc: 'Marker–trait associations imported from GWAS Atlas, from studies not curated here.' },
+  { to: '/map', icon: MapIcon, title: 'Genome Map', desc: 'Ideogram, circos and linkage (cM) views of QTLs and MetaQTLs.' },
   { to: '/data/linkage-maps', icon: GitBranch, title: 'Linkage maps', desc: 'Marker-order genetic maps from the published literature.' },
   { to: '/publications', icon: BookOpen, title: 'Publications', desc: 'Every source study, with the records it contributed.' },
 ]

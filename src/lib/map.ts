@@ -9,7 +9,6 @@ export const TRAIT_CATEGORIES = [
   'Heat stress tolerance',
   'Waterlogging tolerance',
   'Frost tolerance',
-  'Multiple abiotic stress',
   'Biofortification',
   'Bacterial resistance',
   'Nematode resistance',
@@ -27,43 +26,38 @@ export const TRAIT_CATEGORIES = [
 
 export type TraitCategory = (typeof TRAIT_CATEGORIES)[number]
 
-// Broader umbrella groupings shown as homepage "highlight" tiles (Home.tsx),
-// each spanning several of the real, individually-filterable categories
-// above. Kept as an explicit map (rather than baking "Abiotic stress" or
-// "Biotic stress" into TRAIT_CATEGORIES itself) so the Search page's trait
-// dropdown/filter can recognise a group name too - selecting one matches any
-// QTL whose normalizeTrait() result is one of its listed categories.
+// The main traits of the curators' trait table (the WheatQTLdb v2.0 vs v3.0
+// comparison), in the order that table lists them. The Search page's "Trait
+// class" filter and the Statistics breakdown both use exactly these groups, so
+// the site's per-class totals can be read straight against that table.
 export const TRAIT_MAJOR_CLASSES = [
+  'Nutrient use efficiency',
   'Abiotic stress',
   'Biotic stress',
-  'Yield & agronomy',
-  'Grain quality & composition',
-  'Development & morphology',
-  'Nutrient use efficiency',
-  'Other',
+  'Biofortification',
+  'Others',
 ] as const
 
 export type TraitMajorClass = (typeof TRAIT_MAJOR_CLASSES)[number]
 
-// Every category belongs to exactly ONE major class, so a record counted under
-// a major class is never also counted under another. The earlier TRAIT_GROUPS
-// was an overlapping set of umbrella labels shown alongside the categories
-// themselves, which meant a "by group" total and a "by category" total could
-// not be reconciled.
+// Every category belongs to exactly ONE main trait, so a record counted under
+// one is never also counted under another and the classes sum to the record
+// total.
 export const TRAIT_HIERARCHY: Record<TraitMajorClass, TraitCategory[]> = {
+  'Nutrient use efficiency': ['Nutrient use efficiency'],
   'Abiotic stress': [
-    'Drought tolerance', 'Heat stress tolerance', 'Salt tolerance',
-    'Waterlogging tolerance', 'Frost tolerance', 'Multiple abiotic stress',
+    'Waterlogging tolerance', 'Salt tolerance', 'Heat stress tolerance',
+    'Pre-harvest sprouting', 'Drought tolerance', 'Frost tolerance',
   ],
   'Biotic stress': [
-    'Fungal resistance', 'Bacterial resistance', 'Viral resistance',
-    'Nematode resistance', 'Insect resistance',
+    'Nematode resistance', 'Insect resistance', 'Bacterial resistance',
+    'Fungal resistance', 'Viral resistance',
   ],
-  'Yield & agronomy': ['Yield', 'Plant morphology', 'Pre-harvest sprouting'],
-  'Grain quality & composition': ['Quality traits', 'Grain morphology', 'Biofortification'],
-  'Development & morphology': ['Developmental', 'Physiological traits'],
-  'Nutrient use efficiency': ['Nutrient use efficiency'],
-  Other: ['Herbicide tolerance', 'Other'],
+  Biofortification: ['Biofortification'],
+  Others: [
+    'Herbicide tolerance', 'Yield', 'Developmental', 'Physiological traits',
+    'Plant morphology', 'Grain morphology', 'Quality traits', 'Other',
+  ],
 }
 
 const CATEGORY_TO_MAJOR: Record<string, TraitMajorClass> = {}
@@ -72,7 +66,7 @@ const CATEGORY_TO_MAJOR: Record<string, TraitMajorClass> = {}
 })
 
 export function majorClassOf(category: string): TraitMajorClass {
-  return CATEGORY_TO_MAJOR[category] ?? 'Other'
+  return CATEGORY_TO_MAJOR[category] ?? 'Others'
 }
 
 
@@ -101,8 +95,6 @@ export const TRAIT_COLORS: Record<TraitCategory, string> = {
   'Heat stress tolerance': '#e11d48',
   'Waterlogging tolerance': '#1565c0',
   'Frost tolerance': '#64748b',
-  // Deliberately a mix of the drought and heat hues: it IS the combination.
-  'Multiple abiotic stress': '#b45309',
   Biofortification: '#7b1fa2',
   'Bacterial resistance': '#0e8fa0',
   'Nematode resistance': '#ef6c00',
@@ -240,11 +232,50 @@ export interface ParsedPosition {
 }
 
 export function parsePositionInterval(value: string): ParsedPosition {
-  const v = (value || '').replace(/−/g, '-').replace(/,/g, '').trim()
-  if (!v || v === '-' || v === '' || v === 'NA' || v === 'N/A') {
-    return { point: null, start: null, end: null }
-  }
+  const none: ParsedPosition = { point: null, start: null, end: null }
+  let v = (value || '').replace(/,/g, '').trim()
+  if (!v || v === '-' || v === 'NA' || v === 'N/A') return none
 
+  // The sources write the same position many ways - "99.79Mb", "417502036 bp",
+  // "29 cM", "32.7—42.6", "510051474..510054986", "5BL: 528589968",
+  // "12.3/3.9-17.3" (peak / confidence interval). Each was unreadable here, so
+  // 4,000-odd records with a perfectly good position were reported as having
+  // none, and the megabase ones were missing from the physical map. Reduce
+  // them to the plain forms handled below; anything genuinely ambiguous
+  // ("610/748", "86.1-92.1/162.7-189.7") is still left unparsed, not guessed.
+  let scale = 1
+  const unit = v.match(/^(.*\d)\s*(mbp|mb|bp|cm)\**$/i)
+  if (unit) {
+    v = unit[1].trim()
+    if (unit[2].toLowerCase().startsWith('mb')) scale = 1e6
+  }
+  v = v
+    .replace(/^[1-7][ABD][LS]?:\s*/i, '')          // "5BL: 528589968"
+    .replace(/\*+$/, '')
+    .replace(/\s*(?:—|–|−|~|\.\.|\bto\b)\s*/g, '-')
+    .trim()
+  const peak = v.match(/^(\d+(?:\.\d+)?)\/(?:-|(\d+(?:\.\d+)?-\d+(?:\.\d+)?))?$/)
+  if (peak) {
+    // Only a peak that lies inside its own interval is "peak / confidence
+    // interval". "182/274.5-288.5" is a cM position beside a physical
+    // interval - two coordinate systems in one cell - and stays unparsed.
+    const [lo, hi] = (peak[2] ?? '').split('-').map(Number)
+    if (peak[2] && !(Number(peak[1]) >= Math.min(lo, hi) && Number(peak[1]) <= Math.max(lo, hi))) return none
+    v = peak[2] ? `${peak[1]}(${peak[2]})` : peak[1]
+  }
+  const bare = v.match(/^\((\d+(?:\.\d+)?-\d+(?:\.\d+)?)\)$/)
+  if (bare) v = bare[1]
+
+  const parsed = parsePlainPosition(v)
+  if (scale === 1 || parsed.point === null) return parsed
+  return {
+    point: parsed.point * scale,
+    start: parsed.start === null ? null : parsed.start * scale,
+    end: parsed.end === null ? null : parsed.end * scale,
+  }
+}
+
+function parsePlainPosition(v: string): ParsedPosition {
   // 46.8(43.5-50.1) or 46.8 (43.5-50.1) - the "(" must actually be present:
   // with it optional, a plain "667717050-670783640" range (no parens at all)
   // also satisfies this pattern via regex backtracking, since \d+ can give
@@ -287,233 +318,117 @@ function hasWord(haystack: string, word: string): boolean {
   return new RegExp(`\\b${word}\\b`).test(haystack)
 }
 
-/**
- * Elements measured as a grain concentration or content in this dataset.
- *
- * Deliberately a closed list of element names rather than a pattern: "boron"
- * and "barium" are grain minerals, "bread-making" and "basal" are not, and a
- * loose rule here would quietly reclassify unrelated traits. Zinc, iron and
- * selenium are included so every element reaches the category by one rule.
- */
-const MINERAL_ELEMENTS = [
-  'zinc', 'iron', 'selenium', 'calcium', 'magnesium', 'manganese', 'copper',
-  'sulphur', 'sulfur', 'sodium', 'cadmium', 'nickel', 'cobalt', 'chromium',
-  'lead', 'arsenic', 'mercury', 'aluminium', 'aluminum', 'boron', 'barium',
-  'molybdenum', 'rubidium', 'strontium', 'lithium', 'caesium', 'cesium',
-  'platinum', 'titanium', 'vanadium', 'silicon', 'iodine', 'chloride',
-  'phosphorus', 'phosphorous', 'potassium',
-] as const
-
-// Matches when an element name appears alongside a composition measurement
-// ("Sulphur / Grain Sulphur Concentration"), or when the text names a grain
-// element directly. The measurement requirement is what keeps nitrogen,
-// phosphorus and potassium USE-EFFICIENCY rows out of this category.
-const GRAIN_MINERAL = new RegExp(
-  '(^|[^a-z])(' + MINERAL_ELEMENTS.join('|') + ')([^a-z]|$)' +
-  '(?=[\\s\\S]*(concentration|content|conc\\.|accumulation|/grain))' +
-  '|\\bgrain\\s+(' + MINERAL_ELEMENTS.join('|') + ')\\b', 'i')
+const has = (c: string, ...words: string[]) => words.some((w) => c.includes(w))
 
 /**
- * Classify a record into one trait category.
+ * The classification rules, in priority order: a record takes the category of
+ * the FIRST rule it satisfies. Each rule sees the lower-cased trait (t), the
+ * parameter (p), and the two joined (c).
  *
- * The TRAIT field states what the study was about; the PARAMETER field states
- * what was measured. These are different questions, and conflating them was
- * the source of a large miscount: a drought-tolerance study that scores grain
- * yield under drought has trait="Drought tolerance", parameter="Grain yield",
- * and the old rules - which tested trait and parameter together - filed it
- * under Yield. That moved 4,880 records out of the stress categories and into
- * Yield, inflating Yield from ~9,800 to ~14,700 while emptying the categories
- * the studies were actually about.
+ * THESE RULES DEFINE THE PUBLISHED TRAIT STATISTICS. The curators' trait table
+ * (80,641 QTL: Yield 14,728, Drought tolerance 18,430, Heat 4,008, Salt 3,545,
+ * Biofortification 7,502, Nutrient use efficiency 6,983, ...) was counted with
+ * exactly this rule set, and scripts/audit/trait_overlap.ts checks every
+ * category against that table on each data rebuild. A reordering or a new rule
+ * moves records between categories and silently changes the published numbers
+ * - which is what happened when classification was switched to "trait field
+ * first": Yield fell to 9,813, Drought rose to 20,913 and a "Multiple abiotic
+ * stress" category appeared that the table does not have.
  *
- * So the trait field is classified FIRST and alone. The parameter is consulted
- * only when the trait text is too generic to place (empty, or something like
- * "agronomic traits"), where it is the only signal available.
+ * The order matters most for Yield, which is tested first on the parameter: a
+ * QTL for grain yield or grain weight is counted as a yield QTL whichever
+ * source file it was curated in, including when it was mapped under drought,
+ * heat or salt stress.
  */
-/**
- * How many DISTINCT abiotic stresses a trait description names.
- *
- * Each stress is counted once however many ways it is spelled in the string,
- * so "drought stress, drought tolerance" is one stress and "heat and drought"
- * is two. Used only to recognise combined-stress studies; a single stress
- * falls through to its own rule below.
- */
-const STRESS_TERMS: [string, RegExp][] = [
-  ['drought', /drought|water deficit|water stress/],
-  ['heat', /\bheat\b|high temperature/],
-  ['salt', /\bsalt|salin/],
-  ['waterlogging', /water-?\s?log/],
-  ['cold', /frost|freez|cold acclimat|cold harden|winter surviv/],
-  ['sprouting', /sprouting|dormancy/],
-  ['aluminium', /alumini?um|\bal toxicity/],
-  ['boron', /boron toxicity/],
-]
-
-function countStresses(c: string): number {
-  return STRESS_TERMS.filter(([, rx]) => rx.test(c)).length
-}
-
-/**
- * The classification rules, in priority order, as data rather than as a chain
- * of returns.
- *
- * Written this way for one reason: the order is doing real work, and that is
- * only auditable if the rules can be walked more than once. `classifyText`
- * takes the first match, while `matchingCategories` returns every rule that
- * fires - which is what scripts/audit_trait_overlap.ts uses to report where
- * two categories compete for the same records, and how often. A chain of
- * early returns hides that entirely: it always produces exactly one answer and
- * never admits that a second rule would also have matched.
- */
-export const TRAIT_RULES: [TraitCategory, (c: string) => boolean][] = [
-  // Pathogen names first: they are unambiguous, and a disease study often also
-  // mentions yield or quality in the same string.
-  ['Fungal resistance', (c) =>
-    c.includes('fungal') || c.includes('fhb') || c.includes('rust') || c.includes('mildew') ||
-    c.includes('blight') || c.includes('smut') || c.includes('bunt') || c.includes('powdery') ||
-    c.includes('septoria') || c.includes('tan spot') || c.includes('puccinia')],
-  ['Bacterial resistance', (c) =>
-    c.includes('bacterial') || c.includes('leaf streak') || c.includes('bls')],
-  ['Viral resistance', (c) => c.includes('virus') || c.includes('viral')],
-  ['Nematode resistance', (c) => c.includes('nematode') || c.includes('cereal cyst')],
-  ['Insect resistance', (c) => c.includes('insect')],
-
-  // Combined-stress studies, before the single-stress rules.
-  //
-  // 571 records read "heat and drought tolerance" and a further ~250 name three
-  // or more stresses ("multiple abiotic stress tolerance: drought and heat
-  // stress, salinity, pre-harvest sprouting"). First-match ordering filed every
-  // one of them under whichever stress happened to be listed earliest in the
-  // rules, so a jointly mapped drought+heat QTL was counted as drought only and
-  // the heat total lost it entirely. A combined-stress QTL is its own finding -
-  // tolerance to two stresses at one locus is the thing such a study reports -
-  // so it gets its own category rather than being forced into one of them.
-  ['Multiple abiotic stress', (c) => countStresses(c) >= 2],
-
-  // Abiotic stresses: the stress IS the subject of such a study, whatever
-  // phenotype was used to score it.
+export const TRAIT_RULES: [TraitCategory, (c: string, t: string, p: string) => boolean][] = [
+  ['Yield', (_c, t, p) => t.includes('yield') || has(p, 'yield', 'grain weight', 'tgw')],
+  // "puccinia" covers rust pathogens reported by Latin genus name only
+  // (Puccinia striiformis/graminis/triticina) with no English "rust" nearby.
+  ['Fungal resistance', (c) => has(c, 'fungal', 'fhb', 'rust', 'mildew', 'blight', 'smut',
+    'bunt', 'powdery', 'septoria', 'tan spot', 'puccinia')],
+  ['Quality traits', (c) => has(c, 'quality', 'protein', 'gluten', 'hardness', 'sediment',
+    'dough', 'test weight')],
+  ['Pre-harvest sprouting', (c) => has(c, 'sprouting', 'dormancy')],
+  // Drought is checked first among the stresses as the single largest one, so
+  // a record naming several ("drought and heat stress tolerance") is drought.
   ['Drought tolerance', (c) => c.includes('drought')],
-  ['Salt tolerance', (c) => c.includes('salt') || c.includes('salin')],
-  ['Heat stress tolerance', (c) => hasWord(c, 'heat') || c.includes('high temperature')],
-  ['Waterlogging tolerance', (c) =>
-    c.includes('water-log') || c.includes('water log') || c.includes('waterlog')],
-  ['Frost tolerance', (c) =>
-    c.includes('frost') || c.includes('freez') || c.includes('winter surviv') ||
-    c.includes('lt50') || c.includes('cold-respons') || c.includes('cold acclimat') ||
-    c.includes('cold harden') || c.includes('snow mold')],
-
-  // Grain mineral composition, before the nutrient-use-efficiency rule.
-  //
-  // The Minerals files record one element per row - trait "Sulphur",
-  // "Manganese", "Cadmium", "Nickel" and so on, with parameter "Grain <X>
-  // Concentration". None of those words appeared in any rule, so 2,948
-  // records - every element outside Zn/Fe/Se/Ca - fell through to 'Other',
-  // which made Other the fourth-largest category in the database and hid real
-  // grain-composition data from the Biofortification view it belongs to.
-  //
-  // This sits above the nutrient-use rule because "Phosphorous / Grain
-  // Phosphorus Concentration" is a composition measurement whereas
-  // "Phosphorous use efficiency" is an efficiency trait - the explicit
-  // "use efficiency" wording is what separates them.
-  ['Biofortification', (c) =>
-    GRAIN_MINERAL.test(c) && !/use efficiency|uptake efficien/.test(c)],
-
-  ['Nutrient use efficiency', (c) =>
-    c.includes('use efficiency') || c.includes('n-use') || c.includes('n use') ||
-    hasWord(c, 'nue') || c.includes('nitrogen') || c.includes('phosphor') ||
-    c.includes('potassium')],
-
-  ['Pre-harvest sprouting', (c) => c.includes('sprouting') || c.includes('dormancy')],
-  ['Herbicide tolerance', (c) => c.includes('herbicide')],
-
-  // Zinc, iron and selenium are biofortification targets whatever phenotype
-  // was scored, so they do not need a composition word the way the other
-  // elements do. Requiring one left 73 records unclassified entirely -
-  // "Iron / GFeC", "Zinc / Zn deficiency score", "Iron / Fe bioavailability" -
-  // because the measurement is named in an abbreviation the rule did not know.
-  ['Biofortification', (c) =>
-    c.includes('biofort') || c.includes('bioforitif') || c.includes('mineral') ||
-    /\b(zinc|iron|selenium)\b/.test(c) || /\bgrain\s+(fe|zn|se)\b/.test(c) ||
-    /\b(gfec|gznc|gzn|gfe)\b/.test(c)],
-
-  ['Yield', (c) => c.includes('yield') || c.includes('grain weight') || c.includes('tgw')],
-
-  ['Quality traits', (c) =>
-    c.includes('quality') || c.includes('protein') || c.includes('gluten') ||
-    c.includes('hardness') || c.includes('sediment') || c.includes('dough') ||
-    c.includes('test weight')],
-
-  ['Grain morphology', (c) =>
-    c.includes('grain morphology') || c.includes('seed morphology') ||
-    c.includes('grain length') || c.includes('grain width') || c.includes('grain shape') ||
-    c.includes('kernel length') || c.includes('kernel width') || c.includes('kernel shape') ||
-    c.includes('kernel size') || c.includes('seed size')],
-
-  ['Developmental', (c) =>
-    c.includes('development') || c.includes('heading') || c.includes('vernal') ||
-    c.includes('photoperiod') || c.includes('earliness') || c.includes('flowering') ||
-    c.includes('maturity')],
-
-  // "morpholog" alone also matches "grain morphology", so all 1,419 grain
-  // morphology records were claimed by this rule too and only lost it because
-  // Grain morphology happens to be listed first. A rule that is correct only
-  // because of its position is a latent bug: reorder the list and the records
-  // move. The grain/seed/kernel qualifiers are excluded explicitly instead.
-  ['Plant morphology', (c) =>
-    (c.includes('morpholog') && !/\b(grain|seed|kernel|spike)\s+morpholog/.test(c)) ||
-    c.includes('plant height') || c.includes('tiller') ||
-    c.includes('awn') || c.includes('spike length')],
-
-  ['Physiological traits', (c) => c.includes('physiolog')],
-  // Last resort: "disease resistance" with no pathogen named. Fungal pathogens
-  // are the overwhelming majority of wheat disease QTL, but this is a guess,
-  // and it is deliberately the final rule so a named pathogen always wins.
+  ['Salt tolerance', (c) => c.includes('salt')],
+  // "heat" as a whole word - "wheat" (in "wheat dwarf virus", "wheat blossom
+  // midge") contains it as a bare substring.
+  ['Heat stress tolerance', (c) => hasWord(c, 'heat')],
+  // Spelled waterlogging / water-logging / water logging across sources.
+  ['Waterlogging tolerance', (c) => has(c, 'water-log', 'water log', 'waterlog')],
+  // Deliberately narrow (not a generic "cold/osmotic" catch-all), which used
+  // to pull in unrelated "osmotic potential" physiological-trait rows.
+  ['Frost tolerance', (c) => has(c, 'frost', 'freez', 'winter surviv', 'lt50', 'cold-respons',
+    'cold acclimat', 'cold harden', 'snow mold')],
+  // Nutrient USE EFFICIENCY is distinct from biofortification (grain nutrient
+  // content) below, so it is checked first even though both name the same
+  // elements. "nue" is matched as a whole word ("continue", "revenue").
+  ['Nutrient use efficiency', (c) => has(c, 'use efficiency', 'n-use', 'n use', 'nitrogen') ||
+    hasWord(c, 'nue')],
+  // "bioforitif" is a known source-data typo for "biofortification".
+  ['Biofortification', (c) => has(c, 'zinc', 'iron', 'selenium', 'biofort', 'bioforitif',
+    'mineral', 'cadmium', 'calcium', 'magnesium', 'sulph', 'sulfur', 'manganese', 'copper',
+    'nickel', 'molybden', 'phosphor', 'potassium', 'cobalt', 'rubidium', 'lead', 'strontium',
+    'arsenic', 'sodium', 'boron', 'lithium', 'barium', 'platinum', 'co ', 'mo ', 'grain fe',
+    'grain zn')],
+  ['Bacterial resistance', (c) => has(c, 'bacterial', 'leaf streak', 'bls')],
+  ['Viral resistance', (c) => has(c, 'virus', 'viral')],
+  ['Nematode resistance', (c) => has(c, 'nematode', 'cereal cyst')],
+  ['Insect resistance', (c) => c.includes('insect')],
+  // Bare "disease severity" with no pathogen named defaults to fungal, the
+  // overwhelmingly dominant disease type here; the specific pathogens above
+  // already had first claim.
   ['Fungal resistance', (c) => c.includes('disease')],
+  ['Herbicide tolerance', (c) => c.includes('herbicide')],
+  ['Developmental', (c) => has(c, 'development', 'heading', 'vernal', 'photoperiod',
+    'earliness', 'flowering', 'maturity')],
+  // Size and shape of the seed itself, as opposed to whole-plant morphology.
+  // Excludes weight/count parameters ("kernel weight", "kernels per spike"),
+  // which are yield components.
+  ['Grain morphology', (c, t) => t.includes('grain morphology') || has(c, 'seed morphology',
+    'grain length', 'grain width', 'grain diameter', 'grain thickness', 'grain area',
+    'grain perimeter', 'grain circumference', 'grain shape', 'kernel length', 'kernel width',
+    'kernel diameter', 'kernel thickness', 'kernel area', 'kernel perimeter',
+    'kernel circumference', 'kernel shape', 'kernel size', 'seed shape', 'seed size',
+    'characterization system')],
+  ['Plant morphology', (c) => has(c, 'morpholog', 'plant height', 'tiller', 'awn',
+    'spike length')],
+  ['Physiological traits', (c) => c.includes('physiological')],
 ]
 
-function classifyText(c: string): TraitCategory | null {
-  if (!c.trim()) return null
-  for (const [category, matches] of TRAIT_RULES) if (matches(c)) return category
-  return null
+function fields(record: { trait?: string; parameter?: string }): [string, string, string] {
+  const t = (record.trait || '').toLowerCase().trim()
+  const p = (record.parameter || '').toLowerCase().trim()
+  return [`${t} ${p}`, t, p]
+}
+
+export function normalizeTrait(record: { trait?: string; parameter?: string }): TraitCategory {
+  const [c, t, p] = fields(record)
+  for (const [category, matches] of TRAIT_RULES) if (matches(c, t, p)) return category
+  return 'Other'
 }
 
 /**
- * Every category whose rule fires for this text, in priority order, not just
- * the winner. Used to audit where the taxonomy genuinely overlaps.
+ * Every category whose rule fires for this record, in priority order, not just
+ * the winner. Used by scripts/audit/trait_overlap.ts to report where the
+ * categories compete for the same records.
  */
-export function matchingCategories(c: string): TraitCategory[] {
-  if (!c.trim()) return []
+export function matchingCategories(record: { trait?: string; parameter?: string }): TraitCategory[] {
+  const [c, t, p] = fields(record)
   const out: TraitCategory[] = []
   for (const [category, matches] of TRAIT_RULES) {
-    if (matches(c) && !out.includes(category)) out.push(category)
+    if (matches(c, t, p) && !out.includes(category)) out.push(category)
   }
   return out
 }
 
-// Trait strings too generic to classify on their own - for these the measured
-// parameter is the only usable signal.
-const GENERIC_TRAIT = /^(agronomic|morphological|physiological|quantitative|multiple|various|other|misc)/i
-
-export function normalizeTrait(record: QTLRecord | MetaQTLRecord): TraitCategory {
-  const t = ((record as QTLRecord).trait || '').toLowerCase().trim()
-  const p = ((record as QTLRecord).parameter || '').toLowerCase().trim()
-
-  if (t && !GENERIC_TRAIT.test(t)) {
-    const fromTrait = classifyText(t)
-    if (fromTrait) return fromTrait
-  }
-  // trait absent, generic, or unrecognised: fall back to the parameter
-  const fromParam = classifyText(`${t} ${p}`)
-  return fromParam ?? 'Other'
-}
-
-// Finer-grained breakdown within the two categories that actually bundle
-// several distinct nutrients/elements under one umbrella label: a record's
-// TraitCategory alone doesn't distinguish grain Zn content from grain Se
-// content, or N-use efficiency from K-use efficiency, even though those are
-// separately meaningful to a user searching for a specific nutrient. Listed
-// only for categories where the underlying data supports a real split (see
-// normalizeSubTrait) - every other category has none, and the Search page
-// only renders a sub-trait dropdown for a category present here.
+// Finer-grained breakdown within the two categories that bundle several
+// distinct nutrients under one label, matching the sub-categories of the
+// curators' trait table (N / P / K use efficiency; Zn, Fe and Se content vs
+// other minerals). The Search page only renders a sub-trait dropdown for a
+// category present here.
 export const TRAIT_SUBCATEGORIES: Partial<Record<TraitCategory, string[]>> = {
   'Nutrient use efficiency': [
     'Nitrogen use efficiency',
@@ -521,53 +436,37 @@ export const TRAIT_SUBCATEGORIES: Partial<Record<TraitCategory, string[]>> = {
     'Potassium use efficiency',
     'Other nutrient use efficiency',
   ],
-  // One entry per element actually present, because a single "Other minerals"
-  // bucket is what made this category unusable: it held cadmium, lead and
-  // arsenic - contaminants a breeder selects DOWN - alongside manganese and
-  // copper, micronutrients to select UP.
   Biofortification: [
-    'Zinc', 'Iron', 'Selenium', 'Calcium', 'Magnesium', 'Manganese', 'Copper',
-    'Sulphur', 'Phosphorus', 'Potassium', 'Sodium', 'Molybdenum', 'Boron',
-    'Cadmium', 'Lead', 'Arsenic', 'Nickel', 'Cobalt', 'Chromium',
+    'Zinc',
+    'Iron',
+    'Selenium',
+    'Calcium',
     'Other minerals',
   ],
 }
 
 // Sub-trait within 'Nutrient use efficiency' / 'Biofortification' only - null
-// for every other category (those have no meaningful further split). Reuses
-// the same trait+parameter blob as normalizeTrait so a record's sub-trait is
-// always consistent with which top-level category it was bucketed into.
-export function normalizeSubTrait(record: QTLRecord | MetaQTLRecord): string | null {
+// for every other category. Reads the same trait+parameter text as
+// normalizeTrait so a record's sub-trait is always consistent with its
+// category.
+export function normalizeSubTrait(record: { trait?: string; parameter?: string }): string | null {
   const category = normalizeTrait(record)
-  const t = ((record as QTLRecord).trait || (record as MetaQTLRecord).trait || '').toLowerCase().trim()
-  const p = ((record as QTLRecord).parameter || (record as MetaQTLRecord).parameter || '').toLowerCase().trim()
-  const c = `${t} ${p}`
+  const [c] = fields(record)
 
   if (category === 'Nutrient use efficiency') {
-    // Checked in this order so a record mentioning several nutrients still
-    // resolves to its most specific match; "nitrogen"/NUE is the broad
-    // default since it's both the dominant case in this dataset and the
-    // literal name most "use efficiency" rows without a named element imply.
+    // "nitrogen"/NUE is the default named element since it is both the
+    // dominant case and what most "use efficiency" rows without one imply.
     if (c.includes('phosphor')) return 'Phosphorus use efficiency'
     if (c.includes('potassium') || hasWord(c, 'kue')) return 'Potassium use efficiency'
-    if (c.includes('nitrogen') || c.includes('n-use') || c.includes('n use') || hasWord(c, 'nue')) return 'Nitrogen use efficiency'
+    if (has(c, 'nitrogen', 'n-use', 'n use') || hasWord(c, 'nue')) return 'Nitrogen use efficiency'
     return 'Other nutrient use efficiency'
   }
 
   if (category === 'Biofortification') {
-    // Most specific first, so "Zn and Fe concentration" is filed under Zinc
-    // rather than falling into the catch-all.
-    const byElement: [string, RegExp][] = [
-      ['Zinc', /zinc|\bzn\b/], ['Iron', /iron|\bfe\b/], ['Selenium', /selenium|\bse\b/],
-      ['Calcium', /calcium|\bca\b/], ['Magnesium', /magnesium|\bmg\b/],
-      ['Manganese', /manganese|\bmn\b/], ['Copper', /copper|\bcu\b/],
-      ['Sulphur', /sulphur|sulfur/], ['Phosphorus', /phosphor/],
-      ['Potassium', /potassium/], ['Sodium', /sodium|\bna\b/],
-      ['Molybdenum', /molybdenum/], ['Boron', /boron/], ['Cadmium', /cadmium|\bcd\b/],
-      ['Lead', /\blead\b|\bpb\b/], ['Arsenic', /arsenic|\bas\b/],
-      ['Nickel', /nickel/], ['Cobalt', /cobalt/], ['Chromium', /chromium/],
-    ]
-    for (const [label, rx] of byElement) if (rx.test(c)) return label
+    if (c.includes('zinc')) return 'Zinc'
+    if (c.includes('iron')) return 'Iron'
+    if (c.includes('selenium')) return 'Selenium'
+    if (c.includes('calcium')) return 'Calcium'
     return 'Other minerals'
   }
 
@@ -643,18 +542,32 @@ export function isPhysicalPosition(pos: ParsedPosition): boolean {
   return [pos.point, pos.start, pos.end].some((v) => v !== null && v >= 1000)
 }
 
+/**
+ * Physical (bp) position of a QTL on its chromosome, or null if it has none.
+ *
+ * The position field is used when it is physical. Otherwise a coordinate
+ * written into the marker name itself ("chr3B_559428575") is used - the same
+ * rule the epistatic links already follow. A cM-only record returns null.
+ */
+export function qtlPhysicalPoint(r: QTLRecord, chr: string): number | null {
+  const pos = parsePositionInterval(r.position_interval || '')
+  if (pos.point !== null && isPhysicalPosition(pos)) return pos.point
+  return markerPosition(r.associated_markers || '', chr)
+}
+
 export function prepareItems(qtl: QTLRecord[], metaqtl: MetaQTLRecord[]): MapItem[] {
   const items: MapItem[] = []
 
   qtl.forEach((r) => {
     const chr = normalizeChromosome(r.chromosome)
-    const pos = parsePositionInterval(r.position_interval || '')
-    if (!chr || pos.point === null || !isPhysicalPosition(pos)) return
+    if (!chr) return
+    const point = qtlPhysicalPoint(r, chr)
+    if (point === null) return
     items.push({
       id: r.id,
       type: 'qtl',
       chromosome: chr,
-      point: Math.min(pos.point, chromosomeLength(chr)),
+      point: Math.min(point, chromosomeLength(chr)),
       trait: normalizeTrait(r),
       name: r.qtl_name || r.id,
       raw: r,

@@ -11,6 +11,7 @@ const NAV = [
   { to: '/search', label: 'Search' },
   { to: '/data/linkage-maps', label: 'Linkage maps' },
   { to: '/publications', label: 'Publications' },
+  { to: '/news', label: 'News' },
   { to: '/team', label: 'Team' },
   { to: '/contact', label: 'Contact' },
 ]

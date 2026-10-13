@@ -1,14 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { RotateCcw, Download, Image as ImageIcon, FileImage, Search, SlidersHorizontal, Moon, Sun } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import IdeogramMap from '../components/IdeogramMap'
 import CircosMap from '../components/CircosMap'
+import GeneticMap, { GeneticItem } from '../components/GeneticMap'
 import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
-import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
+import { QTLRecord, MetaQTLRecord, EpistaticRecord, GwasAtlasRecord } from '../lib/types'
 import {
   prepareItems, prepareEpistaticLinks, normalizeChromosome, parsePositionInterval, isPhysicalPosition,
-  TRAIT_CATEGORIES, TRAIT_COLORS,
+  TRAIT_CATEGORIES, TRAIT_COLORS, normalizeTrait, chromosomeLength, MapItem,
 } from '../lib/map'
 import { exportSVG, exportRaster } from '../lib/exportMap'
 
@@ -16,12 +18,14 @@ export default function Map() {
   const qtl = useCSV<QTLRecord>('qtl.csv')
   const mqtl = useCSV<MetaQTLRecord>('metaqtl.csv')
   const epi = useCSV<EpistaticRecord>('epistatic.csv')
+  const gwas = useCSV<GwasAtlasRecord>('gwas_atlas.csv')
 
-  const [showQTL, setShowQTL] = useState(false)
+  const [showQTL, setShowQTL] = useState(true)
   const [showMetaQTL, setShowMetaQTL] = useState(true)
   const [showLinks, setShowLinks] = useState(false)
+  const [showGwas, setShowGwas] = useState(true)
   const [selectedTraits, setSelectedTraits] = useState<string[]>([])
-  const [view, setView] = useState<'ideogram' | 'circos'>('circos')
+  const [view, setView] = useState<'ideogram' | 'circos' | 'genetic'>('circos')
   const [search, setSearch] = useState('')
   const [genomeFilter, setGenomeFilter] = useState<'all' | 'A' | 'B' | 'D'>('all')
   const [compact, setCompact] = useState(true)
@@ -32,6 +36,42 @@ export default function Map() {
   const svgRef = useRef<SVGSVGElement>(null)
 
   const allItems = useMemo(() => prepareItems(qtl.data, mqtl.data), [qtl.data, mqtl.data])
+
+  // GWAS Atlas associations (from publications not curated here) all carry a
+  // RefSeq v1.0 position, so they can be drawn on the same physical axis. They
+  // are a separate, toggleable layer and are never added to the WheatQTLdb
+  // counts quoted on this page.
+  const gwasItems = useMemo<MapItem[]>(() => gwas.data.flatMap((g) => {
+    const chr = normalizeChromosome(g.chromosome)
+    const point = Number(g.position)
+    if (!chr || !Number.isFinite(point)) return []
+    return [{
+      id: g.id,
+      type: 'qtl' as const,
+      chromosome: chr,
+      point: Math.min(point, chromosomeLength(chr)),
+      trait: normalizeTrait({ trait: g.trait }),
+      name: `${g.trait} (GWAS Atlas ${g.id})`,
+      raw: {
+        id: g.id, species: g.species, trait: g.trait, parameter: g.condition, qtl_name: g.id,
+        chromosome: chr, position_interval: g.position, pve: g.pve, candidate_gene: g.candidate_gene,
+        reference: g.reference, doi: g.doi, method: g.method, source_file: 'GWAS Atlas',
+      },
+    }]
+  }), [gwas.data])
+
+  // QTL published with a genetic-map position only: they have no place on the
+  // physical views, and are drawn on the linkage (cM) view instead.
+  const geneticItems = useMemo<GeneticItem[]>(() => {
+    const placed = new Set(allItems.map((i) => i.id))
+    return qtl.data.flatMap((r) => {
+      const chr = normalizeChromosome(r.chromosome)
+      if (!chr || placed.has(r.id)) return []
+      const pos = parsePositionInterval(r.position_interval || '')
+      if (pos.point === null || isPhysicalPosition(pos)) return []
+      return [{ id: r.id, chromosome: chr, cm: pos.point, trait: normalizeTrait(r), name: r.qtl_name || r.id, raw: r }]
+    })
+  }, [qtl.data, allItems])
   const links = useMemo(() => prepareEpistaticLinks(epi.data), [epi.data])
 
   // prepareItems/prepareEpistaticLinks only plot records with a genuine
@@ -44,10 +84,13 @@ export default function Map() {
     const qtlMapped = allItems.filter((i) => i.type === 'qtl').length
     const mqtlMapped = allItems.filter((i) => i.type === 'metaqtl').length
 
-    const cmOnly = (records: { chromosome: string; position_interval?: string }[]) =>
+    // "cM only" = has a chromosome and a readable position, but was not placed
+    // (a placed record may still carry a cM position field when its physical
+    // coordinate comes from the marker name, so mapped ids are excluded).
+    const mappedIds = new Set(allItems.map((i) => i.id))
+    const cmOnly = (records: { id: string; chromosome: string; position_interval?: string }[]) =>
       records.filter((r) => {
-        const chr = normalizeChromosome(r.chromosome)
-        if (!chr) return false
+        if (mappedIds.has(r.id) || !normalizeChromosome(r.chromosome)) return false
         const pos = parsePositionInterval(r.position_interval || '')
         return pos.point !== null && !isPhysicalPosition(pos)
       }).length
@@ -67,14 +110,16 @@ export default function Map() {
   }, [allItems, qtl.data, mqtl.data, epi.data.length, links.length])
 
   const items = useMemo(() => {
-    if (genomeFilter === 'all') return allItems
-    return allItems.filter((item) => item.chromosome.endsWith(genomeFilter))
-  }, [allItems, genomeFilter])
+    const shown = showGwas ? [...allItems, ...gwasItems] : allItems
+    if (genomeFilter === 'all') return shown
+    return shown.filter((item) => item.chromosome.endsWith(genomeFilter))
+  }, [allItems, gwasItems, showGwas, genomeFilter])
 
   const reset = () => {
-    setShowQTL(false)
+    setShowQTL(true)
     setShowMetaQTL(true)
     setShowLinks(false)
+    setShowGwas(true)
     setSelectedTraits([])
     setSearch('')
     setGenomeFilter('all')
@@ -116,13 +161,30 @@ export default function Map() {
     <div>
       <PageHero
         eyebrow="Visualization"
-        title="Physical QTL map"
-        subtitle="Genome-wide distribution of QTLs and MetaQTLs across the 21 wheat chromosomes, coloured by trait category."
+        title="Genome map"
+        subtitle="QTLs and MetaQTLs across the 21 wheat chromosomes, coloured by trait: by physical position (ideogram, circos) or by genetic position (linkage, cM)."
         variant="side"
       />
 
       <AsyncBoundary loading={qtl.loading || mqtl.loading || epi.loading} error={qtl.error ?? mqtl.error}>
         <div className={`space-y-6 ${plotDark ? 'dark' : ''}`}>
+          <div className="card">
+            <h2 className="font-semibold text-wheat-900 dark:text-wheat-50">Where each QTL is drawn</h2>
+            <p className="mt-1 text-sm text-wheat-700 dark:text-wheat-300">
+              Of {qtl.data.length.toLocaleString()} QTL records,{' '}
+              <strong>{allItems.filter((i) => i.type === 'qtl').length.toLocaleString()}</strong> have a
+              physical (bp) position and are on the <strong>Ideogram</strong> and <strong>Circos</strong> views,
+              and <strong>{geneticItems.length.toLocaleString()}</strong> were published with a genetic-map
+              position only and are on the <strong>Linkage (cM)</strong> view. The remaining{' '}
+              {(unmapped.qtl - geneticItems.length).toLocaleString()} name no usable chromosome or position
+              and can only be listed — they are in <Link className="underline" to="/search">Search</Link>.
+              {gwasItems.length > 0 && (
+                <> The physical views can also show {gwasItems.length.toLocaleString()}{' '}
+                <Link className="underline" to="/data/gwas-atlas">GWAS Atlas associations</Link> from
+                studies not curated here; they are a separate layer and not part of these counts.</>
+              )}
+            </p>
+          </div>
           {/* Controls */}
           <div className="card">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
@@ -145,6 +207,17 @@ export default function Map() {
                   />
                   <span className="text-sm font-medium">Show MetaQTLs</span>
                 </label>
+                {view !== 'genetic' && gwasItems.length > 0 && (
+                  <label className="inline-flex cursor-pointer items-center gap-2">
+                    <input
+                      type="checkbox"
+                      className="h-4 w-4 accent-wheat-600"
+                      checked={showGwas}
+                      onChange={(e) => setShowGwas(e.target.checked)}
+                    />
+                    <span className="text-sm font-medium">GWAS Atlas MTAs</span>
+                  </label>
+                )}
                 {view === 'circos' && (
                   <label className="inline-flex cursor-pointer items-center gap-2">
                     <input
@@ -218,6 +291,16 @@ export default function Map() {
                   }`}
                 >
                   Circos
+                </button>
+                <button
+                  onClick={() => setView('genetic')}
+                  className={`rounded-md px-3 py-1 text-xs font-medium transition ${
+                    view === 'genetic'
+                      ? 'bg-white dark:bg-ink-800 text-wheat-800 dark:text-wheat-100 shadow-sm'
+                      :'text-wheat-600 dark:text-wheat-400 hover:text-wheat-800'
+                  }`}
+                >
+                  Linkage (cM)
                 </button>
               </div>
               <button
@@ -328,7 +411,7 @@ export default function Map() {
             </div>
           </div>
 
-          {(unmapped.qtl > 0 || unmapped.mqtl > 0 || unmapped.links > 0) && !qtl.loading && !mqtl.loading && !epi.loading && (
+          {view !== 'genetic' && (unmapped.qtl > 0 || unmapped.mqtl > 0 || unmapped.links > 0) && !qtl.loading && !mqtl.loading && !epi.loading && (
             <div className="space-y-0.5 text-xs text-wheat-500 dark:text-wheat-400">
               <p>
                 {unmapped.qtlNoChrOrPos.toLocaleString()} QTL and {unmapped.mqtlNoChrOrPos.toLocaleString()} MetaQTL records have no resolvable
@@ -359,6 +442,14 @@ export default function Map() {
               genomeFilter={genomeFilter}
               genomeColor={genomeColor}
             />
+          ) : view === 'genetic' ? (
+            <GeneticMap
+              items={geneticItems}
+              selectedTraits={selectedTraits}
+              search={search}
+              svgRef={svgRef}
+              genomeFilter={genomeFilter}
+            />
           ) : (
             <CircosMap
               items={items}
@@ -376,7 +467,7 @@ export default function Map() {
           )}
 
           {/* Legend / explanation */}
-          <div className="card">
+          <div className={`card ${view === 'genetic' ? 'hidden' : ''}`}>
             <h3 className="mb-3 text-lg font-semibold text-wheat-900 dark:text-wheat-50">
               How to read this {view === 'ideogram' ? 'ideogram' : 'circos plot'}
             </h3>

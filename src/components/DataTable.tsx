@@ -42,6 +42,16 @@ export default function DataTable<T extends object>({
   const table = useReactTable({
     data: filtered,
     columns,
+    // An empty cell reads as a broken row, so a column with no renderer of its
+    // own shows a dash where the source recorded nothing.
+    defaultColumn: {
+      cell: ({ getValue }) => {
+        const v = getValue()
+        return v === null || v === undefined || String(v).trim() === ''
+          ? <span className="text-wheat-300" aria-label="not reported">—</span>
+          : String(v)
+      },
+    },
     state: { sorting },
     onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),

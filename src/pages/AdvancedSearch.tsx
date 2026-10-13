@@ -8,6 +8,7 @@ import AsyncBoundary from '../components/AsyncBoundary'
 import GlossaryHeader from '../components/GlossaryHeader'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord } from '../lib/types'
+import { TraitCategory } from '../lib/map'
 import { TRAIT_CATEGORIES, TRAIT_SUBCATEGORIES, TRAIT_MAJOR_CLASSES, TRAIT_HIERARCHY,
   normalizeTrait, normalizeSubTrait, normalizeSpecies, isMultiTraitQTL, majorClassOf } from '../lib/map'
 
@@ -18,7 +19,6 @@ interface Filters {
   trait: string
   subTrait: string
   chromosome: string
-  treatment: string
   pveMin: string
   pveMax: string
   hasCandidateGene: boolean
@@ -27,7 +27,7 @@ interface Filters {
 
 const EMPTY: Filters = {
   q: '', species: '', majorClass: '', trait: '', subTrait: '', chromosome: '',
-  treatment: '', pveMin: '', pveMax: '', hasCandidateGene: false, multiTraitOnly: false,
+  pveMin: '', pveMax: '', hasCandidateGene: false, multiTraitOnly: false,
 }
 
 function uniqueValues<T>(rows: T[], key: keyof T): string[] {
@@ -62,20 +62,16 @@ function speciesMatches(fieldValue: string, selected: string): boolean {
   return fieldValue.split(/[;/]/).map((s) => normalizeSpecies(s)).includes(selected)
 }
 
-// Major class and category are separate filters now, so this only ever
-// compares a record's category against a chosen category.
-function traitMatches(category: string, selected: string): boolean {
-  return !selected || category === selected
-}
+// A QTL record with the classification the filters work on attached. The
+// Trait filter, the Trait column and the Statistics page all read `category`,
+// so a row that passes the filter always shows the trait that was selected.
+// `trait` (the label typed in the source spreadsheet) is kept for free-text
+// search and is in the CSV export.
+type Row = QTLRecord & { category: TraitCategory; sub_trait: string }
 
-function subTraitMatches(record: QTLRecord, selected: string): boolean {
-  if (!selected) return true
-  return normalizeSubTrait(record) === selected
-}
-
-const columns: ColumnDef<QTLRecord, any>[] = [
+const columns: ColumnDef<Row, any>[] = [
   { accessorKey: 'species', header: 'Species' },
-  { accessorKey: 'trait', header: () => <GlossaryHeader label="Trait" term="trait" /> },
+  { accessorKey: 'category', header: () => <GlossaryHeader label="Trait" term="trait" /> },
   { accessorKey: 'parameter', header: () => <GlossaryHeader label="Parameter" term="parameter" /> },
   { accessorKey: 'qtl_name', header: () => <GlossaryHeader label="QTL / MTA" term="mta" /> },
   { accessorKey: 'chromosome', header: () => <GlossaryHeader label="Chr" term="chromosome" /> },
@@ -83,14 +79,7 @@ const columns: ColumnDef<QTLRecord, any>[] = [
   { accessorKey: 'pve', header: () => <GlossaryHeader label="PVE / R²" term="pve" /> },
   { accessorKey: 'candidate_gene', header: () => <GlossaryHeader label="Cand. Gene" term="candidate_gene" /> },
   { accessorKey: 'method', header: () => <GlossaryHeader label="Method" term="method" /> },
-  {
-    accessorKey: 'treatment',
-    header: 'Treatment',
-    cell: ({ getValue }) => {
-      const v = String(getValue() ?? '')
-      return v ? <span className="badge text-[10px]">{v}</span> : <span className="text-wheat-400">—</span>
-    },
-  },
+  { accessorKey: 'year', header: 'Year' },
   {
     accessorKey: 'reference', header: 'Reference',
     cell: ({ row }) => {
@@ -101,14 +90,16 @@ const columns: ColumnDef<QTLRecord, any>[] = [
   },
 ]
 
+const BOOLEAN_FILTERS: (keyof Filters)[] = ['hasCandidateGene', 'multiTraitOnly']
+
 export default function AdvancedSearch() {
-  const { data, loading, error } = useCSV<QTLRecord>('qtl.csv')
+  const { data: records, loading, error } = useCSV<QTLRecord>('qtl.csv')
   const [params, setParams] = useSearchParams()
   const [f, setF] = useState<Filters>(() => {
     const next: Filters = { ...EMPTY }
     ;(Object.keys(EMPTY) as (keyof Filters)[]).forEach((k) => {
       const v = params.get(k as string)
-      if (v !== null) (next[k] as any) = k === 'hasCandidateGene' ? v === '1' : v
+      if (v !== null) (next[k] as any) = BOOLEAN_FILTERS.includes(k) ? v === '1' : v
     })
     return next
   })
@@ -122,68 +113,92 @@ export default function AdvancedSearch() {
     setParams(next, { replace: true })
   }, [f, setParams])
 
+  const data = useMemo<Row[]>(
+    () => records.map((r) => ({ ...r, category: normalizeTrait(r), sub_trait: normalizeSubTrait(r) ?? '' })),
+    [records]
+  )
+
   const speciesOpts = useMemo(() => uniqueSpecies(data, 'species'), [data])
-  // Real, non-redundant trait options: the fixed canonical categories (see
-  // TRAIT_CATEGORIES / normalizeTrait), not raw per-row trait strings - those
-  // vary wildly in spelling/case/whitespace across source files and
-  // occasionally contain a mis-shifted species value rather than a trait.
-  // Scoped to the selected major class, so the two dropdowns are a strict
-  // parent/child pair rather than a mixed list.
-  // Major classes partition the categories, so the subclass list is simply the
-  // chosen class's children - never a mix of umbrella labels and categories,
-  // which is what previously made "group" and "category" totals irreconcilable.
+  // The trait options are the fixed categories (TRAIT_CATEGORIES), not raw
+  // per-row trait strings, which vary in spelling/case across source files.
+  // "Trait class" is the main trait of the curators' table and "Trait" its
+  // sub-category, so the two dropdowns are a strict parent/child pair.
   const majorOpts = useMemo(() => {
-    const present = new Set(data.map((r) => majorClassOf(normalizeTrait(r))))
+    const present = new Set(data.map((r) => majorClassOf(r.category)))
     return TRAIT_MAJOR_CLASSES.filter((m) => present.has(m))
   }, [data])
 
   const traitOpts = useMemo(() => {
-    const present = new Set(data.map((r) => normalizeTrait(r)))
+    const present = new Set(data.map((r) => r.category))
     const pool = f.majorClass
       ? TRAIT_HIERARCHY[f.majorClass as keyof typeof TRAIT_HIERARCHY] ?? []
       : TRAIT_CATEGORIES
     return pool.filter((cat) => present.has(cat))
   }, [data, f.majorClass])
   const chrOpts = useMemo(() => uniqueValues(data, 'chromosome'), [data])
-  // Only the studies that ran a treatment contrast carry this, so the filter
-  // appears only when such records are present.
-  const treatmentOpts = useMemo(() => uniqueValues(data, 'treatment'), [data])
 
-  // Only offered when the selected Trait is one that actually has a further
-  // breakdown (see TRAIT_SUBCATEGORIES) - e.g. Biofortification -> Zn/Fe/Se,
-  // Nutrient use efficiency -> NUE/PUE/KUE - and only the sub-trait values
-  // genuinely present in the data, same convention as traitOpts above.
+  // Only offered when the selected Trait has a further breakdown (see
+  // TRAIT_SUBCATEGORIES) - Biofortification -> Zn/Fe/Se, Nutrient use
+  // efficiency -> N/P/K - and only the values present in the data.
   const subTraitOpts = useMemo(() => {
     const options = TRAIT_SUBCATEGORIES[f.trait as keyof typeof TRAIT_SUBCATEGORIES]
     if (!options) return []
-    const present = new Set(data.filter((r) => normalizeTrait(r) === f.trait).map((r) => normalizeSubTrait(r)))
+    const present = new Set(data.filter((r) => r.category === f.trait).map((r) => r.sub_trait))
     return options.filter((o) => present.has(o))
   }, [data, f.trait])
 
+  // A filter value that is not one of its dropdown's options (an old bookmark,
+  // a link from before the trait classes were renamed) would otherwise keep
+  // filtering while the dropdown reads "Any" - a result count that matches
+  // nothing on screen. Drop any such value once the data has loaded.
+  useEffect(() => {
+    if (!data.length) return
+    const stale: Partial<Filters> = {}
+    if (f.majorClass && !(majorOpts as readonly string[]).includes(f.majorClass)) stale.majorClass = ''
+    if (f.trait && !(traitOpts as readonly string[]).includes(f.trait)) stale.trait = ''
+    if (f.subTrait && !subTraitOpts.includes(f.subTrait)) stale.subTrait = ''
+    if (f.species && !speciesOpts.includes(f.species)) stale.species = ''
+    if (f.chromosome && !chrOpts.includes(f.chromosome)) stale.chromosome = ''
+    if (Object.keys(stale).length) setF((prev) => ({ ...prev, ...stale }))
+  }, [data.length, f, majorOpts, traitOpts, subTraitOpts, speciesOpts, chrOpts])
+
   const filtered = useMemo(() => {
     const q = f.q.trim().toLowerCase()
-    const pMin = f.pveMin ? Number(f.pveMin) : -Infinity
-    const pMax = f.pveMax ? Number(f.pveMax) : Infinity
+    const pveActive = f.pveMin !== '' || f.pveMax !== ''
+    const pMin = f.pveMin !== '' ? Number(f.pveMin) : -Infinity
+    const pMax = f.pveMax !== '' ? Number(f.pveMax) : Infinity
     return data.filter((r) => {
       if (!speciesMatches(r.species, f.species)) return false
-      const cat = normalizeTrait(r)
-      if (f.majorClass && majorClassOf(cat) !== f.majorClass) return false
-      if (f.trait && !traitMatches(cat, f.trait)) return false
-      if (subTraitOpts.length && f.subTrait && !subTraitMatches(r, f.subTrait)) return false
+      if (f.majorClass && majorClassOf(r.category) !== f.majorClass) return false
+      if (f.trait && r.category !== f.trait) return false
+      if (f.subTrait && r.sub_trait !== f.subTrait) return false
       if (f.chromosome && r.chromosome !== f.chromosome) return false
-      if (f.treatment && (r.treatment ?? '') !== f.treatment) return false
-      const p = Number(r.pve)
-      if (!Number.isNaN(p) && (p < pMin || p > pMax)) return false
+      if (pveActive) {
+        // A record with no PVE, or one that is not a single number, cannot be
+        // said to fall inside the range, so it is not shown when a range is set.
+        const raw = String(r.pve ?? '').trim()
+        const p = Number(raw)
+        if (raw === '' || Number.isNaN(p) || p < pMin || p > pMax) return false
+      }
       if (f.hasCandidateGene && !String(r.candidate_gene ?? '').trim()) return false
       if (f.multiTraitOnly && !isMultiTraitQTL(r)) return false
       if (q) {
-        const blob = [r.qtl_name, r.trait, r.associated_markers, r.candidate_gene, r.reference, r.cross, r.population]
+        const blob = [r.qtl_name, r.category, r.trait, r.parameter, r.associated_markers, r.candidate_gene, r.reference, r.cross, r.population]
           .map((x) => String(x ?? '').toLowerCase()).join(' ')
         if (!blob.includes(q)) return false
       }
       return true
     })
-  }, [data, f, subTraitOpts])
+  }, [data, f])
+
+  // What the current result is made of, by trait - so the count can be read
+  // against the Statistics page and it is visible that a trait filter left
+  // only that trait.
+  const breakdown = useMemo(() => {
+    const m = new Map<string, number>()
+    filtered.forEach((r) => m.set(r.category, (m.get(r.category) ?? 0) + 1))
+    return Array.from(m.entries()).sort((a, b) => b[1] - a[1])
+  }, [filtered])
 
   const activeCount = Object.entries(f).filter(([, v]) => (typeof v === 'boolean' ? v : Boolean(v))).length
 
@@ -206,7 +221,7 @@ export default function AdvancedSearch() {
 
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             <Field label="Free-text">
-              <input className="input" placeholder="QTL name, marker, gene, reference…" value={f.q} onChange={(e) => setF({ ...f, q: e.target.value })} />
+              <input className="input" placeholder="QTL name, parameter, marker, gene, reference…" value={f.q} onChange={(e) => setF({ ...f, q: e.target.value })} />
             </Field>
             <Field label="Species">
               <Select value={f.species} onChange={(v) => setF({ ...f, species: v })} options={speciesOpts} />
@@ -229,11 +244,6 @@ export default function AdvancedSearch() {
             <Field label="Chromosome">
               <Select value={f.chromosome} onChange={(v) => setF({ ...f, chromosome: v })} options={chrOpts} />
             </Field>
-            {treatmentOpts.length > 0 && (
-              <Field label="Treatment">
-                <Select value={f.treatment} onChange={(v) => setF({ ...f, treatment: v })} options={treatmentOpts} />
-              </Field>
-            )}
             <Field label="PVE / R² (%)">
               <div className="flex gap-2">
                 <input className="input" type="number" placeholder="min" value={f.pveMin} onChange={(e) => setF({ ...f, pveMin: e.target.value })} />
@@ -253,6 +263,16 @@ export default function AdvancedSearch() {
               </div>
             </Field>
           </div>
+        </div>
+
+        <div className="mb-3 text-sm text-wheat-700">
+          <strong className="text-wheat-900">{filtered.length.toLocaleString()}</strong> of{' '}
+          {data.length.toLocaleString()} QTL records match
+          {breakdown.length > 0 && breakdown.length <= 8 && (
+            <span className="text-wheat-600">
+              {': '}{breakdown.map(([name, n]) => `${name} ${n.toLocaleString()}`).join(' · ')}
+            </span>
+          )}
         </div>
 
         <DataTable data={filtered} columns={columns} filename="wheatqtldb_search.csv" pageSize={50} />

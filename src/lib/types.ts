@@ -14,6 +14,12 @@ export interface QTLRecord {
   candidate_gene?: string
   reference?: string
   doi?: string
+  /**
+   * Publication year, written by the data pipeline from the record's resolved
+   * publication (publications.csv). Empty when the reference could not be
+   * resolved - never inferred from the link text.
+   */
+  year?: string
   source_file?: string
   /**
    * Which arm of a treatment-contrast experiment the QTL was detected in
@@ -40,6 +46,7 @@ export interface MetaQTLRecord {
   candidate_gene?: string
   reference?: string
   doi?: string
+  year?: string
   source_file?: string
 }
 
@@ -63,6 +70,7 @@ export interface EpistaticRecord {
   pve?: number | string
   reference?: string
   doi?: string
+  year?: string
   source_file?: string
 }
 
@@ -98,4 +106,31 @@ export interface PublicationRecord {
   species: string
   top_trait: string
   url: string
+}
+
+/** A wheat marker-trait association curated by GWAS Atlas (NGDC/CNCB), from a
+ *  publication this database does not itself hold. See scripts/build_gwas_atlas.py. */
+export interface GwasAtlasRecord {
+  id: string
+  species: string
+  trait: string
+  trait_accession: string
+  chromosome: string
+  /** Physical position, bp, IWGSC RefSeq v1.0. */
+  position: string
+  p_value: string
+  pve: string
+  candidate_gene: string
+  condition: string
+  environment: string
+  population: string
+  sample_size: string
+  tissue: string
+  genotyping: string
+  method: string
+  reference: string
+  doi: string
+  pmid: string
+  year: string
+  gwas_atlas_id: string
 }
