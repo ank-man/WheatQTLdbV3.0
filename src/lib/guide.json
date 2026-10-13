@@ -1,0 +1,412 @@
+[
+  {
+    "id": "home",
+    "title": "Home page",
+    "intro": "The home page is the starting point: search the whole database, see how much it holds, and jump straight to a trait.",
+    "image": "01-home.png",
+    "width": 2800,
+    "height": 2080,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "Menu",
+        "text": "Every part of the database is one click away: Statistics, Map, Data, Search, Linkage maps, Publications and News."
+      },
+      {
+        "n": 2,
+        "label": "Search box",
+        "text": "Type a QTL name, trait, marker, gene or author and press Search. The examples below it (Drought, Rht-B1, Fhb1 …) run a search in one click."
+      },
+      {
+        "n": 3,
+        "label": "Quick links",
+        "text": "Open the data tables, the Statistics page or the Genome map."
+      },
+      {
+        "n": 4,
+        "label": "Live counts",
+        "text": "The number of QTL, MetaQTL, epistatic QTL pairs, multi-trait QTL and species, read from the current data. Click a number to open that table."
+      },
+      {
+        "n": 5,
+        "label": "Browse by trait",
+        "text": "Each tile shows how many QTL the trait has and opens the Search page with that trait already selected."
+      }
+    ]
+  },
+  {
+    "id": "home-chromosome",
+    "title": "Home page: browse by chromosome and news",
+    "intro": "Further down the home page you can pick a chromosome, read what has changed recently and copy the citation.",
+    "image": "02-home-chromosome.png",
+    "width": 2800,
+    "height": 2000,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "Chromosome picker",
+        "text": "The 21 chromosomes drawn at their relative lengths and coloured by subgenome. Click one to list all of its QTL."
+      },
+      {
+        "n": 2,
+        "label": "News",
+        "text": "Data releases and new features, most recent first. “All news” opens the full list."
+      }
+    ]
+  },
+  {
+    "id": "search",
+    "title": "Search",
+    "intro": "Search combines free text with filters. Filters narrow the table as you set them, and the web address changes with them, so a search can be bookmarked or shared.",
+    "image": "03-search.png",
+    "width": 2800,
+    "height": 2160,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "Free text",
+        "text": "Matches QTL name, trait, parameter, marker, candidate gene, reference, cross and population."
+      },
+      {
+        "n": 2,
+        "label": "Trait class",
+        "text": "One of the five main traits. Choosing one limits the Trait list to its sub-categories."
+      },
+      {
+        "n": 3,
+        "label": "Trait",
+        "text": "A single trait, such as Drought tolerance or Fungal resistance. Biofortification and Nutrient use efficiency offer a further Sub-trait list."
+      },
+      {
+        "n": 4,
+        "label": "Chromosome and species",
+        "text": "Limit the results to one chromosome or one species."
+      },
+      {
+        "n": 5,
+        "label": "PVE range",
+        "text": "Keep only QTL whose phenotypic variance explained falls between a minimum and a maximum (in %)."
+      },
+      {
+        "n": 6,
+        "label": "Other filters",
+        "text": "Show only QTL with a candidate gene, or only multi-trait (pleiotropic) QTL."
+      },
+      {
+        "n": 7,
+        "label": "Result count",
+        "text": "How many records match, out of the whole database, and which traits they belong to."
+      },
+      {
+        "n": 8,
+        "label": "Export CSV",
+        "text": "Downloads exactly the rows that match, with every column, for use in R, Python or Excel."
+      },
+      {
+        "n": 9,
+        "label": "Reset",
+        "text": "Clears every filter."
+      }
+    ]
+  },
+  {
+    "id": "data",
+    "title": "Data tables",
+    "intro": "The Data page lists every table in the database. Each opens as a sortable, searchable table that can be exported.",
+    "image": "04-data.png",
+    "width": 2800,
+    "height": 1720,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "QTL",
+        "text": "All main effect QTL and marker–trait associations."
+      },
+      {
+        "n": 2,
+        "label": "MetaQTL and epistatic QTL",
+        "text": "Consensus QTL regions across studies, and QTL × QTL interactions."
+      },
+      {
+        "n": 3,
+        "label": "Candidate genes",
+        "text": "Every gene named as a candidate, linked to GrainGenes or Ensembl Plants."
+      },
+      {
+        "n": 4,
+        "label": "GWAS Atlas associations",
+        "text": "Marker–trait associations imported from GWAS Atlas. They are a separate table and are not part of the QTL counts."
+      },
+      {
+        "n": 5,
+        "label": "Studies awaiting curation",
+        "text": "Papers found in the literature that are not yet in the database."
+      }
+    ]
+  },
+  {
+    "id": "table",
+    "title": "Working with a table",
+    "intro": "Every table works the same way, whether it is QTL, MetaQTL, candidate genes or publications.",
+    "image": "05-table.png",
+    "width": 2800,
+    "height": 1800,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "Search the table",
+        "text": "Filters the rows as you type, across all columns."
+      },
+      {
+        "n": 2,
+        "label": "Row count",
+        "text": "The number of rows currently shown."
+      },
+      {
+        "n": 3,
+        "label": "Export CSV",
+        "text": "Downloads the rows currently shown."
+      },
+      {
+        "n": 4,
+        "label": "Sort and definitions",
+        "text": "Click a column heading to sort by it; click again to reverse. Hover the small “?” for the definition of the column."
+      },
+      {
+        "n": 5,
+        "label": "Reference",
+        "text": "Opens the source publication. A dash means the source did not report that value."
+      }
+    ]
+  },
+  {
+    "id": "statistics",
+    "title": "Statistics",
+    "intro": "The Statistics page summarises what the database holds. All numbers are computed from the current data when the page opens.",
+    "image": "06-statistics.png",
+    "width": 2800,
+    "height": 2120,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "Totals",
+        "text": "QTL, MetaQTL, epistatic QTL pairs and source publications."
+      },
+      {
+        "n": 2,
+        "label": "Main traits",
+        "text": "The five main traits with their totals. The bar length is proportional to the number of QTL."
+      },
+      {
+        "n": 3,
+        "label": "Sub-categories",
+        "text": "Each sub-category with its count and its share of all records. The rows add up to the total."
+      }
+    ]
+  },
+  {
+    "id": "statistics-charts",
+    "title": "Statistics: charts",
+    "intro": "Below the trait table are charts by chromosome and publication year, and summaries of position type, species and literature coverage.",
+    "image": "07-statistics-charts.png",
+    "width": 2800,
+    "height": 2160,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "QTL by chromosome",
+        "text": "Bars are coloured by subgenome (A, B, D). Hover a bar to read its exact value."
+      },
+      {
+        "n": 2,
+        "label": "Save a chart",
+        "text": "Hover a chart and click the camera icon to save it as a high-resolution PNG."
+      },
+      {
+        "n": 3,
+        "label": "QTL by publication year",
+        "text": "The year of the study each QTL came from."
+      },
+      {
+        "n": 4,
+        "label": "Type of map position",
+        "text": "How many QTL have a physical position, a genetic position only, or none."
+      }
+    ]
+  },
+  {
+    "id": "map-circos",
+    "title": "Genome map: Circos view",
+    "intro": "The Map page draws QTL and MetaQTL on the wheat genome. The Circos view shows all 21 chromosomes in a circle.",
+    "image": "08-map-circos.png",
+    "width": 2800,
+    "height": 3000,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "Layers",
+        "text": "Switch QTL, MetaQTL, GWAS Atlas associations and epistatic links on or off."
+      },
+      {
+        "n": 2,
+        "label": "Choose the view",
+        "text": "Ideogram and Circos show QTL with a physical position; Linkage (cM) shows QTL mapped only on a genetic map."
+      },
+      {
+        "n": 3,
+        "label": "Export",
+        "text": "Save the current view as SVG, PNG or JPEG. PNG and JPEG are saved at print resolution."
+      },
+      {
+        "n": 4,
+        "label": "Search the map",
+        "text": "Shows only the QTL whose name, trait, parameter or candidate gene matches."
+      },
+      {
+        "n": 5,
+        "label": "Subgenome",
+        "text": "Limit the view to the A, B or D subgenome."
+      },
+      {
+        "n": 6,
+        "label": "Highlight traits",
+        "text": "Click one or several traits to show only those. The colours here are the colours used in the plot."
+      },
+      {
+        "n": 7,
+        "label": "The plot",
+        "text": "Outer ring: chromosomes. Next ring: QTL density. Inner rings: one ring per trait for MetaQTL and for QTL. Hover any mark for its details."
+      }
+    ]
+  },
+  {
+    "id": "map-ideogram",
+    "title": "Genome map: Ideogram view",
+    "intro": "The Ideogram view lays the chromosomes side by side, each at its true physical length.",
+    "image": "09-map-ideogram.png",
+    "width": 2800,
+    "height": 2500,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "Chromosomes",
+        "text": "Height is proportional to physical length; the pinch marks the centromere. The strip beside each chromosome shows QTL density, coloured by the most frequent trait, and the brackets are MetaQTL intervals."
+      }
+    ]
+  },
+  {
+    "id": "map-linkage",
+    "title": "Genome map: Linkage (cM) view",
+    "intro": "Many QTL were published with a genetic-map position only. They cannot be placed on the physical views, so they are drawn here on a centimorgan scale.",
+    "image": "10-map-linkage.png",
+    "width": 2800,
+    "height": 2500,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "How many are shown",
+        "text": "The number of QTL drawn by their genetic position."
+      },
+      {
+        "n": 2,
+        "label": "cM scale",
+        "text": "Each strip is a 5 cM window: its length shows how many QTL were reported there and its colour the most frequent trait. Positions are as published, each on its own study’s map."
+      }
+    ]
+  },
+  {
+    "id": "linkage-maps",
+    "title": "Linkage maps",
+    "intro": "Genetic maps behind the mapped QTL: the GrainGenes catalogue plus maps whose marker positions can be viewed here.",
+    "image": "11-linkage-maps.png",
+    "width": 2800,
+    "height": 2360,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "Viewable maps",
+        "text": "How many of the catalogued maps can be drawn with their marker positions."
+      },
+      {
+        "n": 2,
+        "label": "Map viewer",
+        "text": "One bar per linkage group; shading shows marker density. Click a group to list its markers."
+      },
+      {
+        "n": 3,
+        "label": "Choose a map",
+        "text": "Maps with marker positions are listed first; the others are catalogue records with a link to GrainGenes."
+      }
+    ]
+  },
+  {
+    "id": "publications",
+    "title": "Publications",
+    "intro": "Every study behind a record, with its title, authors, journal, year and the number of records it contributed.",
+    "image": "12-publications.png",
+    "width": 2800,
+    "height": 1800,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "Summary",
+        "text": "The number of publications and the years they span."
+      },
+      {
+        "n": 2,
+        "label": "Decade",
+        "text": "Show only the publications of one decade."
+      },
+      {
+        "n": 3,
+        "label": "Title",
+        "text": "Opens the publication. The Records column shows how many records came from it."
+      }
+    ]
+  },
+  {
+    "id": "candidate-genes",
+    "title": "Candidate genes",
+    "intro": "Genes proposed as underlying a QTL, each with the link that suits its identifier.",
+    "image": "13-candidate-genes.png",
+    "width": 2800,
+    "height": 1720,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "Kind of identifier",
+        "text": "Says whether the entry is a gene symbol, an annotation gene model or a functional description."
+      },
+      {
+        "n": 2,
+        "label": "Resources",
+        "text": "Gene symbols open in GrainGenes; gene models open in Ensembl Plants; a position opens the genome browser at that location."
+      }
+    ]
+  },
+  {
+    "id": "pending",
+    "title": "Studies awaiting curation and News",
+    "intro": "Papers found by a literature search that are not yet in the database. They are listed so that curators, and users, can see what is still to come; no QTL has been taken from them. New data and features are announced on the News page.",
+    "image": "14-pending.png",
+    "width": 2800,
+    "height": 1640,
+    "callouts": [
+      {
+        "n": 1,
+        "label": "Strongest candidates",
+        "text": "Tick to show only papers whose title reports QTL or GWAS work."
+      },
+      {
+        "n": 2,
+        "label": "Study type",
+        "text": "QTL mapping, GWAS, meta-QTL or epistatic QTL."
+      },
+      {
+        "n": 3,
+        "label": "News",
+        "text": "Opens the list of data releases and new features."
+      }
+    ]
+  }
+]

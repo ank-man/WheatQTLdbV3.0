@@ -23,6 +23,7 @@ Usage:  python3 scripts/build_publications.py [--limit N] [--no-enrich]
 
 import argparse
 import csv
+import hashlib
 import json
 import os
 import re
@@ -78,13 +79,17 @@ def normalise_doi(raw: str) -> str:
     # Springer links arrive percent-encoded ("10.1007%2Fs00122-018-3183-6"), and
     # a few DOIs were pasted with a space after the slash; neither matched the
     # pattern, so those papers were filed as "no DOI".
-    text = urllib.parse.unquote(raw)
+    # unquoted twice: a few Springer links are double-encoded ("10.1007%252Fs00122-…")
+    text = urllib.parse.unquote(urllib.parse.unquote(raw))
     text = re.sub(r"(10\.\d{4,9}/)\s+", r"\1", text)
     m = DOI_RE.search(text)
     if not m:
         return ""
     doi = m.group(0)
-    doi = doi.split("#")[0].split("?")[0]          # anchors, query strings
+    doi = doi.split("#")[0].split("?")[0].split("&")[0]   # anchors, query strings
+    doi = re.sub(r"/(tables|figures|metrics)/\d+$", "", doi)
+    if doi.startswith("10.1101/"):                 # bioRxiv: ".../2024.07.16.602850v1.abstract"
+        doi = re.sub(r"v\d+(\.\w+)*$", "", doi)
     # Applied until stable: "…/s10681-017-2058-2.pdf" kept its ".pdf", which is
     # not part of the DOI, so Crossref could not resolve it.
     while True:
@@ -101,6 +106,24 @@ def source_label(raw: str) -> str:
         return ""
     m = re.search(r"https?://(?:www\.)?([^/]+)", raw)
     return m.group(1) if m else raw[:60]
+
+
+LINKLIKE = re.compile(r"https?://|www\.|10\.\d{4,9}/", re.I)
+
+
+def record_link(r) -> str:
+    """The reference link of one record.
+
+    Normally the doi column. In some source sheets (Iron data, 1,877 rows) the
+    link was typed into the reference column instead and the doi column left
+    empty, so those records had no publication and no year although their
+    source is perfectly well identified.
+    """
+    d = (r.get("doi") or "").strip()
+    if d:
+        return d
+    ref = (r.get("reference") or "").strip()
+    return ref if ref and len(ref) < 400 and LINKLIKE.search(ref) else ""
 
 
 def link_key(raw: str) -> str:
@@ -190,9 +213,184 @@ def _title_doi(text):
         # Exact match after normalising punctuation, or one a prefix of the
         # other (the curated cell is sometimes cut short). Nothing fuzzier:
         # a near-miss title is a different paper.
-        if got and (got == want or (len(want) > 60 and (got.startswith(want) or want.startswith(got)))):
+        if got and (got == want or (len(want) > 45 and (got.startswith(want) or want.startswith(got)))):
             return it.get("DOI", "").lower()
     return ""
+
+
+def _get_text(url: str, cache_name: str) -> str:
+    path = os.path.join(CACHE, "res_" + re.sub(r"[^A-Za-z0-9]", "_", cache_name)[:140] + ".txt")
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            return f.read()
+    throttle()
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=40) as r:
+            text = r.read().decode("utf-8", errors="replace")
+    except Exception as e:
+        print(f"    lookup failed ({type(e).__name__}): {url[:90]}", flush=True)
+        return ""
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(text)
+    return text
+
+
+# Publisher links that name the journal, volume, issue and first page but not
+# the DOI ("academic.oup.com/jxb/article/72/4/1135/…"). Crossref's OpenURL
+# resolver returns the DOI for exactly that combination.
+JOURNAL_ISSN = {"jxb": "0022-0957", "g3journal": "2160-1836", "plphys": "0032-0889",
+                "genetics": "0016-6731", "cs": "0011-183X", "tpg": "1940-3372", "plantcell": "1040-4651",
+                "plcell": "1040-4651", "0806": "0133-3720"}        # 0806: Cereal Research Communications
+VOLUME_PAGE = [
+    re.compile(r"academic\.oup\.com/(?P<j>[a-z0-9]+)/article(?:-abstract)?/(?P<v>\d+)/(?P<i>\d+)/(?P<p>[A-Za-z]*\d+)", re.I),
+    re.compile(r"akjournals\.com/view/journals/(?P<j>\d+)/(?P<v>\d+)/(?P<i>\d+)/article-p(?P<p>\d+)", re.I),
+    re.compile(r"dl\.sciencesocieties\.org/publications/(?P<j>[a-z]+)/(?:abstracts|articles)/(?P<v>\d+)/(?P<i>\d+)/(?P<p>\d+)", re.I),
+    re.compile(r"(?P<j>plantcell)\.org/content/(?P<v>\d+)/(?P<i>\d+)/(?P<p>\d+)", re.I),
+    re.compile(r"(?P<j>g3journal)\.org/content/(?P<v>\d+)/(?P<i>\d+)/(?P<p>\d+)", re.I),
+    re.compile(r"(?P<j>genetics)\.org/content/(?:genetics/)?(?P<v>\d+)/(?P<i>\d+)/(?P<p>\d+)", re.I),
+]
+
+
+def _volume_page_doi(raw):
+    for rx in VOLUME_PAGE:
+        m = rx.search(raw)
+        if not m:
+            continue
+        issn = JOURNAL_ISSN.get(m.group("j").lower())
+        if not issn:
+            return ""
+        q = f"issn={issn}&volume={m.group('v')}&issue={m.group('i')}&spage={m.group('p')}"
+        xml = _get_text(f"https://doi.crossref.org/openurl?pid={MAILTO}&{q}&noredirect=true", "openurl_" + q)
+        d = re.search(r'<doi type="journal_article">([^<]+)</doi>', xml)
+        return d.group(1).strip().lower() if d else ""
+    return ""
+
+
+def _title_in_url(raw):
+    """A paper title carried in the link itself: a ResearchGate or Cambridge
+    slug, or the query of a Google Scholar search."""
+    m = re.search(r"researchgate\.net/publication/\d+_([^/?#]+)", raw, re.I)
+    if m:
+        return m.group(1).replace("_", " ")
+    m = re.search(r"scholar\.google\.[a-z.]+/scholar\?.*?[?&]q=([^&]+)", raw, re.I)
+    if m:
+        return urllib.parse.unquote_plus(m.group(1))
+    m = re.search(r"cambridge\.org/core/journals/[^/]+/article/(?:abs/)?([a-z0-9-]{30,})", raw, re.I)
+    if m:
+        return m.group(1).replace("-", " ")
+    return ""
+
+
+# ---------------------------------------------------------------------------
+# Last resort for a link with no DOI: read the page's own bibliographic tags
+# ---------------------------------------------------------------------------
+# Repositories and most journal sites describe the item in <meta> tags
+# (citation_publication_date, DC.date, ...) for indexers such as Google Scholar.
+# That is the publisher's own statement of the date, so it is used as written.
+# Sites that are not a paper (an ORCID profile, a search page) or that refuse
+# automated readers are not requested.
+NOT_A_PAPER = re.compile(r"orcid\.org|scholar\.google|publons\.com|researchgate\.net|graingenes", re.I)
+META_DATE = ["citation_publication_date", "citation_date", "citation_online_date", "dc.date.issued",
+             "dcterms.issued", "dc.date", "dcterms.date", "prism.publicationdate", "article:published_time",
+             "citation_year", "dc.date.created", "dcterms.created"]
+
+
+def _meta_tags(page):
+    tags = {}
+    for m in re.finditer(r"<meta\b[^>]*>", page, re.I):
+        tag = m.group(0)
+        name = re.search(r'(?:name|property)\s*=\s*["\']([^"\']+)["\']', tag, re.I)
+        content = re.search(r'content\s*=\s*["\']([^"\']*)["\']', tag, re.I)
+        if name and content and content.group(1).strip():
+            tags.setdefault(name.group(1).strip().lower(), []).append(content.group(1).strip())
+    return tags
+
+
+def page_meta(url):
+    """-> {title, authors, journal, year} from a page's citation tags ({} if none)."""
+    if not re.match(r"https?://", url, re.I):
+        url = "http://" + url if re.match(r"www\.", url, re.I) else ""
+    if not url or NOT_A_PAPER.search(url) or url.lower().split("?")[0].endswith(".pdf"):
+        return {}
+    tags = _meta_tags(_get_text(url, "page_" + url)[:400000])
+    year = ""
+    for key in META_DATE:
+        for v in tags.get(key, []):
+            y = re.search(r"(19[89]\d|20[0-2]\d)", v)
+            if y and int(y.group(1)) <= time.gmtime().tm_year:
+                year = y.group(1)
+                break
+        if year:
+            break
+    if not year:
+        return {}
+    first = lambda k: plain((tags.get(k) or [""])[0])
+    authors = [plain(a) for a in tags.get("citation_author", []) or tags.get("dc.creator", []) or tags.get("dc.contributor.author", [])]
+    return {"title": first("citation_title") or first("dc.title"),
+            "authors": "; ".join(authors[:12]),
+            "journal": first("citation_journal_title") or first("citation_dissertation_institution") or first("dc.publisher"),
+            "year": year, "type": "", "publisher": "", "citations": ""}
+
+
+# A few link styles carry the publication year by construction (not a number
+# that merely looks like one): SciELO article ids ("S0103-84782018000300251" is
+# ISSN + year + issue), and proceedings filed under a year folder.
+YEAR_IN_LINK = [
+    re.compile(r"scielo\.[a-z.]+/.*[?&]pid=S\d{4}-?\d{3}[\dX](19[89]\d|20[0-2]\d)\d", re.I),
+    re.compile(r"agronomyaustraliaproceedings\.org/images/sampledata/(20[0-2]\d)/", re.I),
+    re.compile(r"jeb\.co\.in/journal_issues/(20[0-2]\d)\d{2}_", re.I),
+]
+
+
+YEAR_IN_LINK += [
+    re.compile(r"10\.\d{4,5}/j\.issn\.\d{4}-\d{3}[\dxX]\.(19[89]\d|20[0-2]\d)\.\d", re.I),   # Chinese journal DOIs
+    re.compile(r"cnki\.com\.cn/Article_en/CJFDTotal-[A-Z]{4}(19[89]\d|20[0-2]\d)\d{5}", re.I),
+    re.compile(r"cropj\.com/[a-z]+_\d+_\d+_(19[89]\d|20[0-2]\d)_\d+_\d+\.pdf", re.I),
+    re.compile(r"epa\.hu/.*applied_ecology_(20[0-2]\d)_\d\d_", re.I),
+    re.compile(r"fs\.fed\.us/rm/pubs_other/rmrs_(19[89]\d|20[0-2]\d)_", re.I),
+]
+# Elsevier PII: "S" + ISSN (8) + two-digit year + ...; Springer journal DOI:
+# s<journal>-<year code>-<article>-<check>, where the year code is the year
+# minus 2000 (008 = 2008). Both are assigned by the publisher at acceptance.
+ELSEVIER_PII = re.compile(r"(?:/pii/|/article/)S(\d{4})-?(\d{3}[\dX])\(?(\d{2})\)?", re.I)
+SPRINGER_DOI = re.compile(r"10\.1007/s\d{5}-(\d{3})-\d{4}-[\dxX]", re.I)
+
+
+def year_in_link(raw):
+    this_year = time.gmtime().tm_year
+    for rx in YEAR_IN_LINK:
+        m = rx.search(raw)
+        if m:
+            return m.group(1)
+    m = ELSEVIER_PII.search(raw)
+    if m:
+        yy = int(m.group(3))
+        year = 2000 + yy if 2000 + yy <= this_year else 1900 + yy
+        return str(year) if year >= 1980 else ""
+    m = SPRINGER_DOI.search(raw)
+    if m and int(m.group(1)) < 100 and 2000 + int(m.group(1)) <= this_year:
+        return str(2000 + int(m.group(1)))
+    return ""
+
+
+# Hand-entered details for references nothing above can resolve - a thesis in a
+# repository that blocks readers, a link to an author profile. One row per
+# reference string exactly as it appears in the data.
+OVERRIDES = os.path.join(ROOT, "curation", "reference_overrides.csv")
+
+
+def load_overrides():
+    out = {}
+    if os.path.exists(OVERRIDES):
+        with open(OVERRIDES, encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                if (r.get("year") or "").strip():
+                    out[r["reference"].strip()] = {
+                        "title": (r.get("title") or "").strip(), "authors": (r.get("authors") or "").strip(),
+                        "journal": (r.get("journal") or "").strip(), "year": r["year"].strip(),
+                        "type": "", "publisher": "", "citations": ""}
+    return out
 
 
 PMID_RE = re.compile(r"(?:pubmed\.ncbi\.nlm\.nih\.gov/|ncbi\.nlm\.nih\.gov/pubmed/|europepmc\.org/article/med/)(\d+)", re.I)
@@ -207,7 +405,7 @@ def _ncbi_batch(pmids, pmcids):
         chunk = pmcids[i:i + 100]
         d = _get_json("https://pmc.ncbi.nlm.nih.gov/tools/idconv/api/v1/articles/?format=json"
                       f"&tool=wheatqtldb&email={MAILTO}&ids=" + ",".join(chunk),
-                      "pmc_" + "_".join(chunk)[:100] + f"_{len(chunk)}")
+                      "pmc_" + hashlib.md5(",".join(chunk).encode()).hexdigest())
         for rec in d.get("records", []):
             if rec.get("doi"):
                 pmc_doi[rec["pmcid"].upper()] = rec["doi"].lower()
@@ -219,7 +417,7 @@ def _ncbi_batch(pmids, pmcids):
         chunk = pmids[i:i + 100]
         d = _get_json("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed"
                       f"&retmode=json&tool=wheatqtldb&email={MAILTO}&id=" + ",".join(chunk),
-                      "pmid_" + "_".join(chunk)[:100] + f"_{len(chunk)}").get("result", {})
+                      "pmid_" + hashlib.md5(",".join(chunk).encode()).hexdigest()).get("result", {})
         for pid in chunk:
             rec = d.get(pid) or {}
             if not rec.get("title"):
@@ -281,6 +479,14 @@ def resolve_links(raws):
             guess = _mdpi_doi(m.group(1), m.group(2), m.group(3), m.group(4))
         elif (m := re.search(r"(?:/pii/|csbj\.org/article/)(S[0-9X()\-]+)", raw, re.I)):
             guess = _pii_doi(re.sub(r"[^0-9A-Za-z]", "", m.group(1)))
+        elif (m := re.search(r"sciencesocieties\.org/publications/\w+/articles/\d+/\d+/((?:plantgenome|cropsci)\d{4}\.\d{2}\.\d{4})", raw, re.I)):
+            guess = f"10.3835/{m.group(1).lower()}" if m.group(1).lower().startswith("plantgenome") else f"10.2135/{m.group(1).lower()}"
+        elif (m := re.search(r"jstage\.jst\.go\.jp/article/jsbbs/(\d+)/\d+/\1_(\d+)", raw, re.I)):
+            guess = f"10.1270/jsbbs.{m.group(1)}.{m.group(2)}"
+        elif any(rx.search(raw) for rx in VOLUME_PAGE):
+            guess = _volume_page_doi(raw)
+        elif _title_in_url(raw):
+            guess = _title_doi(_title_in_url(raw))
         elif not re.match(r"(https?://|www\.)", raw, re.I):
             guess = _title_doi(raw)
         if guess.startswith("pmid:"):
@@ -314,7 +520,7 @@ def distinct_references():
             continue
         with open(path, encoding="utf-8") as f:
             for r in csv.DictReader(f):
-                raw = (r.get("doi") or "").strip()
+                raw = record_link(r)
                 if raw:
                     raws.add(raw)
     return sorted(raws)
@@ -322,7 +528,7 @@ def distinct_references():
 
 def collect(keys):
     """key -> {'records': n, 'tables': set, 'raw': example, 'species': Counter}"""
-    agg = defaultdict(lambda: {"records": 0, "tables": set(), "raw": "",
+    agg = defaultdict(lambda: {"records": 0, "tables": set(), "raw": "", "raws": set(),
                                "species": Counter(), "traits": Counter(),
                                "no_doi_source": ""})
     for fname, label in RECORD_TABLES:
@@ -331,12 +537,13 @@ def collect(keys):
             continue
         with open(path, encoding="utf-8") as f:
             for r in csv.DictReader(f):
-                raw = (r.get("doi") or "").strip()
+                raw = record_link(r)
                 if not raw:
                     continue
                 key = keys[raw]
                 a = agg[key]
                 a["records"] += 1
+                a["raws"].add(raw)
                 a["tables"].add(label)
                 if not a["raw"]:
                     a["raw"] = raw
@@ -460,6 +667,29 @@ def main():
         found = sum(1 for d in targets if meta.get(d, {}).get("title"))
         print(f"  resolved with metadata: {found}/{len(targets)}")
 
+    # Link-only references: the page's own citation tags, a year the link
+    # carries by construction, or a hand-entered override - in that order of
+    # preference for the details, with an override always winning.
+    overrides = load_overrides()
+    if not args.no_enrich:
+        links = [k for k in agg if k.startswith("link:")]
+        print(f"\nreading citation tags from {len(links)} link-only references...")
+
+        def tags_for(k):
+            return k, page_meta(agg[k]["raw"])
+
+        with ThreadPoolExecutor(max_workers=WORKERS) as pool:
+            for k, m in pool.map(tags_for, links):
+                if m:
+                    meta[k] = m
+        print(f"  dated from the page itself: {sum(1 for k in links if meta.get(k, {}).get('year'))}/{len(links)}")
+    for k, a in agg.items():
+        if not meta.get(k, {}).get("year") and year_in_link(a["raw"]):
+            meta[k] = {**meta.get(k, {}), "year": year_in_link(a["raw"])}
+        for raw in a["raws"]:
+            if raw in overrides:
+                meta[k] = {**meta.get(k, {}), **{f: v for f, v in overrides[raw].items() if v}}
+
     cols = ["id", "doi", "title", "authors", "journal", "year", "type", "publisher",
             "citations", "records", "record_types", "species", "top_trait", "url"]
     rows = []
@@ -473,7 +703,7 @@ def main():
             "title": m.get("title", "") or (f"[{a['no_doi_source']}]" if is_link else ""),
             "authors": m.get("authors", ""),
             "journal": m.get("journal", "") or (a["no_doi_source"] if is_link else ""),
-            "year": m.get("year", ""),
+            "year": m.get("year", "") or (cited_year(a["raw"]) if is_link else ""),
             "type": m.get("type", ""),
             "publisher": m.get("publisher", ""),
             "citations": m.get("citations", ""),
@@ -504,6 +734,18 @@ def main():
         w.writeheader()
         w.writerows(rows)
 
+    # What is still undated, as a worklist: fill in `year` (and anything else
+    # known) in curation/reference_overrides.csv and rebuild.
+    undated = sorted((r for r in rows if not r["year"]), key=lambda r: -r["records"])
+    os.makedirs(os.path.dirname(OVERRIDES), exist_ok=True)
+    with open(os.path.join(os.path.dirname(OVERRIDES), "undated_references.csv"), "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["records", "reference", "year", "title", "authors", "journal"])
+        for r in undated:
+            w.writerow([r["records"], r["url"], "", "", "", ""])
+    print(f"undated publications : {len(undated)} ({sum(r['records'] for r in undated)} records) "
+          f"-> curation/undated_references.csv")
+
     resolved = sum(1 for r in rows if r["title"] and not r["title"].startswith("["))
     print(f"\npublications written : {len(rows)}  ({resolved} with full metadata)")
     yrs = Counter(r["year"] for r in rows if r["year"])
@@ -514,8 +756,6 @@ def main():
     print(f"wrote -> {path}")
 
 
-if __name__ == "__main__":
-    main()
 
 
 # A year is only ever read from citation text a curator typed, never from a
@@ -581,8 +821,15 @@ def backfill_references(limit_cols=("qtl.csv", "metaqtl.csv", "epistatic.csv")):
             cols.insert(cols.index("doi") + 1, "year")
         filled = dated = 0
         for r in rows:
-            pid = pub_of.get((r.get("doi") or "").strip(), "")
+            link = record_link(r)
+            pid = pub_of.get(link, "")
             curated = r.get("reference", "").strip()
+            if link and not (r.get("doi") or "").strip():
+                # the link was in the reference column: file it under doi, and
+                # let the resolved citation take its place below
+                r["doi"] = link
+                curated = ""
+                r["reference"] = ""
             r["year"] = year_of.get(pid, "") or cited_year(curated)
             dated += bool(r["year"])
             if not curated and pid in cite:
@@ -595,3 +842,7 @@ def backfill_references(limit_cols=("qtl.csv", "metaqtl.csv", "epistatic.csv")):
         have = sum(1 for r in rows if r.get("reference", "").strip())
         print(f"  {fname:<16} filled {filled:>6}   references {have}/{len(rows)}"
               f"   with a year {dated}/{len(rows)} ({100 * dated / len(rows):.1f}%)")
+
+
+if __name__ == "__main__":
+    main()

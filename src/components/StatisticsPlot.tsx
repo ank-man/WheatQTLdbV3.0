@@ -42,7 +42,7 @@ export default function StatisticsPlot({
         bargap: 0.3,
         barmode: stacked ? 'stack' : 'group',
         showlegend: showLegend,
-        legend: { orientation: 'h', y: 1.14, x: 0, font: { size: 11, color: '#57575f' } },
+        legend: { orientation: 'h', y: 1.14, x: 0, font: { size: 11, color: '#57575f' }, traceorder: 'normal' },
         hoverlabel: { bgcolor: '#19191c', bordercolor: '#19191c', font: { color: '#ffffff', size: 12 } },
         xaxis: horizontal ? valueAxis : { ...categoryAxis, tickangle: 0 },
         yaxis: horizontal ? { ...categoryAxis, automargin: true } : valueAxis,

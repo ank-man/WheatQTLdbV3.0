@@ -1,0 +1,111 @@
+/**
+ * Build public/WheatQTLdb_User_Guide.docx from src/lib/guide.json and the
+ * annotated screenshots in public/images/guide/.
+ */
+const fs = require('fs')
+const path = require('path')
+const {
+  Document, Packer, Paragraph, TextRun, ImageRun, HeadingLevel, AlignmentType, Footer, PageNumber,
+  Table, TableRow, TableCell, WidthType, BorderStyle, ShadingType, PageBreak, ExternalHyperlink, TabStopType,
+} = require('docx')
+
+const ROOT = path.join(__dirname, '..', '..')
+const guide = JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'lib', 'guide.json'), 'utf8'))
+const totals = (() => {
+  // headline numbers for the introduction, read from the figures' summary table
+  const f = path.join(ROOT, 'manuscript_figures', 'data', 'totals.csv')
+  if (!fs.existsSync(f)) return null
+  const [h, v] = fs.readFileSync(f, 'utf8').trim().split('\n').map((l) => l.split(','))
+  return Object.fromEntries(h.map((k, i) => [k, Number(v[i]).toLocaleString('en-US')]))
+})()
+
+const FONT = 'Arial'
+const INK = '19191C', MUTED = '57575F', GREEN = '15803D', RED = 'D92D20', RULE = 'D1D1D6'
+const PAGE_W = 11906, MARGIN = 1134            // A4, 2 cm margins (DXA)
+const CONTENT_W = PAGE_W - 2 * MARGIN          // 9638 DXA = 17 cm
+const IMG_W = 642                              // px at 96 dpi = 17 cm
+
+const text = (t, o = {}) => new TextRun({ text: t, font: FONT, size: 21, color: INK, ...o })
+const para = (children, o = {}) => new Paragraph({ spacing: { after: 120, line: 300 }, ...o, children: [].concat(children) })
+const none = { style: BorderStyle.NONE, size: 0, color: 'FFFFFF' }
+const line = { style: BorderStyle.SINGLE, size: 4, color: RULE }
+
+function calloutTable(callouts) {
+  const NUM_W = 620
+  return new Table({
+    width: { size: CONTENT_W, type: WidthType.DXA },
+    columnWidths: [NUM_W, CONTENT_W - NUM_W],
+    rows: callouts.map((c, i) => new TableRow({
+      cantSplit: true,
+      children: [
+        new TableCell({
+          width: { size: NUM_W, type: WidthType.DXA },
+          borders: { top: none, left: none, right: none, bottom: i === callouts.length - 1 ? none : line },
+          margins: { top: 90, bottom: 90, left: 0, right: 80 },
+          children: [new Paragraph({
+            alignment: AlignmentType.CENTER,
+            shading: { type: ShadingType.CLEAR, color: 'auto', fill: RED },
+            children: [new TextRun({ text: String(c.n), font: FONT, size: 21, bold: true, color: 'FFFFFF' })],
+          })],
+        }),
+        new TableCell({
+          width: { size: CONTENT_W - NUM_W, type: WidthType.DXA },
+          borders: { top: none, left: none, right: none, bottom: i === callouts.length - 1 ? none : line },
+          margins: { top: 90, bottom: 90, left: 120, right: 0 },
+          children: [para([text(c.label + '. ', { bold: true }), text(c.text)], { spacing: { after: 0, line: 290 } })],
+        }),
+      ],
+    })),
+  })
+}
+
+const children = [
+  new Paragraph({ spacing: { before: 2400, after: 120 }, children: [new TextRun({ text: 'WheatQTLdb V3.0', font: FONT, size: 64, bold: true, color: INK })] }),
+  new Paragraph({ spacing: { after: 360 }, children: [new TextRun({ text: 'User guide', font: FONT, size: 40, color: GREEN })] }),
+  para(text('A step-by-step tour of the database: how to search it, browse and export its tables, read its statistics and use its genome maps. Each screenshot is numbered; the list under it explains every numbered item.', { size: 24, color: MUTED }), { spacing: { after: 360, line: 340 } }),
+  para([text('The database is at '), new ExternalHyperlink({ link: 'https://wheatqtldbv3.org', children: [text('https://wheatqtldbv3.org', { color: GREEN, underline: {} })] }), text('. This guide is also available on the site under Tutorial.')]),
+]
+if (totals) {
+  children.push(para(text(`At the time this guide was generated the database held ${totals.qtl} QTL / MTA records, ${totals.metaqtl} MetaQTLs and ${totals.epistatic} epistatic QTL pairs from ${totals.publications} publications.`, { color: MUTED })))
+}
+children.push(
+  new Paragraph({ spacing: { before: 480, after: 160 }, children: [new TextRun({ text: 'Contents', font: FONT, size: 28, bold: true, color: INK })] }),
+  ...guide.map((s, i) => para(text(`${i + 1}.  ${s.title}`), { spacing: { after: 60 } })),
+)
+
+guide.forEach((s, i) => {
+  const img = fs.readFileSync(path.join(ROOT, 'public', 'images', 'guide', s.image))
+  children.push(
+    new Paragraph({ children: [new PageBreak()] }),
+    new Paragraph({ heading: HeadingLevel.HEADING_1, spacing: { after: 140 }, children: [new TextRun({ text: `${i + 1}.  ${s.title}`, font: FONT, size: 32, bold: true, color: INK })] }),
+    para(text(s.intro, { color: MUTED }), { spacing: { after: 200, line: 300 } }),
+    new Paragraph({
+      spacing: { after: 200 },
+      children: [new ImageRun({ type: 'png', data: img, transformation: { width: IMG_W, height: Math.round(IMG_W * s.height / s.width) },
+        altText: { title: s.title, description: `Screenshot of the ${s.title} page with numbered arrows`, name: s.id } })],
+    }),
+    calloutTable(s.callouts),
+  )
+})
+
+const doc = new Document({
+  creator: 'WheatQTLdb',
+  title: 'WheatQTLdb V3.0 user guide',
+  description: 'Annotated guide to the WheatQTLdb V3.0 website',
+  styles: { default: { document: { run: { font: FONT, size: 21 } } } },
+  sections: [{
+    properties: { page: { size: { width: PAGE_W, height: 16838 }, margin: { top: MARGIN, bottom: MARGIN, left: MARGIN, right: MARGIN } } },
+    footers: { default: new Footer({ children: [new Paragraph({
+      tabStops: [{ type: TabStopType.RIGHT, position: CONTENT_W }],
+      children: [new TextRun({ text: 'WheatQTLdb V3.0 user guide', font: FONT, size: 16, color: MUTED }),
+        new TextRun({ children: ['\t', PageNumber.CURRENT], font: FONT, size: 16, color: MUTED })],
+    })] }) },
+    children,
+  }],
+})
+
+Packer.toBuffer(doc).then((buf) => {
+  const out = path.join(ROOT, 'public', 'WheatQTLdb_User_Guide.docx')
+  fs.writeFileSync(out, buf)
+  console.log(`wrote ${path.relative(ROOT, out)}  (${guide.length} sections, ${(buf.length / 1048576).toFixed(1)} MB)`)
+})
