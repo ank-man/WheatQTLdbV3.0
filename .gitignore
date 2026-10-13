@@ -51,3 +51,4 @@ scripts/manuscript_panel_data.mjs
 
 # Manuscript drafts stay local (unpublished)
 *.docx
+!public/WheatQTLdb_User_Guide.docx
