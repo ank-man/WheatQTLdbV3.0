@@ -53,7 +53,9 @@ export default function StatisticsPlot({
         responsive: true,
         displaylogo: false,
         modeBarButtonsToRemove: ['lasso2d', 'select2d', 'autoScale2d', 'zoom2d', 'pan2d', 'zoomIn2d', 'zoomOut2d', 'resetScale2d'],
-        toImageButtonOptions: { format: 'png', filename, scale: 2 },
+        // 8x the on-screen size: a 600 px wide chart saves at 4,800 px, enough
+        // for a 600 dpi two-column figure.
+        toImageButtonOptions: { format: 'png', filename, scale: 8 },
       })
       resize = new ResizeObserver(() => Plotly.Plots.resize(node))
       resize.observe(node)

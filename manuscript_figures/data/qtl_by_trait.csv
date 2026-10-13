@@ -1,0 +1,27 @@
+main_trait,sub_category,records
+Nutrient use efficiency,Nitrogen use efficiency,4650
+Nutrient use efficiency,Phosphorus use efficiency,1274
+Nutrient use efficiency,Potassium use efficiency,1059
+Abiotic stress,Waterlogging tolerance,356
+Abiotic stress,Salt tolerance,3545
+Abiotic stress,Heat stress tolerance,4008
+Abiotic stress,Pre-harvest sprouting,967
+Abiotic stress,Drought tolerance,18430
+Abiotic stress,Frost tolerance,100
+Biotic stress,Nematode resistance,502
+Biotic stress,Insect resistance,202
+Biotic stress,Bacterial resistance,97
+Biotic stress,Fungal resistance,9084
+Biotic stress,Viral resistance,80
+Biofortification,Zinc,1377
+Biofortification,Iron,457
+Biofortification,Selenium,273
+Biofortification,Calcium,532
+Biofortification,Other minerals,4859
+Others,Herbicide tolerance,366
+Others,Yield,14729
+Others,Developmental,4149
+Others,Physiological traits,930
+Others,Plant morphology,2981
+Others,Grain morphology,1259
+Others,Quality traits,4374

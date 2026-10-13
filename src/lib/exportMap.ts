@@ -54,16 +54,35 @@ export function exportSVG(svg: SVGSVGElement, filename = 'wheat-qtl-map.svg') {
   downloadBlob(blob, filename)
 }
 
+// Print resolution. A figure is typically placed 7 in (two columns) wide; 600 dpi
+// across that is 4,200 px, and the export goes past it so a panel can be
+// cropped or enlarged without softening. Canvases have a hard size limit
+// (about 16,000 px a side and 268 million px in total in current browsers), so
+// the long side is capped below that rather than silently producing a blank file.
+const EXPORT_LONG_SIDE_PX = 8000
+const MAX_CANVAS_AREA = 120_000_000
+
 export function exportRaster(
   svg: SVGSVGElement,
   format: 'png' | 'jpeg',
   filename = `wheat-qtl-map.${format}`,
-  scale = 2
+  scale?: number
 ) {
   const styled = inlineSvgStyles(svg)
   const rect = svg.getBoundingClientRect()
-  const width = rect.width * scale
-  const height = rect.height * scale
+  const longSide = Math.max(rect.width, rect.height, 1)
+  const factor = Math.min(
+    scale ?? Math.max(4, EXPORT_LONG_SIDE_PX / longSide),
+    Math.sqrt(MAX_CANVAS_AREA / Math.max(1, rect.width * rect.height))
+  )
+  const width = Math.round(rect.width * factor)
+  const height = Math.round(rect.height * factor)
+  // The serialised SVG must carry its own size, or the browser rasterises it
+  // at the on-screen size and then stretches that bitmap - which is what made
+  // large exports look soft however high the scale was set.
+  styled.setAttribute('width', String(width))
+  styled.setAttribute('height', String(height))
+  if (!styled.getAttribute('viewBox')) styled.setAttribute('viewBox', `0 0 ${rect.width} ${rect.height}`)
 
   const serializer = new XMLSerializer()
   const svgStr = serializer.serializeToString(styled)
@@ -85,7 +104,7 @@ export function exportRaster(
     URL.revokeObjectURL(url)
     canvas.toBlob((blob) => {
       if (blob) downloadBlob(blob, filename)
-    }, format === 'png' ? 'image/png' : 'image/jpeg', 0.95)
+    }, format === 'png' ? 'image/png' : 'image/jpeg', 1)
   }
   img.src = url
 }

@@ -1,53 +1,36 @@
 import { FormEvent, useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import {
-  ArrowRight, BarChart3, Check, Copy, Database, Download,
-  Filter, Layers, Microscope, Network, Quote, Search, Sparkles,
-  Sprout, Telescope, Wheat, Zap,
-} from 'lucide-react'
+import { ArrowRight, BarChart3, Check, Copy, Database, Layers, Search } from 'lucide-react'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
 import NewsList from '../components/NewsList'
 import { useNews } from '../lib/news'
-import { normalizeTrait, normalizeSpecies, isMultiTraitQTL, locusKey,
-  TRAIT_MAJOR_CLASSES, majorClassOf } from '../lib/map'
+import { normalizeTrait, normalizeSpecies, isMultiTraitQTL, TRAIT_MAJOR_CLASSES, majorClassOf } from '../lib/map'
 import MiniIdeogram from '../components/MiniIdeogram'
 
-const heroImg = `${import.meta.env.BASE_URL}images/wheat-aerial-field.jpg`
-const img = (p: string) => `${import.meta.env.BASE_URL}images/${p}`
-
-// Original field photography from the curation team's own trial plots.
-const GALLERY = [
-  { file: 'wheat-field-sunset.jpg', caption: 'Wheat field at sunset' },
-  { file: 'wheat-field-dusk-2.jpg', caption: 'Trial plots at dusk' },
-  { file: 'wheat-spike-comparison.jpg', caption: 'Spike size comparison' },
-  { file: 'wheat-field-dusk.jpg', caption: 'Ripening wheat, field trial' },
+// Entry points into the Search page. A tile names either a main trait of the
+// curators' trait table or one sub-category of it; the dot colour is that
+// category's colour on the map views.
+const TRAITS = [
+  { name: 'Abiotic stress',  blurb: 'Drought, heat, salinity, water-logging, frost.', color: '#a16207' },
+  { name: 'Biotic stress',   blurb: 'Rusts, FHB, powdery mildew, nematodes, insects.', color: '#c62828' },
+  { name: 'Yield',           blurb: 'Grain yield, grain weight and yield components.', color: '#2e7d32' },
+  { name: 'Biofortification', blurb: 'Zinc, iron, selenium and other grain minerals.', color: '#7b1fa2' },
+  { name: 'Nutrient use efficiency', blurb: 'Nitrogen, phosphorus and potassium use.', color: '#0277bd' },
+  { name: 'Quality traits',  blurb: 'Protein, gluten, sedimentation, dough strength.', color: '#d4a017' },
+  { name: 'Developmental',   blurb: 'Heading date, vernalisation, photoperiod.', color: '#0f9178' },
+  { name: 'Plant morphology', blurb: 'Plant height, tillers, awns, spike length.', color: '#a05a2c' },
 ]
 
-// Colours match this same category's TRAIT_COLORS entry in lib/map.ts (the
-// same palette used by the Search/Map/Statistics views), so the homepage
-// teaser reads as the same coloured taxonomy, not an unrelated rainbow.
-const TRAIT_CATS = [
-  { name: 'Yield',           icon: Sprout,     blurb: 'Grain yield, biomass, harvest index, spike traits.', color: '#2e7d32' },
-  { name: 'Abiotic stress',  icon: Zap,        blurb: 'Drought, heat, salinity, water-logging, frost.', color: '#a16207' },
-  { name: 'Biotic stress',   icon: Microscope, blurb: 'Rusts, FHB, powdery mildew, insect resistance.', color: '#c62828' },
-  { name: 'Quality traits',  icon: Layers,     blurb: 'Protein, gluten, sedimentation, dough strength.', color: '#d4a017' },
-  { name: 'Biofortification', icon: Sparkles,  blurb: 'Fe, Zn, Se grain content for nutrition.', color: '#7b1fa2' },
-  { name: 'Developmental',   icon: Telescope,  blurb: 'Heading date, vernalisation, photoperiod.', color: '#0f9178' },
-  { name: 'Plant morphology', icon: Network,  blurb: 'Plant height, tiller number, awns, spike length.', color: '#a05a2c' },
-  { name: 'Nutrient use efficiency', icon: Filter, blurb: 'NUE, PUE, KUE - nitrogen, phosphorus and potassium use efficiency.', color: '#0277bd' },
-]
+const isMainTrait = (name: string) => (TRAIT_MAJOR_CLASSES as readonly string[]).includes(name)
 
-
-// A tile names either a major trait class or a single category. They are now
-// separate filters on the Search page, so the link has to target the right
-// one - sending a major class as `trait` would match no category and return
-// an empty result.
+// A main trait and a sub-category are separate filters on the Search page, so
+// the link has to target the right one.
 function traitSearchHref(name: string): string {
-  const isMajor = (TRAIT_MAJOR_CLASSES as readonly string[]).includes(name)
-  const key = isMajor ? 'majorClass' : 'trait'
-  return `/search?${key}=${encodeURIComponent(name)}`
+  return `/search?${isMainTrait(name) ? 'majorClass' : 'trait'}=${encodeURIComponent(name)}`
 }
+
+const CITATION = 'Singh, K., Saini, D.K., Saripalli, G. et al. WheatQTLdb V2.0: a supplement to the database for wheat QTL. Mol Breeding 42, 56 (2022). https://doi.org/10.1007/s11032-022-01329-1'
 
 export default function Home() {
   const news = useNews()
@@ -59,378 +42,190 @@ export default function Home() {
   const [copied, setCopied] = useState(false)
 
   const stats = useMemo(() => {
-    const speciesSet = new Set<string>()
-    // A few records name several species in one field ("A; B") - those are
-    // split, so the tile counts species rather than distinct field values.
-    qtl.data.forEach((r) => (r.species || '').split(/[;/]/).forEach((sp) => {
-      const name = normalizeSpecies(sp)
-      if (name) speciesSet.add(name)
-    }))
+    const species = new Set<string>()
+    const traits = new Map<string, number>()
+    const bump = (k: string) => traits.set(k, (traits.get(k) ?? 0) + 1)
+    qtl.data.forEach((r) => {
+      // A few records name several species in one field ("A; B") - those are
+      // split, so the tile counts species rather than distinct field values.
+      ;(r.species || '').split(/[;/]/).forEach((sp) => {
+        const name = normalizeSpecies(sp)
+        if (name) species.add(name)
+      })
+      const category = normalizeTrait(r)
+      bump(category)
+      // "Biofortification" and "Nutrient use efficiency" are both a main
+      // trait and its only category; count each record once under the name.
+      if (majorClassOf(category) !== category) bump(majorClassOf(category))
+    })
     return {
       qtl: qtl.data.length,
       mqtl: mqtl.data.length,
       epi: epi.data.length,
-      species: speciesSet.size,
+      species: species.size,
       multiTrait: qtl.data.filter(isMultiTraitQTL).length,
-      loci: new Set(qtl.data.map(locusKey)).size,
+      traits,
     }
   }, [qtl.data, mqtl.data, epi.data])
-
-  // Grouped by the same normalizeTrait() classification the Search page's
-  // Trait dropdown uses, not raw per-row trait text - a raw grouping would
-  // both undercount (case/whitespace variants of the same trait split
-  // across bars) and disagree with what "Trait" actually filters to
-  // elsewhere in the app.
-  const topCategories = useMemo(() => {
-    const m = new Map<string, number>()
-    qtl.data.forEach((r) => {
-      const k = normalizeTrait(r)
-      m.set(k, (m.get(k) ?? 0) + 1)
-    })
-    const max = Math.max(1, ...m.values())
-    return Array.from(m, ([name, value]) => ({ name, value, pct: (value / max) * 100 }))
-      .sort((a, b) => b.value - a.value).slice(0, 6)
-  }, [qtl.data])
 
   const onSearch = (e: FormEvent) => {
     e.preventDefault()
     navigate(q.trim() ? `/search?q=${encodeURIComponent(q.trim())}` : '/search')
   }
-
-  const citation = `Singh, K., Saini, D.K., Saripalli, G. et al. WheatQTLdb V2.0: a supplement to the database for wheat QTL. Mol Breeding 42, 56 (2022). https://doi.org/10.1007/s11032-022-01329-1`
   const copyCitation = async () => {
-    try { await navigator.clipboard.writeText(citation); setCopied(true); setTimeout(() => setCopied(false), 1800) } catch {}
+    try { await navigator.clipboard.writeText(CITATION); setCopied(true); setTimeout(() => setCopied(false), 1800) } catch {}
   }
 
   return (
-    <div className="space-y-20">
+    <div className="space-y-14">
       {/* HERO */}
-      <section className="relative -mx-4 -mt-8 overflow-hidden border-b border-wheat-200 bg-white">
-        <img src={heroImg} alt="" className="absolute inset-0 h-full w-full object-cover opacity-70" />
-        <div className="absolute inset-0 bg-white/30" />
+      <section className="-mx-4 -mt-8 border-b border-wheat-200 bg-gradient-to-b from-wheat-100 to-white">
+        <div className="mx-auto flex max-w-3xl flex-col items-center px-4 pb-12 pt-16 text-center sm:pt-24">
+          <span className="badge animate-fade-up">
+            <span className="mr-1 inline-flex h-2 w-2 rounded-full bg-green-600" />
+            Version 3.0 · curated from the published literature
+          </span>
+          <h1 className="mt-6 font-serif text-5xl font-bold leading-[1.05] tracking-tight text-wheat-900 sm:text-7xl animate-fade-up" style={{ animationDelay: '.05s' }}>
+            WheatQTLdb <span className="text-green-700">V3.0</span>
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-wheat-700 animate-fade-up" style={{ animationDelay: '.1s' }}>
+            A manually curated, open-access database of <strong className="text-wheat-900">QTL</strong>,{' '}
+            <strong className="text-wheat-900">MetaQTL</strong> and{' '}
+            <strong className="text-wheat-900">epistatic QTL</strong> in <em>Triticum aestivum</em> and seven
+            related wheat species.
+          </p>
 
-        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:py-28">
-          <div className="flex flex-col items-center text-center">
-            <span className="badge animate-fade-up">
-              <span className="relative mr-1 inline-flex h-2 w-2 rounded-full bg-green-600" />
-              v3.0 · peer-curated QTL database
-            </span>
-            <h1 className="mt-5 max-w-4xl font-serif text-4xl font-bold leading-tight tracking-tight text-wheat-900 sm:text-6xl animate-fade-up" style={{ animationDelay: '.05s' }}>
-              WheatQTLdb <span className="text-green-700">V3.0</span>
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-wheat-700 animate-fade-up" style={{ animationDelay: '.1s' }}>
-              A manually curated, open-access database of <strong>QTL</strong>, <strong>MetaQTL</strong> and <strong>epistatic QTL</strong> in <em>Triticum aestivum</em> and seven related wheat species.
-              An updated, static, reproducible release of{' '}
-              <a className="underline hover:text-wheat-900" href="http://wheatqtldb.net" target="_blank" rel="noreferrer">wheatqtldb.net</a>{' '}
-              for the wheat-genetics community.
-            </p>
-            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-wheat-600 animate-fade-up" style={{ animationDelay: '.12s' }}>
-              Academic resource · Manuscript in preparation · Citation-ready
-            </p>
+          <form onSubmit={onSearch} className="mt-9 flex w-full max-w-xl items-center gap-2 rounded-2xl border border-wheat-300 bg-white p-2 shadow-sm transition focus-within:border-green-600 focus-within:shadow-md animate-fade-up" style={{ animationDelay: '.15s' }}>
+            <Search className="ml-2 h-5 w-5 flex-shrink-0 text-wheat-500" />
+            <input
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              placeholder="Search QTL, trait, marker, gene, reference…"
+              className="min-w-0 flex-1 bg-transparent px-1 py-2 text-base outline-none placeholder:text-wheat-500"
+              aria-label="Search WheatQTLdb"
+            />
+            <button type="submit" className="btn-primary">
+              Search <ArrowRight className="h-4 w-4" />
+            </button>
+          </form>
 
-            {/* Embedded search */}
-            <form onSubmit={onSearch} className="mt-8 flex w-full max-w-2xl items-center gap-2 rounded-2xl border border-wheat-200 bg-white p-2 shadow-lg shadow-wheat-200/40 animate-fade-up" style={{ animationDelay: '.15s' }}>
-              <Search className="ml-2 h-5 w-5 flex-shrink-0 text-wheat-500" />
-              <input
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-                placeholder="Search QTL, trait, marker, gene, reference…"
-                className="flex-1 bg-transparent px-1 py-2 text-base outline-none placeholder:text-wheat-500"
-                aria-label="Search WheatQTLdb"
-              />
-              <button type="submit" className="btn-primary">
-                Search <ArrowRight className="h-4 w-4" />
+          <div className="mt-3 flex flex-wrap items-center justify-center gap-2 text-xs text-wheat-600 animate-fade-up" style={{ animationDelay: '.2s' }}>
+            <span>Try</span>
+            {['Drought', 'Rht-B1', 'Fhb1', 'Grain yield', 'Heat tolerance'].map((t) => (
+              <button
+                key={t}
+                onClick={() => navigate(`/search?q=${encodeURIComponent(t)}`)}
+                className="rounded-full border border-wheat-300 bg-white px-3 py-1 text-wheat-700 transition hover:border-wheat-400 hover:bg-wheat-100"
+              >
+                {t}
               </button>
-            </form>
-
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-wheat-700 animate-fade-up" style={{ animationDelay: '.2s' }}>
-              <span>Try:</span>
-              {['Drought', 'Rht-B1', 'Fhb1', 'Grain yield', 'Heat tolerance'].map((t) => (
-                <button
-                  key={t}
-                  onClick={() => navigate(`/search?q=${encodeURIComponent(t)}`)}
-                  className="rounded-full border border-wheat-300 bg-white/70 px-3 py-1 backdrop-blur transition hover:bg-wheat-100"
-                >
-                  {t}
-                </button>
-              ))}
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-2 animate-fade-up" style={{ animationDelay: '.25s' }}>
-              <Link to="/data" className="btn-primary"><Database className="h-4 w-4" /> Browse data</Link>
-              <Link to="/statistics" className="btn"><BarChart3 className="h-4 w-4" /> Statistics</Link>
-              <Link to="/map" className="btn"><Layers className="h-4 w-4" /> Genome map</Link>
-            </div>
+            ))}
           </div>
 
-          {/* Live stat strip */}
-          <div className="relative mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-5 animate-fade-up" style={{ animationDelay: '.3s' }}>
-            <StatTile label="QTL records" value={stats.qtl} loading={qtl.loading} icon={Database} color="#475569" />
-            <StatTile label="MetaQTL" value={stats.mqtl} loading={mqtl.loading} icon={Layers} color="#0f9178" />
-            <StatTile label="Epistatic QTL" value={stats.epi} loading={epi.loading} icon={Network} color="#7b1fa2" />
-            <Link to="/data/multi-trait" className="block">
-              <StatTile label="Multi-trait QTL" value={stats.multiTrait} loading={qtl.loading} icon={Layers} color="#0277bd" />
-            </Link>
-            <StatTile label="Species" value={stats.species} loading={qtl.loading} icon={Wheat} suffix="" color="#2e7d32" />
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-2 animate-fade-up" style={{ animationDelay: '.25s' }}>
+            <Link to="/data" className="btn-primary"><Database className="h-4 w-4" /> Browse data</Link>
+            <Link to="/statistics" className="btn"><BarChart3 className="h-4 w-4" /> Statistics</Link>
+            <Link to="/map" className="btn"><Layers className="h-4 w-4" /> Genome map</Link>
           </div>
+        </div>
+
+        {/* Live counts, read from the data files */}
+        <div className="mx-auto max-w-5xl px-4 pb-12">
+          <dl className="grid grid-cols-2 divide-wheat-200 overflow-hidden rounded-2xl border border-wheat-200 bg-white shadow-sm sm:grid-cols-5 sm:divide-x">
+            <Stat label="QTL / MTA records" value={stats.qtl} loading={qtl.loading} to="/data/qtl" />
+            <Stat label="MetaQTLs" value={stats.mqtl} loading={mqtl.loading} to="/data/metaqtl" />
+            <Stat label="Epistatic QTL pairs" value={stats.epi} loading={epi.loading} to="/data/epistatic" />
+            <Stat label="Multi-trait QTLs" value={stats.multiTrait} loading={qtl.loading} to="/data/multi-trait" />
+            <Stat label="Species" value={stats.species} loading={qtl.loading} to="/search" />
+          </dl>
         </div>
       </section>
 
-      {/* TRAIT CATEGORIES */}
-      <section className="space-y-6">
-        <SectionHeader
-          eyebrow="Coverage"
-          title="Trait categories represented in the database"
-          subtitle="Curated QTL spanning abiotic and biotic stress tolerance, yield, quality, biofortification, developmental and physiological traits."
-        />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {TRAIT_CATS.map(({ name, icon: Icon, blurb, color }, i) => (
-            <Link
-              key={name}
-              to={traitSearchHref(name)}
-              className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
-              style={{ animation: `fade-up .5s ease-out ${i * 60}ms both`, borderTopColor: color, borderTopWidth: 3 }}
-            >
-              <div
-                className="absolute -right-6 -top-6 h-24 w-24 rounded-full blur-2xl transition"
-                style={{ backgroundColor: `${color}33` }}
-              />
-              <div className="relative">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl text-white shadow-md" style={{ backgroundColor: color }}>
-                  <Icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-3 font-semibold text-wheat-900">{name}</h3>
-                <p className="mt-1 text-sm text-wheat-700">{blurb}</p>
-                <div className="mt-3 inline-flex items-center gap-1 text-xs font-medium transition group-hover:gap-2" style={{ color }}>
-                  Explore <ArrowRight className="h-3 w-3" />
-                </div>
+      {/* BROWSE BY TRAIT */}
+      <section>
+        <SectionHeader title="Browse by trait" to="/statistics" linkLabel="All traits" />
+        <div className="grid gap-px overflow-hidden rounded-2xl border border-wheat-200 bg-wheat-200 sm:grid-cols-2 lg:grid-cols-4">
+          {TRAITS.map(({ name, blurb, color }) => (
+            <Link key={name} to={traitSearchHref(name)} className="group bg-white p-5 transition hover:bg-wheat-100">
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 flex-shrink-0 rounded-full" style={{ backgroundColor: color }} />
+                <h3 className="font-semibold text-wheat-900">{name}</h3>
+                <ArrowRight className="ml-auto h-4 w-4 text-wheat-300 transition group-hover:translate-x-0.5 group-hover:text-green-700" />
               </div>
+              <p className="mt-2 text-sm leading-relaxed text-wheat-600">{blurb}</p>
+              <p className="mt-3 text-sm tabular-nums text-wheat-900">
+                {qtl.loading ? '…' : `${(stats.traits.get(name) ?? 0).toLocaleString()} QTL`}
+              </p>
             </Link>
           ))}
         </div>
       </section>
 
-      {/* CHROMOSOME MAP */}
-      <section className="relative overflow-hidden rounded-3xl border border-wheat-200 bg-white p-6 shadow-sm sm:p-10">
-        <div className="relative">
-          <SectionHeader
-            eyebrow="Genome map"
-            title="Browse by chromosome"
-            subtitle="A miniature, to-scale karyotype of all 21 hexaploid wheat chromosomes — real relative sizes (3B is the largest), coloured by subgenome (A/B/D). Click any bar to filter the search."
-          />
-          <div className="mt-6 overflow-x-auto rounded-2xl border border-wheat-200 bg-wheat-50/60 px-4 py-6">
-            <div className="mx-auto max-w-4xl">
-              <MiniIdeogram onSelect={(chr) => navigate(`/search?chromosome=${chr}`)} />
-            </div>
+      {/* BROWSE BY CHROMOSOME */}
+      <section>
+        <SectionHeader title="Browse by chromosome" to="/map" linkLabel="Genome map" />
+        <div className="rounded-2xl border border-wheat-200 bg-white px-4 py-6">
+          <div className="mx-auto max-w-4xl overflow-x-auto">
+            <MiniIdeogram onSelect={(chr) => navigate(`/search?chromosome=${chr}`)} />
           </div>
-          <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-wheat-600">
-            {(['A', 'B', 'D'] as const).map((g) => (
-              <span key={g} className="inline-flex items-center gap-1.5">
-                <span
-                  className="h-2.5 w-2.5 rounded-full"
-                  style={{ backgroundColor: g === 'A' ? '#e8a33d' : g === 'B' ? '#4f8fc0' : '#5fa777' }}
-                />
-                {g} genome
-              </span>
-            ))}
-            <span>Bar height is proportional to real IWGSC RefSeq v1.0 physical length.</span>
-          </div>
+          <p className="mt-4 text-center text-xs text-wheat-500">
+            The 21 chromosomes at their relative physical lengths (IWGSC RefSeq v1.0), coloured by subgenome.
+            Select one to list its QTL.
+          </p>
         </div>
       </section>
 
       {/* NEWS */}
       {news.items.length > 0 && (
-        <section className="card">
-          <div className="mb-1 flex items-center justify-between">
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-wider text-wheat-600">Updates</div>
-              <h3 className="mt-1 text-xl font-bold">News</h3>
-            </div>
-            <Link to="/news" className="btn">All news</Link>
+        <section>
+          <SectionHeader title="News" to="/news" linkLabel="All news" />
+          <div className="rounded-2xl border border-wheat-200 bg-white px-5">
+            <NewsList items={news.items.slice(0, 3)} />
           </div>
-          <NewsList items={news.items.slice(0, 3)} />
         </section>
       )}
 
-      {/* TOP TRAIT CATEGORIES (live from data) */}
-      <section className="grid gap-6 lg:grid-cols-3">
-        <div className="lg:col-span-2 card relative overflow-hidden">
-          <div className="mb-4 flex items-center justify-between">
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-wider text-wheat-600">Live from your data</div>
-              <h3 className="mt-1 text-xl font-bold">Most studied trait categories</h3>
-            </div>
-            <Link to="/statistics" className="btn">
-              <BarChart3 className="h-4 w-4" /> All charts
-            </Link>
-          </div>
-          {topCategories.length === 0 && !qtl.loading ? (
-            <p className="text-sm text-wheat-600">No data loaded yet.</p>
-          ) : (
-            <ul className="space-y-3">
-              {topCategories.map((c, i) => (
-                <li key={c.name} className="animate-fade-up" style={{ animationDelay: `${i * 50}ms` }}>
-                  <Link to={traitSearchHref(c.name)} className="group block">
-                    <div className="mb-1 flex items-center justify-between text-sm">
-                      <span className="font-medium text-wheat-800 group-hover:text-wheat-900">{c.name}</span>
-                      <span className="tabular-nums text-wheat-600">{c.value} QTL</span>
-                    </div>
-                    <div className="h-2 w-full overflow-hidden rounded-full bg-wheat-100">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-wheat-500 via-wheat-600 to-wheat-700 transition-all"
-                        style={{ width: `${c.pct}%`, animation: `fade-up .8s ease-out ${i * 60}ms both` }}
-                      />
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-
-        <div className="card relative overflow-hidden bg-gradient-to-br from-wheat-600 via-wheat-700 to-emerald-800 text-white shadow-lg">
-          <Sparkles className="h-7 w-7 text-wheat-100" />
-          <h3 className="mt-3 text-xl font-bold">What's new in V3.0</h3>
-          <ul className="mt-3 space-y-2 text-sm text-wheat-50/95">
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Updated list of QTLs reported through 2022, {stats.qtl.toLocaleString()} records in total.</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Multi-trait (pleiotropic) QTL now curated and browsable separately.</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Trait sub-categorisation for biofortification and nutrient-use efficiency.</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Advanced multi-criteria search across species, trait, chromosome, PVE and method.</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> Interactive statistics with per-chart image export.</li>
-            <li className="flex gap-2"><Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-wheat-200" /> One-click CSV export of every table.</li>
-          </ul>
-          <Link to="/credits" className="mt-5 inline-flex items-center gap-2 rounded-md bg-white/15 px-3 py-1.5 text-sm font-medium backdrop-blur transition hover:bg-white/25">
-            Read more <ArrowRight className="h-4 w-4" />
+      {/* CITATION */}
+      <section className="rounded-2xl border border-wheat-200 bg-wheat-100 p-6 sm:p-8">
+        <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-wheat-600">How to cite</h2>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-wheat-800">{CITATION}</p>
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-wheat-700">
+          Singh K, Batra R, Sharma S, et al. <em>WheatQTLdb: a QTL database for wheat.</em>{' '}
+          Mol Genet Genomics 296, 1051–1056 (2021).{' '}
+          <a className="underline" href="https://doi.org/10.1007/s00438-021-01796-9" target="_blank" rel="noreferrer">doi:10.1007/s00438-021-01796-9</a>
+        </p>
+        <div className="mt-5 flex flex-wrap items-center gap-2">
+          <button className="btn-primary" onClick={copyCitation}>
+            {copied ? <><Check className="h-4 w-4" /> Copied</> : <><Copy className="h-4 w-4" /> Copy citation</>}
+          </button>
+          <Link to="/credits" className="btn">Credits &amp; citation</Link>
+          <Link to="/contact" className="ml-auto text-sm text-wheat-600 underline-offset-2 hover:text-wheat-900 hover:underline">
+            Report an error or send new data
           </Link>
         </div>
       </section>
-
-      {/* WORKFLOW */}
-      <section>
-        <SectionHeader eyebrow="Workflow" title="From query to publication-ready CSV" subtitle="Reproducible querying for fine-mapping, MAS and meta-analysis." />
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {[
-            { icon: Search,   title: '1. Search',  body: 'Combine free-text with species, trait, chromosome, year, PVE, method.', to: '/search' },
-            { icon: Filter,   title: '2. Refine',  body: 'Sort, paginate, and drill into individual references with DOI links.', to: '/data/qtl' },
-            { icon: Download, title: '3. Export',  body: 'Download the filtered table as CSV for downstream R / Python workflows.', to: '/data' },
-          ].map((s, i) => (
-            <Link key={s.title} to={s.to} className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
-              <div className="absolute right-3 top-3 text-5xl font-black text-wheat-100 transition group-hover:text-wheat-200">
-                {String(i + 1).padStart(2, '0')}
-              </div>
-              <div className="relative">
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-wheat-100 text-wheat-700 transition group-hover:bg-wheat-600 group-hover:text-white">
-                  <s.icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-3 font-bold text-wheat-900">{s.title}</h3>
-                <p className="mt-1 text-sm text-wheat-700">{s.body}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* GALLERY */}
-      <section className="space-y-6">
-        <SectionHeader
-          eyebrow="Gallery"
-          title="From our own field trials"
-          subtitle="Original photography from the curation team's wheat trial plots."
-        />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {GALLERY.map((g, i) => (
-            <figure
-              key={g.file}
-              className="group relative overflow-hidden rounded-2xl border border-wheat-200 shadow-sm"
-              style={{ animation: `fade-up .5s ease-out ${i * 60}ms both` }}
-            >
-              <img
-                src={img(g.file)}
-                alt={g.caption}
-                loading="lazy"
-                className="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
-              />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-3 py-2 text-xs font-medium text-white">
-                {g.caption}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-        <p className="text-xs text-wheat-600">
-          Photographs are original, taken in the curation team's wheat trial plots — see{' '}
-          <Link to="/credits" className="underline">Credits</Link> for attribution.
-        </p>
-      </section>
-
-      {/* CITATION */}
-      <section className="relative overflow-hidden rounded-3xl border border-wheat-200 bg-white p-6 shadow-sm sm:p-10">
-        <Quote className="absolute right-6 top-6 h-24 w-24 text-wheat-200" />
-        <div className="relative">
-          <SectionHeader eyebrow="Citing the database" title="Please cite the original WheatQTLdb papers" />
-          <p className="mt-3 max-w-3xl text-sm text-wheat-800">{citation}</p>
-          <p className="mt-2 max-w-3xl text-sm text-wheat-700">
-            Singh K, Batra R, Sharma S, et al. <em>WheatQTLdb: a QTL database for wheat.</em>{' '}
-            Mol Genet Genomics 296, 1051–1056 (2021).{' '}
-            <a className="underline" href="https://doi.org/10.1007/s00438-021-01796-9" target="_blank" rel="noreferrer">doi:10.1007/s00438-021-01796-9</a>
-          </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            <button className="btn-primary" onClick={copyCitation}>
-              {copied ? <><Check className="h-4 w-4" /> Copied!</> : <><Copy className="h-4 w-4" /> Copy citation</>}
-            </button>
-            <a className="btn" href="https://doi.org/10.1007/s11032-022-01329-1" target="_blank" rel="noreferrer">
-              View on DOI <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-wheat-700 via-wheat-600 to-emerald-700 p-8 text-white shadow-xl sm:p-14">
-        <div className="relative max-w-3xl">
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Help us keep the record complete.</h2>
-          <p className="mt-3 text-wheat-50/90">
-            Found a missing reference or an error in a record? Email the curators a correction or a CSV/XLSX of new
-            data, citing the source publication — contributions are credited.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-2">
-            <Link to="/contact" className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-semibold text-wheat-900 shadow-lg transition hover:bg-wheat-50">
-              Contact the curators
-            </Link>
-            <Link to="/credits" className="inline-flex items-center gap-2 rounded-md border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold backdrop-blur transition hover:bg-white/20">
-              How to cite this data
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }
 
-function StatTile({ label, value, loading, icon: Icon, suffix, color = '#9a6628' }: { label: string; value: number; loading: boolean; icon: typeof Database; suffix?: string; color?: string }) {
+function Stat({ label, value, loading, to }: { label: string; value: number; loading: boolean; to: string }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-wheat-200 bg-white/80 p-4 shadow-sm backdrop-blur transition hover:shadow-md" style={{ borderTopColor: color, borderTopWidth: 3 }}>
-      <div className="absolute -right-3 -top-3 h-16 w-16 rounded-full blur-xl transition" style={{ backgroundColor: `${color}22` }} />
-      <div className="relative flex items-start justify-between">
-        <div>
-          <div className="text-[11px] uppercase tracking-wider text-wheat-600">{label}</div>
-          <div className="mt-1 text-3xl font-extrabold tabular-nums text-wheat-900">
-            {loading ? <span className="inline-block h-7 w-20 animate-pulse rounded bg-wheat-200" /> : value.toLocaleString()}{suffix ?? ''}
-          </div>
-        </div>
-        <div className="rounded-lg p-2 text-white" style={{ backgroundColor: color }}>
-          <Icon className="h-4 w-4" />
-        </div>
-      </div>
-    </div>
+    <Link to={to} className="group block px-5 py-5 text-left transition hover:bg-wheat-100">
+      <dd className="text-3xl font-semibold tabular-nums tracking-tight text-wheat-900">
+        {loading ? <span className="inline-block h-8 w-20 animate-pulse rounded bg-wheat-200" /> : value.toLocaleString()}
+      </dd>
+      <dt className="mt-1 text-xs font-medium uppercase tracking-wider text-wheat-500 group-hover:text-green-700">{label}</dt>
+    </Link>
   )
 }
 
-function SectionHeader({ eyebrow, title, subtitle }: { eyebrow?: string; title: string; subtitle?: string }) {
+function SectionHeader({ title, to, linkLabel }: { title: string; to: string; linkLabel: string }) {
   return (
-    <div className="max-w-3xl">
-      {eyebrow && <div className="text-xs font-semibold uppercase tracking-[0.2em] text-wheat-600">{eyebrow}</div>}
-      <h2 className="mt-1 text-3xl font-extrabold tracking-tight text-wheat-900 sm:text-4xl">{title}</h2>
-      {subtitle && <p className="mt-2 text-wheat-700">{subtitle}</p>}
+    <div className="mb-4 flex items-baseline justify-between">
+      <h2 className="text-2xl font-bold tracking-tight text-wheat-900">{title}</h2>
+      <Link to={to} className="inline-flex items-center gap-1 text-sm font-medium text-green-700 hover:underline">
+        {linkLabel} <ArrowRight className="h-3.5 w-3.5" />
+      </Link>
     </div>
   )
 }

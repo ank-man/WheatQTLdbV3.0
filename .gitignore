@@ -46,3 +46,4 @@ scripts/mine/.cache/
 
 # Built by esbuild from the .ts beside it; regenerate rather than edit.
 scripts/audit/*.mjs
+scripts/manuscript_panel_data.mjs
