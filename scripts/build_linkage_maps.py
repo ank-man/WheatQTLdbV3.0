@@ -34,6 +34,10 @@ GG = os.path.join(ROOT, "scripts", "mine", "out", "graingenes_maps.csv")
 # Source: https://pmc-oa-opendata.s3.amazonaws.com/PMC4265271.1/pbi0012-0787-SD23.csv
 # Original MD5: c2b6a62f1445ac9da151a9b75725e9f9
 GG_90K = os.path.join(ROOT, "scripts", "mine", "out", "wheat_2014_90k_s13.csv")
+# Classic maps from GrainGenes' open archive directory (graingenes_archive_maps.py)
+GG_ARCHIVE = os.path.join(ROOT, "scripts", "mine", "out", "graingenes_archive_maps.csv")
+# Map files a curator has downloaded by hand - see map_uploads/README.md
+UPLOADS = os.path.join(ROOT, "map_uploads")
 DATA = os.path.join(ROOT, "public", "data")
 csv.field_size_limit(10_000_000)
 
@@ -304,6 +308,111 @@ def main():
                             "12:787–796. Table S13. DOI: 10.1111/pbi.12183."
                         )
 
+    # ------------------------------------------------------------------
+    # Maps whose positions come as ready-made tables: the classic maps in
+    # GrainGenes' open archive directory, and any file a curator has put in
+    # map_uploads/. A file named after a catalogue record fills that record
+    # in; anything else is listed as its own map.
+    # ------------------------------------------------------------------
+    by_name = {re.sub(r"[^a-z0-9]+", "", m["name"].lower()): m for m in maps}
+    have_loci = {r["map_id"] for r in loci_rows}
+
+    def add_table_map(name, loci, source, species="", year="", reference="", url="", prefix="X"):
+        """loci: [(linkage group, marker, cM)]. Returns loci kept."""
+        groups = defaultdict(list)
+        for lg, marker, cm in loci:
+            lg = normalise_lg(lg)
+            if lg and marker:
+                groups[lg].append((marker, cm))
+        kept, span = [], 0.0
+        for lg, items in groups.items():
+            lo = min(cm for _, cm in items)
+            hi = max(cm for _, cm in items)
+            # Old maps are often centred on the centromere (negative values on
+            # the short arm); shift each group to start at 0. A group longer
+            # than 400 cM is not a single linkage group as published, so it is
+            # left out rather than drawn at a misleading scale.
+            if hi - lo > 400:
+                continue
+            span += hi - lo
+            seen = set()
+            for marker, cm in sorted(items, key=lambda x: x[1]):
+                if marker in seen:
+                    continue
+                seen.add(marker)
+                kept.append((lg, marker, cm - lo))
+        if len(kept) < 10:
+            return 0
+        target = by_name.get(re.sub(r"[^a-z0-9]+", "", name.lower()))
+        if target and target["map_id"] in have_loci:
+            return 0
+        if not target:
+            n = sum(1 for m in maps if m["map_id"].startswith(prefix)) + 1
+            target = {"map_id": f"{prefix}{n:04d}", "name": name, "source": source,
+                      "species": species or "Triticum aestivum", "population": "",
+                      "n_linkage_groups": 0, "n_loci": 0, "length_cm": "", "marker_types": "",
+                      "year": year, "reference": reference, "doi": "", "url": url}
+            maps.append(target)
+            by_name[re.sub(r"[^a-z0-9]+", "", name.lower())] = target
+        types = Counter(marker_class(m) for _, m, _ in kept)
+        target["n_loci"] = len(kept)
+        target["n_linkage_groups"] = len({lg for lg, _, _ in kept})
+        target["length_cm"] = f"{span:.1f}"
+        if not target.get("marker_types"):
+            target["marker_types"] = "; ".join(t for t, _ in types.most_common(3) if t != "other") or "other"
+        have_loci.add(target["map_id"])
+        for lg, marker, cm in kept:
+            loci_rows.append({"map_id": target["map_id"], "marker": marker, "linkage_group": lg,
+                              "position_cm": f"{cm:.2f}", "marker_type": marker_class(marker), "bp": ""})
+        return len(kept)
+
+    archive_count = 0
+    if os.path.exists(GG_ARCHIVE):
+        tables = defaultdict(list)
+        info = {}
+        with open(GG_ARCHIVE, encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                tables[r["map_name"]].append((r["linkage_group"], r["marker"], float(r["cm"])))
+                info[r["map_name"]] = r
+        for name, loci in tables.items():
+            r = info[name]
+            if add_table_map(name, loci, "GrainGenes archive", r["species"], r["year"],
+                             r["reference"], r["url"], prefix="GA"):
+                archive_count += 1
+
+    upload_count, upload_skipped = 0, 0
+    if os.path.isdir(UPLOADS):
+        pick = lambda cols, names: next((c for c in cols if c.strip().lower() in names), None)
+        for fname in sorted(os.listdir(UPLOADS)):
+            if not fname.lower().endswith((".csv", ".tsv", ".txt")):
+                continue
+            path = os.path.join(UPLOADS, fname)
+            with open(path, encoding="utf-8-sig", errors="replace") as f:
+                head = f.readline()
+                f.seek(0)
+                delim = "\t" if head.count("\t") >= head.count(",") and "\t" in head else ","
+                rows = list(csv.DictReader(f, delimiter=delim))
+            if not rows:
+                continue
+            cols = list(rows[0].keys())
+            c_marker = pick(cols, {"marker", "locus", "feature_name", "name"})
+            c_lg = pick(cols, {"linkage_group", "chromosome", "chr", "lg", "map_name", "group"})
+            c_cm = pick(cols, {"cm", "position", "position_cm", "feature_start", "start", "location"})
+            if not (c_marker and c_lg and c_cm):
+                print(f"  map_uploads/{fname}: needs marker, linkage group and cM columns - skipped")
+                continue
+            loci = []
+            for r in rows:
+                try:
+                    loci.append((r[c_lg], (r[c_marker] or "").strip(), float(r[c_cm])))
+                except (TypeError, ValueError):
+                    upload_skipped += 1
+            n = add_table_map(os.path.splitext(fname)[0], loci, "Supplied map file", prefix="UP")
+            upload_skipped += len(loci) - n
+            if n:
+                upload_count += 1
+            print(f"  map_uploads/{fname}: {n} loci loaded")
+
     for m in maps:
         m.setdefault("url", f"https://doi.org/{m['doi']}" if m.get("doi") else "")
 
@@ -322,7 +431,8 @@ def main():
 
     viewable = len({r["map_id"] for r in loci_rows})
     print(f"maps      : {len(maps)}  "
-          f"({viewable} with marker positions, {gg_count} GrainGenes registry)")
+          f"({viewable} with marker positions, {gg_count} GrainGenes registry, "
+          f"{archive_count} from the GrainGenes archive, {upload_count} from map_uploads/)")
     print(f"loci      : {len(loci_rows)}")
     print(f"dropped   : {dropped_lg} loci with a non-wheat linkage group")
     for doi, t in skipped_species:
