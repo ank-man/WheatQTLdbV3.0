@@ -385,8 +385,9 @@ def load_overrides():
     if os.path.exists(OVERRIDES):
         with open(OVERRIDES, encoding="utf-8") as f:
             for r in csv.DictReader(f):
-                if (r.get("year") or "").strip():
+                if (r.get("year") or "").strip() or (r.get("doi") or "").strip():
                     out[r["reference"].strip()] = {
+                        "doi": normalise_doi(r.get("doi") or ""),
                         "title": (r.get("title") or "").strip(), "authors": (r.get("authors") or "").strip(),
                         "journal": (r.get("journal") or "").strip(), "year": r["year"].strip(),
                         "type": "", "publisher": "", "citations": ""}
@@ -445,8 +446,10 @@ def resolve_links(raws):
     """
     out, candidate = {}, {}
     pmids, pmcids = set(), set()
+    # a hand-identified DOI for a link that carries none (curation/reference_overrides.csv)
+    known = {raw: o["doi"] for raw, o in load_overrides().items() if o.get("doi")}
     for raw in raws:
-        doi = normalise_doi(raw)
+        doi = normalise_doi(raw) or known.get(raw, "")
         if doi:
             out[raw] = doi
             continue
@@ -688,7 +691,7 @@ def main():
             meta[k] = {**meta.get(k, {}), "year": year_in_link(a["raw"])}
         for raw in a["raws"]:
             if raw in overrides:
-                meta[k] = {**meta.get(k, {}), **{f: v for f, v in overrides[raw].items() if v}}
+                meta[k] = {**meta.get(k, {}), **{f: v for f, v in overrides[raw].items() if v and f != "doi"}}
 
     cols = ["id", "doi", "title", "authors", "journal", "year", "type", "publisher",
             "citations", "records", "record_types", "species", "top_trait", "url"]

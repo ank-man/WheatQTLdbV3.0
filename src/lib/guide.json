@@ -136,11 +136,6 @@
         "n": 4,
         "label": "GWAS Atlas associations",
         "text": "Marker–trait associations imported from GWAS Atlas. They are a separate table and are not part of the QTL counts."
-      },
-      {
-        "n": 5,
-        "label": "Studies awaiting curation",
-        "text": "Papers found in the literature that are not yet in the database."
       }
     ]
   },

@@ -12,6 +12,7 @@ const items = [
   { to: '/map', icon: MapIcon, title: 'Genome Map', desc: 'Ideogram, circos and linkage (cM) views of QTLs and MetaQTLs.' },
   { to: '/data/linkage-maps', icon: GitBranch, title: 'Linkage maps', desc: 'Marker-order genetic maps from the published literature.' },
   { to: '/publications', icon: BookOpen, title: 'Publications', desc: 'Every source study, with the records it contributed.' },
+  { to: '/data/extracted-qtl', icon: Database, title: 'Automatically extracted QTL', desc: 'Unverified records read by software from the tables of open-access papers not yet curated.' },
   { to: '/data/pending-studies', icon: BookOpen, title: 'Studies awaiting curation', desc: 'Wheat QTL and GWAS papers found in the literature that are not yet in the database.' },
 ]
 

@@ -685,7 +685,33 @@ def extract_qtl(headers, body, source_file):
             "source_file":      source_file,
             "treatment":        "",
         })
+
+    # A study's reference is often typed once, on the first row of its block,
+    # and left blank on the rows below. A row with no reference at all takes
+    # the one above it when both name the same cross and the same population -
+    # the two things that identify a mapping study within a sheet.
+    for prev, rec in zip(records, records[1:]):
+        if rec["doi"] or rec["reference"]:
+            continue
+        same = (rec["cross"] and rec["cross"] == prev["cross"]
+                and rec["population"] and rec["population"] == prev["population"])
+        if same and (prev["doi"] or prev["reference"]):
+            rec["doi"], rec["reference"] = prev["doi"], prev["reference"]
+    # Studies whose rows carry no reference anywhere in the sheet, identified
+    # from their mapping population.
+    for rec in records:
+        if not rec["doi"] and not rec["reference"]:
+            rec["doi"] = REFERENCE_BY_CROSS.get((source_file, rec["cross"]), "")
     return records
+
+
+# (source file, cross) -> DOI, for blocks of rows entered without a reference.
+# SC8021-V2 x AC Karma, 386 DH lines, pre-harvest sprouting: Kumar et al. 2015,
+# Euphytica 205:287-309.
+REFERENCE_BY_CROSS = {
+    ("PHST data", "SC-8012V2/AC Karma"): "https://doi.org/10.1007/s10681-015-1460-x",
+}
+
 
 def extract_metaqtl(headers, body, source_file):
     headers = recover_unnamed_columns(headers, body)

@@ -39,6 +39,7 @@ export default function Statistics() {
   const pubs = useCSV<PublicationRecord>('publications.csv')
   const atlas = useCSV<{ publications: string }>('gwas_atlas_summary.csv')
   const pending = useCSV<{ mapping_in: string }>('pending_studies.csv')
+  const extracted = useCSV<{ records: string; publications: string }>('extracted_qtl_summary.csv')
 
   const loading = qtl.loading || mqtl.loading || epi.loading || pubs.loading
   const error = qtl.error ?? mqtl.error ?? epi.error ?? pubs.error
@@ -247,6 +248,7 @@ export default function Statistics() {
               {[
                 { name: 'Publications curated into WheatQTLdb', n: pubs.data.length, to: '/publications' },
                 { name: 'Further publications imported from GWAS Atlas', n: Number(atlas.data[0]?.publications ?? 0), to: '/data/gwas-atlas' },
+                { name: `Papers awaiting curation with automatically extracted, unverified records (${Number(extracted.data[0]?.records ?? 0).toLocaleString()} records)`, n: Number(extracted.data[0]?.publications ?? 0), to: '/data/extracted-qtl' },
                 { name: 'Papers awaiting curation that name QTL / GWAS in the title', n: pending.data.filter((r) => r.mapping_in === 'title').length, to: '/data/pending-studies' },
                 { name: 'Other candidate papers (mapping mentioned in the abstract only)', n: pending.data.filter((r) => r.mapping_in !== 'title').length, to: '/data/pending-studies' },
               ].map((row) => (
