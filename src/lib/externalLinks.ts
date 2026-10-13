@@ -27,10 +27,32 @@ export function grainGenesUrl(
   return `${GG}?class=${cls}&name=${encodeURIComponent(primary)}`
 }
 
-/** Free-text GrainGenes search, for names that may not match a record exactly. */
-export function grainGenesSearchUrl(query: string): string | null {
+/**
+ * GrainGenes search for a name that may not match a record exactly - its class
+ * browser with a wildcard either side, so "Rht-B1" also finds "Rht-B1b".
+ */
+export function grainGenesSearchUrl(
+  query: string,
+  cls: 'gene' | 'marker' | 'qtl' | 'locus' | 'map' = 'gene'
+): string | null {
   const q = (query || '').trim()
-  return q ? `https://graingenes.org/GG3/search_node?keys=${encodeURIComponent(q)}` : null
+  return q ? `${GG.replace('report.cgi', 'browse.cgi')}?class=${cls}&query=${encodeURIComponent(`*${q}*`)}` : null
+}
+
+export type GeneKind = 'symbol' | 'model' | 'text'
+
+/**
+ * What kind of thing one candidate-gene value is. A gene MODEL id
+ * (TraesCS5A02G391700, TRITD2Bv1G013040) is an annotation feature and belongs
+ * in Ensembl Plants; a short SYMBOL (Vrn-A1, Lr34, TaGW2) is what GrainGenes
+ * curates; anything longer or with spaces is descriptive text, not an
+ * identifier, and is not linked anywhere.
+ */
+export function geneKind(value: string): GeneKind {
+  const g = (value || '').trim().replace(/^\((?:HC|LC)\)\s*/i, '')
+  if (/^(Traes|TRITD|TRIAE|TraesTL)/i.test(g)) return 'model'
+  if (/^[A-Za-z][\w.-]{1,17}$/.test(g) && /\d|-/.test(g) && !/^\d/.test(g)) return 'symbol'
+  return 'text'
 }
 
 /**

@@ -374,13 +374,31 @@ def fetch_crossref(doi: str):
     return data
 
 
+def plain(text: str) -> str:
+    """Crossref returns titles with JATS/HTML markup and entities in them
+    ("<i>Triticum aestivum</i>", "Plant, Cell &amp; Environment",
+    "&lt;i&gt;Heterodera&lt;/i&gt;"). The site prints these as text, so the
+    markup showed up literally. A few records are also double-encoded
+    ("R\u00c3\u00b6der" for "R\u00f6der"), which is undone when it round-trips cleanly."""
+    import html
+    t = html.unescape(html.unescape(text or ""))
+    t = re.sub(r"</?[A-Za-z][^<>]{0,40}>", "", t)
+    if re.search("[\u00c3\u00c2\u00e2]", t):
+        try:
+            t = t.encode("cp1252").decode("utf-8")
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            pass
+    t = t.replace("R\ufffdder", "Röder")
+    return re.sub(r"\s+", " ", t).strip()
+
+
 def meta_from(msg):
     if not msg or msg.get("_error"):
         return {}
-    title = (msg.get("title") or [""])[0]
+    title = plain((msg.get("title") or [""])[0])
     authors = []
     for a in (msg.get("author") or [])[:12]:
-        fam = a.get("family") or ""
+        fam = plain(a.get("family") or "")
         given = (a.get("given") or "").strip()
         initials = "".join(p[0] for p in re.split(r"[\s.-]+", given) if p)
         authors.append(f"{fam} {initials}".strip())
@@ -388,7 +406,7 @@ def meta_from(msg):
     return {
         "title": re.sub(r"\s+", " ", title).strip(),
         "authors": "; ".join(authors),
-        "journal": (msg.get("container-title") or [""])[0],
+        "journal": plain((msg.get("container-title") or [""])[0]),
         "year": str(date[0]) if date and date[0] else "",
         "type": msg.get("type", ""),
         "publisher": msg.get("publisher", ""),

@@ -44,10 +44,31 @@ _PLACEHOLDER = {
 }
 
 
+# Text that was saved through the wrong encoding somewhere upstream. "â€“" and
+# "Â" are UTF-8 read as Windows-1252; U+FFFD is what is left when the original
+# byte could not be decoded at all. Between two numbers, or between two marker
+# names, that lost character was a range dash, so it is restored as one; where
+# it replaced a letter in a name ("R\ufffdcital") the letter is not recoverable
+# and the mark is left for a curator to see.
+_MOJIBAKE = [("â€“", "–"), ("â€”", "—"), ("â€™", "’"), ("â€˜", "‘"), ("Â ", " "), ("Â", ""),
+             ("R\ufffdcital", "Récital")]
+
+
+def repair_text(s):
+    for bad, good in _MOJIBAKE:
+        if bad in s:
+            s = s.replace(bad, good)
+    if "\ufffd" in s:
+        s = re.sub(r"(?<=\w) \ufffd (?=\w)", " × ", s)          # "Forno ? Oberkulmer": a cross
+        s = re.sub(r"(?<=\d)\s*\ufffd\s*(?=[\w(])", "–", s)     # "cfd20?barc313", "10.7?29.9": a range
+        s = re.sub(r"(?<=\d)\ufffd$", "", s)                     # stray trailing mark after a number
+    return s
+
+
 def clean(v):
     if v is None:
         return ""
-    s = str(v).strip()
+    s = repair_text(str(v)).strip()
     s = re.sub(r"\s+", " ", s)
     # strip a value made only of repeated dash/underscore glyphs ("──", "___")
     if s and all(ch in "-_.\u2010\u2011\u2012\u2013\u2014\u2015\u2212\uff0d\uff3f\u2500\u2501\u254c" for ch in s):
@@ -894,6 +915,34 @@ def main():
     # curators' own count. They are kept, with a placeholder name that says
     # what is missing rather than an empty cell.
     # ------------------------------------------------------------------
+    # One spelling per trait label. The sources write the same trait several
+    # ways ("Fungal resistsnace", "yield", "Physiological Trait"), which showed
+    # up as separate values wherever the trait column is listed or filtered.
+    # Only spelling, case and singular/plural are unified - no label is merged
+    # into a different trait, so the trait statistics are unchanged (the
+    # taxonomy audit at the end of the rebuild verifies that).
+    TRAIT_SPELLING = {
+        "fungal resistsnace": "Fungal resistance",
+        "yield": "Yield",
+        "salt tolerance": "Salt tolerance",
+        "virus resistance": "Virus resistance",
+        "waterlogging tolerance": "Water-logging tolerance",
+        "physiological trait": "Physiological traits",
+        "physiological traits": "Physiological traits",
+        "morphological trait": "Morphological traits",
+        "quality trait": "Quality traits",
+        "quality": "Quality traits",
+        "developmental trait": "Developmental traits",
+        "development traits": "Developmental traits",
+        "nematode resistance": "Nematode resistance",
+        "grain morphology": "Grain morphology",
+        "bacterial leaf streak": "Bacterial leaf streak resistance",
+    }
+    for table in (all_qtl, all_metaqtl, all_epistatic):
+        for r in table:
+            t = (r.get("trait") or "").strip()
+            r["trait"] = TRAIT_SPELLING.get(t.lower(), t)
+
     UNNAMED = "Unnamed locus"
     unnamed = 0
     for r in all_qtl:

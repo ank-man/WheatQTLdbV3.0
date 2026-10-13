@@ -3,6 +3,7 @@ import PageHero from '../components/PageHero'
 import DataTable from '../components/DataTable'
 import AsyncBoundary from '../components/AsyncBoundary'
 import GlossaryHeader from '../components/GlossaryHeader'
+import CandidateGeneCell from '../components/CandidateGeneCell'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord } from '../lib/types'
 
@@ -16,7 +17,11 @@ const columns: ColumnDef<QTLRecord, any>[] = [
   { accessorKey: 'position_interval', header: () => <GlossaryHeader label="Position / Interval" term="position_interval" /> },
   { accessorKey: 'associated_markers', header: () => <GlossaryHeader label="Markers" term="associated_markers" /> },
   { accessorKey: 'pve', header: () => <GlossaryHeader label="PVE / R²" term="pve" /> },
-  { accessorKey: 'candidate_gene', header: () => <GlossaryHeader label="Cand. Gene" term="candidate_gene" /> },
+  {
+    accessorKey: 'candidate_gene',
+    header: () => <GlossaryHeader label="Cand. Gene" term="candidate_gene" />,
+    cell: ({ getValue }) => <CandidateGeneCell value={getValue()} />,
+  },
   { accessorKey: 'method', header: () => <GlossaryHeader label="Method" term="method" /> },
   { accessorKey: 'cross', header: () => <GlossaryHeader label="Cross" term="cross" /> },
   { accessorKey: 'population', header: () => <GlossaryHeader label="Population" term="population" /> },

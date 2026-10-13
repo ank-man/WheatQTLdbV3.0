@@ -32,7 +32,7 @@ import urllib.request
 from collections import Counter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build_publications import _ncbi_batch, normalise_doi  # noqa: E402
+from build_publications import _ncbi_batch, plain  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "public", "data")
@@ -105,7 +105,7 @@ def main():
         year = meta.get("year") or (re.match(r"(\d{4})", clean(r[-1])) or [""])[0]
         author = g("First author")
         lead = (author.split()[-1] + " et al." if author else "").strip()
-        title = g("Title").rstrip(".")
+        title = plain(g("Title")).rstrip(".")
         trait = g("Trait")
         out.append({
             "species": "Triticum aestivum",

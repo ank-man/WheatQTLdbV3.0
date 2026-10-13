@@ -8,7 +8,7 @@ import { useCSV } from '../lib/useCSV'
 import { CandidateGeneRecord } from '../lib/types'
 import {
   grainGenesUrl, grainGenesSearchUrl, ensemblPlantsUrl, ensemblGeneUrl,
-  ensemblSearchUrl, positionToBp, doiUrl,
+  ensemblSearchUrl, positionToBp, doiUrl, geneKind,
 } from '../lib/externalLinks'
 
 // Which outbound link makes sense depends on what kind of identifier the
@@ -38,7 +38,8 @@ const columns: ColumnDef<CandidateGeneRecord, any>[] = [
         <span className="inline-flex items-center gap-1.5">
           <span className="font-medium">{g}</span>
           {url && (
-            <a href={url} target="_blank" rel="noreferrer" title={`Open ${g} in GrainGenes`}
+            <a href={url} target="_blank" rel="noreferrer"
+               title={`Open ${g} in ${SYMBOLIC.has(kind) ? 'GrainGenes' : 'Ensembl Plants'}`}
                className="text-wheat-500 hover:text-wheat-800">
               <ExternalLink className="h-3 w-3" />
             </a>
@@ -86,7 +87,10 @@ const columns: ColumnDef<CandidateGeneRecord, any>[] = [
     cell: ({ row }) => {
       const q = row.original.qtl_name
       if (!q) return '—'
-      const url = grainGenesUrl(q, 'qtl')
+      // Only a name in the wheat QTL nomenclature ("QYld.cau-2D") can have a
+      // GrainGenes QTL record. Most GWAS rows carry a SNP id here instead
+      // ("AX-109333243", "S2A_46314116"), and linking those opened an empty page.
+      const url = /^Q[A-Za-z]/.test(q.trim()) ? grainGenesUrl(q, 'qtl') : null
       return url ? (
         <a className="underline" href={url} target="_blank" rel="noreferrer" title="Open in GrainGenes">{q}</a>
       ) : q
@@ -109,9 +113,12 @@ const columns: ColumnDef<CandidateGeneRecord, any>[] = [
     cell: ({ row }) => {
       const r = row.original
       const kind = r.gene_type ?? ''
+      // A curated symbol has its own GrainGenes record; any other identifier
+      // that is not an annotation gene model gets a GrainGenes search, since
+      // it may still be a symbol GrainGenes knows under a variant spelling.
       const gg = SYMBOLIC.has(kind)
-        ? (grainGenesUrl(r.gene, 'gene') ?? grainGenesSearchUrl(r.gene))
-        : null
+        ? grainGenesUrl(r.gene, 'gene')
+        : kind === 'Other identifier' && geneKind(r.gene) === 'symbol' ? grainGenesSearchUrl(r.gene) : null
       const bp = positionToBp(r.position)
       const model = MODEL.has(kind) ? (ensemblGeneUrl(r.gene) ?? ensemblSearchUrl(r.gene)) : null
       const ens = model ?? (bp ? ensemblPlantsUrl(r.chromosome, bp) : null)
@@ -120,7 +127,7 @@ const columns: ColumnDef<CandidateGeneRecord, any>[] = [
           {gg && (
             <a href={gg} target="_blank" rel="noreferrer"
                className="btn px-2 py-1 text-[11px]" title="Curated gene record at GrainGenes">
-              <Dna className="h-3 w-3" /> GrainGenes
+              <Dna className="h-3 w-3" /> {SYMBOLIC.has(kind) ? 'GrainGenes' : 'Search GrainGenes'}
             </a>
           )}
           {ens && (

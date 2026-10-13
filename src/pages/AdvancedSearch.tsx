@@ -6,6 +6,7 @@ import PageHero from '../components/PageHero'
 import DataTable from '../components/DataTable'
 import AsyncBoundary from '../components/AsyncBoundary'
 import GlossaryHeader from '../components/GlossaryHeader'
+import CandidateGeneCell from '../components/CandidateGeneCell'
 import { useCSV } from '../lib/useCSV'
 import { QTLRecord } from '../lib/types'
 import { TraitCategory } from '../lib/map'
@@ -77,7 +78,11 @@ const columns: ColumnDef<Row, any>[] = [
   { accessorKey: 'chromosome', header: () => <GlossaryHeader label="Chr" term="chromosome" /> },
   { accessorKey: 'position_interval', header: () => <GlossaryHeader label="Position / Interval" term="position_interval" /> },
   { accessorKey: 'pve', header: () => <GlossaryHeader label="PVE / R²" term="pve" /> },
-  { accessorKey: 'candidate_gene', header: () => <GlossaryHeader label="Cand. Gene" term="candidate_gene" /> },
+  {
+    accessorKey: 'candidate_gene',
+    header: () => <GlossaryHeader label="Cand. Gene" term="candidate_gene" />,
+    cell: ({ getValue }) => <CandidateGeneCell value={getValue()} />,
+  },
   { accessorKey: 'method', header: () => <GlossaryHeader label="Method" term="method" /> },
   { accessorKey: 'year', header: 'Year' },
   {

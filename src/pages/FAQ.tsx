@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: 'How are traits classified?',
-    a: 'Traits are grouped into functional categories such as abiotic-stress tolerance, biotic-stress resistance, biofortification, morphological, quality, yield, developmental, physiological and nitrogen-use-efficiency.',
+    a: 'Each record is counted under one of five main traits - nutrient use efficiency, abiotic stress, biotic stress, biofortification and others (yield, quality, developmental, physiological, plant and grain morphology, herbicide tolerance) - and one sub-category within it, such as drought tolerance or fungal resistance. The Statistics page lists every main trait and sub-category with its record count, and the Search page filters on the same grouping.',
   },
   {
     q: 'What do PVE, R² and LOD mean, and how are QTL positions reported?',

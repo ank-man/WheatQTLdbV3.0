@@ -489,17 +489,18 @@ export default function CircosMap({
               x={CX}
               y={CY - 8}
               textAnchor="middle"
-              className="pointer-events-none fill-current text-[15px] font-semibold opacity-80"
+              className="pointer-events-none fill-current text-[12px] font-semibold opacity-80"
             >
               WheatQTLdb V3.0
             </text>
             <text
               x={CX}
-              y={CY + 14}
+              y={CY + 10}
               textAnchor="middle"
-              className="pointer-events-none fill-current text-[11px] opacity-55"
+              className="pointer-events-none fill-current text-[9px] opacity-55"
             >
-              {chromosomes.length} chromosomes · IWGSC RefSeq v1.0
+              {/* must fit inside the innermost track (radius 70) */}
+              IWGSC RefSeq v1.0
             </text>
           </svg>
         </div>

@@ -1,5 +1,5 @@
 import { ReactNode, useState } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useLocation } from 'react-router-dom'
 import { Menu, X, Wheat } from 'lucide-react'
 
 const NAV = [
@@ -17,6 +17,8 @@ const NAV = [
 ]
 
 export default function Layout({ children }: { children: ReactNode }) {
+  // Linkage maps sits under /data but has its own tab, so only that tab lights up.
+  const underOwnTab = useLocation().pathname.startsWith('/data/linkage-maps')
   const [open, setOpen] = useState(false)
 
   return (
@@ -36,7 +38,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                 key={n.to}
                 to={n.to}
                 end={n.end}
-                className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
+                className={({ isActive }) => `nav-link ${isActive && !(n.to === '/data' && underOwnTab) ? 'nav-link-active' : ''}`}
               >
                 {n.label}
               </NavLink>

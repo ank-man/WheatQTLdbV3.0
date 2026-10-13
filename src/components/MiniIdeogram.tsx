@@ -39,7 +39,7 @@ export default function MiniIdeogram({ onSelect, className = '' }: MiniIdeogramP
     <svg
       viewBox={`0 0 ${svgWidth} ${svgHeight}`}
       width="100%"
-      height="auto"
+      style={{ height: 'auto' }}
       role="img"
       aria-label="Miniature wheat karyotype: 21 chromosomes, sized to scale, coloured by subgenome"
       className={className}

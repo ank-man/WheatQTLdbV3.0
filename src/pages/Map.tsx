@@ -411,21 +411,12 @@ export default function Map() {
             </div>
           </div>
 
-          {view !== 'genetic' && (unmapped.qtl > 0 || unmapped.mqtl > 0 || unmapped.links > 0) && !qtl.loading && !mqtl.loading && !epi.loading && (
-            <div className="space-y-0.5 text-xs text-wheat-500 dark:text-wheat-400">
-              <p>
-                {unmapped.qtlNoChrOrPos.toLocaleString()} QTL and {unmapped.mqtlNoChrOrPos.toLocaleString()} MetaQTL records have no resolvable
-                chromosome or position, often from GWAS studies that reported without one; {unmapped.links.toLocaleString()} epistatic pairs likewise
-                couldn't be resolved to two physical loci. None of these are shown below.
-              </p>
-              {(unmapped.qtlCm > 0 || unmapped.mqtlCm > 0) && (
-                <p>
-                  A further {unmapped.qtlCm.toLocaleString()} QTL and {unmapped.mqtlCm.toLocaleString()} MetaQTL are anchored to a chromosome
-                  but only report a genetic-map (cM) position, not a physical (bp) one — these are excluded from these physical-coordinate
-                  views rather than estimated onto the physical axis, but remain searchable in the data tables.
-                </p>
-              )}
-            </div>
+          {view !== 'genetic' && (unmapped.mqtl > 0 || unmapped.links > 0) && !mqtl.loading && !epi.loading && (
+            <p className="text-xs text-wheat-500 dark:text-wheat-400">
+              {(mqtl.data.length - unmapped.mqtl).toLocaleString()} of {mqtl.data.length.toLocaleString()} MetaQTLs
+              and {links.length.toLocaleString()} of {epi.data.length.toLocaleString()} epistatic pairs have physical
+              positions and can be drawn here; the others report a genetic (cM) position or none.
+            </p>
           )}
 
           {view === 'ideogram' ? (

@@ -60,7 +60,12 @@ export default function Home() {
 
   const stats = useMemo(() => {
     const speciesSet = new Set<string>()
-    qtl.data.forEach((r) => r.species && speciesSet.add(normalizeSpecies(r.species)))
+    // A few records name several species in one field ("A; B") - those are
+    // split, so the tile counts species rather than distinct field values.
+    qtl.data.forEach((r) => (r.species || '').split(/[;/]/).forEach((sp) => {
+      const name = normalizeSpecies(sp)
+      if (name) speciesSet.add(name)
+    }))
     return {
       qtl: qtl.data.length,
       mqtl: mqtl.data.length,

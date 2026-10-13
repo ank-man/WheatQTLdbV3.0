@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero'
 import DataTable from '../components/DataTable'
 import AsyncBoundary from '../components/AsyncBoundary'
 import GlossaryHeader from '../components/GlossaryHeader'
+import CandidateGeneCell from '../components/CandidateGeneCell'
 import { useCSV } from '../lib/useCSV'
 import { GwasAtlasRecord } from '../lib/types'
 
@@ -19,7 +20,11 @@ const columns: ColumnDef<GwasAtlasRecord, any>[] = [
   },
   { accessorKey: 'p_value', header: 'P-value' },
   { accessorKey: 'pve', header: () => <GlossaryHeader label="PVE / R²" term="pve" /> },
-  { accessorKey: 'candidate_gene', header: () => <GlossaryHeader label="Cand. Gene" term="candidate_gene" /> },
+  {
+    accessorKey: 'candidate_gene',
+    header: () => <GlossaryHeader label="Cand. Gene" term="candidate_gene" />,
+    cell: ({ getValue }) => <CandidateGeneCell value={getValue()} />,
+  },
   { accessorKey: 'condition', header: 'Condition' },
   { accessorKey: 'population', header: () => <GlossaryHeader label="Population" term="population" /> },
   { accessorKey: 'sample_size', header: 'N' },
