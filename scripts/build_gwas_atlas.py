@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build public/data/gwas_atlas.csv - wheat marker-trait associations curated by
+Build curation/gwas_atlas.csv - wheat marker-trait associations curated by
 GWAS Atlas (NGDC/CNCB) from publications this database does not already hold.
 
 GWAS Atlas (https://ngdc.cncb.ac.cn/gwas/; Tian et al. 2020, Nucleic Acids
@@ -36,6 +36,8 @@ from build_publications import _ncbi_batch, plain  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "public", "data")
+# not part of the website: kept for curators only
+OFFSITE = os.path.join(ROOT, "curation")
 CACHE = os.path.join(ROOT, "scripts", "mine", ".cache")
 SRC = os.path.join(CACHE, "gwas_atlas_wheat.txt.gz")
 URL = "ftp://download.big.ac.cn/gwas_atlas/gwas_association_result_for_wheat.txt.gz"
@@ -143,7 +145,7 @@ def main():
         r["id"] = f"G{i:05d}"
 
     cols = ["id"] + [c for c in rows[0] if c != "id"]
-    path = os.path.join(DATA, "gwas_atlas.csv")
+    path = os.path.join(OFFSITE, "gwas_atlas.csv")
     with open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=cols)
         w.writeheader()
@@ -151,7 +153,7 @@ def main():
 
     # One-line summary, so pages that only need the totals do not have to
     # download the whole table.
-    with open(os.path.join(DATA, "gwas_atlas_summary.csv"), "w", newline="", encoding="utf-8") as f:
+    with open(os.path.join(OFFSITE, "gwas_atlas_summary.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["associations", "publications", "traits"])
         w.writerow([len(rows), len({r["pmid"] for r in rows}), len({r["trait"] for r in rows})])

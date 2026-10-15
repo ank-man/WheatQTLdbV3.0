@@ -131,11 +131,6 @@
         "n": 3,
         "label": "Candidate genes",
         "text": "Every gene named as a candidate, linked to GrainGenes or Ensembl Plants."
-      },
-      {
-        "n": 4,
-        "label": "GWAS Atlas associations",
-        "text": "Marker–trait associations imported from GWAS Atlas. They are a separate table and are not part of the QTL counts."
       }
     ]
   },
@@ -240,7 +235,7 @@
       {
         "n": 1,
         "label": "Layers",
-        "text": "Switch QTL, MetaQTL, GWAS Atlas associations and epistatic links on or off."
+        "text": "Switch QTL, MetaQTL and epistatic links on or off."
       },
       {
         "n": 2,
@@ -376,31 +371,6 @@
         "n": 2,
         "label": "Resources",
         "text": "Gene symbols open in GrainGenes; gene models open in Ensembl Plants; a position opens the genome browser at that location."
-      }
-    ]
-  },
-  {
-    "id": "pending",
-    "title": "Studies awaiting curation and News",
-    "intro": "Papers found by a literature search that are not yet in the database. They are listed so that curators, and users, can see what is still to come; no QTL has been taken from them. New data and features are announced on the News page.",
-    "image": "14-pending.png",
-    "width": 2800,
-    "height": 1640,
-    "callouts": [
-      {
-        "n": 1,
-        "label": "Strongest candidates",
-        "text": "Tick to show only papers whose title reports QTL or GWAS work."
-      },
-      {
-        "n": 2,
-        "label": "Study type",
-        "text": "QTL mapping, GWAS, meta-QTL or epistatic QTL."
-      },
-      {
-        "n": 3,
-        "label": "News",
-        "text": "Opens the list of data releases and new features."
       }
     ]
   }

@@ -19,10 +19,7 @@ import AdvancedSearch from './pages/AdvancedSearch'
 import Credits from './pages/Credits'
 import PublicationsPage from './pages/PublicationsPage'
 import LinkageMapsPage from './pages/LinkageMapsPage'
-import GwasAtlasPage from './pages/GwasAtlasPage'
 import NewsPage from './pages/NewsPage'
-import PendingStudiesPage from './pages/PendingStudiesPage'
-import ExtractedQtlPage from './pages/ExtractedQtlPage'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -40,15 +37,12 @@ export default function App() {
         <Route path="/data/metaqtl" element={<MetaQTLPage />} />
         <Route path="/map" element={<Map />} />
         <Route path="/data/linkage-maps" element={<LinkageMapsPage />} />
-        <Route path="/data/gwas-atlas" element={<GwasAtlasPage />} />
         <Route path="/data/epistatic" element={<EpistaticPage />} />
         <Route path="/data/candidate-genes" element={<CandidateGenesPage />} />
         <Route path="/search" element={<AdvancedSearch />} />
         <Route path="/team" element={<Team />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/news" element={<NewsPage />} />
-        <Route path="/data/pending-studies" element={<PendingStudiesPage />} />
-        <Route path="/data/extracted-qtl" element={<ExtractedQtlPage />} />
         <Route path="/publications" element={<PublicationsPage />} />
         <Route path="/credits" element={<Credits />} />
         <Route path="/links" element={<UsefulLinks />} />

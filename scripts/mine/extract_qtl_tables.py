@@ -23,7 +23,7 @@ and a table can list candidate rather than significant loci. They are written
 to their own file with the table they came from, so each can be checked
 against its source, and they are never mixed into the curated tables.
 
-Writes public/data/extracted_qtl.csv and curation/extraction_report.csv.
+Writes curation/extracted_qtl.csv and curation/extraction_report.csv.
 
 Usage: python3 scripts/mine/extract_qtl_tables.py [--limit N]
 """
@@ -41,6 +41,8 @@ from harvest_map_tables import tables_from_xml  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA = os.path.join(ROOT, "public", "data")
+# not part of the website: kept for curators only
+OFFSITE = os.path.join(ROOT, "curation")
 CURATION = os.path.join(ROOT, "curation")
 csv.field_size_limit(10_000_000)
 
@@ -212,7 +214,7 @@ def main():
 
     cols = ["id", "species", "trait", "qtl_name", "chromosome", "position_interval", "associated_markers",
             "pve", "lod", "p_value", "environment", "method", "reference", "doi", "pmcid", "year", "source_table"]
-    with open(os.path.join(DATA, "extracted_qtl.csv"), "w", newline="", encoding="utf-8") as f:
+    with open(os.path.join(OFFSITE, "extracted_qtl.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=cols)
         w.writeheader()
         w.writerows(uniq)
@@ -225,7 +227,7 @@ def main():
     print(f"records extracted          : {len(uniq)} from {len(report)} tables in {papers} papers")
     for reason, n in why.most_common():
         print(f"  {n:>6}  {reason}")
-    with open(os.path.join(DATA, "extracted_qtl_summary.csv"), "w", newline="", encoding="utf-8") as f:
+    with open(os.path.join(OFFSITE, "extracted_qtl_summary.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["records", "publications", "tables"])
         w.writerow([len(uniq), papers, len(report)])

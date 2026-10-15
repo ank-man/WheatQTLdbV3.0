@@ -37,9 +37,6 @@ export default function Statistics() {
   const mqtl = useCSV<MetaQTLRecord>('metaqtl.csv')
   const epi = useCSV<EpistaticRecord>('epistatic.csv')
   const pubs = useCSV<PublicationRecord>('publications.csv')
-  const atlas = useCSV<{ publications: string }>('gwas_atlas_summary.csv')
-  const pending = useCSV<{ mapping_in: string }>('pending_studies.csv')
-  const extracted = useCSV<{ records: string; publications: string }>('extracted_qtl_summary.csv')
 
   const loading = qtl.loading || mqtl.loading || epi.loading || pubs.loading
   const error = qtl.error ?? mqtl.error ?? epi.error ?? pubs.error
@@ -239,24 +236,6 @@ export default function Statistics() {
                   <dd className="w-14" />
                 </div>
               )}
-            </dl>
-          </section>
-          <section className="card lg:col-span-2">
-            <Heading title="Literature coverage"
-                     note="How much of the wheat QTL and GWAS literature is in the database. Only the first row contributes to the QTL counts above." />
-            <dl className="space-y-2 text-sm">
-              {[
-                { name: 'Publications curated into WheatQTLdb', n: pubs.data.length, to: '/publications' },
-                { name: 'Further publications imported from GWAS Atlas', n: Number(atlas.data[0]?.publications ?? 0), to: '/data/gwas-atlas' },
-                { name: `Papers awaiting curation with automatically extracted, unverified records (${Number(extracted.data[0]?.records ?? 0).toLocaleString()} records)`, n: Number(extracted.data[0]?.publications ?? 0), to: '/data/extracted-qtl' },
-                { name: 'Papers awaiting curation that name QTL / GWAS in the title', n: pending.data.filter((r) => r.mapping_in === 'title').length, to: '/data/pending-studies' },
-                { name: 'Other candidate papers (mapping mentioned in the abstract only)', n: pending.data.filter((r) => r.mapping_in !== 'title').length, to: '/data/pending-studies' },
-              ].map((row) => (
-                <div key={row.name} className="flex items-center gap-2">
-                  <dt className="text-wheat-700"><Link className="hover:underline" to={row.to}>{row.name}</Link></dt>
-                  <dd className="ml-auto tabular-nums font-medium text-wheat-900">{row.n.toLocaleString()}</dd>
-                </div>
-              ))}
             </dl>
           </section>
 

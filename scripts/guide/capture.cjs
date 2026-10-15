@@ -64,8 +64,6 @@ const SECTIONS = [
       { find: (p) => p.getByRole('link', { name: /^QTL QTL\/MTA/ }), side: 'left', label: 'QTL', text: 'All main effect QTL and marker–trait associations.' },
       { find: (p) => p.getByRole('link', { name: /MetaQTL Consensus/ }), side: 'left', label: 'MetaQTL and epistatic QTL', text: 'Consensus QTL regions across studies, and QTL × QTL interactions.' },
       { find: (p) => p.getByRole('link', { name: /Candidate Genes/ }), side: 'left', label: 'Candidate genes', text: 'Every gene named as a candidate, linked to GrainGenes or Ensembl Plants.' },
-      { find: (p) => p.getByRole('link', { name: /GWAS Atlas associations/ }), side: 'right', label: 'GWAS Atlas associations', text: 'Marker–trait associations imported from GWAS Atlas. They are a separate table and are not part of the QTL counts.' },
-      { find: (p) => p.getByRole('link', { name: /Studies awaiting curation/ }), side: 'right', label: 'Studies awaiting curation', text: 'Papers found in the literature that are not yet in the database.' },
     ],
   },
   {
@@ -106,7 +104,7 @@ const SECTIONS = [
     prep: async (p) => { await p.getByText('Circos genome view').waitFor({ timeout: 120000 }); await p.evaluate(() => window.scrollTo(0, 290)); await p.waitForTimeout(1200) },
     intro: 'The Map page draws QTL and MetaQTL on the wheat genome. The Circos view shows all 21 chromosomes in a circle.',
     callouts: [
-      { find: (p) => p.getByText('Show QTLs'), side: 'top', label: 'Layers', text: 'Switch QTL, MetaQTL, GWAS Atlas associations and epistatic links on or off.' },
+      { find: (p) => p.getByText('Show QTLs'), side: 'top', label: 'Layers', text: 'Switch QTL, MetaQTL and epistatic links on or off.' },
       { find: (p) => p.getByRole('button', { name: 'Circos', exact: true }), side: 'top', label: 'Choose the view', text: 'Ideogram and Circos show QTL with a physical position; Linkage (cM) shows QTL mapped only on a genetic map.' },
       { find: (p) => p.getByRole('button', { name: 'PNG' }), side: 'top', label: 'Export', text: 'Save the current view as SVG, PNG or JPEG. PNG and JPEG are saved at print resolution.' },
       { find: (p) => p.getByPlaceholder('Search name, trait, parameter or candidate gene…'), side: 'left', label: 'Search the map', text: 'Shows only the QTL whose name, trait, parameter or candidate gene matches.' },
@@ -159,16 +157,6 @@ const SECTIONS = [
     callouts: [
       { find: (p) => p.locator('thead th', { hasText: 'Identifier' }), side: 'top', label: 'Kind of identifier', text: 'Says whether the entry is a gene symbol, an annotation gene model or a functional description.' },
       { find: (p) => p.locator('tbody tr').first().locator('td').last(), side: 'left', label: 'Resources', text: 'Gene symbols open in GrainGenes; gene models open in Ensembl Plants; a position opens the genome browser at that location.' },
-    ],
-  },
-  {
-    id: 'pending', title: 'Studies awaiting curation and News', url: '/data/pending-studies', height: 820,
-    prep: async (p) => { await p.getByText('candidate papers').waitFor({ timeout: 90000 }); await p.evaluate(() => window.scrollTo(0, 200)) },
-    intro: 'Papers found by a literature search that are not yet in the database. They are listed so that curators, and users, can see what is still to come; no QTL has been taken from them. New data and features are announced on the News page.',
-    callouts: [
-      { find: (p) => p.getByText('Only papers naming QTL / GWAS in the title'), side: 'bottom', label: 'Strongest candidates', text: 'Tick to show only papers whose title reports QTL or GWAS work.' },
-      { find: (p) => p.locator('label', { hasText: 'Study type' }).locator('select'), side: 'bottom', label: 'Study type', text: 'QTL mapping, GWAS, meta-QTL or epistatic QTL.' },
-      { find: (p) => p.getByRole('link', { name: 'News' }).first(), side: 'bottom', label: 'News', text: 'Opens the list of data releases and new features.' },
     ],
   },
 ]

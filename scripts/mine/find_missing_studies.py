@@ -34,6 +34,8 @@ from epmc import hit_count, search  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA = os.path.join(ROOT, "public", "data")
+# not part of the website: kept for curators only
+OFFSITE = os.path.join(ROOT, "curation")
 OUT_DIR = os.path.join(ROOT, "curation")
 csv.field_size_limit(10_000_000)
 
@@ -94,7 +96,7 @@ def main():
                 # a reference held only as pasted title text
                 have_title.add(norm_title(re.split(r"\s+\|\s+", p["url"])[0]))
     atlas_doi, atlas_pmid = set(), set()
-    atlas_path = os.path.join(DATA, "gwas_atlas.csv")
+    atlas_path = os.path.join(OFFSITE, "gwas_atlas.csv")
     if os.path.exists(atlas_path):
         with open(atlas_path, encoding="utf-8") as f:
             for r in csv.DictReader(f):
@@ -170,7 +172,7 @@ def main():
     # part of any count of curated records.
     site_cols = ["year", "title", "authors", "journal", "study_type", "mapping_in", "trait_hint",
                  "doi", "pmid", "open_access", "in_gwas_atlas", "preprint", "url"]
-    with open(os.path.join(DATA, "pending_studies.csv"), "w", newline="", encoding="utf-8") as f:
+    with open(os.path.join(OFFSITE, "pending_studies.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=site_cols, extrasaction="ignore")
         w.writeheader()
         w.writerows(rows)

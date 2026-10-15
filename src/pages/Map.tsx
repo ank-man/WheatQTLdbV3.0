@@ -7,7 +7,7 @@ import CircosMap from '../components/CircosMap'
 import GeneticMap, { GeneticItem } from '../components/GeneticMap'
 import AsyncBoundary from '../components/AsyncBoundary'
 import { useCSV } from '../lib/useCSV'
-import { QTLRecord, MetaQTLRecord, EpistaticRecord, GwasAtlasRecord } from '../lib/types'
+import { QTLRecord, MetaQTLRecord, EpistaticRecord } from '../lib/types'
 import {
   prepareItems, prepareEpistaticLinks, normalizeChromosome, parsePositionInterval, isPhysicalPosition,
   TRAIT_CATEGORIES, TRAIT_COLORS, normalizeTrait, chromosomeLength, MapItem,
@@ -18,12 +18,10 @@ export default function Map() {
   const qtl = useCSV<QTLRecord>('qtl.csv')
   const mqtl = useCSV<MetaQTLRecord>('metaqtl.csv')
   const epi = useCSV<EpistaticRecord>('epistatic.csv')
-  const gwas = useCSV<GwasAtlasRecord>('gwas_atlas.csv')
 
   const [showQTL, setShowQTL] = useState(true)
   const [showMetaQTL, setShowMetaQTL] = useState(true)
   const [showLinks, setShowLinks] = useState(false)
-  const [showGwas, setShowGwas] = useState(true)
   const [selectedTraits, setSelectedTraits] = useState<string[]>([])
   const [view, setView] = useState<'ideogram' | 'circos' | 'genetic'>('circos')
   const [search, setSearch] = useState('')
@@ -36,29 +34,6 @@ export default function Map() {
   const svgRef = useRef<SVGSVGElement>(null)
 
   const allItems = useMemo(() => prepareItems(qtl.data, mqtl.data), [qtl.data, mqtl.data])
-
-  // GWAS Atlas associations (from publications not curated here) all carry a
-  // RefSeq v1.0 position, so they can be drawn on the same physical axis. They
-  // are a separate, toggleable layer and are never added to the WheatQTLdb
-  // counts quoted on this page.
-  const gwasItems = useMemo<MapItem[]>(() => gwas.data.flatMap((g) => {
-    const chr = normalizeChromosome(g.chromosome)
-    const point = Number(g.position)
-    if (!chr || !Number.isFinite(point)) return []
-    return [{
-      id: g.id,
-      type: 'qtl' as const,
-      chromosome: chr,
-      point: Math.min(point, chromosomeLength(chr)),
-      trait: normalizeTrait({ trait: g.trait }),
-      name: `${g.trait} (GWAS Atlas ${g.id})`,
-      raw: {
-        id: g.id, species: g.species, trait: g.trait, parameter: g.condition, qtl_name: g.id,
-        chromosome: chr, position_interval: g.position, pve: g.pve, candidate_gene: g.candidate_gene,
-        reference: g.reference, doi: g.doi, method: g.method, source_file: 'GWAS Atlas',
-      },
-    }]
-  }), [gwas.data])
 
   // QTL published with a genetic-map position only: they have no place on the
   // physical views, and are drawn on the linkage (cM) view instead.
@@ -110,16 +85,14 @@ export default function Map() {
   }, [allItems, qtl.data, mqtl.data, epi.data.length, links.length])
 
   const items = useMemo(() => {
-    const shown = showGwas ? [...allItems, ...gwasItems] : allItems
-    if (genomeFilter === 'all') return shown
-    return shown.filter((item) => item.chromosome.endsWith(genomeFilter))
-  }, [allItems, gwasItems, showGwas, genomeFilter])
+    if (genomeFilter === 'all') return allItems
+    return allItems.filter((item) => item.chromosome.endsWith(genomeFilter))
+  }, [allItems, genomeFilter])
 
   const reset = () => {
     setShowQTL(true)
     setShowMetaQTL(true)
     setShowLinks(false)
-    setShowGwas(true)
     setSelectedTraits([])
     setSearch('')
     setGenomeFilter('all')
@@ -178,11 +151,6 @@ export default function Map() {
               position only and are on the <strong>Linkage (cM)</strong> view. The remaining{' '}
               {(unmapped.qtl - geneticItems.length).toLocaleString()} name no usable chromosome or position
               and can only be listed — they are in <Link className="underline" to="/search">Search</Link>.
-              {gwasItems.length > 0 && (
-                <> The physical views can also show {gwasItems.length.toLocaleString()}{' '}
-                <Link className="underline" to="/data/gwas-atlas">GWAS Atlas associations</Link> from
-                studies not curated here; they are a separate layer and not part of these counts.</>
-              )}
             </p>
           </div>
           {/* Controls */}
@@ -207,17 +175,6 @@ export default function Map() {
                   />
                   <span className="text-sm font-medium">Show MetaQTLs</span>
                 </label>
-                {view !== 'genetic' && gwasItems.length > 0 && (
-                  <label className="inline-flex cursor-pointer items-center gap-2">
-                    <input
-                      type="checkbox"
-                      className="h-4 w-4 accent-wheat-600"
-                      checked={showGwas}
-                      onChange={(e) => setShowGwas(e.target.checked)}
-                    />
-                    <span className="text-sm font-medium">GWAS Atlas MTAs</span>
-                  </label>
-                )}
                 {view === 'circos' && (
                   <label className="inline-flex cursor-pointer items-center gap-2">
                     <input

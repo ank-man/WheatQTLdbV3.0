@@ -107,30 +107,3 @@ export interface PublicationRecord {
   top_trait: string
   url: string
 }
-
-/** A wheat marker-trait association curated by GWAS Atlas (NGDC/CNCB), from a
- *  publication this database does not itself hold. See scripts/build_gwas_atlas.py. */
-export interface GwasAtlasRecord {
-  id: string
-  species: string
-  trait: string
-  trait_accession: string
-  chromosome: string
-  /** Physical position, bp, IWGSC RefSeq v1.0. */
-  position: string
-  p_value: string
-  pve: string
-  candidate_gene: string
-  condition: string
-  environment: string
-  population: string
-  sample_size: string
-  tissue: string
-  genotyping: string
-  method: string
-  reference: string
-  doi: string
-  pmid: string
-  year: string
-  gwas_atlas_id: string
-}

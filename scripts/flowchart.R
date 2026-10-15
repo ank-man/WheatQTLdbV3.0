@@ -8,12 +8,10 @@ suppressPackageStartupMessages({ library(DiagrammeR); library(DiagrammeRsvg); li
 d   <- function(f) fread(file.path("public/data", f), colClasses = "character", showProgress = FALSE)
 qtl <- d("qtl.csv"); mq <- d("metaqtl.csv"); epi <- d("epistatic.csv"); pub <- d("publications.csv")
 cg  <- d("candidate_genes.csv"); maps <- d("maps.csv"); ml <- d("map_loci.csv")
-ga  <- d("gwas_atlas_summary.csv"); ex <- d("extracted_qtl_summary.csv"); pend <- d("pending_studies.csv")
 f <- function(x) format(as.numeric(x), big.mark = ",")
 
 n_src  <- length(list.files("Final_data/Updated data (2.0+3.0)", pattern = "\\.(xlsx?|csv)$", recursive = TRUE))
 n_mt   <- sum(qtl$multi_trait == "yes")
-n_phys <- sum(grepl("Mb|bp|^[0-9]{5,}", qtl$position_interval))
 n_view <- length(unique(ml$map_id))
 n_cg   <- length(unique(cg$gene))
 n_yr   <- sum(qtl$year != "")
@@ -32,32 +30,31 @@ digraph db {
   edge  [color = "#B7C0B8", arrowsize = 0.6, penwidth = 1.2]
 
   subgraph cluster_src  { label = <<B>1  SOURCES</B>>; CLUSTER
-    cur [label = %s]; gwa [label = %s]; lit [label = %s]; gg [label = %s] }
+    cur [label = %s]; lit [label = %s]; gg [label = %s] }
   subgraph cluster_proc { label = <<B>2  CURATION &amp; VALIDATION</B>>; CLUSTER
     conv [label = %s]; tax [label = %s]; pubr [label = %s]; val [label = %s] }
   subgraph cluster_data { label = <<B>3  DATA</B>>; CLUSTER
     q [label = %s, color = "#15803D", penwidth = 1.7]; m [label = %s]; e [label = %s]; mt [label = %s]; p [label = %s] }
   subgraph cluster_ext  { label = <<B>4  LINKED RESOURCES</B>>; CLUSTER
-    cand [label = %s]; lm [label = %s]; atlas [label = %s]; pen [label = %s] }
+    cand [label = %s]; lm [label = %s] }
   subgraph cluster_web  { label = <<B>5  WEBSITE</B>>; CLUSTER
     srch [label = %s]; gmap [label = %s]; stat [label = %s]; help [label = %s] }
 
-  { rank = same; cur; gwa; lit; gg }
+  { rank = same; cur; lit; gg }
   { rank = same; conv; tax; pubr; val }
   { rank = same; q; m; e; mt; p }
-  { rank = same; cand; lm; atlas; pen }
+  { rank = same; cand; lm }
   { rank = same; srch; gmap; stat; help }
   conv -> tax -> pubr -> val [constraint = false]
 
   cur -> conv [ltail = cluster_src, lhead = cluster_proc]
   val -> q [ltail = cluster_proc, lhead = cluster_data]
   q -> cand [ltail = cluster_data, lhead = cluster_ext]
-  atlas -> gmap [ltail = cluster_ext, lhead = cluster_web]
+  lm -> gmap [ltail = cluster_ext, lhead = cluster_web]
 }',
   "<FONT POINT-SIZE='22'><B>WheatQTLdb V3.0</B></FONT><BR/><FONT POINT-SIZE='11' COLOR='#57575F'>Curated QTL, MetaQTL, epistatic and multi-trait QTL of wheat and its relatives, with publications, genes, maps and a genome browser</FONT><BR/>",
   lab("Curated spreadsheets", sprintf("Final_data: v2.0 + v3.0 trait files<BR/>%s source files", n_src)),
-  lab("GWAS Atlas", "NGDC wheat associations<BR/>(papers not curated here)"),
-  lab("Literature", "Europe PMC search<BR/>open-access tables · Crossref"),
+  lab("Literature databases", "Crossref · NCBI PubMed<BR/>reference resolution"),
   lab("GrainGenes &amp; papers", "linkage-map catalogue<BR/>supplementary map tables"),
   lab("Harmonise &amp; de-duplicate", "names, chromosomes, positions<BR/>encoding repair · exact duplicates removed"),
   lab("Trait taxonomy", "5 main traits, sub-categories<BR/>audited against the curators&#39; table"),
@@ -70,8 +67,6 @@ digraph db {
   lab("Publications", "title, authors, journal, year", f(nrow(pub))),
   lab("Candidate genes", sprintf("%s candidate genes<BR/>GrainGenes / Ensembl Plants links", f(n_cg))),
   lab("Linkage maps", sprintf("%s maps · %s with marker positions", f(nrow(maps)), f(n_view))),
-  lab("GWAS Atlas associations", sprintf("%s associations · %s papers", f(ga$associations), f(ga$publications))),
-  lab("Studies awaiting curation", sprintf("%s candidate papers<BR/>%s auto-extracted QTL (unverified)", f(nrow(pend)), f(ex$records))),
   lab("Search &amp; tables", "trait · chromosome · species · PVE · CSV"),
   lab("Genome map", "ideogram · Circos · linkage (cM)"),
   lab("Statistics", "trait, chromosome, year charts"),
