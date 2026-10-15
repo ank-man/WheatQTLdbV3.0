@@ -54,16 +54,16 @@ export default function MultiTraitQTLPage() {
       <PageHero
         eyebrow="Data"
         title="Multi-trait (pleiotropic) QTL"
-        subtitle="QTL/MTA loci reported against two or more co-mapped traits or parameters in the same study - e.g. a single locus affecting both grain Zn and Fe content, or both heading date and flowering date."
+        subtitle="QTL/MTA loci reported against two or more co-mapped traits or parameters in the same study - e.g. a single locus affecting both grain Zn and Fe content, or both heading date and flowering date - from the curators' multi-trait QTL data files."
         variant="side"
       />
       <AsyncBoundary loading={loading} error={error}>
         <p className="mb-4 text-sm text-wheat-600">
           <span className="font-semibold text-wheat-900">{multiTrait.length.toLocaleString()}</span> of{' '}
-          {data.length.toLocaleString()} QTL/MTA records report two or more <em>distinct</em> traits for the
-          same locus. Trait&nbsp;&times;&nbsp;environment repeats of one trait are counted once, and
-          study-wide trait panels — a list of everything a study phenotyped, recorded against every
-          marker — are excluded, since those describe the experiment rather than the locus.
+          {data.length.toLocaleString()} QTL/MTA records are multi-trait QTL. This table holds exactly the curated
+          multi-trait data files (Drought, Developmental and Zn multi-trait QTL): each locus is reported against
+          two or more co-mapped traits or parameters. The Traits column counts the distinct traits, with
+          trait&nbsp;&times;&nbsp;environment repeats of one trait counted once.
         </p>
         <DataTable data={multiTrait} columns={columns} filename="wheatqtldb_multitrait_qtl.csv" />
       </AsyncBoundary>

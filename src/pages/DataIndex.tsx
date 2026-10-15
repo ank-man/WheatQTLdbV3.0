@@ -4,7 +4,7 @@ import PageHero from '../components/PageHero'
 
 const items = [
   { to: '/data/qtl', icon: Database, title: 'QTL', desc: 'QTL/MTA records from interval mapping and GWAS.' },
-  { to: '/data/multi-trait', icon: Layers, title: 'Multi-trait QTL', desc: 'Pleiotropic loci reported against 2+ co-mapped traits/parameters.' },
+  { to: '/data/multi-trait', icon: Layers, title: 'Multi-trait QTL', desc: 'Pleiotropic loci reported against 2+ co-mapped traits (curated multi-trait QTL files).' },
   { to: '/data/metaqtl', icon: GitBranch, title: 'MetaQTL', desc: 'Consensus QTL regions across studies.' },
   { to: '/data/epistatic', icon: Network, title: 'Epistatic QTL', desc: 'QTL × QTL interactions.' },
   { to: '/data/candidate-genes', icon: Dna, title: 'Candidate Genes', desc: 'Genes underlying QTL regions.' },

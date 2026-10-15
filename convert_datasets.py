@@ -983,65 +983,44 @@ def main():
     all_epistatic = dedupe_exact("Epistatic", all_epistatic)
 
     # ------------------------------------------------------------------
-    # Multi-trait (pleiotropic) flag.
+    # Multi-trait (pleiotropic) QTL.
     #
-    # Computed here rather than in the web app because it needs whole-dataset
-    # context. Two corrections over a naive "parameter contains a comma":
-    #
-    #   1. Trait x environment combinations are collapsed. A parameter listing
-    #      "Grain yield_M_17, Grain yield_S_18, ..." describes ONE trait scored
-    #      in several environments, not several traits.
-    #
-    #   2. Study-level trait panels are excluded. In Drought.xls, 457 rows
-    #      share one identical 36-item parameter string: that is the list of
-    #      traits the STUDY phenotyped, pasted onto every marker row, not a
-    #      claim that each marker affects all of them. A long parameter string
-    #      repeated across many rows of one source is therefore treated as an
-    #      experiment description, not as evidence of pleiotropy.
+    # The multi-trait table is exactly the curators' multi-trait data drop:
+    # every record from the files in Final_data/.../multitrait qtl, and no
+    # others. (Earlier the flag was inferred from any record whose parameter
+    # listed two or more traits; the curators asked for the table to hold only
+    # their multi-trait files.) n_traits still counts the distinct traits in
+    # the parameter, with trait x environment combinations collapsed.
     # ------------------------------------------------------------------
+    multitrait_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                  "Final_data", "Updated data (2.0+3.0)", "multitrait qtl")
+    MULTITRAIT_SOURCES = {os.path.splitext(f)[0] for f in os.listdir(multitrait_dir)
+                          if f.lower().endswith((".xls", ".xlsx", ".csv"))}
+
     _ENV_SUFFIX = re.compile(
         r"[_\s-]+(?:[MSE]|E\d+|ENV\d*|LOC\d*|Y\d+|\d{2,4})"
         r"(?:[_\s-]+(?:\d{2,4}|[MSE]))*$", re.I)
 
-    def _trait_parts(param):
-        return [x.strip() for x in re.split(r"[,&]", param or "") if x.strip()]
-
     def _distinct_traits(param):
         out = set()
-        for part in _trait_parts(param):
+        for part in [x.strip() for x in re.split(r"[,&]", param or "") if x.strip()]:
             b = re.sub(r"\s+", " ", _ENV_SUFFIX.sub("", part).strip()).lower()
             if b:
                 out.add(b)
         return out
 
-    # how often each (source, parameter) string recurs - a long list repeated
-    # across many rows is a panel description
-    panel_counts = {}
+    n_multi = 0
+    n_panel = 0
     for r in all_qtl:
-        key = (r.get("source_file", ""), r.get("parameter", ""))
-        panel_counts[key] = panel_counts.get(key, 0) + 1
-
-    PANEL_MIN_PARTS = 5     # only long lists can be panels
-    PANEL_MIN_ROWS = 20     # ...repeated this often in one source
-
-    n_multi = n_panel = 0
-    for r in all_qtl:
-        param = r.get("parameter", "")
-        parts = _trait_parts(param)
-        distinct = _distinct_traits(param)
-        key = (r.get("source_file", ""), param)
-        is_panel = (len(parts) >= PANEL_MIN_PARTS
-                    and panel_counts.get(key, 0) >= PANEL_MIN_ROWS)
-        if is_panel:
-            n_panel += 1
-        multi = (len(distinct) >= 2) and not is_panel
+        distinct = _distinct_traits(r.get("parameter", ""))
+        multi = r.get("source_file", "") in MULTITRAIT_SOURCES
         r["multi_trait"] = "yes" if multi else ""
         r["n_traits"] = str(len(distinct)) if distinct else ""
         if multi:
             n_multi += 1
+    print(f"  QTL: multi-trait records come only from {sorted(MULTITRAIT_SOURCES)}")
 
-    print(f"  QTL: {n_multi} multi-trait (pleiotropic) record(s); "
-          f"{n_panel} excluded as study-level trait panels")
+    print(f"  QTL: {n_multi} multi-trait (pleiotropic) record(s)")
 
     # distinct loci, for an honest headline alongside the record count: the
     # same locus reported for several traits is several ROWS but one LOCUS.
